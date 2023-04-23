@@ -30,7 +30,6 @@
 	- create(IConfig) : std::unique_ptr<IEntity>
 
 - extern C
-	- Enum EntityType getType(void);
 	- IEntityCreator *getEntityCreator(void);
 	- void deleteEntityCreator(IEntityCreator *creator);
 
