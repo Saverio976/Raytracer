@@ -4,4 +4,4 @@ target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Main.cpp"
 )
 
-add_subdirectory(scenes)
+add_subdirectory(Entities)

@@ -7,7 +7,7 @@
 
 #ifndef IMATERIAL_HPP_
     #define IMATERIAL_HPP_
-    #include "Color.hpp"
+    #include "../Images/Color.hpp"
 
 namespace Scenes {
     /**

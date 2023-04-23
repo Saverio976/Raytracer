@@ -7,8 +7,8 @@
 
 #ifndef ILIGHT_HPP_
     #define ILIGHT_HPP_
-    #include "Color.hpp"
-    #include "Vector3f.hpp"
+    #include "../Images/Color.hpp"
+    #include "Transform/Vector3f.hpp"
 
 namespace Scenes {
     /**

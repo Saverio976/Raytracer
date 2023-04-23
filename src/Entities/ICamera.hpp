@@ -7,7 +7,7 @@
 
 #ifndef ICAMERA_HPP_
     #define ICAMERA_HPP_
-    #include "Vector2i.hpp"
+    #include "Transform/Vector2i.hpp"
 
 namespace Scenes {
     /**

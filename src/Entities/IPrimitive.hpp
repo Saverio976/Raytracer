@@ -8,7 +8,7 @@
 #ifndef IPRIMITIVE_HPP_
     #define IPRIMITIVE_HPP_
     #include "IMaterial.hpp"
-    #include "Vector3f.hpp"
+    #include "Transform/Vector3f.hpp"
 
 namespace Scenes {
     /**

@@ -7,7 +7,7 @@
 
 #ifndef ENTITY_HPP_
     #define ENTITY_HPP_
-    #include "ITransform.hpp"
+    #include "Transform/ITransform.hpp"
 
 namespace Scenes {
     /**
