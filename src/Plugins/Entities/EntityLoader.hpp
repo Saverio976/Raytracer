@@ -16,7 +16,7 @@
 class EntityLoader {
     public:
         EntityLoader(const std::string &directory);
-        void load(TFactory<EntityHandler, Scenes::IEntity> &factory);
+        virtual void load(TFactory<EntityHandler, Scenes::IEntity> &factory);
 
     protected:
     private:

@@ -12,10 +12,11 @@
     #include <string>
     #include "IEntity.hpp"
     #include "IEntityCreator.hpp"
+    #include "PluginHandler.hpp"
 
 class IConfig; // TODO: create an iconfig please
 
-class EntityHandler {
+class EntityHandler : PluginHandler<Scenes::IEntity, IEntityCreator> {
     public:
         enum class Type {
             Light,
@@ -23,12 +24,10 @@ class EntityHandler {
             Primitive
         };
         EntityHandler(const std::string &filePath);
-        ~EntityHandler();
         Type getType() const;
         std::unique_ptr<Scenes::IEntity> getEntity(const IConfig &config);
     private:
         Type _type;
-        IEntityCreator *_creator;
 };
 
 #endif
