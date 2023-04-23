@@ -8,7 +8,7 @@
 #ifndef IPRIMITIVE_HPP_
     #define IPRIMITIVE_HPP_
     #include "IMaterial.hpp"
-    #include "Box.hpp"
+    #include "Vector3f.hpp"
 
 namespace Scenes {
     /**
@@ -25,12 +25,6 @@ namespace Scenes {
              * @return the material
              */
             IMaterial &getMaterial();
-            /**
-             * @brief Get the collision box
-             *
-             * @return the collision box
-             */
-            const Box &getCollisionBox() const;
             /**
              * @brief Check if the point is collided with the box
              *
