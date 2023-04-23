@@ -7,6 +7,7 @@
 
 #ifndef COLOR_HPP_
     #define COLOR_HPP_
+    #include <mutex>
 
 namespace Scenes {
     /**
@@ -16,6 +17,12 @@ namespace Scenes {
      */
     class Color {
         public:
+            enum class Types {
+                RED,
+                GREEN,
+                BLUE,
+                ALPHA
+            };
             ~Color() = default;
             /**
              * @brief Construct a new Color object
@@ -72,13 +79,15 @@ namespace Scenes {
              * @return the same color modified
              */
             Color &operator=(const Color &other);
+            float &operator[](const Types &type);
 
         protected:
         private:
-            float r;
-            float g;
-            float b;
-            float a;
+            float _r;
+            float _g;
+            float _b;
+            float _a;
+            std::mutex _mutex;
     };
 }
 
