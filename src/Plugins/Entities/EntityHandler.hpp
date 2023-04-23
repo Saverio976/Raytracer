@@ -18,16 +18,9 @@ class IConfig; // TODO: create an iconfig please
 
 class EntityHandler : PluginHandler<Scenes::IEntity, IEntityCreator> {
     public:
-        enum class Type {
-            Light,
-            Camera,
-            Primitive
-        };
         EntityHandler(const std::string &filePath);
-        Type getType() const;
         std::unique_ptr<Scenes::IEntity> getEntity(const IConfig &config);
     private:
-        Type _type;
 };
 
 #endif

@@ -17,6 +17,11 @@ namespace Scenes {
      */
     class IEntity {
         public:
+            enum class Type {
+                Light,
+                Camera,
+                Primitive
+            };
             virtual ~IEntity() = default;
             /**
              * @brief Get the transform (position, rotation, scale)
@@ -24,6 +29,7 @@ namespace Scenes {
              * @return the transform
              */
             virtual ITransform &getTransform() = 0;
+            virtual Type getType() const = 0;
 
         protected:
         private:
