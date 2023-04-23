@@ -23,8 +23,8 @@ class Image {
                 Scenes::Color &operator[](std::size_t x);
 
             private:
-                Scenes::Vector2i _size;
-                std::size_t _y;
+                const Scenes::Vector2i &_size;
+                const std::size_t &_y;
                 std::list<Scenes::Color> &_pixels;
         };
         Image(const Scenes::Vector2i &size);
