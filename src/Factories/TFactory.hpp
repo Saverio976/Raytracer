@@ -9,6 +9,7 @@
 	#define IFACTORY_HPP_
     #include <string>
     #include <memory>
+    #include <map>
 
 class IConfig; // TODO: create an iconfig please
 
@@ -18,12 +19,13 @@ class TFactory {
 		~TFactory() = default;
         void add(const std::string &name, std::unique_ptr<Handler> handler);
         Interface get(const std::string &name, IConfig config);
-        static TFactory<Handler, Interface> &getInstance();
+        static TFactory<Handler, Interface> &getFactory();
         void clearAll();
 
 	protected:
         TFactory();
         static TFactory<Handler, Interface> _factory;
+        std::map<std::string, std::unique_ptr<Handler>> _stock;
 	private:
 };
 
