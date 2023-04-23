@@ -1,6 +1,3 @@
-- IPrimitive
-	- enlever les box
-
 - Color
 	- variable mutex private
 	- operator [](const Enum &type)
