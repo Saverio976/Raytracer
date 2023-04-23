@@ -6,7 +6,8 @@
 */
 
 #ifndef IFACTORY_HPP_
-	#define IFACTORY_HPP_
+    #define IFACTORY_HPP_
+
     #include <string>
     #include <memory>
     #include <map>
@@ -24,7 +25,7 @@ class TFactory {
 
 	protected:
         TFactory();
-        static TFactory<Handler, Interface> _factory;
+        static std::unique_ptr<TFactory<Handler, Interface>> _factory;
         std::map<std::string, std::unique_ptr<Handler>> _stock;
 	private:
 };
