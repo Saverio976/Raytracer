@@ -9,7 +9,7 @@
     #define ENTITY_HPP_
     #include "Transform/ITransform.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities {
     /**
      * @brief The IEntity class
      *
@@ -28,7 +28,7 @@ namespace Scenes {
              *
              * @return the transform
              */
-            virtual ITransform &getTransform() = 0;
+            virtual Transform::ITransform &getTransform() = 0;
             virtual Type getType() const = 0;
 
         protected:

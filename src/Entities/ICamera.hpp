@@ -13,7 +13,7 @@
     #include "IFilter.hpp"
     #include "Scene.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities {
     /**
      * @brief The ICamera class
      *
@@ -40,16 +40,16 @@ namespace Scenes {
              *
              * @param vector the size
              */
-            virtual void setSize(const Vector2i &vector) = 0;
+            virtual void setSize(const Transform::Vector2i &vector) = 0;
             /**
              * @brief Get the size (of the screen)
              *
              * @return the size
              */
-            virtual const Vector2i &getSize() const = 0;
-            virtual const Image &render(const Displayable &displayable, const Scene::SceneState &state);
-            virtual const Image &getImage() const;
-            virtual std::list<std::unique_ptr<IFilter>> &getFilters();
+            virtual const Transform::Vector2i &getSize() const = 0;
+            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::Scene::SceneState &state);
+            virtual const Images::Image &getImage() const;
+            virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters();
 
         protected:
         private:

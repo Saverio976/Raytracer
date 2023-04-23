@@ -13,18 +13,22 @@
 
 class IConfig; // TODO: create an iconfig please
 
-template<typename Interface, typename Creator>
-class PluginHandler {
-	public:
-		PluginHandler(const std::string &filePath);
-		~PluginHandler();
+namespace RayTracer::Plugins {
+    template<typename Interface, typename Creator>
+    class PluginHandler {
+    public:
+        PluginHandler(const std::string &filePath);
+
+        ~PluginHandler();
+
         std::unique_ptr<Interface> get(const IConfig &config);
 
-	protected:
+    protected:
         Creator *_creator;
         std::string _filePath;
         void *_handler;
-	private:
-};
+    private:
+    };
+}
 
 #endif /*PLUGINHANDLER_HPP_*/

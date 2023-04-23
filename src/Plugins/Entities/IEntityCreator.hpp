@@ -13,13 +13,16 @@
 
 class IConfig; // TODO: create an iconfig please
 
-class IEntityCreator {
+namespace RayTracer::Plugins::Entities {
+    class IEntityCreator {
     public:
         virtual ~IEntityCreator() = default;
-        virtual std::unique_ptr<Scenes::IEntity> create(const IConfig &config) = 0;
+
+        virtual std::unique_ptr<RayTracer::Entities::IEntity> create(const IConfig &config) = 0;
 
     protected:
     private:
-};
+    };
+}
 
 #endif /*IENTITYCREATOR_HPP_*/

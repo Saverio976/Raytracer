@@ -9,15 +9,18 @@
     #include <string>
     #include "TFactory.hpp"
 
-template<typename Handler, typename Interface>
-class PluginLoader {
-	public:
-		PluginLoader(const std::string &directory);
-        virtual void load(TFactory<Handler, Interface> &factory);
+namespace RayTracer::Plugins {
+    template<typename Handler, typename Interface>
+    class PluginLoader {
+    public:
+        PluginLoader(const std::string &directory);
 
-	protected:
+        virtual void load(Factories::TFactory <Handler, Interface> &factory);
+
+    protected:
         std::string _directory;
     private:
-};
+    };
+}
 
 #endif /*PLUGINLOADER_HPP_*/

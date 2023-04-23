@@ -12,18 +12,20 @@
     #include "IFilter.hpp"
     #include "Scene.hpp"
 
-class ImagePipeLine {
-	public:
-		ImagePipeLine(Image &image, const Displayable &displayable, const Scene::SceneState &state);
-        void generate(std::size_t maxThread = 1, std::size_t cluster = 1);
-        void apply(IFilter &filter);
-		~ImagePipeLine();
+namespace RayTracer::Images {
+    class ImagePipeLine {
+        public:
+            ImagePipeLine(Image &image, const Scenes::Displayable &displayable, const Scenes::Scene::SceneState &state);
+            void generate(std::size_t maxThread = 1, std::size_t cluster = 1);
+            void apply(Filters::IFilter &filter);
+            ~ImagePipeLine();
 
-	protected:
-	private:
-        Image &_image;
-        const Displayable &_displayable;
-        const Scene::SceneState &_state;
-};
+        protected:
+        private:
+            Image &_image;
+            const Scenes::Displayable &_displayable;
+            const Scenes::Scene::SceneState &_state;
+    };
+}
 
 #endif /*IMAGEPIPELINE_HPP_*/

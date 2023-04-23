@@ -14,20 +14,22 @@
 
 class IConfig; // TODO: create an iconfig please
 
-template <typename Handler, typename Interface>
-class TFactory {
-	public:
-		~TFactory() = default;
-        void add(const std::string &name, std::unique_ptr<Handler> handler);
-        Interface get(const std::string &name, IConfig config);
-        static TFactory<Handler, Interface> &getFactory();
-        void clearAll();
+namespace RayTracer::Factories {
+    template <typename Handler, typename Interface>
+    class TFactory {
+        public:
+            ~TFactory() = default;
+            void add(const std::string &name, std::unique_ptr<Handler> handler);
+            Interface get(const std::string &name, IConfig config);
+            static TFactory<Handler, Interface> &getFactory();
+            void clearAll();
 
-	protected:
-        TFactory();
-        static std::unique_ptr<TFactory<Handler, Interface>> _factory;
-        std::map<std::string, std::unique_ptr<Handler>> _stock;
-	private:
-};
+        protected:
+            TFactory();
+            static std::unique_ptr<TFactory<Handler, Interface>> _factory;
+            std::map<std::string, std::unique_ptr<Handler>> _stock;
+        private:
+    };
+}
 
 #endif /*IFACTORY_HPP_*/

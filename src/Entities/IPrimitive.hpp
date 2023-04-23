@@ -10,7 +10,7 @@
     #include "IMaterial.hpp"
     #include "Transform/Vector3f.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities {
     /**
      * @brief The IPrimitive class
      *
@@ -32,7 +32,7 @@ namespace Scenes {
              *
              * @return true if the point is collided
              */
-            virtual bool isCollided(const Vector3f &point) const = 0;
+            virtual bool isCollided(const Transform::Vector3f &point) const = 0;
 
         protected:
         private:

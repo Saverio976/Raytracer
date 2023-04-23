@@ -10,10 +10,12 @@
 
     #include "Image.hpp"
 
-class IFilter {
-    public:
-        virtual ~IFilter() = default;
-        virtual void apply(Image &image) = 0;
-};
+namespace RayTracer::Filters {
+    class IFilter {
+        public:
+            virtual ~IFilter() = default;
+            virtual void apply(Images::Image &image) = 0;
+    };
+}
 
 #endif

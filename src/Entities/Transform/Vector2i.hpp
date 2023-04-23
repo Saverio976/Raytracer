@@ -7,7 +7,7 @@
 #ifndef VECTOR2I_HPP_
     #define VECTOR2I_HPP_
 
-namespace Scenes {
+namespace RayTracer::Entities::Transform {
     /**
      * @brief The Vector2i class
      *

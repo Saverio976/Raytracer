@@ -13,17 +13,19 @@
     #include <list>
     #include <memory>
 
-class Displayable {
-	public:
-        const std::list<std::unique_ptr<Scenes::ILight>> &getLightList() const;
-        std::list<std::unique_ptr<Scenes::ILight>> &getLightList();
-        const std::list<std::unique_ptr<Scenes::IPrimitive>> &getPrimitiveList() const;
-        std::list<std::unique_ptr<Scenes::IPrimitive>> &getPrimitiveList();
+namespace RayTracer::Scenes {
+    class Displayable {
+    public:
+        const std::list<std::unique_ptr<Entities::ILight>> &getLightList() const;
+        std::list<std::unique_ptr<Entities::ILight>> &getLightList();
+        const std::list<std::unique_ptr<Entities::IPrimitive>> &getPrimitiveList() const;
+        std::list<std::unique_ptr<Entities::IPrimitive>> &getPrimitiveList();
 
-	protected:
-	private:
-        std::list<std::unique_ptr<Scenes::ILight>> _lights;
-        std::list<std::unique_ptr<Scenes::IPrimitive>> _primitives;
-};
+    protected:
+    private:
+        std::list<std::unique_ptr<Entities::ILight>> _lights;
+        std::list<std::unique_ptr<Entities::IPrimitive>> _primitives;
+    };
+}
 
 #endif /*DISPLAYABLE_HPP_*/

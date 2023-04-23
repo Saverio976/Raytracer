@@ -16,13 +16,16 @@
 
 class IConfig; // TODO: create an iconfig please
 
-class FilterHandler : public PluginHandler<IFilter, IFilterCreator> {
+namespace RayTracer::Plugins::Filters {
+    class FilterHandler : public PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> {
     public:
         FilterHandler(const std::string &filePath);
-        std::unique_ptr<IFilter> getFilter(const IConfig &config);
+
+        std::unique_ptr<RayTracer::Filters::IFilter> getFilter(const IConfig &config);
 
     protected:
     private:
-};
+    };
+}
 
 #endif /*FILTERHANDLER_HPP_*/

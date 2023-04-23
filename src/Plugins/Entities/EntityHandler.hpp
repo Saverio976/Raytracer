@@ -16,11 +16,13 @@
 
 class IConfig; // TODO: create an iconfig please
 
-class EntityHandler : PluginHandler<Scenes::IEntity, IEntityCreator> {
-    public:
-        EntityHandler(const std::string &filePath);
-        std::unique_ptr<Scenes::IEntity> getEntity(const IConfig &config);
-    private:
-};
+namespace RayTracer::Plugins::Entities {
+    class EntityHandler : PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> {
+        public:
+            EntityHandler(const std::string &filePath);
+            std::unique_ptr<RayTracer::Entities::IEntity> getEntity(const IConfig &config);
+        private:
+    };
+}
 
 #endif

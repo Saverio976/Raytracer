@@ -9,7 +9,7 @@
     #define ITRANSFORM_HPP_
     #include "Vector3f.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities::Transform {
 	/**
 	 * @brief The ITransform class
 	 *

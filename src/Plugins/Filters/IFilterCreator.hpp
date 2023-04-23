@@ -13,13 +13,16 @@
 
 class IConfig; // TODO: create an iconfig please
 
-class IFilterCreator {
+namespace RayTracer::Plugins::Filters {
+    class IFilterCreator {
     public:
         virtual ~IFilterCreator() = default;
-        virtual std::unique_ptr<IFilter> create(const IConfig &config) = 0;
+
+        virtual std::unique_ptr<RayTracer::Filters::IFilter> create(const IConfig &config) = 0;
 
     protected:
     private:
-};
+    };
+}
 
 #endif /*IFILTERCREATOR_HPP_*/

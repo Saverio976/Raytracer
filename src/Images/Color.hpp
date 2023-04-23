@@ -9,7 +9,7 @@
     #define COLOR_HPP_
     #include <mutex>
 
-namespace Scenes {
+namespace RayTracer::Images {
     /**
      * @brief The Color class
      *

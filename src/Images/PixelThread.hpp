@@ -9,14 +9,16 @@
 
     #include "Displayable.hpp"
 
-class PixelThread {
-	public:
-		PixelThread(const Displayable &displayable, Scenes::Color &color);
-		~PixelThread();
-        void operator()();
+namespace RayTracer::Images {
+    class PixelThread {
+        public:
+            PixelThread(const Scenes::Displayable &displayable, Color &color);
+            ~PixelThread();
+            void operator()();
 
-	protected:
-	private:
-};
+        protected:
+        private:
+    };
+}
 
 #endif /*PIXELTHREAD_HPP_*/

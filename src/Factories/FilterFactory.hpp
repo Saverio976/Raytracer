@@ -11,16 +11,18 @@
     #include "FilterHandler.hpp"
     #include "IFilter.hpp"
 
-class FilterFactory : public TFactory<FilterHandler, IFilter> {
-	public:
-		~FilterFactory() = default;
-        void addFilter(const std::string &name, std::unique_ptr<FilterHandler> handler);
-        IFilter getFilter(const std::string &name, IConfig config);
-        static FilterFactory &getFilterFactory();
+namespace RayTracer::Factories {
+    class FilterFactory : public TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> {
+        public:
+            ~FilterFactory() = default;
+            void addFilter(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
+            Filters::IFilter getFilter(const std::string &name, IConfig config);
+            static FilterFactory &getFilterFactory();
 
-	protected:
-		FilterFactory();
-	private:
-};
+        protected:
+            FilterFactory();
+        private:
+    };
+}
 
 #endif /*FILTERFACTORY_HPP_*/

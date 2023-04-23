@@ -16,34 +16,35 @@
 
 class IConfig; // TODO: create an iconfig please
 
-class Scene {
-	public:
+namespace RayTracer::Scenes {
+    class Scene {
+    public:
         class SceneState {
-            public:
-                enum class States {
-                    RUNNING,
-                    CANCELLED
-                };
-                States getState() const;
-                void changeState(const States &state);
-            private:
-                States _state;
-                std::mutex mutex;
+        public:
+            enum class States {
+                RUNNING,
+                CANCELLED
+            };
+            States getState() const;
+            void changeState(const States &state);
+        private:
+            States _state;
+            std::mutex mutex;
         };
-		~Scene();
+        ~Scene();
         void operator()(const IConfig &);
         void renders();
-        const std::list<std::unique_ptr<Scenes::ICamera>> &getCameras() const;
+        const std::list<std::unique_ptr<Entities::ICamera>> &getCameras() const;
         bool isReady() const;
         void cancel();
-
-	protected:
-	private:
-        std::list<std::unique_ptr<Scenes::ICamera>> _cameras;
+    protected:
+    private:
+        std::list<std::unique_ptr<Entities::ICamera>> _cameras;
         SceneState _state;
         std::thread thread;
         Displayable displayable;
 
-};
+    };
+}
 
 #endif /*SCENE_HPP_*/

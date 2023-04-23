@@ -13,15 +13,19 @@
     #include "FilterHandler.hpp"
     #include "PluginLoader.hpp"
 
-class FilterLoader : public PluginLoader<FilterHandler, IFilter> {
+namespace RayTracer::Plugins::Filters {
+    class FilterLoader : public PluginLoader<FilterHandler, RayTracer::Filters::IFilter> {
     public:
         FilterLoader(const std::string &directory);
-        void load(TFactory<FilterHandler, IFilter> &factory) override;
+
+        void load(Factories::TFactory <FilterHandler, RayTracer::Filters::IFilter> &factory) override;
+
         void load();
 
     protected:
     private:
         std::string _directory;
-};
+    };
+}
 
 #endif /*FILTERLOADER_HPP_*/
