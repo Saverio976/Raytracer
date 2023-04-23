@@ -9,52 +9,52 @@
     #define ITRANSFORM_HPP_
     #include "Vector3f.hpp"
 
-namespace Scenes {
-	/**
-	 * @brief The ITransform class
-	 *
-	 * class that represent a transform (position, rotation, scale, ..) of
-	 * an `IEntity`
-	 */
+namespace RayTracer::Entities::Transform {
+    /**
+     * @brief The ITransform class
+     *
+     * class that represent a transform (position, rotation, scale, ..) of
+     * an `IEntity`
+     */
     class ITransform {
         public:
-            ~ITransform() = default;
+            virtual ~ITransform() = default;
             /**
              * @brief Set the position
              *
              * @param position the position
              */
-            void setPosition(const Vector3f &position);
+            virtual void setPosition(const Vector3f &position) = 0;
             /**
              * @brief Get the position
              *
              * @return the position
              */
-            const Vector3f &getPosition() const;
+            virtual const Vector3f &getPosition() const = 0;
             /**
              * @brief Set the rotation
              *
              * @param rotation the rotation
              */
-            void setRotation(const Vector3f &rotation);
+            virtual void setRotation(const Vector3f &rotation) = 0;
             /**
              * @brief Get the rotation
              *
              * @return the rotation
              */
-            const Vector3f &getRotation() const;
+            virtual const Vector3f &getRotation() const = 0;
             /**
              * @brief Set the scale
              *
              * @param scale the scale
              */
-            void setScale(const Vector3f &scale);
+            virtual void setScale(const Vector3f &scale) = 0;
             /**
              * @brief Get the scale
              *
              * @return the scale
              */
-            const Vector3f &getScale() const;
+            virtual const Vector3f &getScale() const = 0;
 
         protected:
         private:

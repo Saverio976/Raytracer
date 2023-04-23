@@ -4,6 +4,7 @@ project(Raytracer
     DESCRIPTION "Raytracer engine with sphere,..."
     LANGUAGES CXX
 )
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(raytracer)
 set_target_properties(raytracer PROPERTIES

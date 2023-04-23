@@ -7,7 +7,7 @@
 #ifndef VECTOR3F_HPP_
     #define VECTOR3F_HPP_
 
-namespace Scenes {
+namespace RayTracer::Entities::Transform {
     /**
      * @brief The Vector3f class
      *
@@ -73,9 +73,9 @@ namespace Scenes {
 
         protected:
         private:
-            float x;
-            float y;
-            float z;
+            float _x;
+            float _y;
+            float _z;
     };
 }
 

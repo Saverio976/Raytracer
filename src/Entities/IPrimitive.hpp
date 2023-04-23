@@ -8,9 +8,9 @@
 #ifndef IPRIMITIVE_HPP_
     #define IPRIMITIVE_HPP_
     #include "IMaterial.hpp"
-    #include "Box.hpp"
+    #include "Transform/Vector3f.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities {
     /**
      * @brief The IPrimitive class
      *
@@ -18,19 +18,13 @@ namespace Scenes {
      */
     class IPrimitive {
         public:
-            ~IPrimitive() = default;
+            virtual ~IPrimitive() = default;
             /**
              * @brief Get the material
              *
              * @return the material
              */
-            IMaterial &getMaterial();
-            /**
-             * @brief Get the collision box
-             *
-             * @return the collision box
-             */
-            const Box &getCollisionBox() const;
+            virtual IMaterial &getMaterial() = 0;
             /**
              * @brief Check if the point is collided with the box
              *
@@ -38,7 +32,7 @@ namespace Scenes {
              *
              * @return true if the point is collided
              */
-            bool isCollided(const Vector3f &point) const;
+            virtual bool isCollided(const Transform::Vector3f &point) const = 0;
 
         protected:
         private:

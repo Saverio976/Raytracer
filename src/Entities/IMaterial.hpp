@@ -7,9 +7,9 @@
 
 #ifndef IMATERIAL_HPP_
     #define IMATERIAL_HPP_
-    #include "Color.hpp"
+    #include "../Images/Color.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities {
     /**
      * @brief The IMaterial class
      *
@@ -17,19 +17,19 @@ namespace Scenes {
      */
     class IMaterial {
         public:
-            ~IMaterial() = default;
+            virtual ~IMaterial() = default;
             /**
              * @brief Get the color
              *
              * @return the color
              */
-            const Color &getColor() const;
+            virtual const Images::Color &getColor() const = 0;
             /**
              * @brief Set the color
              *
              * @param color the color
              */
-            void setColor(const Color &color);
+            virtual void setColor(const Images::Color &color) = 0;
 
         protected:
         private:

@@ -7,10 +7,10 @@
 
 #ifndef ILIGHT_HPP_
     #define ILIGHT_HPP_
-    #include "Color.hpp"
-    #include "Vector3f.hpp"
+    #include "../Images/Color.hpp"
+    #include "Transform/Vector3f.hpp"
 
-namespace Scenes {
+namespace RayTracer::Entities {
     /**
      * @brief The ILight class
      *
@@ -18,13 +18,13 @@ namespace Scenes {
      */
     class ILight {
         public:
-            ~ILight() = default;
+            virtual ~ILight() = default;
             /**
              * @brief Get the color
              *
              * @return the color
              */
-            const Color &getColor() const;
+            virtual const Images::Color &getColor() const = 0;
             /**
              * @brief Get the color
              *
@@ -32,13 +32,13 @@ namespace Scenes {
              *
              * @return the color
              */
-            Color getColor(const Vector3f &point) const;
+            virtual Images::Color getColor(const Transform::Vector3f &point) const = 0;
             /**
              * @brief Set the color
              *
              * @param color the color
              */
-            void setColor(const Color &color);
+            virtual void setColor(const Images::Color &color) = 0;
 
         protected:
         private:

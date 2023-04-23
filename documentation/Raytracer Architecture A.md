@@ -1,6 +1,3 @@
-- IPrimitive
-	- enlever les box
-
 - Color
 	- variable mutex private
 	- operator [](const Enum &type)
@@ -33,7 +30,6 @@
 	- create(IConfig) : std::unique_ptr<IEntity>
 
 - extern C
-	- Enum EntityType getType(void);
 	- IEntityCreator *getEntityCreator(void);
 	- void deleteEntityCreator(IEntityCreator *creator);
 
