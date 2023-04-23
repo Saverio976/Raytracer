@@ -5,3 +5,7 @@ target_sources(raytracer PRIVATE
 )
 
 add_subdirectory(Entities)
+add_subdirectory(Factories)
+add_subdirectory(Images)
+add_subdirectory(Plugins)
+add_subdirectory(Scenes)

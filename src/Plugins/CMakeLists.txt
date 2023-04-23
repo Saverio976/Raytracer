@@ -6,4 +6,5 @@ target_sources(raytracer PRIVATE
     # sources of current directory
 )
 
-add_subdirectory(Transform)
+add_subdirectory(Filters)
+add_subdirectory(Entities)
