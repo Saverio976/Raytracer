@@ -29,6 +29,11 @@ namespace RayTracer::Entities {
              * @return the transform
              */
             virtual Transform::ITransform &getTransform() = 0;
+            /**
+             * @brief Get the type (light, camera, primitive)
+             *
+             * @return the type
+             */
             virtual Type getType() const = 0;
 
         protected:

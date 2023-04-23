@@ -14,14 +14,25 @@
 class IConfig; // TODO: create an iconfig please
 
 namespace RayTracer::Plugins::Entities {
+    /**
+     * @brief The IEntityCreator
+     *
+     * class that represent an entity creator
+     */
     class IEntityCreator {
-    public:
-        virtual ~IEntityCreator() = default;
+        public:
+            virtual ~IEntityCreator() = default;
+            /**
+            * @brief Create an entity with a config
+            *
+            * @param config the config
+            *
+            * @return the entity
+            */
+            virtual std::unique_ptr<RayTracer::Entities::IEntity> create(const IConfig &config) = 0;
 
-        virtual std::unique_ptr<RayTracer::Entities::IEntity> create(const IConfig &config) = 0;
-
-    protected:
-    private:
+        protected:
+        private:
     };
 }
 

@@ -10,12 +10,12 @@
     #include "Vector3f.hpp"
 
 namespace RayTracer::Entities::Transform {
-	/**
-	 * @brief The ITransform class
-	 *
-	 * class that represent a transform (position, rotation, scale, ..) of
-	 * an `IEntity`
-	 */
+    /**
+     * @brief The ITransform class
+     *
+     * class that represent a transform (position, rotation, scale, ..) of
+     * an `IEntity`
+     */
     class ITransform {
         public:
             virtual ~ITransform() = default;

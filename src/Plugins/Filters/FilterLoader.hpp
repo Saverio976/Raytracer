@@ -14,13 +14,23 @@
     #include "PluginLoader.hpp"
 
 namespace RayTracer::Plugins::Filters {
-    class FilterLoader : public PluginLoader<FilterHandler, RayTracer::Filters::IFilter> {
+    /**
+     * @brief The FilterLoader
+     *
+     * class that represent a filter loader (take a directory)
+     */
+    class FilterLoader : protected PluginLoader<FilterHandler, RayTracer::Filters::IFilter> {
     public:
+        /**
+         * @brief FilterLoader constructor (doesn't load anything)
+         *
+         * @param directory the directory
+         */
         FilterLoader(const std::string &directory);
-
-        void load(Factories::TFactory <FilterHandler, RayTracer::Filters::IFilter> &factory) override;
-
-        void load();
+        /**
+         * @brief Load all the filters in the factory singleton
+         */
+        void loadFilter();
 
     protected:
     private:

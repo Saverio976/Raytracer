@@ -11,7 +11,7 @@
     #include "Displayable.hpp"
     #include "Image.hpp"
     #include "IFilter.hpp"
-    #include "Scene.hpp"
+    #include "SceneState.hpp"
 
 namespace RayTracer::Entities {
     /**
@@ -47,8 +47,26 @@ namespace RayTracer::Entities {
              * @return the size
              */
             virtual const Transform::Vector2i &getSize() const = 0;
-            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::Scene::SceneState &state);
+            /**
+             * @brief Render an image
+             *
+             * @param displayable the displayable
+             * @param state the state (if cancel needed)
+             *
+             * @return the image
+             */
+            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state);
+            /**
+             * @brief Get the image (possible when rendering)
+             *
+             * @return the image
+             */
             virtual const Images::Image &getImage() const;
+            /**
+             * @brief Get the filters
+             *
+             * @return the filters
+             */
             virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters();
 
         protected:

@@ -15,7 +15,7 @@ namespace RayTracer::Plugins {
     public:
         PluginLoader(const std::string &directory);
 
-        virtual void load(Factories::TFactory <Handler, Interface> &factory);
+        void load(Factories::TFactory <Handler, Interface> &factory);
 
     protected:
         std::string _directory;

@@ -73,9 +73,9 @@ namespace RayTracer::Entities::Transform {
 
         protected:
         private:
-            float x;
-            float y;
-            float z;
+            float _x;
+            float _y;
+            float _z;
     };
 }
 

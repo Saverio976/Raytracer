@@ -17,6 +17,9 @@ namespace RayTracer::Images {
      */
     class Color {
         public:
+            /**
+             * @brief Type of color
+             */
             enum class Types {
                 RED,
                 GREEN,
@@ -79,6 +82,13 @@ namespace RayTracer::Images {
              * @return the same color modified
              */
             Color &operator=(const Color &other);
+            /**
+             * @brief Get the color (thread safe)
+             *
+             * @param type the color type
+             *
+             * @return the color
+             */
             float &operator[](const Types &type);
 
         protected:

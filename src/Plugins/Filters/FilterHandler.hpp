@@ -17,14 +17,30 @@
 class IConfig; // TODO: create an iconfig please
 
 namespace RayTracer::Plugins::Filters {
+    /**
+     * @brief The FilterHandler
+     *
+     * class that represent a filter handler (take a .so)
+     */
     class FilterHandler : public PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> {
-    public:
-        FilterHandler(const std::string &filePath);
+        public:
+            /**
+             * @brief FilterHandler constructor
+             *
+             * @param filePath the file path
+             */
+            FilterHandler(const std::string &filePath);
+            /**
+             * @brief Get a filter (and create it with config)
+             *
+             * @param config the config
+             *
+             * @return the filter
+             */
+            std::unique_ptr<RayTracer::Filters::IFilter> getFilter(const IConfig &config);
 
-        std::unique_ptr<RayTracer::Filters::IFilter> getFilter(const IConfig &config);
-
-    protected:
-    private:
+        protected:
+        private:
     };
 }
 
