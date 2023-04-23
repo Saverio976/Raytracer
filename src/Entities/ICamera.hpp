@@ -8,6 +8,10 @@
 #ifndef ICAMERA_HPP_
     #define ICAMERA_HPP_
     #include "Transform/Vector2i.hpp"
+    #include "Displayable.hpp"
+    #include "Image.hpp"
+    #include "IFilter.hpp"
+    #include "Scene.hpp"
 
 namespace Scenes {
     /**
@@ -43,6 +47,9 @@ namespace Scenes {
              * @return the size
              */
             virtual const Vector2i &getSize() const = 0;
+            virtual const Image &render(const Displayable &displayable, const Scene::SceneState &state);
+            virtual const Image &getImage() const;
+            virtual std::list<std::unique_ptr<IFilter>> &getFilters();
 
         protected:
         private:
