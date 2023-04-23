@@ -10,6 +10,8 @@
     #include <string>
     #include <memory>
 
+class IConfig; // TODO: create an iconfig please
+
 template <typename Handler, typename Interface>
 class TFactory {
 	public:
