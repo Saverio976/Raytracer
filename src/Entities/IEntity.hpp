@@ -17,13 +17,13 @@ namespace Scenes {
      */
     class IEntity {
         public:
-            ~IEntity() = default;
+            virtual ~IEntity() = default;
             /**
              * @brief Get the transform (position, rotation, scale)
              *
              * @return the transform
              */
-            ITransform &getTransform();
+            virtual ITransform &getTransform() = 0;
 
         protected:
         private:

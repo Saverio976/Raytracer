@@ -18,13 +18,13 @@ namespace Scenes {
      */
     class IPrimitive {
         public:
-            ~IPrimitive() = default;
+            virtual ~IPrimitive() = default;
             /**
              * @brief Get the material
              *
              * @return the material
              */
-            IMaterial &getMaterial();
+            virtual IMaterial &getMaterial() = 0;
             /**
              * @brief Check if the point is collided with the box
              *
@@ -32,7 +32,7 @@ namespace Scenes {
              *
              * @return true if the point is collided
              */
-            bool isCollided(const Vector3f &point) const;
+            virtual bool isCollided(const Vector3f &point) const = 0;
 
         protected:
         private:

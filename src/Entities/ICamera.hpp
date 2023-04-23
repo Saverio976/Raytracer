@@ -18,31 +18,31 @@ namespace Scenes {
      */
     class ICamera {
         public:
-            ~ICamera() = default;
+            virtual ~ICamera() = default;
             /**
              * @brief Get the focal (distance from the camera)
              *
              * @return the focal
              */
-            float getFocal() const;
+            virtual float getFocal() const = 0;
             /**
              * @brief Set the focal (distance from the camera)
              *
              * @param value the focal
              */
-            void setFocal(float value);
+            virtual void setFocal(float value) = 0;
             /**
              * @brief Set the size (of the screen)
              *
              * @param vector the size
              */
-            void setSize(const Vector2i &vector);
+            virtual void setSize(const Vector2i &vector) = 0;
             /**
              * @brief Get the size (of the screen)
              *
              * @return the size
              */
-            const Vector2i &getSize() const;
+            virtual const Vector2i &getSize() const = 0;
 
         protected:
         private:

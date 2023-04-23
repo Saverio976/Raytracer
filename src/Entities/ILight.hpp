@@ -18,13 +18,13 @@ namespace Scenes {
      */
     class ILight {
         public:
-            ~ILight() = default;
+            virtual ~ILight() = default;
             /**
              * @brief Get the color
              *
              * @return the color
              */
-            const Color &getColor() const;
+            virtual const Color &getColor() const = 0;
             /**
              * @brief Get the color
              *
@@ -32,13 +32,13 @@ namespace Scenes {
              *
              * @return the color
              */
-            Color getColor(const Vector3f &point) const;
+            virtual Color getColor(const Vector3f &point) const = 0;
             /**
              * @brief Set the color
              *
              * @param color the color
              */
-            void setColor(const Color &color);
+            virtual void setColor(const Color &color) = 0;
 
         protected:
         private:
