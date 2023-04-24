@@ -10,6 +10,11 @@
 
 #include "Vector3f.hpp"
 namespace RayTracer::Images {
+    /**
+     * @brief The Ray class
+     *
+     * class that represent a ray
+     */
     class Ray {
         public:
             /**
