@@ -18,6 +18,7 @@ namespace RayTracer::Factories {
     class FilterFactory : public TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> {
         public:
             ~FilterFactory() = default;
+            FilterFactory(const FilterFactory &other) = delete;
             /**
              * @brief Add a filter
              *
