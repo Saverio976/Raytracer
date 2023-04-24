@@ -49,6 +49,7 @@ namespace RayTracer::Images {
             Image &_image;
             const Scenes::Displayable &_displayable;
             const Scenes::SceneState &_state;
+            RayIterrator _rayIterrator;
     };
 }
 
