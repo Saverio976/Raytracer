@@ -8,6 +8,7 @@
     #define PIXELTHREAD_HPP_
 
     #include "Displayable.hpp"
+#include "Ray.hpp"
 
 namespace RayTracer::Images {
     /**
@@ -22,8 +23,9 @@ namespace RayTracer::Images {
              *
              * @param displayable the displayable to calcul
              * @param color the color to modify
+             * @param ray the ray
              */
-            PixelThread(const Scenes::Displayable &displayable, Color &color);
+            PixelThread(const Scenes::Displayable &displayable, Color &color, const Images::Ray &ray);
             ~PixelThread();
             /**
              * @brief The function that actualy do all the work
@@ -32,6 +34,9 @@ namespace RayTracer::Images {
 
         protected:
         private:
+            const Scenes::Displayable &_displayable;
+            Color &_color;
+            Images::Ray _ray;
     };
 }
 
