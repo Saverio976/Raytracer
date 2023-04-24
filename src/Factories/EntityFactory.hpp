@@ -18,6 +18,7 @@ namespace RayTracer::Factories {
     class EntityFactory : public TFactory<Plugins::Entities::EntityHandler, Entities::IEntity> {
         public:
             ~EntityFactory() = default;
+            EntityFactory(const EntityFactory &other) = delete;
             /**
              * @brief Add an entity
              *

@@ -25,6 +25,7 @@ namespace RayTracer::Factories {
     class TFactory {
         public:
             ~TFactory() = default;
+            TFactory(const TFactory<Handler, Interface> &other) = delete;
             /**
              * @brief Add an `handler`
              *

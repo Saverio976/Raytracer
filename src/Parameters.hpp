@@ -20,6 +20,7 @@ namespace RayTracer {
     class Parameters {
         public:
             ~Parameters() = default;
+            Parameters(const Parameters &other) = delete;
             /**
              * @brief Get the singleton instance
              *
