@@ -37,7 +37,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new
              */
-            Vector3f operator+(const Vector3f &other);
+            Vector3f operator+(const Vector3f &other) const;
             /**
              * @brief Subtraction two vectors
              *
@@ -45,7 +45,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator-(const Vector3f &other);
+            Vector3f operator-(const Vector3f &other) const;
             /**
              * @brief Multiplication two vectors
              *
@@ -53,7 +53,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator*(const Vector3f &other);
+            Vector3f operator*(const Vector3f &other) const;
             /**
              * @brief Division two vectors
              *
@@ -61,7 +61,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator/(const Vector3f &other);
+            Vector3f operator/(const Vector3f &other) const;
             /**
              * @brief Assign a vector
              *
@@ -70,6 +70,18 @@ namespace RayTracer::Entities::Transform {
              * @return the same vector modified
              */
             Vector3f &operator=(const Vector3f &other);
+            /**
+             * @brief Get the norm
+             *
+             * @return sqrt(x^2 + y^2 + z^2)
+             */
+            float getNorm() const;
+            /**
+             * @brief Get normalized vector
+             *
+             * @return vector / getNorm()
+             */
+            Vector3f getNormalized() const;
 
         protected:
         private:
