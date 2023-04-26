@@ -15,17 +15,16 @@ namespace RayTracer::Factories {
     /**
      * @brief The FilterFactory (singleton factory)
      */
-    class FilterFactory : public TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> {
+    class FilterFactory {
         public:
             ~FilterFactory() = default;
-            FilterFactory(const FilterFactory &other) = delete;
             /**
              * @brief Add a filter
              *
              * @param name the name
              * @param handler the handler
              */
-            void addFilter(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
+            static void addFilter(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
             /**
              * @brief Get a filter
              *
@@ -34,16 +33,14 @@ namespace RayTracer::Factories {
              *
              * @return the filter
              */
-            std::unique_ptr<Filters::IFilter> getFilter(const std::string &name, IConfig config);
+            static std::unique_ptr<Filters::IFilter> getFilter(const std::string &name, const IConfig &config);
             /**
-             * @brief Get the filter factory instance
-             *
-             * @return the filter factory instance
+             * @brief Clear all filters
              */
-            static FilterFactory &getFilterFactory();
+            void clearAll();
 
         protected:
-            FilterFactory();
+            static TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> &getFactory();
         private:
     };
 }
