@@ -43,7 +43,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the rotation
              */
-            const Vector3f &getRotation() const;
+            const Vector3f &getRotation() const final;
             /**
              * @brief Set the scale
              *
