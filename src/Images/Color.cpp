@@ -87,12 +87,16 @@ namespace RayTracer::Images {
         switch (type) {
             case Types::RED:
                 this->_r = value;
+                break;
             case Types::GREEN:
                 this->_g = value;
+                break;
             case Types::BLUE:
                 this->_b = value;
+                break;
             case Types::ALPHA:
                 this->_a = value;
+                break;
             default:
                 throw std::runtime_error("Error color: undefined type");
         }
