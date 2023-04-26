@@ -25,7 +25,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @param position the position
              */
-            void setPosition(const Vector3f &position);
+            void setPosition(const Vector3f &position) final;
             /**
              * @brief Get the position
              *
