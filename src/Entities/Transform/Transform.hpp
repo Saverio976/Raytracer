@@ -49,7 +49,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @param scale the scale
              */
-            void setScale(const Vector3f &scale);
+            void setScale(const Vector3f &scale) final;
             /**
              * @brief Get the scale
              *
