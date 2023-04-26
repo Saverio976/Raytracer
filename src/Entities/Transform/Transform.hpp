@@ -37,7 +37,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @param rotation the rotation
              */
-            void setRotation(const Vector3f &rotation);
+            void setRotation(const Vector3f &rotation) final;
             /**
              * @brief Get the rotation
              *
