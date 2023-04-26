@@ -15,17 +15,16 @@ namespace RayTracer::Factories {
     /**
      * @brief The EntityFactory (singleton factory)
      */
-    class EntityFactory : public TFactory<Plugins::Entities::EntityHandler, Entities::IEntity> {
+    class EntityFactory {
         public:
-            ~EntityFactory() = default;
-            EntityFactory(const EntityFactory &other) = delete;
+            ~EntityFactory();
             /**
              * @brief Add an entity
              *
              * @param name the name
              * @param handler the handler
              */
-            void addEntity(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler);
+            static void addEntity(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler);
             /**
              * @brief Get an entity
              *
@@ -34,16 +33,14 @@ namespace RayTracer::Factories {
              *
              * @return the entity
              */
-            std::unique_ptr<Entities::IEntity> getEntity(const std::string &name, IConfig config);
+            static std::unique_ptr<Entities::IEntity> getEntity(const std::string &name, const IConfig &config);
             /**
-             * @brief Get the entity factory instance
-             *
-             * @return the entity factory instance
+             * @brief Clear all handlers
              */
-            static EntityFactory &getEntityFactory();
+            void clearAll();
 
         protected:
-            EntityFactory();
+            static TFactory<Plugins::Entities::EntityHandler, Entities::IEntity> &getFactory();
         private:
     };
 }
