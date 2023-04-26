@@ -7,85 +7,93 @@
 
 #include "Color.hpp"
 
-using namespace RayTracer::Images;
+using namespace RayTracer::Images {
+    Color::Color(float r, float g, float b, float a) : _r(r), _g(g), _b(b), _a(a) { }
 
-Color::Color(float r, float g, float b, float a) : _r(r), _g(g), _b(b), _a(a) { }
-
-Color Color::operator+(const Color &other) const {
-    float new_r = this->_r + other[Types::RED];
-    float new_g = this->_g + other[Types::GREEN];
-    float new_b = this->_b + other[Types::BLUE];
-    float new_a = this->_a + other[Types::ALPHA];
-    return {new_r, new_g, new_b, new_a};
-}
-
-Color Color::operator-(const Color &other) const {
-    float new_r = this->_r - other[Types::RED];
-    float new_g = this->_g - other[Types::GREEN];
-    float new_b = this->_b - other[Types::BLUE];
-    float new_a = this->_a - other[Types::ALPHA];
-    return {new_r, new_g, new_b, new_a};
-}
-
-Color Color::operator*(const Color &other) const {
-    float new_r = this->_r * other[Types::RED];
-    float new_g = this->_g * other[Types::GREEN];
-    float new_b = this->_b * other[Types::BLUE];
-    float new_a = this->_a * other[Types::ALPHA];
-    return {new_r, new_g, new_b, new_a};
-}
-
-Color Color::operator/(const Color &other) const {
-    float new_r = this->_r / other[Types::RED];
-    float new_g = this->_g / other[Types::GREEN];
-    float new_b = this->_b / other[Types::BLUE];
-    float new_a = this->_a / other[Types::ALPHA];
-    return {new_r, new_g, new_b, new_a};
-}
-
-Color &Color::operator=(const Color &other) {
-    this->_r = other[Types::RED];
-    this->_g = other[Types::GREEN];
-    this->_b = other[Types::BLUE];
-    this->_a = other[Types::ALPHA];
-    return *this;
-}
-
-const float &Color::operator[](const Color::Types &type) const {
-    switch (type) {
-        case Types::RED:
-            return this->_r;
-        case Types::GREEN:
-            return this->_g;
-        case Types::BLUE:
-            return this->_b;
-        case Types::ALPHA:
-            return this->_a;
-        default:
-            throw std::runtime_error("Error color: undefined type");
+    Color Color::operator+(const Color &other) const {
+        float new_r = this->_r + other[Types::RED];
+        float new_g = this->_g + other[Types::GREEN];
+        float new_b = this->_b + other[Types::BLUE];
+        float new_a = this->_a + other[Types::ALPHA];
+        return {new_r, new_g, new_b, new_a};
     }
-}
 
-float &Color::operator[](const Color::Types &type) {
-    float &result = this->_r;
-    this->_mutex.lock();
-    switch (type) {
-        case Types::RED:
-            result = this->_r;
-            break;
-        case Types::GREEN:
-            result = this->_g;
-            break;
-        case Types::BLUE:
-            result = this->_b;
-            break;
-        case Types::ALPHA:
-            result = this->_a;
-            break;
-        default:
-            this->_mutex.unlock();
-            throw std::runtime_error("Error color: undefined type");
+    Color Color::operator-(const Color &other) const {
+        float new_r = this->_r - other[Types::RED];
+        float new_g = this->_g - other[Types::GREEN];
+        float new_b = this->_b - other[Types::BLUE];
+        float new_a = this->_a - other[Types::ALPHA];
+        return {new_r, new_g, new_b, new_a};
     }
-    this->_mutex.unlock();
-    return result;
+
+    Color Color::operator*(const Color &other) const {
+        float new_r = this->_r * other[Types::RED];
+        float new_g = this->_g * other[Types::GREEN];
+        float new_b = this->_b * other[Types::BLUE];
+        float new_a = this->_a * other[Types::ALPHA];
+        return {new_r, new_g, new_b, new_a};
+    }
+
+    Color Color::operator/(const Color &other) const {
+        float new_r = this->_r / other[Types::RED];
+        float new_g = this->_g / other[Types::GREEN];
+        float new_b = this->_b / other[Types::BLUE];
+        float new_a = this->_a / other[Types::ALPHA];
+        return {new_r, new_g, new_b, new_a};
+    }
+
+    Color &Color::operator=(const Color &other) {
+        this->_r = other[Types::RED];
+        this->_g = other[Types::GREEN];
+        this->_b = other[Types::BLUE];
+        this->_a = other[Types::ALPHA];
+        return *this;
+    }
+
+    const float &Color::operator[](const Color::Types &type) const {
+        switch (type) {
+            case Types::RED:
+                return this->_r;
+            case Types::GREEN:
+                return this->_g;
+            case Types::BLUE:
+                return this->_b;
+            case Types::ALPHA:
+                return this->_a;
+            default:
+                throw std::runtime_error("Error color: undefined type");
+        }
+    }
+
+    float &Color::operator[](const Color::Types &type) {
+        switch (type) {
+            case Types::RED:
+                return this->_r;
+            case Types::GREEN:
+                return this->_g;
+            case Types::BLUE:
+                return this->_b;
+            case Types::ALPHA:
+                return this->_a;
+            default:
+                throw std::runtime_error("Error color: undefined type");
+        }
+    }
+
+    void Color::set(const Types &type, float value) {
+        this->_mutex->lock();
+        switch (type) {
+            case Types::RED:
+                this->_r = value;
+            case Types::GREEN:
+                this->_g = value;
+            case Types::BLUE:
+                this->_b = value;
+            case Types::ALPHA:
+                this->_a = value;
+            default:
+                throw std::runtime_error("Error color: undefined type");
+        }
+        this->_mutex->unlock();
+    }
 }
