@@ -55,7 +55,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the scale
              */
-            const Vector3f &getScale() const;
+            const Vector3f &getScale() const final;
 
             protected:
             private:
