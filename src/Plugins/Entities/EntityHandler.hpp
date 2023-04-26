@@ -22,7 +22,7 @@ namespace RayTracer::Plugins::Entities {
      *
      * class that represent an entity handler (take a .so)
      */
-    class EntityHandler : PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> {
+    class EntityHandler {
         public:
             /**
              * @brief EntityHandler constructor
@@ -37,8 +37,9 @@ namespace RayTracer::Plugins::Entities {
              *
              * @return the entity
              */
-            std::unique_ptr<RayTracer::Entities::IEntity> getEntity(const IConfig &config);
+            std::unique_ptr<RayTracer::Entities::IEntity> get(const IConfig &config) const;
         private:
+            PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> _handler;
     };
 }
 
