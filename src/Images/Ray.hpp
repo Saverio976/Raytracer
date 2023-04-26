@@ -8,7 +8,8 @@
 #ifndef RAY_HPP
     #define RAY_HPP
 
-#include "Vector3f.hpp"
+    #include "Vector3f.hpp"
+
 namespace RayTracer::Images {
     /**
      * @brief The Ray class
