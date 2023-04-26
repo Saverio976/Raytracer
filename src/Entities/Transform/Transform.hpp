@@ -31,7 +31,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the position
              */
-            const Vector3f &getPosition() const;
+            const Vector3f &getPosition() const final;
             /**
              * @brief Set the rotation
              *
