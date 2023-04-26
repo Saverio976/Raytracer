@@ -22,7 +22,7 @@ namespace RayTracer::Plugins::Filters {
      *
      * class that represent a filter handler (take a .so)
      */
-    class FilterHandler : public PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> {
+    class FilterHandler {
         public:
             /**
              * @brief FilterHandler constructor
@@ -37,10 +37,10 @@ namespace RayTracer::Plugins::Filters {
              *
              * @return the filter
              */
-            std::unique_ptr<RayTracer::Filters::IFilter> getFilter(const IConfig &config);
+            std::unique_ptr<RayTracer::Filters::IFilter> get(const IConfig &config);
 
-        protected:
         private:
+            PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> _handler;
     };
 }
 
