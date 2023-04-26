@@ -12,6 +12,7 @@
     #include "Image.hpp"
     #include "IFilter.hpp"
     #include "SceneState.hpp"
+    #include "IEntity.hpp"
 
 namespace RayTracer::Entities {
     /**
@@ -20,7 +21,7 @@ namespace RayTracer::Entities {
      * class that represent a camera
      * (perspective, orthographic, panoramic, ...)
      */
-    class ICamera {
+    class ICamera : public IEntity {
         public:
             virtual ~ICamera() = default;
             /**
