@@ -43,10 +43,12 @@ namespace RayTracer::Images {
     }
 
     Color &Color::operator=(const Color &other) {
+        this->_mutex->lock();
         this->_r = other[Types::RED];
         this->_g = other[Types::GREEN];
         this->_b = other[Types::BLUE];
         this->_a = other[Types::ALPHA];
+        this->_mutex.unlock();
         return *this;
     }
 
