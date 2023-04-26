@@ -42,6 +42,7 @@ namespace RayTracer::Images {
              * @param a alpha
              */
             Color(float r, float g, float b, float a);
+
             /**
              * @brief Addition two colors
              *
@@ -49,7 +50,7 @@ namespace RayTracer::Images {
              *
              * @return the new color
              */
-            Color operator+(const Color &other);
+            Color operator+(const Color &other) const;
             /**
              * @brief Subtraction two colors
              *
@@ -57,7 +58,7 @@ namespace RayTracer::Images {
              *
              * @return the new color
              */
-            Color operator-(const Color &other);
+            Color operator-(const Color &other) const;
             /**
              * @brief Multiplication two colors
              *
@@ -65,7 +66,7 @@ namespace RayTracer::Images {
              *
              * @return the new color
              */
-            Color operator*(const Color &other);
+            Color operator*(const Color &other) const;
             /**
              * @brief Division two colors
              *
@@ -73,7 +74,7 @@ namespace RayTracer::Images {
              *
              * @return the new color
              */
-            Color operator/(const Color &other);
+            Color operator/(const Color &other) const;
             /**
              * @brief Assign a color
              *
@@ -89,6 +90,7 @@ namespace RayTracer::Images {
              *
              * @return the color
              */
+            const float &operator[](const Types &type) const;
             float &operator[](const Types &type);
 
         protected:
