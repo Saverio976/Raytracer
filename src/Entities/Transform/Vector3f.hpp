@@ -70,6 +70,24 @@ namespace RayTracer::Entities::Transform {
              * @return the same vector modified
              */
             Vector3f &operator=(const Vector3f &other);
+            /**
+             * @brief Get x
+             *
+             * @return x
+             */
+            float getX() const;
+            /**
+             * @brief Get y
+             *
+             * @return y
+             */
+            float getY() const;
+            /**
+             * @brief Get z
+             *
+             * @return z
+             */
+            float getZ() const;
 
         protected:
         private:

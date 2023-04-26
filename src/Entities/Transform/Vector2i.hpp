@@ -69,6 +69,18 @@ namespace RayTracer::Entities::Transform {
              * @return the same vector modified
              */
             Vector2i &operator=(const Vector2i &other);
+            /**
+             * @brief Get x
+             *
+             * @return x
+             */
+            int getX() const;
+            /**
+             * @brief Get y
+             *
+             * @return y
+             */
+            int getY() const;
 
         protected:
         private:
