@@ -84,14 +84,29 @@ namespace RayTracer::Images {
              */
             Color &operator=(const Color &other);
             /**
-             * @brief Get the color (thread safe)
+             * @brief Get the color
              *
              * @param type the color type
              *
              * @return the color
              */
             const float &operator[](const Types &type) const;
+            /**
+             * @brief Get the color (not thread safe !!)
+             *
+             * @param type the color type
+             *
+             * @return the color
+             */
             float &operator[](const Types &type);
+            /**
+             * @brief set the color (thread safe)
+             *
+             * @param type the color type
+             *
+             * @return the color
+             */
+            void set(const Types &type, float value);
 
         protected:
         private:
