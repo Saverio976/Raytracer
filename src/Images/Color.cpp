@@ -43,7 +43,7 @@ namespace RayTracer::Images {
     }
 
     Color &Color::operator=(const Color &other) {
-        this->_mutex->lock();
+        this->_mutex.lock();
         this->_r = other[Types::RED];
         this->_g = other[Types::GREEN];
         this->_b = other[Types::BLUE];
@@ -83,7 +83,7 @@ namespace RayTracer::Images {
     }
 
     void Color::set(const Types &type, float value) {
-        this->_mutex->lock();
+        this->_mutex.lock();
         switch (type) {
             case Types::RED:
                 this->_r = value;
@@ -96,6 +96,6 @@ namespace RayTracer::Images {
             default:
                 throw std::runtime_error("Error color: undefined type");
         }
-        this->_mutex->unlock();
+        this->_mutex.unlock();
     }
 }
