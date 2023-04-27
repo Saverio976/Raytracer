@@ -10,7 +10,7 @@
 
 #include <cstddef>
 #include <string>
-#include <list>
+#include <vector>
 #include "Color.hpp"
 #include "Vector2i.hpp"
 
@@ -36,7 +36,15 @@ namespace RayTracer::Images {
                      * @param y the y
                      * @param pixels the orginal pixels
                      */
-                    PixelLine(const Entities::Transform::Vector2i &size, const std::size_t &y, std::list<Color> &pixels);
+                    PixelLine(const Entities::Transform::Vector2i &size, const std::size_t &y, std::vector<Color> &pixels);
+                    /**
+                     * @brief PixelLine
+                     *
+                     * @param size the size
+                     * @param y the y
+                     * @param pixels the orginal pixels (const)
+                     */
+                    PixelLine(const Entities::Transform::Vector2i &size, const std::size_t &y, const std::vector<Color> &pixels);
                     /**
                      * @brief Get the color (const)
                      *
@@ -56,8 +64,10 @@ namespace RayTracer::Images {
 
                 private:
                     const Entities::Transform::Vector2i &_size;
-                    const std::size_t &_y;
-                    std::list<Color> &_pixels;
+                    std::vector<Color> _colors;
+                    const std::size_t _y;
+                    std::vector<Color> &_pixels;
+                    const std::vector<Color> &_pixelsConst;
             };
             /**
              * @brief Image
@@ -88,9 +98,16 @@ namespace RayTracer::Images {
              * @return the pixels line
              */
             PixelLine operator[](std::size_t y);
+            /**
+             * @brief Get the size of Image
+             *
+             * @return the Image's size (Width, Height)
+             */
+            const Entities::Transform::Vector2i &getSize() const;
 
         private:
-            std::list<Color> _pixels;
+            std::vector<Color> _pixels;
+            Entities::Transform::Vector2i _size;
     };
 }
 

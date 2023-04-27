@@ -8,6 +8,7 @@
 #ifndef COLOR_HPP_
     #define COLOR_HPP_
     #include <mutex>
+    #include <ostream>
 
 namespace RayTracer::Images {
     /**
@@ -117,5 +118,7 @@ namespace RayTracer::Images {
             std::mutex _mutex;
     };
 }
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color);
 
 #endif /*COLOR_HPP_*/
