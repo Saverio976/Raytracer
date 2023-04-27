@@ -37,7 +37,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new
              */
-            Vector3f operator+(const Vector3f &other);
+            Vector3f operator+(const Vector3f &other) const;
             /**
              * @brief Subtraction two vectors
              *
@@ -45,7 +45,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator-(const Vector3f &other);
+            Vector3f operator-(const Vector3f &other) const;
             /**
              * @brief Multiplication two vectors
              *
@@ -53,7 +53,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator*(const Vector3f &other);
+            Vector3f operator*(const Vector3f &other) const;
             /**
              * @brief Division two vectors
              *
@@ -61,7 +61,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator/(const Vector3f &other);
+            Vector3f operator/(const Vector3f &other) const;
             /**
              * @brief Assign a vector
              *
@@ -71,23 +71,17 @@ namespace RayTracer::Entities::Transform {
              */
             Vector3f &operator=(const Vector3f &other);
             /**
-             * @brief Get x
+             * @brief Get the norm
              *
-             * @return x
+             * @return sqrt(x^2 + y^2 + z^2)
              */
-            float getX() const;
+            float getNorm() const;
             /**
-             * @brief Get y
+             * @brief Get normalized vector
              *
-             * @return y
+             * @return vector / getNorm()
              */
-            float getY() const;
-            /**
-             * @brief Get z
-             *
-             * @return z
-             */
-            float getZ() const;
+            Vector3f getNormalized() const;
 
         protected:
         private:
