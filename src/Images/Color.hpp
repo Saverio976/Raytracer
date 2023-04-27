@@ -8,7 +8,7 @@
 #ifndef COLOR_HPP_
     #define COLOR_HPP_
     #include <mutex>
-    #include <iostream>
+    #include <ostream>
 
 namespace RayTracer::Images {
     /**
