@@ -27,11 +27,11 @@ namespace RayTracer::Images {
 
         for (size_t i = 0; i < maxThread; i++)
             threads.push_back(std::thread());
-        while (this->_state.getState() == RayTracer::Scenes::SceneState::RUNNING && !stop) {
+        while (this->_state.getState() == RayTracer::Scenes::SceneState::States::RUNNING && !stop) {
             for (std::thread &thread : threads) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
-                thread = std::thread(pixelThread());
-                it++;
+                thread = std::thread(pixelThread);
+                ++it;
                 x++;
                 if (x >= this->_image.getSize().getX()) {
                     x = 0;
