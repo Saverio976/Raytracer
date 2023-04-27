@@ -51,4 +51,8 @@ namespace RayTracer::Images {
     const Color &Image::PixelLine::operator[](std::size_t x) const {
         return this->_pixels.at(this->_size.getX() * this->_y + x);
     }
+
+    const Entities::Transform::Vector2i &Image::getSize() const {
+        return this->_size;
+    }
 }

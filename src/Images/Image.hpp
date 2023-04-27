@@ -88,6 +88,12 @@ namespace RayTracer::Images {
              * @return the pixels line
              */
             PixelLine operator[](std::size_t y);
+            /**
+             * @brief Get the size of Image
+             *
+             * @return the Image's size (Width, Height)
+             */
+            const Entities::Transform::Vector2i &getSize() const;
 
         private:
             std::vector<Color> _pixels;
