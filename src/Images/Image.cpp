@@ -11,7 +11,7 @@
 
 namespace RayTracer::Images {
     Image::Image(const Entities::Transform::Vector2i &size): _size(size) {
-        size_t air = size->getX() * size->getY();
+        size_t air = size.getX() * size.getY();
 
         for (size_t i = 0; i < air; i++)
             this->_pixels.push_back(Color(0, 0, 0, 0));
@@ -31,11 +31,11 @@ namespace RayTracer::Images {
         file.close();
     }
 
-    PixelLine Image::operator[](std::size_t y) {
+    Image::PixelLine Image::operator[](std::size_t y) {
         return PixelLine(this->_size, y, this->_pixels);
     }
 
-    const PixelLine Image::operator[](std::size_t y) const {
+    const Image::PixelLine Image::operator[](std::size_t y) const {
         return PixelLine(this->_size, y, this->_pixels);
     }
 
