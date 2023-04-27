@@ -8,10 +8,13 @@
 #ifndef DISPLAYABLE_HPP_
     #define DISPLAYABLE_HPP_
 
-    #include "ILight.hpp"
-    #include "IPrimitive.hpp"
     #include <list>
     #include <memory>
+
+namespace RayTracer::Entities {
+    class IPrimitive;
+    class ILight;
+}
 
 namespace RayTracer::Scenes {
     /**

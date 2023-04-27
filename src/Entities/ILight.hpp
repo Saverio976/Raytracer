@@ -8,6 +8,7 @@
 #ifndef ILIGHT_HPP_
     #define ILIGHT_HPP_
     #include "../Images/Color.hpp"
+#include "Displayable.hpp"
     #include "Transform/Vector3f.hpp"
 
 namespace RayTracer::Entities {
@@ -32,7 +33,7 @@ namespace RayTracer::Entities {
              *
              * @return the color
              */
-            virtual Images::Color getColor(const Transform::Vector3f &point) const = 0;
+            virtual Images::Color getColor(const Transform::Vector3f &point, const Scenes::Displayable &displayable) const = 0;
             /**
              * @brief Set the color
              *
