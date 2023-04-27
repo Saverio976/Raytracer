@@ -13,7 +13,7 @@ namespace RayTracer::Images {
     Image::Image(const Entities::Transform::Vector2i &size): _size(size) {
         size_t air = size->getX() * size->getY();
 
-        for (int i = 0; i < air; i++)
+        for (size_t i = 0; i < air; i++)
             this->_pixels.push_back(Color(0, 0, 0, 0));
     }
 
