@@ -104,7 +104,7 @@ namespace RayTracer::Images {
     }
 }
 
-ostream& operator<<(ostream& os, const RayTracer::Images::Color& color) {
+std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color) {
     float a = color[RayTracer::Images::Color::Types::ALPHA];
     float r = a * color[RayTracer::Images::Color::Types::RED] / 255;
     float g = a * color[RayTracer::Images::Color::Types::GREEN] / 255;

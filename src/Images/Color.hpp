@@ -119,6 +119,6 @@ namespace RayTracer::Images {
     };
 }
 
-ostream& operator<<(ostream& os, const RayTracer::Images::Color& color);
+std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color);
 
 #endif /*COLOR_HPP_*/
