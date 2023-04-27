@@ -103,3 +103,13 @@ namespace RayTracer::Images {
         this->_mutex.unlock();
     }
 }
+
+ostream& operator<<(ostream& os, const RayTracer::Images::Color& color) {
+    float a = color[RayTracer::Images::Color::Types::ALPHA];
+    float r = a * color[RayTracer::Images::Color::Types::RED] / 255;
+    float g = a * color[RayTracer::Images::Color::Types::GREEN] / 255;
+    float b = a * color[RayTracer::Images::Color::Types::BLUE] / 255;
+
+    os << r << ' ' << g << ' ' << b;
+    return os;
+}
