@@ -5,7 +5,7 @@
 ** Vector3f.hpp
 */
 #ifndef VECTOR3F_HPP_
-    #define VECTOR3F_HPP_
+#define VECTOR3F_HPP_
 
 namespace RayTracer::Entities::Transform {
     /**
@@ -70,6 +70,24 @@ namespace RayTracer::Entities::Transform {
              * @return the same vector modified
              */
             Vector3f &operator=(const Vector3f &other);
+            /**
+             * @brief Get x
+             *
+             * @return x
+             */
+            float getX() const;
+            /**
+             * @brief Get y
+             *
+             * @return y
+             */
+            float getY() const;
+            /**
+             * @brief Get z
+             *
+             * @return z
+             */
+            float getZ() const;
             /**
              * @brief Get the norm
              *
