@@ -27,7 +27,7 @@ namespace RayTracer::Images {
 
         for (size_t i = 0; i < maxThread; i++)
             threads.push_back(std::thread());
-        while (this->_state.getState() == RayTracer::Scenes::SceneState::RUNNING) {
+        while (this->_state.getState() == RayTracer::Scenes::SceneState::RUNNING && !stop) {
             for (std::thread &thread : threads) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
                 thread = std::thread(pixelThread());
@@ -45,8 +45,6 @@ namespace RayTracer::Images {
             for (std::thread &thread : threads) {
                 thread.join();
             }
-            if (stop)
-                break;
         }
     }
 
