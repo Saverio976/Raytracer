@@ -42,11 +42,13 @@ namespace RayTracer::Images {
     Image::PixelLine::PixelLine(const Entities::Transform::Vector2i &size, const std::size_t &y, std::vector<Color> &pixels) :
         _size(size),
         _pixels(pixels),
+        _pixelsConst(_pixels),
         _y(y) { }
 
     Image::PixelLine::PixelLine(const Entities::Transform::Vector2i &size, const std::size_t &y, const std::vector<Color> &pixels) :
         _size(size),
-        _pixelsConst(pixels),
+        _pixelsConst(_pixels),
+        _pixels(_colors)
         _y(y) { }
 
     Color &Image::PixelLine::operator[](std::size_t x) {
@@ -54,7 +56,7 @@ namespace RayTracer::Images {
     }
 
     const Color &Image::PixelLine::operator[](std::size_t x) const {
-        return this->_pixels.at(this->_size.getX() * this->_y + x);
+        return this->_pixelsConst.at(this->_size.getX() * this->_y + x);
     }
 
     const Entities::Transform::Vector2i &Image::getSize() const {

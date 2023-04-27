@@ -64,6 +64,7 @@ namespace RayTracer::Images {
 
                 private:
                     const Entities::Transform::Vector2i &_size;
+                    std::vector<Color> _colors;
                     const std::size_t _y;
                     std::vector<Color> &_pixels;
                     const std::vector<Color> &_pixelsConst;
