@@ -20,7 +20,7 @@ namespace RayTracer::Images {
 
     void ImagePipeLine::generate(std::size_t maxThread, std::size_t cluster) {
         std::vector<std::thread> threads;
-        RayIterrator::iterrator it;
+        RayIterrator::iterrator it = this->_rayIterrator.begin();
         size_t x = 0;
         size_t y = 0;
         bool stop = false;
