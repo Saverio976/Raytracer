@@ -5,11 +5,11 @@
 ** SphereEntity.cpp
 */
 
+#include <cmath>
 #include "SphereEntity.hpp"
 #include "IEntity.hpp"
 #include "Transform.hpp"
 #include "Vector3f.hpp"
-#include <cmath>
 
 namespace RayTracer::PluginsExt::Sphere {
     SphereEntity::SphereEntity(const IConfig &config):
@@ -32,6 +32,11 @@ namespace RayTracer::PluginsExt::Sphere {
         return _transform;
     }
 
+    Entities::IMaterial &SphereEntity::getMaterial()
+    {
+        return _material;
+    }
+
     bool SphereEntity::isCollided(const Entities::Transform::Vector3f &point) const
     {
         return false;
@@ -45,6 +50,6 @@ namespace RayTracer::PluginsExt::Sphere {
         auto c = oc.dot(oc) - std::pow(_radius, 2);
         auto discriminant = std::pow(b, 2) - (4 * a * c);
 
-        return (discriminant > 0);
+        return discriminant > 0;
     }
 }

@@ -7,7 +7,7 @@
 
 #ifndef IMATERIAL_HPP_
     #define IMATERIAL_HPP_
-    #include "../Images/Color.hpp"
+    #include "Color.hpp"
 
 namespace RayTracer::Entities {
     /**
