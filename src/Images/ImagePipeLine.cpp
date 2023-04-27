@@ -20,9 +20,34 @@ namespace RayTracer::Images {
 
     void ImagePipeLine::generate(std::size_t maxThread, std::size_t cluster) {
         std::vector<std::thread> threads;
+        RayIterrator::iterrator it;
+        size_t x = 0;
+        size_t y = 0;
+        bool stop = false;
 
         for (size_t i = 0; i < maxThread; i++)
             threads.push_back(std::thread());
+        while (this->_state.getState() == RayTracer::Scenes::SceneState::RUNNING) {
+            for (std::thread &thread : threads) {
+                PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
+                thread = std::thread(pixelThread());
+                it++;
+                x++;
+                if (x >= this->_image.getSize().getX()) {
+                    x = 0;
+                    y++;
+                }
+                if (y >= this->_image.getSize().getY()) {
+                    stop = true;
+                    break;
+                }
+            }
+            for (std::thread &thread : threads) {
+                thread.join();
+            }
+            if (stop)
+                break;
+        }
     }
 
     void ImagePipeLine::apply(Filters::IFilter &filter) {
