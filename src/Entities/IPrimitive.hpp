@@ -27,7 +27,7 @@ namespace RayTracer::Entities {
              *
              * @return the material
              */
-            virtual Images::Color getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) = 0;
+            virtual Images::Color getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const = 0;
             /**
              * @brief Check if the point is collided with the box
              *
