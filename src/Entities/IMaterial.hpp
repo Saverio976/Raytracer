@@ -8,6 +8,9 @@
 #ifndef IMATERIAL_HPP_
     #define IMATERIAL_HPP_
     #include "Color.hpp"
+    #include "Displayable.hpp"
+    #include "ITransform.hpp"
+    #include "Vector3f.hpp"
 
 namespace RayTracer::Entities {
     /**
@@ -21,9 +24,13 @@ namespace RayTracer::Entities {
             /**
              * @brief Get the color
              *
+             * @param centerObj the center of the object impacted
+             * @param intersect the intersection point on the object
+             * @param displayable the displayable objects
+             *
              * @return the color
              */
-            virtual const Images::Color &getColor() const = 0;
+            virtual const Images::Color &getColor(const Transform::ITransform &centerObj, const Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const = 0;
             /**
              * @brief Set the color
              *
