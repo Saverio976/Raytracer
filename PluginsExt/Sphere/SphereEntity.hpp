@@ -22,9 +22,8 @@ namespace RayTracer::PluginsExt::Sphere {
             Type getType() const final;
             Entities::Transform::ITransform &getTransform() final;
             const Entities::Transform::ITransform &getTransform() const final;
-            Entities::IMaterial &getMaterial() final;
             bool isCollided(const Entities::Transform::Vector3f &point) const final;
-            bool isCollided(const Images::Ray &ray) const final;
+            std::optional<Entities::Transform::Vector3f> isCollided(const Images::Ray &ray) const final;
         private:
             Entities::Transform::Transform _transform;
             float _radius;

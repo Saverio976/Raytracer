@@ -32,17 +32,12 @@ namespace RayTracer::PluginsExt::Sphere {
         return _transform;
     }
 
-    Entities::IMaterial &SphereEntity::getMaterial()
-    {
-        return _material;
-    }
-
     bool SphereEntity::isCollided(const Entities::Transform::Vector3f &point) const
     {
         return false;
     }
 
-    bool SphereEntity::isCollided(const Images::Ray &ray) const
+    std::optional<Entities::Transform::Vector3f> SphereEntity::isCollided(const Images::Ray &ray) const
     {
         Entities::Transform::Vector3f oc = ray.getOrigin() - _transform.getPosition();
         auto a = ray.getDirection().dot(ray.getDirection());
@@ -50,6 +45,12 @@ namespace RayTracer::PluginsExt::Sphere {
         auto c = oc.dot(oc) - std::pow(_radius, 2);
         auto discriminant = std::pow(b, 2) - (4 * a * c);
 
-        return discriminant > 0;
+        if (discriminant == 0) {
+            return std::nullopt;
+        }
+        auto t = (-b - std::sqrt(discriminant)) / (2 * a);
+        auto vect = ray.getDirection() * Entities::Transform::Vector3f(t, t, t);
+        vect = vect + ray.getOrigin();
+        return std::make_optional(vect);
     }
 }
