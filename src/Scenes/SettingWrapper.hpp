@@ -16,7 +16,8 @@ namespace Raytracer::Scenes {
     /**
      * @brief The SettingWrapper class
      *
-     * class that represent a scene configuration
+     * class that represent a setting in a scene configuration
+     * it allows the user to navigate through the scene configuration by changing the path of the setting
      */
     class SettingWrapper {
         /**
