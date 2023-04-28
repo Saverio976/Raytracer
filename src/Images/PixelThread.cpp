@@ -7,6 +7,7 @@
 
 #include "PixelThread.hpp"
 #include "IPrimitive.hpp"
+#include <optional>
 
 namespace RayTracer::Images {
     PixelThread::PixelThread(const Scenes::Displayable &displayable, Color &color, const Images::Ray &ray) :
@@ -16,17 +17,23 @@ namespace RayTracer::Images {
     { }
 
     void PixelThread::operator()() {
-        bool stop = false;
+        float distance = -1;
+        float tmpDistance;
+        size_t position = 0;
+        const std::vector<std::unique_ptr<Entities::IPrimitive>> &list = _displayable.getPrimitiveList();
+        std::optional<RayTracer::Entities::Transform::Vector3f> point;
 
-        while (!stop) {
-            for (const Entities::IPrimitive &primitive : _displayable.getPrimitiveList()) {
-                if (!primitive.isCollided(this->_ray.getStep()))
-                    continue;
-                stop = true;
-                this->_color = primitive.getColor();
-                break;
+        for (size_t i = 0; i < list.size(); i++) {
+            point = list[i]->isCollided(this->_ray);
+            if (point == std::nullopt)
+                continue;
+            tmpDistance = point->getDistance(this->_ray.getOrigin());
+            if (tmpDistance < distance || distance == -1) {
+                distance = tmpDistance;
+                position = i;
             }
-            this->_ray++;
         }
+        if (distance != -1)
+            this->_color = list[position]->getColor(this->_ray, this->_displayable);
     }
 }
