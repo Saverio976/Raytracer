@@ -7,12 +7,10 @@
 
 #ifndef IPRIMITIVE_HPP_
     #define IPRIMITIVE_HPP_
-    #include "IEntity.hpp"
-    #include "IMaterial.hpp"
-    #include "Ray.hpp"
-    #include "Transform/Vector3f.hpp"
+    #include <optional>
     #include "Color.hpp"
     #include "Displayable.hpp"
+    #include "IEntity.hpp"
     #include "IMaterial.hpp"
     #include "Ray.hpp"
     #include "Vector3f.hpp"
@@ -47,7 +45,7 @@ namespace RayTracer::Entities {
              *
              * @return true if the ray is collided
              */
-            virtual bool isCollided(const Images::Ray &ray) const = 0;
+            virtual std::optional<Transform::Vector3f> isCollided(const Images::Ray &ray) const = 0;
 
         protected:
         private:
