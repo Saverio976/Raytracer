@@ -10,7 +10,7 @@
     #include <iostream>
     #include <libconfig.h++>
     #include <memory>
-    #include "SceneConfig.hpp"
+    #include "SettingWrapper.hpp"
 
 namespace Raytracer::Scenes {
     class ConfigWrapper {
@@ -34,14 +34,14 @@ namespace Raytracer::Scenes {
              */
             bool writeFile(const std::string &path);
             /**
-             * @brief returns the current SceneConfig
+             * @brief returns the current SettingWrapper
              *
-             * @return the current SceneConfig
+             * @return the current SettingWrapper
              */
-            std::shared_ptr<SceneConfig> getScene();
+            std::shared_ptr<SettingWrapper> getScene();
         private:
             std::shared_ptr<libconfig::Config> _config;
-            std::shared_ptr<SceneConfig> _scene;
+            std::shared_ptr<SettingWrapper> _scene;
     };
 }
 

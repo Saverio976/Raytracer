@@ -18,7 +18,7 @@ namespace Raytracer::Scenes {
             std::cerr << "Parse error at " << e.getFile() << ":" << e.getLine() << " - " << e.getError() << std::endl;
             return false;
         }
-        _scene = std::make_unique<SceneConfig>(_config);
+        _scene = std::make_unique<SettingWrapper>(_config);
         return true;
     }
 
@@ -32,7 +32,7 @@ namespace Raytracer::Scenes {
         return true;
     }
 
-    std::shared_ptr<SceneConfig> ConfigWrapper::getScene() {
+    std::shared_ptr<SettingWrapper> ConfigWrapper::getScene() {
         return _scene;
     }
 }
