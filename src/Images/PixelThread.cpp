@@ -7,7 +7,6 @@
 
 #include "PixelThread.hpp"
 #include "IPrimitive.hpp"
-#include <optional>
 
 namespace RayTracer::Images {
     PixelThread::PixelThread(const Scenes::Displayable &displayable, Color &color, const Images::Ray &ray) :
