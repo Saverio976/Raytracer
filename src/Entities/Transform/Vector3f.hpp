@@ -112,6 +112,13 @@ namespace RayTracer::Entities::Transform {
              * @return x^other.x + y^other.y + z^other.z
              */
             double dot(const Vector3f &other) const;
+            /* @brief Get distance between this point and other point
+             *
+             * @param other the other point
+             *
+             * @return The distance value
+             */
+            float getDistance(const Vector3f &other) const;
 
         protected:
         private:
