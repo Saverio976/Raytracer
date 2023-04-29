@@ -24,7 +24,7 @@ namespace RayTracer::Factories {
              * @param name the name
              * @param handler the handler
              */
-            static void addEntity(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler);
+            static void add(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler);
             /**
              * @brief Get an entity
              *
@@ -33,7 +33,7 @@ namespace RayTracer::Factories {
              *
              * @return the entity
              */
-            static std::unique_ptr<Entities::IEntity> getEntity(const std::string &name, const IConfig &config);
+            static std::unique_ptr<Entities::IEntity> get(const std::string &name, const IConfig &config);
             /**
              * @brief Clear all handlers
              */
