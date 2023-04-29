@@ -68,6 +68,10 @@ namespace RayTracer::Scenes {
         return (_setting->getPath());
     }
 
+    std::string SettingWrapper::getKey() {
+        return (_setting->getName());
+    }
+
     std::shared_ptr<libconfig::Config> SettingWrapper::getConfig() {
         return (_config);
     }
