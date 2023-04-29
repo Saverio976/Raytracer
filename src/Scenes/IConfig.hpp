@@ -14,7 +14,7 @@
 namespace RayTracer::Scenes {
     class IConfig {
         public:
-            ~IConfig() = default;
+            virtual ~IConfig() = default;
             /**
              * @brief read and parse the file at given path
              *
@@ -22,7 +22,7 @@ namespace RayTracer::Scenes {
              *
              * @return true if parsing worked, false otherwise
              */
-            bool readFile(const std::string &path);
+            virtual bool readFile(const std::string &path) = 0;
             /**
              * @brief writes the current config in a file at the given path
              *
@@ -30,13 +30,13 @@ namespace RayTracer::Scenes {
              *
              * @return true if writing worked, false otherwise
              */
-            bool writeFile(const std::string &path);
+            virtual bool writeFile(const std::string &path) = 0;
             /**
              * @brief returns the current SettingWrapper
              *
              * @return the current SettingWrapper
              */
-            std::shared_ptr<ISetting> getScene();
+            virtual std::shared_ptr<ISetting> getScene() = 0;
     };
 }
 

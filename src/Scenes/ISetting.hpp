@@ -14,7 +14,7 @@
 namespace RayTracer::Scenes {
     class ISetting {
         public:
-            ~ISetting() = default;
+            virtual ~ISetting() = default;
             /**
              * @brief get a precise setting of the config from key
              *
@@ -22,7 +22,7 @@ namespace RayTracer::Scenes {
              *
              * @return true if the setting exists, false otherwise
              */
-            bool getSetting(const std::string &key);
+            virtual bool getSetting(const std::string &key) = 0;
             /**
              * @brief access element at index
              *
@@ -30,38 +30,38 @@ namespace RayTracer::Scenes {
              *
              * @return true if the setting exists, false otherwise
              */
-            bool getSetting(int index);
+            virtual bool getSetting(int index) = 0;
             /**
              * @brief get the length of the current key
              * works only for lists, array, groups
              *
              * @return -1 if invalid type or size
              */
-            int getLength();
+            virtual int getLength() = 0;
             /**
              * @brief gets the path of the current setting
              *
              * @return the path
              */
-            std::string getPath();
+            virtual std::string getPath() = 0;
             /**
              * @brief gets the config of a setting
              *
              * @return the config
              */
-            std::shared_ptr<libconfig::Config> getConfig();
+            virtual std::shared_ptr<libconfig::Config> getConfig() = 0;
             /**
              * @brief
              *
              * @param key
              */
-            void moveTo(const std::string &key);
+            virtual void moveTo(const std::string &key) = 0;
             /**
              * @brief
              *
              * @param index
              */
-            void moveTo(int index);
+            virtual void moveTo(int index) = 0;
             /**
              * @brief search the setting at the given key in the childs
              *
@@ -69,7 +69,7 @@ namespace RayTracer::Scenes {
              *
              * @return a copy of the setting, moved to the key
              */
-            ISetting operator[](const std::string &key);
+            virtual ISetting &operator[](const std::string &key) = 0;
             /**
              * @brief search the setting at the given index in the childs
              *
@@ -77,17 +77,17 @@ namespace RayTracer::Scenes {
              *
              * @return a copy of the setting, moved to the index
              */
-            ISetting operator[](int index);
+            virtual ISetting &operator[](int index) = 0;
             /**
              * @brief cast operator to get bool from setting
              *
              * @return
              */
-            explicit operator bool() const;
-            explicit operator int() const;
-            explicit operator double() const;
-            explicit operator const char *() const;
-            explicit operator std::string() const;
+            virtual explicit operator bool() const = 0;
+            virtual explicit operator int() const = 0;
+            virtual explicit operator double() const;
+            virtual explicit operator const char *() const = 0;
+            virtual explicit operator std::string() const = 0;
     };
 }
 
