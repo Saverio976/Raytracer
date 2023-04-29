@@ -74,11 +74,17 @@ namespace RayTracer::Scenes {
          */
         int getLength();
         /**
-         * @brief gets the path of the current setting
+         * @brief gets the full path of the current setting
          *
          * @return the path
          */
         std::string getPath();
+        /**
+         * @brief gets the key of the setting
+         *
+         * @return the key
+         */
+        std::string getKey();
         /**
          * @brief gets the config of a setting
          *
