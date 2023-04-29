@@ -19,7 +19,7 @@ namespace RayTracer::Scenes {
         for (int i = 0; i < length; i++) {
             tmp = settingWrapper->get(i);
 
-            _cameras.push_back(Factories::EntityFactory::getEntity(tmp->getKey(), tmp));
+            _cameras.push_back(Factories::EntityFactory::get(tmp->getKey(), tmp));
         }
         settingWrapper->getSetting("ligths");
         length = settingWrapper->getLength();
@@ -28,7 +28,7 @@ namespace RayTracer::Scenes {
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
 
-                _displayable.getLightList().push_back(Factories::EntityFactory::getEntity(tmp->getKey(), tmp));
+                _displayable.getLightList().push_back(Factories::EntityFactory::get(tmp->getKey(), tmp));
             }
         }
         settingWrapper->getSetting("primitives");
@@ -38,7 +38,7 @@ namespace RayTracer::Scenes {
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
 
-                _displayable.getPrimitiveList().push_back(Factories::EntityFactory::getEntity(tmp->getKey(), tmp));
+                _displayable.getPrimitiveList().push_back(Factories::EntityFactory::get(tmp->getKey(), tmp));
             }
         }
     }
