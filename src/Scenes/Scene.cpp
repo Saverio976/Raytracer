@@ -18,8 +18,9 @@ namespace RayTracer::Scenes {
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
             tmp = settingWrapper->get(i);
+            std::unique_ptr<Entities::ICamera> testPtr((Entities::ICamera *) Factories::EntityFactory::get(tmp->getKey(), *tmp).get());
 
-            _cameras.push_back(Factories::EntityFactory::get(tmp->getKey(), tmp));
+            _cameras.push_back(std::move(testPtr));
         }
         settingWrapper->getSetting("ligths");
         length = settingWrapper->getLength();
@@ -27,8 +28,9 @@ namespace RayTracer::Scenes {
             length_two = (*settingWrapper).get(i)->getLength();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
+                std::unique_ptr<Entities::ILight> testPtr((Entities::ILight *) Factories::EntityFactory::get(tmp->getKey(), *tmp).get());
 
-                _displayable.getLightList().push_back(Factories::EntityFactory::get(tmp->getKey(), tmp));
+                _displayable.getLightList().push_back(std::move(testPtr));
             }
         }
         settingWrapper->getSetting("primitives");
@@ -37,8 +39,9 @@ namespace RayTracer::Scenes {
             length_two = (*settingWrapper).get(i)->getLength();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
+                std::unique_ptr<Entities::IPrimitive> testPtr((Entities::IPrimitive *) Factories::EntityFactory::get(tmp->getKey(), *tmp).get());
 
-                _displayable.getPrimitiveList().push_back(Factories::EntityFactory::get(tmp->getKey(), tmp));
+                _displayable.getPrimitiveList().push_back(std::move(testPtr));
             }
         }
     }
