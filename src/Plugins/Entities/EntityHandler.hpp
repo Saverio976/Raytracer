@@ -13,8 +13,7 @@
     #include "IEntity.hpp"
     #include "IEntityCreator.hpp"
     #include "PluginHandler.hpp"
-
-class IConfig; // TODO: create an iconfig please
+    #include "IConfig.hpp"
 
 namespace RayTracer::Plugins::Entities {
     /**
@@ -37,7 +36,7 @@ namespace RayTracer::Plugins::Entities {
              *
              * @return the entity
              */
-            std::unique_ptr<RayTracer::Entities::IEntity> get(const IConfig &config) const;
+            std::unique_ptr<RayTracer::Entities::IEntity> get(const RayTracer::Scenes::IConfig &config) const;
         private:
             PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> _handler;
     };
