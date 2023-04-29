@@ -12,6 +12,7 @@
     #include <map>
     #include <filesystem>
     #include "SettingWrapper.hpp"
+    #include "IConfig.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -37,15 +38,15 @@ namespace RayTracer::Scenes {
              * @param event the event
              * @param std::function the function
              */
-            void subscribe(const std::string &event, std::function<void(const SettingWrapper &)> func);
+            void subscribe(const std::string &event, std::function<void(const IConfig &)> func);
             /**
              * @brief Check if the file has been modified and call subscribed events in consequence
              */
             void update();
         protected:
         private:
-            ConfigWrapper _configWrapper;
-            std::map<std::string, std::function<void(const SettingWrapper &)>> _events;
+            IConfig _configWrapper;
+            std::map<std::string, std::function<void(const IConfig &)>> _events;
             std::string _filePath;
             std::filesystem::file_time_type _lastWriteTime;
         };
