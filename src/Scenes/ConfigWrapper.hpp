@@ -12,7 +12,7 @@
     #include <memory>
     #include "SettingWrapper.hpp"
 
-namespace Raytracer::Scenes {
+namespace RayTracer::Scenes {
     class ConfigWrapper {
         public:
             ConfigWrapper() = default;

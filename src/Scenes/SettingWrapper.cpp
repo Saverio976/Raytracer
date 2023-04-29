@@ -7,7 +7,7 @@
 
 #include "SettingWrapper.hpp"
 
-namespace Raytracer::Scenes {
+namespace RayTracer::Scenes {
     SettingWrapper::KeyNotFoundException::KeyNotFoundException(const std::string &key) {
         _msg = "Error key not found : " + key + "\n";
     };

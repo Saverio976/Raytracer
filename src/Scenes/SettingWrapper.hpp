@@ -12,7 +12,7 @@
 #include <memory>
 #include <exception>
 
-namespace Raytracer::Scenes {
+namespace RayTracer::Scenes {
     /**
      * @brief The SettingWrapper class
      *
