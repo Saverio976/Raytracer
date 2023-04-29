@@ -15,8 +15,8 @@
     #include "ICamera.hpp"
     #include "SceneState.hpp"
     #include "Displayable.hpp"
-
-class IConfig; // TODO: create an iconfig please
+    #include "IConfig.hpp"
+    #include "EntityFactory.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -26,7 +26,7 @@ namespace RayTracer::Scenes {
      */
     class Scene {
         public:
-            ~Scene();
+            ~Scene() = default;
             /**
              * @brief Scene config reloader
              *
