@@ -12,7 +12,7 @@
     #include <memory>
     #include <dlfcn.h>
 
-class IConfig; // TODO: create an iconfig please
+    #include "IConfig.hpp"
 
 namespace RayTracer::Plugins {
     /**
