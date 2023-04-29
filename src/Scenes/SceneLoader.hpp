@@ -10,8 +10,9 @@
     #include <string>
     #include <functional>
     #include <map>
-
-class IConfig; // TODO: create an iconfig please
+    #include <filesystem>
+    #include "SettingWrapper.hpp"
+    #include "IConfig.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -39,13 +40,15 @@ namespace RayTracer::Scenes {
              */
             void subscribe(const std::string &event, std::function<void(const IConfig &)> func);
             /**
-             * @brief Check if the filePath is changed and call subscribed events in consequence
+             * @brief Check if the file has been modified and call subscribed events in consequence
              */
             void update();
         protected:
         private:
+            std::unique_ptr<IConfig> _configWrapper;
             std::map<std::string, std::function<void(const IConfig &)>> _events;
             std::string _filePath;
+            std::filesystem::file_time_type _lastWriteTime;
         };
 }
 
