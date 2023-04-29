@@ -13,6 +13,7 @@
     #include "IEntity.hpp"
     #include "PluginLoader.hpp"
     #include "EntityHandler.hpp"
+    #include "EntityFactory.hpp"
 
 namespace RayTracer::Plugins::Entities {
     /**
@@ -20,7 +21,7 @@ namespace RayTracer::Plugins::Entities {
      *
      * class that represent an entity loader (take a directory and create EntityHandler)
      */
-    class EntityLoader : protected PluginLoader<EntityHandler, RayTracer::Entities::IEntity> {
+    class EntityLoader : protected PluginLoader<EntityHandler, RayTracer::Entities::IEntity, Factories::EntityFactory> {
         public:
             /**
             * @brief EntityLoader constructor (doesn't load anything)
