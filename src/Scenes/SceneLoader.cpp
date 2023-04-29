@@ -10,7 +10,7 @@
 namespace RayTracer::Scenes {
     SceneLoader::SceneLoader(const std::string &filePath): _filePath(filePath) {};
 
-    void SceneLoader::subscribe(const std::string &event, std::function<void(const SettingWrapper &)> func) {
+    void SceneLoader::subscribe(const std::string &event, std::function<void(const IConfig &)> func) {
         this->_events.emplace(event, func);
     }
 
@@ -19,11 +19,11 @@ namespace RayTracer::Scenes {
 
         if (currentTime != _lastWriteTime) {
             auto it = _events.find("onChange");
-            _configWrapper->readFile(_filePath);
+            _configWrapper->readFile(_filePath.c_str());
 
             if (it == _events.end())
                 return;
-            it->second(_configWrapper);
+            it->second(*_configWrapper);
         }
     }
 }
