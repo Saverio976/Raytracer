@@ -2,38 +2,81 @@
 ** EPITECH PROJECT, 2023
 ** Raytracer
 ** File description:
-** IFilterCreator.hpp
+** PluginHandler.hpp
 */
 
-#ifndef IFILTERCREATOR_HPP_
-    #define IFILTERCREATOR_HPP_
+#ifndef PLUGINHANDLER_HPP_
+#define PLUGINHANDLER_HPP_
 
-    #include <memory>
-    #include "IFilter.hpp"
+#include <string>
+#include <memory>
+#include <dlfcn.h>
 
 class IConfig; // TODO: create an iconfig please
 
-namespace RayTracer::Plugins::Filters {
+namespace RayTracer::Plugins {
     /**
-     * @brief The IFilterCreator class
+     * @brief The PluginHandler class
      *
-     * class that represent a filter creator
+     * @tparam Interface the interface type of the value to get
+     * @tparam Creator the creator type to create the interface
      */
-    class IFilterCreator {
-        public:
-            virtual ~IFilterCreator() = default;
-            /**
-             * @brief Create a filter with a config
-             *
-             * @param config the config
-             *
-             * @return the filter
-             */
-            virtual std::unique_ptr<RayTracer::Filters::IFilter> create(const IConfig &config) = 0;
+    template<typename Interface, typename Creator>
+    class PluginHandler {
+    public:
+        /**
+         * @brief PluginHandler constructor (take a .so)
+         *
+         * @param filePath the file path
+         */
+        PluginHandler(const std::string &filePath) {
+            this->_handler = dlopen(filePath, RTLD_LAZY);
+            if (this->_handler)
+                throw std::runtime_error("Couldn't open in PluginHandler: " + std::string(dlerror()));
+            _creator = this->getResult<Creator>("getCreator");
+            if (!_creator)
+                throw std::runtime_error("Creator couldn't be created in PluginHandler");
+        }
 
-        protected:
-        private:
+        ~PluginHandler() {
+            this->getResult<void>("deleteCreator", this->_creator);
+            dlclose(this->_handler);
+        }
+
+        /**
+         * @brief Get an interface (and create it with config)
+         *
+         * @param config the config
+         *
+         * @return the interface
+         */
+        std::unique_ptr<Interface> get(const IConfig &config) {
+            return this->_creator->create(config);
+        }
+
+    protected:
+        /**
+         * @brief Call function inside the handler
+         *
+         * @param name the name of the function
+         * @param __args arguments of the function
+         *
+         * @return the result of the function called
+         */
+        template<typename T, typename... Args>
+        T getResult(const std::string &name, _Args&&... __args) {
+            void *sym = dlsym(this->_handler, name.c_str());
+
+            if (!sym)
+                throw std::runtime_error("Error on open with dlsym in PluginHandler: " + std::string(dlerror()));
+            T (*function)(...) = reinterpret_cast<T(*)(...)>(sym);
+            return function(__args...);
+        }
+        Creator *_creator;
+        std::string _filePath;
+        void *_handler;
+    private:
     };
 }
 
-#endif /*IFILTERCREATOR_HPP_*/
+#endif /*PLUGINHANDLER_HPP_*/
