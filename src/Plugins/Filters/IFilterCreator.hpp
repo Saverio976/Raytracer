@@ -8,8 +8,8 @@
 #ifndef IFILTERCREATOR_HPP_
     #define IFILTERCREATOR_HPP_
 
-#include <memory>
-#include "IFilter.hpp"
+    #include <memory>
+    #include "IFilter.hpp"
 
 class IConfig; // TODO: create an iconfig please
 
