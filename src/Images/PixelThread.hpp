@@ -8,7 +8,8 @@
     #define PIXELTHREAD_HPP_
 
     #include "Displayable.hpp"
-#include "Ray.hpp"
+    #include "Ray.hpp"
+    #include "Color.hpp"
 
 namespace RayTracer::Images {
     /**
