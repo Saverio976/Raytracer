@@ -42,7 +42,7 @@ namespace RayTracer::Factories {
              *
              * @return the interface
              */
-            std::unique_ptr<Interface> get(const std::string &name, const Scenes::ISetting &setting)
+            Interface *get(const std::string &name, const Scenes::ISetting &setting)
             {
                 return _stock.at(name)->get(setting);
             }
