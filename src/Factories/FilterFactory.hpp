@@ -37,7 +37,7 @@ namespace RayTracer::Factories {
             /**
              * @brief Clear all filters
              */
-            void clearAll();
+            static void clearAll();
 
         protected:
             static TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> &getFactory();

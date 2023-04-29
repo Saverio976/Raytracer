@@ -37,7 +37,7 @@ namespace RayTracer::Factories {
             /**
              * @brief Clear all handlers
              */
-            void clearAll();
+            static void clearAll();
 
         protected:
             static TFactory<Plugins::Entities::EntityHandler, Entities::IEntity> &getFactory();
