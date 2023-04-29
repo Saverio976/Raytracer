@@ -69,7 +69,16 @@ namespace RayTracer::Scenes {
     }
 
     std::string SettingWrapper::getKey() {
-        return (_setting->getName());
+        std::string path = _setting->getPath();
+        int pos = 0;
+
+        while (!_config->lookup(path).getName() && !path.empty()) {
+            pos = static_cast<int>(path.find_last_of('.'));
+            if (pos == -1)
+                pos = 0;
+            path = path.substr(pos, path.size());
+        }
+        return (_config->lookup(path).getName());
     }
 
     std::shared_ptr<libconfig::Config> SettingWrapper::getConfig() {
