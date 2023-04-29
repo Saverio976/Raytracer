@@ -30,7 +30,7 @@ namespace RayTracer::Plugins {
              * @param filePath the file path
              */
             PluginHandler(const std::string &filePath) {
-                this->_handler = dlopen(filePath, RTLD_LAZY);
+                this->_handler = dlopen(filePath.c_str(), RTLD_LAZY);
                 if (!this->_handler)
                     throw std::runtime_error("Couldn't open in PluginHandler: " + std::string(dlerror()));
                 _creator = this->getResult<Creator>("getCreator");
@@ -64,7 +64,7 @@ namespace RayTracer::Plugins {
              * @return the result of the function called
              */
             template<typename T, typename... Args>
-            T getResult(const std::string &name, _Args&&... __args) {
+            T getResult(const std::string &name, Args&&... __args) {
                 void *sym = dlsym(this->_handler, name.c_str());
 
                 if (!sym)

@@ -9,34 +9,33 @@
     #include <string>
     #include "TFactory.hpp"
     #include <filesystem>
+    #include <memory>
 
 namespace RayTracer::Plugins {
-    template<typename Handler, typename Interface>
+    template<typename Handler, typename Interface, typename Factory>
     class PluginLoader {
         public:
-            PluginLoader(const std::string &directory, Factories::TFactory<Handler, Interface> &factory) :
-                _directory(directory),
-                _factory(factory) { }
+            PluginLoader(const std::string &directory) :
+                _directory(directory) { }
 
             void load() {
                 std::string currentFilePath;
                 std::size_t sizeFilePath;
                 std::string fileName;
 
-                _factory.clearAll();
+                Factory::clearAll();
                 for (const auto &entry : std::filesystem::directory_iterator(_directory)) {
                     currentFilePath = entry.path();
                     sizeFilePath = currentFilePath.size();
                     if (currentFilePath.substr(sizeFilePath - 3, sizeFilePath) == ".so") {
                         fileName = entry.path().filename();
-                        _factory.add(fileName.substr(0, sizeFilePath - 3), std::make_unique<Handler>(currentFilePath));
+                        Factory::add(fileName.substr(0, sizeFilePath - 3), std::make_unique<Handler>(currentFilePath));
                     }
                 }
             }
 
         protected:
             std::string _directory;
-            Factories::TFactory<Handler, Interface> &_factory;
         private:
     };
 }
