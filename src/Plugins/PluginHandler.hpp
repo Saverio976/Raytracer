@@ -31,7 +31,7 @@ namespace RayTracer::Plugins {
              */
             PluginHandler(const std::string &filePath) {
                 this->_handler = dlopen(filePath, RTLD_LAZY);
-                if (this->_handler)
+                if (!this->_handler)
                     throw std::runtime_error("Couldn't open in PluginHandler: " + std::string(dlerror()));
                 _creator = this->getResult<Creator>("getCreator");
                 if (!_creator)
