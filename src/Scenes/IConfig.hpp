@@ -36,7 +36,7 @@ namespace RayTracer::Scenes {
              *
              * @return the current SettingWrapper
              */
-            virtual std::shared_ptr<ISetting> getSetting() = 0;
+            virtual std::shared_ptr<ISetting> getSetting() const = 0;
     };
 }
 

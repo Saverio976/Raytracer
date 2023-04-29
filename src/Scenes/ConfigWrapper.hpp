@@ -39,7 +39,7 @@ namespace RayTracer::Scenes {
              *
              * @return the current SettingWrapper
              */
-            std::shared_ptr<ISetting> getSetting() override;
+            std::shared_ptr<ISetting> getSetting() const override;
         private:
             std::shared_ptr<libconfig::Config> _config;
             std::shared_ptr<ISetting> _scene;
