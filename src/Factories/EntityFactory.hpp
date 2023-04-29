@@ -29,11 +29,11 @@ namespace RayTracer::Factories {
              * @brief Get an entity
              *
              * @param name the name
-             * @param config the config (to create the entity)
+             * @param setting the setting (to create the entity)
              *
              * @return the entity
              */
-            static std::unique_ptr<Entities::IEntity> get(const std::string &name, const IConfig &config);
+            static std::unique_ptr<Entities::IEntity> get(const std::string &name, const Scenes::ISetting &setting);
             /**
              * @brief Clear all handlers
              */

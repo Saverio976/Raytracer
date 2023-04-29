@@ -10,7 +10,7 @@
 namespace RayTracer::Plugins::Filters {
     FilterHandler::FilterHandler(const std::string &filePath) : _handler(filePath) { }
 
-    std::unique_ptr <RayTracer::Filters::IFilter> FilterHandler::get(const RayTracer::Scenes::IConfig &config) {
-        return this->_handler.get(config);
+    std::unique_ptr <RayTracer::Filters::IFilter> FilterHandler::get(const RayTracer::Scenes::ISetting &setting) const {
+        return this->_handler.get(setting);
     }
 }

@@ -7,12 +7,10 @@
 
 #ifndef IFACTORY_HPP_
     #define IFACTORY_HPP_
-
     #include <string>
     #include <memory>
     #include <map>
-
-class IConfig {}; // TODO: create an iconfig please
+    #include "ISetting.hpp"
 
 namespace RayTracer::Factories {
     /**
@@ -40,13 +38,13 @@ namespace RayTracer::Factories {
              * @brief Get an `interface`
              *
              * @param name the name
-             * @param config the config
+             * @param setting the setting
              *
              * @return the interface
              */
-            std::unique_ptr<Interface> get(const std::string &name, const IConfig &config)
+            std::unique_ptr<Interface> get(const std::string &name, const Scenes::ISetting &setting)
             {
-                return _stock.at(name)->get(config);
+                return _stock.at(name)->get(setting);
             }
             /**
              * @brief Get the factory

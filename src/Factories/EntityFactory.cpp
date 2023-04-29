@@ -19,9 +19,9 @@ namespace RayTracer::Factories {
         getFactory().add(name, std::move(handler));
     }
 
-    std::unique_ptr<Entities::IEntity> EntityFactory::get(const std::string &name, const IConfig &config)
+    std::unique_ptr<Entities::IEntity> EntityFactory::get(const std::string &name, const Scenes::ISetting &setting)
     {
-        return getFactory().get(name, config);
+        return getFactory().get(name, setting);
     }
 
     void EntityFactory::clearAll()
