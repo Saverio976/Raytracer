@@ -8,8 +8,8 @@
 #ifndef PLUGINHANDLER_HPP_
     #define PLUGINHANDLER_HPP_
 
-    #include <string>
-    #include <memory>
+#include <string>
+#include <memory>
 
 class IConfig; // TODO: create an iconfig please
 
