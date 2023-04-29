@@ -69,7 +69,7 @@ namespace RayTracer::Scenes {
              *
              * @return a copy of the setting, moved to the key
              */
-            virtual ISetting &operator[](const std::string &key) = 0;
+            virtual std::unique_ptr<ISetting> get(const std::string &key) = 0;
             /**
              * @brief search the setting at the given index in the childs
              *
@@ -77,15 +77,15 @@ namespace RayTracer::Scenes {
              *
              * @return a copy of the setting, moved to the index
              */
-            virtual ISetting &operator[](int index) = 0;
+            virtual std::unique_ptr<ISetting> get(int index) = 0;
             /**
-             * @brief cast operator to get bool from setting
+             * @brief cast operator to get the value
              *
              * @return
              */
             virtual explicit operator bool() const = 0;
             virtual explicit operator int() const = 0;
-            virtual explicit operator double() const;
+            virtual explicit operator double() const = 0;
             virtual explicit operator const char *() const = 0;
             virtual explicit operator std::string() const = 0;
     };
