@@ -7,11 +7,9 @@
 
 #ifndef IENTITYCREATOR_HPP_
     #define IENTITYCREATOR_HPP_
-
     #include <memory>
     #include "IEntity.hpp"
-
-class IConfig; // TODO: create an iconfig please
+    #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Entities {
     /**
@@ -23,13 +21,13 @@ namespace RayTracer::Plugins::Entities {
         public:
             virtual ~IEntityCreator() = default;
             /**
-            * @brief Create an entity with a config
+            * @brief Create an entity with a setting
             *
-            * @param config the config
+            * @param setting the setting
             *
             * @return the entity
             */
-            virtual std::unique_ptr<RayTracer::Entities::IEntity> create(const IConfig &config) = 0;
+            virtual std::unique_ptr<RayTracer::Entities::IEntity> create(const Scenes::ISetting &setting) = 0;
 
         protected:
         private:

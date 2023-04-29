@@ -10,7 +10,7 @@
 namespace RayTracer::Plugins::Entities {
     EntityHandler::EntityHandler(const std::string &filePath) : _handler(filePath) { }
 
-    std::unique_ptr <RayTracer::Entities::IEntity> EntityHandler::get(const RayTracer::Scenes::IConfig &config) const {
-        return this->_handler.get(config);
+    std::unique_ptr <RayTracer::Entities::IEntity> EntityHandler::get(const RayTracer::Scenes::ISetting &setting) const {
+        return this->_handler.get(setting);
     }
 }
