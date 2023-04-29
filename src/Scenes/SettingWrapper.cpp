@@ -7,7 +7,7 @@
 
 #include "SettingWrapper.hpp"
 
-namespace Raytracer::Scenes {
+namespace RayTracer::Scenes {
     SettingWrapper::KeyNotFoundException::KeyNotFoundException(const std::string &key) {
         _msg = "Error key not found : " + key + "\n";
     };
@@ -68,6 +68,10 @@ namespace Raytracer::Scenes {
         return (_setting->getPath());
     }
 
+    std::string SettingWrapper::getKey() {
+        return (_setting->getName());
+    }
+
     std::shared_ptr<libconfig::Config> SettingWrapper::getConfig() {
         return (_config);
     }
@@ -95,17 +99,17 @@ namespace Raytracer::Scenes {
         }
     }
 
-    SettingWrapper SettingWrapper::operator[](const std::string &key) {
-        SettingWrapper copy = SettingWrapper(*this);
+    std::unique_ptr<ISetting> SettingWrapper::get(const std::string &key) {
+        std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
 
-        copy.moveTo(key);
+        copy->moveTo(key);
         return copy;
     }
 
-    SettingWrapper SettingWrapper::operator[](int index) {
-        SettingWrapper copy = SettingWrapper(*this);
+    std::unique_ptr<ISetting> SettingWrapper::get(int index) {
+        std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
 
-        copy.moveTo(index);
+        copy->moveTo(index);
         return copy;
     }
 
