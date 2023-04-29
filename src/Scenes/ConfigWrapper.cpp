@@ -32,7 +32,7 @@ namespace RayTracer::Scenes {
         return true;
     }
 
-    std::shared_ptr<ISetting> ConfigWrapper::getSetting() {
+    std::shared_ptr<ISetting> ConfigWrapper::getSetting() const {
         return _scene;
     }
 }
