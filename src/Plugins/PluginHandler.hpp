@@ -63,8 +63,8 @@ namespace RayTracer::Plugins {
              *
              * @return the result of the function called
              */
-            template<typename T, typename... _Args>
-            T getResult(const std::string &name, _Args&&... __args) {
+            template<typename T, typename... Args>
+            T getResult(const std::string &name, Args&&... __args) {
                 void *sym = dlsym(this->_handler, name.c_str());
 
                 if (!sym)

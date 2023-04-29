@@ -9,6 +9,7 @@
     #include <string>
     #include "TFactory.hpp"
     #include <filesystem>
+    #include <memory>
 
 namespace RayTracer::Plugins {
     template<typename Handler, typename Interface, typename Factory>
