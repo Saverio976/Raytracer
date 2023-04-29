@@ -24,7 +24,7 @@ namespace RayTracer::Factories {
              * @param name the name
              * @param handler the handler
              */
-            static void addFilter(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
+            static void add(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
             /**
              * @brief Get a filter
              *
@@ -33,7 +33,7 @@ namespace RayTracer::Factories {
              *
              * @return the filter
              */
-            static std::unique_ptr<Filters::IFilter> getFilter(const std::string &name, const IConfig &config);
+            static std::unique_ptr<Filters::IFilter> get(const std::string &name, const IConfig &config);
             /**
              * @brief Clear all filters
              */
