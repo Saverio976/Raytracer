@@ -6,11 +6,11 @@
 */
 
 #ifndef PLUGINHANDLER_HPP_
-#define PLUGINHANDLER_HPP_
+    #define PLUGINHANDLER_HPP_
 
-#include <string>
-#include <memory>
-#include <dlfcn.h>
+    #include <string>
+    #include <memory>
+    #include <dlfcn.h>
 
 class IConfig; // TODO: create an iconfig please
 
