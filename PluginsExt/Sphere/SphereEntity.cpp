@@ -53,4 +53,10 @@ namespace RayTracer::PluginsExt::Sphere {
         vect = vect + ray.getOrigin();
         return std::make_optional(vect);
     }
+
+    Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const
+    {
+        auto intersect = isCollided(ray);
+        return _material.getColor(ray, _transform, intersect.value(), displayable);
+    }
 }
