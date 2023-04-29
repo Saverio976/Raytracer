@@ -7,6 +7,8 @@
 
 #ifndef IMATERIAL_HPP_
     #define IMATERIAL_HPP_
+
+    #include "Ray.hpp"
     #include "Color.hpp"
     #include "Displayable.hpp"
     #include "ITransform.hpp"
@@ -30,7 +32,7 @@ namespace RayTracer::Entities {
              *
              * @return the color
              */
-            virtual const Images::Color &getColor(const Transform::ITransform &centerObj, const Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const = 0;
+            virtual Images::Color getColor(const Images::Ray &ray, const Transform::ITransform &centerObj, const Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const = 0;
             /**
              * @brief Set the color
              *
