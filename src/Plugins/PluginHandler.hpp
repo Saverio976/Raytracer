@@ -33,7 +33,7 @@ namespace RayTracer::Plugins {
                 this->_handler = dlopen(filePath.c_str(), RTLD_LAZY);
                 if (!this->_handler)
                     throw std::runtime_error("Couldn't open in PluginHandler: " + std::string(dlerror()));
-                _creator = this->getResult<Creator>("getCreator");
+                _creator = this->getResult<Creator *>("getCreator");
                 if (!_creator)
                     throw std::runtime_error("Creator couldn't be created in PluginHandler");
             }
@@ -50,7 +50,7 @@ namespace RayTracer::Plugins {
              *
              * @return the interface
              */
-            std::unique_ptr<Interface> get(const IConfig &config) {
+            std::unique_ptr<Interface> get(const RayTracer::Scenes::IConfig &config) {
                 return this->_creator->create(config);
             }
 
