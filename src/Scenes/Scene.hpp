@@ -7,7 +7,7 @@
 
 #ifndef SCENE_HPP_
     #define SCENE_HPP_
-    #include <list>
+    #include <vector>
     #include <memory>
     #include <mutex>
     #include <thread>
@@ -44,7 +44,7 @@ namespace RayTracer::Scenes {
              *
              * @return the cameras
              */
-            const std::list<std::unique_ptr<Entities::ICamera>> &getCameras() const;
+            const std::vector<std::unique_ptr<Entities::ICamera>> &getCameras() const;
             /**
              * @brief Check if the scene is ready (internal render thread is stopped)
              *
@@ -55,12 +55,16 @@ namespace RayTracer::Scenes {
              * @brief Cancel the scene rendering
              */
             void cancel();
+            /**
+             * @brief wait until the end of the renders
+             */
+            void wait_end();
         protected:
         private:
-            std::list<std::unique_ptr<Entities::ICamera>> _cameras;
+            std::vector<std::unique_ptr<Entities::ICamera>> _cameras;
             SceneState _state;
-            std::thread thread;
-            Displayable displayable;
+            std::thread _thread;
+            Displayable _displayable;
     };
 }
 
