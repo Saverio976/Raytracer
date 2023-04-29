@@ -27,6 +27,10 @@ namespace RayTracer::Scenes {
                 CANCELLED
             };
             /**
+             * @brief SceneState
+             */
+            SceneState();
+            /**
              * @brief Get the state (thread safe)
              *
              * @return the state
