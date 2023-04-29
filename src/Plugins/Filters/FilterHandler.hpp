@@ -35,7 +35,7 @@ namespace RayTracer::Plugins::Filters {
              *
              * @return the filter
              */
-            std::unique_ptr<RayTracer::Filters::IFilter> get(const RayTracer::Scenes::ISetting &setting) const;
+            RayTracer::Filters::IFilter *get(const RayTracer::Scenes::ISetting &setting) const;
 
         private:
             PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> _handler;
