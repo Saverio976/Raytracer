@@ -23,7 +23,7 @@ namespace RayTracer::Scenes {
 
             if (it == _events.end())
                 return;
-            it->second(_configWrapper->getScene());
+            it->second(_configWrapper);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace RayTracer::Scenes {
             void update();
         protected:
         private:
-            IConfig _configWrapper;
+            std::unique_ptr<IConfig> _configWrapper;
             std::map<std::string, std::function<void(const IConfig &)>> _events;
             std::string _filePath;
             std::filesystem::file_time_type _lastWriteTime;
