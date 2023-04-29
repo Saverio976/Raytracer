@@ -95,17 +95,17 @@ namespace RayTracer::Scenes {
         }
     }
 
-    SettingWrapper SettingWrapper::operator[](const std::string &key) {
-        SettingWrapper copy = SettingWrapper(*this);
+    std::unique_ptr<ISetting> SettingWrapper::get(const std::string &key) {
+        std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
 
-        copy.moveTo(key);
+        copy->moveTo(key);
         return copy;
     }
 
-    SettingWrapper SettingWrapper::operator[](int index) {
-        SettingWrapper copy = SettingWrapper(*this);
+    std::unique_ptr<ISetting> SettingWrapper::get(int index) {
+        std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
 
-        copy.moveTo(index);
+        copy->moveTo(index);
         return copy;
     }
 

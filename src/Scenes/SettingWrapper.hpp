@@ -6,11 +6,12 @@
 */
 
 #ifndef RAYTRACER_SETTINGWRAPPER_HPP
-#define RAYTRACER_SETTINGWRAPPER_HPP
-#include <libconfig.h++>
-#include <iostream>
-#include <memory>
-#include <exception>
+    #define RAYTRACER_SETTINGWRAPPER_HPP
+    #include <libconfig.h++>
+    #include <iostream>
+    #include <memory>
+    #include <exception>
+    #include "ISetting.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -19,7 +20,7 @@ namespace RayTracer::Scenes {
      * class that represent a setting in a scene configuration
      * it allows the user to navigate through the scene configuration by changing the path of the setting
      */
-    class SettingWrapper {
+    class SettingWrapper: public ISetting {
         /**
          * @brief an exception for when the key is not found
          */
@@ -104,7 +105,7 @@ namespace RayTracer::Scenes {
          *
          * @return a copy of the setting, moved to the key
          */
-        SettingWrapper operator[](const std::string &key);
+        std::unique_ptr<ISetting> get(const std::string &key) override;
         /**
          * @brief search the setting at the given index in the childs
          *
@@ -112,7 +113,7 @@ namespace RayTracer::Scenes {
          *
          * @return a copy of the setting, moved to the index
          */
-        SettingWrapper operator[](int index);
+        std::unique_ptr<ISetting> get(int index) override;
         /**
          * @brief cast operator to get bool from setting
          *
