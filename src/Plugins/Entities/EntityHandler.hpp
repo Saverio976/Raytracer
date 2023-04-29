@@ -7,13 +7,12 @@
 
 #ifndef ENTITYHANDLER_HPP_
     #define ENTITYHANDLER_HPP_
-
     #include <memory>
     #include <string>
     #include "IEntity.hpp"
     #include "IEntityCreator.hpp"
     #include "PluginHandler.hpp"
-    #include "IConfig.hpp"
+    #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Entities {
     /**
@@ -30,13 +29,13 @@ namespace RayTracer::Plugins::Entities {
              */
             EntityHandler(const std::string &filePath);
             /**
-             * @brief Get an entity (and create it with config)
+             * @brief Get an entity (and create it with setting)
              *
-             * @param config the config
+             * @param setting the setting
              *
              * @return the entity
              */
-            std::unique_ptr<RayTracer::Entities::IEntity> get(const RayTracer::Scenes::IConfig &config) const;
+            std::unique_ptr<RayTracer::Entities::IEntity> get(const RayTracer::Scenes::ISetting &setting) const;
         private:
             PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> _handler;
     };

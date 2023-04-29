@@ -11,8 +11,7 @@
     #include <string>
     #include <memory>
     #include <dlfcn.h>
-
-    #include "IConfig.hpp"
+    #include "ISetting.hpp"
 
 namespace RayTracer::Plugins {
     /**
@@ -44,14 +43,14 @@ namespace RayTracer::Plugins {
             }
 
             /**
-             * @brief Get an interface (and create it with config)
+             * @brief Get an interface (and create it with setting)
              *
-             * @param config the config
+             * @param setting the setting
              *
              * @return the interface
              */
-            std::unique_ptr<Interface> get(const RayTracer::Scenes::IConfig &config) {
-                return this->_creator->create(config);
+            std::unique_ptr<Interface> get(const RayTracer::Scenes::ISetting &setting) const {
+                return this->_creator->create(setting);
             }
 
         protected:
