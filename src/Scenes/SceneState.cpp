@@ -8,6 +8,10 @@
 #include "SceneState.hpp"
 
 namespace RayTracer::Scenes {
+    SceneState::SceneState() {
+        this->_state = SceneState::States::CANCELLED;
+    }
+
     SceneState::States SceneState::getState() const {
         return this->_state;
     }
