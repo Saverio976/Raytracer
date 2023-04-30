@@ -29,7 +29,7 @@ namespace RayTracer::Entities::Transform {
             std::cerr << "Error: division by zero" << std::endl;
             return {0, 0};
         }
-        return Vector2i(_x / other._x, _y / other._y);
+        return {_x / other._x, _y / other._y};
     }
 
     Vector2i &Vector2i::operator=(const Vector2i &other) {
