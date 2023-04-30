@@ -49,7 +49,7 @@ namespace RayTracer::Plugins {
              *
              * @return the interface
              */
-            std::unique_ptr<Interface> get(const RayTracer::Scenes::ISetting &setting) const {
+            Interface *get(const RayTracer::Scenes::ISetting &setting) const {
                 return this->_creator->create(setting);
             }
 

@@ -13,6 +13,7 @@
     #include "IMaterial.hpp"
     #include "Ray.hpp"
     #include "Vector3f.hpp"
+    #include "IEntity.hpp"
 
 namespace RayTracer::Entities {
     /**
@@ -20,7 +21,7 @@ namespace RayTracer::Entities {
      *
      * class that represent a primitive (box, sphere, ...)
      */
-    class IPrimitive {
+    class IPrimitive: public IEntity {
         public:
             virtual ~IPrimitive() = default;
             /**

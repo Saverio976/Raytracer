@@ -27,7 +27,7 @@ namespace RayTracer::Plugins::Filters {
              *
              * @return the filter
              */
-            virtual std::unique_ptr<RayTracer::Filters::IFilter> create(const Scenes::ISetting &setting) = 0;
+            virtual RayTracer::Filters::IFilter *create(const Scenes::ISetting &setting) = 0;
 
         protected:
         private:
