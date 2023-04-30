@@ -5,8 +5,8 @@
 ** Vector3f.cpp
 */
 
-#include "Vector3f.hpp"
 #include <cmath>
+#include "Vector3f.hpp"
 
 namespace RayTracer::Entities::Transform {
     Vector3f::Vector3f(const Vector3f &vector3f): _x(vector3f._x), _y(vector3f._y), _z(vector3f._z) {}
