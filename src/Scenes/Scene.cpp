@@ -18,7 +18,7 @@ namespace RayTracer::Scenes {
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
             tmp = settingWrapper->get(i);
-            std::unique_ptr<Entities::ICamera> cameraPtr((Entities::ICamera *)(Factories::EntityFactory::get(tmp->getKey(), *tmp)));
+            std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get(tmp->getKey(), *tmp)));
 
             _cameras.push_back(std::move(cameraPtr));
         }
@@ -28,7 +28,7 @@ namespace RayTracer::Scenes {
             length_two = (*settingWrapper).get(i)->getLength();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::ILight> lightPtr(dynamic_cast<Entities::ILight *>(Factories::EntityFactory::get(tmp->getKey(), *tmp)));
+                std::unique_ptr<Entities::ILight> lightPtr(static_cast<Entities::ILight *>(Factories::EntityFactory::get(tmp->getKey(), *tmp)));
 
                 _displayable.getLightList().push_back(std::move(lightPtr));
             }
@@ -39,7 +39,7 @@ namespace RayTracer::Scenes {
             length_two = (*settingWrapper).get(i)->getLength();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::IPrimitive> primitivePtr(dynamic_cast<Entities::IPrimitive *>(Factories::EntityFactory::get(tmp->getKey(), *tmp)));
+                std::unique_ptr<Entities::IPrimitive> primitivePtr(static_cast<Entities::IPrimitive *>(Factories::EntityFactory::get(tmp->getKey(), *tmp)));
 
                 _displayable.getPrimitiveList().push_back(std::move(primitivePtr));
             }
