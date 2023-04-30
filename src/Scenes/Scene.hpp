@@ -13,6 +13,8 @@
     #include <thread>
     #include "Image.hpp"
     #include "ICamera.hpp"
+    #include "ILight.hpp"
+    #include "IPrimitive.hpp"
     #include "SceneState.hpp"
     #include "Displayable.hpp"
     #include "IConfig.hpp"

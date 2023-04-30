@@ -27,7 +27,7 @@ namespace RayTracer::Plugins::Entities {
             *
             * @return the entity
             */
-            virtual std::unique_ptr<RayTracer::Entities::IEntity> create(const Scenes::ISetting &setting) = 0;
+            virtual RayTracer::Entities::IEntity *create(const Scenes::ISetting &setting) = 0;
 
         protected:
         private:
