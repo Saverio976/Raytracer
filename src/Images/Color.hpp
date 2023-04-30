@@ -43,6 +43,10 @@ namespace RayTracer::Images {
              * @param a alpha
              */
             Color(float r, float g, float b, float a);
+            /**
+             * @brief Construct a new Color object (all set to 0 0 0 0)
+             */
+            Color();
 
             /**
              * @brief Addition two colors
