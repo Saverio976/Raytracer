@@ -13,7 +13,7 @@ namespace RayTracer::Entities::Transform {
     Vector2i::Vector2i(int width, int height) : _x(width), _y(height) {}
 
     Vector2i Vector2i::operator+(const Vector2i &other) {
-        return Vector2i(_x + other._x, _y + other._y);
+        return {_x + other._x, _y + other._y};
     }
 
     Vector2i Vector2i::operator-(const Vector2i &other) {
