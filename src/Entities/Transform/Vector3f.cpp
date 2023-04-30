@@ -65,7 +65,7 @@ float Vector3f::getNorm() const
 Vector3f Vector3f::getNormalized() const
 {
     float norm = getNorm();
-    return Vector3f(_x / norm, _y / norm, _z / norm);
+    return {_x / norm, _y / norm, _z / norm};
 }
 
 float Vector3f::getDistance(const Vector3f &other) const
