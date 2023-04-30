@@ -8,6 +8,7 @@
 #ifndef PLAINMATERIAL_HPP_
     #define PLAINMATERIAL_HPP_
 
+    #include "ISetting.hpp"
     #include "Ray.hpp"
     #include "Color.hpp"
     #include "ITransform.hpp"
@@ -17,7 +18,7 @@
 namespace RayTracer::PluginsExt::Sphere {
     class PlainMaterial : public Entities::IMaterial {
         public:
-            PlainMaterial(const IConfig &config);
+            PlainMaterial(const Scenes::ISetting &config);
 
             Images::Color getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const final;
             void setColor(const Images::Color &color) final;

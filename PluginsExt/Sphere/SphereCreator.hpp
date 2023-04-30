@@ -9,11 +9,12 @@
     #define SPHERE_CREATOR_HPP_
 
     #include "IEntityCreator.hpp"
+#include "ISetting.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
     class SphereCreator : public RayTracer::Plugins::Entities::IEntityCreator {
         public:
-            std::unique_ptr<RayTracer::Entities::IEntity> create(const IConfig &config) final;
+            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config) final;
     };
 }
 

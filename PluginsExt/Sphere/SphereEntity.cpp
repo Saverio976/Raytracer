@@ -6,14 +6,16 @@
 */
 
 #include <cmath>
+#include "ISetting.hpp"
 #include "SphereEntity.hpp"
 #include "IEntity.hpp"
 #include "Transform.hpp"
 #include "Vector3f.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
-    SphereEntity::SphereEntity(const IConfig &config):
-        _transform(Entities::Transform::Transform())
+    SphereEntity::SphereEntity(const Scenes::ISetting &config):
+        _transform(Entities::Transform::Transform()),
+        _material(config)
     {
     }
 

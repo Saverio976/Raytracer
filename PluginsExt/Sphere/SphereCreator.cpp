@@ -7,12 +7,13 @@
 
 #include <memory>
 #include "IEntity.hpp"
+#include "ISetting.hpp"
 #include "SphereCreator.hpp"
 #include "SphereEntity.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
-    std::unique_ptr<RayTracer::Entities::IEntity> SphereCreator::create(const IConfig &config)
+    RayTracer::Entities::IEntity *SphereCreator::create(const Scenes::ISetting &config)
     {
-        return std::make_unique<RayTracer::PluginsExt::Sphere::SphereEntity>(config);
+        return new RayTracer::PluginsExt::Sphere::SphereEntity(config);
     }
 }

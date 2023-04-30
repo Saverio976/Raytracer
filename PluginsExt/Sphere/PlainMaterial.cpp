@@ -7,6 +7,7 @@
 
 #include "PlainMaterial.hpp"
 #include "Color.hpp"
+#include "ISetting.hpp"
 #include "Ray.hpp"
 #include "ILight.hpp"
 #include "IPrimitive.hpp"
@@ -14,7 +15,7 @@
 #include <cmath>
 
 namespace RayTracer::PluginsExt::Sphere {
-    PlainMaterial::PlainMaterial(const IConfig &config) {}
+    PlainMaterial::PlainMaterial(const Scenes::ISetting &config) {}
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
     {
@@ -71,5 +72,6 @@ namespace RayTracer::PluginsExt::Sphere {
         result[Images::Color::Types::RED] = result[Images::Color::Types::RED] / 255.0;
         result[Images::Color::Types::GREEN] = result[Images::Color::Types::GREEN] / 255.0;
         result[Images::Color::Types::BLUE] = result[Images::Color::Types::BLUE] / 255.0;
+        return result;
     }
 }

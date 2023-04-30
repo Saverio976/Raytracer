@@ -10,6 +10,7 @@
 
     #include "IMaterial.hpp"
     #include "IPrimitive.hpp"
+    #include "ISetting.hpp"
     #include "PlainMaterial.hpp"
     #include "Transform.hpp"
     #include "Vector3f.hpp"
@@ -17,7 +18,7 @@
 namespace RayTracer::PluginsExt::Sphere {
     class SphereEntity : public RayTracer::Entities::IPrimitive {
         public:
-            SphereEntity(const IConfig &config);
+            SphereEntity(const Scenes::ISetting &config);
 
             Type getType() const final;
             Entities::Transform::ITransform &getTransform() final;
