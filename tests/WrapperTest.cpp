@@ -2,7 +2,7 @@
 #include <libconfig.h++>
 #include "ConfigWrapper.hpp"
 
-using namespace Raytracer::Scenes;
+using namespace RayTracer::Scenes;
 /*
  * Exemple d'un code récupérant les informations concernant les sphères dans le fichier testScene.config
  */
@@ -22,12 +22,12 @@ int main(int ac, char **av) {
         //récupération coordonnées :
         std::cout << "sphere[" << i << "]" << std::endl << "\tcoords: " << std::endl << "\t\t";
         for (int j = 0; j < 4; j++)
-            std::cout << keys[j] << " = " << static_cast<int>((*setting)[i][j]) << "\t";
+            std::cout << keys[j] << " = " << static_cast<int>(*(setting->get(i)->get(j))) << "\t";
 
         //récupération couleurs :
         std::cout << std::endl << "\tcolor: " << std::endl << "\t\t";
         for (int k = 0; k < 3; k++)
-            std::cout << color_keys[k] << " = " << static_cast<int>((*setting)[i]["color"][k]) << "\t";
+            std::cout << color_keys[k] << " = " << static_cast<int>(*(setting->get(i)->get("color")->get(k))) << "\t";
         std::cout << std::endl;
     }
 }

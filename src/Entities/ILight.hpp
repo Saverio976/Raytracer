@@ -8,9 +8,9 @@
 #ifndef ILIGHT_HPP_
     #define ILIGHT_HPP_
     #include "Color.hpp"
-    #include "IEntity.hpp"
     #include "Displayable.hpp"
     #include "Transform/Vector3f.hpp"
+    #include "IEntity.hpp"
 
 namespace RayTracer::Entities {
     /**
@@ -18,7 +18,7 @@ namespace RayTracer::Entities {
      *
      * class that represent a light
      */
-    class ILight : public IEntity {
+    class ILight: public IEntity {
         public:
             virtual ~ILight() = default;
             /**

@@ -24,20 +24,20 @@ namespace RayTracer::Factories {
              * @param name the name
              * @param handler the handler
              */
-            static void addEntity(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler);
+            static void add(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler);
             /**
              * @brief Get an entity
              *
              * @param name the name
-             * @param config the config (to create the entity)
+             * @param setting the setting (to create the entity)
              *
              * @return the entity
              */
-            static std::unique_ptr<Entities::IEntity> getEntity(const std::string &name, const IConfig &config);
+            static Entities::IEntity *get(const std::string &name, const Scenes::ISetting &setting);
             /**
              * @brief Clear all handlers
              */
-            void clearAll();
+            static void clearAll();
 
         protected:
             static TFactory<Plugins::Entities::EntityHandler, Entities::IEntity> &getFactory();

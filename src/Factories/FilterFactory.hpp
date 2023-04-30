@@ -6,7 +6,6 @@
 */
 #ifndef FILTERFACTORY_HPP_
     #define FILTERFACTORY_HPP_
-
     #include "TFactory.hpp"
     #include "FilterHandler.hpp"
     #include "IFilter.hpp"
@@ -24,20 +23,20 @@ namespace RayTracer::Factories {
              * @param name the name
              * @param handler the handler
              */
-            static void addFilter(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
+            static void add(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
             /**
              * @brief Get a filter
              *
              * @param name the name
-             * @param config the config
+             * @param setting the setting
              *
              * @return the filter
              */
-            static std::unique_ptr<Filters::IFilter> getFilter(const std::string &name, const IConfig &config);
+            static Filters::IFilter *get(const std::string &name, const Scenes::ISetting &setting);
             /**
              * @brief Clear all filters
              */
-            void clearAll();
+            static void clearAll();
 
         protected:
             static TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> &getFactory();

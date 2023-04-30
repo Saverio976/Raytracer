@@ -7,14 +7,12 @@
 
 #ifndef FILTERHANDLER_HPP_
     #define FILTERHANDLER_HPP_
-
     #include <memory>
     #include <string>
     #include "IFilter.hpp"
     #include "PluginHandler.hpp"
     #include "IFilterCreator.hpp"
-
-class IConfig; // TODO: create an iconfig please
+    #include "IConfig.hpp"
 
 namespace RayTracer::Plugins::Filters {
     /**
@@ -31,13 +29,13 @@ namespace RayTracer::Plugins::Filters {
              */
             FilterHandler(const std::string &filePath);
             /**
-             * @brief Get a filter (and create it with config)
+             * @brief Get a filter (and create it with setting)
              *
-             * @param config the config
+             * @param config the setting
              *
              * @return the filter
              */
-            std::unique_ptr<RayTracer::Filters::IFilter> get(const IConfig &config);
+            RayTracer::Filters::IFilter *get(const RayTracer::Scenes::ISetting &setting) const;
 
         private:
             PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> _handler;

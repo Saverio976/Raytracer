@@ -6,20 +6,21 @@
 */
 
 #ifndef RAYTRACER_SETTINGWRAPPER_HPP
-#define RAYTRACER_SETTINGWRAPPER_HPP
-#include <libconfig.h++>
-#include <iostream>
-#include <memory>
-#include <exception>
+    #define RAYTRACER_SETTINGWRAPPER_HPP
+    #include <libconfig.h++>
+    #include <iostream>
+    #include <memory>
+    #include <exception>
+    #include "ISetting.hpp"
 
-namespace Raytracer::Scenes {
+namespace RayTracer::Scenes {
     /**
      * @brief The SettingWrapper class
      *
      * class that represent a setting in a scene configuration
      * it allows the user to navigate through the scene configuration by changing the path of the setting
      */
-    class SettingWrapper {
+    class SettingWrapper: public ISetting {
         /**
          * @brief an exception for when the key is not found
          */
@@ -73,11 +74,17 @@ namespace Raytracer::Scenes {
          */
         int getLength();
         /**
-         * @brief gets the path of the current setting
+         * @brief gets the full path of the current setting
          *
          * @return the path
          */
         std::string getPath();
+        /**
+         * @brief gets the key of the setting
+         *
+         * @return the key
+         */
+        std::string getKey();
         /**
          * @brief gets the config of a setting
          *
@@ -104,7 +111,7 @@ namespace Raytracer::Scenes {
          *
          * @return a copy of the setting, moved to the key
          */
-        SettingWrapper operator[](const std::string &key);
+        std::unique_ptr<ISetting> get(const std::string &key) override;
         /**
          * @brief search the setting at the given index in the childs
          *
@@ -112,7 +119,7 @@ namespace Raytracer::Scenes {
          *
          * @return a copy of the setting, moved to the index
          */
-        SettingWrapper operator[](int index);
+        std::unique_ptr<ISetting> get(int index) override;
         /**
          * @brief cast operator to get bool from setting
          *

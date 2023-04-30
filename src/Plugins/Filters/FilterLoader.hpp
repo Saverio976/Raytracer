@@ -12,6 +12,7 @@
     #include "IFilter.hpp"
     #include "FilterHandler.hpp"
     #include "PluginLoader.hpp"
+    #include "FilterFactory.hpp"
 
 namespace RayTracer::Plugins::Filters {
     /**
@@ -19,22 +20,21 @@ namespace RayTracer::Plugins::Filters {
      *
      * class that represent a filter loader (take a directory)
      */
-    class FilterLoader : protected PluginLoader<FilterHandler, RayTracer::Filters::IFilter> {
-    public:
-        /**
-         * @brief FilterLoader constructor (doesn't load anything)
-         *
-         * @param directory the directory
-         */
-        FilterLoader(const std::string &directory);
-        /**
-         * @brief Load all the filters in the factory singleton
-         */
-        void loadFilter();
+    class FilterLoader : protected PluginLoader<FilterHandler, RayTracer::Filters::IFilter, Factories::FilterFactory> {
+        public:
+            /**
+             * @brief FilterLoader constructor (doesn't load anything)
+             *
+             * @param directory the directory
+             */
+            FilterLoader(const std::string &directory);
+            /**
+             * @brief Load all the filters in the factory singleton
+             */
+            void loadFilters();
 
-    protected:
-    private:
-        std::string _directory;
+        protected:
+        private:
     };
 }
 

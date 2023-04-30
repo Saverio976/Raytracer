@@ -28,6 +28,13 @@ namespace RayTracer {
              */
             static Parameters &getInstance();
             /**
+             * @brief Parse the command line arguments
+             *
+             * @param argc the number of arguments
+             * @param argv the arguments
+             */
+            void parseCmdArgs(int argc, char **argv);
+            /**
              * @brief Get config key value as int
              *
              * @param key the key
@@ -50,7 +57,7 @@ namespace RayTracer {
              *
              * @return the string
              */
-            const std::string getString(const std::string &key) const;
+            const std::string &getString(const std::string &key) const;
             /**
              * @brief Set config key value as int
              *
@@ -71,11 +78,12 @@ namespace RayTracer {
              * @param key the key
              * @param value the value
              */
-            void set(const std::string &key, std::string value);
+            void set(const std::string &key, const std::string &value);
 
         protected:
             Parameters();
             static std::unique_ptr<Parameters> _parameters;
+            void parseCmdArg(const std::string &key, const std::string &value);
             std::map<std::string, int> _valuesInt;
             std::map<std::string, float> _valuesFloat;
             std::map<std::string, std::string> _valuesString;

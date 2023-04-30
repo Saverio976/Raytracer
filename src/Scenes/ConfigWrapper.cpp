@@ -7,7 +7,7 @@
 
 #include "ConfigWrapper.hpp"
 
-namespace Raytracer::Scenes {
+namespace RayTracer::Scenes {
     bool ConfigWrapper::readFile(const std::string &path) {
         std::shared_ptr<libconfig::Config> fileConfig = std::make_shared<libconfig::Config>();
 
@@ -32,7 +32,7 @@ namespace Raytracer::Scenes {
         return true;
     }
 
-    std::shared_ptr<SettingWrapper> ConfigWrapper::getScene() {
+    std::shared_ptr<ISetting> ConfigWrapper::getSetting() const {
         return _scene;
     }
 }

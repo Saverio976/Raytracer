@@ -2,22 +2,19 @@
 ** EPITECH PROJECT, 2023
 ** Raytracer
 ** File description:
-** ConfigWrapper.hpp
+** IConfig.hpp
 */
 
-#ifndef RAYTRACER_CONFIGWRAPPER_HPP
-    #define RAYTRACER_CONFIGWRAPPER_HPP
+#ifndef ICONFIG_HPP_
+	#define ICONFIG_HPP_
     #include <iostream>
-    #include <libconfig.h++>
     #include <memory>
-    #include "IConfig.hpp"
-    #include "SettingWrapper.hpp"
+    #include "ISetting.hpp"
 
 namespace RayTracer::Scenes {
-    class ConfigWrapper: public IConfig {
+    class IConfig {
         public:
-            ConfigWrapper() = default;
-            ~ConfigWrapper() override = default;
+            virtual ~IConfig() = default;
             /**
              * @brief read and parse the file at given path
              *
@@ -25,7 +22,7 @@ namespace RayTracer::Scenes {
              *
              * @return true if parsing worked, false otherwise
              */
-            bool readFile(const std::string &path) override;
+            virtual bool readFile(const std::string &path) = 0;
             /**
              * @brief writes the current config in a file at the given path
              *
@@ -33,17 +30,14 @@ namespace RayTracer::Scenes {
              *
              * @return true if writing worked, false otherwise
              */
-            bool writeFile(const std::string &path) override;
+            virtual bool writeFile(const std::string &path) = 0;
             /**
              * @brief returns the current SettingWrapper
              *
              * @return the current SettingWrapper
              */
-            std::shared_ptr<ISetting> getSetting() const override;
-        private:
-            std::shared_ptr<libconfig::Config> _config;
-            std::shared_ptr<ISetting> _scene;
+            virtual std::shared_ptr<ISetting> getSetting() const = 0;
     };
 }
 
-#endif //RAYTRACER_CONFIGWRAPPER_HPP
+#endif /*ICONFIG_HPP_*/
