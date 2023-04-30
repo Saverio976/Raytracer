@@ -26,7 +26,7 @@ Vector3f Vector3f::operator-(const Vector3f &other) const
 
 Vector3f Vector3f::operator*(const Vector3f &other) const
 {
-    return Vector3f(_x * other._x, _y * other._y, _z * other._z);
+    return {_x * other._x, _y * other._y, _z * other._z};
 }
 
 Vector3f Vector3f::operator/(const Vector3f &other) const
