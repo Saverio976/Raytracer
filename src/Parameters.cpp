@@ -77,16 +77,16 @@ namespace RayTracer {
             set(key, value);
             return;
         }
+        if (value.find('.') != std::string::npos) {
+            set(key, valueFloat);
+            return;
+        }
         ss.str(value);
         ss >> valueInt;
         if (ss.fail()) {
             set(key, valueFloat);
             return;
         }
-        if ((valueInt * 1.0) == valueFloat) {
-            set(key, valueInt);
-            return;
-        }
-        set(key, valueFloat);
+        set(key, valueInt);
     }
 }
