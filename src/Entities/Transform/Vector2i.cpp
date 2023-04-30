@@ -37,4 +37,12 @@ namespace RayTracer::Entities::Transform {
         _y = other._y;
         return *this;
     }
+
+    int Vector2i::getX() const {
+        return _x;
+    }
+
+    int Vector2i::getY() const {
+        return _y;
+    }
 }
