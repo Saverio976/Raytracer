@@ -51,8 +51,8 @@ namespace RayTracer::Scenes {
             std::map<std::string, std::function<void(const ISetting &)>> _events;
             std::string _filePath;
             std::filesystem::file_time_type _lastWriteTime;
-            std::unique_ptr<Plugins::Entities::EntityLoader> _entityLoader = nullptr;
-            std::unique_ptr<Plugins::Filters::FilterLoader> _filterLoader = nullptr;
+            std::unique_ptr<Plugins::Entities::EntityLoader> _entityLoader;
+            std::unique_ptr<Plugins::Filters::FilterLoader> _filterLoader;
 
         };
 }
