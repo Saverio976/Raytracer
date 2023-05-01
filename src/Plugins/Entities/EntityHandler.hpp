@@ -7,14 +7,12 @@
 
 #ifndef ENTITYHANDLER_HPP_
     #define ENTITYHANDLER_HPP_
-
     #include <memory>
     #include <string>
     #include "IEntity.hpp"
     #include "IEntityCreator.hpp"
     #include "PluginHandler.hpp"
-
-class IConfig; // TODO: create an iconfig please
+    #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Entities {
     /**
@@ -22,7 +20,7 @@ namespace RayTracer::Plugins::Entities {
      *
      * class that represent an entity handler (take a .so)
      */
-    class EntityHandler : PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> {
+    class EntityHandler {
         public:
             /**
              * @brief EntityHandler constructor
@@ -31,14 +29,15 @@ namespace RayTracer::Plugins::Entities {
              */
             EntityHandler(const std::string &filePath);
             /**
-             * @brief Get an entity (and create it with config)
+             * @brief Get an entity (and create it with setting)
              *
-             * @param config the config
+             * @param setting the setting
              *
              * @return the entity
              */
-            std::unique_ptr<RayTracer::Entities::IEntity> getEntity(const IConfig &config);
+            RayTracer::Entities::IEntity *get(const RayTracer::Scenes::ISetting &setting) const;
         private:
+            PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> _handler;
     };
 }
 

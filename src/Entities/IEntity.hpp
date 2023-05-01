@@ -30,6 +30,12 @@ namespace RayTracer::Entities {
              */
             virtual Transform::ITransform &getTransform() = 0;
             /**
+             * @brief Get the transform (position, rotation, scale) (const)
+             *
+             * @return the transform
+             */
+            virtual const Transform::ITransform &getTransform() const = 0;
+            /**
              * @brief Get the type (light, camera, primitive)
              *
              * @return the type

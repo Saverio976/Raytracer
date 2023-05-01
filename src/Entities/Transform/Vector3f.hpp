@@ -5,8 +5,9 @@
 ** Vector3f.hpp
 */
 #ifndef VECTOR3F_HPP_
-    #define VECTOR3F_HPP_
+#define VECTOR3F_HPP_
 
+#include "ISetting.hpp"
 namespace RayTracer::Entities::Transform {
     /**
      * @brief The Vector3f class
@@ -31,13 +32,21 @@ namespace RayTracer::Entities::Transform {
              */
             Vector3f(float x, float y, float z);
             /**
+             * @brief Construct a new Vector3f from a setting
+             *
+             * needed: x, y, z
+             *
+             * @param setting the setting
+             */
+            Vector3f(const Scenes::ISetting &setting);
+            /**
              * @brief Addition two vectors
              *
              * @param other the other vector
              *
              * @return the new
              */
-            Vector3f operator+(const Vector3f &other);
+            Vector3f operator+(const Vector3f &other) const;
             /**
              * @brief Subtraction two vectors
              *
@@ -45,7 +54,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator-(const Vector3f &other);
+            Vector3f operator-(const Vector3f &other) const;
             /**
              * @brief Multiplication two vectors
              *
@@ -53,7 +62,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator*(const Vector3f &other);
+            Vector3f operator*(const Vector3f &other) const;
             /**
              * @brief Division two vectors
              *
@@ -61,7 +70,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector3f operator/(const Vector3f &other);
+            Vector3f operator/(const Vector3f &other) const;
             /**
              * @brief Assign a vector
              *
@@ -70,6 +79,44 @@ namespace RayTracer::Entities::Transform {
              * @return the same vector modified
              */
             Vector3f &operator=(const Vector3f &other);
+            /**
+             * @brief Get x
+             *
+             * @return x
+             */
+            float getX() const;
+            /**
+             * @brief Get y
+             *
+             * @return y
+             */
+            float getY() const;
+            /**
+             * @brief Get z
+             *
+             * @return z
+             */
+            float getZ() const;
+            /**
+             * @brief Get the norm
+             *
+             * @return sqrt(x^2 + y^2 + z^2)
+             */
+            float getNorm() const;
+            /**
+             * @brief Get normalized vector
+             *
+             * @return vector / getNorm()
+             */
+            Vector3f getNormalized() const;
+            /**
+             * @brief Get distance between this point and other point
+             *
+             * @param other the other point
+             *
+             * @return The distance value
+             */
+            float getDistance(const Vector3f &other) const;
 
         protected:
         private:

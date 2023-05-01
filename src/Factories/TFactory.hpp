@@ -7,12 +7,10 @@
 
 #ifndef IFACTORY_HPP_
     #define IFACTORY_HPP_
-
     #include <string>
     #include <memory>
     #include <map>
-
-class IConfig; // TODO: create an iconfig please
+    #include "ISetting.hpp"
 
 namespace RayTracer::Factories {
     /**
@@ -25,35 +23,51 @@ namespace RayTracer::Factories {
     class TFactory {
         public:
             ~TFactory() = default;
+            TFactory(const TFactory<Handler, Interface> &other) = delete;
             /**
              * @brief Add an `handler`
              *
              * @param name the name
              * @param handler the handler
              */
-            void add(const std::string &name, std::unique_ptr<Handler> handler);
+            void add(const std::string &name, std::unique_ptr<Handler> handler)
+            {
+                _stock[name] = std::move(handler);
+            }
             /**
              * @brief Get an `interface`
              *
              * @param name the name
-             * @param config the config
+             * @param setting the setting
              *
              * @return the interface
              */
-            std::unique_ptr<Interface> get(const std::string &name, IConfig config);
+            Interface *get(const std::string &name, const Scenes::ISetting &setting)
+            {
+                return _stock.at(name)->get(setting);
+            }
             /**
              * @brief Get the factory
              *
              * @return the factory
              */
-            static TFactory<Handler, Interface> &getFactory();
+            static TFactory<Handler, Interface> &getFactory()
+            {
+                if (_factory == nullptr) {
+                    _factory.reset(new TFactory<Handler, Interface>());
+                }
+                return *_factory;
+            }
             /**
              * @brief Clear all handler
              */
-            void clearAll();
+            void clearAll()
+            {
+                _stock.clear();
+            }
 
         protected:
-            TFactory();
+            TFactory() = default;
             static std::unique_ptr<TFactory<Handler, Interface>> _factory;
             std::map<std::string, std::unique_ptr<Handler>> _stock;
         private:
