@@ -62,7 +62,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the same transform modified
              */
-            virtual ITransform &operator=(const ITransform &other);
+            virtual ITransform &operator=(const ITransform &other) = 0;
 
         protected:
         private:
