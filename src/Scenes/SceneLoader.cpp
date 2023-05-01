@@ -10,6 +10,8 @@
 namespace RayTracer::Scenes {
     SceneLoader::SceneLoader(const std::string &filePath): _filePath(filePath) {
         _configWrapper = std::make_unique<ConfigWrapper>();
+        _entityLoader = new Plugins::Entities::EntityLoader("./EntitiesPlugin");
+        _entityLoader = new Plugins::Filters::FilterLoader("./FilterPlugin");
     };
 
     void SceneLoader::subscribe(const std::string &event, std::function<void(const ISetting &)> func) {
@@ -28,6 +30,8 @@ namespace RayTracer::Scenes {
 
             if (it == _events.end())
                 return;
+            this->_entityLoader->loadEntities();
+            this->_filterLoader->loadFilters();
             it->second(*_configWrapper->getSetting());
             _lastWriteTime = currentTime;
         }
