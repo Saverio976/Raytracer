@@ -9,6 +9,7 @@
     #define COLOR_HPP_
     #include <mutex>
     #include <ostream>
+    #include "ISetting.hpp"
 
 namespace RayTracer::Images {
     /**
@@ -43,7 +44,14 @@ namespace RayTracer::Images {
              * @param a alpha
              */
             Color(float r, float g, float b, float a);
-
+            /**
+             * @brief Construct a new Color object with setting
+             *
+             * Key needed: r, g, b, a
+             *
+             * @param setting the setting
+             */
+            Color(const Scenes::ISetting &setting);
             /**
              * @brief Addition two colors
              *
