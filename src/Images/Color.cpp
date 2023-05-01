@@ -8,6 +8,14 @@
 #include "Color.hpp"
 
 namespace RayTracer::Images {
+
+    Color::Color(const Color &color) {
+        this->_r = color[Color::Types::RED];
+        this->_g = color[Color::Types::GREEN];
+        this->_b = color[Color::Types::BLUE];
+        this->_a = color[Color::Types::ALPHA];
+    }
+
     Color::Color(float r, float g, float b, float a) : _r(r), _g(g), _b(b), _a(a) { }
 
     Color Color::operator+(const Color &other) const {
