@@ -97,7 +97,7 @@ namespace RayTracer {
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file" << std::endl;
+        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file [--help true]" << std::endl;
         std::cout << std::endl;
         std::cout << "OPTIONS:" << std::endl;
         std::cout << "\t--scene-path scene-conf.yaax\tpath to scene config" << std::endl;
