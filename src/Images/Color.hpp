@@ -6,7 +6,7 @@
 */
 
 #ifndef COLOR_HPP_
-#define COLOR_HPP_
+    #define COLOR_HPP_
 #include <mutex>
 #include <ostream>
 #include "ISetting.hpp"
