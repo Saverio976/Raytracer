@@ -8,3 +8,9 @@ target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Vector3f.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Transform.cpp"
 )
+
+target_sources(raytracer-plugins-entity-sphere PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Vector2i.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Vector3f.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Transform.cpp"
+)
