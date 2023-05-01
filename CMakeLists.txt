@@ -5,7 +5,6 @@ project(Raytracer
     LANGUAGES CXX
 )
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(raytracer)
 set_target_properties(raytracer PROPERTIES
