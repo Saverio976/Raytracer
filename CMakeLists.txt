@@ -6,10 +6,19 @@ project(Raytracer
 )
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# --------- Entities plugins ---------
 add_library(raytracer-plugins-entity-sphere SHARED)
 set_target_properties(raytracer-plugins-entity-sphere PROPERTIES
     CXX_STANDARD 20
+    COMPILE_FLAGS "-fno-gnu-unique"
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/EntitiesPlugins"
 )
+# --------- Filters plugins ---------
+
+
+# -----------------------------------
+# --------- Main executable ---------
 
 add_executable(raytracer)
 set_target_properties(raytracer PROPERTIES

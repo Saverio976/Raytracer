@@ -10,8 +10,8 @@
 namespace RayTracer::Scenes {
     SceneLoader::SceneLoader(const std::string &filePath): _filePath(filePath) {
         _configWrapper = std::make_unique<ConfigWrapper>();
-        _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>("./EntitiesPlugin");
-        _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>("./FilterPlugin");
+        _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>("./EntitiesPlugins"); // TODO: use parameters path
+        _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>("./FiltersPlugins"); // TODO: use parameters path
     };
 
     void SceneLoader::subscribe(const std::string &event, std::function<void(const ISetting &)> func) {
