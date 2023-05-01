@@ -56,6 +56,14 @@ namespace RayTracer::Entities::Transform {
              * @return the scale
              */
             const Vector3f &getScale() const final;
+            /**
+             * @brief Assign a transform
+             *
+             * @param other the other transform
+             *
+             * @return the same transform modified
+             */
+            ITransform &operator=(const ITransform &other) final;
 
             protected:
             private:
