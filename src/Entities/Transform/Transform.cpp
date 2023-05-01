@@ -31,4 +31,11 @@ namespace RayTracer::Entities::Transform {
     void Transform::setRotation(const RayTracer::Entities::Transform::Vector3f &rotation) {
         this->_rotation = rotation;
     }
+
+    ITransform &Transform::operator=(const RayTracer::Entities::Transform::ITransform &other) {
+        this->_rotation = other.getRotation();
+        this->_scale = other.getScale();
+        this->_position = other.getPosition();
+        return *this;
+    }
 }
