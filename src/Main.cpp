@@ -99,6 +99,7 @@ namespace RayTracer {
         std::cout << "OPTIONS:" << std::endl;
         std::cout << "\t--scene-path scene-conf.yaax\tpath to scene config" << std::endl;
         std::cout << "\t--output-path file\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << "\t--help true\tto display the help message" << std::endl;
         std::cout << std::endl;
         std::cout << "CREDITS:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
