@@ -52,6 +52,7 @@ namespace RayTracer {
             std::string _baseFilePath;
             std::string _sceneConfFilePath;
             Scenes::Scene _scene;
+            std::string _help;
     };
 }
 

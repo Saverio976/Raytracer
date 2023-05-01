@@ -20,6 +20,16 @@ namespace RayTracer {
     {
         _parameters.parseCmdArgs(argc, argv);
         try {
+            _help = _parameters.getString("help");
+            if (_help == "true") {
+                help();
+                return;
+            }
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+            _exitCode = 84;
+        }
+        try {
             _sceneConfFilePath = _parameters.getString("scene-path");
         } catch (const std::exception &e) {
             std::cerr << e.what() << std::endl;
@@ -37,7 +47,7 @@ namespace RayTracer {
 
     void Main::run()
     {
-        if (_exitCode != 0) {
+        if (_exitCode != 0 || _help == "true") {
             return;
         }
         Scenes::SceneLoader loader(_sceneConfFilePath);
