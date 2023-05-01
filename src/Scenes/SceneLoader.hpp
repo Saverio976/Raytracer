@@ -10,10 +10,9 @@
     #include <string>
     #include <functional>
     #include <map>
+    #include <fstream>
     #include <filesystem>
-    #include "ISetting.hpp"
-    #include "IConfig.hpp"
-    #include "SettingWrapper.hpp"
+    #include "ConfigWrapper.hpp"
 
 namespace RayTracer::Scenes {
     /**
