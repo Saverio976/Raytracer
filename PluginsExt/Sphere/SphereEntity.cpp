@@ -14,8 +14,9 @@
 
 namespace RayTracer::PluginsExt::Sphere {
     SphereEntity::SphereEntity(const Scenes::ISetting &config):
-        _transform(Entities::Transform::Transform()),
-        _material(config)
+        _transform(Entities::Transform::Transform(*config.get("transform"))),
+        _material(*config.get("material")),
+        _radius(static_cast<double>(*config.get("radius")))
     {
     }
 

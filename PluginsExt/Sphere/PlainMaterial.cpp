@@ -15,7 +15,9 @@
 #include <cmath>
 
 namespace RayTracer::PluginsExt::Sphere {
-    PlainMaterial::PlainMaterial(const Scenes::ISetting &config) {}
+    PlainMaterial::PlainMaterial(const Scenes::ISetting &config): _shininess(static_cast<double>(*config.get("shininess"))),
+          _ambient(Images::Color(*config.get("ambient"))), _diffuse(Images::Color(*config.get("diffuse"))),
+          _specular(Images::Color(*config.get("specular"))) {};
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
     {
