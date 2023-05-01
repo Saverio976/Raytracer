@@ -28,7 +28,7 @@ namespace RayTracer::Scenes {
         _setting = &config->getRoot();
     }
 
-    SettingWrapper::SettingWrapper(SettingWrapper &src): _config(src.getConfig()) {
+    SettingWrapper::SettingWrapper(const SettingWrapper &src): _config(src.getConfig()) {
         if (!src.getPath().empty())
             _setting = &_config->lookup(src.getPath());
         else
@@ -58,17 +58,17 @@ namespace RayTracer::Scenes {
         return (true);
     }
 
-    int SettingWrapper::getLength() {
+    int SettingWrapper::getLength() const {
         if (!_setting->isAggregate())
             return -1;
         return _setting->getLength();
     }
 
-    std::string SettingWrapper::getPath() {
+    std::string SettingWrapper::getPath() const {
         return (_setting->getPath());
     }
 
-    std::string SettingWrapper::getKey() {
+    std::string SettingWrapper::getKey() const {
         std::string path = _setting->getPath();
         int pos = 0;
 
@@ -81,7 +81,7 @@ namespace RayTracer::Scenes {
         return (_config->lookup(path).getName());
     }
 
-    std::shared_ptr<libconfig::Config> SettingWrapper::getConfig() {
+    std::shared_ptr<libconfig::Config> SettingWrapper::getConfig() const {
         return (_config);
     }
 
@@ -108,14 +108,14 @@ namespace RayTracer::Scenes {
         }
     }
 
-    std::unique_ptr<ISetting> SettingWrapper::get(const std::string &key) {
+    std::unique_ptr<ISetting> SettingWrapper::get(const std::string &key) const {
         std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
 
         copy->moveTo(key);
         return copy;
     }
 
-    std::unique_ptr<ISetting> SettingWrapper::get(int index) {
+    std::unique_ptr<ISetting> SettingWrapper::get(int index) const {
         std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
 
         copy->moveTo(index);
