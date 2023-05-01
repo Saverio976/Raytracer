@@ -5,16 +5,17 @@
 ** Scene.cpp
 */
 
+#include "ISetting.hpp"
 #include "Scene.hpp"
 
 namespace RayTracer::Scenes {
-    void Scene::operator()(const IConfig &config) {
-        std::shared_ptr<ISetting> settingWrapper = config.getSetting();
+    void Scene::operator()(const ISetting &setting) {
+        std::shared_ptr<ISetting> settingWrapper;
         std::unique_ptr<ISetting> tmp;
         int length = 0;
         int length_two = 0;
 
-        settingWrapper->getSetting("camera");
+        settingWrapper = setting.get("camera");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
             tmp = settingWrapper->get(i);
@@ -22,7 +23,7 @@ namespace RayTracer::Scenes {
 
             _cameras.push_back(std::move(cameraPtr));
         }
-        settingWrapper->getSetting("ligths");
+        settingWrapper = setting.get("ligths");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
             length_two = (*settingWrapper).get(i)->getLength();
@@ -33,7 +34,7 @@ namespace RayTracer::Scenes {
                 _displayable.getLightList().push_back(std::move(lightPtr));
             }
         }
-        settingWrapper->getSetting("primitives");
+        settingWrapper = setting.get("primitives");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
             length_two = (*settingWrapper).get(i)->getLength();

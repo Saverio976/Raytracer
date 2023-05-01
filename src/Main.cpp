@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <string>
 #include <iostream>
+#include "ISetting.hpp"
 #include "Main.hpp"
 #include "Scene.hpp"
 #include "SceneLoader.hpp"
@@ -40,7 +41,9 @@ namespace RayTracer {
             return;
         }
         Scenes::SceneLoader loader(_sceneConfFilePath);
-        loader.subscribe("onChange", _scene);
+        loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
+            _scene(setting);
+        });
         loader.update();
         while (!_scene.isReady()) {
             std::this_thread::sleep_for(std::chrono::milliseconds(5));

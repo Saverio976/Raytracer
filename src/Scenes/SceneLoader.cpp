@@ -6,11 +6,12 @@
 */
 
 #include "SceneLoader.hpp"
+#include "ISetting.hpp"
 
 namespace RayTracer::Scenes {
     SceneLoader::SceneLoader(const std::string &filePath): _filePath(filePath) {};
 
-    void SceneLoader::subscribe(const std::string &event, std::function<void(const IConfig &)> func) {
+    void SceneLoader::subscribe(const std::string &event, std::function<void(const ISetting &)> func) {
         this->_events.emplace(event, func);
     }
 
@@ -23,7 +24,7 @@ namespace RayTracer::Scenes {
 
             if (it == _events.end())
                 return;
-            it->second(*_configWrapper);
+            it->second(*_configWrapper->getSetting());
         }
     }
 }
