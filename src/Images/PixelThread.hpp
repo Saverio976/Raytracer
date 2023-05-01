@@ -27,7 +27,7 @@ namespace RayTracer::Images {
              * @param ray the ray
              */
             PixelThread(const Scenes::Displayable &displayable, Color &color, const Images::Ray &ray);
-            ~PixelThread();
+            ~PixelThread() = default;
             /**
              * @brief The function that actualy do all the work
              */
