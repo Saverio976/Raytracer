@@ -22,14 +22,14 @@ namespace RayTracer {
             _sceneConfFilePath = _parameters.getString("scene-path");
         } catch (const std::exception &e) {
             std::cerr << e.what() << std::endl;
-            _exitCode = 1;
+            _exitCode = 84;
         }
         return;
         try {
             _baseFilePath = _parameters.getString("output-path");
         } catch (const std::exception &e) {
             std::cerr << e.what() << std::endl;
-            _exitCode = 1;
+            _exitCode = 84;
         }
         return;
     }
@@ -62,9 +62,10 @@ namespace RayTracer {
         for (const auto &camera : _scene.getCameras()) {
             try {
                 camera->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
+                _exitCode = 0;
             } catch (const std::runtime_error &e) {
                 std::cerr << e.what() << std::endl;
-                _exitCode = 1;
+                _exitCode = 84;
             }
             i++;
         }
