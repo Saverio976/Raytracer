@@ -7,6 +7,7 @@
 #ifndef VECTOR3F_HPP_
 #define VECTOR3F_HPP_
 
+#include "ISetting.hpp"
 namespace RayTracer::Entities::Transform {
     /**
      * @brief The Vector3f class
@@ -30,6 +31,14 @@ namespace RayTracer::Entities::Transform {
              * @param z z position
              */
             Vector3f(float x, float y, float z);
+            /**
+             * @brief Construct a new Vector3f from a setting
+             *
+             * needed: x, y, z
+             *
+             * @param setting the setting
+             */
+            Vector3f(const Scenes::ISetting &setting);
             /**
              * @brief Addition two vectors
              *

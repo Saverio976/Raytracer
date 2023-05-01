@@ -6,12 +6,25 @@
 */
 
 #include <cmath>
+#include <memory>
+#include "ISetting.hpp"
 #include "Vector3f.hpp"
 
 namespace RayTracer::Entities::Transform {
     Vector3f::Vector3f(const Vector3f &vector3f): _x(vector3f._x), _y(vector3f._y), _z(vector3f._z) {}
 
     Vector3f::Vector3f(float x, float y, float z): _x(x), _y(y), _z(z) {}
+
+    Vector3f::Vector3f(const Scenes::ISetting &setting)
+    {
+        std::unique_ptr<Scenes::ISetting> tmp = setting.get("x");
+
+        _x = static_cast<double>(*tmp);
+        tmp = setting.get("y");
+        _y = static_cast<double>(*tmp);
+        tmp = setting.get("z");
+        _z = static_cast<double>(*tmp);
+    }
 
     Vector3f Vector3f::operator+(const Vector3f &other) const
     {
