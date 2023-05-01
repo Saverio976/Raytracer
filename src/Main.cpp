@@ -25,10 +25,7 @@ namespace RayTracer {
                 help();
                 return;
             }
-        } catch (const std::exception &e) {
-            std::cerr << e.what() << std::endl;
-            _exitCode = 84;
-        }
+        } catch (const std::exception &e) { }
         try {
             _sceneConfFilePath = _parameters.getString("scene-path");
         } catch (const std::exception &e) {
