@@ -20,6 +20,13 @@ namespace RayTracer {
     {
         _parameters.parseCmdArgs(argc, argv);
         try {
+            _help = _parameters.getString("help");
+            if (_help == "true") {
+                help();
+                return;
+            }
+        } catch (const std::exception &e) { }
+        try {
             _sceneConfFilePath = _parameters.getString("scene-path");
         } catch (const std::exception &e) {
             std::cerr << e.what() << std::endl;
@@ -37,7 +44,7 @@ namespace RayTracer {
 
     void Main::run()
     {
-        if (_exitCode != 0) {
+        if (_exitCode != 0 || _help == "true") {
             return;
         }
         Scenes::SceneLoader loader(_sceneConfFilePath);
@@ -87,11 +94,12 @@ namespace RayTracer {
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file" << std::endl;
+        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file [--help true]" << std::endl;
         std::cout << std::endl;
         std::cout << "OPTIONS:" << std::endl;
         std::cout << "\t--scene-path scene-conf.yaax\tpath to scene config" << std::endl;
         std::cout << "\t--output-path file\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << "\t--help true\tto display the help message" << std::endl;
         std::cout << std::endl;
         std::cout << "CREDITS:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
