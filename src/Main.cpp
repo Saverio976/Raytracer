@@ -78,6 +78,19 @@ namespace RayTracer {
     {
         return _exitCode;
     }
+
+    void Main::help() const
+    {
+        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file" << std::endl;
+        std::cout << std::endl;
+        std::cout << "OPTIONS:" << std::endl;
+        std::cout << "\t--scene-path scene-conf.yaax\tpath to scene config" << std::endl;
+        std::cout << "\t--output-path file\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << std::endl;
+        std::cout << "CREDITS:" << std::endl;
+        std::cout << "\tAuthors: Y A A X" << std::endl;
+        std::cout << "\tRepository: https://github.com/Saverio976/Raytracer" << std::endl;
+    }
 }
 
 int main(int argc, char **argv)
@@ -85,6 +98,11 @@ int main(int argc, char **argv)
     int exitCode = 0;
     RayTracer::Main main(argc, argv);
 
+    if (main.getExitCode() != 0) {
+        main.help();
+        exitCode = main.getExitCode();
+        return exitCode;
+    }
     main.run();
     exitCode = main.getExitCode();
     return exitCode;

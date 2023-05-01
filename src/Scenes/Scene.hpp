@@ -11,7 +11,7 @@
     #include <memory>
     #include <mutex>
     #include <thread>
-#include "ISetting.hpp"
+    #include "ISetting.hpp"
     #include "Image.hpp"
     #include "ICamera.hpp"
     #include "ILight.hpp"

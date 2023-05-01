@@ -35,6 +35,10 @@ namespace RayTracer {
              * @return the exit code
              */
             int getExitCode() const;
+            /**
+             * @brief Print the help
+             */
+            void help() const;
 
         private:
             /**
