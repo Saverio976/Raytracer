@@ -17,7 +17,7 @@ namespace RayTracer::Images {
             this->_pixels.push_back(Color(0, 0, 0, 0));
     }
 
-    void Image::convertToPPM(const std::string &filePath) {
+    void Image::convertToPPM(const std::string &filePath) const {
         std::ofstream file;
 
         file.open(filePath);

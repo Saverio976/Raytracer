@@ -80,7 +80,7 @@ namespace RayTracer::Images {
              *
              * @param filePath the file
              */
-            void convertToPPM(const std::string &filePath);
+            void convertToPPM(const std::string &filePath) const;
             // sf::Texture convertToSfTexture();
             /**
              * @brief Get the pixels line at line `y` (const)
