@@ -44,7 +44,13 @@ namespace RayTracer {
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting);
         });
-        loader.update();
+        try {
+            loader.update();
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+            _exitCode = 84;
+            return;
+        }
         while (!_scene.isReady()) {
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
             try {
