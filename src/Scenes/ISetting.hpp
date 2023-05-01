@@ -22,7 +22,7 @@ namespace RayTracer::Scenes {
              *
              * @return true if the setting exists, false otherwise
              */
-            virtual bool getSetting(const std::string &key) = 0;
+            virtual void getSetting(const std::string &key) = 0;
             /**
              * @brief access element at index
              *
@@ -30,7 +30,7 @@ namespace RayTracer::Scenes {
              *
              * @return true if the setting exists, false otherwise
              */
-            virtual bool getSetting(int index) = 0;
+            virtual void getSetting(int index) = 0;
             /**
              * @brief get the length of the current key
              * works only for lists, array, groups
@@ -84,6 +84,12 @@ namespace RayTracer::Scenes {
              * @return a copy of the setting, moved to the index
              */
             virtual std::unique_ptr<ISetting> get(int index) const = 0;
+            /**
+            * @brief returns the current setting
+            *
+            * @return a copy of the setting at the current emplacement
+            */
+            virtual std::unique_ptr<ISetting> get() const = 0;
             /**
              * @brief cast operator to get the value
              *
