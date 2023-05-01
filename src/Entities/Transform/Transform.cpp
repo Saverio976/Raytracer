@@ -8,6 +8,9 @@
 #include "Transform.hpp"
 
 namespace RayTracer::Entities::Transform {
+    Transform::Transform(const Scenes::ISetting &setting): _position(*setting.get("position")),
+        _rotation(*setting.get("rotation")), _scale(*setting.get("scale")) {};
+
     const Vector3f &Transform::getPosition() const {
         return this->_position;
     }
