@@ -24,7 +24,6 @@ namespace RayTracer::Scenes {
 
         if (currentTime != _lastWriteTime) {
             auto it = _events.find("onChange");
-            std::cout << _filePath.empty() << std::endl;
             _configWrapper->readFile(_filePath);
 
             if (it == _events.end())
