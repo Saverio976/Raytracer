@@ -30,12 +30,6 @@ namespace RayTracer {
              */
             void run();
             /**
-             * @brief Export the scene to ppm files
-             *
-             * @param baseFilePath
-             */
-            void exportScene(const std::string &baseFilePath);
-            /**
              * @brief Get the exit code of the main
              *
              * @return the exit code
@@ -43,6 +37,12 @@ namespace RayTracer {
             int getExitCode() const;
 
         private:
+            /**
+             * @brief Export the scene to ppm files
+             *
+             * @param baseFilePath
+             */
+            void exportScene(const std::string &baseFilePath);
             Parameters &_parameters;
             int _exitCode;
             std::string _baseFilePath;
