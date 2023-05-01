@@ -9,4 +9,5 @@ target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/ConfigWrapper.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/SettingWrapper.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Scene.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/SceneState.cpp"
 )
