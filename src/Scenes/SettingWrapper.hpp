@@ -48,7 +48,7 @@ namespace RayTracer::Scenes {
          * @param config the config to wrap from libconfig++
          */
         explicit SettingWrapper(const std::shared_ptr<libconfig::Config> &config);
-        SettingWrapper(SettingWrapper &src);
+        SettingWrapper(const SettingWrapper &src);
         ~SettingWrapper() = default;
         /**
          * @brief get a precise setting of the config from key
@@ -72,25 +72,25 @@ namespace RayTracer::Scenes {
          *
          * @return -1 if invalid type or size
          */
-        int getLength();
+        int getLength() const;
         /**
          * @brief gets the full path of the current setting
          *
          * @return the path
          */
-        std::string getPath();
+        std::string getPath() const;
         /**
          * @brief gets the key of the setting
          *
          * @return the key
          */
-        std::string getKey();
+        std::string getKey() const;
         /**
          * @brief gets the config of a setting
          *
          * @return the config
          */
-        std::shared_ptr<libconfig::Config> getConfig();
+        std::shared_ptr<libconfig::Config> getConfig() const;
         /**
          * @brief
          *
@@ -111,7 +111,7 @@ namespace RayTracer::Scenes {
          *
          * @return a copy of the setting, moved to the key
          */
-        std::unique_ptr<ISetting> get(const std::string &key) override;
+        std::unique_ptr<ISetting> get(const std::string &key) const override;
         /**
          * @brief search the setting at the given index in the childs
          *
@@ -119,7 +119,7 @@ namespace RayTracer::Scenes {
          *
          * @return a copy of the setting, moved to the index
          */
-        std::unique_ptr<ISetting> get(int index) override;
+        std::unique_ptr<ISetting> get(int index) const override;
         /**
          * @brief cast operator to get bool from setting
          *

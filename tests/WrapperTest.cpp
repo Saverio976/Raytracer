@@ -1,19 +1,19 @@
 #include <iostream>
 #include <libconfig.h++>
 #include "ConfigWrapper.hpp"
+#include "ISetting.hpp"
 
-using namespace RayTracer::Scenes;
 /*
  * Exemple d'un code récupérant les informations concernant les sphères dans le fichier testScene.config
  */
 int main(int ac, char **av) {
-    ConfigWrapper test;
+    RayTracer::Scenes::ConfigWrapper test;
     char keys[5] = "xyzr";
     char color_keys[4] = "rgb";
 
     test.readFile("./testScene.config");
 
-    std::shared_ptr<SettingWrapper> setting = test.getScene();
+    const std::shared_ptr<RayTracer::Scenes::ISetting> setting = test.getSetting();
 
     //récupération de l'objet contenant les sphères
     setting->getSetting("primitives.spheres");

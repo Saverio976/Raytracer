@@ -7,8 +7,8 @@
 
 #ifndef TRANSFORM_HPP_
     #define TRANSFORM_HPP_
-
     #include "ITransform.hpp"
+    #include "ISetting.hpp"
     #include "Vector3f.hpp"
 
 namespace RayTracer::Entities::Transform {
@@ -20,6 +20,7 @@ namespace RayTracer::Entities::Transform {
      */
     class Transform : public ITransform {
         public:
+            explicit Transform(const Scenes::ISetting &setting);
             /**
              * @brief Set the position
              *
@@ -56,6 +57,14 @@ namespace RayTracer::Entities::Transform {
              * @return the scale
              */
             const Vector3f &getScale() const final;
+            /**
+             * @brief Assign a transform
+             *
+             * @param other the other transform
+             *
+             * @return the same transform modified
+             */
+            ITransform &operator=(const ITransform &other) final;
 
             protected:
             private:

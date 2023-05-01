@@ -6,10 +6,32 @@
 */
 
 #include "Color.hpp"
+#include "ISetting.hpp"
+#include <memory>
 
 namespace RayTracer::Images {
+
+    Color::Color(const Color &color) {
+        this->_r = color[Color::Types::RED];
+        this->_g = color[Color::Types::GREEN];
+        this->_b = color[Color::Types::BLUE];
+        this->_a = color[Color::Types::ALPHA];
+    }
+
     Color::Color(float r, float g, float b, float a) : _r(r), _g(g), _b(b), _a(a) { }
     Color::Color() : _r(0), _g(0), _b(0), _a(0) { }
+
+    Color::Color(const Scenes::ISetting &setting) {
+        std::unique_ptr<Scenes::ISetting> tmp = setting.get("r");
+
+        this->_r = static_cast<double>(*tmp);
+        tmp = setting.get("g");
+        this->_g = static_cast<double>(*tmp);
+        tmp = setting.get("b");
+        this->_b = static_cast<double>(*tmp);
+        tmp = setting.get("a");
+        this->_a = static_cast<double>(*tmp);
+    }
 
     Color Color::operator+(const Color &other) const {
         float new_r = this->_r + other[Types::RED];

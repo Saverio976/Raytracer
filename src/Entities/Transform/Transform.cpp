@@ -8,6 +8,9 @@
 #include "Transform.hpp"
 
 namespace RayTracer::Entities::Transform {
+    Transform::Transform(const Scenes::ISetting &setting): _position(*setting.get("position")),
+        _rotation(*setting.get("rotation")), _scale(*setting.get("scale")) {};
+
     const Vector3f &Transform::getPosition() const {
         return this->_position;
     }
@@ -30,5 +33,12 @@ namespace RayTracer::Entities::Transform {
 
     void Transform::setRotation(const RayTracer::Entities::Transform::Vector3f &rotation) {
         this->_rotation = rotation;
+    }
+
+    ITransform &Transform::operator=(const RayTracer::Entities::Transform::ITransform &other) {
+        this->_rotation = other.getRotation();
+        this->_scale = other.getScale();
+        this->_position = other.getPosition();
+        return *this;
     }
 }

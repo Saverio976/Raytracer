@@ -37,25 +37,25 @@ namespace RayTracer::Scenes {
              *
              * @return -1 if invalid type or size
              */
-            virtual int getLength() = 0;
+            virtual int getLength() const = 0;
             /**
              * @brief gets the full path of the current setting
              *
              * @return the path
              */
-            virtual std::string getPath() = 0;
+            virtual std::string getPath() const = 0;
             /**
              * @brief gets the key of the current setting
              *
              * @return the key
              */
-            virtual std::string getKey() = 0;
+            virtual std::string getKey() const = 0;
             /**
              * @brief gets the config of a setting
              *
              * @return the config
              */
-            virtual std::shared_ptr<libconfig::Config> getConfig() = 0;
+            virtual std::shared_ptr<libconfig::Config> getConfig() const = 0;
             /**
              * @brief
              *
@@ -75,7 +75,7 @@ namespace RayTracer::Scenes {
              *
              * @return a copy of the setting, moved to the key
              */
-            virtual std::unique_ptr<ISetting> get(const std::string &key) = 0;
+            virtual std::unique_ptr<ISetting> get(const std::string &key) const = 0;
             /**
              * @brief search the setting at the given index in the childs
              *
@@ -83,7 +83,7 @@ namespace RayTracer::Scenes {
              *
              * @return a copy of the setting, moved to the index
              */
-            virtual std::unique_ptr<ISetting> get(int index) = 0;
+            virtual std::unique_ptr<ISetting> get(int index) const = 0;
             /**
              * @brief cast operator to get the value
              *
