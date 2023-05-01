@@ -56,7 +56,9 @@ namespace RayTracer {
     void Main::exportScene(const std::string &baseFilePath)
     {
         int i = 0;
-
+        if (_exitCode != 0) {
+            return;
+        }
         for (const auto &camera : _scene.getCameras()) {
             try {
                 camera->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
