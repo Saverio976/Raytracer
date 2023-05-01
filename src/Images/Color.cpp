@@ -6,6 +6,8 @@
 */
 
 #include "Color.hpp"
+#include "ISetting.hpp"
+#include <memory>
 
 namespace RayTracer::Images {
 
@@ -17,6 +19,18 @@ namespace RayTracer::Images {
     }
 
     Color::Color(float r, float g, float b, float a) : _r(r), _g(g), _b(b), _a(a) { }
+
+    Color::Color(const Scenes::ISetting &setting) {
+        std::unique_ptr<Scenes::ISetting> tmp = setting.get("r");
+
+        this->_r = static_cast<double>(*tmp);
+        tmp = setting.get("g");
+        this->_g = static_cast<double>(*tmp);
+        tmp = setting.get("b");
+        this->_b = static_cast<double>(*tmp);
+        tmp = setting.get("a");
+        this->_a = static_cast<double>(*tmp);
+    }
 
     Color Color::operator+(const Color &other) const {
         float new_r = this->_r + other[Types::RED];
