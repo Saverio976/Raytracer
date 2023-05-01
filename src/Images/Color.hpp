@@ -117,7 +117,6 @@ namespace RayTracer::Images {
              */
             void set(const Types &type, float value);
 
-        protected:
         private:
             float _r;
             float _g;

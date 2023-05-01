@@ -18,6 +18,10 @@ namespace RayTracer::Entities::Transform {
         public:
             ~Vector3f() = default;
             /**
+             * @brief Construct a new Vector3f with x=0, y=0, z=0
+             */
+            Vector3f();
+            /**
              * @brief Construct a new Vector3f
              *
              * @param vector3f the vector
@@ -110,7 +114,14 @@ namespace RayTracer::Entities::Transform {
              */
             Vector3f getNormalized() const;
             /**
-             * @brief Get distance between this point and other point
+             * @brief Get dot product
+             *
+             * @param other the other
+             *
+             * @return x^other.x + y^other.y + z^other.z
+             */
+            double dot(const Vector3f &other) const;
+            /* @brief Get distance between this point and other point
              *
              * @param other the other point
              *

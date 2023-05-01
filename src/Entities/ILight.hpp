@@ -7,7 +7,7 @@
 
 #ifndef ILIGHT_HPP_
     #define ILIGHT_HPP_
-    #include "../Images/Color.hpp"
+    #include "Color.hpp"
     #include "Displayable.hpp"
     #include "Transform/Vector3f.hpp"
     #include "IEntity.hpp"

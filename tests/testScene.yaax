@@ -14,12 +14,20 @@ primitives :
 {
     # List of spheres
     spheres = (
-        {x = 60; y = 5; z = 40; r = 25; color = { r = 255; g = 64; b = 64; };},
-        {x = -40; y = 20; z = -10; r = 35; color = { r = 64; g = 255; b = 64; };}
-    );
-    # List of planes
-    planes = (
-        {axis = "Z"; position = -20; color = { r = 64; g = 64; b = 255; };}
+        {
+            radius = 12.0;
+            transform = {
+                position = {x = 60; y = 20; z = -10;};
+                scale = {x = 60; y = 20; z = -10;};
+                rotation = {x = 60; y = 20; z = -10;};
+            };
+            material = {
+                shininess = 1.0;
+                ambient = {r = 12; g = 255; b = 64;};
+                diffuse = {r = 12; g = 255; b = 64;};
+                specular = {r = 12; g = 255; b = 64;}
+            };
+        },
     );
 };
 
