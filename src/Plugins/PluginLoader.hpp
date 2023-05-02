@@ -29,7 +29,7 @@ namespace RayTracer::Plugins {
                     sizeFilePath = currentFilePath.size();
                     if (currentFilePath.substr(sizeFilePath - 3, sizeFilePath) == ".so") {
                         fileName = entry.path().filename();
-                        Factory::add(fileName.substr(0, sizeFilePath - 3), std::make_unique<Handler>(currentFilePath));
+                        Factory::add(fileName.substr(0, fileName.size() - 3), std::make_unique<Handler>(currentFilePath));
                     }
                 }
             }

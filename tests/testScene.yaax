@@ -1,33 +1,36 @@
 # Configuration of the camera
-camera:
+cameras:
 (
     {
-        resolution = {width = 1920; height = 1080;};
-        position = {x = 0; y = -100; z = 20;};
-        rotation = {x = 0; y = 0; z = 0;};
-        fieldOfView = 72.0; # In degree
-    },
+        size = {x: 5; y = 5;};
+        transform = {
+            position = {x = -150.0; y = -150.0; z = -10.0;};
+            scale = {x = 60.0; y = 20.0; z = -10.0;};
+            rotation = {x = 60.0; y = 20.0; z = -10.0;};
+        };
+        focal = 15.0;
+    }
 );
 
 # Primitives in the scene
 primitives :
 {
     # List of spheres
-    spheres = (
+    raytracer-plugins-entity-sphere = (
         {
             radius = 12.0;
             transform = {
-                position = {x = 60; y = 20; z = -10;};
-                scale = {x = 60; y = 20; z = -10;};
-                rotation = {x = 60; y = 20; z = -10;};
+                position = {x = 60.0; y = 20.0; z = -10.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
             };
             material = {
                 shininess = 1.0;
-                ambient = {r = 12; g = 255; b = 64;};
-                diffuse = {r = 12; g = 255; b = 64;};
-                specular = {r = 12; g = 255; b = 64;}
+                ambient = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
+                diffuse = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
+                specular = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;}
             };
-        },
+        }
     );
 };
 
@@ -35,13 +38,14 @@ primitives :
 lights :
 {
     # List of ambient lights
-    ambient = (
-        {intensity = 0.4;},
-        {intensity = 2;}
-    );
-    # List of directional lights
-    directional = (
-        {intensity = 0.4},
-        {intensity = 2}
+    AmbientLight = (
+        {
+            transform = {
+                position = {x = 60.0; y = 20.0; z = -10.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+        }
     );
 };

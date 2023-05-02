@@ -32,8 +32,10 @@ set_target_properties(AmbientLight PROPERTIES
 # --------- Main executable ---------
 
 add_executable(raytracer)
+set(CMAKE_BUILD_TYPE Debug)
 set_target_properties(raytracer PROPERTIES
     CXX_STANDARD 20
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 add_subdirectory(PluginsExt)

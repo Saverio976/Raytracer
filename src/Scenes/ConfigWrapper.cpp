@@ -8,7 +8,15 @@
 #include "ConfigWrapper.hpp"
 
 namespace RayTracer::Scenes {
-    bool ConfigWrapper::readFile(const std::string &path) {
+    const char *ConfigWrapper::ReadException::what() const throw() {
+        return ("Error: can't read given file");
+    }
+
+    const char *ConfigWrapper::WriteException::what() const throw() {
+        return ("Error: can't write given config");
+    }
+
+    void ConfigWrapper::readFile(const std::string &path) {
         std::shared_ptr<libconfig::Config> fileConfig = std::make_shared<libconfig::Config>();
 
         try {
@@ -16,20 +24,18 @@ namespace RayTracer::Scenes {
             _config = fileConfig;
         } catch (libconfig::ParseException &e) {
             std::cerr << "Parse error at " << e.getFile() << ":" << e.getLine() << " - " << e.getError() << std::endl;
-            return false;
+            throw ConfigWrapper::ReadException();
         }
         _scene = std::make_unique<SettingWrapper>(_config);
-        return true;
     }
 
-    bool ConfigWrapper::writeFile(const std::string &path) {
+    void ConfigWrapper::writeFile(const std::string &path) {
         try {
             _config->writeFile(path.c_str());
         } catch (libconfig::FileIOException &e) {
             std::cerr << "Writing error: " << e.what() << std::endl;
-            return false;
+            throw ConfigWrapper::WriteException();
         }
-        return true;
     }
 
     std::shared_ptr<ISetting> ConfigWrapper::getSetting() const {

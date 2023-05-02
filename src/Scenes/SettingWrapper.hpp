@@ -21,17 +21,27 @@ namespace RayTracer::Scenes {
      * it allows the user to navigate through the scene configuration by changing the path of the setting
      */
     class SettingWrapper: public ISetting {
+    public:
         /**
          * @brief an exception for when the key is not found
          */
         class ParsingException: public std::exception {
+            public:
+                explicit ParsingException(const std::string &key);
+                const char *what() const throw();
+            private:
+                std::string _msg;
+        };
+        /**
+         * @brief an exception for when the key is not found
+         */
+        class TypeException: public std::exception {
         public:
-            explicit ParsingException(const std::string &key);
+            explicit TypeException(const std::string &key);
             const char *what() const throw();
         private:
             std::string _msg;
         };
-    public:
         /**
          * @brief Creates a SettingWrapper
          *

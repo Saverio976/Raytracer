@@ -44,6 +44,8 @@ namespace RayTracer::Factories {
              */
             Interface *get(const std::string &name, const Scenes::ISetting &setting)
             {
+                if (_stock.count(name) == 0)
+                    throw std::runtime_error(name + " <- not found");
                 return _stock.at(name)->get(setting);
             }
             /**

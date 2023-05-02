@@ -19,18 +19,14 @@ namespace RayTracer::Scenes {
              * @brief read and parse the file at given path
              *
              * @param path the path to the file
-             *
-             * @return true if parsing worked, false otherwise
              */
-            virtual bool readFile(const std::string &path) = 0;
+            virtual void readFile(const std::string &path) = 0;
             /**
              * @brief writes the current config in a file at the given path
              *
              * @param path the path to the file
-             *
-             * @return true if writing worked, false otherwise
              */
-            virtual bool writeFile(const std::string &path) = 0;
+            virtual void writeFile(const std::string &path) = 0;
             /**
              * @brief returns the current SettingWrapper
              *

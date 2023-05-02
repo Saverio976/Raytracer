@@ -87,4 +87,8 @@ namespace RayTracer::Entities::Transform {
         float dz = _z - other._z;
         return std::sqrt(dx * dx + dy * dy + dz * dz);
     }
+
+    double Vector3f::dot(const RayTracer::Entities::Transform::Vector3f &other) const {
+        return _x * _x + _y * _y + _z * _z;
+    }
 }

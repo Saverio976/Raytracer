@@ -53,19 +53,13 @@ namespace RayTracer {
         });
         try {
             loader.update();
+            this->_scene.renders();
         } catch (const std::exception &e) {
             std::cerr << e.what() << std::endl;
             _exitCode = 84;
             return;
         }
-        while (!_scene.isReady()) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(5));
-            try {
-                loader.update();
-            } catch (const std::exception &e) {
-                std::cerr << e.what() << std::endl;
-            }
-        }
+        this->_scene.wait_end();
         exportScene(_baseFilePath);
     }
 
