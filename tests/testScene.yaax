@@ -2,7 +2,7 @@
 cameras:
 (
     {
-        size = {x: 5; y = 5;};
+        size = {x: 50; y = 50;};
         transform = {
             position = {x = -150.0; y = -150.0; z = -10.0;};
             scale = {x = 60.0; y = 20.0; z = -10.0;};
@@ -18,7 +18,7 @@ primitives :
     # List of spheres
     raytracer-plugins-entity-sphere = (
         {
-            radius = 12.0;
+            radius = 1.0;
             transform = {
                 position = {x = 60.0; y = 20.0; z = -10.0;};
                 scale = {x = 60.0; y = 20.0; z = -10.0;};

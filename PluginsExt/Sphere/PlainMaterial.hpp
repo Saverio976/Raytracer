@@ -28,7 +28,7 @@ namespace RayTracer::PluginsExt::Sphere {
             Images::Color _ambient;
             Images::Color _diffuse;
             Images::Color _specular;
-            float _shininess;
+            double _shininess;
     };
 }
 

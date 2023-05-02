@@ -16,8 +16,8 @@ namespace RayTracer::Images {
     { }
 
     void PixelThread::operator()() {
-        float distance = -1;
-        float tmpDistance;
+        double distance = -1;
+        double tmpDistance;
         size_t position = 0;
         const std::vector<std::unique_ptr<Entities::IPrimitive>> &list = _displayable.getPrimitiveList();
         std::optional<RayTracer::Entities::Transform::Vector3f> point;
@@ -27,15 +27,16 @@ namespace RayTracer::Images {
             point = list[i]->isCollided(this->_ray);
             if (point == std::nullopt)
                 continue;
-            std::cout << "points : " << point->getX() << " " << point->getY() << " " << point->getZ() << std::endl;
             tmpDistance = point->getDistance(this->_ray.getOrigin());
             if (tmpDistance < distance || distance == -1) {
                 distance = tmpDistance;
                 position = i;
             }
         }
-        std::cout << "j'ai une collision ? " << distance << std::endl;
-        if (distance != -1)
+        //std::cout << "j'ai une collision ? " << distance << std::endl;
+        if (distance != -1) {
             this->_color = list[position]->getColor(this->_ray, this->_displayable);
+            std::cout << "color catch : " << this->_color << std::endl;
+        }
     }
 }

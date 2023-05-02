@@ -43,13 +43,13 @@ namespace RayTracer {
              */
             const int getInt(const std::string &key) const;
             /**
-             * @brief Get config key value as float
+             * @brief Get config key value as double
              *
              * @param key the key
              *
-             * @return the float
+             * @return the double
              */
-            const float getFloat(const std::string &key) const;
+            const double getdouble(const std::string &key) const;
             /**
              * @brief Get config key value as string
              *
@@ -66,12 +66,12 @@ namespace RayTracer {
              */
             void set(const std::string &key, int value);
             /**
-             * @brief Set config key value as float
+             * @brief Set config key value as double
              *
              * @param key the key
              * @param value the value
              */
-            void set(const std::string &key, float value);
+            void set(const std::string &key, double value);
             /**
              * @brief Set config key value as string
              *
@@ -85,7 +85,7 @@ namespace RayTracer {
             static std::unique_ptr<Parameters> _parameters;
             void parseCmdArg(const std::string &key, const std::string &value);
             std::map<std::string, int> _valuesInt;
-            std::map<std::string, float> _valuesFloat;
+            std::map<std::string, double> _valuesdouble;
             std::map<std::string, std::string> _valuesString;
         private:
     };

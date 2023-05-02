@@ -37,9 +37,9 @@ namespace RayTracer {
         return _valuesInt.at(key);
     }
 
-    const float Parameters::getFloat(const std::string &key) const
+    const double Parameters::getdouble(const std::string &key) const
     {
-        return _valuesFloat.at(key);
+        return _valuesdouble.at(key);
     }
 
     const std::string &Parameters::getString(const std::string &key) const
@@ -52,9 +52,9 @@ namespace RayTracer {
         _valuesInt[key] = value;
     }
 
-    void Parameters::set(const std::string &key, float value)
+    void Parameters::set(const std::string &key, double value)
     {
-        _valuesFloat[key] = value;
+        _valuesdouble[key] = value;
     }
 
     void Parameters::set(const std::string &key, const std::string &value)
@@ -70,21 +70,21 @@ namespace RayTracer {
     {
         std::stringstream ss(value);
         int valueInt;
-        float valueFloat;
+        double valuedouble;
 
-        ss >> valueFloat;
+        ss >> valuedouble;
         if (ss.fail()) {
             set(key, value);
             return;
         }
         if (value.find('.') != std::string::npos) {
-            set(key, valueFloat);
+            set(key, valuedouble);
             return;
         }
         ss.str(value);
         ss >> valueInt;
         if (ss.fail()) {
-            set(key, valueFloat);
+            set(key, valuedouble);
             return;
         }
         set(key, valueInt);

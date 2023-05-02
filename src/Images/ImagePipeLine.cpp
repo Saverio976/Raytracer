@@ -24,6 +24,8 @@ namespace RayTracer::Images {
         size_t x = 0;
         size_t y = 0;
         bool stop = false;
+        size_t length = this->_image.getSize().getX() * this->_image.getSize().getY();
+        maxThread = (maxThread > length) ? length : maxThread;
 
         std::cout << "je passes pour générer l'image" << std::endl;
         for (size_t i = 0; i < maxThread; i++)
