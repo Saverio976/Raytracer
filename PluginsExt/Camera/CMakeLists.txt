@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
-target_sources(raytracer-plugins-entity-sphere PRIVATE
-        CameraEntity.cpp
+target_sources(camera PRIVATE
+    CameraEntity.cpp
     CameraCreator.cpp
     EntryPoint.cpp
 )
