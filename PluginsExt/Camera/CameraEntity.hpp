@@ -36,13 +36,13 @@ namespace RayTracer::PluginsExt::Camera {
              *
              * @param vector the size
              */
-            void setSize(const Transform::Vector2i &vector) final;
+            void setSize(const Entities::Transform::Vector2i &vector) final;
             /**
              * @brief Get the size (of the screen)
              *
              * @return the size
              */
-            const Transform::Vector2i &getSize() const final;
+            const Entities::Transform::Vector2i &getSize() const final;
             /**
              * @brief Render an image
              *
@@ -67,7 +67,7 @@ namespace RayTracer::PluginsExt::Camera {
 
         protected:
         private:
-            std::unique_ptr<Images::Image> _image;
+            Images::Image _image;
             Entities::Transform::Vector2i _size;
             float _focal;
             std::list<std::unique_ptr<Filters::IFilter>> _filters;

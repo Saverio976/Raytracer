@@ -14,11 +14,13 @@ namespace RayTracer::PluginsExt::Camera {
     CameraEntity::CameraEntity(const Scenes::ISetting &config) :
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _size(Entities::Transform::Vector2i(*config.get("size"))),
-        _focal(*config.get("focal")),
         _image(Images::Image(_size)) {
+        std::unique_ptr<Scenes::ISetting> tmp = config.get("focal");
+
+        this->_focal = static_cast<double>(*tmp);
         try {
-            std::shared_ptr<ISetting> settingWrapper = config.get("filter");
-            std::unique_ptr<ISetting> tmp;
+            std::shared_ptr<Scenes::ISetting> settingWrapper = config.get("filter");
+            std::unique_ptr<Scenes::ISetting> tmp;
 
             for (int i = 0; i < settingWrapper->getLength(); i++) {
                 tmp = settingWrapper->get(i);
@@ -59,11 +61,11 @@ namespace RayTracer::PluginsExt::Camera {
 
     const Images::Image &CameraEntity::render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) {
         Images::RayIterrator iterator(*this);
-        Images::ImagePipeLine::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
+        Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 
         imagePipeLine.generate(1, 1);
-        for (const IFilter &filter : this->_filters) {
-            imagePipeLine.apply(filter);
+        for (const std::unique_ptr<Filters::IFilter> &filter : this->_filters) {
+            imagePipeLine.apply(*filter);
         }
         return this->_image;
     }
