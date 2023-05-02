@@ -7,6 +7,8 @@
 #ifndef VECTOR2I_HPP_
     #define VECTOR2I_HPP_
 
+    #include "IConfig.hpp"
+
 namespace RayTracer::Entities::Transform {
     /**
      * @brief The Vector2i class
@@ -16,6 +18,12 @@ namespace RayTracer::Entities::Transform {
     class Vector2i {
         public:
             ~Vector2i() = default;
+            /**
+             * @brief Construct a new Vector2i
+             *
+             * @param vector the vector
+             */
+            Vector2i(const Scenes::ISetting &config);
             /**
              * @brief Construct a new Vector2i
              *
