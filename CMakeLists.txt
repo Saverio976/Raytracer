@@ -19,6 +19,12 @@ set_target_properties(camera PROPERTIES
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
 )
+add_library(AmbientLight SHARED)
+set_target_properties(AmbientLight PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
 # --------- Filters plugins ---------
 
 
