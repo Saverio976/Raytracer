@@ -37,12 +37,6 @@ namespace RayTracer::PluginsExt::AmbientLight {
         Images::Ray ray(vector, point);
         std::optional<Entities::Transform::Vector3f> impact;
 
-        for (const std::unique_ptr<Entities::IPrimitive> &primitive : displayable.getPrimitiveList()) {
-            impact = primitive->isCollided(ray);
-            if (impact == std::nullopt)
-                continue;
-            return Images::Color(0, 0, 0, 0);
-        }
         return this->_color;
     }
 
