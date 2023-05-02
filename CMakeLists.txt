@@ -17,7 +17,7 @@ add_library(camera SHARED)
 set_target_properties(camera PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
 )
 # --------- Filters plugins ---------
 
