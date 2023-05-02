@@ -56,19 +56,19 @@ namespace RayTracer::Entities {
              *
              * @return the image
              */
-            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state);
+            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) = 0;
             /**
              * @brief Get the image (possible when rendering)
              *
              * @return the image
              */
-            virtual const Images::Image &getImage() const;
+            virtual const Images::Image &getImage() const = 0;
             /**
              * @brief Get the filters
              *
              * @return the filters
              */
-            virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters();
+            virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters() = 0;
 
         protected:
         private:

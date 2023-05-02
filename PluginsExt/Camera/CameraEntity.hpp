@@ -15,7 +15,7 @@ namespace RayTracer::PluginsExt::Camera {
     class CameraEntity : public RayTracer::Entities::ICamera {
         public:
             CameraEntity(const Scenes::ISetting &config);
-            ~CameraEntity();
+            ~CameraEntity() = default;
             Type getType() const final;
             Entities::Transform::ITransform &getTransform() final;
             const Entities::Transform::ITransform &getTransform() const final;
