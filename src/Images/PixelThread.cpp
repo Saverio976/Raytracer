@@ -24,6 +24,7 @@ namespace RayTracer::Images {
 
         std::cout << "je passes pour le calcul du pixel" << std::endl;
         for (size_t i = 0; i < list.size(); i++) {
+            std::cout << this->_ray.getOrigin().getX() << " " << this->_ray.getOrigin().getY() << " " << this->_ray.getOrigin().getZ() <<std::endl;
             point = list[i]->isCollided(this->_ray);
             if (point == std::nullopt)
                 continue;
