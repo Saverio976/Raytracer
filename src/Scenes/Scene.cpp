@@ -52,17 +52,12 @@ namespace RayTracer::Scenes {
 
     void Scene::renders() {
         this->_state.changeState(SceneState::States::RUNNING);
-        this->_thread = std::thread([&] () -> void * {
-            try {
-                for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
-                    if (this->_state.getState() == SceneState::States::CANCELLED)
-                        break;
-                    camera->render(this->_displayable, this->_state);
-                }
-            } catch (std::exception &e) {
-                std::cerr << e.what() << std::endl;
+        this->_thread = std::thread([&] () -> void {
+            for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
+                if (this->_state.getState() == SceneState::States::CANCELLED)
+                    break;
+                camera->render(this->_displayable, this->_state);
             }
-            return nullptr;
         });
     }
 
