@@ -2,7 +2,7 @@
 cameras:
 (
     {
-        size = {x: 10; y = 10;};
+        size = {x: 500; y = 500;};
         transform = {
             position = {x = 0.0; y = 0.0; z = 0.0;};
             scale = {x = 60.0; y = 20.0; z = -10.0;};
@@ -19,11 +19,11 @@ primitives :
     Plane = (
         {
             transform = {
-                position = {x = 15.0; y = 15.0; z = 0.0;};
+                position = {x = 0.0; y = 150.0; z = -100.0;};
                 scale = {x = 60.0; y = 20.0; z = -10.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.01; y = 0.0; z = 0.0;};
             };
-            size = {x = 150.0; y = 150.0; z = 150.0;};
+            size = {x = 50.0; y = 50.0; z = 50.0;};
         }
     );
 };
