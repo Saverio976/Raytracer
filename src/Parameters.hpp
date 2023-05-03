@@ -49,7 +49,7 @@ namespace RayTracer {
              *
              * @return the double
              */
-            const double getdouble(const std::string &key) const;
+            const double getDouble(const std::string &key) const;
             /**
              * @brief Get config key value as string
              *
