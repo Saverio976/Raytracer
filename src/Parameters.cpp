@@ -78,7 +78,7 @@ namespace RayTracer {
             return;
         }
         if (value.find('.') != std::string::npos) {
-            set(key, valuedouble);
+            set(key, valueDouble);
             return;
         }
         ss.str(value);
