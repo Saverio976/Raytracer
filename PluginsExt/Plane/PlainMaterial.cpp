@@ -5,6 +5,7 @@
 ** PlainMaterial.cpp
 */
 
+#include <cmath>
 #include "PlainMaterial.hpp"
 #include "Color.hpp"
 #include "ISetting.hpp"
