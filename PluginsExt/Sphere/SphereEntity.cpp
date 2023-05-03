@@ -69,6 +69,5 @@ namespace RayTracer::PluginsExt::Sphere {
     {
         auto intersect = isCollided(ray);
         return _material.getColor(ray, _transform, intersect.value(), displayable) + Images::Color(0, 0, 0, 255);
-        // return Images::Color(255, 0, 0, 255);
     }
 }
