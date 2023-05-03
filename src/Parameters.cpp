@@ -39,7 +39,7 @@ namespace RayTracer {
 
     const double Parameters::getdouble(const std::string &key) const
     {
-        return _valuesdouble.at(key);
+        return _valuesDouble.at(key);
     }
 
     const std::string &Parameters::getString(const std::string &key) const
