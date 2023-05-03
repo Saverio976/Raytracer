@@ -42,7 +42,7 @@ namespace RayTracer::Images {
         return _ray;
     }
 
-    bool RayIterrator::iterrator::operator==(const RayIterrator::iterrator &other) {
+    bool RayIterrator::iterrator::operator==(const RayIterrator::iterrator &other) const {
         bool isEq = _ray.getOrigin().getX() == other._ray.getOrigin().getX() &&
                     _ray.getOrigin().getY() == other._ray.getOrigin().getY() &&
                     _ray.getOrigin().getZ() == other._ray.getOrigin().getZ();
@@ -53,8 +53,13 @@ namespace RayTracer::Images {
         return isEq;
     }
 
-    bool RayIterrator::iterrator::operator!=(const RayIterrator::iterrator &other) {
+    bool RayIterrator::iterrator::operator!=(const RayIterrator::iterrator &other) const {
         return !(*this == other);
+    }
+
+    RayIterrator::iterrator &RayIterrator::iterrator::operator=(const RayIterrator::iterrator &other) {
+        _ray = other._ray;
+        return *this;
     }
 
     // -----------------------------------------------------------------------

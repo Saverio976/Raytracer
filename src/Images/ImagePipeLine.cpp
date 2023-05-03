@@ -35,13 +35,13 @@ namespace RayTracer::Images {
             for (std::thread &thread : threads) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
                 thread = std::thread(pixelThread);
-                ++it;
+                it = ++it;
                 x++;
                 if (x >= this->_image.getSize().getX()) {
                     x = 0;
                     y++;
                 }
-                if (y >= this->_image.getSize().getY()) {
+                if (y >= this->_image.getSize().getY() || it == _rayIterrator.end()) {
                     stop = true;
                     break;
                 }

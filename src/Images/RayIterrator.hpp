@@ -51,7 +51,7 @@ namespace RayTracer::Images {
                     *
                     * @return true if equal
                     */
-                    bool operator==(const RayIterrator::iterrator &other);
+                    bool operator==(const RayIterrator::iterrator &other) const;
                     /**
                     * @brief Compare two RayIterrator
                     *
@@ -59,7 +59,15 @@ namespace RayTracer::Images {
                     *
                     * @return true if not equal
                     */
-                    bool operator!=(const RayIterrator::iterrator &other);
+                    bool operator!=(const RayIterrator::iterrator &other) const;
+                    /**
+                     * @brief Compare two RayIterrator::iterrator
+                     *
+                     * @param other the other
+                     *
+                     * @return true if equal
+                     */
+                    RayIterrator::iterrator &operator=(const RayIterrator::iterrator &other);
                 private:
                     const Ray _last;
                     const Entities::Transform::Vector2i _size;
