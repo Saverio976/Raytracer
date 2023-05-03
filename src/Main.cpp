@@ -59,7 +59,7 @@ namespace RayTracer {
             _exitCode = 84;
             return;
         }
-        this->_scene.wait_end();
+        this->_scene.wait_end(); // TODO: ici
         exportScene(_baseFilePath);
     }
 
