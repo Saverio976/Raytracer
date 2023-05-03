@@ -49,7 +49,7 @@ namespace RayTracer {
              *
              * @return the double
              */
-            const double getdouble(const std::string &key) const;
+            const double getDouble(const std::string &key) const;
             /**
              * @brief Get config key value as string
              *
@@ -85,7 +85,7 @@ namespace RayTracer {
             static std::unique_ptr<Parameters> _parameters;
             void parseCmdArg(const std::string &key, const std::string &value);
             std::map<std::string, int> _valuesInt;
-            std::map<std::string, double> _valuesdouble;
+            std::map<std::string, double> _valuesDouble;
             std::map<std::string, std::string> _valuesString;
         private:
     };
