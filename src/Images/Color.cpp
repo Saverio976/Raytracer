@@ -148,9 +148,9 @@ namespace RayTracer::Images {
 
 std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color) {
     double a = color[RayTracer::Images::Color::Types::ALPHA];
-    double r = a * color[RayTracer::Images::Color::Types::RED] / 255;
-    double g = a * color[RayTracer::Images::Color::Types::GREEN] / 255;
-    double b = a * color[RayTracer::Images::Color::Types::BLUE] / 255;
+    int r = a * color[RayTracer::Images::Color::Types::RED] / 255;
+    int g = a * color[RayTracer::Images::Color::Types::GREEN] / 255;
+    int b = a * color[RayTracer::Images::Color::Types::BLUE] / 255;
 
     os << r << ' ' << g << ' ' << b;
     return os;
