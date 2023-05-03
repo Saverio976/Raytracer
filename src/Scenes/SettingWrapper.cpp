@@ -16,6 +16,14 @@ namespace RayTracer::Scenes {
         return _msg.c_str();
     }
 
+    SettingWrapper::TypeException::TypeException(const std::string &key) {
+        _msg = "Type error, invalid type of key : " + key + "\n";
+    };
+
+    const char *SettingWrapper::TypeException::what() const throw() {
+        return _msg.c_str();
+    }
+
     SettingWrapper::SettingWrapper(const std::shared_ptr<libconfig::Config> &config): _config(config) {
         _setting = &config->getRoot();
     }
@@ -30,6 +38,8 @@ namespace RayTracer::Scenes {
     void SettingWrapper::getSetting(const std::string &key) {
         try {
             _setting = &_config->lookup(key);
+        } catch (libconfig::SettingTypeException &e) {
+            throw ParsingException(e.getPath());
         } catch (libconfig::SettingNotFoundException &e) {
             throw ParsingException(e.getPath());
         }
@@ -38,8 +48,6 @@ namespace RayTracer::Scenes {
     void SettingWrapper::getSetting(int index) {
         try {
             *_setting[index];
-        } catch (libconfig::SettingTypeException &e) {
-            throw ParsingException(e.getPath());
         } catch (libconfig::SettingNotFoundException &e) {
             throw ParsingException(e.getPath());
         }
@@ -114,22 +122,42 @@ namespace RayTracer::Scenes {
     }
 
     SettingWrapper::operator bool() const {
-        return _setting->operator bool();
+        try {
+            return _setting->operator bool();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator std::string() const {
-        return _setting->operator std::string();
+        try {
+            return _setting->operator std::string();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator const char *() const {
-        return _setting->operator const char *();
+        try {
+            return _setting->operator const char *();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator double() const {
-        return _setting->operator double();
+        try {
+            return _setting->operator double();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator int() const {
-        return _setting->operator int();
+        try {
+            return _setting->operator int();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 }

@@ -4,7 +4,10 @@ project(Raytracer
     DESCRIPTION "Raytracer engine with sphere,..."
     LANGUAGES CXX
 )
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Release)
+if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
+    set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+endif()
 
 # --------- Entities plugins ---------
 add_library(raytracer-plugins-entity-sphere SHARED)
@@ -34,6 +37,7 @@ set_target_properties(AmbientLight PROPERTIES
 add_executable(raytracer)
 set_target_properties(raytracer PROPERTIES
     CXX_STANDARD 20
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 add_subdirectory(PluginsExt)

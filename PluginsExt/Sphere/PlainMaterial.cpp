@@ -15,56 +15,30 @@
 #include <cmath>
 
 namespace RayTracer::PluginsExt::Sphere {
-    PlainMaterial::PlainMaterial(const Scenes::ISetting &config): _shininess(static_cast<double>(*config.get("shininess"))),
-          _ambient(Images::Color(*config.get("ambient"))), _diffuse(Images::Color(*config.get("diffuse"))),
-          _specular(Images::Color(*config.get("specular"))) {};
+    PlainMaterial::PlainMaterial(const Scenes::ISetting &config):
+        _shininess(static_cast<double>(*config.get("shininess"))),
+        _color(Images::Color(*config.get("color")))
+    {
+    }
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
     {
-        Images::Color color(0, 0, 0, 0);
-        Images::Color colorRound = round(_ambient);
-        Images::Color colorTmp(0, 0, 0, 0);
-        Images::Color ambient(0, 0, 0, 0);
-        Images::Color diffuse(0, 0, 0, 0);
-        Images::Color specular(1, 1, 1, 1);
-        Entities::Transform::Vector3f normal = intersect;
-        Entities::Transform::Vector3f shiftedPoint(0, 0, 0);
-        Entities::Transform::Vector3f intersectToLight(0, 0, 0);
+        Images::Color coefs(0, 0, 0, 0);
+        double coefsTmp = 0;
+        Images::Color colorLight(0, 0, 0, 0);
 
-        normal = (normal - centerObj.getPosition()).getNormalized();
         for (const auto &light : displayable.getLightList()) {
-            ambient = round(light->getColor(intersect, displayable));
-            diffuse = ambient;
-            shiftedPoint = intersect + Entities::Transform::Vector3f(1e-5, 1e-5, 1e-5) * normal;
-            intersectToLight = (light->getTransform().getPosition() - shiftedPoint).getNormalized();
+            colorLight = light->getColor(intersect, displayable);
 
-            colorTmp = Images::Color(
-                colorRound[Images::Color::Types::RED] * ambient[Images::Color::Types::RED],
-                colorRound[Images::Color::Types::GREEN] * ambient[Images::Color::Types::GREEN],
-                colorRound[Images::Color::Types::BLUE] * ambient[Images::Color::Types::BLUE],
-                0
-            );
-            colorTmp = colorTmp + Images::Color(
-                _diffuse[Images::Color::Types::RED] * diffuse[Images::Color::Types::RED] * intersectToLight.dot(normal),
-                _diffuse[Images::Color::Types::GREEN] * diffuse[Images::Color::Types::GREEN] * intersectToLight.dot(normal),
-                _diffuse[Images::Color::Types::BLUE] * diffuse[Images::Color::Types::BLUE] * intersectToLight.dot(normal),
-                0
-            );
-            Entities::Transform::Vector3f H = (intersectToLight + ray.getDirection()).getNormalized();
-            colorTmp = colorTmp + Images::Color(
-                _specular[Images::Color::Types::RED] * specular[Images::Color::Types::RED] * std::pow(normal.dot(H), _shininess / 4.0),
-                _specular[Images::Color::Types::GREEN] * specular[Images::Color::Types::GREEN] * std::pow(normal.dot(H), _shininess / 4.0),
-                _specular[Images::Color::Types::BLUE] * specular[Images::Color::Types::BLUE] * std::pow(normal.dot(H), _shininess / 4.0),
-                0
-            );
-            color = color + colorTmp;
+            coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess / 3.0);
+            coefs = coefs + (colorLight * Images::Color(coefsTmp, coefsTmp, coefsTmp, 255));
         }
-        return color;
+        return _color * coefs;
     }
 
     void PlainMaterial::setColor(const Images::Color &color)
     {
-        _ambient = color;
+        _color = color;
     }
 
     Images::Color PlainMaterial::round(const Images::Color &color) const

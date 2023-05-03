@@ -19,13 +19,11 @@ namespace RayTracer::Images {
         _last(last), _size(size), _screenPos(screenPos), _pov(pov), _ray(last)
     {
         Entities::Transform::Vector3f right(1, 0, 0);
-        Entities::Transform::Vector3f down(0, -1, 0);
-        Entities::Transform::Vector3f resetX(size.getX(), 0, 0);
+        Entities::Transform::Vector3f resetX(_screenPos.getX() - (size.getX() / 2.0), last.getOrigin().getY(), last.getOrigin().getZ() - 1);
         Entities::Transform::Vector3f onScreenPos(last.getOrigin().getX(), last.getOrigin().getY(), last.getOrigin().getZ());
 
-        if (screenPos.getX() + right.getX() >= screenPos.getX() + size.getX()) {
-            onScreenPos = onScreenPos + down;
-            onScreenPos = onScreenPos - resetX;
+        if (onScreenPos.getX() + right.getX() >= screenPos.getX() + (size.getX() / 2.0)) {
+            onScreenPos = resetX;
         } else {
             onScreenPos = onScreenPos + right;
         }
@@ -42,7 +40,7 @@ namespace RayTracer::Images {
         return _ray;
     }
 
-    bool RayIterrator::iterrator::operator==(const RayIterrator::iterrator &other) {
+    bool RayIterrator::iterrator::operator==(const RayIterrator::iterrator &other) const {
         bool isEq = _ray.getOrigin().getX() == other._ray.getOrigin().getX() &&
                     _ray.getOrigin().getY() == other._ray.getOrigin().getY() &&
                     _ray.getOrigin().getZ() == other._ray.getOrigin().getZ();
@@ -53,8 +51,13 @@ namespace RayTracer::Images {
         return isEq;
     }
 
-    bool RayIterrator::iterrator::operator!=(const RayIterrator::iterrator &other) {
+    bool RayIterrator::iterrator::operator!=(const RayIterrator::iterrator &other) const {
         return !(*this == other);
+    }
+
+    RayIterrator::iterrator &RayIterrator::iterrator::operator=(const RayIterrator::iterrator &other) {
+        _ray = other._ray;
+        return *this;
     }
 
     // -----------------------------------------------------------------------
@@ -67,9 +70,9 @@ namespace RayTracer::Images {
         _beforeFirst(Entities::Transform::Vector3f(0, 0, 0), Entities::Transform::Vector3f(0, 0, 0)),
         _afterLast(Entities::Transform::Vector3f(0, 0, 0), Entities::Transform::Vector3f(0, 0, 0))
     {
-        Entities::Transform::Vector3f update(0, 0, 0 - camera.getFocal());
-        Entities::Transform::Vector3f rayScreenPos(0 - (camera.getSize().getX() / 2.0) - 1, camera.getSize().getY() / 2.0, 0);
-        Entities::Transform::Vector3f rayScreenNeg((camera.getSize().getX() / 2.0) + 1, 0 - (camera.getSize().getY() / 2.0), 0);
+        Entities::Transform::Vector3f update(0, 0 - camera.getFocal(), 0);
+        Entities::Transform::Vector3f rayScreenPos(0 - (camera.getSize().getX() / 2.0) - 1, 0, camera.getSize().getY() / 2.0);
+        Entities::Transform::Vector3f rayScreenNeg((camera.getSize().getX() / 2.0) + 1, 0, 0 - (camera.getSize().getY() / 2.0));
         Entities::Transform::Vector3f pos(camera.getTransform().getPosition());
 
         _pov = _pov + update;

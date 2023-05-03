@@ -34,7 +34,7 @@ namespace RayTracer::Entities::Transform {
              * @param y y position
              * @param z z position
              */
-            Vector3f(float x, float y, float z);
+            Vector3f(double x, double y, double z);
             /**
              * @brief Construct a new Vector3f from a setting
              *
@@ -88,25 +88,25 @@ namespace RayTracer::Entities::Transform {
              *
              * @return x
              */
-            float getX() const;
+            double getX() const;
             /**
              * @brief Get y
              *
              * @return y
              */
-            float getY() const;
+            double getY() const;
             /**
              * @brief Get z
              *
              * @return z
              */
-            float getZ() const;
+            double getZ() const;
             /**
              * @brief Get the norm
              *
              * @return sqrt(x^2 + y^2 + z^2)
              */
-            float getNorm() const;
+            double getNorm() const;
             /**
              * @brief Get normalized vector
              *
@@ -127,13 +127,13 @@ namespace RayTracer::Entities::Transform {
              *
              * @return The distance value
              */
-            float getDistance(const Vector3f &other) const;
+            double getDistance(const Vector3f &other) const;
 
         protected:
         private:
-            float _x;
-            float _y;
-            float _z;
+            double _x;
+            double _y;
+            double _z;
     };
 }
 

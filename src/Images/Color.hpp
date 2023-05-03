@@ -43,7 +43,7 @@ namespace RayTracer::Images {
              * @param b blue
              * @param a alpha
              */
-            Color(float r, float g, float b, float a);
+            Color(double r, double g, double b, double a);
             /**
              * @brief Construct a new Color object with setting
              *
@@ -99,7 +99,7 @@ namespace RayTracer::Images {
              *
              * @return the color
              */
-            const float &operator[](const Types &type) const;
+            const double &operator[](const Types &type) const;
             /**
              * @brief Get the color (not thread safe !!)
              *
@@ -107,7 +107,7 @@ namespace RayTracer::Images {
              *
              * @return the color
              */
-            float &operator[](const Types &type);
+            double &operator[](const Types &type);
             /**
              * @brief set the color (thread safe)
              *
@@ -115,13 +115,13 @@ namespace RayTracer::Images {
              *
              * @return the color
              */
-            void set(const Types &type, float value);
+            void set(const Types &type, double value);
 
         private:
-            float _r;
-            float _g;
-            float _b;
-            float _a;
+            double _r;
+            double _g;
+            double _b;
+            double _a;
             std::mutex _mutex;
     };
 }

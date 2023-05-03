@@ -19,21 +19,31 @@ namespace RayTracer::Scenes {
             ConfigWrapper() = default;
             ~ConfigWrapper() override = default;
             /**
+             * @brief an exception for when the file can't be read
+             */
+            class ReadException: public std::exception {
+                public:
+                    const char *what() const throw();
+            };
+            /**
+             * @brief an exception for when the file can't be written
+             */
+            class WriteException: public std::exception {
+                public:
+                    const char *what() const throw();
+            };
+            /**
              * @brief read and parse the file at given path
              *
              * @param path the path to the file
-             *
-             * @return true if parsing worked, false otherwise
              */
-            bool readFile(const std::string &path) override;
+            void readFile(const std::string &path) override;
             /**
              * @brief writes the current config in a file at the given path
              *
              * @param path the path to the file
-             *
-             * @return true if writing worked, false otherwise
              */
-            bool writeFile(const std::string &path) override;
+            void writeFile(const std::string &path) override;
             /**
              * @brief returns the current SettingWrapper
              *

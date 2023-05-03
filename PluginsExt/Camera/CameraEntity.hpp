@@ -24,13 +24,13 @@ namespace RayTracer::PluginsExt::Camera {
               *
               * @return the focal
               */
-            float getFocal() const final;
+            double getFocal() const final;
             /**
              * @brief Set the focal (distance from the camera)
              *
              * @param value the focal
              */
-            void setFocal(float value) final;
+            void setFocal(double value) final;
             /**
              * @brief Set the size (of the screen)
              *
@@ -69,9 +69,10 @@ namespace RayTracer::PluginsExt::Camera {
         private:
             Images::Image _image;
             Entities::Transform::Vector2i _size;
-            float _focal;
+            double _focal;
             std::list<std::unique_ptr<Filters::IFilter>> _filters;
             Entities::Transform::Transform _transform;
+            int _maxThread;
     };
 }
 

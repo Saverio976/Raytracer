@@ -28,7 +28,7 @@ namespace RayTracer::PluginsExt::Sphere {
             Images::Color getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const final;
         private:
             Entities::Transform::Transform _transform;
-            float _radius;
+            double _radius;
             PlainMaterial _material;
     };
 }

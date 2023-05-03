@@ -31,13 +31,13 @@ namespace RayTracer::Images {
         return _step;
     }
 
-    void Ray::operator+=(float t)
+    void Ray::operator+=(double t)
     {
         Entities::Transform::Vector3f tVector(t, t, t);
         _step = _step + (tVector * _normal);
     }
 
-    void Ray::operator-=(float t)
+    void Ray::operator-=(double t)
     {
         Entities::Transform::Vector3f tVector(t, t, t);
         _step = _step - (tVector * _normal);

@@ -29,13 +29,13 @@ namespace RayTracer::Entities {
              *
              * @return the focal
              */
-            virtual float getFocal() const = 0;
+            virtual double getFocal() const = 0;
             /**
              * @brief Set the focal (distance from the camera)
              *
              * @param value the focal
              */
-            virtual void setFocal(float value) = 0;
+            virtual void setFocal(double value) = 0;
             /**
              * @brief Set the size (of the screen)
              *
