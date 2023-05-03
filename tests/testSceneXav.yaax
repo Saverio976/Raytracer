@@ -2,7 +2,7 @@
 cameras:
 (
     {
-        size = {x: 100; y = 100;};
+        size = {x: 500; y = 500;};
         transform = {
             position = {x = 0.0; y = 0.0; z = 0.0;};
             scale = {x = 0.0; y = 0.0; z = 0.0;};

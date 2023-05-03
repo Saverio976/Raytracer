@@ -37,6 +37,10 @@ namespace RayTracer::Images {
         double new_g = this->_g + other[Types::GREEN];
         double new_b = this->_b + other[Types::BLUE];
         double new_a = this->_a + other[Types::ALPHA];
+
+        new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
+        new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
+        new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -45,6 +49,10 @@ namespace RayTracer::Images {
         double new_g = this->_g - other[Types::GREEN];
         double new_b = this->_b - other[Types::BLUE];
         double new_a = this->_a - other[Types::ALPHA];
+
+        new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
+        new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
+        new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -53,6 +61,10 @@ namespace RayTracer::Images {
         double new_g = this->_g * other[Types::GREEN];
         double new_b = this->_b * other[Types::BLUE];
         double new_a = this->_a * other[Types::ALPHA];
+
+        new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
+        new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
+        new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -61,6 +73,10 @@ namespace RayTracer::Images {
         double new_g = this->_g / other[Types::GREEN];
         double new_b = this->_b / other[Types::BLUE];
         double new_a = this->_a / other[Types::ALPHA];
+
+        new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
+        new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
+        new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -70,6 +86,10 @@ namespace RayTracer::Images {
         this->_g = other[Types::GREEN];
         this->_b = other[Types::BLUE];
         this->_a = other[Types::ALPHA];
+
+        this->_r = (this->_r < 0) ? 0 : (this->_r > 255) ? 255 : this->_r;
+        this->_g = (this->_g < 0) ? 0 : (this->_g > 255) ? 255 : this->_g;
+        this->_b = (this->_b < 0) ? 0 : (this->_b > 255) ? 255 : this->_b;
         this->_mutex.unlock();
         return *this;
     }
