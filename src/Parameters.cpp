@@ -72,7 +72,7 @@ namespace RayTracer {
         int valueInt;
         double valueDouble;
 
-        ss >> valuedouble;
+        ss >> valueDouble;
         if (ss.fail()) {
             set(key, value);
             return;
