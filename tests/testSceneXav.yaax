@@ -9,6 +9,8 @@ cameras:
             rotation = {x = 0.0; y = 0.0; z = 0.0;};
         };
         focal = 10.0;
+        maxThreads = -1;
+        filter = ()
     }
 );
 
