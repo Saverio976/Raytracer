@@ -5,10 +5,10 @@
 ** Camera.cpp
 */
 
+#include <iostream>
 #include "CameraEntity.hpp"
 #include "FilterFactory.hpp"
 #include "ImagePipeLine.hpp"
-#include <iostream>
 #include "SettingWrapper.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
@@ -30,7 +30,9 @@ namespace RayTracer::PluginsExt::Camera {
 
                 _filters.push_back(std::move(filterPtr));
             }
-        } catch (const Scenes::SettingWrapper::ParsingException &e) { }
+        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+            std::cerr << e.what() << std::endl;
+        }
     }
 
     Entities::IEntity::Type CameraEntity::getType() const {
