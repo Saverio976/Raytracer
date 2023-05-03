@@ -16,13 +16,17 @@ namespace RayTracer::Scenes {
         int length_two = 0;
         std::string name;
 
-        settingWrapper = setting.get("cameras");
+        settingWrapper = setting.get("camera");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
-            tmp = settingWrapper->get(i);
-            std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get("camera", *tmp)));
+            length_two = (*settingWrapper).get(i)->getLength();
+            name = (*settingWrapper).get(i)->getKey();
+            for (int j = 0; j < length_two; j++) {
+                tmp = settingWrapper->get(i)->get(j);
+                std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get(name, *tmp)));
 
-            _cameras.push_back(std::move(cameraPtr));
+                _cameras.push_back(std::move(cameraPtr));
+            }
         }
         settingWrapper = setting.get("lights");
         length = settingWrapper->getLength();
