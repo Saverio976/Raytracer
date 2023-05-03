@@ -16,6 +16,11 @@ namespace RayTracer::Images {
         this->_g = color[Color::Types::GREEN];
         this->_b = color[Color::Types::BLUE];
         this->_a = color[Color::Types::ALPHA];
+
+        this->_r = (this->_r < 0) ? 0 : (this->_r > 255) ? 255 : this->_r;
+        this->_g = (this->_g < 0) ? 0 : (this->_g > 255) ? 255 : this->_g;
+        this->_b = (this->_b < 0) ? 0 : (this->_b > 255) ? 255 : this->_b;
+        this->_a = (this->_a < 0) ? 0 : (this->_a > 255) ? 255 : this->_a;
     }
 
     Color::Color(double r, double g, double b, double a) : _r(r), _g(g), _b(b), _a(a) { }
@@ -30,6 +35,10 @@ namespace RayTracer::Images {
         this->_b = static_cast<double>(*tmp);
         tmp = setting.get("a");
         this->_a = static_cast<double>(*tmp);
+        this->_r = (this->_r < 0) ? 0 : (this->_r > 255) ? 255 : this->_r;
+        this->_g = (this->_g < 0) ? 0 : (this->_g > 255) ? 255 : this->_g;
+        this->_b = (this->_b < 0) ? 0 : (this->_b > 255) ? 255 : this->_b;
+        this->_a = (this->_a < 0) ? 0 : (this->_a > 255) ? 255 : this->_a;
     }
 
     Color Color::operator+(const Color &other) const {
@@ -41,6 +50,7 @@ namespace RayTracer::Images {
         new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
         new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
         new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
+        new_a = (new_a < 0) ? 0 : (new_a > 255) ? 255 : new_a;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -53,6 +63,7 @@ namespace RayTracer::Images {
         new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
         new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
         new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
+        new_a = (new_a < 0) ? 0 : (new_a > 255) ? 255 : new_a;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -65,18 +76,24 @@ namespace RayTracer::Images {
         new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
         new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
         new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
+        new_a = (new_a < 0) ? 0 : (new_a > 255) ? 255 : new_a;
         return {new_r, new_g, new_b, new_a};
     }
 
     Color Color::operator/(const Color &other) const {
-        double new_r = this->_r / other[Types::RED];
-        double new_g = this->_g / other[Types::GREEN];
-        double new_b = this->_b / other[Types::BLUE];
-        double new_a = this->_a / other[Types::ALPHA];
+        double other_r = other[Types::RED];
+        double new_r = (other_r) ? this->_r / other_r : 0;
+        double other_g = other[Types::GREEN];
+        double new_g = (other_g) ? this->_g / other_g : 0;
+        double other_b = other[Types::BLUE];
+        double new_b = (other_b) ? this->_b / other_b : 0;
+        double other_a = other[Types::ALPHA];
+        double new_a = (other_a) ? this->_a / other_a : 0;
 
         new_r = (new_r < 0) ? 0 : (new_r > 255) ? 255 : new_r;
         new_g = (new_g < 0) ? 0 : (new_g > 255) ? 255 : new_g;
         new_b = (new_b < 0) ? 0 : (new_b > 255) ? 255 : new_b;
+        new_a = (new_a < 0) ? 0 : (new_a > 255) ? 255 : new_a;
         return {new_r, new_g, new_b, new_a};
     }
 
@@ -90,6 +107,7 @@ namespace RayTracer::Images {
         this->_r = (this->_r < 0) ? 0 : (this->_r > 255) ? 255 : this->_r;
         this->_g = (this->_g < 0) ? 0 : (this->_g > 255) ? 255 : this->_g;
         this->_b = (this->_b < 0) ? 0 : (this->_b > 255) ? 255 : this->_b;
+        this->_a = (this->_a < 0) ? 0 : (this->_a > 255) ? 255 : this->_a;
         this->_mutex.unlock();
         return *this;
     }
@@ -152,6 +170,9 @@ std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color
     int g = a * color[RayTracer::Images::Color::Types::GREEN] / 255;
     int b = a * color[RayTracer::Images::Color::Types::BLUE] / 255;
 
+    r = (r < 0) ? 0 : (r > 255) ? 255 : r;
+    g = (g < 0) ? 0 : (g > 255) ? 255 : g;
+    b = (b < 0) ? 0 : (b > 255) ? 255 : b;
     os << r << ' ' << g << ' ' << b;
     return os;
 }
