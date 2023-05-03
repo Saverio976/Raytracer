@@ -4,4 +4,5 @@ target_sources(Plane PRIVATE
     PlaneEntity.cpp
     PlaneCreator.cpp
     EntryPoint.cpp
+    PlainMaterial.cpp
 )
