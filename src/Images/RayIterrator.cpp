@@ -23,7 +23,7 @@ namespace RayTracer::Images {
         Entities::Transform::Vector3f resetX(size.getX(), 0, 0);
         Entities::Transform::Vector3f onScreenPos(last.getOrigin().getX(), last.getOrigin().getY(), last.getOrigin().getZ());
 
-        if (screenPos.getX() + right.getX() >= screenPos.getX() + size.getX()) {
+        if (onScreenPos.getX() + right.getX() >= screenPos.getX() + (size.getX() / 2.0)) {
             onScreenPos = onScreenPos + down;
             onScreenPos = onScreenPos - resetX;
         } else {
