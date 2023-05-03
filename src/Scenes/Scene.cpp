@@ -16,7 +16,7 @@ namespace RayTracer::Scenes {
         int length_two = 0;
         std::string name;
 
-        settingWrapper = setting.get("camera");
+        settingWrapper = setting.get("cameras");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
             length_two = (*settingWrapper).get(i)->getLength();

@@ -1,18 +1,20 @@
 # Configuration of the camera
 cameras:
-(
-    {
-        size = {x: 200; y = 200;};
-        transform = {
-            position = {x = 0.0; y = 0.0; z = 0.0;};
-            scale = {x = 0.0; y = 0.0; z = 0.0;};
-            rotation = {x = 0.0; y = 0.0; z = 0.0;};
-        };
-        focal = 20.0;
-        maxThreads = -1;
-        filter = ()
-    }
-);
+{
+    camera: (
+        {
+            size = {x: 500; y = 500;};
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            focal = 20.0;
+            maxThreads = -1;
+            filter = ()
+        }
+    );
+};
 
 # Primitives in the scene
 primitives :
