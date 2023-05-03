@@ -84,7 +84,7 @@ namespace RayTracer {
         ss.str(value);
         ss >> valueInt;
         if (ss.fail()) {
-            set(key, valuedouble);
+            set(key, valueDouble);
             return;
         }
         set(key, valueInt);
