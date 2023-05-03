@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-target_sources(raytracer-plugins-entity-sphere PRIVATE
+target_sources(Sphere PRIVATE
     SphereEntity.cpp
     SphereCreator.cpp
     PlainMaterial.cpp

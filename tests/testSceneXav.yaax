@@ -20,7 +20,7 @@ cameras:
 primitives :
 {
     # List of spheres
-    raytracer-plugins-entity-sphere = (
+    Sphere = (
         {
             radius = 100.0;
             transform = {

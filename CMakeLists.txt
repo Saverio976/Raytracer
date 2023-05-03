@@ -10,8 +10,8 @@ if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
 endif()
 
 # --------- Entities plugins ---------
-add_library(raytracer-plugins-entity-sphere SHARED)
-set_target_properties(raytracer-plugins-entity-sphere PROPERTIES
+add_library(Sphere SHARED)
+set_target_properties(Sphere PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
@@ -24,6 +24,12 @@ set_target_properties(camera PROPERTIES
 )
 add_library(AmbientLight SHARED)
 set_target_properties(AmbientLight PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+add_library(Plane SHARED)
+set_target_properties(Plane PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
