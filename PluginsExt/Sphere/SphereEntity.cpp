@@ -5,7 +5,9 @@
 ** SphereEntity.cpp
 */
 
+#include <algorithm>
 #include <cmath>
+#include <optional>
 #include "ISetting.hpp"
 #include "SphereEntity.hpp"
 #include "IEntity.hpp"
@@ -42,19 +44,23 @@ namespace RayTracer::PluginsExt::Sphere {
 
     std::optional<Entities::Transform::Vector3f> SphereEntity::isCollided(const Images::Ray &ray) const
     {
-        Entities::Transform::Vector3f oc = ray.getOrigin() - _transform.getPosition();
         auto a = ray.getDirection().dot(ray.getDirection());
-        auto b = 2.0 * oc.dot(ray.getDirection());
-        auto c = oc.dot(oc) - std::pow(_radius, 2);
-        auto discriminant = std::pow(b, 2) - (4 * a * c);
+        auto b = (Entities::Transform::Vector3f(2, 2, 2) * ray.getDirection()).dot(ray.getOrigin() - _transform.getPosition());
+        auto c = (ray.getOrigin() - _transform.getPosition()).dot(ray.getOrigin() - _transform.getPosition()) - (_radius * _radius);
+        auto discriminant = (b * b) - (4 * a * c);
 
-        if (discriminant == 0) {
+        if (discriminant < 0) {
             return std::nullopt;
         }
         auto t = (-b - std::sqrt(discriminant)) / (2 * a);
-        auto vect = ray.getDirection() * Entities::Transform::Vector3f(t, t, t);
-        vect = vect + ray.getOrigin();
-        return std::make_optional(vect);
+        if (t <= 0) {
+            t = (-b + std::sqrt(discriminant)) / (2 * a);
+            if (t <= 0) {
+                return std::nullopt;
+            }
+        }
+        std::cout << t << "!collision!" << std::endl;
+        return std::make_optional(Entities::Transform::Vector3f(ray.getOrigin() + (ray.getDirection() * Entities::Transform::Vector3f(t, t, t))));
     }
 
     Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const
