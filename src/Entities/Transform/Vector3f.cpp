@@ -89,6 +89,6 @@ namespace RayTracer::Entities::Transform {
     }
 
     double Vector3f::dot(const RayTracer::Entities::Transform::Vector3f &other) const {
-        return _x * _x + _y * _y + _z * _z;
+        return _x * other.getX() + _y * other.getY() + _z * other.getZ();
     }
 }

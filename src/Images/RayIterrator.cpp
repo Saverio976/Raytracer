@@ -72,7 +72,7 @@ namespace RayTracer::Images {
         _beforeFirst(Entities::Transform::Vector3f(0, 0, 0), Entities::Transform::Vector3f(0, 0, 0)),
         _afterLast(Entities::Transform::Vector3f(0, 0, 0), Entities::Transform::Vector3f(0, 0, 0))
     {
-        Entities::Transform::Vector3f update(0, 0, 0 - camera.getFocal());
+        Entities::Transform::Vector3f update(0, 0 - camera.getFocal(), 0);
         Entities::Transform::Vector3f rayScreenPos(0 - (camera.getSize().getX() / 2.0) - 1, camera.getSize().getY() / 2.0, 0);
         Entities::Transform::Vector3f rayScreenNeg((camera.getSize().getX() / 2.0) + 1, 0 - (camera.getSize().getY() / 2.0), 0);
         Entities::Transform::Vector3f pos(camera.getTransform().getPosition());
