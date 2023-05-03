@@ -70,7 +70,7 @@ namespace RayTracer {
     {
         std::stringstream ss(value);
         int valueInt;
-        double valuedouble;
+        double valueDouble;
 
         ss >> valuedouble;
         if (ss.fail()) {
