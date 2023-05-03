@@ -18,7 +18,7 @@ primitives :
     # List of spheres
     raytracer-plugins-entity-sphere = (
         {
-            radius = 50.0;
+            radius = 100.0;
             transform = {
                 position = {x = 0.0; y = 100.0; z = 0.0;};
                 scale = {x = 1.0; y = 1.0; z = 1.0;};
