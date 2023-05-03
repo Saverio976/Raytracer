@@ -11,7 +11,8 @@
 namespace RayTracer::PluginsExt::Plane {
     PlaneEntity::PlaneEntity(const Scenes::ISetting &config):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _size(Entities::Transform::Vector3f(*config.get("size"))) { }
+        _size(Entities::Transform::Vector3f(*config.get("size"))),
+        _material(*config.get("material")) { }
 
     Entities::IEntity::Type PlaneEntity::getType() const {
         return Type::Primitive;
@@ -51,6 +52,7 @@ namespace RayTracer::PluginsExt::Plane {
     }
 
     Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const {
-        return {255, 0, 0, 255};
+        auto intersect = isCollided(ray);
+        return _material.getColor(ray, _transform, intersect.value(), displayable);
     }
 }

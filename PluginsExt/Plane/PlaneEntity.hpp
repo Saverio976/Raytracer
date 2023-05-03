@@ -9,6 +9,7 @@
 
     #include "IPrimitive.hpp"
     #include "Transform.hpp"
+    #include "PlainMaterial.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
     class PlaneEntity : public RayTracer::Entities::IPrimitive {
@@ -23,6 +24,7 @@ namespace RayTracer::PluginsExt::Plane {
         private:
             Entities::Transform::Transform _transform;
             RayTracer::Entities::Transform::Vector3f _size;
+            PlainMaterial _material;
     };
 }
 
