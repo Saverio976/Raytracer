@@ -54,7 +54,7 @@ namespace RayTracer {
 
     void Parameters::set(const std::string &key, double value)
     {
-        _valuesdouble[key] = value;
+        _valuesDouble[key] = value;
     }
 
     void Parameters::set(const std::string &key, const std::string &value)
