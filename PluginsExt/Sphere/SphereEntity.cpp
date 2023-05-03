@@ -7,7 +7,9 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 #include <optional>
+#include <utility>
 #include "Color.hpp"
 #include "ISetting.hpp"
 #include "SphereEntity.hpp"
@@ -21,6 +23,11 @@ namespace RayTracer::PluginsExt::Sphere {
         _material(*config.get("material")),
         _radius(static_cast<double>(*config.get("radius")))
     {
+        if (_transform.getScale().getX() != _transform.getScale().getY() ||
+                _transform.getScale().getX() != _transform.getScale().getZ()) {
+            std::cerr << "SPHERE: config: scale x y z must be the same: now using only x" << std::endl;
+        }
+        _radius = _radius * _transform.getScale().getX();
     }
 
     Entities::IEntity::Type SphereEntity::getType() const
@@ -61,7 +68,8 @@ namespace RayTracer::PluginsExt::Sphere {
                 return std::nullopt;
             }
         }
-        return std::make_optional(Entities::Transform::Vector3f(ray.getOrigin() + (ray.getDirection() * Entities::Transform::Vector3f(t, t, t))));
+        auto vect = Entities::Transform::Vector3f(ray.getOrigin() + (ray.getDirection() * Entities::Transform::Vector3f(t, t, t)));;
+        return std::make_optional(vect);
     }
 
     Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const
