@@ -12,7 +12,6 @@
 #include "ILight.hpp"
 #include "IPrimitive.hpp"
 #include "Vector3f.hpp"
-#include <cmath>
 
 namespace RayTracer::PluginsExt::Plane {
     PlainMaterial::PlainMaterial(const Scenes::ISetting &config):
