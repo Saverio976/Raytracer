@@ -13,11 +13,9 @@ namespace RayTracer::Images {
     Image::Image(const Entities::Transform::Vector2i &size): _size(size) {
         size_t air = size.getX() * size.getY();
 
-        std::cout << "initialisation de l'image" << std::endl;
         for (size_t i = 0; i < air; i++) {
             this->_pixels.push_back(Color(0, 0, 0, 0));
         }
-        std::cout << "fin de l'initialisation de l'image" << std::endl;
     }
 
     void Image::convertToPPM(const std::string &filePath) const {

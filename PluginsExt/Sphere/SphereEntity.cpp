@@ -61,7 +61,6 @@ namespace RayTracer::PluginsExt::Sphere {
                 return std::nullopt;
             }
         }
-        std::cout << t << "!collision!" << std::endl;
         return std::make_optional(Entities::Transform::Vector3f(ray.getOrigin() + (ray.getDirection() * Entities::Transform::Vector3f(t, t, t))));
     }
 

@@ -48,27 +48,20 @@ namespace RayTracer::Scenes {
                 _displayable.getPrimitiveList().push_back(std::move(primitivePtr));
             }
         }
-        std::cout << "J'ai terminé le pasing" << std::endl;
     }
 
     void Scene::renders() {
-        std::cout << "je rentre dans la grotte du thread" << std::endl;
         this->_state.changeState(SceneState::States::RUNNING);
         this->_thread = std::thread([&] () -> void * {
             try {
-                std::cout << "je suis dans la grotte du thread et je commence" << std::endl;
                 for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
                     if (this->_state.getState() == SceneState::States::CANCELLED)
                         break;
                     camera->render(this->_displayable, this->_state);
-                    std::cout << "caméra suivante !" << std::endl;
                 }
-                std::cout << "je suis entrain de sortir" << std::endl;
             } catch (std::exception &e) {
-                std::cout << "j'ai eu un problème chef" << std::endl;
-                std::cout << e.what() << std::endl;
+                std::cerr << e.what() << std::endl;
             }
-            std::cout << "j'ai terminé !" << std::endl;
             return nullptr;
         });
     }

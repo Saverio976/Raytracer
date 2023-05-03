@@ -65,13 +65,10 @@ namespace RayTracer::PluginsExt::Camera {
         Images::RayIterrator iterator(*this);
         Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 
-        std::cout << "je passes pour l'appel à la génération" << std::endl;
         imagePipeLine.generate(1000, 1);
-        std::cout << "je passes pour les filtres" << std::endl;
         for (const std::unique_ptr<Filters::IFilter> &filter : this->_filters) {
             imagePipeLine.apply(*filter);
         }
-        std::cout << "je passes pour l'envoie" << std::endl;
         return this->_image;
     }
 
