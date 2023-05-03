@@ -25,9 +25,7 @@ namespace RayTracer::PluginsExt::Sphere {
 
             Images::Color round(const Images::Color &color) const;
         private:
-            Images::Color _ambient;
-            Images::Color _diffuse;
-            Images::Color _specular;
+            Images::Color _color;
             double _shininess;
     };
 }

@@ -19,10 +19,14 @@ namespace RayTracer::Scenes {
         settingWrapper = setting.get("cameras");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
-            tmp = settingWrapper->get(i);
-            std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get("camera", *tmp)));
+            length_two = (*settingWrapper).get(i)->getLength();
+            name = (*settingWrapper).get(i)->getKey();
+            for (int j = 0; j < length_two; j++) {
+                tmp = settingWrapper->get(i)->get(j);
+                std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get(name, *tmp)));
 
-            _cameras.push_back(std::move(cameraPtr));
+                _cameras.push_back(std::move(cameraPtr));
+            }
         }
         settingWrapper = setting.get("lights");
         length = settingWrapper->getLength();
@@ -48,28 +52,16 @@ namespace RayTracer::Scenes {
                 _displayable.getPrimitiveList().push_back(std::move(primitivePtr));
             }
         }
-        std::cout << "J'ai terminé le pasing" << std::endl;
     }
 
     void Scene::renders() {
-        std::cout << "je rentre dans la grotte du thread" << std::endl;
         this->_state.changeState(SceneState::States::RUNNING);
-        this->_thread = std::thread([&] () -> void * {
-            try {
-                std::cout << "je suis dans la grotte du thread et je commence" << std::endl;
-                for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
-                    if (this->_state.getState() == SceneState::States::CANCELLED)
-                        break;
-                    camera->render(this->_displayable, this->_state);
-                    std::cout << "caméra suivante !" << std::endl;
-                }
-                std::cout << "je suis entrain de sortir" << std::endl;
-            } catch (std::exception &e) {
-                std::cout << "j'ai eu un problème chef" << std::endl;
-                std::cout << e.what() << std::endl;
+        this->_thread = std::thread([&] () -> void {
+            for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
+                if (this->_state.getState() == SceneState::States::CANCELLED)
+                    break;
+                camera->render(this->_displayable, this->_state);
             }
-            std::cout << "j'ai terminé !" << std::endl;
-            return nullptr;
         });
     }
 

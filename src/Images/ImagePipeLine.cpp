@@ -27,11 +27,9 @@ namespace RayTracer::Images {
         size_t length = this->_image.getSize().getX() * this->_image.getSize().getY();
         maxThread = (maxThread > length) ? length : maxThread;
 
-        std::cout << "je passes pour générer l'image" << std::endl;
         for (size_t i = 0; i < maxThread; i++)
             threads.push_back(std::thread());
         while (this->_state.getState() == RayTracer::Scenes::SceneState::States::RUNNING && !stop) {
-            std::cout << "nouvelle lancé de pixel" << std::endl;
             for (std::thread &thread : threads) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
                 thread = std::thread(pixelThread);
@@ -50,7 +48,6 @@ namespace RayTracer::Images {
                 thread.join();
             }
         }
-        std::cout << "j'ai terminé la génération de l'image" << std::endl;
     }
 
     void ImagePipeLine::apply(Filters::IFilter &filter) {

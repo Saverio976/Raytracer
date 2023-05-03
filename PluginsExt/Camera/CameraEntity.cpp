@@ -5,10 +5,10 @@
 ** Camera.cpp
 */
 
+#include <iostream>
 #include "CameraEntity.hpp"
 #include "FilterFactory.hpp"
 #include "ImagePipeLine.hpp"
-#include <iostream>
 #include "SettingWrapper.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
@@ -16,7 +16,8 @@ namespace RayTracer::PluginsExt::Camera {
     CameraEntity::CameraEntity(const Scenes::ISetting &config) :
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _size(Entities::Transform::Vector2i(*config.get("size"))),
-        _image(Images::Image(Entities::Transform::Vector2i(*config.get("size")))) {
+        _image(Images::Image(Entities::Transform::Vector2i(*config.get("size"))))
+    {
         std::unique_ptr<Scenes::ISetting> tmp = config.get("focal");
 
         this->_focal = static_cast<double>(*tmp);
@@ -30,7 +31,16 @@ namespace RayTracer::PluginsExt::Camera {
 
                 _filters.push_back(std::move(filterPtr));
             }
-        } catch (const Scenes::SettingWrapper::ParsingException &e) { }
+        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+            std::cerr << e.what() << std::endl;
+        }
+        try {
+            _maxThread = static_cast<int>(*config.get("maxThreads"));
+            _maxThread = (_maxThread == -1) ? std::thread::hardware_concurrency() : _maxThread;
+        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+            _maxThread = std::thread::hardware_concurrency();
+        }
+        _maxThread = (_maxThread <= 0) ? 1 : _maxThread;
     }
 
     Entities::IEntity::Type CameraEntity::getType() const {
@@ -65,13 +75,10 @@ namespace RayTracer::PluginsExt::Camera {
         Images::RayIterrator iterator(*this);
         Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 
-        std::cout << "je passes pour l'appel à la génération" << std::endl;
-        imagePipeLine.generate(1, 1);
-        std::cout << "je passes pour les filtres" << std::endl;
+        imagePipeLine.generate(_maxThread, 1);
         for (const std::unique_ptr<Filters::IFilter> &filter : this->_filters) {
             imagePipeLine.apply(*filter);
         }
-        std::cout << "je passes pour l'envoie" << std::endl;
         return this->_image;
     }
 

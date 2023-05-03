@@ -72,6 +72,7 @@ namespace RayTracer::PluginsExt::Camera {
             double _focal;
             std::list<std::unique_ptr<Filters::IFilter>> _filters;
             Entities::Transform::Transform _transform;
+            int _maxThread;
     };
 }
 
