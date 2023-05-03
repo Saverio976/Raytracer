@@ -39,4 +39,4 @@ target_sources(raytracer-plugins-entity-sphere PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
-        )
+)
