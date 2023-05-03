@@ -19,13 +19,11 @@ namespace RayTracer::Images {
         _last(last), _size(size), _screenPos(screenPos), _pov(pov), _ray(last)
     {
         Entities::Transform::Vector3f right(1, 0, 0);
-        Entities::Transform::Vector3f down(0, -1, 0);
-        Entities::Transform::Vector3f resetX(size.getX(), 0, 0);
+        Entities::Transform::Vector3f resetX(_screenPos.getX() - (size.getX() / 2.0), last.getOrigin().getY(), last.getOrigin().getZ() - 1);
         Entities::Transform::Vector3f onScreenPos(last.getOrigin().getX(), last.getOrigin().getY(), last.getOrigin().getZ());
 
         if (onScreenPos.getX() + right.getX() >= screenPos.getX() + (size.getX() / 2.0)) {
-            onScreenPos = onScreenPos + down;
-            onScreenPos = onScreenPos - resetX;
+            onScreenPos = resetX;
         } else {
             onScreenPos = onScreenPos + right;
         }
@@ -73,8 +71,8 @@ namespace RayTracer::Images {
         _afterLast(Entities::Transform::Vector3f(0, 0, 0), Entities::Transform::Vector3f(0, 0, 0))
     {
         Entities::Transform::Vector3f update(0, 0 - camera.getFocal(), 0);
-        Entities::Transform::Vector3f rayScreenPos(0 - (camera.getSize().getX() / 2.0) - 1, camera.getSize().getY() / 2.0, 0);
-        Entities::Transform::Vector3f rayScreenNeg((camera.getSize().getX() / 2.0) + 1, 0 - (camera.getSize().getY() / 2.0), 0);
+        Entities::Transform::Vector3f rayScreenPos(0 - (camera.getSize().getX() / 2.0) - 1, 0, camera.getSize().getY() / 2.0);
+        Entities::Transform::Vector3f rayScreenNeg((camera.getSize().getX() / 2.0) + 1, 0, 0 - (camera.getSize().getY() / 2.0));
         Entities::Transform::Vector3f pos(camera.getTransform().getPosition());
 
         _pov = _pov + update;

@@ -45,18 +45,19 @@ namespace RayTracer::PluginsExt::Sphere {
 
     std::optional<Entities::Transform::Vector3f> SphereEntity::isCollided(const Images::Ray &ray) const
     {
-        auto a = ray.getDirection().dot(ray.getDirection());
-        auto b = (Entities::Transform::Vector3f(2, 2, 2) * ray.getDirection()).dot(ray.getOrigin() - _transform.getPosition());
-        auto c = (ray.getOrigin() - _transform.getPosition()).dot(ray.getOrigin() - _transform.getPosition()) - (_radius * _radius);
-        auto discriminant = (b * b) - (4 * a * c);
+        long double a = ray.getDirection().dot(ray.getDirection());
+        long double b = (Entities::Transform::Vector3f(2, 2, 2) * ray.getDirection()).dot(ray.getOrigin() - _transform.getPosition());
+        long double c = (ray.getOrigin() - _transform.getPosition()).dot(ray.getOrigin() - _transform.getPosition()) - (_radius * _radius);
+        long double discriminant = (b * b) - (4 * a * c);
+        long double precision = 0;
 
-        if (discriminant < 0) {
+        if (discriminant < precision) {
             return std::nullopt;
         }
-        auto t = (-b - std::sqrt(discriminant)) / (2 * a);
-        if (t <= 0) {
+        long double t = (-b - std::sqrt(discriminant)) / (2 * a);
+        if (t <= precision) {
             t = (-b + std::sqrt(discriminant)) / (2 * a);
-            if (t <= 0) {
+            if (t <= precision) {
                 return std::nullopt;
             }
         }
@@ -68,6 +69,6 @@ namespace RayTracer::PluginsExt::Sphere {
     {
         auto intersect = isCollided(ray);
         return _material.getColor(ray, _transform, intersect.value(), displayable) + Images::Color(0, 0, 0, 255);
-        // return Images::Color(255, 0, 0, 0);
+        // return Images::Color(255, 0, 0, 255);
     }
 }
