@@ -7,8 +7,8 @@ project(Raytracer
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # --------- Entities plugins ---------
-add_library(raytracer-plugins-entity-sphere SHARED)
-set_target_properties(raytracer-plugins-entity-sphere PROPERTIES
+add_library(Sphere SHARED)
+set_target_properties(Sphere PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
