@@ -2,13 +2,13 @@
 cameras:
 (
     {
-        size = {x: 50; y = 50;};
+        size = {x: 10; y = 10;};
         transform = {
-            position = {x = -150.0; y = -150.0; z = -10.0;};
+            position = {x = 0.0; y = 0.0; z = 0.0;};
             scale = {x = 60.0; y = 20.0; z = -10.0;};
             rotation = {x = 60.0; y = 20.0; z = -10.0;};
         };
-        focal = 15.0;
+        focal = 1.0;
     }
 );
 
@@ -16,20 +16,14 @@ cameras:
 primitives :
 {
     # List of spheres
-    raytracer-plugins-entity-sphere = (
+    Plane = (
         {
-            radius = 1.0;
             transform = {
-                position = {x = 60.0; y = 20.0; z = -10.0;};
+                position = {x = 15.0; y = 15.0; z = 0.0;};
                 scale = {x = 60.0; y = 20.0; z = -10.0;};
-                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
-            material = {
-                shininess = 1.0;
-                ambient = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
-                diffuse = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
-                specular = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;}
-            };
+            size = {x = 150.0; y = 150.0; z = 150.0;};
         }
     );
 };
