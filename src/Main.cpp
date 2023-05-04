@@ -78,7 +78,7 @@ namespace RayTracer {
         }
         for (const auto &camera : _scene.getCameras()) {
             try {
-                camera->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
+                camera.get().getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
                 _exitCode = 0;
             } catch (const std::runtime_error &e) {
                 std::cerr << e.what() << std::endl;
