@@ -3,114 +3,232 @@
 
   Affichage d'image en envoyant des rayons dans une scene
 
-  <h2>Configuration d'une Scene</h2>
+  <h2><center>Configuration d'une Scene</center></h2>
 
   une scene est représenté par un fichier de config `file.yaax`
 
   <details>
-    <summary>Example de configuration et son rendu</summary>
+    <summary><u>Example de configuration et son rendu</u></summary>
 
-  ```config
-  # Configuration of the camera
-  cameras:
-  {
-      camera: (
-          {
-              size = {x: 500; y = 500;};
-              transform = {
-                  position = {x = 0.0; y = 0.0; z = 0.0;};
-                  scale = {x = 0.0; y = 0.0; z = 0.0;};
-                  rotation = {x = 0.0; y = 0.0; z = 0.0;};
-              };
-              focal = 20.0;
-              maxThreads = -1;
-              filter = ()
-          }
-      );
-  };
+    ```config
+    # Configuration of the camera
+    cameras:
+    {
+        camera: (
+            {
+                size = {x: 500; y = 500;};
+                transform = {
+                    position = {x = 0.0; y = 0.0; z = 0.0;};
+                    scale = {x = 0.0; y = 0.0; z = 0.0;};
+                    rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                };
+                focal = 20.0;
+                maxThreads = -1;
+                filter = ()
+            }
+        );
+    };
 
-  # Primitives in the scene
-  primitives :
-  {
-      # List of spheres
-      Sphere = (
-          {
-              radius = 100.0;
-              transform = {
-                  position = {x = 0.0; y = 100.0; z = 0.0;};
-                  scale = {x = 1.0; y = 1.0; z = 1.0;};
-                  rotation = {x = 0.0; y = 0.0; z = 0.0;};
-              };
-              material = {
-                  shininess = 1.0;
-                  color = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
-              };
-          },
-          {
-              radius = 200.0;
-              transform = {
-                  position = {x = 50.0; y = 200.0; z = 0.0;};
-                  scale = {x = 1.0; y = 1.0; z = 1.0;};
-                  rotation = {x = 0.0; y = 0.0; z = 0.0;};
-              }
-              material = {
-                  shininess = 1.0;
-                  color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
-              };
-          }
-      );
-      Plane = (
-          {
-              transform = {
-                  position = {x = 0.0; y = 150.0; z = 0.0;};
-                  scale = {x = 0.0; y = 0.0; z = 0.0;};
-                  rotation = {x = 1.5708; y = 0.0; z = 0.0;};
-              };
-              size = {x = 50.0; y = 50.0; z = 50.0;};
-              material = {
-                  shininess = 1.0;
-                  color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
-              };
-          },
-          {
-              transform = {
-                  position = {x = 0.0; y = 0.0; z = -250.0;};
-                  scale = {x = 0.0; y = 0.0; z = 0.0;};
-                  rotation = {x = 0.1; y = 0.0; z = 0.0;};
-              };
-              size = {x = 50.0; y = 50.0; z = 50.0;};
-              material = {
-                  shininess = 1.0;
-                  color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
-              };
-          }
-      );
-  };
+    # Primitives in the scene
+    primitives :
+    {
+        # List of spheres
+        Sphere = (
+            {
+                radius = 100.0;
+                transform = {
+                    position = {x = 0.0; y = 100.0; z = 0.0;};
+                    scale = {x = 1.0; y = 1.0; z = 1.0;};
+                    rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                };
+                material = {
+                    shininess = 1.0;
+                    color = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
+                };
+            },
+            {
+                radius = 200.0;
+                transform = {
+                    position = {x = 50.0; y = 200.0; z = 0.0;};
+                    scale = {x = 1.0; y = 1.0; z = 1.0;};
+                    rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                }
+                material = {
+                    shininess = 1.0;
+                    color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                };
+            }
+        );
+        Plane = (
+            {
+                transform = {
+                    position = {x = 0.0; y = 150.0; z = 0.0;};
+                    scale = {x = 0.0; y = 0.0; z = 0.0;};
+                    rotation = {x = 1.5708; y = 0.0; z = 0.0;};
+                };
+                size = {x = 50.0; y = 50.0; z = 50.0;};
+                material = {
+                    shininess = 1.0;
+                    color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                };
+            },
+            {
+                transform = {
+                    position = {x = 0.0; y = 0.0; z = -250.0;};
+                    scale = {x = 0.0; y = 0.0; z = 0.0;};
+                    rotation = {x = 0.1; y = 0.0; z = 0.0;};
+                };
+                size = {x = 50.0; y = 50.0; z = 50.0;};
+                material = {
+                    shininess = 1.0;
+                    color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                };
+            }
+        );
+    };
 
-  # Light configuration
-  lights :
-  {
-      # List of ambient lights
-      AmbientLight = (
-          {
-              transform = {
-                  position = {x = 60.0; y = 20.0; z = -10.0;};
-                  scale = {x = 60.0; y = 20.0; z = -10.0;};
-                  rotation = {x = 60.0; y = 20.0; z = -10.0;};
-              };
-              color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
-          }
-      );
-  };
-  ```
+    # Light configuration
+    lights :
+    {
+        # List of ambient lights
+        AmbientLight = (
+            {
+                transform = {
+                    position = {x = 60.0; y = 20.0; z = -10.0;};
+                    scale = {x = 60.0; y = 20.0; z = -10.0;};
+                    rotation = {x = 60.0; y = 20.0; z = -10.0;};
+                };
+                color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            }
+        );
+    };
+    ```
 
   </details>
 
-  <h3>Cameras config</h3>
+  <h3><center>Cameras config</center></h3>
 
-  <h3>Primitives config</h3>
+  starts with `cameras: {}` and put everything between the `{}`
 
-  <h3>Lights config</h3>
+  ```config
+  cameras:
+  {
+      # here
+  }
+  ```
+
+  Plugins have all different settings
+
+  <h4>Default Plugin: Camera</h4>
+
+  <details>
+    <summary><u>Camera</u></summary>
+
+    put config inside `()`
+
+    ```config
+    camera:
+    (
+        # here
+    )
+    ```
+
+    - each element is:
+    ```config
+    {
+        size= {x= 0, y= 0};
+        transform= {
+            position= {x= 0.0; y= 0.0, z= 0.0;};
+            scale= {x= 0.0; y= 0.0, z= 0.0;};
+            rotation= {x = 0.0; y = 0.0; z = 0.0;};
+        };
+        focal= 0.0;
+        maxThreads= 0;
+        filter= ();
+    }
+    ```
+    (replace each 0 with your values)
+
+  </details>
+
+  <h3><center>Primitives config</center></h3>
+
+  starts with `primitives: {}` and put everything between the `{}`
+
+  ```config
+  primitives:
+  {
+      # here
+  }
+  ```
+
+  <h4>Default Plugin: Sphere</h4>
+
+  <details>
+    <summary><u>Sphere</u></summary>
+
+    put config inside `()`
+
+    ```config
+    Sphere:
+    (
+        # here
+    )
+    ```
+
+    - each element is:
+    ```config
+    {
+        radius= 0.0;
+        transform= {
+            position= {x= 0.0; y= 0.0; z= 0.0;};
+            scale= {x= 1.0; y= 1.0; z= 1.0;};
+            rotation= {x= 0.0; y= 0.0; z= 0.0;};
+        };
+        material= {
+            shininess= 0.0;
+            color= {r= 0.0; g= 0.0; b= 0.0; a= 0.0;};
+        };
+    }
+    ```
+    (replace each 0 with your values)
+
+  </details>
+
+  <h4>Default Plugin: Plane</h4>
+
+  <details>
+    <summary><u>Plane</u></summary>
+
+    put config inside `()`
+
+    ```config
+    Plane:
+    (
+        # here
+    )
+    ```
+
+    - each element is:
+    ```config
+    {
+          transform= {
+              position= {x= 0.0; y= 0.0; z= 0.0;};
+              scale= {x= 0.0; y= 0.0; z= 0.0;};
+              rotation= {x= 0.0; y= 0.0; z= 0.0;};
+          };
+          size = {x = 0.0; y = 0.0; z = 0.0;};
+          material = {
+              shininess = 0.0;
+              color = {r = 0.0; g = 0.0; b = 0.0; a = 0.0;};
+          };
+    }
+    ```
+    (replace each 0 with your values)
+
+  </details>
+
+  <h3><center>Lights config</center></h3>
 
   \image html uml.svg
 */
