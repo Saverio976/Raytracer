@@ -5,10 +5,10 @@
 ** ImagePipeLine.cpp
 */
 
+#include <future>
+#include <vector>
 #include "ImagePipeLine.hpp"
 #include "PixelThread.hpp"
-#include <thread>
-#include <vector>
 
 namespace RayTracer::Images {
     ImagePipeLine::ImagePipeLine(RayTracer::Images::Image &image, const Scenes::Displayable &displayable,
@@ -19,31 +19,35 @@ namespace RayTracer::Images {
         _rayIterrator(rayIterrator) { }
 
     void ImagePipeLine::generate(std::size_t maxThread, std::size_t cluster) {
-        std::vector<std::thread> threads;
-        RayIterrator::iterrator it = this->_rayIterrator.begin();
+        std::vector<std::future<void>> threads;
+        RayIterrator::iterrator it = ++this->_rayIterrator.begin();
         size_t x = 0;
         size_t y = 0;
         bool stop = false;
+        size_t length = this->_image.getSize().getX() * this->_image.getSize().getY();
+        maxThread = (maxThread > length) ? length : maxThread;
 
-        for (size_t i = 0; i < maxThread; i++)
-            threads.push_back(std::thread());
         while (this->_state.getState() == RayTracer::Scenes::SceneState::States::RUNNING && !stop) {
-            for (std::thread &thread : threads) {
+            if (threads.size() < maxThread) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
-                thread = std::thread(pixelThread);
-                ++it;
+                threads.push_back(std::async(std::launch::async, pixelThread));
+                it = ++it;
                 x++;
                 if (x >= this->_image.getSize().getX()) {
                     x = 0;
                     y++;
                 }
-                if (y >= this->_image.getSize().getY()) {
+                if (y >= this->_image.getSize().getY() || it == _rayIterrator.end()) {
                     stop = true;
                     break;
                 }
             }
-            for (std::thread &thread : threads) {
-                thread.join();
+            for (auto it = threads.begin(); it != threads.end(); ++it) {
+                if (it->wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
+                    it->get();
+                    threads.erase(it);
+                    break;
+                }
             }
         }
     }

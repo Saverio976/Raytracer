@@ -42,7 +42,7 @@ namespace RayTracer::Images {
              * @param filter the filter
              */
             void apply(Filters::IFilter &filter);
-            ~ImagePipeLine();
+            ~ImagePipeLine() = default;
 
         protected:
         private:

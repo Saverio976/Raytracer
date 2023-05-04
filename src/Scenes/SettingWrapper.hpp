@@ -21,34 +21,34 @@ namespace RayTracer::Scenes {
      * it allows the user to navigate through the scene configuration by changing the path of the setting
      */
     class SettingWrapper: public ISetting {
+    public:
         /**
          * @brief an exception for when the key is not found
          */
-        class KeyNotFoundException: public std::exception {
-        public:
-            explicit KeyNotFoundException(const std::string &key);
-            const char *what() const throw();
-        private:
-            std::string _msg;
+        class ParsingException: public std::exception {
+            public:
+                explicit ParsingException(const std::string &key);
+                const char *what() const throw();
+            private:
+                std::string _msg;
         };
         /**
-         * @brief an exception for invalid type
+         * @brief an exception for when the key is not found
          */
-        class InvalidTypeSearchIndex: public std::exception {
+        class TypeException: public std::exception {
         public:
-            explicit InvalidTypeSearchIndex(const std::string &key);
+            explicit TypeException(const std::string &key);
             const char *what() const throw();
         private:
             std::string _msg;
         };
-    public:
         /**
          * @brief Creates a SettingWrapper
          *
          * @param config the config to wrap from libconfig++
          */
         explicit SettingWrapper(const std::shared_ptr<libconfig::Config> &config);
-        SettingWrapper(const SettingWrapper &src);
+        SettingWrapper(const ISetting &src);
         ~SettingWrapper() = default;
         /**
          * @brief get a precise setting of the config from key
@@ -57,7 +57,7 @@ namespace RayTracer::Scenes {
          *
          * @return true if the setting exists, false otherwise
          */
-        bool getSetting(const std::string &key);
+        void getSetting(const std::string &key);
         /**
          * @brief access element at index
          *
@@ -65,7 +65,7 @@ namespace RayTracer::Scenes {
          *
          * @return true if the setting exists, false otherwise
          */
-        bool getSetting(int index);
+        void getSetting(int index);
         /**
          * @brief get the length of the current key
          * works only for lists, array, groups
@@ -120,6 +120,12 @@ namespace RayTracer::Scenes {
          * @return a copy of the setting, moved to the index
          */
         std::unique_ptr<ISetting> get(int index) const override;
+        /**
+         * @brief returns the current setting
+         *
+         * @return a copy of the setting at the current emplacement
+         */
+        std::unique_ptr<ISetting> get() const override;
         /**
          * @brief cast operator to get bool from setting
          *

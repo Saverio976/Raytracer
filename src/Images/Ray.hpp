@@ -51,13 +51,13 @@ namespace RayTracer::Images {
              *
              * @param t the step to add
              */
-            void operator+=(float t);
+            void operator+=(double t);
             /**
              * @brief Substract `t*normal`
              *
              * @param t the step to substract
              */
-            void operator-=(float t);
+            void operator-=(double t);
             /**
              * @brief Increment `1*normal`
              *

@@ -8,19 +8,19 @@
 #include "SettingWrapper.hpp"
 
 namespace RayTracer::Scenes {
-    SettingWrapper::KeyNotFoundException::KeyNotFoundException(const std::string &key) {
-        _msg = "Error key not found : " + key + "\n";
+    SettingWrapper::ParsingException::ParsingException(const std::string &key) {
+        _msg = "Parsing error, cannot find : " + key + "\n";
     };
 
-    const char *SettingWrapper::KeyNotFoundException::what() const throw() {
+    const char *SettingWrapper::ParsingException::what() const throw() {
         return _msg.c_str();
     }
 
-    SettingWrapper::InvalidTypeSearchIndex::InvalidTypeSearchIndex(const std::string &key) {
-        _msg = "Error invalid type for key : " + key + "\n";
-    }
+    SettingWrapper::TypeException::TypeException(const std::string &key) {
+        _msg = "Type error, invalid type of key : " + key + "\n";
+    };
 
-    const char *SettingWrapper::InvalidTypeSearchIndex::what() const throw() {
+    const char *SettingWrapper::TypeException::what() const throw() {
         return _msg.c_str();
     }
 
@@ -28,34 +28,29 @@ namespace RayTracer::Scenes {
         _setting = &config->getRoot();
     }
 
-    SettingWrapper::SettingWrapper(const SettingWrapper &src): _config(src.getConfig()) {
+    SettingWrapper::SettingWrapper(const ISetting &src): _config(src.getConfig()) {
         if (!src.getPath().empty())
             _setting = &_config->lookup(src.getPath());
         else
             _setting = &_config->getRoot();
     }
 
-    bool SettingWrapper::getSetting(const std::string &key) {
+    void SettingWrapper::getSetting(const std::string &key) {
         try {
             _setting = &_config->lookup(key);
+        } catch (libconfig::SettingTypeException &e) {
+            throw ParsingException(e.getPath());
         } catch (libconfig::SettingNotFoundException &e) {
-            std::cerr << "Setting not found at path :" << e.getPath() << std::endl;
-            return (false);
+            throw ParsingException(e.getPath());
         }
-        return (true);
     }
 
-    bool SettingWrapper::getSetting(int index) {
+    void SettingWrapper::getSetting(int index) {
         try {
             *_setting[index];
-        } catch (libconfig::SettingTypeException &e) {
-            std::cerr << "Setting is invalid type :" << e.getPath() << std::endl;
-            return (false);
         } catch (libconfig::SettingNotFoundException &e) {
-            std::cerr << "Setting not found at path :" << e.getPath() << std::endl;
-            return (false);
+            throw ParsingException(e.getPath());
         }
-        return (true);
     }
 
     int SettingWrapper::getLength() const {
@@ -91,10 +86,8 @@ namespace RayTracer::Scenes {
                 getSetting(key);
             else
                 _setting = &(*_setting)[key.c_str()];
-        } catch (KeyNotFoundException &e) {
-            std::cerr << e.what() << std::endl;
         } catch (libconfig::SettingNotFoundException &e) {
-            std::cerr << "Setting not found at path :" << e.getPath() << std::endl;
+            throw ParsingException(e.getPath());
         }
     }
 
@@ -102,9 +95,9 @@ namespace RayTracer::Scenes {
         try {
             _setting = &(*_setting)[index];
         } catch (libconfig::SettingTypeException &e) {
-            std::cerr << "Setting is invalid type :" << e.getPath() << std::endl;
+            throw ParsingException(e.getPath());
         } catch (libconfig::SettingNotFoundException &e) {
-            std::cerr << "Setting not found at path :" << e.getPath() << std::endl;
+            throw ParsingException(e.getPath());
         }
     }
 
@@ -122,23 +115,49 @@ namespace RayTracer::Scenes {
         return copy;
     }
 
+    std::unique_ptr<ISetting> SettingWrapper::get() const {
+        std::unique_ptr<SettingWrapper> copy = std::make_unique<SettingWrapper>(*this);
+
+        return copy;
+    }
+
     SettingWrapper::operator bool() const {
-        return _setting->operator bool();
+        try {
+            return _setting->operator bool();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator std::string() const {
-        return _setting->operator std::string();
+        try {
+            return _setting->operator std::string();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator const char *() const {
-        return _setting->operator const char *();
+        try {
+            return _setting->operator const char *();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator double() const {
-        return _setting->operator double();
+        try {
+            return _setting->operator double();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 
     SettingWrapper::operator int() const {
-        return _setting->operator int();
+        try {
+            return _setting->operator int();
+        } catch (libconfig::SettingTypeException &e) {
+            throw TypeException(e.getPath());
+        }
     }
 }

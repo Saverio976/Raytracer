@@ -12,6 +12,14 @@ namespace RayTracer::Entities::Transform {
     Vector2i::Vector2i(const Vector2i &vector) : _x(vector._x), _y(vector._y) {}
     Vector2i::Vector2i(int width, int height) : _x(width), _y(height) {}
 
+    Vector2i::Vector2i(const Scenes::ISetting &setting) {
+        std::unique_ptr<Scenes::ISetting> tmp = setting.get("x");
+
+        _x = static_cast<int>(*tmp);
+        tmp = setting.get("y");
+        _y = static_cast<int>(*tmp);
+    }
+
     Vector2i Vector2i::operator+(const Vector2i &other) {
         return {_x + other._x, _y + other._y};
     }

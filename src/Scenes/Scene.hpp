@@ -11,13 +11,13 @@
     #include <memory>
     #include <mutex>
     #include <thread>
+    #include "ISetting.hpp"
     #include "Image.hpp"
     #include "ICamera.hpp"
     #include "ILight.hpp"
     #include "IPrimitive.hpp"
     #include "SceneState.hpp"
     #include "Displayable.hpp"
-    #include "IConfig.hpp"
     #include "EntityFactory.hpp"
 
 namespace RayTracer::Scenes {
@@ -34,7 +34,7 @@ namespace RayTracer::Scenes {
              *
              * @param config the config changed
              */
-            void operator()(const IConfig &);
+            void operator()(const ISetting &);
             /**
              * @brief Renders the scene (execute internal process in the thread)
              *

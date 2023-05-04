@@ -10,6 +10,7 @@
     #include <optional>
     #include "Color.hpp"
     #include "Displayable.hpp"
+    #include "IEntity.hpp"
     #include "IMaterial.hpp"
     #include "Ray.hpp"
     #include "Vector3f.hpp"
@@ -39,7 +40,7 @@ namespace RayTracer::Entities {
              */
             virtual bool isCollided(const Transform::Vector3f &point) const = 0;
             /**
-             * @brief Check if the ray is collided with the box
+             * @brief Check if the ray is collided
              *
              * @param ray the ray
              *

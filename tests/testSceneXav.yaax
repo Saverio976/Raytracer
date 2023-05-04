@@ -1,0 +1,65 @@
+# Configuration of the camera
+cameras:
+{
+    camera: (
+        {
+            size = {x: 500; y = 500;};
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            focal = 20.0;
+            maxThreads = -1;
+            filter = ()
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    Sphere = (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = 0.0; y = 100.0; z = 0.0;};
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                shininess = 1.0;
+                color = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
+            };
+        },
+        {
+            radius = 200.0;
+            transform = {
+                position = {x = 50.0; y = 200.0; z = 0.0;};
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                shininess = 1.0;
+                color = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# Light configuration
+lights :
+{
+    # List of ambient lights
+    AmbientLight = (
+        {
+            transform = {
+                position = {x = 60.0; y = 20.0; z = -10.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+        }
+    );
+};

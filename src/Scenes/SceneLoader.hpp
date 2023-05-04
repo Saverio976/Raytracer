@@ -10,9 +10,11 @@
     #include <string>
     #include <functional>
     #include <map>
+    #include <fstream>
     #include <filesystem>
-    #include "SettingWrapper.hpp"
-    #include "IConfig.hpp"
+    #include "FilterLoader.hpp"
+    #include "EntityLoader.hpp"
+    #include "ConfigWrapper.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -29,7 +31,7 @@ namespace RayTracer::Scenes {
              * @param filePath the file path
              */
             SceneLoader(const std::string &filePath);
-            ~SceneLoader();
+            ~SceneLoader() = default;
             /**
              * @brief Subscribe to an event
              *
@@ -38,7 +40,7 @@ namespace RayTracer::Scenes {
              * @param event the event
              * @param std::function the function
              */
-            void subscribe(const std::string &event, std::function<void(const IConfig &)> func);
+            void subscribe(const std::string &event, std::function<void(const ISetting &)> func);
             /**
              * @brief Check if the file has been modified and call subscribed events in consequence
              */
@@ -46,9 +48,12 @@ namespace RayTracer::Scenes {
         protected:
         private:
             std::unique_ptr<IConfig> _configWrapper;
-            std::map<std::string, std::function<void(const IConfig &)>> _events;
+            std::map<std::string, std::function<void(const ISetting &)>> _events;
             std::string _filePath;
             std::filesystem::file_time_type _lastWriteTime;
+            std::unique_ptr<Plugins::Entities::EntityLoader> _entityLoader;
+            std::unique_ptr<Plugins::Filters::FilterLoader> _filterLoader;
+
         };
 }
 

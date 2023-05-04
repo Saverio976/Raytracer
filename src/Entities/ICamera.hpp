@@ -29,13 +29,13 @@ namespace RayTracer::Entities {
              *
              * @return the focal
              */
-            virtual float getFocal() const = 0;
+            virtual double getFocal() const = 0;
             /**
              * @brief Set the focal (distance from the camera)
              *
              * @param value the focal
              */
-            virtual void setFocal(float value) = 0;
+            virtual void setFocal(double value) = 0;
             /**
              * @brief Set the size (of the screen)
              *
@@ -56,19 +56,19 @@ namespace RayTracer::Entities {
              *
              * @return the image
              */
-            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state);
+            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) = 0;
             /**
              * @brief Get the image (possible when rendering)
              *
              * @return the image
              */
-            virtual const Images::Image &getImage() const;
+            virtual const Images::Image &getImage() const = 0;
             /**
              * @brief Get the filters
              *
              * @return the filters
              */
-            virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters();
+            virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters() = 0;
 
         protected:
         private:

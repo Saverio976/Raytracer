@@ -4,11 +4,47 @@ project(Raytracer
     DESCRIPTION "Raytracer engine with sphere,..."
     LANGUAGES CXX
 )
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Release)
+if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
+    set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+endif()
+
+# --------- Entities plugins ---------
+add_library(Sphere SHARED)
+set_target_properties(Sphere PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+add_library(camera SHARED)
+set_target_properties(camera PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+add_library(AmbientLight SHARED)
+set_target_properties(AmbientLight PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+add_library(Plane SHARED)
+set_target_properties(Plane PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+# --------- Filters plugins ---------
+
+
+# -----------------------------------
+# --------- Main executable ---------
 
 add_executable(raytracer)
 set_target_properties(raytracer PROPERTIES
     CXX_STANDARD 20
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
+add_subdirectory(PluginsExt)
 add_subdirectory(src)
