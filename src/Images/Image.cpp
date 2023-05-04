@@ -13,6 +13,9 @@
 namespace RayTracer::Images {
     Image::Image(const Entities::Transform::Vector2i &size): _size(size)
     {
+        std::size_t r = size.getY() * size.getX();
+
+        _pixels.resize(r, Color(0, 0, 0, 0));
     }
 
     void Image::convertToPPM(const std::string &filePath) const {
@@ -51,9 +54,6 @@ namespace RayTracer::Images {
 
     Color &Image::PixelLine::operator[](std::size_t x) {
         std::size_t toReach = this->_size.getX() * this->_y + x;
-        for (size_t i = _pixels.size(); i < toReach + 1; i++) {
-            _pixels.push_back(Color(0, 0, 0, 0));
-        }
         return this->_pixels.at(toReach);
     }
 
