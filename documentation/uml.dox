@@ -1,0 +1,9 @@
+/*!
+  \mainpage RayTracer
+
+  Affichage d'image en envoyant des rayons dans une scene
+
+  <h2>Configuration d'une Scene</h2>
+
+  \image html uml.svg
+*/
