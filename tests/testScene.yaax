@@ -1,7 +1,7 @@
 # Configuration of the camera
 cameras:
 {
-    camera: (
+    Camera: (
         {
             size = {x: 500; y = 500;};
             transform = {

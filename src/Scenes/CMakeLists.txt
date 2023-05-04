@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 target_include_directories(raytracer PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Sphere PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(AmbientLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
-target_include_directories(camera PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Camera PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 find_library(LIBCONFIG config++)
@@ -18,7 +18,7 @@ target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/SceneLoader.cpp"
 )
 
-target_sources(camera PRIVATE
+target_sources(Camera PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/ConfigWrapper.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/SettingWrapper.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Scene.cpp"
