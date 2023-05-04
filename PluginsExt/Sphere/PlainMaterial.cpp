@@ -5,6 +5,7 @@
 ** PlainMaterial.cpp
 */
 
+#include <cmath>
 #include "PlainMaterial.hpp"
 #include "Color.hpp"
 #include "ISetting.hpp"
@@ -12,7 +13,6 @@
 #include "ILight.hpp"
 #include "IPrimitive.hpp"
 #include "Vector3f.hpp"
-#include <cmath>
 
 namespace RayTracer::PluginsExt::Sphere {
     PlainMaterial::PlainMaterial(const Scenes::ISetting &config):
@@ -23,17 +23,31 @@ namespace RayTracer::PluginsExt::Sphere {
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
     {
-        Images::Color coefs(0, 0, 0, 0);
+        double r = 0;
+        double g = 0;
+        double b = 0;
         double coefsTmp = 0;
         Images::Color colorLight(0, 0, 0, 0);
 
+        if (displayable.getLightList().empty()) {
+            return {0, 0, 0, 0};
+        }
         for (const auto &light : displayable.getLightList()) {
             colorLight = light->getColor(intersect, displayable);
 
-            coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess / 3.0);
-            coefs = coefs + (colorLight * Images::Color(coefsTmp, coefsTmp, coefsTmp, 255));
+            if (!light->isAmbient()) {
+                coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess / 3.0);
+            } else {
+                coefsTmp = _shininess;
+            }
+            r += colorLight[Images::Color::Types::RED] * coefsTmp;
+            g += colorLight[Images::Color::Types::GREEN] * coefsTmp;
+            b += colorLight[Images::Color::Types::BLUE] * coefsTmp;
         }
-        return _color * coefs;
+        r /= displayable.getLightList().size();
+        g /= displayable.getLightList().size();
+        b /= displayable.getLightList().size();
+        return _color * round(Images::Color(r, g, b, 255));
     }
 
     void PlainMaterial::setColor(const Images::Color &color)

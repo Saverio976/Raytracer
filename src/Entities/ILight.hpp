@@ -41,6 +41,12 @@ namespace RayTracer::Entities {
              * @param color the color
              */
             virtual void setColor(const Images::Color &color) = 0;
+            /**
+             * @brief Check if the light is ambient
+             *
+             * @return true if the light is ambient
+             */
+            virtual bool isAmbient() const = 0;
 
         protected:
         private:
