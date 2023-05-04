@@ -43,4 +43,9 @@ namespace RayTracer::PluginsExt::AmbientLight {
     void AmbientLightEntity::setColor(const Images::Color &color) {
         this->_color = color;
     }
+
+    bool AmbientLightEntity::isAmbient() const
+    {
+        return true;
+    }
 }
