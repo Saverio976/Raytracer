@@ -7,6 +7,7 @@
 
 #include "ISetting.hpp"
 #include "Scene.hpp"
+#include <future>
 
 namespace RayTracer::Scenes {
     void Scene::operator()(const ISetting &setting) {
@@ -16,6 +17,13 @@ namespace RayTracer::Scenes {
         int length_two = 0;
         std::string name;
 
+        this->_state.changeState(SceneState::States::CANCELLED);
+        while (!this->isReady()) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+        this->_cameras.clear();
+        this->_displayable.getLightList().clear();
+        this->_displayable.getPrimitiveList().clear();
         settingWrapper = setting.get("cameras");
         length = settingWrapper->getLength();
         for (int i = 0; i < length; i++) {
@@ -56,10 +64,11 @@ namespace RayTracer::Scenes {
 
     void Scene::renders() {
         this->_state.changeState(SceneState::States::RUNNING);
-        this->_thread = std::thread([&] () -> void {
+        this->_future = std::async(std::launch::async, [this] () {
             for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
-                if (this->_state.getState() == SceneState::States::CANCELLED)
+                if (this->_state.getState() == SceneState::States::CANCELLED) {
                     break;
+                }
                 camera->render(this->_displayable, this->_state);
             }
         });
@@ -73,12 +82,17 @@ namespace RayTracer::Scenes {
         return this->_cameras;
     }
 
-    bool Scene::isReady() const {
-        return !this->_thread.joinable();
+    bool Scene::isReady() const
+    {
+        try {
+            return this->_future.wait_for(std::chrono::seconds(0)) == std::future_status::ready;
+        } catch (const std::future_error &e) {
+            return true;
+        }
     }
 
-    void Scene::wait_end() {
-        if (this->_thread.joinable())
-            this->_thread.join();
+    void Scene::wait_end()
+    {
+        this->_future.wait();
     }
 }

@@ -7,6 +7,7 @@
 
 #ifndef SCENE_HPP_
     #define SCENE_HPP_
+    #include <future>
     #include <vector>
     #include <memory>
     #include <mutex>
@@ -65,7 +66,7 @@ namespace RayTracer::Scenes {
         private:
             std::vector<std::unique_ptr<Entities::ICamera>> _cameras;
             SceneState _state;
-            std::thread _thread;
+            std::future<void> _future;
             Displayable _displayable;
     };
 }
