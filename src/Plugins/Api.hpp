@@ -8,6 +8,8 @@
 #ifndef API_HPP_
     #define API_HPP_
 
+    #include <vector>
+
 extern "C" {
     /**
      * @brief Get the creator
@@ -27,7 +29,7 @@ extern "C" {
      *
      * @param creator
      */
-    void deleteCreator(void *creator);
+    void deleteCreator(void *creator, std::vector<void *> &elements);
 }
 
 #endif
