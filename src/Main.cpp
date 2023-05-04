@@ -59,7 +59,14 @@ namespace RayTracer {
             _exitCode = 84;
             return;
         }
-        this->_scene.wait_end(); // TODO: ici
+        while (!_scene.isReady()) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            try {
+                loader.update();
+            } catch (const std::exception &e) {
+                std::cerr << e.what() << ": Waiting 5 more seconds (unlimited times)" << std::endl;
+            }
+        }
         exportScene(_baseFilePath);
     }
 
