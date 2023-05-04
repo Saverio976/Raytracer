@@ -22,11 +22,11 @@ namespace RayTracer::PluginsExt::Plane {
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
     {
-        double r = 0;
-        double g = 0;
-        double b = 0;
+        double r = _color[Images::Color::Types::RED];
+        double g = _color[Images::Color::Types::GREEN];
+        double b = _color[Images::Color::Types::BLUE];
         size_t size = displayable.getLightList().size() + 1;
-        Images::Color color = _color;
+        Images::Color color(0, 0, 0, 255);
 
         if (size == 1)
             return {0, 0, 0, 0};
