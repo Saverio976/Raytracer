@@ -11,6 +11,7 @@
     #include <list>
     #include <memory>
     #include <vector>
+    #include <functional>
 
 namespace RayTracer::Entities {
     class IPrimitive;
@@ -30,30 +31,30 @@ namespace RayTracer::Scenes {
              *
              * @return the light list
              */
-            const std::vector<std::unique_ptr<Entities::ILight>> &getLightList() const;
+            const std::vector<std::reference_wrapper<Entities::ILight>> &getLightList() const;
             /**
              * @brief Get the light list
              *
              * @return the light list
              */
-            std::vector<std::unique_ptr<Entities::ILight>> &getLightList();
+            std::vector<std::reference_wrapper<Entities::ILight>> &getLightList();
             /**
              * @brief Get the primitive list (const)
              *
              * @return the primitive list
              */
-            const std::vector<std::unique_ptr<Entities::IPrimitive>> &getPrimitiveList() const;
+            const std::vector<std::reference_wrapper<Entities::IPrimitive>> &getPrimitiveList() const;
             /**
              * @brief Get the primitive list
              *
              * @return the primitive list
              */
-            std::vector<std::unique_ptr<Entities::IPrimitive>> &getPrimitiveList();
+            std::vector<std::reference_wrapper<Entities::IPrimitive>> &getPrimitiveList();
 
         protected:
         private:
-            std::vector<std::unique_ptr<Entities::ILight>> _lights;
-            std::vector<std::unique_ptr<Entities::IPrimitive>> _primitives;
+            std::vector<std::reference_wrapper<Entities::ILight>> _lights;
+            std::vector<std::reference_wrapper<Entities::IPrimitive>> _primitives;
     };
 }
 

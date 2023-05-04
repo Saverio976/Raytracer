@@ -9,19 +9,19 @@
 
 namespace RayTracer::Scenes {
 
-    const std::vector<std::unique_ptr<Entities::ILight>>& Displayable::getLightList() const {
+    const std::vector<std::reference_wrapper<Entities::ILight>> &Displayable::getLightList() const {
         return _lights;
     }
 
-    std::vector<std::unique_ptr<Entities::ILight>>& Displayable::getLightList() {
+    std::vector<std::reference_wrapper<Entities::ILight>> &Displayable::getLightList() {
         return _lights;
     }
 
-    const std::vector<std::unique_ptr<Entities::IPrimitive>>& Displayable::getPrimitiveList() const {
+    const std::vector<std::reference_wrapper<Entities::IPrimitive>> &Displayable::getPrimitiveList() const {
         return _primitives;
     }
 
-    std::vector<std::unique_ptr<Entities::IPrimitive>>& Displayable::getPrimitiveList() {
+    std::vector<std::reference_wrapper<Entities::IPrimitive>> &Displayable::getPrimitiveList() {
         return _primitives;
     }
 }
