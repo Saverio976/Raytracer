@@ -32,7 +32,7 @@ namespace RayTracer::Factories {
              *
              * @return the filter
              */
-            static Filters::IFilter *get(const std::string &name, const Scenes::ISetting &setting);
+            static Filters::IFilter &get(const std::string &name, const Scenes::ISetting &setting);
             /**
              * @brief Clear all filters
              */
