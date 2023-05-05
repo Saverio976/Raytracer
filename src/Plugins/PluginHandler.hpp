@@ -11,7 +11,7 @@
     #include <string>
     #include <memory>
     #include <dlfcn.h>
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins {
