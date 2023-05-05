@@ -13,7 +13,12 @@
 namespace RayTracer {
     void Logger::fatal(const std::string &message)
     {
-        if (Parameters::getInstance().getInt("log-level") < 0) {
+        try {
+            if (Parameters::getInstance().getInt("log-level") < 0) {
+                return;
+            }
+        }
+        catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
         Logger::print("FATAL", message);
@@ -21,7 +26,11 @@ namespace RayTracer {
 
     void Logger::error(const std::string &message)
     {
-        if (Parameters::getInstance().getInt("log-level") < 1) {
+        try {
+            if (Parameters::getInstance().getInt("log-level") < 1) {
+                return;
+            }
+        } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
         Logger::print("ERROR", message);
@@ -29,7 +38,11 @@ namespace RayTracer {
 
     void Logger::warn(const std::string &message)
     {
-        if (Parameters::getInstance().getInt("log-level") < 2) {
+        try {
+            if (Parameters::getInstance().getInt("log-level") < 2) {
+                return;
+            }
+        } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
         Logger::print("WARN", message);
@@ -37,7 +50,11 @@ namespace RayTracer {
 
     void Logger::info(const std::string &message)
     {
-        if (Parameters::getInstance().getInt("log-level") < 3) {
+        try {
+            if (Parameters::getInstance().getInt("log-level") < 3) {
+                return;
+            }
+        } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
         Logger::print("INFO", message);
@@ -48,7 +65,11 @@ namespace RayTracer {
 #ifdef NDEBUG
         return;
 #else
-        if (Parameters::getInstance().getInt("log-level") < 4) {
+        try {
+            if (Parameters::getInstance().getInt("log-level") < 4) {
+                return;
+            }
+        } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
         Logger::print("DEBUG", message);
@@ -60,7 +81,11 @@ namespace RayTracer {
 #ifdef NDEBUG
         return;
 #else
-        if (Parameters::getInstance().getInt("log-level") < 5) {
+        try {
+            if (Parameters::getInstance().getInt("log-level") < 5) {
+                return;
+            }
+        } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
         Logger::print("TRACE", message);
