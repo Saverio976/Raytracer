@@ -6,7 +6,6 @@
 */
 
 #include <vector>
-#include "PlaneEntity.hpp"
 #include "Api.hpp"
 #include "PlaneCreator.hpp"
 
@@ -16,10 +15,8 @@ extern "C" {
         return new RayTracer::PluginsExt::Plane::PlaneCreator();
     }
 
-    void deleteCreator(void *creator, std::vector<void *> &elements)
+    void deleteCreator(void *creator)
     {
-        for (void *element : elements)
-            delete static_cast<RayTracer::PluginsExt::Plane::PlaneEntity *>(element);
         delete static_cast<RayTracer::PluginsExt::Plane::PlaneCreator *>(creator);
     }
 }
