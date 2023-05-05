@@ -128,6 +128,24 @@ namespace RayTracer::Entities::Transform {
              * @return The distance value
              */
             double getDistance(const Vector3f &other) const;
+            /* @brief Convert the vector to degrees from radians
+             *
+             * @return a new vector with the conversion
+             */
+            Vector3f toDegrees() const;
+            /* @brief Convert the vector to radians from degrees
+             *
+             * @return a new vector with the conversion
+             */
+            Vector3f toRadians() const;
+            /* @brief Rotate the vector (base, direction)
+             *
+             * @param direction the vector of the direction
+             * @param rotation the rotation
+             *
+             * @return a new vector direction
+             */
+            Vector3f rotateVector(const Vector3f &direction, const Vector3f &rotation) const;
 
         protected:
         private:
