@@ -11,8 +11,8 @@
 #include "PixelThread.hpp"
 
 namespace RayTracer::Images {
-    ImagePipeLine::ImagePipeLine(RayTracer::Images::Image &image, const Scenes::Displayable &displayable,
-        const Scenes::SceneState &state, const RayTracer::Images::RayIterrator &rayIterrator) :
+    ImagePipeLine::ImagePipeLine(RayTracer::Images::Image &image, const Scenes::IDisplayable &displayable,
+        const Scenes::ISceneState &state, const RayTracer::Images::RayIterrator &rayIterrator) :
         _image(image),
         _displayable(displayable),
         _state(state),
@@ -27,7 +27,7 @@ namespace RayTracer::Images {
         size_t length = this->_image.getSize().getX() * this->_image.getSize().getY();
         maxThread = (maxThread > length) ? length : maxThread;
 
-        while (this->_state.getState() == RayTracer::Scenes::SceneState::States::RUNNING && !stop) {
+        while (this->_state.getState() == RayTracer::Scenes::ISceneState::States::RUNNING && !stop) {
             if (threads.size() < maxThread) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
                 threads.push_back(std::async(std::launch::async, pixelThread));

@@ -5,11 +5,12 @@
 ** PixelThread.cpp
 */
 
+#include "IDisplayable.hpp"
 #include "PixelThread.hpp"
 #include "IPrimitive.hpp"
 
 namespace RayTracer::Images {
-    PixelThread::PixelThread(const Scenes::Displayable &displayable, Color &color, const Images::Ray &ray) :
+    PixelThread::PixelThread(const Scenes::IDisplayable &displayable, Color &color, const Images::Ray &ray) :
         _displayable(displayable),
         _color(color),
         _ray(ray)

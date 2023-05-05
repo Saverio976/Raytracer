@@ -7,11 +7,12 @@
 
 #ifndef ICAMERA_HPP_
     #define ICAMERA_HPP_
+    #include <list>
     #include "Transform/Vector2i.hpp"
-    #include "Displayable.hpp"
+    #include "IDisplayable.hpp"
     #include "Image.hpp"
     #include "IFilter.hpp"
-    #include "SceneState.hpp"
+    #include "ISceneState.hpp"
     #include "IEntity.hpp"
 
 namespace RayTracer::Entities {
@@ -56,7 +57,7 @@ namespace RayTracer::Entities {
              *
              * @return the image
              */
-            virtual const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) = 0;
+            virtual const Images::Image &render(const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state) = 0;
             /**
              * @brief Get the image (possible when rendering)
              *

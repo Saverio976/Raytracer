@@ -98,9 +98,9 @@ namespace RayTracer {
             set(key, valueDouble);
             return;
         }
-        ss.str(value);
-        ss >> valueInt;
-        if (ss.fail()) {
+        std::stringstream ss1(value);
+        ss1 >> valueInt;
+        if (ss1.fail()) {
             set(key, valueDouble);
             return;
         }

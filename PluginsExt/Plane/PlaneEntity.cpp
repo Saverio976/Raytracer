@@ -51,8 +51,9 @@ namespace RayTracer::PluginsExt::Plane {
         return false;
     }
 
-    Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable,
-    const Entities::Transform::Vector3f &intersect) const {
+    Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+    const Entities::Transform::Vector3f &intersect) const
+    {
         return _material.getColor(ray, _transform, intersect, displayable);
     }
 }

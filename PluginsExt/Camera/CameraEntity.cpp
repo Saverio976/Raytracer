@@ -6,10 +6,12 @@
 */
 
 #include <iostream>
+#include <thread>
+#include "ISceneState.hpp"
+#include "IDisplayable.hpp"
 #include "CameraEntity.hpp"
 #include "FilterFactory.hpp"
 #include "ImagePipeLine.hpp"
-#include "SettingWrapper.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
 
@@ -31,13 +33,13 @@ namespace RayTracer::PluginsExt::Camera {
 
                 _filters.push_back(std::move(filterPtr));
             }
-        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+        } catch (const Scenes::ISetting::IParsingException &e) {
             std::cerr << e.what() << std::endl;
         }
         try {
             _maxThread = static_cast<int>(*config.get("maxThreads"));
             _maxThread = (_maxThread == -1) ? std::thread::hardware_concurrency() : _maxThread;
-        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+        } catch (const Scenes::ISetting::IParsingException &e) {
             _maxThread = std::thread::hardware_concurrency();
         }
         _maxThread = (_maxThread <= 0) ? 1 : _maxThread;
@@ -71,7 +73,7 @@ namespace RayTracer::PluginsExt::Camera {
         return this->_size;
     }
 
-    const Images::Image &CameraEntity::render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) {
+    const Images::Image &CameraEntity::render(const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state) {
         Images::RayIterrator iterator(*this);
         Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 

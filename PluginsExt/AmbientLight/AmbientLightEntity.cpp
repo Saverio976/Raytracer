@@ -31,7 +31,8 @@ namespace RayTracer::PluginsExt::AmbientLight {
     }
 
     Images::Color AmbientLightEntity::getColor(const Entities::Transform::Vector3f &point,
-    const Scenes::Displayable &displayable) const {
+    const Scenes::IDisplayable &displayable) const
+    {
         Entities::Transform::Vector3f normal = (point - this->_transform.getPosition()).getNormalized();
         Entities::Transform::Vector3f vector = point - normal;
         Images::Ray ray(vector, point);

@@ -6,6 +6,7 @@
 */
 
 #include "SceneLoader.hpp"
+#include "Logger.hpp"
 
 namespace RayTracer::Scenes {
     SceneLoader::SceneLoader(const std::string &filePath): _filePath(filePath) {
@@ -30,6 +31,7 @@ namespace RayTracer::Scenes {
 
             if (it == _events.end())
                 return;
+            Logger::info("Scene config file changed, reloading...");
             this->_entityLoader->loadEntities();
             this->_filterLoader->loadFilters();
             it->second(*_configWrapper->getSetting());

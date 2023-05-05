@@ -60,7 +60,7 @@ namespace RayTracer::PluginsExt::AmbientLight {
              *
              * @return the color
              */
-            Images::Color getColor(const Entities::Transform::Vector3f &point, const Scenes::Displayable &displayable) const final;
+            Images::Color getColor(const Entities::Transform::Vector3f &point, const Scenes::IDisplayable &displayable) const final;
             /**
              * @brief Set the color
              *

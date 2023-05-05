@@ -9,7 +9,7 @@
     #define IPRIMITIVE_HPP_
     #include <optional>
     #include "Color.hpp"
-    #include "Displayable.hpp"
+    #include "IDisplayable.hpp"
     #include "IEntity.hpp"
     #include "IMaterial.hpp"
     #include "Ray.hpp"
@@ -30,7 +30,7 @@ namespace RayTracer::Entities {
              *
              * @return the material
              */
-            virtual Images::Color getColor(const Images::Ray &ray, const Scenes::Displayable &displayable,
+            virtual Images::Color getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
                 const Transform::Vector3f &intersect) const = 0;
             /**
              * @brief Check if the point is collided with the box

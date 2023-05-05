@@ -31,7 +31,7 @@ target_sources(AmbientLight PRIVATE
 )
 
 target_sources(Plane PRIVATE
-        "${CMAKE_CURRENT_SOURCE_DIR}/Vector2i.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Vector3f.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Transform.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Vector2i.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Vector3f.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Transform.cpp"
 )

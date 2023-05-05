@@ -10,7 +10,7 @@
 
     #include "Ray.hpp"
     #include "Color.hpp"
-    #include "Displayable.hpp"
+    #include "IDisplayable.hpp"
     #include "ITransform.hpp"
     #include "Vector3f.hpp"
 
@@ -32,7 +32,7 @@ namespace RayTracer::Entities {
              *
              * @return the color
              */
-            virtual Images::Color getColor(const Images::Ray &ray, const Transform::ITransform &centerObj, const Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const = 0;
+            virtual Images::Color getColor(const Images::Ray &ray, const Transform::ITransform &centerObj, const Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const = 0;
             /**
              * @brief Set the color
              *

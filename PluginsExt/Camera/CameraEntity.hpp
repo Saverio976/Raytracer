@@ -9,6 +9,8 @@
     #define CAMERA_HPP_
 
     #include "ICamera.hpp"
+    #include "ISceneState.hpp"
+    #include "IDisplayable.hpp"
     #include "Transform.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
@@ -51,7 +53,7 @@ namespace RayTracer::PluginsExt::Camera {
              *
              * @return the image
              */
-            const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) final;
+            const Images::Image &render(const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state) final;
             /**
              * @brief Get the image (possible when rendering)
              *

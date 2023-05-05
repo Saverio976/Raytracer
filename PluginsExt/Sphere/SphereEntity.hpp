@@ -8,6 +8,7 @@
 #ifndef SPHEREENTITY_HPP_
     #define SPHEREENTITY_HPP_
 
+    #include "IDisplayable.hpp"
     #include "IMaterial.hpp"
     #include "IPrimitive.hpp"
     #include "ISetting.hpp"
@@ -25,7 +26,7 @@ namespace RayTracer::PluginsExt::Sphere {
             const Entities::Transform::ITransform &getTransform() const final;
             bool isCollided(const Entities::Transform::Vector3f &point) const final;
             std::optional<Entities::Transform::Vector3f> isCollided(const Images::Ray &ray) const final;
-            Images::Color getColor(const Images::Ray &ray, const Scenes::Displayable &displayable,
+            Images::Color getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
                 const Entities::Transform::Vector3f &intersect) const final;
         private:
             Entities::Transform::Transform _transform;

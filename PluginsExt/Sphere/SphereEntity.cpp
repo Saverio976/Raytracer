@@ -16,6 +16,7 @@
 #include "IEntity.hpp"
 #include "Transform.hpp"
 #include "Vector3f.hpp"
+#include "IDisplayable.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
     SphereEntity::SphereEntity(const Scenes::ISetting &config):
@@ -72,7 +73,7 @@ namespace RayTracer::PluginsExt::Sphere {
         return std::make_optional(vect);
     }
 
-    Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable,
+    Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const {
         return _material.getColor(ray, _transform, intersect, displayable) + Images::Color(0, 0, 0, 255);
     }

@@ -8,9 +8,9 @@
     #define IMAGEPIPELINE_HPP_
 
     #include "Image.hpp"
-    #include "Displayable.hpp"
+    #include "IDisplayable.hpp"
     #include "IFilter.hpp"
-    #include "Scene.hpp"
+    #include "ISceneState.hpp"
     #include "RayIterrator.hpp"
 
 namespace RayTracer::Images {
@@ -28,7 +28,7 @@ namespace RayTracer::Images {
              * @param displayable the displayable entities to render
              * @param state the state (if cancel needed)
              */
-            ImagePipeLine(Image &image, const Scenes::Displayable &displayable, const Scenes::SceneState &state, const RayIterrator &rayIterrator);
+            ImagePipeLine(Image &image, const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state, const RayIterrator &rayIterrator);
             /**
              * @brief Generate the image with entities displayable
              *
@@ -47,8 +47,8 @@ namespace RayTracer::Images {
         protected:
         private:
             Image &_image;
-            const Scenes::Displayable &_displayable;
-            const Scenes::SceneState &_state;
+            const Scenes::IDisplayable &_displayable;
+            const Scenes::ISceneState &_state;
             RayIterrator _rayIterrator;
     };
 }
