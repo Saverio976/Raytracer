@@ -17,7 +17,7 @@ namespace RayTracer::Factories {
         getFactory().add(name, std::move(handler));
     }
 
-    Filters::IFilter *FilterFactory::get(const std::string &name, const Scenes::ISetting &setting)
+    Filters::IFilter &FilterFactory::get(const std::string &name, const Scenes::ISetting &setting)
     {
         return getFactory().get(name, setting);
     }

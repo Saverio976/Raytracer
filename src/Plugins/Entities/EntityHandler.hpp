@@ -35,7 +35,7 @@ namespace RayTracer::Plugins::Entities {
              *
              * @return the entity
              */
-            RayTracer::Entities::IEntity *get(const RayTracer::Scenes::ISetting &setting) const;
+            RayTracer::Entities::IEntity &get(const RayTracer::Scenes::ISetting &setting);
         private:
             PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> _handler;
     };

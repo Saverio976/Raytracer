@@ -33,9 +33,9 @@ namespace RayTracer::PluginsExt::Sphere {
             return {0, 0, 0, 0};
         }
         for (const auto &light : displayable.getLightList()) {
-            colorLight = light->getColor(intersect, displayable);
+            colorLight = light.get().getColor(intersect, displayable);
 
-            if (!light->isAmbient()) {
+            if (!light.get().isAmbient()) {
                 coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess / 3.0);
             } else {
                 coefsTmp = _shininess;

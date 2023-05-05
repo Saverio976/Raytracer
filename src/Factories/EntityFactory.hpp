@@ -33,7 +33,7 @@ namespace RayTracer::Factories {
              *
              * @return the entity
              */
-            static Entities::IEntity *get(const std::string &name, const Scenes::ISetting &setting);
+            static Entities::IEntity &get(const std::string &name, const Scenes::ISetting &setting);
             /**
              * @brief Clear all handlers
              */
