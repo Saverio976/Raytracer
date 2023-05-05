@@ -12,8 +12,14 @@
 #include "SphereEntity.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
-    RayTracer::Entities::IEntity *SphereCreator::create(const Scenes::ISetting &config)
-    {
-        return new RayTracer::PluginsExt::Sphere::SphereEntity(config);
+    SphereCreator::~SphereCreator() {
+        for (SphereEntity *element : this->_elements)
+            delete element;
+    }
+
+    RayTracer::Entities::IEntity *SphereCreator::create(const Scenes::ISetting &config) {
+        SphereEntity *element = new SphereEntity(config);
+        this->_elements.push_back(element);
+        return element;
     }
 }
