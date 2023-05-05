@@ -4,9 +4,11 @@
 ** File description:
 ** Vector2i.hpp
 */
+
 #ifndef VECTOR2I_HPP_
     #define VECTOR2I_HPP_
 
+    #include <ostream>
     #include "IConfig.hpp"
 
 namespace RayTracer::Entities::Transform {
@@ -96,5 +98,7 @@ namespace RayTracer::Entities::Transform {
             int _y;
     };
 }
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector2i& vector);
 
 #endif /*VECTOR2I_HPP_*/
