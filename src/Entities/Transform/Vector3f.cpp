@@ -129,3 +129,8 @@ namespace RayTracer::Entities::Transform {
         return {xRotation, yRotation, zRotation};
     }
 }
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector3f& vector) {
+    os << "x = " << vector.getX() << " y = " << vector.getY() << " z = " << vector.getZ() << std::endl;
+    return os;
+}

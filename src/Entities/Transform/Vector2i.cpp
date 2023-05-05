@@ -54,3 +54,8 @@ namespace RayTracer::Entities::Transform {
         return _y;
     }
 }
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector2i& vector) {
+    os << "x = " << vector.getX() << " y = " << vector.getY() << std::endl;
+    return os;
+}
