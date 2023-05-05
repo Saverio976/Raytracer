@@ -10,7 +10,7 @@
 
     #include "ILight.hpp"
     #include "IConfig.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "Transform.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
