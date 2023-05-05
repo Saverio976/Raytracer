@@ -12,6 +12,7 @@
     #include <memory>
     #include <mutex>
     #include <thread>
+    #include <functional>
     #include "ILogger.hpp"
     #include "ISetting.hpp"
     #include "Image.hpp"
@@ -49,7 +50,7 @@ namespace RayTracer::Scenes {
              *
              * @return the cameras
              */
-            const std::vector<std::unique_ptr<Entities::ICamera>> &getCameras() const;
+            const std::vector<std::reference_wrapper<Entities::ICamera>> &getCameras() const;
             /**
              * @brief Check if the scene is ready (internal render thread is stopped)
              *
@@ -66,7 +67,7 @@ namespace RayTracer::Scenes {
             void wait_end();
         protected:
         private:
-            std::vector<std::unique_ptr<Entities::ICamera>> _cameras;
+            std::vector<std::reference_wrapper<Entities::ICamera>> _cameras;
             SceneState _state;
             std::future<void> _future;
             Displayable _displayable;

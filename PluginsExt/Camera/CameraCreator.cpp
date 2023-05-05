@@ -10,7 +10,14 @@
 #include "ILogger.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
+    CameraCreator::~CameraCreator() {
+        for (CameraEntity *element : this->_elements)
+            delete element;
+    }
+
     RayTracer::Entities::IEntity *CameraCreator::create(const Scenes::ISetting &config, ILogger &logger) {
-        return new CameraEntity(config, logger);
+        CameraEntity *element = new CameraEntity(config, logger);
+        this->_elements.push_back(element);
+        return element;
     }
 }

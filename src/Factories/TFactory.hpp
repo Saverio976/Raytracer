@@ -43,7 +43,7 @@ namespace RayTracer::Factories {
              *
              * @return the interface
              */
-            Interface *get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger)
+            Interface &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger)
             {
                 if (_stock.count(name) == 0)
                     throw std::runtime_error(name + " <- not found");

@@ -20,7 +20,7 @@ namespace RayTracer::Factories {
         getFactory().add(name, std::move(handler));
     }
 
-    Entities::IEntity *EntityFactory::get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger)
+    Entities::IEntity &EntityFactory::get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger)
     {
         return getFactory().get(name, setting, logger);
     }

@@ -31,9 +31,7 @@ namespace RayTracer::PluginsExt::Camera {
 
             for (int i = 0; i < settingWrapper->getLength(); i++) {
                 tmp = settingWrapper->get(i);
-                std::unique_ptr<Filters::IFilter> filterPtr(Factories::FilterFactory::get(tmp->getKey(), *tmp, logger));
-
-                _filters.push_back(std::move(filterPtr));
+                _filters.push_back(Factories::FilterFactory::get(tmp->getKey(), *tmp, logger));
             }
         } catch (const Scenes::ISetting::IParsingException &e) {
             std::cerr << e.what() << std::endl;
@@ -80,8 +78,8 @@ namespace RayTracer::PluginsExt::Camera {
         Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 
         imagePipeLine.generate(_logger, _maxThread, 1);
-        for (const std::unique_ptr<Filters::IFilter> &filter : this->_filters) {
-            imagePipeLine.apply(*filter);
+        for (const std::reference_wrapper<Filters::IFilter> &filter : this->_filters) {
+            imagePipeLine.apply(filter.get());
         }
         return this->_image;
     }
@@ -90,7 +88,7 @@ namespace RayTracer::PluginsExt::Camera {
         return this->_image;
     }
 
-    std::list<std::unique_ptr<Filters::IFilter>> &CameraEntity::getFilters() {
+    std::list<std::reference_wrapper<Filters::IFilter>> &CameraEntity::getFilters() {
         return this->_filters;
     }
 }

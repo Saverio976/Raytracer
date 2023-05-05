@@ -69,7 +69,7 @@ namespace RayTracer::Entities {
              *
              * @return the filters
              */
-            virtual std::list<std::unique_ptr<Filters::IFilter>> &getFilters() = 0;
+            virtual std::list<std::reference_wrapper<Filters::IFilter>> &getFilters() = 0;
 
         protected:
         private:

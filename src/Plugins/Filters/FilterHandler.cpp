@@ -11,7 +11,7 @@
 namespace RayTracer::Plugins::Filters {
     FilterHandler::FilterHandler(const std::string &filePath) : _handler(filePath) { }
 
-    RayTracer::Filters::IFilter *FilterHandler::get(const RayTracer::Scenes::ISetting &setting, ILogger &logger) const {
+    RayTracer::Filters::IFilter &FilterHandler::get(const RayTracer::Scenes::ISetting &setting, ILogger &logger) {
         return this->_handler.get(setting, logger);
     }
 }

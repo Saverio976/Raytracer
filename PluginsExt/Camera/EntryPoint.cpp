@@ -5,6 +5,8 @@
 ** EntryPoint.cpp
 */
 
+#include <vector>
+#include "CameraEntity.hpp"
 #include "Api.hpp"
 #include "CameraCreator.hpp"
 

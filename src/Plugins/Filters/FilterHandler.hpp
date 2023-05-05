@@ -36,7 +36,7 @@ namespace RayTracer::Plugins::Filters {
              *
              * @return the filter
              */
-            RayTracer::Filters::IFilter *get(const RayTracer::Scenes::ISetting &setting, ILogger &logger) const;
+            RayTracer::Filters::IFilter &get(const RayTracer::Scenes::ISetting &setting, ILogger &logger);
 
         private:
             PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> _handler;

@@ -8,6 +8,7 @@
 #ifndef CAMERA_HPP_
     #define CAMERA_HPP_
 
+    #include <functional>
     #include "ICamera.hpp"
     #include "ILogger.hpp"
     #include "ISceneState.hpp"
@@ -66,14 +67,14 @@ namespace RayTracer::PluginsExt::Camera {
              *
              * @return the filters
              */
-            std::list<std::unique_ptr<Filters::IFilter>> &getFilters() final;
+            std::list<std::reference_wrapper<Filters::IFilter>> &getFilters() final;
 
         protected:
         private:
             Images::Image _image;
             Entities::Transform::Vector2i _size;
             double _focal;
-            std::list<std::unique_ptr<Filters::IFilter>> _filters;
+            std::list<std::reference_wrapper<Filters::IFilter>> _filters;
             Entities::Transform::Transform _transform;
             int _maxThread;
             ILogger &_logger;
