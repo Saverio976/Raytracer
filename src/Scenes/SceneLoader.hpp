@@ -15,7 +15,7 @@
     #include "FilterLoader.hpp"
     #include "EntityLoader.hpp"
     #include "ConfigWrapper.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
 
 namespace RayTracer::Scenes {
     /**
