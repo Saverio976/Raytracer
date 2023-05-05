@@ -2,14 +2,13 @@
 ** EPITECH PROJECT, 2023
 ** Raytracer
 ** File description:
-** Logger.hpp
+** ILogger.hpp
 */
 
-#ifndef RAYLOGGER_HPP
-    #define RAYLOGGER_HPP
+#ifndef RAYILOGGER_HPP
+    #define RAYILOGGER_HPP
 
     #include <string>
-    #include "ILogger.hpp"
 
 namespace RayTracer {
     /**
@@ -28,8 +27,9 @@ namespace RayTracer {
      * `debug` and `trace` will only do something in debug mode compilation.
      * (`set(CMAKE_BUILD_TYPE Debug)` in `CMakeLists.txt`)
      */
-    class Logger : public ILogger {
+    class ILogger {
         public:
+            virtual ~ILogger() = default;
             /**
              * @brief Logger fata
              * 
@@ -39,7 +39,7 @@ namespace RayTracer {
              *
              * @param message the message
              */
-            void fatal(const std::string &message) final;
+            virtual void fatal(const std::string &message) = 0;
             /**
              * @brief Logger error
              *
@@ -50,7 +50,7 @@ namespace RayTracer {
              *
              * @param message the message
              */
-            void error(const std::string &message) final;
+            virtual void error(const std::string &message) = 0;
             /**
              * @brief Logger warn
              *
@@ -60,7 +60,7 @@ namespace RayTracer {
              *
              * @param message the message
              */
-            void warn(const std::string &message) final;
+            virtual void warn(const std::string &message) = 0;
             /**
              * @brief Logger info
              *
@@ -70,7 +70,7 @@ namespace RayTracer {
              *
              * @param message the message
              */
-            void info(const std::string &message) final;
+            virtual void info(const std::string &message) = 0;
             /**
              * @brief Logger debug
              *
@@ -79,7 +79,7 @@ namespace RayTracer {
              *
              * @param message the message
              */
-            void debug(const std::string &message) final;
+            virtual void debug(const std::string &message) = 0;
             /**
              * @brief Logger trace
              *
@@ -88,10 +88,7 @@ namespace RayTracer {
              *
              * @param message the message
              */
-            void trace(const std::string &message) final;
-
-        private:
-            void print(const std::string &level, const std::string &message);
+            virtual void trace(const std::string &message) = 0;
     };
 }
 

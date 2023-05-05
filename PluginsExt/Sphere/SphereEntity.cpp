@@ -11,6 +11,7 @@
 #include <optional>
 #include <utility>
 #include "Color.hpp"
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "SphereEntity.hpp"
 #include "IEntity.hpp"
@@ -19,14 +20,15 @@
 #include "IDisplayable.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
-    SphereEntity::SphereEntity(const Scenes::ISetting &config):
+    SphereEntity::SphereEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _material(*config.get("material")),
-        _radius(static_cast<double>(*config.get("radius")))
+        _radius(static_cast<double>(*config.get("radius"))),
+        _logger(logger)
     {
         if (_transform.getScale().getX() != _transform.getScale().getY() ||
                 _transform.getScale().getX() != _transform.getScale().getZ()) {
-            std::cerr << "SPHERE: config: scale x y z must be the same: now using only x" << std::endl;
+            _logger.warn("SPHERE: config: scale x y z must be the same: now using only x");
         }
         _radius = _radius * _transform.getScale().getX();
     }

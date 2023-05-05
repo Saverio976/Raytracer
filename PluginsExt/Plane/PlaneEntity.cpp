@@ -6,13 +6,17 @@
 */
 
 #include <cmath>
+#include "ILogger.hpp"
 #include "PlaneEntity.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
-    PlaneEntity::PlaneEntity(const Scenes::ISetting &config):
+    PlaneEntity::PlaneEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _size(Entities::Transform::Vector3f(*config.get("size"))),
-        _material(*config.get("material")) { }
+        _material(*config.get("material")),
+        _logger(logger)
+    {
+    }
 
     Entities::IEntity::Type PlaneEntity::getType() const {
         return Type::Primitive;

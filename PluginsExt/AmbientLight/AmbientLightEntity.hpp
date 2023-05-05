@@ -10,6 +10,7 @@
 
     #include "ILight.hpp"
     #include "IConfig.hpp"
+#include "ILogger.hpp"
     #include "Transform.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
@@ -27,7 +28,7 @@ namespace RayTracer::PluginsExt::AmbientLight {
              *
              * @param config the config
              */
-            AmbientLightEntity(const Scenes::ISetting &config);
+            AmbientLightEntity(const Scenes::ISetting &config, ILogger &logger);
             ~AmbientLightEntity() = default;
             /**
              * @brief Get the type (ILight)
@@ -78,6 +79,7 @@ namespace RayTracer::PluginsExt::AmbientLight {
         private:
             Entities::Transform::Transform _transform;
             Images::Color _color;
+            ILogger &_logger;
     };
 }
 

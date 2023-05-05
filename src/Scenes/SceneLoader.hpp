@@ -15,6 +15,7 @@
     #include "FilterLoader.hpp"
     #include "EntityLoader.hpp"
     #include "ConfigWrapper.hpp"
+#include "ILogger.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -30,7 +31,7 @@ namespace RayTracer::Scenes {
              *
              * @param filePath the file path
              */
-            SceneLoader(const std::string &filePath);
+            SceneLoader(const std::string &filePath, ILogger &logger);
             ~SceneLoader() = default;
             /**
              * @brief Subscribe to an event
@@ -53,6 +54,7 @@ namespace RayTracer::Scenes {
             std::filesystem::file_time_type _lastWriteTime;
             std::unique_ptr<Plugins::Entities::EntityLoader> _entityLoader;
             std::unique_ptr<Plugins::Filters::FilterLoader> _filterLoader;
+            ILogger &_logger;
 
         };
 }

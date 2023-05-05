@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <thread>
+#include "ILogger.hpp"
 #include "ISceneState.hpp"
 #include "IDisplayable.hpp"
 #include "CameraEntity.hpp"
@@ -15,10 +16,11 @@
 
 namespace RayTracer::PluginsExt::Camera {
 
-    CameraEntity::CameraEntity(const Scenes::ISetting &config) :
+    CameraEntity::CameraEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _size(Entities::Transform::Vector2i(*config.get("size"))),
-        _image(Images::Image(Entities::Transform::Vector2i(*config.get("size"))))
+        _image(Images::Image(Entities::Transform::Vector2i(*config.get("size")))),
+        _logger(logger)
     {
         std::unique_ptr<Scenes::ISetting> tmp = config.get("focal");
 
@@ -29,7 +31,7 @@ namespace RayTracer::PluginsExt::Camera {
 
             for (int i = 0; i < settingWrapper->getLength(); i++) {
                 tmp = settingWrapper->get(i);
-                std::unique_ptr<Filters::IFilter> filterPtr(Factories::FilterFactory::get(tmp->getKey(), *tmp));
+                std::unique_ptr<Filters::IFilter> filterPtr(Factories::FilterFactory::get(tmp->getKey(), *tmp, logger));
 
                 _filters.push_back(std::move(filterPtr));
             }
@@ -77,7 +79,7 @@ namespace RayTracer::PluginsExt::Camera {
         Images::RayIterrator iterator(*this);
         Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 
-        imagePipeLine.generate(_maxThread, 1);
+        imagePipeLine.generate(_logger, _maxThread, 1);
         for (const std::unique_ptr<Filters::IFilter> &filter : this->_filters) {
             imagePipeLine.apply(*filter);
         }

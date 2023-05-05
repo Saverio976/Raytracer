@@ -6,7 +6,8 @@
 */
 #ifndef FILTERFACTORY_HPP_
     #define FILTERFACTORY_HPP_
-    #include "TFactory.hpp"
+    #include "ILogger.hpp"
+#include "TFactory.hpp"
     #include "FilterHandler.hpp"
     #include "IFilter.hpp"
 
@@ -32,7 +33,7 @@ namespace RayTracer::Factories {
              *
              * @return the filter
              */
-            static Filters::IFilter *get(const std::string &name, const Scenes::ISetting &setting);
+            static Filters::IFilter *get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger);
             /**
              * @brief Clear all filters
              */

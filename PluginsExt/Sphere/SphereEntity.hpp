@@ -9,6 +9,7 @@
     #define SPHEREENTITY_HPP_
 
     #include "IDisplayable.hpp"
+    #include "ILogger.hpp"
     #include "IMaterial.hpp"
     #include "IPrimitive.hpp"
     #include "ISetting.hpp"
@@ -19,7 +20,7 @@
 namespace RayTracer::PluginsExt::Sphere {
     class SphereEntity : public RayTracer::Entities::IPrimitive {
         public:
-            SphereEntity(const Scenes::ISetting &config);
+            SphereEntity(const Scenes::ISetting &config, ILogger &logger);
 
             Type getType() const final;
             Entities::Transform::ITransform &getTransform() final;
@@ -32,6 +33,7 @@ namespace RayTracer::PluginsExt::Sphere {
             Entities::Transform::Transform _transform;
             double _radius;
             PlainMaterial _material;
+            ILogger &_logger;
     };
 }
 

@@ -11,6 +11,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Logger.hpp"
 #include "Main.hpp"
@@ -19,6 +20,12 @@
 #include "Parameters.hpp"
 
 namespace RayTracer {
+    Main::Main(ILogger &logger):
+        _logger(logger),
+        _scene(logger)
+    {
+    }
+
     bool Main::parseCmdArgs(int argc, char **argv)
     {
         std::string isHelp;
@@ -49,25 +56,25 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             Parameters::getInstance().set("log-level", 0);
         }
-        Logger::trace("Finishing Parsing Command Arguments");
+        _logger.trace("Finishing Parsing Command Arguments");
         return true;
     }
 
     void Main::run()
     {
-        Scenes::SceneLoader loader(_sceneConfFilePath);
+        Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting);
         });
         try {
-            Logger::info("Loading Scene...");
+            _logger.info("Loading Scene...");
             loader.update();
-            Logger::info("Rendering Scene...");
+            _logger.info("Rendering Scene...");
             this->_scene.renders();
         } catch (const std::exception &e) {
             std::string message = e.what();
-            Logger::fatal("Loader/Render error:: " + message);
+            _logger.fatal("Loader/Render error:: " + message);
             throw MainError("Loader/Render error:: " + message);
         }
         while (!_scene.isReady()) {
@@ -76,7 +83,7 @@ namespace RayTracer {
                 loader.update();
             } catch (const std::exception &e) {
                 std::string message = e.what();
-                Logger::warn(message + ": Waiting 5 more seconds (unlimited times)");
+                _logger.warn(message + ": Waiting 5 more seconds (unlimited times)");
             }
         }
     }
@@ -88,20 +95,20 @@ namespace RayTracer {
 
         for (const auto &camera : _scene.getCameras()) {
             RayTracer::Entities::ICamera *cam = camera.get();
-            futures.push_back(std::async(std::launch::async, [cam, baseFilePath, i]() {
-                Logger::info("Exporting camera index " + std::to_string(i) + "...");
+            futures.push_back(std::async(std::launch::async, [cam, baseFilePath, i, this]() {
+                _logger.info("Exporting camera index " + std::to_string(i) + "...");
                 try {
                     cam->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
-                    Logger::trace("Exported camera index" + std::to_string(i));
+                    _logger.trace("Exported camera index" + std::to_string(i));
                 } catch (const std::exception &e) {
                     std::string message = e.what();
-                    Logger::error("Export To PPM error (cam index: " + std::to_string(i) + "):: " + message);
+                    _logger.error("Export To PPM error (cam index: " + std::to_string(i) + "):: " + message);
                 }
             }));
             i++;
         }
         while (futures.size() > 0) {
-            Logger::trace("Waiting for camera to finish... (rest: " + std::to_string(futures.size()) + ")");
+            _logger.trace("Waiting for camera to finish... (rest: " + std::to_string(futures.size()) + ")");
             futures.front().wait();
             futures.erase(futures.begin());
         }
@@ -173,12 +180,13 @@ namespace RayTracer {
 int main(int argc, char **argv)
 {
     int exitCode = 0;
-    RayTracer::Main main;
+    RayTracer::Logger logger;
+    RayTracer::Main main(logger);
 
     try {
         exitCode = main(argc, argv);
     } catch (const RayTracer::Main::MainError &e) {
-        RayTracer::Logger::fatal(e.what());
+        logger.fatal(e.what());
         exitCode = 84;
     }
     return exitCode;

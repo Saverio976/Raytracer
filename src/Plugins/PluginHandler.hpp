@@ -11,6 +11,7 @@
     #include <string>
     #include <memory>
     #include <dlfcn.h>
+#include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins {
@@ -49,8 +50,8 @@ namespace RayTracer::Plugins {
              *
              * @return the interface
              */
-            Interface *get(const RayTracer::Scenes::ISetting &setting) const {
-                return this->_creator->create(setting);
+            Interface *get(const RayTracer::Scenes::ISetting &setting, ILogger &logger) const {
+                return this->_creator->create(setting, logger);
             }
 
         protected:

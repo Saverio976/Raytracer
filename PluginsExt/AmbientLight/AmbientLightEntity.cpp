@@ -6,13 +6,17 @@
 */
 
 #include "AmbientLightEntity.hpp"
+#include "ILogger.hpp"
 #include "Ray.hpp"
 #include "IPrimitive.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
-    AmbientLightEntity::AmbientLightEntity(const Scenes::ISetting &config) :
+    AmbientLightEntity::AmbientLightEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _color(*config.get("color")) { }
+        _color(*config.get("color")),
+        _logger(logger)
+    {
+    }
 
     Entities::Transform::ITransform &AmbientLightEntity::getTransform() {
         return this->_transform;

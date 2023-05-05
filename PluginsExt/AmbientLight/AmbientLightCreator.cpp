@@ -7,9 +7,10 @@
 
 #include "AmbientLightCreator.hpp"
 #include "AmbientLightEntity.hpp"
+#include "ILogger.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
-    RayTracer::Entities::IEntity *AmbientLightCreator::create(const Scenes::ISetting &config) {
-        return new AmbientLightEntity(config);
+    RayTracer::Entities::IEntity *AmbientLightCreator::create(const Scenes::ISetting &config, ILogger &logger) {
+        return new AmbientLightEntity(config, logger);
     }
 }

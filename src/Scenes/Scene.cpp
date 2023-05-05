@@ -5,11 +5,17 @@
 ** Scene.cpp
 */
 
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Scene.hpp"
 #include <future>
 
 namespace RayTracer::Scenes {
+    Scene::Scene(ILogger &logger):
+        _logger(logger)
+    {
+    }
+
     void Scene::operator()(const ISetting &setting) {
         std::shared_ptr<ISetting> settingWrapper;
         std::unique_ptr<ISetting> tmp;
@@ -31,7 +37,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get(name, *tmp)));
+                std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get(name, *tmp, _logger)));
 
                 _cameras.push_back(std::move(cameraPtr));
             }
@@ -43,7 +49,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::ILight> lightPtr(static_cast<Entities::ILight *>(Factories::EntityFactory::get(name, *tmp)));
+                std::unique_ptr<Entities::ILight> lightPtr(static_cast<Entities::ILight *>(Factories::EntityFactory::get(name, *tmp, _logger)));
 
                 _displayable.getLightList().push_back(std::move(lightPtr));
             }
@@ -55,7 +61,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::IPrimitive> primitivePtr(static_cast<Entities::IPrimitive *>(Factories::EntityFactory::get(name, *tmp)));
+                std::unique_ptr<Entities::IPrimitive> primitivePtr(static_cast<Entities::IPrimitive *>(Factories::EntityFactory::get(name, *tmp, _logger)));
 
                 _displayable.getPrimitiveList().push_back(std::move(primitivePtr));
             }

@@ -6,10 +6,14 @@
 */
 
 #include "SceneLoader.hpp"
+#include "ILogger.hpp"
 #include "Logger.hpp"
 
 namespace RayTracer::Scenes {
-    SceneLoader::SceneLoader(const std::string &filePath): _filePath(filePath) {
+    SceneLoader::SceneLoader(const std::string &filePath, ILogger &logger):
+        _filePath(filePath),
+        _logger(logger)
+    {
         _configWrapper = std::make_unique<ConfigWrapper>();
         _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>("./EntitiesPlugins"); // TODO: use parameters path
         _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>("./FiltersPlugins"); // TODO: use parameters path
@@ -31,7 +35,7 @@ namespace RayTracer::Scenes {
 
             if (it == _events.end())
                 return;
-            Logger::info("Scene config file changed, reloading...");
+            _logger.info("Scene config file changed, reloading...");
             this->_entityLoader->loadEntities();
             this->_filterLoader->loadFilters();
             it->second(*_configWrapper->getSetting());

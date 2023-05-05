@@ -7,7 +7,8 @@
 
 #ifndef ENTITYFACTORY_HPP_
     #define ENTITYFACTORY_HPP_
-    #include "TFactory.hpp"
+    #include "ILogger.hpp"
+#include "TFactory.hpp"
     #include "EntityHandler.hpp"
     #include "IEntity.hpp"
 
@@ -33,7 +34,7 @@ namespace RayTracer::Factories {
              *
              * @return the entity
              */
-            static Entities::IEntity *get(const std::string &name, const Scenes::ISetting &setting);
+            static Entities::IEntity *get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger);
             /**
              * @brief Clear all handlers
              */
