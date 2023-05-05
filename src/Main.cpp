@@ -72,15 +72,15 @@ namespace RayTracer {
         std::vector<std::future<void>> futures;
 
         for (const auto &camera : _scene.getCameras()) {
-            RayTracer::Entities::ICamera *cam = camera.get();
-            futures.push_back(std::async(std::launch::async, [cam, baseFilePath, i]() {
+            futures.push_back(std::async(std::launch::async, [camera, baseFilePath, i]() {
                 try {
-                    cam->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
+                    camera.get().getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
                 } catch (const std::runtime_error &e) {
                     std::cerr << e.what() << std::endl;
                 } catch (const std::exception &e) {
                     std::cerr << e.what() << std::endl;
                 }
+            }));
             i++;
         }
         while (futures.size() > 0) {
