@@ -9,7 +9,7 @@
     #define IFILTERCREATOR_HPP_
     #include <memory>
     #include "IFilter.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Filters {
