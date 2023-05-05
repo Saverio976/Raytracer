@@ -11,7 +11,7 @@
     #include <string>
     #include "IEntity.hpp"
     #include "IEntityCreator.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "PluginHandler.hpp"
     #include "ISetting.hpp"
 
