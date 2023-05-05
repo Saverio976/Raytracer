@@ -9,7 +9,7 @@
     #define PLANECREATOR_HPP_
 
     #include "IEntityCreator.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
     class PlaneCreator : public RayTracer::Plugins::Entities::IEntityCreator {
