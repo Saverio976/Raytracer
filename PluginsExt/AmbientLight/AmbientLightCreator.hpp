@@ -9,7 +9,7 @@
     #define AMBIENTLIGHTCREATOR_HPP_
 
     #include "IEntityCreator.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
     class AmbientLightCreator : public RayTracer::Plugins::Entities::IEntityCreator {
