@@ -8,7 +8,7 @@
 #ifndef ENTITYFACTORY_HPP_
     #define ENTITYFACTORY_HPP_
     #include "ILogger.hpp"
-#include "TFactory.hpp"
+    #include "TFactory.hpp"
     #include "EntityHandler.hpp"
     #include "IEntity.hpp"
 
