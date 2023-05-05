@@ -10,7 +10,7 @@
     #include <memory>
     #include <string>
     #include "IFilter.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "PluginHandler.hpp"
     #include "IFilterCreator.hpp"
     #include "IConfig.hpp"
