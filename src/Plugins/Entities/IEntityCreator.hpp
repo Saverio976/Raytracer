@@ -9,7 +9,7 @@
     #define IENTITYCREATOR_HPP_
     #include <memory>
     #include "IEntity.hpp"
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Entities {
