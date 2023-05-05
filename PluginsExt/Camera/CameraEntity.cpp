@@ -43,6 +43,7 @@ namespace RayTracer::PluginsExt::Camera {
             _maxThread = std::thread::hardware_concurrency();
         }
         _maxThread = (_maxThread <= 0) ? 1 : _maxThread;
+        _logger.info("Max threads : " + std::to_string(_maxThread));
     }
 
     Entities::IEntity::Type CameraEntity::getType() const {
