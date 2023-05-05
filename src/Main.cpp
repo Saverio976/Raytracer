@@ -5,9 +5,11 @@
 ** Parameters.cpp
 */
 
+#include <future>
 #include <stdexcept>
 #include <string>
 #include <iostream>
+#include <vector>
 #include "ISetting.hpp"
 #include "Main.hpp"
 #include "Scene.hpp"
@@ -15,39 +17,35 @@
 #include "Parameters.hpp"
 
 namespace RayTracer {
-    Main::Main(int argc, char **argv):
-        _parameters(Parameters::getInstance()), _exitCode(0)
+    bool Main::parseCmdArgs(int argc, char **argv)
     {
-        _parameters.parseCmdArgs(argc, argv);
+        Parameters::getInstance().parseCmdArgs(argc, argv);
         try {
-            _help = _parameters.getString("help");
-            if (_help == "true") {
+            _help = Parameters::getInstance().getString("help");
+            if (_help == "true" || _help == "") {
                 help();
-                return;
+                return false;
+            } else {
+                throw ArgumentError("bad argument:: --help");
             }
-        } catch (const std::exception &e) { }
+        } catch (const Parameters::KeyNotFoundError &e) { }
         try {
-            _sceneConfFilePath = _parameters.getString("scene-path");
-        } catch (const std::exception &e) {
-            std::cerr << e.what() << std::endl;
-            _exitCode = 84;
+            _sceneConfFilePath = Parameters::getInstance().getString("scene-path");
+        } catch (const Parameters::KeyNotFoundError &e) {
+            throw ArgumentError("missing argument:: --scene-path <path>");
         }
-        return;
         try {
-            _baseFilePath = _parameters.getString("output-path");
-        } catch (const std::exception &e) {
-            std::cerr << e.what() << std::endl;
-            _exitCode = 84;
+            _baseFilePath = Parameters::getInstance().getString("output-path");
+        } catch (const Parameters::KeyNotFoundError &e) {
+            throw ArgumentError("missing argument:: --output-path <path>");
         }
-        return;
+        return true;
     }
 
     void Main::run()
     {
-        if (_exitCode != 0 || _help == "true") {
-            return;
-        }
         Scenes::SceneLoader loader(_sceneConfFilePath);
+
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting);
         });
@@ -55,9 +53,8 @@ namespace RayTracer {
             loader.update();
             this->_scene.renders();
         } catch (const std::exception &e) {
-            std::cerr << e.what() << std::endl;
-            _exitCode = 84;
-            return;
+            std::string message = e.what();
+            throw MainError("Loader/Render error:: " + message);
         }
         while (!_scene.isReady()) {
             std::this_thread::sleep_for(std::chrono::seconds(5));
@@ -67,35 +64,36 @@ namespace RayTracer {
                 std::cerr << e.what() << ": Waiting 5 more seconds (unlimited times)" << std::endl;
             }
         }
-        exportScene(_baseFilePath);
     }
 
     void Main::exportScene(const std::string &baseFilePath)
     {
         int i = 0;
-        if (_exitCode != 0) {
-            return;
-        }
+        std::vector<std::future<void>> futures;
+
         for (const auto &camera : _scene.getCameras()) {
-            try {
-                camera->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
-                _exitCode = 0;
-            } catch (const std::runtime_error &e) {
-                std::cerr << e.what() << std::endl;
-                _exitCode = 84;
-            }
+            RayTracer::Entities::ICamera *cam = camera.get();
+            futures.push_back(std::async(std::launch::async, [cam, baseFilePath, i]() {
+                try {
+                    cam->getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
+                } catch (const std::runtime_error &e) {
+                    std::cerr << e.what() << std::endl;
+                } catch (const std::exception &e) {
+                    std::cerr << e.what() << std::endl;
+                }
+            }));
             i++;
         }
-    }
-
-    int Main::getExitCode() const
-    {
-        return _exitCode;
+        while (futures.size() > 0) {
+            futures.front().wait();
+            futures.erase(futures.begin());
+        }
     }
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file [--help true]" << std::endl;
+        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file" << std::endl;
+        std::cout << "USAGE: ./raytracer --help" << std::endl;
         std::cout << std::endl;
         std::cout << "OPTIONS:" << std::endl;
         std::cout << "\t--scene-path scene-conf.yaax\tpath to scene config" << std::endl;
@@ -106,19 +104,64 @@ namespace RayTracer {
         std::cout << "\tAuthors: Y A A X" << std::endl;
         std::cout << "\tRepository: https://github.com/Saverio976/Raytracer" << std::endl;
     }
+
+    int Main::operator()(int argc, char **argv)
+    {
+        bool isProceed = true;
+        try {
+            isProceed = parseCmdArgs(argc, argv);
+        } catch (const ArgumentError &e) {
+            std::string message = e.what();
+            this->help();
+            throw MainError("Parse Command Argument: " + message);
+        }
+        if (!isProceed) {
+            return 0;
+        }
+        run();
+        exportScene(_baseFilePath);
+        return 0;
+    }
+
+    // -----------------------------------------------------------------------
+    // Main::MainError
+    // -----------------------------------------------------------------------
+
+    Main::MainError::MainError(const std::string &message):
+        _message(message)
+    {
+    }
+
+    const char *Main::MainError::what() const noexcept
+    {
+        return _message.c_str();
+    }
+
+    // -----------------------------------------------------------------------
+    // Main::ArgumentError
+    // -----------------------------------------------------------------------
+
+    Main::ArgumentError::ArgumentError(const std::string &message):
+        _message(message)
+    {
+    }
+
+    const char *Main::ArgumentError::what() const noexcept
+    {
+        return _message.c_str();
+    }
 }
 
 int main(int argc, char **argv)
 {
     int exitCode = 0;
-    RayTracer::Main main(argc, argv);
+    RayTracer::Main main;
 
-    if (main.getExitCode() != 0) {
-        main.help();
-        exitCode = main.getExitCode();
-        return exitCode;
+    try {
+        exitCode = main(argc, argv);
+    } catch (const RayTracer::Main::MainError &e) {
+        std::cerr << e.what() << std::endl;
+        exitCode = 84;
     }
-    main.run();
-    exitCode = main.getExitCode();
     return exitCode;
 }
