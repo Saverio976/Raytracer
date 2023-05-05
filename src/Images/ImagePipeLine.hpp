@@ -7,7 +7,8 @@
 #ifndef IMAGEPIPELINE_HPP_
     #define IMAGEPIPELINE_HPP_
 
-    #include "Image.hpp"
+    #include "ILogger.hpp"
+#include "Image.hpp"
     #include "IDisplayable.hpp"
     #include "IFilter.hpp"
     #include "ISceneState.hpp"
@@ -35,7 +36,7 @@ namespace RayTracer::Images {
              * @param maxThread the max thread number to use
              * @param cluster the cluster number (1 ray represent `cluster` pixel)
              */
-            void generate(std::size_t maxThread = 1, std::size_t cluster = 1);
+            void generate(ILogger &logger, std::size_t maxThread = 1, std::size_t cluster = 1);
             /**
              * @brief Apply the filter
              *
