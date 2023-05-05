@@ -8,7 +8,6 @@
 #ifndef API_HPP_
     #define API_HPP_
 
-    #include <vector>
 
 extern "C" {
     /**
