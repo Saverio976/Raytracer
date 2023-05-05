@@ -8,7 +8,7 @@
     #define PLANEENTITY_HPP_
 
     #include "ILogger.hpp"
-#include "IPrimitive.hpp"
+    #include "IPrimitive.hpp"
     #include "Transform.hpp"
     #include "PlainMaterial.hpp"
 
