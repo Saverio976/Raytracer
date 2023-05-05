@@ -16,10 +16,8 @@ extern "C" {
         return new RayTracer::PluginsExt::Camera::CameraCreator();
     }
 
-    void deleteCreator(void *creator, std::vector<void *> &elements)
+    void deleteCreator(void *creator)
     {
-        for (void *element : elements)
-            delete static_cast<RayTracer::PluginsExt::Camera::CameraEntity *>(element);
         delete static_cast<RayTracer::PluginsExt::Camera::CameraCreator *>(creator);
     }
 }
