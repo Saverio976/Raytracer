@@ -14,6 +14,7 @@
 
 namespace RayTracer::Factories {
     template<> std::unique_ptr<TFactory<Plugins::Entities::EntityHandler, Entities::IEntity>> TFactory<Plugins::Entities::EntityHandler, Entities::IEntity>::_factory = nullptr;
+    std::unique_ptr<EntityFactory> EntityFactory::_factory = nullptr;
 
     void EntityFactory::add(const std::string &name, std::unique_ptr<Plugins::Entities::EntityHandler> handler)
     {
@@ -33,5 +34,12 @@ namespace RayTracer::Factories {
     TFactory<Plugins::Entities::EntityHandler, Entities::IEntity> &EntityFactory::getFactory()
     {
         return TFactory<Plugins::Entities::EntityHandler, Entities::IEntity>::getFactory();
+    }
+
+    EntityFactory &EntityFactory::getInstance()
+    {
+        if (_factory == nullptr)
+            _factory.reset(new EntityFactory());
+        return *_factory;
     }
 }

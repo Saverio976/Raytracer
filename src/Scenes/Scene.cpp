@@ -37,7 +37,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                _cameras.push_back(static_cast<Entities::ICamera &>(Factories::EntityFactory::get(name, *tmp, _logger)));
+                _cameras.push_back(static_cast<Entities::ICamera &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
         settingWrapper = setting.get("lights");
@@ -47,7 +47,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                _displayable.getLightList().push_back(static_cast<Entities::ILight &>(Factories::EntityFactory::get(name, *tmp, _logger)));
+                _displayable.getLightList().push_back(static_cast<Entities::ILight &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
         settingWrapper = setting.get("primitives");
@@ -57,7 +57,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                _displayable.getPrimitiveList().push_back(static_cast<Entities::IPrimitive &>(Factories::EntityFactory::get(name, *tmp, _logger)));
+                _displayable.getPrimitiveList().push_back(static_cast<Entities::IPrimitive &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
     }
