@@ -8,7 +8,7 @@
     #define IMAGEPIPELINE_HPP_
 
     #include "ILogger.hpp"
-#include "Image.hpp"
+    #include "Image.hpp"
     #include "IDisplayable.hpp"
     #include "IFilter.hpp"
     #include "ISceneState.hpp"
