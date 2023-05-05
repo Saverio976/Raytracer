@@ -9,6 +9,7 @@
     #define IENTITYCREATOR_HPP_
     #include <memory>
     #include "IEntity.hpp"
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Entities {
@@ -27,7 +28,7 @@ namespace RayTracer::Plugins::Entities {
             *
             * @return the entity
             */
-            virtual RayTracer::Entities::IEntity *create(const Scenes::ISetting &setting) = 0;
+            virtual RayTracer::Entities::IEntity *create(const Scenes::ISetting &setting, ILogger &logger) = 0;
 
         protected:
         private:

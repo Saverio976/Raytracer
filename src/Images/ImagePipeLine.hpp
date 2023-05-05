@@ -7,10 +7,11 @@
 #ifndef IMAGEPIPELINE_HPP_
     #define IMAGEPIPELINE_HPP_
 
+    #include "ILogger.hpp"
     #include "Image.hpp"
-    #include "Displayable.hpp"
+    #include "IDisplayable.hpp"
     #include "IFilter.hpp"
-    #include "Scene.hpp"
+    #include "ISceneState.hpp"
     #include "RayIterrator.hpp"
 
 namespace RayTracer::Images {
@@ -28,14 +29,14 @@ namespace RayTracer::Images {
              * @param displayable the displayable entities to render
              * @param state the state (if cancel needed)
              */
-            ImagePipeLine(Image &image, const Scenes::Displayable &displayable, const Scenes::SceneState &state, const RayIterrator &rayIterrator);
+            ImagePipeLine(Image &image, const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state, const RayIterrator &rayIterrator);
             /**
              * @brief Generate the image with entities displayable
              *
              * @param maxThread the max thread number to use
              * @param cluster the cluster number (1 ray represent `cluster` pixel)
              */
-            void generate(std::size_t maxThread = 1, std::size_t cluster = 1);
+            void generate(ILogger &logger, std::size_t maxThread = 1, std::size_t cluster = 1);
             /**
              * @brief Apply the filter
              *
@@ -47,8 +48,8 @@ namespace RayTracer::Images {
         protected:
         private:
             Image &_image;
-            const Scenes::Displayable &_displayable;
-            const Scenes::SceneState &_state;
+            const Scenes::IDisplayable &_displayable;
+            const Scenes::ISceneState &_state;
             RayIterrator _rayIterrator;
     };
 }

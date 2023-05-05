@@ -7,6 +7,7 @@
 
 #include <memory>
 #include "IEntity.hpp"
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "SphereCreator.hpp"
 #include "SphereEntity.hpp"
@@ -17,8 +18,8 @@ namespace RayTracer::PluginsExt::Sphere {
             delete element;
     }
 
-    RayTracer::Entities::IEntity *SphereCreator::create(const Scenes::ISetting &config) {
-        SphereEntity *element = new SphereEntity(config);
+    RayTracer::Entities::IEntity *SphereCreator::create(const Scenes::ISetting &config, ILogger &logger) {
+        SphereEntity *element = new SphereEntity(config, logger);
         this->_elements.push_back(element);
         return element;
     }

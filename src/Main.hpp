@@ -8,11 +8,12 @@
 #ifndef MAIN_HPP
     #define MAIN_HPP
 
+    #include <exception>
+    #include <memory>
+    #include <string>
+    #include "ILogger.hpp"
     #include "Parameters.hpp"
-#include "Scene.hpp"
-#include <exception>
-#include <memory>
-#include <string>
+    #include "Scene.hpp"
 
 namespace RayTracer {
     class Main {
@@ -30,7 +31,7 @@ namespace RayTracer {
              * @param argc (argc from main func)
              * @param argv (argv from main func)
              */
-            Main() = default;
+            Main(ILogger &logger);
             ~Main() = default;
 
             int operator()(int argc, char **argv);
@@ -72,7 +73,7 @@ namespace RayTracer {
             std::string _baseFilePath;
             std::string _sceneConfFilePath;
             Scenes::Scene _scene;
-            std::string _help;
+            ILogger &_logger;
     };
 }
 

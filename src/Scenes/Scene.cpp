@@ -5,11 +5,17 @@
 ** Scene.cpp
 */
 
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Scene.hpp"
 #include <future>
 
 namespace RayTracer::Scenes {
+    Scene::Scene(ILogger &logger):
+        _logger(logger)
+    {
+    }
+
     void Scene::operator()(const ISetting &setting) {
         std::shared_ptr<ISetting> settingWrapper;
         std::unique_ptr<ISetting> tmp;
@@ -30,8 +36,8 @@ namespace RayTracer::Scenes {
             length_two = (*settingWrapper).get(i)->getLength();
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
-                    tmp = settingWrapper->get(i)->get(j);
-                    _cameras.push_back(static_cast<Entities::ICamera &>(Factories::EntityFactory::get(name, *tmp)));
+                tmp = settingWrapper->get(i)->get(j);
+                _cameras.push_back(static_cast<Entities::ICamera &>(Factories::EntityFactory::get(name, *tmp, _logger)));
             }
         }
         settingWrapper = setting.get("lights");
@@ -41,7 +47,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                _displayable.getLightList().push_back(static_cast<Entities::ILight &>(Factories::EntityFactory::get(name, *tmp)));
+                _displayable.getLightList().push_back(static_cast<Entities::ILight &>(Factories::EntityFactory::get(name, *tmp, _logger)));
             }
         }
         settingWrapper = setting.get("primitives");
@@ -51,7 +57,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                _displayable.getPrimitiveList().push_back(static_cast<Entities::IPrimitive &>(Factories::EntityFactory::get(name, *tmp)));
+                _displayable.getPrimitiveList().push_back(static_cast<Entities::IPrimitive &>(Factories::EntityFactory::get(name, *tmp, _logger)));
             }
         }
     }

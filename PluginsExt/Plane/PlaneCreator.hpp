@@ -11,13 +11,14 @@
     #include <vector>
     #include <memory>
     #include "IEntityCreator.hpp"
+    #include "ILogger.hpp"
     #include "PlaneEntity.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
     class PlaneCreator : public RayTracer::Plugins::Entities::IEntityCreator {
         public:
             ~PlaneCreator();
-            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config) final;
+            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config, ILogger &logger) final;
         protected:
         private:
             std::vector<PlaneEntity *> _elements;

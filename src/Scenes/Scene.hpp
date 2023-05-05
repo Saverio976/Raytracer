@@ -13,6 +13,7 @@
     #include <mutex>
     #include <thread>
     #include <functional>
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
     #include "Image.hpp"
     #include "ICamera.hpp"
@@ -30,6 +31,7 @@ namespace RayTracer::Scenes {
      */
     class Scene {
         public:
+            Scene(ILogger &logger);
             ~Scene() = default;
             /**
              * @brief Scene config reloader
@@ -69,6 +71,7 @@ namespace RayTracer::Scenes {
             SceneState _state;
             std::future<void> _future;
             Displayable _displayable;
+            ILogger &_logger;
     };
 }
 

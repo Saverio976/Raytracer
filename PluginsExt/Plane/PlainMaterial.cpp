@@ -20,7 +20,7 @@ namespace RayTracer::PluginsExt::Plane {
             _color(Images::Color(*config.get("color")))
     { }
 
-    Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
+    Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const
     {
         double r = _color[Images::Color::Types::RED];
         double g = _color[Images::Color::Types::GREEN];

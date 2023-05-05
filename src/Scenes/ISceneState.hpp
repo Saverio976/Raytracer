@@ -1,44 +1,41 @@
 /*
 ** EPITECH PROJECT, 2023
-** Raytracer
+** raytracer
 ** File description:
-** SceneState.hpp
+** ISceneState.hpp
 */
 
-#ifndef SCENESTATE_HPP_
-    #define SCENESTATE_HPP_
-
-    #include <mutex>
-    #include "ISceneState.hpp"
+#ifndef ISCENESTATE_HPP_
+    #define ISCENESTATE_HPP_
 
 namespace RayTracer::Scenes {
     /**
-     * @brief The SceneState class
+     * @brief The SceneState interface
      *
      * class that represent a scene state (to know if the scene is running or not)
      * (or if the scene render need to be cancelled)
      */
-    class SceneState : public ISceneState {
+    class ISceneState {
         public:
             /**
-             * @brief SceneState
+             * @brief The States
              */
-            SceneState();
+            enum class States {
+                RUNNING,
+                CANCELLED
+            };
             /**
              * @brief Get the state (thread safe)
              *
              * @return the state
              */
-            ISceneState::States getState() const final;
+            virtual States getState() const = 0;
             /**
              * @brief Change the state (thread safe)
              *
              * @param state the state
              */
-            void changeState(const ISceneState::States &state) final;
-        private:
-            States _state;
-            std::mutex mutex;
+            virtual void changeState(const States &state) = 0;
     };
 }
 

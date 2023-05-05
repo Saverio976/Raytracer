@@ -11,13 +11,14 @@
     #include <vector>
     #include <memory>
     #include "IEntityCreator.hpp"
+    #include "ILogger.hpp"
     #include "CameraEntity.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
     class CameraCreator : public RayTracer::Plugins::Entities::IEntityCreator {
         public:
             ~CameraCreator();
-            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config) final;
+            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config, ILogger &logger) final;
 
         protected:
         private:

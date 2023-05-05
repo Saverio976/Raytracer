@@ -7,6 +7,7 @@
 
 #include "AmbientLightCreator.hpp"
 #include "AmbientLightEntity.hpp"
+#include "ILogger.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
     AmbientLightCreator::~AmbientLightCreator() {
@@ -14,8 +15,8 @@ namespace RayTracer::PluginsExt::AmbientLight {
             delete element;
     }
 
-    RayTracer::Entities::IEntity *AmbientLightCreator::create(const Scenes::ISetting &config) {
-        AmbientLightEntity *element = new AmbientLightEntity(config);
+    RayTracer::Entities::IEntity *AmbientLightCreator::create(const Scenes::ISetting &config, ILogger &logger) {
+        AmbientLightEntity *element = new AmbientLightEntity(config, logger);
         this->_elements.push_back(element);
         return element;
     }

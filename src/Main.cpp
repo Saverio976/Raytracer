@@ -5,24 +5,36 @@
 ** Parameters.cpp
 */
 
+#include <exception>
 #include <future>
 #include <stdexcept>
 #include <string>
 #include <iostream>
 #include <vector>
+#include "ILogger.hpp"
 #include "ISetting.hpp"
+#include "Logger.hpp"
 #include "Main.hpp"
 #include "Scene.hpp"
 #include "SceneLoader.hpp"
 #include "Parameters.hpp"
 
 namespace RayTracer {
+    Main::Main(ILogger &logger):
+        _logger(logger),
+        _scene(logger)
+    {
+    }
+
     bool Main::parseCmdArgs(int argc, char **argv)
     {
+        std::string isHelp;
+        int logLevel = 0;
+
         Parameters::getInstance().parseCmdArgs(argc, argv);
         try {
-            _help = Parameters::getInstance().getString("help");
-            if (_help == "true" || _help == "") {
+            isHelp = Parameters::getInstance().getString("help");
+            if (isHelp == "true" || isHelp == "") {
                 help();
                 return false;
             } else {
@@ -39,21 +51,30 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             throw ArgumentError("missing argument:: --output-path <path>");
         }
+        try {
+            logLevel = Parameters::getInstance().getInt("log-level");
+        } catch (const Parameters::KeyNotFoundError &e) {
+            Parameters::getInstance().set("log-level", 0);
+        }
+        _logger.trace("Finishing Parsing Command Arguments");
         return true;
     }
 
     void Main::run()
     {
-        Scenes::SceneLoader loader(_sceneConfFilePath);
+        Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting);
         });
         try {
+            _logger.info("Loading Scene...");
             loader.update();
+            _logger.info("Rendering Scene...");
             this->_scene.renders();
         } catch (const std::exception &e) {
             std::string message = e.what();
+            _logger.fatal("Loader/Render error:: " + message);
             throw MainError("Loader/Render error:: " + message);
         }
         while (!_scene.isReady()) {
@@ -61,7 +82,8 @@ namespace RayTracer {
             try {
                 loader.update();
             } catch (const std::exception &e) {
-                std::cerr << e.what() << ": Waiting 5 more seconds (unlimited times)" << std::endl;
+                std::string message = e.what();
+                _logger.warn(message + ": Waiting 5 more seconds (unlimited times)");
             }
         }
     }
@@ -72,18 +94,20 @@ namespace RayTracer {
         std::vector<std::future<void>> futures;
 
         for (const auto &camera : _scene.getCameras()) {
-            futures.push_back(std::async(std::launch::async, [camera, baseFilePath, i]() {
+            futures.push_back(std::async(std::launch::async, [camera, baseFilePath, i, this]() {
+                _logger.info("Exporting camera index " + std::to_string(i) + "...");
                 try {
                     camera.get().getImage().convertToPPM(baseFilePath + std::to_string(i) + ".ppm");
-                } catch (const std::runtime_error &e) {
-                    std::cerr << e.what() << std::endl;
+                    _logger.trace("Exported camera index" + std::to_string(i));
                 } catch (const std::exception &e) {
-                    std::cerr << e.what() << std::endl;
+                    std::string message = e.what();
+                    _logger.error("Export To PPM error (cam index: " + std::to_string(i) + "):: " + message);
                 }
             }));
             i++;
         }
         while (futures.size() > 0) {
+            _logger.trace("Waiting for camera to finish... (rest: " + std::to_string(futures.size()) + ")");
             futures.front().wait();
             futures.erase(futures.begin());
         }
@@ -91,13 +115,14 @@ namespace RayTracer {
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path scene-conf.yaax --output-path file" << std::endl;
+        std::cout << "USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>]" << std::endl;
         std::cout << "USAGE: ./raytracer --help" << std::endl;
         std::cout << std::endl;
         std::cout << "OPTIONS:" << std::endl;
-        std::cout << "\t--scene-path scene-conf.yaax\tpath to scene config" << std::endl;
-        std::cout << "\t--output-path file\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
-        std::cout << "\t--help true\tto display the help message" << std::endl;
+        std::cout << "\t--scene-path <scene-conf.yaax>\tpath to scene config" << std::endl;
+        std::cout << "\t--output-path <file>\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << "\t--help\tto display the help message" << std::endl;
+        std::cout << "\t--log-level <int>\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [0 by default]" << std::endl;
         std::cout << std::endl;
         std::cout << "CREDITS:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
@@ -154,12 +179,13 @@ namespace RayTracer {
 int main(int argc, char **argv)
 {
     int exitCode = 0;
-    RayTracer::Main main;
+    RayTracer::Logger logger;
+    RayTracer::Main main(logger);
 
     try {
         exitCode = main(argc, argv);
     } catch (const RayTracer::Main::MainError &e) {
-        std::cerr << e.what() << std::endl;
+        logger.fatal(e.what());
         exitCode = 84;
     }
     return exitCode;

@@ -10,12 +10,15 @@
 
     #include <functional>
     #include "ICamera.hpp"
+    #include "ILogger.hpp"
+    #include "ISceneState.hpp"
+    #include "IDisplayable.hpp"
     #include "Transform.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
     class CameraEntity : public RayTracer::Entities::ICamera {
         public:
-            CameraEntity(const Scenes::ISetting &config);
+            CameraEntity(const Scenes::ISetting &config, ILogger &logger);
             ~CameraEntity() = default;
             Type getType() const final;
             Entities::Transform::ITransform &getTransform() final;
@@ -52,7 +55,7 @@ namespace RayTracer::PluginsExt::Camera {
              *
              * @return the image
              */
-            const Images::Image &render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) final;
+            const Images::Image &render(const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state) final;
             /**
              * @brief Get the image (possible when rendering)
              *
@@ -74,6 +77,7 @@ namespace RayTracer::PluginsExt::Camera {
             std::list<std::reference_wrapper<Filters::IFilter>> _filters;
             Entities::Transform::Transform _transform;
             int _maxThread;
+            ILogger &_logger;
     };
 }
 
