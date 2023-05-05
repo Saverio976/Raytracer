@@ -12,7 +12,7 @@
     #include <memory>
     #include <mutex>
     #include <thread>
-#include "ILogger.hpp"
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
     #include "Image.hpp"
     #include "ICamera.hpp"
