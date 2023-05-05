@@ -40,7 +40,7 @@ namespace RayTracer::Plugins {
             }
 
             ~PluginHandler() {
-                this->getResult<void>("deleteCreator", this->_creator, this->_elements);
+                this->getResult<void>("deleteCreator", this->_creator);
                 dlclose(this->_handler);
             }
 
@@ -75,8 +75,8 @@ namespace RayTracer::Plugins {
                 T (*function)(...) = reinterpret_cast<T(*)(...)>(sym);
                 return function(__args...);
             }
-            std::vector<Interface *> _elements;
             Creator *_creator;
+            std::vector<Interface *> _elements;
             std::string _filePath;
             void *_handler;
         private:

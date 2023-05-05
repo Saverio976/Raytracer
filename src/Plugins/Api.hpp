@@ -29,7 +29,7 @@ extern "C" {
      *
      * @param creator
      */
-    void deleteCreator(void *creator, std::vector<void *> &elements);
+    void deleteCreator(void *creator);
 }
 
 #endif
