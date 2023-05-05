@@ -4,14 +4,14 @@
 #include "ISetting.hpp"
 
 /*
- * Exemple d'un code récupérant les informations concernant les sphères dans le fichier testScene.config
+ * Exemple d'un code récupérant les informations concernant les sphères dans le fichier testScene.yaax
  */
 int main(int ac, char **av) {
     RayTracer::Scenes::ConfigWrapper test;
     char keys[5] = "xyzr";
     char color_keys[4] = "rgb";
 
-    test.readFile("./testScene.config");
+    test.readFile("./testScene.yaax");
 
     const std::shared_ptr<RayTracer::Scenes::ISetting> setting = test.getSetting();
 

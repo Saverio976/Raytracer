@@ -20,58 +20,17 @@ cameras:
 primitives :
 {
     # List of spheres
-    Sphere = (
+    Cone = (
         {
-            radius = 100.0;
+            angle = 0.1;
             transform = {
                 position = {x = 0.0; y = 100.0; z = 0.0;};
-                scale = {x = 1.0; y = 1.0; z = 1.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
-            };
-            material = {
-                shininess = 1.0;
-                color = {r = 12.0; g = 255.0; b = 64.0; a = 255.0;};
-            };
-        },
-        {
-            radius = 200.0;
-            transform = {
-                position = {x = 50.0; y = 200.0; z = 0.0;};
-                scale = {x = 1.0; y = 1.0; z = 1.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
-            }
-            material = {
-                shininess = 1.0;
-                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.57};
             };
         }
     );
-    Plane = (
-        {
-            transform = {
-                position = {x = 0.0; y = 150.0; z = 0.0;};
-                scale = {x = 0.0; y = 0.0; z = 0.0;};
-                rotation = {x = 1.5708; y = 0.0; z = 0.0;};
-            };
-            size = {x = 50.0; y = 50.0; z = 50.0;};
-            material = {
-                shininess = 1.0;
-                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
-            };
-        },
-        {
-            transform = {
-                position = {x = 0.0; y = 0.0; z = -250.0;};
-                scale = {x = 0.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.1; y = 0.0; z = 0.0;};
-            };
-            size = {x = 50.0; y = 50.0; z = 50.0;};
-            material = {
-                shininess = 1.0;
-                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
-            };
-        }
-    );
+
 };
 
 # Light configuration
