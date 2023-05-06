@@ -15,6 +15,8 @@ namespace RayTracer::Entities::Transform {
 
     Vector3f::Vector3f(double x, double y, double z): _x(x), _y(y), _z(z) {}
 
+    Vector3f::Vector3f(): _x(0), _y(0), _z(0) {}
+
     Vector3f::Vector3f(const Scenes::ISetting &setting)
     {
         std::unique_ptr<Scenes::ISetting> tmp = setting.get("x");
