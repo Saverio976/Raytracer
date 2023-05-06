@@ -162,6 +162,35 @@ namespace RayTracer::Images {
         }
         this->_mutex.unlock();
     }
+
+    void Color::applyAlpha(const RayTracer::Images::Color &background) {
+        double alphaFloat = this->_a / 255.0f;
+
+        this->_mutex.lock();
+        this->_r = this->_r * alphaFloat + background[Types::RED] * (1 - alphaFloat);
+        this->_g = this->_g * alphaFloat + background[Types::GREEN] * (1 - alphaFloat);
+        this->_b = this->_b * alphaFloat + background[Types::BLUE] * (1 - alphaFloat);
+        this->_a = 255;
+        this->_mutex.unlock();
+    }
+
+    void Color::mergeColor(const RayTracer::Images::Color &other) {
+        this->_mutex.lock();
+        this->_r = other[Types::RED] * this->_r / 255;
+        this->_g = other[Types::GREEN] * this->_g / 255;
+        this->_b = other[Types::BLUE] * this->_b / 255;
+        this->_mutex.unlock();
+    }
+
+    void Color::applyDistance(double distance, double maxDistance) {
+        distance = (maxDistance < distance) ? maxDistance : distance;
+        distance = maxDistance - distance;
+        this->_mutex.lock();
+        this->_r = distance * this->_r / maxDistance;
+        this->_g = distance * this->_g / maxDistance;
+        this->_b = distance * this->_b / maxDistance;
+        this->_mutex.unlock();
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color) {
