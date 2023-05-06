@@ -35,32 +35,37 @@ namespace RayTracer::PluginsExt::Cone {
     {
         Entities::Transform::Vector3f coneStart = _transform.getPosition();
         Entities::Transform::Vector3f coneDirection = _transform.getRotation();
-        const Entities::Transform::Vector3f& rayDirection = ray.getDirection();
-        const Entities::Transform::Vector3f& rayOrigin = ray.getOrigin();
-        Entities::Transform::Vector3f cO = {rayOrigin.getX() - coneStart.getX(), rayOrigin.getY() - coneStart.getY(), rayOrigin.getZ() - coneStart.getZ()};
+        const Entities::Transform::Vector3f &rayStart = ray.getOrigin();
+        const Entities::Transform::Vector3f &rayDirection = ray.getDirection();
+        Entities::Transform::Vector3f deltaP(rayStart.getX() - coneStart.getX(), rayStart.getY() - coneStart.getY(), rayStart.getZ() - coneStart.getZ());
+
+        double vDeltaPValue = rayDirection.dot(deltaP);
         Entities::Transform::Vector3f collision(0, 0, 0);
 
-        double a = pow((rayDirection.getX() * coneDirection.getX() + rayDirection.getY() * coneDirection.getY() + rayDirection.getZ() * coneDirection.getZ()), 2) - pow(cos(_angle), 2);
-        double b = 2 * ((rayDirection.getX() * coneDirection.getX() + rayDirection.getY() * coneDirection.getY() + rayDirection.getZ() * coneDirection.getZ()) *
-                (cO.getX() * coneDirection.getX() + cO.getY() * coneDirection.getY() + cO.getZ() * coneDirection.getZ()) - (rayDirection.getX() * cO.getX() + rayDirection.getY() * cO.getY() + rayDirection.getZ() * cO.getZ())) * pow(cos(_angle), 2);
-        double c = (pow((cO.getX() * coneDirection.getX() + cO.getY() * coneDirection.getY() + cO.getZ() * coneDirection.getZ()), 2) - (cO.getX() * cO.getX() + cO.getY() * cO.getY() + cO.getZ() * cO.getZ()) * pow(cos(_angle), 2));
+        double a = (pow(cos(_angle), 2)) * (rayDirection.getX() * rayDirection.getX() + rayDirection.getY() * rayDirection.getY() + rayDirection.getZ() * rayDirection.getZ()) -
+                (coneDirection.getX() * coneDirection.getX() + coneDirection.getY() * coneDirection.getY() + coneDirection.getZ() * coneDirection.getZ());
+        double b = 2 * pow(cos(_angle), 2) * vDeltaPValue -
+                2 * (coneDirection.dot(rayDirection * deltaP) * coneDirection.getX() + coneDirection.dot(rayDirection * deltaP) * coneDirection.getY() + coneDirection.dot(rayDirection * deltaP) * coneDirection.getZ());
+        double c = pow(cos(_angle), 2) * (deltaP.getX() * deltaP.getX() + deltaP.getY() * deltaP.getY() + deltaP.getZ() * deltaP.getZ()) - pow(deltaP.dot(coneDirection), 2);
         double delta = pow(b, 2) - 4 * a * c;
+
+        std::cout << _angle << std::endl;
 
         if (delta < 0) {
             return std::nullopt;
-        } else if (delta == 0) {
-            double t = -b / (2 * a);
+        } else if (delta > 0) {
+            double t1 = ((-1 * b + sqrt(delta)) / (2 * a));
+            double t2 = ((-1 * b - sqrt(delta)) / (2 * a));
+            double t = t1 > t2 ? t2 : t1;
 
-            collision = ray.getOrigin() + rayDirection * Entities::Transform::Vector3f(t, t, t);
+            collision = rayStart + rayDirection * Entities::Transform::Vector3f(t, t, t);
         } else {
-            double t1 = (-b - sqrt(delta)) / (2 * a);
+            double t = -1 * b / (2 * a);
 
-            collision = ray.getOrigin() + rayDirection * Entities::Transform::Vector3f(t1, t1, t1);
+            collision = rayStart + rayDirection * Entities::Transform::Vector3f(t, t, t);
         }
-        Entities::Transform::Vector3f test(collision.getX() - coneStart.getX(), collision.getY() - coneStart.getY(), collision.getZ() - coneStart.getZ());
-        if (coneDirection.dot(test) > 2.44346 )
-            return collision;
-        return std::nullopt;
+
+        return collision;
     }
 
     bool ConeEntity::isCollided(const Entities::Transform::Vector3f &point) const
