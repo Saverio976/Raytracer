@@ -5,11 +5,17 @@
 ** Scene.cpp
 */
 
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Scene.hpp"
 #include <future>
 
 namespace RayTracer::Scenes {
+    Scene::Scene(ILogger &logger):
+        _logger(logger)
+    {
+    }
+
     void Scene::operator()(const ISetting &setting) {
         std::shared_ptr<ISetting> settingWrapper;
         std::unique_ptr<ISetting> tmp;
@@ -31,9 +37,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::ICamera> cameraPtr(static_cast<Entities::ICamera *>(Factories::EntityFactory::get(name, *tmp)));
-
-                _cameras.push_back(std::move(cameraPtr));
+                _cameras.push_back(static_cast<Entities::ICamera &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
         settingWrapper = setting.get("lights");
@@ -43,9 +47,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::ILight> lightPtr(static_cast<Entities::ILight *>(Factories::EntityFactory::get(name, *tmp)));
-
-                _displayable.getLightList().push_back(std::move(lightPtr));
+                _displayable.getLightList().push_back(static_cast<Entities::ILight &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
         settingWrapper = setting.get("primitives");
@@ -55,9 +57,7 @@ namespace RayTracer::Scenes {
             name = (*settingWrapper).get(i)->getKey();
             for (int j = 0; j < length_two; j++) {
                 tmp = settingWrapper->get(i)->get(j);
-                std::unique_ptr<Entities::IPrimitive> primitivePtr(static_cast<Entities::IPrimitive *>(Factories::EntityFactory::get(name, *tmp)));
-
-                _displayable.getPrimitiveList().push_back(std::move(primitivePtr));
+                _displayable.getPrimitiveList().push_back(static_cast<Entities::IPrimitive &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
     }
@@ -65,11 +65,11 @@ namespace RayTracer::Scenes {
     void Scene::renders() {
         this->_state.changeState(SceneState::States::RUNNING);
         this->_future = std::async(std::launch::async, [this] () {
-            for (const std::unique_ptr<Entities::ICamera> &camera : this->_cameras) {
+            for (const std::reference_wrapper<Entities::ICamera> &camera : this->_cameras) {
                 if (this->_state.getState() == SceneState::States::CANCELLED) {
                     break;
                 }
-                camera->render(this->_displayable, this->_state);
+                camera.get().render(this->_displayable, this->_state);
             }
         });
     }
@@ -78,7 +78,7 @@ namespace RayTracer::Scenes {
         this->_state.changeState(SceneState::States::CANCELLED);
     }
 
-    const std::vector<std::unique_ptr<Entities::ICamera>> &Scene::getCameras() const {
+    const std::vector<std::reference_wrapper<Entities::ICamera>> &Scene::getCameras() const {
         return this->_cameras;
     }
 

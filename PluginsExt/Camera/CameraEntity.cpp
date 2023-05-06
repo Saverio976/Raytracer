@@ -6,17 +6,21 @@
 */
 
 #include <iostream>
+#include <thread>
+#include "ILogger.hpp"
+#include "ISceneState.hpp"
+#include "IDisplayable.hpp"
 #include "CameraEntity.hpp"
 #include "FilterFactory.hpp"
 #include "ImagePipeLine.hpp"
-#include "SettingWrapper.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
 
-    CameraEntity::CameraEntity(const Scenes::ISetting &config) :
+    CameraEntity::CameraEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _size(Entities::Transform::Vector2i(*config.get("size"))),
-        _image(Images::Image(Entities::Transform::Vector2i(*config.get("size"))))
+        _image(Images::Image(Entities::Transform::Vector2i(*config.get("size")))),
+        _logger(logger)
     {
         std::unique_ptr<Scenes::ISetting> tmp = config.get("focal");
 
@@ -27,20 +31,19 @@ namespace RayTracer::PluginsExt::Camera {
 
             for (int i = 0; i < settingWrapper->getLength(); i++) {
                 tmp = settingWrapper->get(i);
-                std::unique_ptr<Filters::IFilter> filterPtr(Factories::FilterFactory::get(tmp->getKey(), *tmp));
-
-                _filters.push_back(std::move(filterPtr));
+                _filters.push_back(Factories::FilterFactory::getInstance().get(tmp->getKey(), *tmp, logger));
             }
-        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+        } catch (const Scenes::ISetting::IParsingException &e) {
             std::cerr << e.what() << std::endl;
         }
         try {
             _maxThread = static_cast<int>(*config.get("maxThreads"));
             _maxThread = (_maxThread == -1) ? std::thread::hardware_concurrency() : _maxThread;
-        } catch (const Scenes::SettingWrapper::ParsingException &e) {
+        } catch (const Scenes::ISetting::IParsingException &e) {
             _maxThread = std::thread::hardware_concurrency();
         }
         _maxThread = (_maxThread <= 0) ? 1 : _maxThread;
+        _logger.info("Max threads : " + std::to_string(_maxThread));
     }
 
     Entities::IEntity::Type CameraEntity::getType() const {
@@ -71,13 +74,13 @@ namespace RayTracer::PluginsExt::Camera {
         return this->_size;
     }
 
-    const Images::Image &CameraEntity::render(const Scenes::Displayable &displayable, const Scenes::SceneState &state) {
+    const Images::Image &CameraEntity::render(const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state) {
         Images::RayIterrator iterator(*this);
         Images::ImagePipeLine imagePipeLine(this->_image, displayable, state, iterator);
 
-        imagePipeLine.generate(_maxThread, 1);
-        for (const std::unique_ptr<Filters::IFilter> &filter : this->_filters) {
-            imagePipeLine.apply(*filter);
+        imagePipeLine.generate(_logger, _maxThread, 1);
+        for (const std::reference_wrapper<Filters::IFilter> &filter : this->_filters) {
+            imagePipeLine.apply(filter.get());
         }
         return this->_image;
     }
@@ -86,7 +89,7 @@ namespace RayTracer::PluginsExt::Camera {
         return this->_image;
     }
 
-    std::list<std::unique_ptr<Filters::IFilter>> &CameraEntity::getFilters() {
+    std::list<std::reference_wrapper<Filters::IFilter>> &CameraEntity::getFilters() {
         return this->_filters;
     }
 }

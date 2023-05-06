@@ -5,8 +5,10 @@
 ** EntryPoint.cpp
 */
 
+#include <vector>
 #include "Api.hpp"
 #include "AmbientLightCreator.hpp"
+#include "AmbientLightEntity.hpp"
 
 extern "C" {
     void *getCreator(void)

@@ -21,7 +21,7 @@ namespace RayTracer::PluginsExt::Sphere {
     {
     }
 
-    Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
+    Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const
     {
         double r = 0;
         double g = 0;
@@ -33,9 +33,9 @@ namespace RayTracer::PluginsExt::Sphere {
             return {0, 0, 0, 0};
         }
         for (const auto &light : displayable.getLightList()) {
-            colorLight = light->getColor(intersect, displayable);
+            colorLight = light.get().getColor(intersect, displayable);
 
-            if (!light->isAmbient()) {
+            if (!light.get().isAmbient()) {
                 coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess / 3.0);
             } else {
                 coefsTmp = _shininess;

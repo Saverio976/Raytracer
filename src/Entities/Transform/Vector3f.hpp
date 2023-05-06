@@ -4,10 +4,13 @@
 ** File description:
 ** Vector3f.hpp
 */
-#ifndef VECTOR3F_HPP_
-#define VECTOR3F_HPP_
 
-#include "ISetting.hpp"
+#ifndef VECTOR3F_HPP_
+    #define VECTOR3F_HPP_
+
+    #include <ostream>
+    #include "ISetting.hpp"
+
 namespace RayTracer::Entities::Transform {
     /**
      * @brief The Vector3f class
@@ -128,6 +131,24 @@ namespace RayTracer::Entities::Transform {
              * @return The distance value
              */
             double getDistance(const Vector3f &other) const;
+            /* @brief Convert the vector to degrees from radians
+             *
+             * @return a new vector with the conversion
+             */
+            Vector3f toDegrees() const;
+            /* @brief Convert the vector to radians from degrees
+             *
+             * @return a new vector with the conversion
+             */
+            Vector3f toRadians() const;
+            /* @brief Rotate the vector (base, direction)
+             *
+             * @param direction the vector of the direction
+             * @param rotation the rotation
+             *
+             * @return a new vector direction
+             */
+            Vector3f rotateVector(const Vector3f &direction, const Vector3f &rotation) const;
 
         protected:
         private:
@@ -136,5 +157,7 @@ namespace RayTracer::Entities::Transform {
             double _z;
     };
 }
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector3f& vector);
 
 #endif /*VECTOR3F_HPP_*/

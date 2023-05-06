@@ -10,6 +10,7 @@
     #include <string>
     #include <memory>
     #include <map>
+#include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Factories {
@@ -42,11 +43,11 @@ namespace RayTracer::Factories {
              *
              * @return the interface
              */
-            Interface *get(const std::string &name, const Scenes::ISetting &setting)
+            Interface &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger)
             {
                 if (_stock.count(name) == 0)
                     throw std::runtime_error(name + " <- not found");
-                return _stock.at(name)->get(setting);
+                return _stock.at(name)->get(setting, logger);
             }
             /**
              * @brief Get the factory

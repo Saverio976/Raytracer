@@ -5,6 +5,7 @@
 ** EntryPoint.cpp
 */
 
+#include <vector>
 #include "Api.hpp"
 #include "PlaneCreator.hpp"
 

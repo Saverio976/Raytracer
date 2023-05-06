@@ -20,7 +20,7 @@ namespace RayTracer::PluginsExt::Plane {
             _color(Images::Color(*config.get("color")))
     { }
 
-    Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::Displayable &displayable) const
+    Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const
     {
         double r = _color[Images::Color::Types::RED];
         double g = _color[Images::Color::Types::GREEN];
@@ -30,8 +30,8 @@ namespace RayTracer::PluginsExt::Plane {
 
         if (size == 1)
             return {0, 0, 0, 0};
-        for (const std::unique_ptr<Entities::ILight> &light : displayable.getLightList()) {
-            color = light->getColor(intersect, displayable);
+        for (const std::reference_wrapper<Entities::ILight> &light : displayable.getLightList()) {
+            color = light.get().getColor(intersect, displayable);
             r += color[Images::Color::Types::RED];
             g += color[Images::Color::Types::GREEN];
             b += color[Images::Color::Types::BLUE];

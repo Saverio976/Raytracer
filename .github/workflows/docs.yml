@@ -1,0 +1,38 @@
+name: Doxygen GitHub Pages Deploy Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y graphviz doxygen plantuml curl default-jre default-jdk
+          pip install -r ./requirements.txt
+          curl -Lo plantuml.jar "https://github.com/plantuml/plantuml/releases/download/v1.2023.4/plantuml.jar"
+      - name: Build uml
+        run: make -C documentation uml EXTRA_PARAMS_PLANTUML="java -jar ./plantuml.jar"
+
+      - name: Build documentation
+        run: make -C documentation doxygen
+
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: documentation/
+          ssh-key: ${{ secrets.SSH_KEY }}
+          git-config-email: "<>"
+          git-config-name: "Github Action documentation"

@@ -8,15 +8,21 @@
 #ifndef CAMERACREATOR_HPP_
     #define CAMERACREATOR_HPP_
 
+    #include <vector>
+    #include <memory>
     #include "IEntityCreator.hpp"
+    #include "ILogger.hpp"
+    #include "CameraEntity.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
     class CameraCreator : public RayTracer::Plugins::Entities::IEntityCreator {
         public:
-            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config) final;
+            ~CameraCreator();
+            RayTracer::Entities::IEntity *create(const Scenes::ISetting &config, ILogger &logger) final;
 
         protected:
         private:
+            std::vector<CameraEntity *> _elements;
     };
 }
 

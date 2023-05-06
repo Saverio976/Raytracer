@@ -11,21 +11,24 @@
 #include <optional>
 #include <utility>
 #include "Color.hpp"
+#include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "SphereEntity.hpp"
 #include "IEntity.hpp"
 #include "Transform.hpp"
 #include "Vector3f.hpp"
+#include "IDisplayable.hpp"
 
 namespace RayTracer::PluginsExt::Sphere {
-    SphereEntity::SphereEntity(const Scenes::ISetting &config):
+    SphereEntity::SphereEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _material(*config.get("material")),
-        _radius(static_cast<double>(*config.get("radius")))
+        _radius(static_cast<double>(*config.get("radius"))),
+        _logger(logger)
     {
         if (_transform.getScale().getX() != _transform.getScale().getY() ||
                 _transform.getScale().getX() != _transform.getScale().getZ()) {
-            std::cerr << "SPHERE: config: scale x y z must be the same: now using only x" << std::endl;
+            _logger.warn("SPHERE: config: scale x y z must be the same: now using only x");
         }
         _radius = _radius * _transform.getScale().getX();
     }
@@ -72,9 +75,8 @@ namespace RayTracer::PluginsExt::Sphere {
         return std::make_optional(vect);
     }
 
-    Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const
-    {
-        auto intersect = isCollided(ray);
-        return _material.getColor(ray, _transform, intersect.value(), displayable) + Images::Color(0, 0, 0, 255);
+    Images::Color SphereEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const {
+        return _material.getColor(ray, _transform, intersect, displayable) + Images::Color(0, 0, 0, 255);
     }
 }

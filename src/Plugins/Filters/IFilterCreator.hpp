@@ -9,6 +9,7 @@
     #define IFILTERCREATOR_HPP_
     #include <memory>
     #include "IFilter.hpp"
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins::Filters {
@@ -27,7 +28,7 @@ namespace RayTracer::Plugins::Filters {
              *
              * @return the filter
              */
-            virtual RayTracer::Filters::IFilter *create(const Scenes::ISetting &setting) = 0;
+            virtual RayTracer::Filters::IFilter *create(const Scenes::ISetting &setting, ILogger &logger) = 0;
 
         protected:
         private:

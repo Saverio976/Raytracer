@@ -11,6 +11,9 @@
     #include <string>
     #include <memory>
     #include <dlfcn.h>
+    #include <vector>
+    #include <functional>
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
 
 namespace RayTracer::Plugins {
@@ -49,8 +52,10 @@ namespace RayTracer::Plugins {
              *
              * @return the interface
              */
-            Interface *get(const RayTracer::Scenes::ISetting &setting) const {
-                return this->_creator->create(setting);
+            Interface &get(const RayTracer::Scenes::ISetting &setting, ILogger &logger) {
+                Interface *element = this->_creator->create(setting, logger);
+                this->_elements.push_back(element);
+                return *element;
             }
 
         protected:
@@ -72,6 +77,7 @@ namespace RayTracer::Plugins {
                 return function(__args...);
             }
             Creator *_creator;
+            std::vector<Interface *> _elements;
             std::string _filePath;
             void *_handler;
         private:

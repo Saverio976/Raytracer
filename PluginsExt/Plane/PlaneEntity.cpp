@@ -6,13 +6,17 @@
 */
 
 #include <cmath>
+#include "ILogger.hpp"
 #include "PlaneEntity.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
-    PlaneEntity::PlaneEntity(const Scenes::ISetting &config):
+    PlaneEntity::PlaneEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _size(Entities::Transform::Vector3f(*config.get("size"))),
-        _material(*config.get("material")) { }
+        _material(*config.get("material")),
+        _logger(logger)
+    {
+    }
 
     Entities::IEntity::Type PlaneEntity::getType() const {
         return Type::Primitive;
@@ -51,8 +55,9 @@ namespace RayTracer::PluginsExt::Plane {
         return false;
     }
 
-    Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const {
-        auto intersect = isCollided(ray);
-        return _material.getColor(ray, _transform, intersect.value(), displayable);
+    Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+    const Entities::Transform::Vector3f &intersect) const
+    {
+        return _material.getColor(ray, _transform, intersect, displayable);
     }
 }
