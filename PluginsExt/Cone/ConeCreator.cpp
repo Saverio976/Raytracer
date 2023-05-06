@@ -14,4 +14,11 @@ namespace RayTracer::PluginsExt::Cone {
     {
         return new RayTracer::PluginsExt::Cone::ConeEntity(config, logger);
     }
+
+    ConeCreator::~ConeCreator()
+    {
+        for (auto element : _elements) {
+            delete element;
+        }
+    }
 }
