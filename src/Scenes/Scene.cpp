@@ -60,7 +60,6 @@ namespace RayTracer::Scenes {
                 _displayable.getPrimitiveList().push_back(static_cast<Entities::IPrimitive &>(Factories::EntityFactory::getInstance().get(name, *tmp, _logger)));
             }
         }
-        this->_displayable.getAmbientLight();
     }
 
     void Scene::renders() {

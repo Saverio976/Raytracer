@@ -40,7 +40,11 @@ namespace RayTracer::Images {
         if (distance != -1) {
             this->_color = list[position].get().getColor(this->_ray, this->_displayable, pointFinal);
         } else {
-            this->_color = this->_displayable.getAmbientLight().getColor();
+            try {
+                this->_color = this->_displayable.getAmbientLight().getColor();
+            } catch (Scenes::IDisplayable::IDisplayableException &exception) {
+                this->_color = Color(0, 0, 0, 255);
+            }
         }
     }
 }
