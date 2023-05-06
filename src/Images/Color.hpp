@@ -116,6 +116,18 @@ namespace RayTracer::Images {
              * @return the color
              */
             void set(const Types &type, double value);
+            /**
+             * @brief apply alpha of the color with background
+             *
+             * @param other the background
+             */
+            void applyAlpha(const Color &background);
+            /**
+             * @brief merge color with another one (thread safe)
+             *
+             * @param other the color that will be merged
+             */
+            void mergeColor(const Color &other);
 
         private:
             double _r;
