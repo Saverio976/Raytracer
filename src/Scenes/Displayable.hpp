@@ -10,8 +10,8 @@
 
     #include <memory>
     #include <vector>
-    #include "IDisplayable.hpp"
     #include <functional>
+    #include "IDisplayable.hpp"
 
 namespace RayTracer::Entities {
     class IPrimitive;
@@ -26,6 +26,16 @@ namespace RayTracer::Scenes {
      */
     class Displayable : public IDisplayable {
         public:
+            /**
+            * @brief an exception for when the key is not found
+            */
+            class DisplayableException: public IDisplayable::IDisplayableException {
+                public:
+                    explicit DisplayableException(const std::string &key);
+                    const char *what() const throw() final;
+                private:
+                    std::string _msg;
+            };
             /**
              * @brief Get the light list (const)
              *
@@ -50,6 +60,18 @@ namespace RayTracer::Scenes {
              * @return the primitive list
              */
             std::vector<std::reference_wrapper<Entities::IPrimitive>> &getPrimitiveList() final;
+            /**
+             * @brief Get the ambient light
+             *
+             * @return the ambient light
+             */
+            const Entities::ILight &getAmbientLight() const;
+            /**
+             * @brief Get the ambient light
+             *
+             * @return the ambient light
+             */
+            Entities::ILight &getAmbientLight();
 
         protected:
         private:
