@@ -12,6 +12,7 @@
 
 namespace RayTracer::Factories {
     template<> std::unique_ptr<TFactory<Plugins::Filters::FilterHandler, Filters::IFilter>> TFactory<Plugins::Filters::FilterHandler, Filters::IFilter>::_factory = nullptr;
+    std::unique_ptr<FilterFactory> FilterFactory::_factory = nullptr;
 
     void FilterFactory::add(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler)
     {
@@ -31,5 +32,12 @@ namespace RayTracer::Factories {
     TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> &FilterFactory::getFactory()
     {
         return TFactory<Plugins::Filters::FilterHandler, Filters::IFilter>::getFactory();
+    }
+
+    FilterFactory &FilterFactory::getInstance()
+    {
+        if (_factory == nullptr)
+            _factory.reset(new FilterFactory());
+        return *_factory;
     }
 }

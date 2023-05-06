@@ -17,6 +17,7 @@ namespace RayTracer::Factories {
      */
     class FilterFactory {
         public:
+            FilterFactory(const FilterFactory &other) = delete;
             ~FilterFactory() = default;
             /**
              * @brief Add a filter
@@ -24,7 +25,7 @@ namespace RayTracer::Factories {
              * @param name the name
              * @param handler the handler
              */
-            static void add(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
+            void add(const std::string &name, std::unique_ptr<Plugins::Filters::FilterHandler> handler);
             /**
              * @brief Get a filter
              *
@@ -33,14 +34,22 @@ namespace RayTracer::Factories {
              *
              * @return the filter
              */
-            static Filters::IFilter &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger);
+            Filters::IFilter &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger);
             /**
              * @brief Clear all filters
              */
-            static void clearAll();
+            void clearAll();
+            /**
+             * @brief Get the singleton
+             *
+             * @return the singleton
+             */
+            static FilterFactory &getInstance();
 
         protected:
+            FilterFactory() = default;
             static TFactory<Plugins::Filters::FilterHandler, Filters::IFilter> &getFactory();
+            static std::unique_ptr<FilterFactory> _factory;
         private:
     };
 }
