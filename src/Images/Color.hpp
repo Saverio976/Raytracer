@@ -134,7 +134,7 @@ namespace RayTracer::Images {
              * @param distance the distance
              * @param distance max distance (exemple: watt of the light)
              */
-            void applyDistance(float distance, float maxDistance);
+            void applyDistance(double distance, double maxDistance);
 
         private:
             double _r;
