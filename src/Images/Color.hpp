@@ -117,7 +117,7 @@ namespace RayTracer::Images {
              */
             void set(const Types &type, double value);
             /**
-             * @brief apply alpha of the color with background
+             * @brief apply alpha of the color with background (thread safe)
              *
              * @param other the background
              */
