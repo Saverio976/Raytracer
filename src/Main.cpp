@@ -54,7 +54,7 @@ namespace RayTracer {
         try {
             logLevel = Parameters::getInstance().getInt("log-level");
         } catch (const Parameters::KeyNotFoundError &e) {
-            Parameters::getInstance().set("log-level", 0);
+            Parameters::getInstance().set("log-level", 3);
         }
         _logger.trace("Finishing Parsing Command Arguments");
         return true;
@@ -122,7 +122,7 @@ namespace RayTracer {
         std::cout << "\t--scene-path <scene-conf.yaax>\tpath to scene config" << std::endl;
         std::cout << "\t--output-path <file>\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
         std::cout << "\t--help\tto display the help message" << std::endl;
-        std::cout << "\t--log-level <int>\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [0 by default]" << std::endl;
+        std::cout << "\t--log-level <int>\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
         std::cout << std::endl;
         std::cout << "CREDITS:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
