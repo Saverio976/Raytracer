@@ -181,6 +181,16 @@ namespace RayTracer::Images {
         this->_b = other[Types::BLUE] * this->_b / 255;
         this->_mutex.unlock();
     }
+
+    void Color::applyDistance(double distance, double maxDistance) {
+        distance = (maxDistance < distance) ? maxDistance : distance;
+        distance = maxDistance - distance;
+        this->_mutex.lock();
+        this->_r = distance * this->_r / maxDistance;
+        this->_g = distance * this->_g / maxDistance;
+        this->_b = distance * this->_b / maxDistance;
+        this->_mutex.unlock();
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color) {

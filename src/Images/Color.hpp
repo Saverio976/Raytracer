@@ -128,6 +128,13 @@ namespace RayTracer::Images {
              * @param other the color that will be merged
              */
             void mergeColor(const Color &other);
+            /**
+             * @brief apply distance in the color
+             *
+             * @param distance the distance
+             * @param distance max distance (exemple: watt of the light)
+             */
+            void applyDistance(float distance, float maxDistance);
 
         private:
             double _r;
