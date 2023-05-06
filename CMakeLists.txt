@@ -34,6 +34,12 @@ set_target_properties(Plane PROPERTIES
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
 )
+add_library(Cylinder SHARED)
+set_target_properties(Cylinder PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
 # --------- Filters plugins ---------
 
 

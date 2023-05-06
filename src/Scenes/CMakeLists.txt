@@ -5,6 +5,7 @@ target_include_directories(Sphere PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(AmbientLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Camera PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 find_library(LIBCONFIG config++)
 target_link_libraries(raytracer PRIVATE ${LIBCONFIG})
