@@ -28,6 +28,8 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
             std::optional<Entities::Transform::Vector3f> isCollided(const Images::Ray &ray) const final;
             Images::Color getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
                 const Entities::Transform::Vector3f &intersect) const final;
+            Images::Color redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+                const Entities::Transform::Vector3f &intersect) const final;
         private:
             std::array<double, 2> isCollidedInfiniteCylinder(const Images::Ray &ray) const;
             Entities::Transform::Transform _transform;

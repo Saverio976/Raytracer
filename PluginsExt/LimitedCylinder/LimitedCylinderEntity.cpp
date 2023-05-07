@@ -134,4 +134,10 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
         transform.setPosition(aa);
         return _material.getColor(ray, transform, intersect, displayable);
     }
+
+    Images::Color LimitedCylinderEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const
+    {
+        return {0, 0, 0, 0};
+    }
 }
