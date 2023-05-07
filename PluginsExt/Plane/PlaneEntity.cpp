@@ -60,4 +60,9 @@ namespace RayTracer::PluginsExt::Plane {
     {
         return _material.getColor(ray, _transform, intersect, displayable);
     }
+
+    Images::Color PlaneEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+    const Entities::Transform::Vector3f &intersect) const {
+        return {0, 0, 0, 0};
+    }
 }
