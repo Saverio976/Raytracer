@@ -9,7 +9,7 @@ cameras:
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
-            focal = 20.0;
+            focal = 100.0;
             maxThreads = -1;
             filter = ()
         }
@@ -20,13 +20,14 @@ cameras:
 primitives :
 {
     # List of spheres
-    Cylinder = (
+    LimitedCylinder = (
         {
             radius = 100.0;
+            height = 600.0;
             transform = {
-                position = {x = 0.0; y = 100.0; z = 0.0;};
+                position = {x = 0.0; y = 0.0; z = -10.0;};
                 scale = {x = 1.0; y = 1.0; z = 1.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 50.0; y = 0.0; z = 0.0;};
             };
             material = {
                 shininess = 1.0;

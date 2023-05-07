@@ -29,7 +29,7 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
             Images::Color getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
                 const Entities::Transform::Vector3f &intersect) const final;
         private:
-            std::optional<Entities::Transform::Vector3f> isCollidedInfiniteCylinder(const Images::Ray &ray) const;
+            std::array<double, 2> isCollidedInfiniteCylinder(const Images::Ray &ray) const;
             Entities::Transform::Transform _transform;
             Entities::Transform::Vector3f _direction;
             double _radius;
