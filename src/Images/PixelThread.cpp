@@ -8,6 +8,7 @@
 #include "IDisplayable.hpp"
 #include "PixelThread.hpp"
 #include "IPrimitive.hpp"
+#include "ILight.hpp"
 
 namespace RayTracer::Images {
     PixelThread::PixelThread(const Scenes::IDisplayable &displayable, Color &color, const Images::Ray &ray) :
@@ -38,6 +39,12 @@ namespace RayTracer::Images {
         }
         if (distance != -1) {
             this->_color = list[position].get().getColor(this->_ray, this->_displayable, pointFinal);
+        } else {
+            try {
+                this->_color = this->_displayable.getAmbientLight().getColor();
+            } catch (Scenes::IDisplayable::IDisplayableException &exception) {
+                this->_color = Color(0, 0, 0, 255);
+            }
         }
     }
 }
