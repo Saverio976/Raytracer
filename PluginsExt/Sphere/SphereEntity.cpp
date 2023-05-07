@@ -79,4 +79,9 @@ namespace RayTracer::PluginsExt::Sphere {
         const Entities::Transform::Vector3f &intersect) const {
         return _material.getColor(ray, _transform, intersect, displayable) + Images::Color(0, 0, 0, 255);
     }
+
+    Images::Color SphereEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const {
+        return {0, 0, 0, 0};
+    }
 }

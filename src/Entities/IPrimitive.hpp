@@ -48,6 +48,17 @@ namespace RayTracer::Entities {
              * @return true if the ray is collided
              */
             virtual std::optional<Transform::Vector3f> isCollided(const Images::Ray &ray) const = 0;
+            /**
+             * @brief this function is called when the object intercept the ray light
+             *
+             * @param ray the ray between the light and the object
+             * @param displayable the displayable
+             * @param intersect the intersection point between this point and the ray
+             *
+             * @return the color of the shadow
+             */
+            virtual Images::Color redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+                const Transform::Vector3f &intersect) const = 0;
 
         protected:
         private:
