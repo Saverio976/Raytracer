@@ -66,8 +66,22 @@ namespace RayTracer::PluginsExt::Cylinder {
     Images::Color CylinderEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const
     {
+        double a = (_direction.getX() * _direction.getX()) + (_direction.getY() * _direction.getY()) + (_direction.getZ() * _direction.getZ());
+        double b = 2 * (_direction.getX() * ray.getOrigin().getX()) + 2 * (_direction.getY() * ray.getOrigin().getY()) + 2 * (_direction.getZ() * ray.getOrigin().getZ());
+        double c = (ray.getOrigin().getX() * ray.getOrigin().getX()) + (ray.getOrigin().getZ() * ray.getOrigin().getY()) + (ray.getOrigin().getZ() * ray.getOrigin().getZ()) - (_radius * _radius);
+        double delta = b * b - 4 * a * c;
+        double t = (-b - std::sqrt(delta)) / (2 * a);
+
         auto transform = _transform;
-        transform.setPosition(intersect * _direction);
+        auto m = ray.getDirection().dot(_direction) * t + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
+        auto aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
+        transform.setPosition(aa);
         return _material.getColor(ray, _transform, intersect, displayable);
+    }
+
+    Images::Color CylinderEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const
+    {
+        return {0, 0, 0, 0};
     }
 }
