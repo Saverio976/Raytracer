@@ -78,4 +78,10 @@ namespace RayTracer::PluginsExt::Cylinder {
         transform.setPosition(aa);
         return _material.getColor(ray, _transform, intersect, displayable);
     }
+
+    Images::Color CylinderEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const
+    {
+        return {0, 0, 0, 0};
+    }
 }
