@@ -6,18 +6,18 @@
 */
 
 #include <vector>
-#include "CylinderEntity.hpp"
+#include "LimitedCylinderEntity.hpp"
 #include "Api.hpp"
-#include "CylinderCreator.hpp"
+#include "LimitedCylinderCreator.hpp"
 
 extern "C" {
     void *getCreator(void)
     {
-        return new RayTracer::PluginsExt::Cylinder::CylinderCreator();
+        return new RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator();
     }
 
     void deleteCreator(void *creator)
     {
-        delete static_cast<RayTracer::PluginsExt::Cylinder::CylinderCreator *>(creator);
+        delete static_cast<RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator *>(creator);
     }
 }
