@@ -11,7 +11,7 @@ cameras:
             };
             focal = 200.0;
             maxThreads = -1;
-            filter = ()
+            filters = ()
         }
     );
 };
@@ -23,11 +23,11 @@ primitives :
     LimitedPlane = (
         {
             transform = {
-                position = {x = 0.0; y = 200.0; z = 0.0;};
+                position = {x = 0.0; y = 200.0; z = 20.0;};
                 scale = {x = 60.0; y = 20.0; z = -10.0;};
-                rotation = {x = 0.0; y = 1.7; z = 0.0;};
+                rotation = {x = 1.0; y = 0.5; z = 0.0;};
             };
-            size = {x = 400.0; y = 50.0; z = 240.0;};
+            size = {x = 400.0; y = 400.0; z = 400.0;};
             material = {
                 shininess = 1.0;
                 color = {r = 200.0; g = 155.0; b = 100.0; a = 255.0;};
