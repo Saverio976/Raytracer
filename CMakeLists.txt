@@ -4,7 +4,7 @@ project(Raytracer
     DESCRIPTION "Raytracer engine with sphere,..."
     LANGUAGES CXX
 )
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
