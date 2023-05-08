@@ -86,6 +86,7 @@ namespace RayTracer::PluginsExt::PointLight {
         Images::Color _color;
         ILogger &_logger;
         double _power;
+        double _radius;
     };
 }
 

@@ -15,6 +15,7 @@ namespace RayTracer::PluginsExt::PointLight {
             _transform(Entities::Transform::Transform(*config.get("transform"))),
             _color(*config.get("color")),
             _power(*config.get("power")),
+            _radius(*config.get("radius")),
             _logger(logger)
     {
     }
@@ -53,7 +54,7 @@ namespace RayTracer::PluginsExt::PointLight {
                 continue;
             return primitive.get().redirectionLight(ray, displayable, *impact);
         }
-        result.applyDistance(distance, this->_power);
+        result.applyDistance(distance, this->_radius);
         return result;
     }
 
