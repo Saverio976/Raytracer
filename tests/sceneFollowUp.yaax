@@ -9,8 +9,8 @@ cameras:
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
-            focal = 20.0;
-            maxThreads = -1;
+            focal = 200.0;
+            maxThreads = 1;
             filter = ()
         }
     );
@@ -22,15 +22,15 @@ primitives :
     # List of spheres
     Cone = (
         {
-            angle = 0.1;
+            angle = 0.01;
             transform = {
-                position = {x = 0.0; y = 100.0; z = 0.0;};
+                position = {x = 0.0; y = 2000.0; z = 0.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.0; y = 0.0; z = 1.57};
+                rotation = {x = 0.0; y = 1.57; z = 0.0};
             };
+            color = {r = 0.0; g = 255.0; b = 50.0; a = 255.0;};
         }
     );
-
 };
 
 # Light configuration
@@ -40,7 +40,7 @@ lights :
     AmbientLight = (
         {
             transform = {
-                position = {x = 60.0; y = 20.0; z = -10.0;};
+                position = {x = 60.0; y = 100.0; z = 0.0;};
                 scale = {x = 60.0; y = 20.0; z = -10.0;};
                 rotation = {x = 60.0; y = 20.0; z = -10.0;};
             };
