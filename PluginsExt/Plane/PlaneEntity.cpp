@@ -32,21 +32,17 @@ namespace RayTracer::PluginsExt::Plane {
 
     std::optional <Entities::Transform::Vector3f> PlaneEntity::isCollided(const Images::Ray &ray) const {
         const Entities::Transform::Vector3f &rotation = this->getTransform().getRotation();
-        Entities::Transform::Vector3f normal(
-                std::sin(rotation.getX()) * std::sin(rotation.getY()),
-                std::sin(rotation.getX()) * std::cos(rotation.getY()),
-                std::cos(rotation.getX())
-        );
-        Entities::Transform::Vector3f direction = ray.getDirection();
-        float denom = normal.dot(direction);
+        const Entities::Transform::Vector3f &point = this->getTransform().getPosition();
+        Entities::Transform::Vector3f normal = this->getTransform().getRotation();
+        float d = -(normal.getX() * point.getX() + normal.getY() * point.getY() + normal.getZ() * point.getZ());
+        const Entities::Transform::Vector3f &direction = ray.getDirection();
+        const Entities::Transform::Vector3f &startPoint = ray.getOrigin();
+        float t = -(normal.getX() * startPoint.getX() + normal.getY() * startPoint.getY() + normal.getZ() * startPoint.getZ() + d)
+                  / (normal.getX() * direction.getX() + normal.getY() * direction.getY() + normal.getZ() * direction.getZ());
 
-        if (denom > 1e-6) {
-            Entities::Transform::Vector3f origin = getTransform().getPosition() - ray.getOrigin();
-            float t = origin.dot(normal) / denom;
-            if (t >= 0) {
-                Entities::Transform::Vector3f collision = ray.getOrigin() + direction * Entities::Transform::Vector3f(t, t, t);
-                return collision;
-            }
+        if (t >= 0 && t <= 400) {
+            Entities::Transform::Vector3f collisionPoint = startPoint + direction * Entities::Transform::Vector3f(t, t, t);
+            return collisionPoint;
         }
         return std::nullopt;
     }
