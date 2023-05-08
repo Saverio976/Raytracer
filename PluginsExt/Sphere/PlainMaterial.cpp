@@ -26,28 +26,37 @@ namespace RayTracer::PluginsExt::Sphere {
         double r = 0;
         double g = 0;
         double b = 0;
-        double coefsTmp = 0;
-        Images::Color colorLight(0, 0, 0, 0);
+        Images::Color rounded = this->round(this->_color);
+        size_t size = displayable.getLightList().size() + 1;
+        Images::Color color(0, 0, 0, 255);
 
-        if (displayable.getLightList().empty()) {
+        if (size == 1)
             return {0, 0, 0, 0};
-        }
-        for (const auto &light : displayable.getLightList()) {
-            colorLight = light.get().getColor(intersect, displayable);
-
-            if (!light.get().isAmbient()) {
-                coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess / 3.0);
+        for (const std::reference_wrapper<Entities::ILight> &light : displayable.getLightList()) {
+            color = light.get().getColor(intersect, displayable);
+            double coef = 0;
+            if (light.get().isAmbient()) {
+                coef = 1;
             } else {
-                coefsTmp = _shininess;
+                coef = (intersect - centerObj.getPosition()).getNormalized().dot(intersect - light.get().getTransform().getPosition());
+                if (coef == 0) {
+                    coef = 3;
+                } else {
+                    coef = std::pow((std::log(std::abs(coef)) - (3.4 - _shininess)) * light.get().getPower(), (std::log(std::abs(coef)) - (3.4 - _shininess)));
+                }
+                if (coef < 0) {
+                    coef = 0;
+                }
             }
-            r += colorLight[Images::Color::Types::RED] * coefsTmp;
-            g += colorLight[Images::Color::Types::GREEN] * coefsTmp;
-            b += colorLight[Images::Color::Types::BLUE] * coefsTmp;
+            r += color[Images::Color::Types::RED] * coef * rounded[Images::Color::Types::RED];
+            g += color[Images::Color::Types::GREEN] * coef * rounded[Images::Color::Types::GREEN];
+            b += color[Images::Color::Types::BLUE] * coef * rounded[Images::Color::Types::BLUE];
         }
-        r /= displayable.getLightList().size();
-        g /= displayable.getLightList().size();
-        b /= displayable.getLightList().size();
-        return _color * round(Images::Color(r, g, b, 255));
+        r /= size;
+        g /= size;
+        b /= size;
+        color = this->round(Images::Color(r, g, b, 255)) * Images::Color(255, 255, 255, 255);
+        return color;
     }
 
     void PlainMaterial::setColor(const Images::Color &color)
