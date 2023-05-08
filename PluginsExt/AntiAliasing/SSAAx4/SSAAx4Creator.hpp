@@ -14,7 +14,7 @@
     #include "IFilterCreator.hpp"
     #include "ILogger.hpp"
     #include "ISetting.hpp"
-    #include "SSAAx4Entity.hpp"
+    #include "SSAAx4Filter.hpp"
 
 namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
     class SSAAx4Creator : public Plugins::Filters::IFilterCreator {
@@ -23,7 +23,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
             Filters::IFilter *create(const Scenes::ISetting &config, ILogger &logger) final;
 
         private:
-            std::vector<SSAAx4Entity *> _elements;
+            std::vector<SSAAx4Filter *> _elements;
     };
 }
 

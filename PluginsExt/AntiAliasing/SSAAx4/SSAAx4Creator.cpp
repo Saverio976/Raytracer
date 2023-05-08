@@ -17,7 +17,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
 
     Filters::IFilter *SSAAx4Creator::create(const Scenes::ISetting &config, ILogger &logger)
     {
-        SSAAx4Entity *element = new SSAAx4Entity(config, logger);
+        SSAAx4Filter *element = new SSAAx4Filter(config, logger);
         _elements.push_back(element);
         return element;
     }

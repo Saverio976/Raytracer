@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** Raytracer
 ** File description:
-** SSAAx4Entity.hpp
+** SSAAx4Filter.hpp
 */
 
 #ifndef BASICENTITY_HPP_
@@ -17,9 +17,9 @@
     #include "Image.hpp"
 
 namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
-    class SSAAx4Entity : public Filters::IFilter {
+    class SSAAx4Filter : public Filters::IFilter {
         public:
-            SSAAx4Entity(const Scenes::ISetting &config, ILogger &logger);
+            SSAAx4Filter(const Scenes::ISetting &config, ILogger &logger);
             void apply(Images::Image &image) final;
 
         private:

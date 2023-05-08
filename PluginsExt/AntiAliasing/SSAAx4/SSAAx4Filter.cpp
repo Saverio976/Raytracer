@@ -3,7 +3,7 @@
 ** EPITECH PROJECT, 2023
 ** Raytracer
 ** File description:
-** SSAAx4Entity.hpp
+** SSAAx4Filter.hpp
 */
 
 #include <exception>
@@ -13,11 +13,11 @@
 #include "IFilter.hpp"
 #include "ISetting.hpp"
 #include "Image.hpp"
-#include "SSAAx4Entity.hpp"
+#include "SSAAx4Filter.hpp"
 #include "Vector2i.hpp"
 
 namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
-    SSAAx4Entity::SSAAx4Entity(const Scenes::ISetting &config, ILogger &logger):
+    SSAAx4Filter::SSAAx4Filter(const Scenes::ISetting &config, ILogger &logger):
         _logger(logger)
     {
         try {
@@ -33,7 +33,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
         _logger.info("SSAAx4 Max threads : " + std::to_string(_maxThread));
     }
 
-    void SSAAx4Entity::waitOnePlace()
+    void SSAAx4Filter::waitOnePlace()
     {
         while (_futures.size() >= _maxThread) {
             for (auto it = _futures.begin() ; it != _futures.end(); it++) {
@@ -45,7 +45,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
         }
     }
 
-    void SSAAx4Entity::waitAllFinisehd()
+    void SSAAx4Filter::waitAllFinisehd()
     {
         while (_futures.size() > 0) {
             for (auto it = _futures.begin() ; it != _futures.end(); it++) {
@@ -57,7 +57,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
         }
     }
 
-    void SSAAx4Entity::apply(Images::Image &image)
+    void SSAAx4Filter::apply(Images::Image &image)
     {
         _logger.info("Applying SSAAx4 Anti-Aliasing...");
         Images::Image tmp(image.getSize() * Entities::Transform::Vector2i(2, 2));
@@ -96,7 +96,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
                     if (x > 0 && y < tmp.getSize().getY() - 1)                          { colors.push_back(tmp[y + 1][x - 1]); }
                     if (x < tmp.getSize().getX() - 1 && y < tmp.getSize().getY() - 1)   { colors.push_back(tmp[y + 1][x + 1]); }
                     if (x < tmp.getSize().getX() - 1 && y > 0)                          { colors.push_back(tmp[y - 1][x + 1]); }
-                    newImage[y][x] = SSAAx4Entity::getColorsMean(colors);
+                    newImage[y][x] = SSAAx4Filter::getColorsMean(colors);
                 }
             }));
         }
@@ -118,7 +118,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
                     int xx = x * 2;
                     int yy = y * 2;
 
-                    image[y][x] = SSAAx4Entity::getColorsMean({
+                    image[y][x] = SSAAx4Filter::getColorsMean({
                         newImage[yy][xx],
                         newImage[yy][xx + 1],
                         newImage[yy + 1][xx + 1],
@@ -131,7 +131,7 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
         _logger.info("SSAAx4 Anti-Aliasing applied.");
     }
 
-    Images::Color SSAAx4Entity::getColorsMean(const std::vector<Images::Color> &colors)
+    Images::Color SSAAx4Filter::getColorsMean(const std::vector<Images::Color> &colors)
     {
         double r = 0;
         double g = 0;

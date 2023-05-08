@@ -6,7 +6,7 @@
 */
 
 #include <vector>
-#include "SSAAx4Entity.hpp"
+#include "SSAAx4Filter.hpp"
 #include "Api.hpp"
 #include "SSAAx4Creator.hpp"
 
