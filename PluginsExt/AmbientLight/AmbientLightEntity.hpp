@@ -74,12 +74,19 @@ namespace RayTracer::PluginsExt::AmbientLight {
              * @return true if the light is ambient
              */
             bool isAmbient() const final;
+            /**
+             * @brief get the power of the light
+             *
+             * @return the value of the power
+             */
+            double getPower() const final;
 
         protected:
         private:
             Entities::Transform::Transform _transform;
             Images::Color _color;
             ILogger &_logger;
+            double _power;
     };
 }
 
