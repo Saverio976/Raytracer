@@ -15,6 +15,7 @@ cameras:
                 SSAAx4: (
                     {
                         present = true;
+                        maxThreads = -1;
                     }
                 )
             };
