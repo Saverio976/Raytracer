@@ -38,12 +38,13 @@ namespace RayTracer::PluginsExt::LimitedPlane {
         const Entities::Transform::Vector3f &startPoint = ray.getOrigin();
         float t = -(normal.getX() * startPoint.getX() + normal.getY() * startPoint.getY() + normal.getZ() * startPoint.getZ() + d)
                   / (normal.getX() * direction.getX() + normal.getY() * direction.getY() + normal.getZ() * direction.getZ());
+        double sizeY = _size.getX() > _size.getZ() ? _size.getX() : _size.getZ();
 
         if (t >= 0 && t <= 400) {
             Entities::Transform::Vector3f collisionPoint = startPoint + direction * Entities::Transform::Vector3f(t, t, t);
             if (std::abs(collisionPoint.getX() - _transform.getPosition().getX()) < _size.getX() / 2 &&
                 std::abs(collisionPoint.getZ() - _transform.getPosition().getZ())  < _size.getZ() / 2 &&
-                std::abs(collisionPoint.getY() - _transform.getPosition().getY()) < _size.getY() / 2)
+                std::abs(collisionPoint.getY() - _transform.getPosition().getY()) <  sizeY / 2)
                 return collisionPoint;
         }
         return std::nullopt;
