@@ -63,6 +63,7 @@ target_sources(LimitedPlane PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
+)
 
 target_sources(Cone PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
