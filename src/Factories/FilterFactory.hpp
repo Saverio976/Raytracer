@@ -4,9 +4,12 @@
 ** File description:
 ** FilterFactory.hpp
 */
+
 #ifndef FILTERFACTORY_HPP_
     #define FILTERFACTORY_HPP_
-    #include "ILogger.hpp"
+
+    #include "IFilterFactory.hpp"
+#include "ILogger.hpp"
     #include "TFactory.hpp"
     #include "FilterHandler.hpp"
     #include "IFilter.hpp"
@@ -15,7 +18,7 @@ namespace RayTracer::Factories {
     /**
      * @brief The FilterFactory (singleton factory)
      */
-    class FilterFactory {
+    class FilterFactory : public IFilterFactory {
         public:
             FilterFactory(const FilterFactory &other) = delete;
             ~FilterFactory() = default;
@@ -34,7 +37,7 @@ namespace RayTracer::Factories {
              *
              * @return the filter
              */
-            Filters::IFilter &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger);
+            Filters::IFilter &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger) final;
             /**
              * @brief Clear all filters
              */

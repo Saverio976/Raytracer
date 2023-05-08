@@ -7,6 +7,7 @@
 
 #ifndef ENTITYHANDLER_HPP_
     #define ENTITYHANDLER_HPP_
+
     #include <memory>
     #include <string>
     #include "IEntity.hpp"

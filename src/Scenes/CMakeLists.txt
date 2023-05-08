@@ -10,6 +10,7 @@ target_include_directories(Cone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PointLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 find_library(LIBCONFIG config++)
 target_link_libraries(raytracer PRIVATE ${LIBCONFIG})
