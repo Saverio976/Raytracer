@@ -25,7 +25,6 @@ namespace RayTracer::PluginsExt::Plane {
         double r = 0;
         double g = 0;
         double b = 0;
-        double power = 0;
         size_t size = displayable.getLightList().size() + 1;
         Images::Color color(0, 0, 0, 255);
 
