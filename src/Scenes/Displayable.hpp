@@ -8,6 +8,7 @@
 #ifndef DISPLAYABLE_HPP_
     #define DISPLAYABLE_HPP_
 
+    #include <string>
     #include <memory>
     #include <vector>
     #include <functional>
