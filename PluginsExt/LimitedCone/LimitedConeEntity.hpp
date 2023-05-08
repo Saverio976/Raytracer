@@ -1,0 +1,14 @@
+//
+// Created by sverm on 08/05/2023.
+//
+
+#ifndef RAYTRACER_LIMITEDCONEENTITY_HPP
+#define RAYTRACER_LIMITEDCONEENTITY_HPP
+
+
+class LimitedConeEntity {
+
+};
+
+
+#endif //RAYTRACER_LIMITEDCONEENTITY_HPP
