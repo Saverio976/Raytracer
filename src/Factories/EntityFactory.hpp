@@ -7,6 +7,8 @@
 
 #ifndef ENTITYFACTORY_HPP_
     #define ENTITYFACTORY_HPP_
+
+    #include "IEntityFactory.hpp"
     #include "ILogger.hpp"
     #include "TFactory.hpp"
     #include "EntityHandler.hpp"
@@ -16,7 +18,7 @@ namespace RayTracer::Factories {
     /**
      * @brief The EntityFactory (singleton factory)
      */
-    class EntityFactory {
+    class EntityFactory : public IEntityFactory {
         public:
             EntityFactory(const EntityFactory &other) = delete;
             ~EntityFactory() = default;
@@ -35,7 +37,7 @@ namespace RayTracer::Factories {
              *
              * @return the entity
              */
-            Entities::IEntity &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger);
+            Entities::IEntity &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger) final;
             /**
              * @brief Clear all handlers
              */

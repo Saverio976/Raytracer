@@ -7,6 +7,7 @@ target_include_directories(Camera PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
@@ -61,4 +62,9 @@ target_sources(Cylinder PRIVATE
 target_sources(LimitedCylinder PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
+)
+
+target_sources(SSAAx4 PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
 )

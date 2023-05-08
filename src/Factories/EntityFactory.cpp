@@ -6,6 +6,7 @@
 */
 
 #include <memory>
+#include "IEntityFactory.hpp"
 #include "EntityFactory.hpp"
 #include "EntityHandler.hpp"
 #include "IEntity.hpp"
@@ -41,5 +42,12 @@ namespace RayTracer::Factories {
         if (_factory == nullptr)
             _factory.reset(new EntityFactory());
         return *_factory;
+    }
+}
+
+extern "C" {
+    RayTracer::Factories::IEntityFactory *getEntityFactoryInstance(void)
+    {
+        return &RayTracer::Factories::EntityFactory::getInstance();
     }
 }

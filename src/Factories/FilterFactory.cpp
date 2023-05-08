@@ -41,3 +41,10 @@ namespace RayTracer::Factories {
         return *_factory;
     }
 }
+
+extern "C" {
+    RayTracer::Factories::IFilterFactory *getFilterFactoryInstance(void)
+    {
+        return &RayTracer::Factories::FilterFactory::getInstance();
+    }
+}

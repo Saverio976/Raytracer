@@ -53,11 +53,13 @@ namespace RayTracer::Images {
         _y(y) { }
 
     Color &Image::PixelLine::operator[](std::size_t x) {
+        std::cout << "SIZEE:" << this->_pixels.size() << std::endl;
         std::size_t toReach = this->_size.getX() * this->_y + x;
         return this->_pixels.at(toReach);
     }
 
     const Color &Image::PixelLine::operator[](std::size_t x) const {
+        std::cout << "SIZEE:" << this->_pixelsConst.size() << std::endl;
         return this->_pixelsConst.at(this->_size.getX() * this->_y + x);
     }
 

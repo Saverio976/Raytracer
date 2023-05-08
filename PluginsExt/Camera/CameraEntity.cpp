@@ -11,7 +11,7 @@
 #include "ISceneState.hpp"
 #include "IDisplayable.hpp"
 #include "CameraEntity.hpp"
-#include "FilterFactory.hpp"
+#include "IFilterFactory.hpp"
 #include "ImagePipeLine.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
@@ -31,7 +31,7 @@ namespace RayTracer::PluginsExt::Camera {
 
             for (int i = 0; i < settingWrapper->getLength(); i++) {
                 tmp = settingWrapper->get(i);
-                _filters.push_back(Factories::FilterFactory::getInstance().get(tmp->getKey(), *tmp, logger));
+                _filters.push_back(getFilterFactoryInstance()->get(tmp->getKey(), *tmp, logger));
             }
         } catch (const Scenes::ISetting::IParsingException &e) {
             std::cerr << e.what() << std::endl;
