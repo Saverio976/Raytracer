@@ -27,6 +27,18 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
              * @brief Wait one place in the vector of futures
              */
             void waitOnePlace();
+            /**
+             * @brief Wait all places in the vector of futures
+             */
+            void waitAllFinisehd();
+            /**
+             * @brief Mean of the colors
+             *
+             * @param colors The colors to mean
+             *
+             * @return The mean
+             */
+            static Images::Color getColorsMean(const std::vector<Images::Color> &colors);
             ILogger &_logger;
             int _maxThread;
             std::vector<std::future<void>> _futures;
