@@ -9,7 +9,7 @@ if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
 
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 
 # --------- Entities plugins ---------
 add_library(Sphere SHARED)
