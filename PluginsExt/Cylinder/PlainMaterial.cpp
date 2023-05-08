@@ -14,34 +14,40 @@
 #include "IPrimitive.hpp"
 #include "Vector3f.hpp"
 
-namespace RayTracer::PluginsExt::Plane {
+namespace RayTracer::PluginsExt::Cylinder {
     PlainMaterial::PlainMaterial(const Scenes::ISetting &config):
-            _shininess(static_cast<double>(*config.get("shininess"))),
-            _color(Images::Color(*config.get("color")))
-    { }
+        _shininess(static_cast<double>(*config.get("shininess"))),
+        _color(Images::Color(*config.get("color")))
+    {
+    }
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const
     {
         double r = 0;
         double g = 0;
         double b = 0;
-        size_t size = displayable.getLightList().size() + 1;
-        Images::Color color(0, 0, 0, 255);
+        double coefsTmp = 0;
+        Images::Color colorLight(0, 0, 0, 0);
 
-        if (size == 1)
+        if (displayable.getLightList().empty()) {
             return {0, 0, 0, 0};
-        for (const std::reference_wrapper<Entities::ILight> &light : displayable.getLightList()) {
-            color = light.get().getColor(intersect, displayable);
-            r += color[Images::Color::Types::RED];
-            g += color[Images::Color::Types::GREEN];
-            b += color[Images::Color::Types::BLUE];
         }
-        r /= size;
-        g /= size;
-        b /= size;
-        color = Images::Color(r, g, b, 255);
-        color.mergeColor(this->_color);
-        return color;
+        for (const auto &light : displayable.getLightList()) {
+            colorLight = light.get().getColor(intersect, displayable);
+
+            if (!light.get().isAmbient()) {
+                coefsTmp = Images::Ray(ray.getOrigin(), centerObj.getPosition()).getDirection().dot(ray.getDirection()) * (_shininess);
+            } else {
+                coefsTmp = _shininess;
+            }
+            r += colorLight[Images::Color::Types::RED] * coefsTmp;
+            g += colorLight[Images::Color::Types::GREEN] * coefsTmp;
+            b += colorLight[Images::Color::Types::BLUE] * coefsTmp;
+        }
+        r /= displayable.getLightList().size();
+        g /= displayable.getLightList().size();
+        b /= displayable.getLightList().size();
+        return _color * round(Images::Color(r, g, b, 255));
     }
 
     void PlainMaterial::setColor(const Images::Color &color)

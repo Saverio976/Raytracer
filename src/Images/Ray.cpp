@@ -13,7 +13,7 @@ namespace RayTracer::Images {
     Ray::Ray(const Entities::Transform::Vector3f &startCamera, const Entities::Transform::Vector3f &screenPos):
         _origin(screenPos), _normal(0, 0, 0), _step(screenPos)
     {
-        _normal = (screenPos - startCamera).getNormalized();
+        _normal = screenPos - startCamera;
     }
 
     const Entities::Transform::Vector3f &Ray::getOrigin() const
