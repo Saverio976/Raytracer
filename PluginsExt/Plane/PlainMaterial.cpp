@@ -22,9 +22,9 @@ namespace RayTracer::PluginsExt::Plane {
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const
     {
-        double r = _color[Images::Color::Types::RED];
-        double g = _color[Images::Color::Types::GREEN];
-        double b = _color[Images::Color::Types::BLUE];
+        double r = 0;
+        double g = 0;
+        double b = 0;
         size_t size = displayable.getLightList().size() + 1;
         Images::Color color(0, 0, 0, 255);
 
@@ -39,7 +39,9 @@ namespace RayTracer::PluginsExt::Plane {
         r /= size;
         g /= size;
         b /= size;
-        return {r, g, b, 255};
+        color = Images::Color(r, g, b, 255);
+        color.mergeColor(this->_color);
+        return color;
     }
 
     void PlainMaterial::setColor(const Images::Color &color)

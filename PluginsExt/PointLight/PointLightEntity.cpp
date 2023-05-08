@@ -38,20 +38,18 @@ namespace RayTracer::PluginsExt::PointLight {
     Images::Color PointLightEntity::getColor(const Entities::Transform::Vector3f &point,
     const Scenes::IDisplayable &displayable) const {
         Entities::Transform::Vector3f normal = (this->_transform.getPosition() - point).getNormalized();
-        Entities::Transform::Vector3f vector = point - normal;
-        Images::Ray ray(vector, point);
+        Entities::Transform::Vector3f vector = point + normal;
+        Images::Ray ray(point, vector);
         std::optional<Entities::Transform::Vector3f> impact;
         double distance = point.getDistance(this->_transform.getPosition());
         double tmpDistance = 0;
         Images::Color result(this->_color);
-
         for (const std::reference_wrapper<Entities::IPrimitive> &primitive : displayable.getPrimitiveList()) {
             impact = primitive.get().isCollided(ray);
             if (impact == std::nullopt)
                 continue;
             tmpDistance = impact->getDistance(this->_transform.getPosition());
-
-            if (tmpDistance > distance)
+            if (tmpDistance >= distance)
                 continue;
             return primitive.get().redirectionLight(ray, displayable, *impact);
         }
@@ -65,6 +63,6 @@ namespace RayTracer::PluginsExt::PointLight {
 
     bool PointLightEntity::isAmbient() const
     {
-        return true;
+        return false;
     }
 }
