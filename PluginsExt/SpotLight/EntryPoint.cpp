@@ -11,7 +11,7 @@
 #include "SpotLightEntity.hpp"
 
 extern "C" {
-void *getCreator(void)
+    void *getCreator(void)
     {
         return new RayTracer::PluginsExt::SpotLight::SpotLightCreator();
     }
