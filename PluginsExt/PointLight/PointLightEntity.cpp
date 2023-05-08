@@ -65,4 +65,8 @@ namespace RayTracer::PluginsExt::PointLight {
     {
         return false;
     }
+
+    double PointLightEntity::getPower() const {
+        return this->_power;
+    }
 }

@@ -73,6 +73,12 @@ namespace RayTracer::PluginsExt::PointLight {
          * @return true if the light is ambient
          */
         bool isAmbient() const final;
+        /**
+         * @brief get the power of the light
+         *
+         * @return the value of the power
+        */
+        double getPower() const final;
 
     protected:
     private:
