@@ -32,9 +32,9 @@ namespace RayTracer::PluginsExt::Plane {
             return {0, 0, 0, 0};
         for (const std::reference_wrapper<Entities::ILight> &light : displayable.getLightList()) {
             color = light.get().getColor(intersect, displayable);
-            r += color[Images::Color::Types::RED];
-            g += color[Images::Color::Types::GREEN];
-            b += color[Images::Color::Types::BLUE];
+            r += color[Images::Color::Types::RED] * light.get().getPower();
+            g += color[Images::Color::Types::GREEN] * light.get().getPower();
+            b += color[Images::Color::Types::BLUE] * light.get().getPower();
         }
         r /= size;
         g /= size;

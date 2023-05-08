@@ -14,7 +14,8 @@ namespace RayTracer::PluginsExt::AmbientLight {
     AmbientLightEntity::AmbientLightEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
         _color(*config.get("color")),
-        _logger(logger)
+        _logger(logger),
+        _power(*config.get("power"))
     {
     }
 
@@ -52,5 +53,9 @@ namespace RayTracer::PluginsExt::AmbientLight {
     bool AmbientLightEntity::isAmbient() const
     {
         return true;
+    }
+
+    double AmbientLightEntity::getPower() const {
+        return this->_power;
     }
 }

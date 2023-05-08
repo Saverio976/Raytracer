@@ -47,6 +47,12 @@ namespace RayTracer::Entities {
              * @return true if the light is ambient
              */
             virtual bool isAmbient() const = 0;
+            /**
+             * @brief get the power of the light
+             *
+             * @return the value of the power
+             */
+            virtual double getPower() const = 0;
 
         protected:
         private:
