@@ -35,7 +35,7 @@ namespace RayTracer::Scenes {
             /**
             * @brief an exception for when the key is not found
             */
-            class TypeException: public ITypeException {
+            class TypeException: public ISetting::ITypeException {
                 public:
                     explicit TypeException(const std::string &key);
                     const char *what() const throw() final;

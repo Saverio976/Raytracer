@@ -21,6 +21,10 @@ namespace RayTracer::Entities::Transform {
         public:
             ~Vector2i() = default;
             /**
+             * @brief Construct a new Vector2i (x = 0, y = 0)
+             */
+            Vector2i();
+            /**
              * @brief Construct a new Vector2i
              *
              * @param vector the vector
@@ -46,7 +50,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator+(const Vector2i &other);
+            Vector2i operator+(const Vector2i &other) const;
             /**
              * @brief Subtraction two vectors
              *
@@ -54,7 +58,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator-(const Vector2i &other);
+            Vector2i operator-(const Vector2i &other) const;
             /**
              * @brief Multiplication two vectors
              *
@@ -62,7 +66,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator*(const Vector2i &other);
+            Vector2i operator*(const Vector2i &other) const;
             /**
              * @brief Division two vectors
              *
@@ -70,7 +74,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator/(const Vector2i &other);
+            Vector2i operator/(const Vector2i &other) const;
             /**
              * @brief Assign a vector
              *

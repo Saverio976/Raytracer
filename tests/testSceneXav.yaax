@@ -5,13 +5,20 @@ cameras:
         {
             size = {x: 500; y = 500;};
             transform = {
-                position = {x = 0.0; y = 0.0; z = 0.0;};
+                position = {x = 0.0; y = 0.0; z = -20.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
-            focal = 100.0;
+            focal = 500.0;
             maxThreads = -1;
-            filter = ()
+            filters: {
+                SSAAx4: (
+                    {
+                        present = true;
+                        maxThreads = -1;
+                    }
+                )
+            };
         }
     );
 };
@@ -20,12 +27,11 @@ cameras:
 primitives :
 {
     # List of spheres
-    LimitedCylinder = (
+    Sphere = (
         {
             radius = 100.0;
-            height = 600.0;
             transform = {
-                position = {x = 0.0; y = 0.0; z = -10.0;};
+                position = {x = 0.0; y = 0.0; z = 100.0;};
                 scale = {x = 1.0; y = 1.0; z = 1.0;};
                 rotation = {x = 50.0; y = 0.0; z = 0.0;};
             };

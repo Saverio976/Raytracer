@@ -6,12 +6,14 @@
 */
 
 #include <iostream>
+#include <string>
 #include <thread>
 #include "ILogger.hpp"
 #include "ISceneState.hpp"
 #include "IDisplayable.hpp"
 #include "CameraEntity.hpp"
-#include "FilterFactory.hpp"
+#include "IFilterFactory.hpp"
+#include "ISetting.hpp"
 #include "ImagePipeLine.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
@@ -26,12 +28,15 @@ namespace RayTracer::PluginsExt::Camera {
 
         this->_focal = static_cast<double>(*tmp);
         try {
-            std::shared_ptr<Scenes::ISetting> settingWrapper = config.get("filter");
-            std::unique_ptr<Scenes::ISetting> tmp;
-
-            for (int i = 0; i < settingWrapper->getLength(); i++) {
-                tmp = settingWrapper->get(i);
-                _filters.push_back(Factories::FilterFactory::getInstance().get(tmp->getKey(), *tmp, logger));
+            std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("filters");
+            int length = settingWrapper->getLength();
+            for (int i = 0; i < length; i++) {
+                int length_two = (*settingWrapper).get(i)->getLength();
+                std::string name = (*settingWrapper).get(i)->getKey();
+                for (int j = 0; j < length_two; j++) {
+                    tmp = settingWrapper->get(i)->get(j);
+                    _filters.push_back(static_cast<Filters::IFilter &>(getFilterFactoryInstance()->get(name, *tmp, _logger)));
+                }
             }
         } catch (const Scenes::ISetting::IParsingException &e) {
             std::cerr << e.what() << std::endl;
@@ -41,9 +46,11 @@ namespace RayTracer::PluginsExt::Camera {
             _maxThread = (_maxThread == -1) ? std::thread::hardware_concurrency() : _maxThread;
         } catch (const Scenes::ISetting::IParsingException &e) {
             _maxThread = std::thread::hardware_concurrency();
+        } catch (const Scenes::ISetting::ITypeException &e) {
+            _maxThread = std::thread::hardware_concurrency();
         }
         _maxThread = (_maxThread <= 0) ? 1 : _maxThread;
-        _logger.info("Max threads : " + std::to_string(_maxThread));
+        _logger.info("Camera Max threads : " + std::to_string(_maxThread));
     }
 
     Entities::IEntity::Type CameraEntity::getType() const {

@@ -9,6 +9,7 @@
 #include "Vector2i.hpp"
 
 namespace RayTracer::Entities::Transform {
+    Vector2i::Vector2i(): _x(0), _y(0) {}
     Vector2i::Vector2i(const Vector2i &vector) : _x(vector._x), _y(vector._y) {}
     Vector2i::Vector2i(int width, int height) : _x(width), _y(height) {}
 
@@ -20,19 +21,23 @@ namespace RayTracer::Entities::Transform {
         _y = static_cast<int>(*tmp);
     }
 
-    Vector2i Vector2i::operator+(const Vector2i &other) {
+    Vector2i Vector2i::operator+(const Vector2i &other) const
+    {
         return {_x + other._x, _y + other._y};
     }
 
-    Vector2i Vector2i::operator-(const Vector2i &other) {
+    Vector2i Vector2i::operator-(const Vector2i &other) const
+    {
         return {_x - other._x, _y - other._y};
     }
 
-    Vector2i Vector2i::operator*(const Vector2i &other) {
+    Vector2i Vector2i::operator*(const Vector2i &other) const
+    {
         return {_x * other._x, _y * other._y};
     }
 
-    Vector2i Vector2i::operator/(const Vector2i &other) {
+    Vector2i Vector2i::operator/(const Vector2i &other) const
+    {
         if (other._x == 0 || other._y == 0) {
             std::cerr << "Error: division by zero" << std::endl;
             return {0, 0};
