@@ -8,6 +8,8 @@
 #ifndef BASICENTITY_HPP_
     #define BASICENTITY_HPP_
 
+    #include <future>
+#include <vector>
     #include "Color.hpp"
     #include "ILogger.hpp"
     #include "IFilter.hpp"
@@ -21,9 +23,13 @@ namespace RayTracer::PluginsExt::AntiAliasing::SSAAx4 {
             void apply(Images::Image &image) final;
 
         private:
-            Images::Color getPixelMean(const Images::Image *image, const Entities::Transform::Vector2i &pos) const;
-            Images::Color getPixelsReduceMean(const Images::Image *image, const Entities::Transform::Vector2i &pos) const;
+            /**
+             * @brief Wait one place in the vector of futures
+             */
+            void waitOnePlace();
             ILogger &_logger;
+            int _maxThread;
+            std::vector<std::future<void>> _futures;
     };
 }
 
