@@ -9,6 +9,8 @@ if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
 
+set(CMAKE_BUILD_TYPE Release)
+
 # --------- Entities plugins ---------
 add_library(Sphere SHARED)
 set_target_properties(Sphere PROPERTIES
@@ -30,6 +32,19 @@ set_target_properties(AmbientLight PROPERTIES
 )
 add_library(Plane SHARED)
 set_target_properties(Plane PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+
+add_library(Cone SHARED)
+set_target_properties(Cone PROPERTIES
+        CXX_STANDARD 20
+        PREFIX ""
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+add_library(PointLight SHARED)
+set_target_properties(PointLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"

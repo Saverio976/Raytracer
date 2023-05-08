@@ -5,7 +5,6 @@
 ** PlainMaterial.cpp
 */
 
-#include <cmath>
 #include "PlainMaterial.hpp"
 #include "Color.hpp"
 #include "ISetting.hpp"
@@ -22,9 +21,9 @@ namespace RayTracer::PluginsExt::Plane {
 
     Images::Color PlainMaterial::getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const
     {
-        double r = 0;
-        double g = 0;
-        double b = 0;
+        double r = _color[Images::Color::Types::RED];
+        double g = _color[Images::Color::Types::GREEN];
+        double b = _color[Images::Color::Types::BLUE];
         size_t size = displayable.getLightList().size() + 1;
         Images::Color color(0, 0, 0, 255);
 
@@ -32,16 +31,14 @@ namespace RayTracer::PluginsExt::Plane {
             return {0, 0, 0, 0};
         for (const std::reference_wrapper<Entities::ILight> &light : displayable.getLightList()) {
             color = light.get().getColor(intersect, displayable);
-            r += color[Images::Color::Types::RED] * light.get().getPower();
-            g += color[Images::Color::Types::GREEN] * light.get().getPower();
-            b += color[Images::Color::Types::BLUE] * light.get().getPower();
+            r += color[Images::Color::Types::RED];
+            g += color[Images::Color::Types::GREEN];
+            b += color[Images::Color::Types::BLUE];
         }
         r /= size;
         g /= size;
         b /= size;
-        color = Images::Color(r, g, b, 255);
-        color.mergeColor(this->_color);
-        return color;
+        return {r, g, b, 255};
     }
 
     void PlainMaterial::setColor(const Images::Color &color)
