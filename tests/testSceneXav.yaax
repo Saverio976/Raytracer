@@ -5,13 +5,19 @@ cameras:
         {
             size = {x: 500; y = 500;};
             transform = {
-                position = {x = 0.0; y = 0.0; z = 0.0;};
+                position = {x = 0.0; y = 0.0; z = -20.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
-            focal = 100.0;
+            focal = 500.0;
             maxThreads = -1;
-            filter = ()
+            filter: {
+                SSAAx4: (
+                    {
+                        present = true;
+                    }
+                )
+            };
         }
     );
 };
