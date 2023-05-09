@@ -22,6 +22,8 @@ namespace RayTracer::PluginsExt::PlainMaterial {
 
             Images::Color getColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const final;
             void setColor(const Images::Color &color) final;
+            Images::Color redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+            const Entities::Transform::Vector3f &intersect) const final;
 
             Images::Color round(const Images::Color &color) const;
         private:
