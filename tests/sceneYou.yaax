@@ -35,7 +35,8 @@ primitives :
                 rotation = {x = 0.0; y = 0.0; z = 1.0;};
             }
             material = {
-                shininess = 1.0;
+                type = "PlainMaterial";
+                shininess = 0.2;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
             };
         },
@@ -47,7 +48,8 @@ primitives :
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             }
             material = {
-                shininess = 1.0;
+                type = "PlainMaterial";
+                shininess = 0.2;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
             };
         }
@@ -62,7 +64,7 @@ primitives :
             size = {x = 50.0; y = 50.0; z = 0.0;};
             material = {
                 type = "PlainMaterial";
-                shininess = 1.0;
+                shininess = 0.0;
                 color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
             };
         },
@@ -75,7 +77,7 @@ primitives :
             size = {x = 1000.0; y = 500.0; z = 500.0;};
             material = {
                 type = "PlainMaterial";
-                shininess = 1.0;
+                shininess = 0.0;
                 color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
             };
         }
@@ -94,16 +96,6 @@ lights :
             };
             color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
             power = 5.0;
-            radius = 500.0;
-        },
-        {
-            transform = {
-                position = {x = -150.0; y = 0.0; z = 100.0;};
-                scale = {x = 60.0; y = 20.0; z = -10.0;};
-                rotation = {x = 60.0; y = 20.0; z = -10.0;};
-            };
-            color = {r = 255.0; g = 0.0; b = 0.0; a = 255.0;};
-            power = 2.0;
             radius = 500.0;
         }
     );
