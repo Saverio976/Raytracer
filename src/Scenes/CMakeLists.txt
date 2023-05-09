@@ -13,11 +13,11 @@ target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_transform PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_ray PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_color PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_image PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
-
 
 find_library(LIBCONFIG config++)
 target_link_libraries(raytracer PRIVATE ${LIBCONFIG})

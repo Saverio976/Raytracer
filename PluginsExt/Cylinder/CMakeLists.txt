@@ -4,5 +4,4 @@ target_sources(Cylinder PRIVATE
     CylinderEntity.cpp
     CylinderCreator.cpp
     EntryPoint.cpp
-    PlainMaterial.cpp
 )

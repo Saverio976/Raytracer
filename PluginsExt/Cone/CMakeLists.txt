@@ -4,5 +4,4 @@ target_sources(Cone PRIVATE
     ConeEntity.cpp
     ConeCreator.cpp
     EntryPoint.cpp
-    PlainMaterial.cpp
 )
