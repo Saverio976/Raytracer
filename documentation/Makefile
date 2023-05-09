@@ -30,3 +30,4 @@ uml: INC_UML = $(addprefix -i , $(SOURCE))
 uml: clean-uml
     hpp2plantuml -d ${INC_UML} -o ${PLANTUML_PUML}
     ${EXTRA_PARAMS_PLANTUML} -tsvg ${PLANTUML_PUML}
+    
