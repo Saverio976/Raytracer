@@ -11,7 +11,7 @@ cameras:
             };
             focal = 200.0;
             maxThreads = 1000;
-            filter = ()
+            filters = ()
         }
     );
 };
@@ -31,6 +31,7 @@ primitives :
             material = {
                 shininess = 1.0;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                type = "PlainMaterial";
             };
         },
         {
@@ -43,6 +44,7 @@ primitives :
             material = {
                 shininess = 1.0;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                type = "PlainMaterial";
             };
         }
     );
@@ -57,6 +59,7 @@ primitives :
             material = {
                 shininess = 1.0;
                 color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                type = "PlainMaterial";
             };
         },
         {
@@ -69,6 +72,7 @@ primitives :
             material = {
                 shininess = 1.0;
                 color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                type = "PlainMaterial";
             };
         }
     );

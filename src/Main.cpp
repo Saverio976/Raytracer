@@ -56,6 +56,12 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             Parameters::getInstance().set("log-level", 3);
         }
+        try {
+            Scenes::SceneLoader::checkGoodFile(_sceneConfFilePath);
+        } catch (const Scenes::SceneLoader::BadFileError &e) {
+            std::string message = e.what();
+            throw ArgumentError("bad argument:: --scene-path <path>:: " + message);
+        }
         _logger.trace("Finishing Parsing Command Arguments");
         return true;
     }

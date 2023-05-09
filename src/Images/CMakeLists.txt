@@ -5,12 +5,15 @@ target_include_directories(Sphere PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(AmbientLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Camera PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(LimitedPlane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Disk PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PointLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(ray_image_color PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
@@ -53,6 +56,16 @@ target_sources(Plane PRIVATE
     $<TARGET_OBJECTS:ray_image_ray>
 )
 
+target_sources(LimitedPlane PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
+target_sources(Disk PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
 target_sources(Cone PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
@@ -64,6 +77,11 @@ target_sources(PointLight PRIVATE
 )
 
 target_sources(SpotLight PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
+target_sources(PlainMaterial PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
 )

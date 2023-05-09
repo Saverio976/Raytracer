@@ -7,10 +7,12 @@
 
 #ifndef RAYTRACER_CONEENTITY_HPP
     #define RAYTRACER_CONEENTITY_HPP
+
     #include <cmath>
     #include "ILogger.hpp"
     #include "IPrimitive.hpp"
     #include "Transform.hpp"
+    #include "IMaterial.hpp"
 
 namespace RayTracer::PluginsExt::Cone {
     class ConeEntity : public Entities::IPrimitive {
@@ -29,6 +31,7 @@ namespace RayTracer::PluginsExt::Cone {
             double _angle;
             ILogger &_logger;
             Images::Color _color;
+            std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
     };
 }
 

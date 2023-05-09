@@ -19,15 +19,20 @@
 #include "ISetting.hpp"
 #include "ILogger.hpp"
 #include "Vector3f.hpp"
+#include "IMaterialFactory.hpp"
 
 namespace RayTracer::PluginsExt::LimitedCylinder {
     LimitedCylinderEntity::LimitedCylinderEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(*config.get("transform")),
         _radius(*config.get("radius")),
         _logger(logger),
-        _material(*config.get("material")),
         _height(*config.get("height"))
     {
+        std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
+
+        std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
+        _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+
         _transform.setRotation(_transform.getRotation().toRadians());
         _direction = {
             std::sin(_transform.getRotation().getX()) * std::sin(_transform.getRotation().getY()),
@@ -132,12 +137,12 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
         auto m = ray.getDirection().dot(_direction) * tt[0] + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
         auto aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
         transform.setPosition(aa);
-        return _material.getColor(ray, transform, intersect, displayable);
+        return _material->get().getColor(ray, transform, intersect, displayable);
     }
 
     Images::Color LimitedCylinderEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const
     {
-        return {0, 0, 0, 0};
+        return _material->get().redirectionLight(ray, displayable, intersect);
     }
 }

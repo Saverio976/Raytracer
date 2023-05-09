@@ -10,7 +10,7 @@
     #include "ILogger.hpp"
     #include "IPrimitive.hpp"
     #include "Transform.hpp"
-    #include "PlainMaterial.hpp"
+    #include "IMaterial.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
     class PlaneEntity : public RayTracer::Entities::IPrimitive {
@@ -28,7 +28,7 @@ namespace RayTracer::PluginsExt::Plane {
         private:
             Entities::Transform::Transform _transform;
             RayTracer::Entities::Transform::Vector3f _size;
-            PlainMaterial _material;
+            std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
             ILogger &_logger;
     };
 }
