@@ -23,7 +23,6 @@ namespace RayTracer::PluginsExt::Plane {
             Images::Color getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const final;
         private:
             Entities::Transform::Transform _transform;
-            RayTracer::Entities::Transform::Vector3f _size;
             PlainMaterial _material;
     };
 }

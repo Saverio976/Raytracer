@@ -11,7 +11,6 @@
 namespace RayTracer::PluginsExt::Plane {
     PlaneEntity::PlaneEntity(const Scenes::ISetting &config):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _size(Entities::Transform::Vector3f(*config.get("size"))),
         _material(*config.get("material")) { }
 
     Entities::IEntity::Type PlaneEntity::getType() const {
