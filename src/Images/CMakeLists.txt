@@ -60,10 +60,6 @@ target_sources(SpotLight PRIVATE
 target_sources(PlainMaterial PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Cylinder PRIVATE
