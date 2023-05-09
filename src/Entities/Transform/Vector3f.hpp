@@ -149,6 +149,14 @@ namespace RayTracer::Entities::Transform {
              * @return a new vector direction
              */
             Vector3f rotateVector(const Vector3f &direction, const Vector3f &rotation) const;
+            /* @brief get the angle with as base (B), this object
+             *
+             * @param direction AB
+             * @param rotation BC
+             *
+             * @return the angle in degree
+             */
+            double getAngle(const Vector3f &a, const Vector3f &c) const;
 
         protected:
         private:

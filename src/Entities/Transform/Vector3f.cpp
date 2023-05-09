@@ -130,6 +130,14 @@ namespace RayTracer::Entities::Transform {
 
         return {xRotation, yRotation, zRotation};
     }
+
+    double Vector3f::getAngle(const Vector3f &a, const Vector3f &c) const {
+        double dot_product = (this->getX() - a.getX()) * (c.getX() - this->getX()) + (this->getY() - a.getY()) * (c.getY() - this->getY()) + (this->getZ() - a.getZ()) * (c.getZ() - this->getZ());
+        double mag_ab = std::sqrt((this->getX() - a.getX()) * (this->getX() - a.getX()) + (this->getY() - a.getY()) * (this->getY() - a.getY()) + (this->getZ() - a.getZ()) * (this->getZ() - a.getZ()));
+        double mag_bc = std::sqrt((c.getX() - this->getX()) * (c.getX() - this->getX()) + (c.getY() - this->getY()) * (c.getY() - this->getY()) + (c.getZ() - this->getZ()) * (c.getZ() - this->getZ()));
+        double cos_angle = dot_product / (mag_ab * mag_bc);
+        return std::acos(cos_angle) * (180 / M_PI);
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector3f& vector) {
