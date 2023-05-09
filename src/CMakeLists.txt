@@ -21,6 +21,7 @@ target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_subdirectory(Filters)
 add_subdirectory(Entities)
