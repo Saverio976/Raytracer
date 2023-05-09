@@ -16,8 +16,6 @@ set_target_properties(Sphere PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
-    UNITY_BUILD true
-    UNITY_BUILD_MODE BATCH
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Sphere PROPERTIES
@@ -77,6 +75,20 @@ set_target_properties(LimitedPlane PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(LimitedPlane PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# DISK
+add_library(Disk SHARED)
+set_target_properties(Disk PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Disk PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )

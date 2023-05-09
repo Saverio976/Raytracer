@@ -6,6 +6,7 @@ target_include_directories(AmbientLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Camera PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedPlane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Disk PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PointLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -55,6 +56,11 @@ target_sources(Plane PRIVATE
 )
 
 target_sources(LimitedPlane PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
+target_sources(Disk PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
 )
