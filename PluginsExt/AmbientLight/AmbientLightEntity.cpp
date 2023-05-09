@@ -17,6 +17,10 @@ namespace RayTracer::PluginsExt::AmbientLight {
         _logger(logger),
         _power(*config.get("power"))
     {
+        if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("AMBIENT_lIGHT: config: scale y z must be 0 (remainder: x is for power)");
+        }
+        _power = std::abs(_power * _transform.getScale().getX());
     }
 
     Entities::Transform::ITransform &AmbientLightEntity::getTransform() {

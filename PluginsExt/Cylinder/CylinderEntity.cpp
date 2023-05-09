@@ -32,6 +32,11 @@ namespace RayTracer::PluginsExt::Cylinder {
             std::sin(_transform.getRotation().getX()) * std::cos(_transform.getRotation().getY()),
             std::cos(_transform.getRotation().getX())
         };
+        if (_transform.getScale().getX() != _transform.getScale().getY() ||
+                _transform.getScale().getX() != _transform.getScale().getZ()) {
+            _logger.warn("CYLINDER: config: scale x y z must be the same: now using only x");
+        }
+        _radius = std::abs(_radius * _transform.getScale().getX());
     }
 
     Entities::IEntity::Type CylinderEntity::getType() const

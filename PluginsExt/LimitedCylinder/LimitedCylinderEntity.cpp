@@ -24,6 +24,7 @@
 namespace RayTracer::PluginsExt::LimitedCylinder {
     LimitedCylinderEntity::LimitedCylinderEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(*config.get("transform")),
+        _direction(_transform.getRotation()),
         _radius(*config.get("radius")),
         _logger(logger),
         _height(*config.get("height"))
@@ -32,13 +33,11 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
-
-        _transform.setRotation(_transform.getRotation().toRadians());
-        _direction = {
-            std::sin(_transform.getRotation().getX()) * std::sin(_transform.getRotation().getY()),
-            std::sin(_transform.getRotation().getX()) * std::cos(_transform.getRotation().getY()),
-            std::cos(_transform.getRotation().getX())
-        };
+        if (_transform.getScale().getZ() != 0) {
+            _logger.warn("LIMITED_CYLINDER: config: scale z must be 0 (remainder: x is for radius, z is for height)");
+        }
+        _radius = std::abs(_radius * _transform.getScale().getX());
+        _height = std::abs(_height * _transform.getScale().getY());
     }
 
     Entities::IEntity::Type LimitedCylinderEntity::getType() const

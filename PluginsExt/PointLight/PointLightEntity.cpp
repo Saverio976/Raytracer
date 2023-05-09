@@ -18,6 +18,14 @@ namespace RayTracer::PluginsExt::PointLight {
             _radius(*config.get("radius")),
             _logger(logger)
     {
+        if (_transform.getScale().getZ() != 0) {
+            _logger.warn("POINT_LIGHT: config: scale z must be 0 (remainder: x is for radius, y is for power)");
+        }
+        _radius = std::abs(_radius * _transform.getScale().getX());
+        if (_transform.getScale().getY() < 0) {
+            _logger.warn("POINT_LIGHT: config: scale y must be positive (remainder: x is for radius, y is for power)");
+        }
+        _power = std::abs(_power * _transform.getScale().getY());
     }
 
     Entities::Transform::ITransform &PointLightEntity::getTransform() {

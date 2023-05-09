@@ -30,11 +30,10 @@ namespace RayTracer::PluginsExt::Sphere {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
-        if (_transform.getScale().getX() != _transform.getScale().getY() ||
-                _transform.getScale().getX() != _transform.getScale().getZ()) {
-            _logger.warn("SPHERE: config: scale x y z must be the same: now using only x");
+        if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("SPHERE: config: scale y z must be 0 (remainder: x is for radius)");
         }
-        _radius = _radius * _transform.getScale().getX();
+        _radius = std::abs(_radius * _transform.getScale().getX());
     }
 
     Entities::IEntity::Type SphereEntity::getType() const

@@ -20,6 +20,15 @@ namespace RayTracer::PluginsExt::SpotLight {
             _angle(*config.get("angle")),
             _logger(logger)
     {
+        if (_transform.getScale().getX() < 0) {
+            _logger.warn("POINT_LIGTH: config: scale x must be positive (remainder: x is for radius, y is for power, z is for angle)");
+        }
+        _radius = std::abs(_radius * _transform.getScale().getX());
+        if (_transform.getScale().getY() < 0) {
+            _logger.warn("POINT_LIGHT: config: scale y must be positive (remainder: x is for radius, y is for power, z is for angle)");
+        }
+        _power = std::abs(_power * _transform.getScale().getY());
+        _angle = _angle * _transform.getScale().getZ();
     }
 
     Entities::Transform::ITransform &SpotLightEntity::getTransform() {

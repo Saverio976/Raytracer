@@ -20,6 +20,11 @@ namespace RayTracer::PluginsExt::Cone {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+        if (_transform.getScale().getX() != _transform.getScale().getY() ||
+                _transform.getScale().getX() != _transform.getScale().getZ()) {
+            _logger.warn("CONE: config: scale x y z must be the same: now using only x");
+        }
+        _angle = _angle * _transform.getScale().getX();
     }
 
     Entities::IEntity::Type ConeEntity::getType() const
