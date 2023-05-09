@@ -6,27 +6,28 @@
 ##
 
 
-EXTRA_PARAMS_PLANTUML 	= 	plantuml
-PLANTUML_PUML			=	uml.puml
-PLANTUML_TARGET			=	$(PLANTUML_PUML:%.puml=%.svg)
+EXTRA_PARAMS_PLANTUML     =     plantuml
+PLANTUML_PUML            =    uml.puml
+PLANTUML_TARGET            =    $(PLANTUML_PUML:%.puml=%.svg)
 
 
 docs: uml doxygen
 
 clean-doxygen:
-	rm -rf docs
-	rm -rf latex
+    rm -rf docs
+    rm -rf latex
 
 doxygen: clean-doxygen
-	doxygen ./Doxyfile
-	touch ./docs/.nojekyll
+    doxygen ./Doxyfile
+    touch ./docs/.nojekyll
 
 clean-uml:
-	rm -rf ${PLANTUML_TARGET}
-	rm -rf ${PLANTUML_PUML}
+    rm -rf ${PLANTUML_TARGET}
+    rm -rf ${PLANTUML_PUML}
 
 uml: SOURCE = $(shell find ../src ../PluginsExt -name "*.hpp" -print)
 uml: INC_UML = $(addprefix -i , $(SOURCE))
 uml: clean-uml
-	hpp2plantuml -d ${INC_UML} -o ${PLANTUML_PUML}
-	${EXTRA_PARAMS_PLANTUML} -tsvg ${PLANTUML_PUML}
+    hpp2plantuml -d ${INC_UML} -o ${PLANTUML_PUML}
+    ${EXTRA_PARAMS_PLANTUML} -tsvg ${PLANTUML_PUML}
+    
