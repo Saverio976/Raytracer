@@ -5,6 +5,8 @@
 ** ConfigWrapper.cpp
 */
 
+#include <string>
+#include "Logger.hpp"
 #include "ConfigWrapper.hpp"
 
 namespace RayTracer::Scenes {
@@ -23,6 +25,9 @@ namespace RayTracer::Scenes {
             fileConfig->readFile(path.c_str());
             _config = fileConfig;
         } catch (libconfig::ParseException &e) {
+            std::string file = e.getFile();
+            std::string line = std::to_string(e.getLine());
+            std::string error = e.getError();
             std::cerr << "Parse error at " << e.getFile() << ":" << e.getLine() << " - " << e.getError() << std::endl;
             throw ConfigWrapper::ReadException();
         }

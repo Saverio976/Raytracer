@@ -6,12 +6,24 @@
 */
 
 #include <cmath>
+#include "ILogger.hpp"
 #include "PlaneEntity.hpp"
+#include "IMaterialFactory.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
-    PlaneEntity::PlaneEntity(const Scenes::ISetting &config):
+    PlaneEntity::PlaneEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _material(*config.get("material")) { }
+        _size(Entities::Transform::Vector3f(*config.get("size"))),
+        _logger(logger)
+    {
+        std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
+
+        std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
+        _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+        if (_transform.getScale().getX() != 0 || _transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("PLANE: config: scale x y z must be the 0 (because that's mean nothing to scale an infinite plane)");
+        }
+    }
 
     Entities::IEntity::Type PlaneEntity::getType() const {
         return Type::Primitive;
@@ -27,21 +39,17 @@ namespace RayTracer::PluginsExt::Plane {
 
     std::optional <Entities::Transform::Vector3f> PlaneEntity::isCollided(const Images::Ray &ray) const {
         const Entities::Transform::Vector3f &rotation = this->getTransform().getRotation();
-        Entities::Transform::Vector3f normal(
-                std::sin(rotation.getX()) * std::sin(rotation.getY()),
-                std::sin(rotation.getX()) * std::cos(rotation.getY()),
-                std::cos(rotation.getX())
-        );
-        Entities::Transform::Vector3f direction = ray.getDirection();
-        float denom = normal.dot(direction);
+        const Entities::Transform::Vector3f &point = this->getTransform().getPosition();
+        Entities::Transform::Vector3f normal = this->getTransform().getRotation();
+        float d = -(normal.getX() * point.getX() + normal.getY() * point.getY() + normal.getZ() * point.getZ());
+        const Entities::Transform::Vector3f &direction = ray.getDirection();
+        const Entities::Transform::Vector3f &startPoint = ray.getOrigin();
+        float t = -(normal.getX() * startPoint.getX() + normal.getY() * startPoint.getY() + normal.getZ() * startPoint.getZ() + d)
+                  / (normal.getX() * direction.getX() + normal.getY() * direction.getY() + normal.getZ() * direction.getZ());
 
-        if (denom > 1e-6) {
-            Entities::Transform::Vector3f origin = getTransform().getPosition() - ray.getOrigin();
-            float t = origin.dot(normal) / denom;
-            if (t >= 0) {
-                Entities::Transform::Vector3f collision = ray.getOrigin() + direction * Entities::Transform::Vector3f(t, t, t);
-                return collision;
-            }
+        if (t >= 0 && t <= 400) {
+            Entities::Transform::Vector3f collisionPoint = startPoint + direction * Entities::Transform::Vector3f(t, t, t);
+            return collisionPoint;
         }
         return std::nullopt;
     }
@@ -50,8 +58,17 @@ namespace RayTracer::PluginsExt::Plane {
         return false;
     }
 
-    Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::Displayable &displayable) const {
-        auto intersect = isCollided(ray);
-        return _material.getColor(ray, _transform, intersect.value(), displayable);
+    Images::Color PlaneEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+    const Entities::Transform::Vector3f &intersect) const
+    {
+        auto transform = _transform;
+        auto pos = intersect - _transform.getRotation();
+        transform.setPosition(pos);
+        return _material->get().getColor(ray, transform, intersect, displayable);
+    }
+
+    Images::Color PlaneEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+    const Entities::Transform::Vector3f &intersect) const {
+        return _material->get().redirectionLight(ray, displayable, intersect);
     }
 }

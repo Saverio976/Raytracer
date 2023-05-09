@@ -5,34 +5,35 @@
 ** ImagePipeLine.cpp
 */
 
+#include <future>
+#include <vector>
+#include "ILogger.hpp"
+#include "Progress.hpp"
 #include "ImagePipeLine.hpp"
 #include "PixelThread.hpp"
-#include <thread>
-#include <vector>
 
 namespace RayTracer::Images {
-    ImagePipeLine::ImagePipeLine(RayTracer::Images::Image &image, const Scenes::Displayable &displayable,
-        const Scenes::SceneState &state, const RayTracer::Images::RayIterrator &rayIterrator) :
+    ImagePipeLine::ImagePipeLine(RayTracer::Images::Image &image, const Scenes::IDisplayable &displayable,
+        const Scenes::ISceneState &state, const RayTracer::Images::RayIterrator &rayIterrator) :
         _image(image),
         _displayable(displayable),
         _state(state),
         _rayIterrator(rayIterrator) { }
 
-    void ImagePipeLine::generate(std::size_t maxThread, std::size_t cluster) {
-        std::vector<std::thread> threads;
+    void ImagePipeLine::generate(ILogger &logger, std::size_t maxThread, std::size_t cluster) {
+        std::vector<std::future<void>> threads;
         RayIterrator::iterrator it = ++this->_rayIterrator.begin();
         size_t x = 0;
         size_t y = 0;
         bool stop = false;
         size_t length = this->_image.getSize().getX() * this->_image.getSize().getY();
         maxThread = (maxThread > length) ? length : maxThread;
+        Progress progress(length, 0.05, logger);
 
-        for (size_t i = 0; i < maxThread; i++)
-            threads.push_back(std::thread());
-        while (this->_state.getState() == RayTracer::Scenes::SceneState::States::RUNNING && !stop) {
-            for (std::thread &thread : threads) {
+        while (this->_state.getState() == RayTracer::Scenes::ISceneState::States::RUNNING && !stop) {
+            if (threads.size() < maxThread) {
                 PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
-                thread = std::thread(pixelThread);
+                threads.push_back(std::async(std::launch::async, pixelThread));
                 it = ++it;
                 x++;
                 if (x >= this->_image.getSize().getX()) {
@@ -44,10 +45,24 @@ namespace RayTracer::Images {
                     break;
                 }
             }
-            for (std::thread &thread : threads) {
-                thread.join();
+            for (auto it = threads.begin(); it != threads.end(); ++it) {
+                if (it->wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
+                    it = threads.erase(it);
+                    progress.add(cluster);
+                    break;
+                }
             }
         }
+        while (!threads.empty()) {
+            for (auto it = threads.begin(); it != threads.end(); ++it) {
+                if (it->wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
+                    it = threads.erase(it);
+                    progress.add(cluster);
+                    break;
+                }
+            }
+        }
+        progress.add(length);
     }
 
     void ImagePipeLine::apply(Filters::IFilter &filter) {

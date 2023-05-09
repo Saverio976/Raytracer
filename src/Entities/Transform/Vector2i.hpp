@@ -4,9 +4,11 @@
 ** File description:
 ** Vector2i.hpp
 */
+
 #ifndef VECTOR2I_HPP_
     #define VECTOR2I_HPP_
 
+    #include <ostream>
     #include "IConfig.hpp"
 
 namespace RayTracer::Entities::Transform {
@@ -18,6 +20,10 @@ namespace RayTracer::Entities::Transform {
     class Vector2i {
         public:
             ~Vector2i() = default;
+            /**
+             * @brief Construct a new Vector2i (x = 0, y = 0)
+             */
+            Vector2i();
             /**
              * @brief Construct a new Vector2i
              *
@@ -44,7 +50,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator+(const Vector2i &other);
+            Vector2i operator+(const Vector2i &other) const;
             /**
              * @brief Subtraction two vectors
              *
@@ -52,7 +58,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator-(const Vector2i &other);
+            Vector2i operator-(const Vector2i &other) const;
             /**
              * @brief Multiplication two vectors
              *
@@ -60,7 +66,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator*(const Vector2i &other);
+            Vector2i operator*(const Vector2i &other) const;
             /**
              * @brief Division two vectors
              *
@@ -68,7 +74,7 @@ namespace RayTracer::Entities::Transform {
              *
              * @return the new vector
              */
-            Vector2i operator/(const Vector2i &other);
+            Vector2i operator/(const Vector2i &other) const;
             /**
              * @brief Assign a vector
              *
@@ -96,5 +102,7 @@ namespace RayTracer::Entities::Transform {
             int _y;
     };
 }
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector2i& vector);
 
 #endif /*VECTOR2I_HPP_*/

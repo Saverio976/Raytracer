@@ -7,10 +7,15 @@
 
 #ifndef SCENE_HPP_
     #define SCENE_HPP_
+
+    #include <string>
+    #include <future>
     #include <vector>
     #include <memory>
     #include <mutex>
     #include <thread>
+    #include <functional>
+    #include "ILogger.hpp"
     #include "ISetting.hpp"
     #include "Image.hpp"
     #include "ICamera.hpp"
@@ -28,13 +33,14 @@ namespace RayTracer::Scenes {
      */
     class Scene {
         public:
+            Scene(ILogger &logger);
             ~Scene() = default;
             /**
              * @brief Scene config reloader
              *
              * @param config the config changed
              */
-            void operator()(const ISetting &);
+            void operator()(const ISetting &, const std::string &event);
             /**
              * @brief Renders the scene (execute internal process in the thread)
              *
@@ -46,7 +52,7 @@ namespace RayTracer::Scenes {
              *
              * @return the cameras
              */
-            const std::vector<std::unique_ptr<Entities::ICamera>> &getCameras() const;
+            const std::vector<std::reference_wrapper<Entities::ICamera>> &getCameras() const;
             /**
              * @brief Check if the scene is ready (internal render thread is stopped)
              *
@@ -63,10 +69,21 @@ namespace RayTracer::Scenes {
             void wait_end();
         protected:
         private:
-            std::vector<std::unique_ptr<Entities::ICamera>> _cameras;
+            /**
+             * @brief Load the scene
+             *
+             * @param setting the setting
+             */
+            void loadConfig(const ISetting &setting);
+            /**
+             * @brief Wait till the cancel is active (and do the changestate cancel)
+             */
+            void waitTillCancel();
+            std::vector<std::reference_wrapper<Entities::ICamera>> _cameras;
             SceneState _state;
-            std::thread _thread;
+            std::future<void> _future;
             Displayable _displayable;
+            ILogger &_logger;
     };
 }
 

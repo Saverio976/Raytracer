@@ -254,3 +254,8 @@ _deps
 
 .cache
 tests/WrapperTest
+documentation/docs
+documentation/latex
+!documentation/Makefile
+documentation/uml.puml
+documentation/uml.svg

@@ -10,15 +10,43 @@
 
     #include "ILight.hpp"
     #include "IConfig.hpp"
+    #include "ILogger.hpp"
     #include "Transform.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
     class AmbientLightEntity : public RayTracer::Entities::ILight {
         public:
-            AmbientLightEntity(const Scenes::ISetting &config);
+            /**
+             * @brief Construct a new AmbientLight
+             *
+             * transform: {
+             *      position: {x= 0; y= 0; z= 0};
+             *      scale: {x= 1; y= 1; z= 1};
+             *      rotation: {x= 0; y= 0; z= 0}
+             * };
+             * color = {r= 1; g= 1; b= 1};
+             *
+             * @param config the config
+             */
+            AmbientLightEntity(const Scenes::ISetting &config, ILogger &logger);
             ~AmbientLightEntity() = default;
+            /**
+             * @brief Get the type (ILight)
+             *
+             * @return the type
+             */
             Type getType() const final;
+            /**
+             * @brief Get the transform
+             *
+             * @return the transform
+             */
             Entities::Transform::ITransform &getTransform() final;
+            /**
+             * @brief Get the transform (const)
+             *
+             * @return the transform
+             */
             const Entities::Transform::ITransform &getTransform() const final;
             /**
              * @brief Get the color
@@ -33,18 +61,32 @@ namespace RayTracer::PluginsExt::AmbientLight {
              *
              * @return the color
              */
-            Images::Color getColor(const Entities::Transform::Vector3f &point, const Scenes::Displayable &displayable) const final;
+            Images::Color getColor(const Entities::Transform::Vector3f &point, const Scenes::IDisplayable &displayable) const final;
             /**
              * @brief Set the color
              *
              * @param color the color
              */
             void setColor(const Images::Color &color) final;
+            /**
+             * @brief Check if the light is ambient
+             *
+             * @return true if the light is ambient
+             */
+            bool isAmbient() const final;
+            /**
+             * @brief get the power of the light
+             *
+             * @return the value of the power
+             */
+            double getPower() const final;
 
         protected:
         private:
             Entities::Transform::Transform _transform;
             Images::Color _color;
+            ILogger &_logger;
+            double _power;
     };
 }
 

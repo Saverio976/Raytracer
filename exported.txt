@@ -1,0 +1,8 @@
+{
+    extern "C"
+    {
+        getEntityFactoryInstance;
+        getFilterFactoryInstance;
+        getMaterialFactoryInstance;
+    };
+};

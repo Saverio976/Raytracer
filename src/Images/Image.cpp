@@ -6,16 +6,16 @@
 */
 
 #include "Image.hpp"
+#include <cstddef>
 #include <iostream>
 #include <fstream>
 
 namespace RayTracer::Images {
-    Image::Image(const Entities::Transform::Vector2i &size): _size(size) {
-        size_t air = size.getX() * size.getY();
+    Image::Image(const Entities::Transform::Vector2i &size): _size(size)
+    {
+        std::size_t r = size.getY() * size.getX();
 
-        for (size_t i = 0; i < air; i++) {
-            this->_pixels.push_back(Color(0, 0, 0, 0));
-        }
+        _pixels.resize(r, Color(0, 0, 0, 0));
     }
 
     void Image::convertToPPM(const std::string &filePath) const {
@@ -53,7 +53,8 @@ namespace RayTracer::Images {
         _y(y) { }
 
     Color &Image::PixelLine::operator[](std::size_t x) {
-        return this->_pixels.at(this->_size.getX() * this->_y + x);
+        std::size_t toReach = this->_size.getX() * this->_y + x;
+        return this->_pixels.at(toReach);
     }
 
     const Color &Image::PixelLine::operator[](std::size_t x) const {

@@ -116,6 +116,25 @@ namespace RayTracer::Images {
              * @return the color
              */
             void set(const Types &type, double value);
+            /**
+             * @brief apply alpha of the color with background (thread safe)
+             *
+             * @param other the background
+             */
+            void applyAlpha(const Color &background);
+            /**
+             * @brief merge color with another one (thread safe)
+             *
+             * @param other the color that will be merged
+             */
+            void mergeColor(const Color &other);
+            /**
+             * @brief apply distance in the color
+             *
+             * @param distance the distance
+             * @param distance max distance (exemple: watt of the light)
+             */
+            void applyDistance(double distance, double maxDistance);
 
         private:
             double _r;

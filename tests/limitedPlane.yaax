@@ -1,0 +1,54 @@
+# Configuration of the camera
+cameras:
+{
+    Camera: (
+        {
+            size = {x: 500; y = 500;};
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            focal = 200.0;
+            maxThreads = -1;
+            filters = ()
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    LimitedPlane = (
+        {
+            transform = {
+                position = {x = 0.0; y = 200.0; z = 20.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 1.0; y = 0.5; z = 0.0;};
+            };
+            size = {x = 400.0; y = 400.0; z = 400.0;};
+            material = {
+                shininess = 1.0;
+                color = {r = 200.0; g = 155.0; b = 100.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# Light configuration
+lights :
+{
+    # List of ambient lights
+    AmbientLight = (
+        {
+            transform = {
+                position = {x = 60.0; y = 20.0; z = 50.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 104.0; g = 0.0; b = 202.0; a = 255.0;};
+            power = 1.0;
+        }
+    );
+};
