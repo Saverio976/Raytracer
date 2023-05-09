@@ -51,7 +51,7 @@ namespace RayTracer::Scenes {
         if (!filePath.ends_with(".yaax")) {
             throw BadFileError("FilePath '" + filePath + "' does not ends with '.yaax'");
         }
-        if (std::filesystem::is_regular_file(filePath)) {
+        if (!std::filesystem::is_regular_file(filePath)) {
             throw BadFileError("FilePath '" + filePath + "' is not a regular file");
         }
         std::ifstream isOpen(filePath);
