@@ -13,7 +13,7 @@
 #include "IPrimitive.hpp"
 #include "Vector3f.hpp"
 
-namespace RayTracer::PluginsExt::Plane {
+namespace RayTracer::PluginsExt::LimitedCone {
     PlainMaterial::PlainMaterial(const Scenes::ISetting &config):
             _shininess(static_cast<double>(*config.get("shininess"))),
             _color(Images::Color(*config.get("color")))

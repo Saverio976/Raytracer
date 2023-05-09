@@ -1,14 +1,27 @@
-//
-// Created by sverm on 08/05/2023.
-//
+/*
+** EPITECH PROJECT, 2023
+** Raytracer
+** File description:
+** LimitedConeCreator.hpp
+*/
 
-#ifndef RAYTRACER_LIMITEDCONECREATOR_HPP
-#define RAYTRACER_LIMITEDCONECREATOR_HPP
+#ifndef LIMITEDCONECREATOR_HPP_
+	#define LIMITEDCONECREATOR_HPP_
 
+#include <vector>
+#include "IEntityCreator.hpp"
+#include "ILogger.hpp"
+#include "LimitedConeEntity.hpp"
 
-class LimitedConeCreator {
+namespace RayTracer::PluginsExt::LimitedCone {
+    class LimitedConeCreator : public RayTracer::Plugins::Entities::IEntityCreator  {
+    public:
+        ~LimitedConeCreator();
+        RayTracer::Entities::IEntity *create(const Scenes::ISetting &config, ILogger &logger) final;
+    protected:
+    private:
+        std::vector<LimitedConeEntity *> _elements;
+    };
+}
 
-};
-
-
-#endif //RAYTRACER_LIMITEDCONECREATOR_HPP
+#endif /*LIMITEDCONECREATOR_HPP_*/

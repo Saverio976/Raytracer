@@ -15,7 +15,7 @@
 #include "Vector3f.hpp"
 #include "IMaterial.hpp"
 
-namespace RayTracer::PluginsExt::Plane {
+namespace RayTracer::PluginsExt::LimitedCone {
     class PlainMaterial : public Entities::IMaterial {
     public:
         PlainMaterial(const Scenes::ISetting &config);
