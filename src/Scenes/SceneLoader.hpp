@@ -36,7 +36,9 @@ namespace RayTracer::Scenes {
             /**
              * @brief Subscribe to an event
              *
-             * Available events : "onChange"
+             * Available events : "onChange", "onBeforeChange"
+             * onChange : called when the scene is changed
+             * onBeforeChange : called before reloading the scene
              *
              * @param event the event
              * @param std::function the function
