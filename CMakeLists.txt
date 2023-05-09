@@ -182,5 +182,65 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+# -----------------------------------
+# ------------- Objects -------------
+
+# src/Entities/Transform/{Vector2i,Vector3f,Transform}.cpp
+add_library(ray_transform OBJECT)
+set_target_properties(ray_transform PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_transform PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/Color.cpp
+add_library(ray_image_color OBJECT)
+set_target_properties(ray_image_color PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_color PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/Ray.cpp
+add_library(ray_image_ray OBJECT)
+set_target_properties(ray_image_ray PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_ray PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/Image.cpp
+add_library(ray_image_image OBJECT)
+set_target_properties(ray_image_image PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_image PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+
+# -----------------------------------
+# ------------- rest .. -------------
+# -----------------------------------
+
 add_subdirectory(PluginsExt)
 add_subdirectory(src)
