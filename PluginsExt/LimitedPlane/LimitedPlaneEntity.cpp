@@ -29,7 +29,7 @@ namespace RayTracer::PluginsExt::LimitedPlane {
         return this->_transform;
     }
 
-    std::optional <Entities::Transform::Vector3f> LimitedPlaneEntity::isCollided(const Images::Ray &ray) const {
+    std::optional<Entities::Transform::Vector3f> LimitedPlaneEntity::isCollided(const Images::Ray &ray) const {
         const Entities::Transform::Vector3f &rotation = this->getTransform().getRotation();
         const Entities::Transform::Vector3f &point = this->getTransform().getPosition();
         Entities::Transform::Vector3f normal = this->getTransform().getRotation();
