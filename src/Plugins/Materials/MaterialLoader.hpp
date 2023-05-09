@@ -5,8 +5,8 @@
 ** EntityLoader.hpp
 */
 
-#ifndef ENTITYLOADER_HPP_
-    #define ENTITYLOADER_HPP_
+#ifndef MATERIALLOADER_HPP_
+    #define MATERIALLOADER_HPP_
 
     #include <string>
     #include "TFactory.hpp"
