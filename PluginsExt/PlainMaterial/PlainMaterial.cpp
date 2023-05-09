@@ -39,7 +39,7 @@ namespace RayTracer::PluginsExt::PlainMaterial {
             }
             double coef = 0;
             if (light.get().isAmbient()) {
-                coef = 1;
+                coef = light.get().getPower();
             } else {
                 double coef1 = (intersect - centerObj.getPosition()).getNormalized().dot((intersect - light.get().getTransform().getPosition()));
                 coef = std::abs(coef1);
