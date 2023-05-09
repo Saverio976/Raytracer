@@ -17,6 +17,7 @@ namespace RayTracer::Scenes {
         _configWrapper = std::make_unique<ConfigWrapper>();
         _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>("./EntitiesPlugins"); // TODO: use parameters path
         _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>("./FiltersPlugins"); // TODO: use parameters path
+        _materialLoader = std::make_unique<Plugins::Materials::MaterialLoader>("./MaterialsPlugins"); // TODO: use parameters path
     };
 
     void SceneLoader::subscribe(const std::string &event, std::function<void(const ISetting &)> func) {
@@ -38,6 +39,7 @@ namespace RayTracer::Scenes {
             _logger.info("Scene config file changed, reloading...");
             this->_entityLoader->loadEntities();
             this->_filterLoader->loadFilters();
+            this->_materialLoader->loadMaterials();
             it->second(*_configWrapper->getSetting());
             _lastWriteTime = currentTime;
         }
