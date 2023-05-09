@@ -19,12 +19,12 @@ namespace RayTracer::Factories {
         public:
             virtual ~IMaterialFactory() = default;
             /**
-             * @brief Get an entity
+             * @brief Get an material
              *
              * @param name the name
-             * @param setting the setting (to create the entity)
+             * @param setting the setting (to create the material)
              *
-             * @return the entity
+             * @return the material
              */
             virtual Entities::IMaterial &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger) = 0;
     };

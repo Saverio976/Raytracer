@@ -17,20 +17,20 @@
 
 namespace RayTracer::Plugins::Materials {
     /**
-     * @brief The EntityLoader
+     * @brief The MaterialLoader
      *
-     * class that represent an entity loader (take a directory and create EntityHandler)
+     * class that represent an material loader (take a directory and create MaterialHandler)
      */
     class MaterialLoader : protected PluginLoader<MaterialHandler, RayTracer::Entities::IMaterial, Factories::MaterialFactory> {
     public:
         /**
-        * @brief EntityLoader constructor (doesn't load anything)
+        * @brief MaterialLoader constructor (doesn't load anything)
         *
         * @param directory the directory
         */
         MaterialLoader(const std::string &directory);
         /**
-        * @brief Load all the entities in the factory singleton
+        * @brief Load all the materials in the factory singleton
         */
         void loadMaterials();
 
@@ -40,4 +40,4 @@ namespace RayTracer::Plugins::Materials {
     };
 }
 
-#endif /*ENTITYLOADER_HPP_*/
+#endif

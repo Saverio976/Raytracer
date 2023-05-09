@@ -15,19 +15,19 @@
 
 namespace RayTracer::Plugins::Materials {
     /**
-     * @brief The IFilterCreator class
+     * @brief The IMaterialCreator class
      *
-     * class that represent a filter creator
+     * class that represent a material creator
      */
     class IMaterialCreator {
         public:
             virtual ~IMaterialCreator() = default;
             /**
-             * @brief Create a filter with a setting
+             * @brief Create a material with a setting
              *
              * @param config the setting
              *
-             * @return the filter
+             * @return the material
              */
             virtual RayTracer::Entities::IMaterial *create(const Scenes::ISetting &setting, ILogger &logger) = 0;
 
@@ -36,4 +36,4 @@ namespace RayTracer::Plugins::Materials {
     };
 }
 
-#endif /*IFILTERCREATOR_HPP_*/
+#endif

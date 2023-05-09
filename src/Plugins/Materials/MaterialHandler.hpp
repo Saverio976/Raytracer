@@ -18,24 +18,24 @@
 
 namespace RayTracer::Plugins::Materials {
     /**
-     * @brief The EntityHandler
+     * @brief The MaterialHandler
      *
-     * class that represent an entity handler (take a .so)
+     * class that represent an material handler (take a .so)
      */
     class MaterialHandler {
         public:
             /**
-             * @brief EntityHandler constructor
+             * @brief MaterialHandler constructor
              *
              * @param filePath the file path
              */
             MaterialHandler(const std::string &filePath);
             /**
-             * @brief Get an entity (and create it with setting)
+             * @brief Get an material (and create it with setting)
              *
              * @param setting the setting
              *
-             * @return the entity
+             * @return the material
              */
             RayTracer::Entities::IMaterial &get(const RayTracer::Scenes::ISetting &setting, ILogger &logger);
         private:

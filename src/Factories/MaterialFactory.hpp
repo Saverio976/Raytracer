@@ -16,26 +16,26 @@
 
 namespace RayTracer::Factories {
     /**
-     * @brief The EntityFactory (singleton factory)
+     * @brief The MaterialFactory (singleton factory)
      */
     class MaterialFactory : public IMaterialFactory {
         public:
             MaterialFactory(const MaterialFactory &other) = delete;
             ~MaterialFactory() = default;
             /**
-             * @brief Add an entity
+             * @brief Add an material
              *
              * @param name the name
              * @param handler the handler
              */
             void add(const std::string &name, std::unique_ptr<Plugins::Materials::MaterialHandler> handler);
             /**
-             * @brief Get an entity
+             * @brief Get an material
              *
              * @param name the name
              * @param setting the setting (to create the entity)
              *
-             * @return the entity
+             * @return the material
              */
             Entities::IMaterial &get(const std::string &name, const Scenes::ISetting &setting, ILogger &logger) final;
             /**
