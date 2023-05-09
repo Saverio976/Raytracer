@@ -9,9 +9,10 @@
     #define DISKENTITY_HPP_
 
     #include "ILogger.hpp"
+    #include "IMaterial.hpp"
     #include "IPrimitive.hpp"
     #include "Transform.hpp"
-    #include "PlainMaterial.hpp"
+    #include <functional>
 
 namespace RayTracer::PluginsExt::Disk {
     class DiskEntity : public RayTracer::Entities::IPrimitive {
@@ -29,7 +30,7 @@ namespace RayTracer::PluginsExt::Disk {
         private:
             Entities::Transform::Transform _transform;
             double _rayon;
-            PlainMaterial _material;
+            std::optional<std::reference_wrapper<Entities::IMaterial>> _material;
             ILogger &_logger;
     };
 }
