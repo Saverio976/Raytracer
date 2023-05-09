@@ -5,6 +5,7 @@
 ** PlainMaterial.cpp
 */
 
+#include <algorithm>
 #include <cmath>
 #include "PlainMaterial.hpp"
 #include "Color.hpp"
@@ -34,18 +35,23 @@ namespace RayTracer::PluginsExt::Sphere {
             return {0, 0, 0, 0};
         for (const std::reference_wrapper<Entities::ILight> &light : displayable.getLightList()) {
             color = light.get().getColor(intersect, displayable);
+            if (color[Images::Color::Types::RED] == 0 && color[Images::Color::Types::GREEN] == 0 && color[Images::Color::Types::BLUE] == 0) {
+                size--;
+                continue;
+            }
             double coef = 0;
             if (light.get().isAmbient()) {
                 coef = 1;
             } else {
-                coef = (intersect - centerObj.getPosition()).getNormalized().dot(intersect - light.get().getTransform().getPosition());
+                double coef1 = (intersect - centerObj.getPosition()).getNormalized().dot((intersect - light.get().getTransform().getPosition()));
+                coef = std::abs(coef1);
                 if (coef == 0) {
-                    coef = 3;
-                } else {
-                    coef = std::pow((std::log(std::abs(coef)) - (3.4 - _shininess)) * light.get().getPower(), (std::log(std::abs(coef)) - (3.4 - _shininess)));
+                    coef = std::exp(3);
                 }
-                if (coef < 0) {
-                    coef = 0;
+                coef1 = std::log(coef) - (3.4 - _shininess);
+                coef = std::pow(coef1, coef1) * light.get().getPower();
+                if (std::isnan(coef)) {
+                    coef = 1;
                 }
             }
             r += color[Images::Color::Types::RED] * coef * rounded[Images::Color::Types::RED];
