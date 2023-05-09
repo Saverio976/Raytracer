@@ -29,7 +29,7 @@ namespace RayTracer::PluginsExt::Disk {
                 const Entities::Transform::Vector3f &intersect) const final;
         private:
             Entities::Transform::Transform _transform;
-            double _rayon;
+            double _radius;
             std::optional<std::reference_wrapper<Entities::IMaterial>> _material;
             ILogger &_logger;
     };

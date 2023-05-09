@@ -20,6 +20,9 @@ namespace RayTracer::PluginsExt::Plane {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+        if (_transform.getScale().getX() != 0 || _transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("PLANE: config: scale x y z must be the 0 (because that's mean nothing to scale an infinite plane)");
+        }
     }
 
     Entities::IEntity::Type PlaneEntity::getType() const {

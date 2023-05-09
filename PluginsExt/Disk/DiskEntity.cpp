@@ -13,13 +13,17 @@
 namespace RayTracer::PluginsExt::Disk {
     DiskEntity::DiskEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _rayon(*config.get("rayon")),
+        _radius(*config.get("radius")),
         _logger(logger)
     {
         std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+        if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("DISK: config: scale y z must be 0: (remainder: x is for radius)");
+        }
+        _radius = std::abs(_radius * _transform.getScale().getX());
     }
 
     Entities::IEntity::Type DiskEntity::getType() const {
@@ -46,7 +50,7 @@ namespace RayTracer::PluginsExt::Disk {
 
         if (t >= 0 && t <= 400) {
             Entities::Transform::Vector3f collisionPoint = startPoint + direction * Entities::Transform::Vector3f(t, t, t);
-            if (collisionPoint.getDistance(point) <= this->_rayon)
+            if (collisionPoint.getDistance(point) <= this->_radius)
                 return collisionPoint;
         }
         return std::nullopt;

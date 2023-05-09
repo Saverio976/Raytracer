@@ -8,6 +8,7 @@
 #include "ILogger.hpp"
 #include "LimitedPlaneEntity.hpp"
 #include "IMaterialFactory.hpp"
+#include "Vector2i.hpp"
 
 namespace RayTracer::PluginsExt::LimitedPlane {
     LimitedPlaneEntity::LimitedPlaneEntity(const Scenes::ISetting &config, ILogger &logger):
@@ -19,6 +20,7 @@ namespace RayTracer::PluginsExt::LimitedPlane {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+        _size = _size * _transform.getScale();
     }
 
     Entities::IEntity::Type LimitedPlaneEntity::getType() const {
