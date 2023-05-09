@@ -10,6 +10,7 @@
     #include <memory>
     #include <string>
     #include "IFilter.hpp"
+    #include "ILogger.hpp"
     #include "PluginHandler.hpp"
     #include "IFilterCreator.hpp"
     #include "IConfig.hpp"
@@ -35,7 +36,7 @@ namespace RayTracer::Plugins::Filters {
              *
              * @return the filter
              */
-            RayTracer::Filters::IFilter *get(const RayTracer::Scenes::ISetting &setting) const;
+            RayTracer::Filters::IFilter &get(const RayTracer::Scenes::ISetting &setting, ILogger &logger);
 
         private:
             PluginHandler<RayTracer::Filters::IFilter, IFilterCreator> _handler;

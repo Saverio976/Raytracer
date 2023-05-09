@@ -6,13 +6,22 @@
 */
 
 #include "AmbientLightEntity.hpp"
+#include "ILogger.hpp"
 #include "Ray.hpp"
 #include "IPrimitive.hpp"
 
 namespace RayTracer::PluginsExt::AmbientLight {
-    AmbientLightEntity::AmbientLightEntity(const Scenes::ISetting &config) :
+    AmbientLightEntity::AmbientLightEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _color(*config.get("color")) { }
+        _color(*config.get("color")),
+        _logger(logger),
+        _power(*config.get("power"))
+    {
+        if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("AMBIENT_lIGHT: config: scale y z must be 0 (remainder: x is for power)");
+        }
+        _power = std::abs(_power * _transform.getScale().getX());
+    }
 
     Entities::Transform::ITransform &AmbientLightEntity::getTransform() {
         return this->_transform;
@@ -31,7 +40,8 @@ namespace RayTracer::PluginsExt::AmbientLight {
     }
 
     Images::Color AmbientLightEntity::getColor(const Entities::Transform::Vector3f &point,
-    const Scenes::Displayable &displayable) const {
+    const Scenes::IDisplayable &displayable) const
+    {
         Entities::Transform::Vector3f normal = (point - this->_transform.getPosition()).getNormalized();
         Entities::Transform::Vector3f vector = point - normal;
         Images::Ray ray(vector, point);
@@ -42,5 +52,14 @@ namespace RayTracer::PluginsExt::AmbientLight {
 
     void AmbientLightEntity::setColor(const Images::Color &color) {
         this->_color = color;
+    }
+
+    bool AmbientLightEntity::isAmbient() const
+    {
+        return true;
+    }
+
+    double AmbientLightEntity::getPower() const {
+        return this->_power;
     }
 }

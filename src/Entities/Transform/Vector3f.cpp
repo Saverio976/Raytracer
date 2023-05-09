@@ -15,6 +15,8 @@ namespace RayTracer::Entities::Transform {
 
     Vector3f::Vector3f(double x, double y, double z): _x(x), _y(y), _z(z) {}
 
+    Vector3f::Vector3f(): _x(0), _y(0), _z(0) {}
+
     Vector3f::Vector3f(const Scenes::ISetting &setting)
     {
         std::unique_ptr<Scenes::ISetting> tmp = setting.get("x");
@@ -91,4 +93,54 @@ namespace RayTracer::Entities::Transform {
     double Vector3f::dot(const RayTracer::Entities::Transform::Vector3f &other) const {
         return _x * other.getX() + _y * other.getY() + _z * other.getZ();
     }
+
+    Vector3f Vector3f::toDegrees() const {
+        return {
+            this->_x * (180 / M_PI),
+            this->_y * (180 / M_PI),
+            this->_z * (180 / M_PI)
+        };
+    }
+
+    Vector3f Vector3f::toRadians() const {
+        return {
+            this->_x * (M_PI / 180),
+            this->_y * (M_PI / 180),
+            this->_z * (M_PI / 180)
+        };
+    }
+
+    Vector3f Vector3f::rotateVector(const Vector3f &direction, const Vector3f &rotation) const {
+        Vector3f angle = rotation.toRadians();
+        float xRotation;
+        float yRotation;
+        float zRotation;
+
+        xRotation = direction.getX();
+        yRotation = direction.getY() * std::cos(angle.getX()) - direction.getZ() * std::sin(angle.getX());
+        zRotation = direction.getY() * std::sin(angle.getX()) + direction.getZ() * std::cos(angle.getX());
+
+        xRotation = xRotation * std::cos(angle.getY()) + zRotation * std::sin(angle.getY());
+        yRotation = yRotation;
+        zRotation = -xRotation * std::sin(angle.getY()) + zRotation * std::cos(angle.getY());
+
+        xRotation = xRotation * std::cos(angle.getZ()) - yRotation * std::sin(angle.getZ());
+        yRotation = xRotation * std::sin(angle.getZ()) + yRotation * std::cos(angle.getZ());
+        zRotation = zRotation;
+
+        return {xRotation, yRotation, zRotation};
+    }
+
+    double Vector3f::getAngle(const Vector3f &a, const Vector3f &c) const {
+        double dot_product = (this->getX() - a.getX()) * (c.getX() - this->getX()) + (this->getY() - a.getY()) * (c.getY() - this->getY()) + (this->getZ() - a.getZ()) * (c.getZ() - this->getZ());
+        double mag_ab = std::sqrt((this->getX() - a.getX()) * (this->getX() - a.getX()) + (this->getY() - a.getY()) * (this->getY() - a.getY()) + (this->getZ() - a.getZ()) * (this->getZ() - a.getZ()));
+        double mag_bc = std::sqrt((c.getX() - this->getX()) * (c.getX() - this->getX()) + (c.getY() - this->getY()) * (c.getY() - this->getY()) + (c.getZ() - this->getZ()) * (c.getZ() - this->getZ()));
+        double cos_angle = dot_product / (mag_ab * mag_bc);
+        return std::acos(cos_angle) * (180 / M_PI);
+    }
+}
+
+std::ostream& operator<<(std::ostream& os, const RayTracer::Entities::Transform::Vector3f& vector) {
+    os << "x = " << vector.getX() << " y = " << vector.getY() << " z = " << vector.getZ() << std::endl;
+    return os;
 }

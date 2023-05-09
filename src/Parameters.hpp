@@ -7,6 +7,7 @@
 #ifndef PARAMETERS_HPP_
     #define PARAMETERS_HPP_
 
+    #include <exception>
     #include <memory>
     #include <map>
     #include <string>
@@ -19,6 +20,13 @@ namespace RayTracer {
      */
     class Parameters {
         public:
+            class KeyNotFoundError : public std::exception {
+                public:
+                    explicit KeyNotFoundError(const std::string &key);
+                    const char *what() const noexcept override;
+                private:
+                    std::string _key;
+            };
             ~Parameters() = default;
             Parameters(const Parameters &other) = delete;
             /**

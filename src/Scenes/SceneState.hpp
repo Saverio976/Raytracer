@@ -9,6 +9,7 @@
     #define SCENESTATE_HPP_
 
     #include <mutex>
+    #include "ISceneState.hpp"
 
 namespace RayTracer::Scenes {
     /**
@@ -17,15 +18,8 @@ namespace RayTracer::Scenes {
      * class that represent a scene state (to know if the scene is running or not)
      * (or if the scene render need to be cancelled)
      */
-    class SceneState {
+    class SceneState : public ISceneState {
         public:
-            /**
-             * @brief The States
-             */
-            enum class States {
-                RUNNING,
-                CANCELLED
-            };
             /**
              * @brief SceneState
              */
@@ -35,13 +29,13 @@ namespace RayTracer::Scenes {
              *
              * @return the state
              */
-            States getState() const;
+            ISceneState::States getState() const final;
             /**
              * @brief Change the state (thread safe)
              *
              * @param state the state
              */
-            void changeState(const States &state);
+            void changeState(const ISceneState::States &state) final;
         private:
             States _state;
             std::mutex mutex;

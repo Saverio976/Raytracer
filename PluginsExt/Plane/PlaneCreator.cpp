@@ -6,10 +6,18 @@
 */
 
 #include "PlaneCreator.hpp"
+#include "ILogger.hpp"
 #include "PlaneEntity.hpp"
 
 namespace RayTracer::PluginsExt::Plane {
-    RayTracer::Entities::IEntity *PlaneCreator::create(const Scenes::ISetting &config) {
-        return new RayTracer::PluginsExt::Plane::PlaneEntity(config);
+    PlaneCreator::~PlaneCreator() {
+        for (PlaneEntity *element : this->_elements)
+            delete element;
+    }
+
+    RayTracer::Entities::IEntity *PlaneCreator::create(const Scenes::ISetting &config, ILogger &logger) {
+        PlaneEntity *element = new PlaneEntity(config, logger);
+        this->_elements.push_back(element);
+        return element;
     }
 }

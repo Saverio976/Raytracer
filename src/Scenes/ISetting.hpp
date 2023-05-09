@@ -6,7 +6,7 @@
 */
 
 #ifndef ISETTING_HPP_
-	#define ISETTING_HPP_
+    #define ISETTING_HPP_
     #include <iostream>
     #include <memory>
     #include <libconfig.h++>
@@ -14,6 +14,22 @@
 namespace RayTracer::Scenes {
     class ISetting {
         public:
+            /**
+            * @brief an exception for when the key is not found
+            */
+            class IParsingException: public std::exception {
+                public:
+                    virtual ~IParsingException() = default;
+                    virtual const char *what() const throw() override = 0;
+            };
+            /**
+            * @brief an exception for when the key is not found
+            */
+            class ITypeException: public std::exception {
+                public:
+                    virtual ~ITypeException() = default;
+                    virtual const char *what() const throw() override = 0;
+            };
             virtual ~ISetting() = default;
             /**
              * @brief get a precise setting of the config from key

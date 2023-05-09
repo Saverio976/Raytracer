@@ -7,10 +7,12 @@
 
 #ifndef ENTITYHANDLER_HPP_
     #define ENTITYHANDLER_HPP_
+
     #include <memory>
     #include <string>
     #include "IEntity.hpp"
     #include "IEntityCreator.hpp"
+    #include "ILogger.hpp"
     #include "PluginHandler.hpp"
     #include "ISetting.hpp"
 
@@ -35,7 +37,7 @@ namespace RayTracer::Plugins::Entities {
              *
              * @return the entity
              */
-            RayTracer::Entities::IEntity *get(const RayTracer::Scenes::ISetting &setting) const;
+            RayTracer::Entities::IEntity &get(const RayTracer::Scenes::ISetting &setting, ILogger &logger);
         private:
             PluginHandler<RayTracer::Entities::IEntity, IEntityCreator> _handler;
     };
