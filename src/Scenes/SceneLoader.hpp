@@ -14,6 +14,7 @@
     #include <filesystem>
     #include "FilterLoader.hpp"
     #include "EntityLoader.hpp"
+    #include "MaterialLoader.hpp"
     #include "ConfigWrapper.hpp"
     #include "ILogger.hpp"
 
@@ -54,6 +55,7 @@ namespace RayTracer::Scenes {
             std::filesystem::file_time_type _lastWriteTime;
             std::unique_ptr<Plugins::Entities::EntityLoader> _entityLoader;
             std::unique_ptr<Plugins::Filters::FilterLoader> _filterLoader;
+            std::unique_ptr<Plugins::Materials::MaterialLoader> _materialLoader;
             ILogger &_logger;
 
         };
