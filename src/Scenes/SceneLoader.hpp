@@ -7,7 +7,8 @@
 
 #ifndef SCENELOADER_HPP_
     #define SCENELOADER_HPP_
-    #include <string>
+    #include <exception>
+#include <string>
     #include <functional>
     #include <map>
     #include <fstream>
@@ -27,8 +28,18 @@ namespace RayTracer::Scenes {
      */
     class SceneLoader {
         public:
+            class BadFileError : public std::exception {
+                public:
+                    BadFileError(const std::string &error);
+                    const char *what() const throw() override;
+                private:
+                    std::string _error;
+            };
             /**
              * @brief SceneLoader constructor (doesn't load anything)
+             *
+             * Throw BadFileError if the filePath doesn't ends with '.yaax'
+             * Throw BadFileError if the filePath is not a regular file
              *
              * @param filePath the file path
              */
@@ -47,6 +58,12 @@ namespace RayTracer::Scenes {
              * @brief Check if the file has been modified and call subscribed events in consequence
              */
             void update();
+            /**
+             * @brief Check if the file passed can be proceed by the class
+             *
+             * @param filePath the filePaht to check
+             */
+            static void checkGoodFile(const std::string &filePath);
         protected:
         private:
             std::unique_ptr<IConfig> _configWrapper;

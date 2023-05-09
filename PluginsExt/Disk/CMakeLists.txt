@@ -4,5 +4,4 @@ target_sources(Disk PRIVATE
     DiskEntity.cpp
     DiskCreator.cpp
     EntryPoint.cpp
-    PlainMaterial.cpp
 )

@@ -7,14 +7,18 @@
 
 #include "ILogger.hpp"
 #include "LimitedPlaneEntity.hpp"
+#include "IMaterialFactory.hpp"
 
 namespace RayTracer::PluginsExt::LimitedPlane {
     LimitedPlaneEntity::LimitedPlaneEntity(const Scenes::ISetting &config, ILogger &logger):
             _transform(Entities::Transform::Transform(*config.get("transform"))),
             _size(Entities::Transform::Vector3f(*config.get("size"))),
-            _material(*config.get("material")),
             _logger(logger)
     {
+        std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
+
+        std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
+        _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
     }
 
     Entities::IEntity::Type LimitedPlaneEntity::getType() const {
@@ -57,7 +61,7 @@ namespace RayTracer::PluginsExt::LimitedPlane {
     Images::Color LimitedPlaneEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const
     {
-        return _material.getColor(ray, _transform, intersect, displayable);
+        return _material->get().getColor(ray, _transform, intersect, displayable);
     }
 
     Images::Color LimitedPlaneEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,

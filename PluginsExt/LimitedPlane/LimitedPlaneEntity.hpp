@@ -6,10 +6,12 @@
 */
 #ifndef LIMITEDPLANEENTITY_HPP_
     #define LIMITEDPLANEENTITY_HPP_
+
+    #include <functional>
     #include "ILogger.hpp"
     #include "IPrimitive.hpp"
     #include "Transform.hpp"
-    #include "PlainMaterial.hpp"
+    #include "IMaterial.hpp"
 
 namespace RayTracer::PluginsExt::LimitedPlane {
     class LimitedPlaneEntity : public RayTracer::Entities::IPrimitive {
@@ -27,7 +29,7 @@ namespace RayTracer::PluginsExt::LimitedPlane {
     private:
         Entities::Transform::Transform _transform;
         RayTracer::Entities::Transform::Vector3f _size;
-        PlainMaterial _material;
+        std::optional<std::reference_wrapper<Entities::IMaterial>> _material;
         ILogger &_logger;
     };
 }
