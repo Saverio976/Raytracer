@@ -11,7 +11,7 @@ cameras:
             };
             focal = 200.0;
             maxThreads = 1000;
-            filter = ()
+            filters = ()
         }
     );
 };
