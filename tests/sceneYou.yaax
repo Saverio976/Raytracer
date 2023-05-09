@@ -63,6 +63,7 @@ primitives :
             };
             size = {x = 50.0; y = 50.0; z = 0.0;};
             material = {
+                type = "PlainMaterial";
                 shininess = 1.0;
                 color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
             };
@@ -75,6 +76,7 @@ primitives :
             };
             size = {x = 1000.0; y = 500.0; z = 500.0;};
             material = {
+                type = "PlainMaterial";
                 shininess = 1.0;
                 color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
             };
