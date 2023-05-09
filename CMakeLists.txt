@@ -75,6 +75,14 @@ set_target_properties(SSAAx4 PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/FiltersPlugins"
 )
 
+# --------- Materials plugins ---------
+add_library(PlainMaterial SHARED)
+set_target_properties(PlainMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+)
+
 # -----------------------------------
 # --------- Main executable ---------
 
