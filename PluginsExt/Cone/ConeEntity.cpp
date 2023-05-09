@@ -7,6 +7,7 @@
 
 #include "ConeEntity.hpp"
 #include "ILogger.hpp"
+#include "IMaterialFactory.hpp"
 
 namespace RayTracer::PluginsExt::Cone {
     ConeEntity::ConeEntity(const Scenes::ISetting &config, ILogger &logger):
@@ -15,6 +16,10 @@ namespace RayTracer::PluginsExt::Cone {
         _logger(logger),
         _color(*config.get("color"))
     {
+        std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
+
+        std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
+        _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
     }
 
     Entities::IEntity::Type ConeEntity::getType() const
@@ -83,6 +88,6 @@ namespace RayTracer::PluginsExt::Cone {
 
     Images::Color ConeEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const {
-        return {0, 0, 0, 0};
+        return _material->get().redirectionLight(ray, displayable, intersect);
     }
 }
