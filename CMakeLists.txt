@@ -61,8 +61,6 @@ set_target_properties(Plane PROPERTIES
     PREFIX ""
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
 )
-<<<<<<< HEAD
-=======
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Plane PROPERTIES
         UNITY_BUILD true
@@ -99,7 +97,6 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
 endif()
 
 # POINT LIGHT
->>>>>>> origin/183-augmenter-le-temps-du-timeout-pour-le-make-du-gitaction
 add_library(PointLight SHARED)
 set_target_properties(PointLight PROPERTIES
     CXX_STANDARD 20
