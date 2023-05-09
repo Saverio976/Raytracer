@@ -7,6 +7,8 @@
 
 #ifndef SCENE_HPP_
     #define SCENE_HPP_
+
+    #include <string>
     #include <future>
     #include <vector>
     #include <memory>
@@ -38,7 +40,7 @@ namespace RayTracer::Scenes {
              *
              * @param config the config changed
              */
-            void operator()(const ISetting &);
+            void operator()(const ISetting &, const std::string &event);
             /**
              * @brief Renders the scene (execute internal process in the thread)
              *
@@ -67,6 +69,16 @@ namespace RayTracer::Scenes {
             void wait_end();
         protected:
         private:
+            /**
+             * @brief Load the scene
+             *
+             * @param setting the setting
+             */
+            void loadConfig(const ISetting &setting);
+            /**
+             * @brief Wait till the cancel is active (and do the changestate cancel)
+             */
+            void waitTillCancel();
             std::vector<std::reference_wrapper<Entities::ICamera>> _cameras;
             SceneState _state;
             std::future<void> _future;

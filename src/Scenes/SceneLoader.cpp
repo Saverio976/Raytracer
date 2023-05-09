@@ -32,14 +32,21 @@ namespace RayTracer::Scenes {
         std::filesystem::file_time_type currentTime = std::filesystem::last_write_time(_filePath);
 
         if (currentTime != _lastWriteTime) {
+            _logger.info("Scene config file changed, reloading...");
             auto it = _events.find("onChange");
             _configWrapper->readFile(_filePath);
 
             if (it == _events.end())
                 return;
-            _logger.info("Scene config file changed, reloading...");
+            auto cancelit = _events.find("onBeforeChange");
+            if (cancelit != _events.end()) {
+                _logger.info("canceling previous rendering...");
+                cancelit->second(*_configWrapper->getSetting());
+            }
+            _logger.info("Reloading plugins...");
             this->_entityLoader->loadEntities();
             this->_filterLoader->loadFilters();
+            _logger.debug("Relaunching the rendering...");
             this->_materialLoader->loadMaterials();
             it->second(*_configWrapper->getSetting());
             _lastWriteTime = currentTime;
