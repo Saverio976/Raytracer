@@ -17,5 +17,8 @@ target_sources(raytracer PRIVATE
     # sources of current directory
 )
 
+find_library(LIBDL dl)
+target_link_libraries(raytracer PRIVATE ${LIBDL})
+
 add_subdirectory(Filters)
 add_subdirectory(Entities)

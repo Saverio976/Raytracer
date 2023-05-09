@@ -15,11 +15,7 @@ target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Camera PRIVATE
@@ -34,64 +30,36 @@ target_sources(Camera PRIVATE
 target_sources(AmbientLight PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Sphere PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Plane PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Disk PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Cone PRIVATE
-        "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
 )
 
 target_sources(PointLight PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(SpotLight PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Ray.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
 )
 
 target_sources(Cylinder PRIVATE
