@@ -28,9 +28,8 @@ namespace RayTracer::PluginsExt::LimitedCone {
         Entities::Transform::Transform _transform;
         double _angle;
         ILogger &_logger;
-        Images::Color _color;
+        std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
         double _height;
-        PlainMaterial _material;
     };
 }
 
