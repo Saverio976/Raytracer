@@ -108,6 +108,20 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+# LIMITED CONE
+add_library(LimitedCone SHARED)
+set_target_properties(LimitedCone PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(LimitedCone PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
 # POINT LIGHT
 add_library(PointLight SHARED)
 set_target_properties(PointLight PROPERTIES

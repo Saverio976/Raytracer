@@ -8,6 +8,7 @@ target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedPlane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Disk PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(LimitedCone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PointLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -67,6 +68,11 @@ target_sources(Disk PRIVATE
 )
 
 target_sources(Cone PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
+target_sources(LimitedCone PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
 )
