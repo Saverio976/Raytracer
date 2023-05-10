@@ -11,10 +11,7 @@
 namespace RayTracer::Display {
     CanvasModule::CanvasModule(Scenes::Scene &scene, std::size_t &position):
     _scene(scene),
-    _position(position) {
-        while (!this->_scene.getCameras().size()) {
-        }
-    }
+    _position(position) { }
 
     void CanvasModule::tick(sf::RenderWindow &window) {
         Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
@@ -22,7 +19,7 @@ namespace RayTracer::Display {
         sf::Texture texture;
         sf::Sprite sprite;
         texture.create(size.getX(), size.getY());
-        
+
         sf::Color *pixels = new sf::Color[size.getX() * size.getY()];
         for (int x = 0; x < size.getX(); x++) {
             for (int y =  0; y < size.getY(); y++) {
@@ -79,26 +76,26 @@ namespace RayTracer::Display {
                     break;
                 case sf::Keyboard::Left:
                     if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(10, 0, 0);
+                        position = position + Entities::Transform::Vector3f(-10, 0, 0);
                         camera.getTransform().setPosition(position);
                         this->_scene.renders();
                     }
                     break;
                 case sf::Keyboard::Right:
                     if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(-10, 0, 0);
+                        position = position + Entities::Transform::Vector3f(10, 0, 0);
                         camera.getTransform().setPosition(position);
                         this->_scene.renders();
                     }
                     break;
-                case sf::Keyboard::Top:
+                case sf::Keyboard::Up:
                     if (this->_scene.isReady()) {
                         position = position + Entities::Transform::Vector3f(0, 10, 0);
                         camera.getTransform().setPosition(position);
                         this->_scene.renders();
                     }
                     break;
-                case sf::Keyboard::Bottom:
+                case sf::Keyboard::Down:
                     if (this->_scene.isReady()) {
                         position = position + Entities::Transform::Vector3f(0, -10, 0);
                         camera.getTransform().setPosition(position);

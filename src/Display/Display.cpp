@@ -9,7 +9,9 @@
 #include "CanvasModule.hpp"
 
 namespace RayTracer::Display {
-    Display::Display(Scenes::Scene &scene) : _scene(scene) {
+    Display::Display(Scenes::Scene &scene, Scenes::SceneLoader &loader) :
+    _scene(scene),
+    _loader(loader) {
         if (!this->_font.loadFromFile("./Assets/arial.ttf"))
             throw std::runtime_error("error init font"); // TODO: Faire avec une erreur custom
         this->_modules.push_back(std::make_unique<CanvasModule>(scene, this->_position));
@@ -20,6 +22,7 @@ namespace RayTracer::Display {
         sf::RenderWindow window(sf::VideoMode(size.getX(), size.getY()), "Militar Perform", sf::Style::Titlebar | sf::Style::Close);
         const sf::Color background(0, 0, 0);
         sf::Event event;
+        sf::Clock time;
 
         for (auto &module : this->_modules) {
             try {
@@ -30,6 +33,10 @@ namespace RayTracer::Display {
             }
         }
         while (window.isOpen()) {
+            if (time.getElapsedTime().asSeconds() > 1) {
+                this->_loader.update();
+                time.restart();
+            }
             while (window.pollEvent(event)) {
                 if (event.type == sf::Event::Closed)
                     window.close();
