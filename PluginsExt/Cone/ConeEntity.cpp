@@ -11,17 +11,17 @@
 
 namespace RayTracer::PluginsExt::Cone {
     ConeEntity::ConeEntity(const Scenes::ISetting &config, ILogger &logger):
-        _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _angle(static_cast<double>(*config.get("angle"))),
-        _logger(logger),
-        _color(*config.get("color"))
+            _transform(Entities::Transform::Transform(*config.get("transform"))),
+            _angle(static_cast<double>(*config.get("angle"))),
+            _logger(logger),
+            _color(*config.get("color"))
     {
         std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
         if (_transform.getScale().getX() != _transform.getScale().getY() ||
-                _transform.getScale().getX() != _transform.getScale().getZ()) {
+            _transform.getScale().getX() != _transform.getScale().getZ()) {
             _logger.warn("CONE: config: scale x y z must be the same: now using only x");
         }
         _angle = _angle * _transform.getScale().getX();
@@ -87,7 +87,7 @@ namespace RayTracer::PluginsExt::Cone {
     }
 
     Images::Color ConeEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
-        const Entities::Transform::Vector3f &intersect) const {
+                                               const Entities::Transform::Vector3f &intersect) const {
         return _material->get().redirectionLight(ray, displayable, intersect);
     }
 }
