@@ -52,22 +52,76 @@ namespace RayTracer::Display {
     }
 
     void CanvasModule::event(sf::RenderWindow &window, const sf::Event &event) {
-        if (event.type == sf::Event::KeyPressed) {
-            if (event.key.code == sf::Keyboard::Q) {
-                this->_position = (this->_position + 1) % this->_scene.getCameras().size();
-                this->resizeWindow(window);
-            }
-            if (event.key.code == sf::Keyboard::D) {
-                this->_position = (this->_position - 1) % this->_scene.getCameras().size();
-                this->resizeWindow(window);
-            }
-            if (event.key.code == sf::Keyboard::Left) {
-                if (this->_scene.isReady()) {
-                    Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
+        Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
+        Entities::Transform::Vector3f position = camera.getTransform().getPosition();
 
-                    camera.setFocal(camera.getFocal() + 10);
-                    this->_scene.renders();
-                }
+        if (event.type == sf::Event::KeyPressed) {
+            switch (event.key.code) {
+                case sf::Keyboard::Q:
+                    this->_position = (this->_position + 1) % this->_scene.getCameras().size();
+                    this->resizeWindow(window);
+                    break;
+                case sf::Keyboard::D:
+                    this->_position = (this->_position - 1) % this->_scene.getCameras().size();
+                    this->resizeWindow(window);
+                    break;
+                case sf::Keyboard::Z:
+                    if (this->_scene.isReady()) {
+                        camera.setFocal(camera.getFocal() + 10);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::S:
+                    if (this->_scene.isReady()) {
+                        camera.setFocal(camera.getFocal() - 10);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::Left:
+                    if (this->_scene.isReady()) {
+                        position = position + Entities::Transform::Vector3f(10, 0, 0);
+                        camera.getTransform().setPosition(position);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::Right:
+                    if (this->_scene.isReady()) {
+                        position = position + Entities::Transform::Vector3f(-10, 0, 0);
+                        camera.getTransform().setPosition(position);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::Top:
+                    if (this->_scene.isReady()) {
+                        position = position + Entities::Transform::Vector3f(0, 10, 0);
+                        camera.getTransform().setPosition(position);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::Bottom:
+                    if (this->_scene.isReady()) {
+                        position = position + Entities::Transform::Vector3f(0, -10, 0);
+                        camera.getTransform().setPosition(position);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::R:
+                    if (this->_scene.isReady()) {
+                        position = position + Entities::Transform::Vector3f(0, 0, 10);
+                        camera.getTransform().setPosition(position);
+                        this->_scene.renders();
+                    }
+                    break;
+                case sf::Keyboard::F:
+                    if (this->_scene.isReady()) {
+                        position = position + Entities::Transform::Vector3f(0, 0, -10);
+                        camera.getTransform().setPosition(position);
+                        this->_scene.renders();
+                    }
+                    break;
+                default:
+                    break;
+
             }
         }
     }
