@@ -14,6 +14,23 @@ L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tra
 
 ![image](./documentation/reprere.png)
 
+# Usage
+
+```bash
+USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>]
+USAGE: ./raytracer --help
+
+OPTIONS:
+	--scene-path <scene-conf.yaax>	path to scene config
+	--output-path <file>	path to output file (dont put .ppm or any extension, it is just a base file path)
+	--help	to display the help message
+	--log-level <int>	log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]
+
+CREDITS:
+	Authors: Y A A X
+	Repository: https://github.com/Saverio976/Raytracer
+```
+
 # Exemples/Documentation
 
 les primitives sont:
