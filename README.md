@@ -12,6 +12,8 @@ membres du projet:
 
 L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tracing) en [C++](https://fr.wikipedia.org/wiki/C%2B%2B)
 
+![image](./documentation/reprere.png)
+
 # Exemples/Documentation
 
 les primitives sont:
