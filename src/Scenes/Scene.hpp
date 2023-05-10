@@ -54,6 +54,12 @@ namespace RayTracer::Scenes {
              */
             const std::vector<std::reference_wrapper<Entities::ICamera>> &getCameras() const;
             /**
+             * @brief Get the cameras
+             *
+             * @return the cameras
+             */
+            std::vector<std::reference_wrapper<Entities::ICamera>> &getCameras();
+            /**
              * @brief Check if the scene is ready (internal render thread is stopped)
              *
              * @return true if the scene is ready

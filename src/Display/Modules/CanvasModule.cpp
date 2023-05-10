@@ -5,6 +5,7 @@
 ** CanvasModule.cpp
 */
 
+#include <future>
 #include "CanvasModule.hpp"
 
 namespace RayTracer::Display {
@@ -43,9 +44,33 @@ namespace RayTracer::Display {
 
     }
 
+    void CanvasModule::resizeWindow(sf::RenderWindow &window) {
+        Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
+        Entities::Transform::Vector2i size = camera.getSize();
+
+        window.setSize({size.getX(), size.getY()});
+        window.setView(sf::View({0, 0, size.getX(), size.getY()}));
+    }
+
     void CanvasModule::event(sf::RenderWindow &window, const sf::Event &event) {
-        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left)
-            window.setSize({1000, 1500});
+        if (event.type == sf::Event::KeyPressed) {
+            if (event.key.code == sf::Keyboard::Q) {
+                this->_position = (this->_position + 1) % this->_scene.getCameras().size();
+                this->resizeWindow(window);
+            }
+            if (event.key.code == sf::Keyboard::D) {
+                this->_position = (this->_position - 1) % this->_scene.getCameras().size();
+                this->resizeWindow(window);
+            }
+            if (event.key.code == sf::Keyboard::Left) {
+                if (this->_scene.isReady()) {
+                    Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
+
+                    camera.setFocal(camera.getFocal() + 10);
+                    this->_scene.renders();
+                }
+            }
+        }
     }
 
     void CanvasModule::end() {

@@ -22,6 +22,7 @@ namespace RayTracer::Display {
 
         protected:
         private:
+            void resizeWindow(sf::RenderWindow &window);
             Scenes::Scene &_scene;
             std::size_t &_position;
             sf::Texture _texture;
