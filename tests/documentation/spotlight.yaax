@@ -34,7 +34,7 @@ primitives :
             transform = {
                 position = {x = -150.0; y = 150.0; z = 50.0;};
                 scale = {x = 1.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
             }
             material = {
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
