@@ -1,15 +1,14 @@
 # Configuration of the camera
 cameras:
 {
-    Camera: (
+    CameraCustom: (
         {
-            size = {x: 500; y = 500;};
-            transform = {
-                position = {x = 0.0; y = 0.0; z = 0.0;};
+            screenSize = {x: 500; y = 500;};
+            positionCamera = {
+                position = {x = -70.0; y = 125.0; z = -80.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 90.0; y = 90.0; z = 0.0;};
             };
-            focal = 200.0;
             maxThreads = 1000;
             filters = ()
         }
