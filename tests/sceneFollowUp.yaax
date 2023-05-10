@@ -1,29 +1,24 @@
 # Configuration of the camera
 cameras:
 {
-    # CameraCustom: (
-    #     {
-    #         screenSize = {x: 500; y = 500;};
-    #         positionCamera = {
-    #             position = {x = 15.0; y = 0.0; z = 50.0;};
-    #             scale = {x = 0.0; y = 0.0; z = 0.0;};
-    #             rotation = {x = 180.0; y = 180.0; z = 0.0;};
-    #         };
-    #         maxThreads = 1000;
-    #         filters = ()
-    #     }
-    # );
-    Camera: (
+    CameraCluster: (
         {
-            size = {x: 500; y = 500;};
-            transform = {
+            screenSize = {x: 500; y = 500;};
+            screen = {
                 position = {x = 0.0; y = 0.0; z = 0.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
                 rotation = {x = 90.0; y = 90.0; z = 0.0;};
             };
             maxThreads = 1;
-            focal = 200.0;
-            filters = ()
+            cluster = 1,
+            distanceFromScreen = 200.0;
+            filters = {
+                SSAAx4: (
+                    {
+                        maxThreads = -1
+                    },
+                )
+            }
         }
     );
 };
@@ -43,6 +38,9 @@ primitives :
             material = {
                 shininess = 1.0;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                ambient = {x = 68.0; y = 171.0; z = 128.0;};
+                diffuse = {x = 68.0; y = 171.0; z = 128.0;};
+                specular = {x = 68.0; y = 171.0; z = 128.0;};
                 type = "PlainMaterial";
             };
         },
@@ -57,6 +55,9 @@ primitives :
                 shininess = 1.0;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
                 type = "PlainMaterial";
+                ambient = {x = 68.0; y = 171.0; z = 128.0;};
+                diffuse = {x = 68.0; y = 171.0; z = 128.0;};
+                specular = {x = 68.0; y = 171.0; z = 128.0;};
             };
         }
     );
@@ -72,6 +73,9 @@ primitives :
                 shininess = 1.0;
                 color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
                 type = "PlainMaterial";
+                ambient = {x = 255.0; y = 255.0; z = 0.0;};
+                diffuse = {x = 255.0; y = 255.0; z = 0.0;};
+                specular = {x = 255.0; y = 255.0; z = 0.0;};
             };
         },
         {
@@ -85,6 +89,9 @@ primitives :
                 shininess = 1.0;
                 color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
                 type = "PlainMaterial";
+                ambient = {x = 0.0; y = 255.0; z = 255.0;};
+                diffuse = {x = 0.0; y = 255.0; z = 255.0;};
+                specular = {x = 0.0; y = 255.0; z = 255.0;};
             };
         }
     );
