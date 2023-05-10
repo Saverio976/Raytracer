@@ -9,13 +9,15 @@
 #include "ICamera.hpp"
 #include "Vector2i.hpp"
 #include "Vector3f.hpp"
+#include <memory>
+#include <string>
 
 namespace RayTracer::Images {
     // -----------------------------------------------------------------------
     // RayIterrator::iterrator
     // -----------------------------------------------------------------------
 
-    RayIterrator::iterrator::iterrator(const Ray &last, const Entities::Transform::Vector2i &size, const Entities::Transform::Vector3f &screenPos, const Entities::Transform::Vector3f &pov):
+    RayIterrator::Iterrator::Iterrator(const Ray &last, const Entities::Transform::Vector2i &size, const Entities::Transform::Vector3f &screenPos, const Entities::Transform::Vector3f &pov):
         _last(last), _size(size), _screenPos(screenPos), _pov(pov), _ray(last)
     {
         Entities::Transform::Vector3f right(1, 0, 0);
@@ -27,37 +29,42 @@ namespace RayTracer::Images {
         } else {
             onScreenPos = onScreenPos + right;
         }
-        _ray = Ray(pov, onScreenPos);
+        _ray = Ray(pov, onScreenPos, {10, 0, 0});
     }
 
-    RayIterrator::iterrator RayIterrator::iterrator::operator++() {
-        auto iter = RayIterrator::iterrator(_ray, _size, _screenPos, _pov);
+    IRayIterator::IIterator &RayIterrator::Iterrator::operator++() {
+        auto iter = RayIterrator::Iterrator(_ray, _size, _screenPos, _pov);
 
-        return iter;
+        *this = iter;
+        return *this;
     }
 
-    Ray RayIterrator::iterrator::operator*() {
+    Ray &RayIterrator::Iterrator::operator*() {
         return _ray;
     }
 
-    bool RayIterrator::iterrator::operator==(const RayIterrator::iterrator &other) const {
-        bool isEq = _ray.getOrigin().getX() == other._ray.getOrigin().getX() &&
-                    _ray.getOrigin().getY() == other._ray.getOrigin().getY() &&
-                    _ray.getOrigin().getZ() == other._ray.getOrigin().getZ();
-        isEq = isEq &&
-                    _ray.getDirection().getX() == other._ray.getDirection().getX() &&
-                    _ray.getDirection().getY() == other._ray.getDirection().getY() &&
-                    _ray.getDirection().getZ() == other._ray.getDirection().getZ();
-        return isEq;
+    bool RayIterrator::Iterrator::operator==(const IRayIterator::IIterator &other) const {
+        return this->toString() == other.toString();
     }
 
-    bool RayIterrator::iterrator::operator!=(const RayIterrator::iterrator &other) const {
+    bool RayIterrator::Iterrator::operator!=(const IRayIterator::IIterator &other) const {
         return !(*this == other);
     }
 
-    RayIterrator::iterrator &RayIterrator::iterrator::operator=(const RayIterrator::iterrator &other) {
+    RayIterrator::Iterrator &RayIterrator::Iterrator::operator=(const RayIterrator::Iterrator &other) {
         _ray = other._ray;
         return *this;
+    }
+
+    std::string RayIterrator::Iterrator::toString() const {
+        return (
+            std::to_string(_ray.getOrigin().getX()) + " " +
+                std::to_string(_ray.getOrigin().getY()) + " " +
+                std::to_string(_ray.getOrigin().getZ()) + " " +
+            std::to_string(_ray.getDirection().getX()) + " " +
+                std::to_string(_ray.getDirection().getY()) + " " +
+                std::to_string(_ray.getDirection().getZ())
+        );
     }
 
     // -----------------------------------------------------------------------
@@ -80,16 +87,16 @@ namespace RayTracer::Images {
         _afterLast = Ray(_pov, pos + rayScreenNeg);
     }
 
-    RayIterrator::iterrator RayIterrator::begin() const
+    std::unique_ptr<IRayIterator::IIterator> RayIterrator::begin() const
     {
-        auto iter = RayIterrator::iterrator(_beforeFirst, _camera.getSize(), _camera.getTransform().getPosition(), _pov);
+        auto iter = std::make_unique<RayIterrator::Iterrator>(_beforeFirst, _camera.getSize(), _camera.getTransform().getPosition(), _pov);
 
         return iter;
     }
 
-    RayIterrator::iterrator RayIterrator::end() const
+    std::unique_ptr<IRayIterator::IIterator> RayIterrator::end() const
     {
-        auto iter = RayIterrator::iterrator(_afterLast, _camera.getSize(), _camera.getTransform().getPosition(), _pov);
+        auto iter = std::make_unique<RayIterrator::Iterrator>(_afterLast, _camera.getSize(), _camera.getTransform().getPosition(), _pov);
 
         return iter;
     }

@@ -4,7 +4,7 @@ project(Raytracer
     DESCRIPTION "Raytracer engine with sphere,..."
     LANGUAGES CXX
 )
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
 if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
@@ -33,6 +33,20 @@ set_target_properties(Camera PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Camera PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# CAMERA CUSTOM
+add_library(CameraCustom SHARED)
+set_target_properties(CameraCustom PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(CameraCustom PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
@@ -272,6 +286,45 @@ set_target_properties(ray_image_image PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(ray_image_image PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/ImagePipeLine.cpp
+add_library(ray_image_pipeline OBJECT)
+set_target_properties(ray_image_pipeline PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_pipeline PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/PixelThread.cpp
+add_library(ray_image_pixelthread OBJECT)
+set_target_properties(ray_image_pixelthread PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_pixelthread PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Progress.cpp
+add_library(ray_progress OBJECT)
+set_target_properties(ray_progress PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_progress PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
