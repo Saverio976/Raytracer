@@ -7,8 +7,8 @@
 
 #ifndef RAYTRACER_SETTINGWRAPPER_HPP
     #define RAYTRACER_SETTINGWRAPPER_HPP
+
     #include <libconfig.h++>
-    #include <iostream>
     #include <memory>
     #include <exception>
     #include "ISetting.hpp"

@@ -5,9 +5,7 @@
 ** Progress.cpp
 */
 
-#include <iostream>
 #include "ILogger.hpp"
-#include "Logger.hpp"
 #include "Progress.hpp"
 
 namespace RayTracer {

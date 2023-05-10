@@ -3,7 +3,7 @@ name: Doxygen GitHub Pages Deploy Action
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: create dependencies
+        run: echo "hpp2plantuml" >> requirements.txt
 
       - name: Install python
         uses: actions/setup-python@v4

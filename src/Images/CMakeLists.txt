@@ -8,12 +8,17 @@ target_include_directories(Plane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedPlane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Disk PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(LimitedCone PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PointLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(CameraCluster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(ray_image_pipeline PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(ray_image_pixelthread PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(ray_image_color PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
@@ -27,6 +32,14 @@ target_sources(ray_image_image PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
 )
 
+target_sources(ray_image_pipeline PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
+)
+
+target_sources(ray_image_pixelthread PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
+)
+
 target_sources(raytracer PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_image>
@@ -35,10 +48,26 @@ target_sources(raytracer PRIVATE
 target_sources(Camera PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
-    "${CMAKE_CURRENT_SOURCE_DIR}/ImagePipeLine.cpp"
+    $<TARGET_OBJECTS:ray_image_image>
+    $<TARGET_OBJECTS:ray_image_pipeline>
     "${CMAKE_CURRENT_SOURCE_DIR}/RayIterrator.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Image.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/PixelThread.cpp"
+    $<TARGET_OBJECTS:ray_image_pixelthread>
+)
+
+target_sources(CameraCustom PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_image>
+    $<TARGET_OBJECTS:ray_image_pipeline>
+    $<TARGET_OBJECTS:ray_image_ray>
+    $<TARGET_OBJECTS:ray_image_pixelthread>
+)
+
+target_sources(CameraCluster PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_image>
+    $<TARGET_OBJECTS:ray_image_pipeline>
+    $<TARGET_OBJECTS:ray_image_ray>
+    $<TARGET_OBJECTS:ray_image_pixelthread>
 )
 
 target_sources(AmbientLight PRIVATE
@@ -67,6 +96,11 @@ target_sources(Disk PRIVATE
 )
 
 target_sources(Cone PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
+target_sources(LimitedCone PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
 )
