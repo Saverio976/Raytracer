@@ -30,7 +30,6 @@ namespace RayTracer::PluginsExt::Cone {
             Entities::Transform::Transform _transform;
             double _angle;
             ILogger &_logger;
-            Images::Color _color;
             std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
     };
 }
