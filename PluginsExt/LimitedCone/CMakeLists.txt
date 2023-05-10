@@ -4,5 +4,4 @@ target_sources(LimitedCone PRIVATE
     LimitedConeEntity.cpp
     LimitedConeCreator.cpp
     EntryPoint.cpp
-    PlainMaterial.cpp
 )

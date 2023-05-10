@@ -49,7 +49,6 @@ namespace RayTracer::PluginsExt::Cone {
         const Entities::Transform::Vector3f coneDirection = _transform.getRotation();
         const Entities::Transform::Vector3f coneOrigin = _transform.getPosition();
         const Entities::Transform::Vector3f rayToConeOrigin(rayOrigin.getX() - coneOrigin.getX(), rayOrigin.getY() - coneOrigin.getY(), rayOrigin.getZ() - coneOrigin.getZ());
-
         double testAngle = pow(tan(_angle), 2);
 
         double a = pow(rayDirection.dot(coneDirection), 2) - testAngle * rayDirection.dot(rayDirection);
@@ -83,7 +82,23 @@ namespace RayTracer::PluginsExt::Cone {
 
     Images::Color ConeEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable, const Entities::Transform::Vector3f &point) const
     {
-        return _color;
+        const Entities::Transform::Vector3f &rayDirection = ray.getDirection();
+        const Entities::Transform::Vector3f &rayOrigin = ray.getOrigin();
+        const Entities::Transform::Vector3f coneDirection = _transform.getRotation();
+        const Entities::Transform::Vector3f coneOrigin = _transform.getPosition();
+        const Entities::Transform::Vector3f rayToConeOrigin(rayOrigin.getX() - coneOrigin.getX(), rayOrigin.getY() - coneOrigin.getY(), rayOrigin.getZ() - coneOrigin.getZ());
+        double testAngle = pow(tan(_angle), 2);
+
+        double a = pow(rayDirection.dot(coneDirection), 2) - testAngle * rayDirection.dot(rayDirection);
+        double b = 2 * (rayToConeOrigin.dot(coneDirection) * rayDirection.dot(coneDirection) - testAngle * rayToConeOrigin.dot(rayDirection));
+        double c = pow(rayToConeOrigin.dot(coneDirection), 2) - testAngle * rayToConeOrigin.dot(rayToConeOrigin);
+        double delta = (b * b) - (4 * a * c);
+
+        auto transform = _transform;
+        auto m = ray.getDirection().dot(coneDirection) * t + (ray.getOrigin() - _transform.getPosition()).dot(coneDirection);
+        auto aa = point - _transform.getPosition() - (coneDirection * Entities::Transform::Vector3f(m, m, m));
+        transform.setPosition(aa);
+        return _material->get().getColor(ray, _transform, point, displayable);
     }
 
     Images::Color ConeEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
