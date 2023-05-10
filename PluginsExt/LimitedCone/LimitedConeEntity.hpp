@@ -10,7 +10,6 @@
 #include "ILogger.hpp"
 #include "IPrimitive.hpp"
 #include "Transform.hpp"
-#include "PlainMaterial.hpp"
 
 namespace RayTracer::PluginsExt::LimitedCone {
     class LimitedConeEntity : public Entities::IPrimitive {
