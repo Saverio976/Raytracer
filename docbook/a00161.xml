@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00161" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/IEntityCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/IEntityCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
+#include &quot;IEntity.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for IEntityCreator.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00162.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00163.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01315">RayTracer::Plugins::Entities::IEntityCreator</link></para>
+
+<para>The <link linkend="_a01315">IEntityCreator</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00333">RayTracer::Plugins</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00334">RayTracer::Plugins::Entities</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

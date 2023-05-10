@@ -1,0 +1,234 @@
+.TH "RayTracer::Entities::Transform::Vector2i" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::Transform::Vector2i \- The \fBVector2i\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Vector2i\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Vector2i\fP ()=default"
+.br
+.ti -1c
+.RI "\fBVector2i\fP ()"
+.br
+.RI "Construct a new \fBVector2i\fP (x = 0, y = 0) "
+.ti -1c
+.RI "\fBVector2i\fP (const \fBScenes::ISetting\fP &config)"
+.br
+.RI "Construct a new \fBVector2i\fP\&. "
+.ti -1c
+.RI "\fBVector2i\fP (const \fBVector2i\fP &vector)"
+.br
+.RI "Construct a new \fBVector2i\fP\&. "
+.ti -1c
+.RI "\fBVector2i\fP (int width, int height)"
+.br
+.RI "Construct a new \fBVector2i\fP\&. "
+.ti -1c
+.RI "\fBVector2i\fP \fBoperator+\fP (const \fBVector2i\fP &other) const"
+.br
+.RI "Addition two vectors\&. "
+.ti -1c
+.RI "\fBVector2i\fP \fBoperator\-\fP (const \fBVector2i\fP &other) const"
+.br
+.RI "Subtraction two vectors\&. "
+.ti -1c
+.RI "\fBVector2i\fP \fBoperator*\fP (const \fBVector2i\fP &other) const"
+.br
+.RI "Multiplication two vectors\&. "
+.ti -1c
+.RI "\fBVector2i\fP \fBoperator/\fP (const \fBVector2i\fP &other) const"
+.br
+.RI "Division two vectors\&. "
+.ti -1c
+.RI "\fBVector2i\fP & \fBoperator=\fP (const \fBVector2i\fP &other)"
+.br
+.RI "Assign a vector\&. "
+.ti -1c
+.RI "int \fBgetX\fP () const"
+.br
+.RI "Get x\&. "
+.ti -1c
+.RI "int \fBgetY\fP () const"
+.br
+.RI "Get y\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_x\fP"
+.br
+.ti -1c
+.RI "int \fB_y\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBVector2i\fP class\&. 
+
+point in 2D space 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Entities::Transform::Vector2i::~Vector2i ()\fC [default]\fP"
+
+.SS "RayTracer::Entities::Transform::Vector2i::Vector2i ()"
+
+.PP
+Construct a new \fBVector2i\fP (x = 0, y = 0) 
+.SS "RayTracer::Entities::Transform::Vector2i::Vector2i (const \fBScenes::ISetting\fP & config)"
+
+.PP
+Construct a new \fBVector2i\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP the vector 
+.RE
+.PP
+
+.SS "RayTracer::Entities::Transform::Vector2i::Vector2i (const \fBVector2i\fP & vector)"
+
+.PP
+Construct a new \fBVector2i\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP the vector 
+.RE
+.PP
+
+.SS "RayTracer::Entities::Transform::Vector2i::Vector2i (int width, int height)"
+
+.PP
+Construct a new \fBVector2i\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP the width 
+.br
+\fIheight\fP the height 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int RayTracer::Entities::Transform::Vector2i::getX () const"
+
+.PP
+Get x\&. 
+.PP
+\fBReturns\fP
+.RS 4
+x 
+.RE
+.PP
+
+.SS "int RayTracer::Entities::Transform::Vector2i::getY () const"
+
+.PP
+Get y\&. 
+.PP
+\fBReturns\fP
+.RS 4
+y 
+.RE
+.PP
+
+.SS "\fBVector2i\fP RayTracer::Entities::Transform::Vector2i::operator* (const \fBVector2i\fP & other) const"
+
+.PP
+Multiplication two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector2i\fP RayTracer::Entities::Transform::Vector2i::operator+ (const \fBVector2i\fP & other) const"
+
+.PP
+Addition two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector2i\fP RayTracer::Entities::Transform::Vector2i::operator\- (const \fBVector2i\fP & other) const"
+
+.PP
+Subtraction two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector2i\fP RayTracer::Entities::Transform::Vector2i::operator/ (const \fBVector2i\fP & other) const"
+
+.PP
+Division two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector2i\fP& RayTracer::Entities::Transform::Vector2i::operator= (const \fBVector2i\fP & other)"
+
+.PP
+Assign a vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the same vector modified 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int RayTracer::Entities::Transform::Vector2i::_x\fC [private]\fP"
+
+.SS "int RayTracer::Entities::Transform::Vector2i::_y\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

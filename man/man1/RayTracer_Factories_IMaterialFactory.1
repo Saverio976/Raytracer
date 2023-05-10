@@ -1,0 +1,53 @@
+.TH "RayTracer::Factories::IMaterialFactory" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Factories::IMaterialFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IMaterialFactory\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Factories::MaterialFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IMaterialFactory\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBEntities::IMaterial\fP & \fBget\fP (const std::string &name, const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger)=0"
+.br
+.RI "Get an material\&. "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Factories::IMaterialFactory::~IMaterialFactory ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBEntities::IMaterial\fP& RayTracer::Factories::IMaterialFactory::get (const std::string & name, const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [pure virtual]\fP"
+
+.PP
+Get an material\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIsetting\fP the setting (to create the material)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Factories::MaterialFactory\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

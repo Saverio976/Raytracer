@@ -1,0 +1,2686 @@
+@startuml
+
+
+
+
+
+/' Objects '/
+
+namespace RayTracer {
+	abstract class ILogger {
+		+~ILogger()
+		+{abstract} debug(const std::string& message) : void
+		+{abstract} error(const std::string& message) : void
+		+{abstract} fatal(const std::string& message) : void
+		+{abstract} info(const std::string& message) : void
+		+{abstract} trace(const std::string& message) : void
+		+{abstract} warn(const std::string& message) : void
+	}
+
+	class Logger {
+		+debug(const std::string& message) : void
+		+error(const std::string& message) : void
+		+fatal(const std::string& message) : void
+		+info(const std::string& message) : void
+		-print(const std::string& level, const std::string& message) : void
+		+trace(const std::string& message) : void
+		+warn(const std::string& message) : void
+	}
+
+	class Main {
+		+Main(ILogger& logger)
+		+~Main()
+		-_logger : ILogger&
+		-_scene : Scenes::Scene
+		-parseCmdArgs(int argc, char** argv) : bool
+		+operator()(int argc, char** argv) : int
+		-_baseFilePath : std::string
+		-_sceneConfFilePath : std::string
+		-exportScene(const std::string& baseFilePath) : void
+		-help() : void {query}
+		-run() : void
+	}
+
+	class Main::ArgumentError {
+		+ArgumentError(const std::string& message)
+		+what() : char* {query}
+		-_message : std::string
+	}
+
+	class Main::MainError {
+		+MainError(const std::string& message)
+		+what() : char* {query}
+		-_message : std::string
+	}
+
+	class Parameters {
+		#Parameters()
+		+~Parameters()
+		+{static} getInstance() : Parameters&
+		+getDouble(const std::string& key) : double {query}
+		+getInt(const std::string& key) : int {query}
+		#{static} _parameters : static std::unique_ptr<Parameters>
+		#_valuesDouble : std::map<std::string, double>
+		#_valuesInt : std::map<std::string, int>
+		#_valuesString : std::map<std::string, std::string>
+		+getString(const std::string& key) : std::string& {query}
+		#parseCmdArg(const std::string& key, const std::string& value) : void
+		+parseCmdArgs(int argc, char** argv) : void
+		+set(const std::string& key, int value) : void
+		+set(const std::string& key, double value) : void
+		+set(const std::string& key, const std::string& value) : void
+	}
+
+	class Parameters::KeyNotFoundError {
+		+KeyNotFoundError(const std::string& key)
+		+what() : char* {query}
+		-_key : std::string
+	}
+
+	class Progress {
+		+Progress(float max, float threshold, ILogger& logger)
+		-_logger : ILogger&
+		-_current : double
+		-_max : double
+		-_nextStep : double
+		-_step : double
+		+add(float value) : void
+	}
+
+	namespace Scenes {
+		class ConfigWrapper {
+			+ConfigWrapper(ILogger& logger)
+			+~ConfigWrapper()
+			-_logger : ILogger&
+			-_scene : std::shared_ptr<ISetting>
+			+getSetting() : std::shared_ptr<ISetting> {query}
+			-_config : std::shared_ptr<libconfig::Config>
+			+readFile(const std::string& path) : void
+			+writeFile(const std::string& path) : void
+		}
+
+		class ConfigWrapper::ReadException {
+			+ReadException(const std::string& message)
+			+what() : char*
+			-_message : std::string
+		}
+
+		class ConfigWrapper::WriteException {
+			+WriteException(const std::string& message)
+			+what() : char*
+			-_message : std::string
+		}
+
+		class Displayable {
+			+getAmbientLight() : Entities::ILight& {query}
+			+getAmbientLight() : Entities::ILight&
+			-_lights : std::vector<std::reference_wrapper<Entities::ILight>>
+			+getLightList() : std::vector<std::reference_wrapper<Entities::ILight>>& {query}
+			+getLightList() : std::vector<std::reference_wrapper<Entities::ILight>>&
+			-_primitives : std::vector<std::reference_wrapper<Entities::IPrimitive>>
+			+getPrimitiveList() : std::vector<std::reference_wrapper<Entities::IPrimitive>>& {query}
+			+getPrimitiveList() : std::vector<std::reference_wrapper<Entities::IPrimitive>>&
+		}
+
+		class Displayable::DisplayableException {
+			+DisplayableException(const std::string& key)
+			+what() : char*
+			-_msg : std::string
+		}
+
+		abstract class IConfig {
+			+~IConfig()
+			+{abstract} getSetting() : std::shared_ptr<ISetting> {query}
+			+{abstract} readFile(const std::string& path) : void
+			+{abstract} writeFile(const std::string& path) : void
+		}
+
+		abstract class IDisplayable {
+			+{abstract} getAmbientLight() : Entities::ILight& {query}
+			+{abstract} getAmbientLight() : Entities::ILight&
+			+{abstract} getLightList() : std::vector<std::reference_wrapper<Entities::ILight>>& {query}
+			+{abstract} getLightList() : std::vector<std::reference_wrapper<Entities::ILight>>&
+			+{abstract} getPrimitiveList() : std::vector<std::reference_wrapper<Entities::IPrimitive>>& {query}
+			+{abstract} getPrimitiveList() : std::vector<std::reference_wrapper<Entities::IPrimitive>>&
+		}
+
+		abstract class IDisplayable::IDisplayableException {
+			+~IDisplayableException()
+			+{abstract} what() : char*
+		}
+
+		abstract class ISceneState {
+			+{abstract} getState() : int {query}
+			+{abstract} changeState(States state) : void
+		}
+
+		abstract class ISetting {
+			+{abstract} operatorbool() {query}
+			+{abstract} operatorconstchar*() {query}
+			+{abstract} operatordouble() {query}
+			+{abstract} operatorint() {query}
+			+{abstract} string() {query}
+			+~ISetting()
+			+{abstract} getLength() : int {query}
+			+{abstract} getConfig() : std::shared_ptr<libconfig::Config> {query}
+			+{abstract} getKey() : std::string {query}
+			+{abstract} getPath() : std::string {query}
+			+{abstract} get(const std::string& key) : std::unique_ptr<ISetting> {query}
+			+{abstract} get(int index) : std::unique_ptr<ISetting> {query}
+			+{abstract} get() : std::unique_ptr<ISetting> {query}
+			+{abstract} getSetting(const std::string& key) : void
+			+{abstract} getSetting(int index) : void
+			+{abstract} moveTo(const std::string& key) : void
+			+{abstract} moveTo(int index) : void
+		}
+
+		abstract class ISetting::IParsingException {
+			+~IParsingException()
+			+{abstract} what() : char*
+		}
+
+		abstract class ISetting::ITypeException {
+			+~ITypeException()
+			+{abstract} what() : char*
+		}
+
+		class Scene {
+			+Scene(ILogger& logger)
+			+~Scene()
+			-_displayable : Displayable
+			-_logger : ILogger&
+			-_state : SceneState
+			+isReady() : bool {query}
+			-_future : std::future<void>
+			-_cameras : std::vector<std::reference_wrapper<Entities::ICamera>>
+			+getCameras() : std::vector<std::reference_wrapper<Entities::ICamera>>& {query}
+			+cancel() : void
+			-loadConfig(const ISetting& setting) : void
+			+operator()(const ISetting &, const std::string& event) : void
+			+renders() : void
+			-waitTillCancel() : void
+			+wait_end() : void
+		}
+
+		class SceneLoader {
+			+SceneLoader(const std::string& filePath, ILogger& logger)
+			+~SceneLoader()
+			-_logger : ILogger&
+			-_lastWriteTime : std::filesystem::file_time_type
+			-function<void(const ISetting &) : std::map<std::string ,
+			-_filePath : std::string
+			-_configWrapper : std::unique_ptr<IConfig>
+			-_entityLoader : std::unique_ptr<Plugins::Entities::EntityLoader>
+			-_filterLoader : std::unique_ptr<Plugins::Filters::FilterLoader>
+			-_materialLoader : std::unique_ptr<Plugins::Materials::MaterialLoader>
+			+{static} checkGoodFile(const std::string& filePath) : void
+			+subscribe(const std::string& event, std::function<void ( const ISetting& )> func) : void
+			+update() : void
+		}
+
+		class SceneLoader::BadFileError {
+			+BadFileError(const std::string& error)
+			+what() : char*
+			-_error : std::string
+		}
+
+		class SceneState {
+			+SceneState()
+			+getState() : ISceneState::States {query}
+			-_state : States
+			-mutex : std::mutex
+			+changeState(const ISceneState::States& state) : void
+		}
+
+		class SettingWrapper {
+			+SettingWrapper(const std::shared_ptr<libconfig::Config>& config)
+			+SettingWrapper(const ISetting& src)
+			+operatorbool() {query}
+			+operatorconstchar*() {query}
+			+operatordouble() {query}
+			+operatorint() {query}
+			+string() {query}
+			+~SettingWrapper()
+			+getLength() : int {query}
+			-_setting : libconfig::Setting*
+			-_config : std::shared_ptr<libconfig::Config>
+			+getConfig() : std::shared_ptr<libconfig::Config> {query}
+			+getKey() : std::string {query}
+			+getPath() : std::string {query}
+			+get(const std::string& key) : std::unique_ptr<ISetting> {query}
+			+get(int index) : std::unique_ptr<ISetting> {query}
+			+get() : std::unique_ptr<ISetting> {query}
+			+getSetting(const std::string& key) : void
+			+getSetting(int index) : void
+			+moveTo(const std::string& key) : void
+			+moveTo(int index) : void
+		}
+
+		class SettingWrapper::ParsingException {
+			+ParsingException(const std::string& key)
+			+what() : char*
+			-_msg : std::string
+		}
+
+		class SettingWrapper::TypeException {
+			+TypeException(const std::string& key)
+			+what() : char*
+			-_msg : std::string
+		}
+
+		enum ISceneState::States {
+			CANCELLED
+			RUNNING
+		}
+	}
+
+	namespace PluginsExt {
+		namespace SpotLight {
+			class SpotLightCreator {
+				+~SpotLightCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<SpotLightEntity*>
+			}
+
+			class SpotLightEntity {
+				+SpotLightEntity(const Scenes::ISetting& config, ILogger& logger)
+				+~SpotLightEntity()
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				-_color : Images::Color
+				+getColor(const Entities::Transform::Vector3f& point, const Scenes::IDisplayable& displayable) : Images::Color {query}
+				+getColor() : Images::Color& {query}
+				+getType() : Type {query}
+				+isAmbient() : bool {query}
+				-_angle : double
+				-_power : double
+				-_radius : double
+				+getPower() : double {query}
+				+setColor(const Images::Color& color) : void
+			}
+		}
+
+		namespace Sphere {
+			class SphereCreator {
+				+~SphereCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<SphereEntity*>
+			}
+
+			class SphereEntity {
+				+SphereEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				-_radius : double
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>>
+			}
+		}
+
+		namespace PointLight {
+			class PointLightCreator {
+				+~PointLightCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<PointLightEntity*>
+			}
+
+			class PointLightEntity {
+				+PointLightEntity(const Scenes::ISetting& config, ILogger& logger)
+				+~PointLightEntity()
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				-_color : Images::Color
+				+getColor(const Entities::Transform::Vector3f& point, const Scenes::IDisplayable& displayable) : Images::Color {query}
+				+getColor() : Images::Color& {query}
+				+getType() : Type {query}
+				+isAmbient() : bool {query}
+				-_power : double
+				-_radius : double
+				+getPower() : double {query}
+				+setColor(const Images::Color& color) : void
+			}
+		}
+
+		namespace Plane {
+			class PlaneCreator {
+				+~PlaneCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<PlaneEntity*>
+			}
+
+			class PlaneEntity {
+				+PlaneEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>>
+			}
+		}
+
+		namespace PlainMaterial {
+			class PlainMaterial {
+				+PlainMaterial(const Scenes::ISetting& config)
+				-_ambient : Entities::Transform::Vector3f
+				-_diffuse : Entities::Transform::Vector3f
+				-_specular : Entities::Transform::Vector3f
+				-_color : Images::Color
+				+getColor(const Images::Ray& ray, const Entities::Transform::ITransform& centerObj, const Entities::Transform::Vector3f& intersect, const Scenes::IDisplayable& displayable) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+round(const Images::Color& color) : Images::Color {query}
+				-_shininess : double
+				+setColor(const Images::Color& color) : void
+			}
+
+			class PlainMaterialCreator {
+				+~PlainMaterialCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IMaterial*
+				-_elements : std::vector<PlainMaterial*>
+			}
+		}
+
+		namespace LimitedPlane {
+			class LimitedPlaneCreator {
+				+~LimitedPlaneCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<LimitedPlaneEntity*>
+			}
+
+			class LimitedPlaneEntity {
+				+LimitedPlaneEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				-_size : RayTracer::Entities::Transform::Vector2i
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<Entities::IMaterial>>
+			}
+		}
+
+		namespace LimitedCylinder {
+			class LimitedCylinderCreator {
+				+~LimitedCylinderCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<LimitedCylinderEntity*>
+			}
+
+			class LimitedCylinderEntity {
+				+LimitedCylinderEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_direction : Entities::Transform::Vector3f
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				-_height : double
+				-_radius : double
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>>
+			}
+		}
+
+		namespace LimitedCone {
+			class LimitedConeCreator {
+				+~LimitedConeCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<LimitedConeEntity*>
+			}
+
+			class LimitedConeEntity {
+				+LimitedConeEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				-_angle : double
+				-_height : double
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>>
+			}
+		}
+
+		namespace Disk {
+			class DiskCreator {
+				+~DiskCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<DiskEntity*>
+			}
+
+			class DiskEntity {
+				+DiskEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				-_radius : double
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<Entities::IMaterial>>
+			}
+		}
+
+		namespace Cylinder {
+			class CylinderCreator {
+				+~CylinderCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<CylinderEntity*>
+			}
+
+			class CylinderEntity {
+				+CylinderEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_direction : Entities::Transform::Vector3f
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				-_radius : double
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>>
+			}
+		}
+
+		namespace Cone {
+			class ConeCreator {
+				+~ConeCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<ConeEntity*>
+			}
+
+			class ConeEntity {
+				+ConeEntity(const Scenes::ISetting& config, ILogger& logger)
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				+getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Entities::Transform::Vector3f& intersect) : Images::Color {query}
+				+getType() : Type {query}
+				+isCollided(const Entities::Transform::Vector3f& point) : bool {query}
+				-_angle : double
+				+isCollided(const Images::Ray& ray) : std::optional<Entities::Transform::Vector3f> {query}
+				-_material : std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>>
+			}
+		}
+
+		namespace Camera {
+			class CameraCreator {
+				+~CameraCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<CameraEntity*>
+			}
+
+			class CameraEntity {
+				+CameraEntity(const Scenes::ISetting& config, ILogger& logger)
+				+~CameraEntity()
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_size : Entities::Transform::Vector2i
+				+getSize() : Entities::Transform::Vector2i& {query}
+				-_logger : ILogger&
+				-_image : Images::Image
+				+getImage() : Images::Image& {query}
+				+render(const Scenes::IDisplayable& displayable, const Scenes::ISceneState& state) : Images::Image&
+				+getType() : Type {query}
+				-_focal : double
+				+getFocal() : double {query}
+				-_maxThread : int
+				-_filters : std::list<std::reference_wrapper<Filters::IFilter>>
+				+getFilters() : std::list<std::reference_wrapper<Filters::IFilter>>&
+				+setFocal(double value) : void
+				+setSize(const Entities::Transform::Vector2i& vector) : void
+			}
+
+			namespace FullCustom {
+				class CameraCustomCreator {
+					+~CameraCustomCreator()
+					+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+					-_elements : std::vector<CameraCustomEntity*>
+				}
+
+				class CameraCustomEntity {
+					+CameraCustomEntity(const Scenes::ISetting& config, ILogger& logger)
+					+~CameraCustomEntity()
+					+getTransform() : Entities::Transform::ITransform&
+					+getTransform() : Entities::Transform::ITransform& {query}
+					-_positionCamera : Entities::Transform::Transform
+					-_screenSize : Entities::Transform::Vector2i
+					+getSize() : Entities::Transform::Vector2i& {query}
+					-_logger : ILogger&
+					+getImage() : Images::Image& {query}
+					+render(const Scenes::IDisplayable& displayable, const Scenes::ISceneState& state) : Images::Image&
+					+getType() : Type {query}
+					-_fov : double
+					+getFocal() : double {query}
+					-_maxThread : int
+					-_filters : std::list<std::reference_wrapper<Filters::IFilter>>
+					+getFilters() : std::list<std::reference_wrapper<Filters::IFilter>>&
+					-_image : std::optional<Images::Image>
+					+setFocal(double value) : void
+					+setSize(const Entities::Transform::Vector2i& vector) : void
+				}
+
+				class CustomRayIterator {
+					+CustomRayIterator(const Entities::Transform::Vector3f& cameraPos, const Entities::Transform::Vector2i& screenSize, const Entities::Transform::Vector3f& fov, std::size_t unit)
+					-_screenSize : Entities::Transform::Vector2i
+					-_cameraPos : Entities::Transform::Vector3f
+					-_fov : Entities::Transform::Vector3f
+					-_fovXYZ : Entities::Transform::Vector3f
+					+begin() : std::unique_ptr<Images::IRayIterator::IIterator> {query}
+					+end() : std::unique_ptr<Images::IRayIterator::IIterator> {query}
+				}
+
+				class CustomRayIterator::Iterator {
+					+Iterator(const Entities::Transform::Vector3f& cameraPos, const Entities::Transform::Vector2i& screenSize, const Entities::Transform::Vector3f& fovXYZ, const Entities::Transform::Vector3f& fov, std::size_t x, std::size_t y)
+					+operator=(const CustomRayIterator::Iterator& other) : CustomRayIterator :: Iterator&
+					-_screenSize : Entities::Transform::Vector2i
+					-_cameraPos : Entities::Transform::Vector3f
+					-_fov : Entities::Transform::Vector3f
+					-_fovXYZ : Entities::Transform::Vector3f
+					-_normal : Entities::Transform::Vector3f
+					+operator++() : IIterator&
+					+operator*() : Images :: Ray&
+					-_ray : Images::Ray
+					+operator!=(const Images::IRayIterator::IIterator& other) : bool {query}
+					+operator==(const Images::IRayIterator::IIterator& other) : bool {query}
+					-_x : std::size_t
+					-_y : std::size_t
+					+toString() : std::string {query}
+				}
+			}
+
+			namespace Clustered {
+				class CameraClusterCreator {
+					+~CameraClusterCreator()
+					+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+					-_elements : std::vector<CameraClusterEntity*>
+				}
+
+				class CameraClusterEntity {
+					+CameraClusterEntity(const Scenes::ISetting& config, ILogger& logger)
+					+~CameraClusterEntity()
+					+getTransform() : Entities::Transform::ITransform&
+					+getTransform() : Entities::Transform::ITransform& {query}
+					-_screen : Entities::Transform::Transform
+					-_screenSize : Entities::Transform::Vector2i
+					+getSize() : Entities::Transform::Vector2i& {query}
+					-_logger : ILogger&
+					+getImage() : Images::Image& {query}
+					+render(const Scenes::IDisplayable& displayable, const Scenes::ISceneState& state) : Images::Image&
+					+getType() : Type {query}
+					-_fov : double
+					+getFocal() : double {query}
+					-_cluster : int
+					-_maxThread : int
+					-_filters : std::list<std::reference_wrapper<Filters::IFilter>>
+					+getFilters() : std::list<std::reference_wrapper<Filters::IFilter>>&
+					-_image : std::optional<Images::Image>
+					+setFocal(double value) : void
+					+setSize(const Entities::Transform::Vector2i& vector) : void
+				}
+
+				class ClusterRayIterator {
+					+ClusterRayIterator(const Entities::Transform::Vector3f& cameraPos, const Entities::Transform::Vector3f& screenPosCenter, const Entities::Transform::Vector2i& screenSize, std::size_t unit)
+					-_screenSize : Entities::Transform::Vector2i
+					-_cameraPos : Entities::Transform::Vector3f
+					-_screenPosCenter : Entities::Transform::Vector3f
+					-_screenPosTopLeft : Entities::Transform::Vector3f
+					-_unit : std::size_t
+					+begin() : std::unique_ptr<Images::IRayIterator::IIterator> {query}
+					+end() : std::unique_ptr<Images::IRayIterator::IIterator> {query}
+				}
+
+				class ClusterRayIterator::Iterator {
+					+Iterator(const Entities::Transform::Vector3f& cameraPos, const Entities::Transform::Vector2i& screenSize, const Entities::Transform::Vector3f& screenPosCenter, std::size_t x, std::size_t y, std::size_t cluster)
+					+operator=(const ClusterRayIterator::Iterator& other) : ClusterRayIterator :: Iterator&
+					-_screenSize : Entities::Transform::Vector2i
+					-_cameraPos : Entities::Transform::Vector3f
+					-_screenPosTopLeft : Entities::Transform::Vector3f
+					+operator++() : IIterator&
+					+operator*() : Images :: Ray&
+					-_ray : Images::Ray
+					+operator!=(const Images::IRayIterator::IIterator& other) : bool {query}
+					+operator==(const Images::IRayIterator::IIterator& other) : bool {query}
+					-_cluster : std::size_t
+					-_x : std::size_t
+					-_y : std::size_t
+					+toString() : std::string {query}
+				}
+			}
+		}
+
+		namespace AntiAliasing {
+			namespace SSAAx4 {
+				class SSAAx4Creator {
+					+~SSAAx4Creator()
+					+create(const Scenes::ISetting& config, ILogger& logger) : Filters::IFilter*
+					-_elements : std::vector<SSAAx4Filter*>
+				}
+
+				class SSAAx4Filter {
+					+SSAAx4Filter(const Scenes::ISetting& config, ILogger& logger)
+					-_logger : ILogger&
+					-{static} getColorsMean(const std::vector<Images::Color>& colors) : Images::Color
+					-_maxThread : int
+					-_futures : std::vector<std::future<void>>
+					+apply(Images::Image& image) : void
+					-waitAllFinisehd() : void
+					-waitOnePlace() : void
+				}
+			}
+		}
+
+		namespace AmbientLight {
+			class AmbientLightCreator {
+				+~AmbientLightCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : RayTracer::Entities::IEntity*
+				-_elements : std::vector<AmbientLightEntity*>
+			}
+
+			class AmbientLightEntity {
+				+AmbientLightEntity(const Scenes::ISetting& config, ILogger& logger)
+				+~AmbientLightEntity()
+				+getTransform() : Entities::Transform::ITransform&
+				+getTransform() : Entities::Transform::ITransform& {query}
+				-_transform : Entities::Transform::Transform
+				-_logger : ILogger&
+				-_color : Images::Color
+				+getColor(const Entities::Transform::Vector3f& point, const Scenes::IDisplayable& displayable) : Images::Color {query}
+				+getColor() : Images::Color& {query}
+				+getType() : Type {query}
+				+isAmbient() : bool {query}
+				-_power : double
+				+getPower() : double {query}
+				+setColor(const Images::Color& color) : void
+			}
+		}
+	}
+
+	namespace Plugins {
+		class PluginHandler <template<typename Interface, typename Creator>> {
+			+PluginHandler(const std::string& filePath)
+			+~PluginHandler()
+			#_creator : Creator*
+			+get(const RayTracer::Scenes::ISetting& setting, ILogger& logger) : Interface&
+			#getResult(const std::string& name, Args&& ... __args) : T
+			#_filePath : std::string
+			#_elements : std::vector<Interface*>
+			#_handler : void*
+		}
+
+		class PluginLoader <template<typename Handler, typename Interface, typename Factory>> {
+			+PluginLoader(const std::string& directory)
+			#_directory : std::string
+			+load() : void
+		}
+
+		namespace Materials {
+			abstract class IMaterialCreator {
+				+~IMaterialCreator()
+				+{abstract} create(const Scenes::ISetting& setting, ILogger& logger) : RayTracer::Entities::IMaterial*
+			}
+
+			class MaterialHandler {
+				+MaterialHandler(const std::string& filePath)
+				-_handler : PluginHandler<RayTracer::Entities::IMaterial, IMaterialCreator>
+				+get(const RayTracer::Scenes::ISetting& setting, ILogger& logger) : RayTracer::Entities::IMaterial&
+			}
+
+			class MaterialLoader {
+				+MaterialLoader(const std::string& directory)
+				-_directory : std::string
+				+loadMaterials() : void
+			}
+		}
+
+		namespace Filters {
+			class FilterHandler {
+				+FilterHandler(const std::string& filePath)
+				-_handler : PluginHandler<RayTracer::Filters::IFilter, IFilterCreator>
+				+get(const RayTracer::Scenes::ISetting& setting, ILogger& logger) : RayTracer::Filters::IFilter&
+			}
+
+			class FilterLoader {
+				+FilterLoader(const std::string& directory)
+				+loadFilters() : void
+			}
+
+			abstract class IFilterCreator {
+				+~IFilterCreator()
+				+{abstract} create(const Scenes::ISetting& setting, ILogger& logger) : RayTracer::Filters::IFilter*
+			}
+		}
+
+		namespace Entities {
+			class EntityHandler {
+				+EntityHandler(const std::string& filePath)
+				-_handler : PluginHandler<RayTracer::Entities::IEntity, IEntityCreator>
+				+get(const RayTracer::Scenes::ISetting& setting, ILogger& logger) : RayTracer::Entities::IEntity&
+			}
+
+			class EntityLoader {
+				+EntityLoader(const std::string& directory)
+				-_directory : std::string
+				+loadEntities() : void
+			}
+
+			abstract class IEntityCreator {
+				+~IEntityCreator()
+				+{abstract} create(const Scenes::ISetting& setting, ILogger& logger) : RayTracer::Entities::IEntity*
+			}
+		}
+	}
+
+	namespace Images {
+		class Color {
+			+Color(const Color& color)
+			+Color(double r, double g, double b, double a)
+			+Color(const Scenes::ISetting& setting)
+			+~Color()
+			+operator*(const Color& other) : Color {query}
+			+operator+(const Color& other) : Color {query}
+			+operator-(const Color& other) : Color {query}
+			+operator/(const Color& other) : Color {query}
+			+operator=(const Color& other) : Color&
+			-_a : double
+			-_b : double
+			-_g : double
+			-_r : double
+			+operator[](Types type) : double& {query}
+			+operator[](Types type) : double&
+			-_mutex : std::mutex
+			+applyAlpha(const Color& background) : void
+			+applyDistance(double distance, double maxDistance) : void
+			+mergeColor(const Color& other) : void
+			+set(Types type, double value) : void
+		}
+
+		abstract class IRayIterator {
+			+~IRayIterator()
+			+{abstract} begin() : std::unique_ptr<IRayIterator::IIterator> {query}
+			+{abstract} end() : std::unique_ptr<IRayIterator::IIterator> {query}
+		}
+
+		abstract class IRayIterator::IIterator {
+			+~IIterator()
+			+{abstract} operator++() : IIterator&
+			+{abstract} operator*() : Ray&
+			+{abstract} operator!=(const IRayIterator::IIterator& other) : bool {query}
+			+{abstract} operator==(const IRayIterator::IIterator& other) : bool {query}
+			+{abstract} toString() : std::string {query}
+		}
+
+		class Image {
+			+Image(const Entities::Transform::Vector2i& size)
+			-_size : Entities::Transform::Vector2i
+			+getSize() : Entities::Transform::Vector2i& {query}
+			+operator[](std::size_t y) : PixelLine {query}
+			+operator[](std::size_t y) : PixelLine
+			-_pixels : std::vector<Color>
+			+convertToPPM(const std::string& filePath) : void {query}
+		}
+
+		class Image::PixelLine {
+			+PixelLine(const Entities::Transform::Vector2i& size, const std::size_t& y, std::vector<Color>& pixels)
+			+PixelLine(const Entities::Transform::Vector2i& size, const std::size_t& y, const std::vector<Color>& pixels)
+			+operator[](std::size_t x) : Color& {query}
+			+operator[](std::size_t x) : Color&
+			-_size : const Entities::Transform::Vector2i&
+			-_y : const std::size_t
+			-_pixelsConst : const std::vector<Color>&
+			-_colors : std::vector<Color>
+			-_pixels : std::vector<Color>&
+		}
+
+		class ImagePipeLine {
+			+ImagePipeLine(Image& image, const Scenes::IDisplayable& displayable, const Scenes::ISceneState& state, const IRayIterator& rayIterrator)
+			+~ImagePipeLine()
+			-_image : Image&
+			-_rayIterrator : const IRayIterator&
+			-_displayable : const Scenes::IDisplayable&
+			-_state : const Scenes::ISceneState&
+			+apply(Filters::IFilter& filter) : void
+			+generate(ILogger& logger, std::size_t maxThread, std::size_t cluster) : void
+		}
+
+		class PixelThread {
+			+PixelThread(const Scenes::IDisplayable& displayable, std::vector<std::reference_wrapper<Color>> colors, const Images::Ray& ray)
+			+~PixelThread()
+			-_ray : Images::Ray
+			-_displayable : const Scenes::IDisplayable&
+			-_colors : std::vector<std::reference_wrapper<Color>>
+			+operator()() : void
+		}
+
+		class Ray {
+			+Ray(const Entities::Transform::Vector3f& startCamera, const Entities::Transform::Vector3f& screenPos)
+			-_normal : Entities::Transform::Vector3f
+			-_origin : Entities::Transform::Vector3f
+			-_step : Entities::Transform::Vector3f
+			+getDirection() : Entities::Transform::Vector3f& {query}
+			+getOrigin() : Entities::Transform::Vector3f& {query}
+			+getStep() : Entities::Transform::Vector3f& {query}
+			+operator++() : Ray&
+			+operator--() : Ray&
+			+operator+=(double t) : void
+			+operator-=(double t) : void
+		}
+
+		class RayIterrator {
+			+RayIterrator(const Entities::ICamera& camera)
+			-_pov : Entities::Transform::Vector3f
+			-_afterLast : Ray
+			-_beforeFirst : Ray
+			-_camera : const Entities::ICamera&
+			-_cluster : std::size_t
+			+begin() : std::unique_ptr<IRayIterator::IIterator> {query}
+			+end() : std::unique_ptr<IRayIterator::IIterator> {query}
+		}
+
+		class RayIterrator::Iterrator {
+			+Iterrator(const Ray& last, const Entities::Transform::Vector2i& size, const Entities::Transform::Vector3f& screenPos, const Entities::Transform::Vector3f& pov)
+			+operator++() : IIterator&
+			-_ray : Ray
+			+operator*() : Ray&
+			+operator=(const RayIterrator::Iterrator& other) : RayIterrator :: Iterrator&
+			+operator!=(const IRayIterator::IIterator& other) : bool {query}
+			+operator==(const IRayIterator::IIterator& other) : bool {query}
+			-_size : const Entities::Transform::Vector2i
+			-_pov : const Entities::Transform::Vector3f
+			-_screenPos : const Entities::Transform::Vector3f
+			-_last : const Ray
+			-_cluster : std::size_t
+			+toString() : std::string {query}
+		}
+
+		enum Color::Types {
+			ALPHA
+			BLUE
+			GREEN
+			RED
+		}
+	}
+
+	namespace Filters {
+		abstract class IFilter {
+			+~IFilter()
+			+{abstract} apply(Images::Image& image) : void
+		}
+	}
+
+	namespace Factories {
+		class EntityFactory {
+			#EntityFactory()
+			+~EntityFactory()
+			+get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Entities::IEntity&
+			+{static} getInstance() : EntityFactory&
+			#{static} getFactory() : TFactory<Plugins::Entities::EntityHandler , Entities::IEntity>&
+			#{static} _factory : static std::unique_ptr<EntityFactory>
+			+add(const std::string& name, std::unique_ptr<Plugins::Entities::EntityHandler> handler) : void
+			+clearAll() : void
+		}
+
+		class FilterFactory {
+			#FilterFactory()
+			+~FilterFactory()
+			+{static} getInstance() : FilterFactory&
+			+get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Filters::IFilter&
+			#{static} getFactory() : TFactory<Plugins::Filters::FilterHandler , Filters::IFilter>&
+			#{static} _factory : static std::unique_ptr<FilterFactory>
+			+add(const std::string& name, std::unique_ptr<Plugins::Filters::FilterHandler> handler) : void
+			+clearAll() : void
+		}
+
+		abstract class IEntityFactory {
+			+~IEntityFactory()
+			+{abstract} get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Entities::IEntity&
+		}
+
+		abstract class IFilterFactory {
+			+~IFilterFactory()
+			+{abstract} get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Filters::IFilter&
+		}
+
+		abstract class IMaterialFactory {
+			+~IMaterialFactory()
+			+{abstract} get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Entities::IMaterial&
+		}
+
+		class MaterialFactory {
+			#MaterialFactory()
+			+~MaterialFactory()
+			+get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Entities::IMaterial&
+			+{static} getInstance() : MaterialFactory&
+			#{static} getFactory() : TFactory<Plugins::Materials::MaterialHandler , Entities::IMaterial>&
+			#{static} _factory : static std::unique_ptr<MaterialFactory>
+			+add(const std::string& name, std::unique_ptr<Plugins::Materials::MaterialHandler> handler) : void
+			+clearAll() : void
+		}
+
+		class TFactory <template<typename Handler, typename Interface>> {
+			#TFactory()
+			+~TFactory()
+			+get(const std::string& name, const Scenes::ISetting& setting, ILogger& logger) : Interface&
+			+{static} getFactory() : TFactory<Handler , Interface>&
+			#{static} _factory : static std::unique_ptr<TFactory<Handler, Interface>>
+			#_stock : std::map<std::string, std::unique_ptr<Handler>>
+			+add(const std::string& name, std::unique_ptr<Handler> handler) : void
+			+clearAll() : void
+		}
+	}
+
+	namespace Entities {
+		abstract class ICamera {
+			+~ICamera()
+			+{abstract} getImage() : Images::Image& {query}
+			+{abstract} render(const Scenes::IDisplayable& displayable, const Scenes::ISceneState& state) : Images::Image&
+			+{abstract} getSize() : Transform::Vector2i& {query}
+			+{abstract} getFocal() : double {query}
+			+{abstract} getFilters() : std::list<std::reference_wrapper<Filters::IFilter>>&
+			+{abstract} setFocal(double value) : void
+			+{abstract} setSize(const Transform::Vector2i& vector) : void
+		}
+
+		abstract class IEntity {
+			+~IEntity()
+			+{abstract} getTransform() : Transform::ITransform&
+			+{abstract} getTransform() : Transform::ITransform& {query}
+			+{abstract} getType() : int {query}
+		}
+
+		abstract class ILight {
+			+~ILight()
+			+{abstract} getColor(const Transform::Vector3f& point, const Scenes::IDisplayable& displayable) : Images::Color {query}
+			+{abstract} getColor() : Images::Color& {query}
+			+{abstract} isAmbient() : bool {query}
+			+{abstract} getPower() : double {query}
+			+{abstract} setColor(const Images::Color& color) : void
+		}
+
+		abstract class IMaterial {
+			+~IMaterial()
+			+{abstract} getColor(const Images::Ray& ray, const Transform::ITransform& centerObj, const Transform::Vector3f& intersect, const Scenes::IDisplayable& displayable) : Images::Color {query}
+			+{abstract} redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Transform::Vector3f& intersect) : Images::Color {query}
+			+{abstract} setColor(const Images::Color& color) : void
+		}
+
+		abstract class IPrimitive {
+			+~IPrimitive()
+			+{abstract} getColor(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Transform::Vector3f& intersect) : Images::Color {query}
+			+{abstract} redirectionLight(const Images::Ray& ray, const Scenes::IDisplayable& displayable, const Transform::Vector3f& intersect) : Images::Color {query}
+			+{abstract} isCollided(const Transform::Vector3f& point) : bool {query}
+			+{abstract} isCollided(const Images::Ray& ray) : std::optional<Transform::Vector3f> {query}
+		}
+
+		enum IEntity::Type {
+			Camera
+			Light
+			Primitive
+		}
+
+		namespace Transform {
+			abstract class ITransform {
+				+~ITransform()
+				+{abstract} operator=(const ITransform& other) : ITransform&
+				+{abstract} getPosition() : Vector3f& {query}
+				+{abstract} getRotation() : Vector3f& {query}
+				+{abstract} getScale() : Vector3f& {query}
+				+{abstract} setPosition(const Vector3f& position) : void
+				+{abstract} setRotation(const Vector3f& rotation) : void
+				+{abstract} setScale(const Vector3f& scale) : void
+			}
+
+			class Transform {
+				+Transform(const Scenes::ISetting& setting)
+				+operator=(const ITransform& other) : ITransform&
+				-_position : Vector3f
+				-_rotation : Vector3f
+				-_scale : Vector3f
+				+getPosition() : Vector3f& {query}
+				+getRotation() : Vector3f& {query}
+				+getScale() : Vector3f& {query}
+				+setPosition(const Vector3f& position) : void
+				+setRotation(const Vector3f& rotation) : void
+				+setScale(const Vector3f& scale) : void
+			}
+
+			class Vector2i {
+				+Vector2i()
+				+Vector2i(const Scenes::ISetting& config)
+				+Vector2i(const Vector2i& vector)
+				+Vector2i(int width, int height)
+				+~Vector2i()
+				+operator*(const Vector2i& other) : Vector2i {query}
+				+operator+(const Vector2i& other) : Vector2i {query}
+				+operator-(const Vector2i& other) : Vector2i {query}
+				+operator/(const Vector2i& other) : Vector2i {query}
+				+operator=(const Vector2i& other) : Vector2i&
+				-_x : int
+				-_y : int
+				+getX() : int {query}
+				+getY() : int {query}
+			}
+
+			class Vector3f {
+				+Vector3f()
+				+Vector3f(const Vector3f& vector3f)
+				+Vector3f(double x, double y, double z)
+				+Vector3f(const Scenes::ISetting& setting)
+				+~Vector3f()
+				+getNormalized() : Vector3f {query}
+				+operator*(const Vector3f& other) : Vector3f {query}
+				+operator+(const Vector3f& other) : Vector3f {query}
+				+operator-(const Vector3f& other) : Vector3f {query}
+				+operator/(const Vector3f& other) : Vector3f {query}
+				+rotateVector(const Vector3f& direction, const Vector3f& rotation) : Vector3f {query}
+				+rotateX(float angle) : Vector3f {query}
+				+rotateY(float angle) : Vector3f {query}
+				+rotateZ(float angle) : Vector3f {query}
+				+toDegrees() : Vector3f {query}
+				+toRadians() : Vector3f {query}
+				+operator=(const Vector3f& other) : Vector3f&
+				-_x : double
+				-_y : double
+				-_z : double
+				+dot(const Vector3f& other) : double {query}
+				+getAngle(const Vector3f& a, const Vector3f& c) : double {query}
+				+getDistance(const Vector3f& other) : double {query}
+				+getNorm() : double {query}
+				+getX() : double {query}
+				+getY() : double {query}
+				+getZ() : double {query}
+			}
+		}
+	}
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+RayTracer.Entities.ICamera <|-- RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Entities.ICamera <|-- RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Entities.ICamera <|-- RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Scenes.IConfig <|-- RayTracer.Scenes.ConfigWrapper
+
+
+RayTracer.Scenes.IDisplayable <|-- RayTracer.Scenes.Displayable
+
+
+RayTracer.Scenes.IDisplayable::IDisplayableException <|-- RayTracer.Scenes.Displayable::DisplayableException
+
+
+RayTracer.Entities.IEntity <|-- RayTracer.Entities.ICamera
+
+
+RayTracer.Entities.IEntity <|-- RayTracer.Entities.ILight
+
+
+RayTracer.Entities.IEntity <|-- RayTracer.Entities.IPrimitive
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Camera.CameraCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Camera.FullCustom.CameraCustomCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Cone.ConeCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Cylinder.CylinderCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Disk.DiskCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.LimitedCone.LimitedConeCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.LimitedPlane.LimitedPlaneCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Plane.PlaneCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.PointLight.PointLightCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.Sphere.SphereCreator
+
+
+RayTracer.Plugins.Entities.IEntityCreator <|-- RayTracer.PluginsExt.SpotLight.SpotLightCreator
+
+
+RayTracer.Factories.IEntityFactory <|-- RayTracer.Factories.EntityFactory
+
+
+RayTracer.Factories.IFilterFactory <|-- RayTracer.Factories.FilterFactory
+
+
+RayTracer.Entities.ILight <|-- RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Entities.ILight <|-- RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Entities.ILight <|-- RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.ILogger <|-- RayTracer.Logger
+
+
+RayTracer.Plugins.Materials.IMaterialCreator <|-- RayTracer.PluginsExt.PlainMaterial.PlainMaterialCreator
+
+
+RayTracer.Factories.IMaterialFactory <|-- RayTracer.Factories.MaterialFactory
+
+
+RayTracer.Entities.IPrimitive <|-- RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Entities.IPrimitive <|-- RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Entities.IPrimitive <|-- RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.IPrimitive <|-- RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Images.IRayIterator <|-- RayTracer.Images.RayIterrator
+
+
+RayTracer.Images.IRayIterator::IIterator <|-- RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.IRayIterator::IIterator <|-- RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.IRayIterator::IIterator <|-- RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Scenes.ISceneState <|-- RayTracer.Scenes.SceneState
+
+
+RayTracer.Scenes.ISetting <|-- RayTracer.Scenes.SettingWrapper
+
+
+RayTracer.Scenes.ISetting::IParsingException <|-- RayTracer.Scenes.SettingWrapper::ParsingException
+
+
+RayTracer.Scenes.ISetting::ITypeException <|-- RayTracer.Scenes.SettingWrapper::TypeException
+
+
+RayTracer.Entities.Transform.ITransform <|-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Plugins.PluginLoader <|-- RayTracer.Plugins.Entities.EntityLoader
+
+
+RayTracer.Plugins.PluginLoader <|-- RayTracer.Plugins.Filters.FilterLoader
+
+
+RayTracer.Plugins.PluginLoader <|-- RayTracer.Plugins.Materials.MaterialLoader
+
+
+
+
+
+/' Aggregation relationships '/
+
+RayTracer.PluginsExt.AmbientLight.AmbientLightCreator o-- RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.PluginsExt.AmbientLight.AmbientLightEntity *-- RayTracer.Images.Color
+
+
+RayTracer.PluginsExt.AmbientLight.AmbientLightEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.AmbientLight.AmbientLightEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator o-- RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity *-- RayTracer.Filters.IFilter
+
+
+RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity *-- RayTracer.Images.Image
+
+
+RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity "2" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.CameraCreator o-- RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CameraCustomCreator o-- RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity *-- RayTracer.Filters.IFilter
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity *-- RayTracer.Images.Image
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity "2" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.CameraEntity *-- RayTracer.Filters.IFilter
+
+
+RayTracer.PluginsExt.Camera.CameraEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Camera.CameraEntity *-- RayTracer.Images.Image
+
+
+RayTracer.PluginsExt.Camera.CameraEntity "2" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.CameraEntity *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator "4" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator "3" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator *-- RayTracer.Images.Ray
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator "3" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator "2" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.Cone.ConeCreator o-- RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.PluginsExt.Cone.ConeEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Cone.ConeEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.Cone.ConeEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Scenes.ConfigWrapper *-- RayTracer.ILogger
+
+
+RayTracer.Scenes.ConfigWrapper *-- RayTracer.Scenes.ISetting
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator "4" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator "3" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator *-- RayTracer.Images.Ray
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator "5" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator "4" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.Cylinder.CylinderCreator o-- RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.PluginsExt.Cylinder.CylinderEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Cylinder.CylinderEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.Cylinder.CylinderEntity "2" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.Cylinder.CylinderEntity *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.Disk.DiskCreator o-- RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.PluginsExt.Disk.DiskEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Disk.DiskEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.Disk.DiskEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Scenes.Displayable *-- RayTracer.Entities.ILight
+
+
+RayTracer.Scenes.Displayable *-- RayTracer.Entities.IPrimitive
+
+
+RayTracer.Factories.EntityFactory *-- RayTracer.Factories.EntityFactory
+
+
+RayTracer.Plugins.Entities.EntityHandler *-- RayTracer.Entities.IEntity
+
+
+RayTracer.Plugins.Entities.EntityHandler *-- RayTracer.Plugins.Entities.IEntityCreator
+
+
+RayTracer.Plugins.Entities.EntityHandler *-- RayTracer.Plugins.PluginHandler
+
+
+RayTracer.Factories.FilterFactory *-- RayTracer.Factories.FilterFactory
+
+
+RayTracer.Plugins.Filters.FilterHandler *-- RayTracer.Filters.IFilter
+
+
+RayTracer.Plugins.Filters.FilterHandler *-- RayTracer.Plugins.Filters.IFilterCreator
+
+
+RayTracer.Plugins.Filters.FilterHandler *-- RayTracer.Plugins.PluginHandler
+
+
+RayTracer.Images.Image *-- RayTracer.Images.Color
+
+
+RayTracer.Images.Image *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Images.Image *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Images.Image::PixelLine "3" *-- RayTracer.Images.Color
+
+
+RayTracer.Images.Image::PixelLine *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Images.Image::PixelLine *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Images.ImagePipeLine *-- RayTracer.Scenes.IDisplayable
+
+
+RayTracer.Images.ImagePipeLine *-- RayTracer.Images.IRayIterator
+
+
+RayTracer.Images.ImagePipeLine *-- RayTracer.Scenes.ISceneState
+
+
+RayTracer.Images.ImagePipeLine *-- RayTracer.Images.Image
+
+
+RayTracer.PluginsExt.LimitedCone.LimitedConeCreator o-- RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.PluginsExt.LimitedCone.LimitedConeEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.LimitedCone.LimitedConeEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.LimitedCone.LimitedConeEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderCreator o-- RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity "2" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.LimitedPlane.LimitedPlaneCreator o-- RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity "2" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Main *-- RayTracer.ILogger
+
+
+RayTracer.Main *-- RayTracer.Scenes.Scene
+
+
+RayTracer.Factories.MaterialFactory *-- RayTracer.Factories.MaterialFactory
+
+
+RayTracer.Plugins.Materials.MaterialHandler *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.Plugins.Materials.MaterialHandler *-- RayTracer.Plugins.Materials.IMaterialCreator
+
+
+RayTracer.Plugins.Materials.MaterialHandler *-- RayTracer.Plugins.PluginHandler
+
+
+RayTracer.Parameters *-- RayTracer.Parameters
+
+
+RayTracer.Images.PixelThread *-- RayTracer.Images.Color
+
+
+RayTracer.Images.PixelThread *-- RayTracer.Scenes.IDisplayable
+
+
+RayTracer.Images.PixelThread *-- RayTracer.Images.Ray
+
+
+RayTracer.PluginsExt.PlainMaterial.PlainMaterial *-- RayTracer.Images.Color
+
+
+RayTracer.PluginsExt.PlainMaterial.PlainMaterial "3" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.PlainMaterial.PlainMaterial "3" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.PlainMaterial.PlainMaterialCreator o-- RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.PluginsExt.Plane.PlaneCreator o-- RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.PluginsExt.Plane.PlaneEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Plane.PlaneEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.Plane.PlaneEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.PointLight.PointLightCreator o-- RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.PluginsExt.PointLight.PointLightEntity *-- RayTracer.Images.Color
+
+
+RayTracer.PluginsExt.PointLight.PointLightEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.PointLight.PointLightEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Progress *-- RayTracer.ILogger
+
+
+RayTracer.Images.Ray "3" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Images.Ray "3" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Images.RayIterrator *-- RayTracer.Entities.ICamera
+
+
+RayTracer.Images.RayIterrator "2" *-- RayTracer.Images.Ray
+
+
+RayTracer.Images.RayIterrator *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Images.RayIterrator *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Images.RayIterrator::Iterrator "2" *-- RayTracer.Images.Ray
+
+
+RayTracer.Images.RayIterrator::Iterrator "3" *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Images.RayIterrator::Iterrator *-- RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Images.RayIterrator::Iterrator "2" *-- RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Creator o-- RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter *-- RayTracer.ILogger
+
+
+RayTracer.Scenes.Scene *-- RayTracer.Scenes.Displayable
+
+
+RayTracer.Scenes.Scene *-- RayTracer.Entities.ICamera
+
+
+RayTracer.Scenes.Scene *-- RayTracer.ILogger
+
+
+RayTracer.Scenes.Scene *-- RayTracer.Scenes.SceneState
+
+
+RayTracer.Scenes.SceneLoader *-- RayTracer.Plugins.Entities.EntityLoader
+
+
+RayTracer.Scenes.SceneLoader *-- RayTracer.Plugins.Filters.FilterLoader
+
+
+RayTracer.Scenes.SceneLoader *-- RayTracer.Scenes.IConfig
+
+
+RayTracer.Scenes.SceneLoader *-- RayTracer.ILogger
+
+
+RayTracer.Scenes.SceneLoader *-- RayTracer.Plugins.Materials.MaterialLoader
+
+
+RayTracer.PluginsExt.Sphere.SphereCreator o-- RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.PluginsExt.Sphere.SphereEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.Sphere.SphereEntity *-- RayTracer.Entities.IMaterial
+
+
+RayTracer.PluginsExt.Sphere.SphereEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.PluginsExt.SpotLight.SpotLightCreator o-- RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.PluginsExt.SpotLight.SpotLightEntity *-- RayTracer.Images.Color
+
+
+RayTracer.PluginsExt.SpotLight.SpotLightEntity *-- RayTracer.ILogger
+
+
+RayTracer.PluginsExt.SpotLight.SpotLightEntity *-- RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Factories.TFactory *-- RayTracer.Factories.TFactory
+
+
+RayTracer.Entities.Transform.Transform "3" *-- RayTracer.Entities.Transform.Vector3f
+
+
+
+
+
+
+/' Dependency relationships '/
+
+RayTracer.Images.Color <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Color
+
+
+RayTracer.Images.Color <.. RayTracer.Entities.ILight
+
+
+RayTracer.Images.Color <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Image::PixelLine
+
+
+RayTracer.Images.Color <.. RayTracer.Images.Image::PixelLine
+
+
+RayTracer.Images.Color <.. RayTracer.Images.PixelThread
+
+
+RayTracer.Images.Color <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Color <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Color <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Images.Color <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Images.Color <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Plugins.Entities.EntityHandler <.. RayTracer.Factories.EntityFactory
+
+
+RayTracer.Plugins.Filters.FilterHandler <.. RayTracer.Factories.FilterFactory
+
+
+RayTracer.Entities.ICamera <.. RayTracer.Images.RayIterrator
+
+
+RayTracer.Filters.IFilter <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.Scenes.Scene
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.Scenes.Scene
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.Scenes.SceneLoader
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.Scenes.SceneLoader
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.Scenes.SettingWrapper
+
+
+RayTracer.Entities.Transform.ITransform <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Entities.Transform.ITransform <.. RayTracer.Entities.Transform.ITransform
+
+
+RayTracer.Entities.Transform.ITransform <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Entities.Transform.ITransform <.. RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Images.Image <.. RayTracer.Filters.IFilter
+
+
+RayTracer.Images.Image <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Camera.CameraCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Cone.ConeCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Logger <.. RayTracer.Scenes.ConfigWrapper
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Cylinder.CylinderCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Disk.DiskCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Logger <.. RayTracer.Factories.EntityFactory
+
+
+RayTracer.Logger <.. RayTracer.Plugins.Entities.EntityHandler
+
+
+RayTracer.Logger <.. RayTracer.Factories.FilterFactory
+
+
+RayTracer.Logger <.. RayTracer.Plugins.Filters.FilterHandler
+
+
+RayTracer.Logger <.. RayTracer.Plugins.Entities.IEntityCreator
+
+
+RayTracer.Logger <.. RayTracer.Factories.IEntityFactory
+
+
+RayTracer.Logger <.. RayTracer.Plugins.Filters.IFilterCreator
+
+
+RayTracer.Logger <.. RayTracer.Factories.IFilterFactory
+
+
+RayTracer.Logger <.. RayTracer.Plugins.Materials.IMaterialCreator
+
+
+RayTracer.Logger <.. RayTracer.Factories.IMaterialFactory
+
+
+RayTracer.Logger <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.LimitedCone.LimitedConeCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Logger <.. RayTracer.Main
+
+
+RayTracer.Logger <.. RayTracer.Factories.MaterialFactory
+
+
+RayTracer.Logger <.. RayTracer.Plugins.Materials.MaterialHandler
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterialCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Plane.PlaneCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Logger <.. RayTracer.Plugins.PluginHandler
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.PointLight.PointLightCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Logger <.. RayTracer.Progress
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Creator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Logger <.. RayTracer.Scenes.Scene
+
+
+RayTracer.Logger <.. RayTracer.Scenes.SceneLoader
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Sphere.SphereCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.SpotLight.SpotLightCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Logger <.. RayTracer.Factories.TFactory
+
+
+RayTracer.Plugins.Materials.MaterialHandler <.. RayTracer.Factories.MaterialFactory
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.Entities.EntityHandler
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.Filters.FilterHandler
+
+
+RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.IRayIterator::IIterator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.IRayIterator::IIterator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.Materials.MaterialHandler
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.PixelThread
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.PluginHandler
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.CameraCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Images.Color
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cone.ConeCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cylinder.CylinderCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Disk.DiskCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.EntityFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.FilterFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.ICamera
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.ICamera
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Plugins.Entities.IEntityCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.IEntityFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Plugins.Filters.IFilterCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.IFilterFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.ILight
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Plugins.Materials.IMaterialCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.IMaterialFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCone.LimitedConeCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.MaterialFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Images.PixelThread
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterialCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Plane.PlaneCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PointLight.PointLightCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Creator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Scenes.SceneState
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Sphere.SphereCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.SpotLight.SpotLightCreator
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Factories.TFactory
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Scenes.Scene <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.ICamera
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Image
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Image::PixelLine
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Image::PixelLine
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.ILight
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.ITransform
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.ITransform
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.ITransform
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.Ray
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.Ray
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Transform
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
+
+
+
+
+
+
+/' Nested objects '/
+
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator +-- RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Color +-- RayTracer.Images.Color::Types
+
+
+RayTracer.Scenes.ConfigWrapper +-- RayTracer.Scenes.ConfigWrapper::ReadException
+
+
+RayTracer.Scenes.ConfigWrapper +-- RayTracer.Scenes.ConfigWrapper::WriteException
+
+
+RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator +-- RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Scenes.Displayable +-- RayTracer.Scenes.Displayable::DisplayableException
+
+
+RayTracer.Scenes.IDisplayable +-- RayTracer.Scenes.IDisplayable::IDisplayableException
+
+
+RayTracer.Entities.IEntity +-- RayTracer.Entities.IEntity::Type
+
+
+RayTracer.Images.IRayIterator +-- RayTracer.Images.IRayIterator::IIterator
+
+
+RayTracer.Scenes.ISceneState +-- RayTracer.Scenes.ISceneState::States
+
+
+RayTracer.Scenes.ISetting +-- RayTracer.Scenes.ISetting::IParsingException
+
+
+RayTracer.Scenes.ISetting +-- RayTracer.Scenes.ISetting::ITypeException
+
+
+RayTracer.Images.Image +-- RayTracer.Images.Image::PixelLine
+
+
+RayTracer.Main +-- RayTracer.Main::ArgumentError
+
+
+RayTracer.Main +-- RayTracer.Main::MainError
+
+
+RayTracer.Parameters +-- RayTracer.Parameters::KeyNotFoundError
+
+
+RayTracer.Images.RayIterrator +-- RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Scenes.SceneLoader +-- RayTracer.Scenes.SceneLoader::BadFileError
+
+
+RayTracer.Scenes.SettingWrapper +-- RayTracer.Scenes.SettingWrapper::ParsingException
+
+
+RayTracer.Scenes.SettingWrapper +-- RayTracer.Scenes.SettingWrapper::TypeException
+
+
+
+
+@enduml

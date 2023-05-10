@@ -1,0 +1,335 @@
+.TH "RayTracer::Scenes::SettingWrapper" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::SettingWrapper \- The \fBSettingWrapper\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SettingWrapper\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBParsingException\fP"
+.br
+.RI "an exception for when the key is not found "
+.ti -1c
+.RI "class \fBTypeException\fP"
+.br
+.RI "an exception for when the key is not found "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSettingWrapper\fP (const std::shared_ptr< libconfig::Config > &config)"
+.br
+.RI "Creates a \fBSettingWrapper\fP\&. "
+.ti -1c
+.RI "\fBSettingWrapper\fP (const \fBISetting\fP &src)"
+.br
+.ti -1c
+.RI "\fB~SettingWrapper\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBgetSetting\fP (const std::string &key) final"
+.br
+.RI "get a precise setting of the config from key "
+.ti -1c
+.RI "void \fBgetSetting\fP (int index) final"
+.br
+.RI "access element at index "
+.ti -1c
+.RI "int \fBgetLength\fP () const final"
+.br
+.RI "get the length of the current key works only for lists, array, groups "
+.ti -1c
+.RI "std::string \fBgetPath\fP () const final"
+.br
+.RI "gets the full path of the current setting "
+.ti -1c
+.RI "std::string \fBgetKey\fP () const final"
+.br
+.RI "gets the key of the setting "
+.ti -1c
+.RI "std::shared_ptr< libconfig::Config > \fBgetConfig\fP () const final"
+.br
+.RI "gets the config of a setting "
+.ti -1c
+.RI "void \fBmoveTo\fP (const std::string &key) final"
+.br
+.RI "move to the given key "
+.ti -1c
+.RI "void \fBmoveTo\fP (int index) final"
+.br
+.RI "move to the given index "
+.ti -1c
+.RI "std::unique_ptr< \fBISetting\fP > \fBget\fP (const std::string &key) const final"
+.br
+.RI "search the setting at the given key in the childs "
+.ti -1c
+.RI "std::unique_ptr< \fBISetting\fP > \fBget\fP (int index) const final"
+.br
+.RI "search the setting at the given index in the childs "
+.ti -1c
+.RI "std::unique_ptr< \fBISetting\fP > \fBget\fP () const final"
+.br
+.RI "returns the current setting "
+.ti -1c
+.RI "\fBoperator bool\fP () const final"
+.br
+.RI "cast operator to get bool from setting "
+.ti -1c
+.RI "\fBoperator int\fP () const final"
+.br
+.ti -1c
+.RI "\fBoperator double\fP () const final"
+.br
+.ti -1c
+.RI "\fBoperator const char *\fP () const final"
+.br
+.ti -1c
+.RI "\fBoperator std::string\fP () const final"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "libconfig::Setting * \fB_setting\fP"
+.br
+.ti -1c
+.RI "std::shared_ptr< libconfig::Config > \fB_config\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSettingWrapper\fP class\&. 
+
+class that represent a setting in a scene configuration it allows the user to navigate through the scene configuration by changing the path of the setting 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Scenes::SettingWrapper::SettingWrapper (const std::shared_ptr< libconfig::Config > & config)\fC [explicit]\fP"
+
+.PP
+Creates a \fBSettingWrapper\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the config to wrap from libconfig++ 
+.RE
+.PP
+
+.SS "RayTracer::Scenes::SettingWrapper::SettingWrapper (const \fBISetting\fP & src)"
+
+.SS "RayTracer::Scenes::SettingWrapper::~SettingWrapper ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::unique_ptr<\fBISetting\fP> RayTracer::Scenes::SettingWrapper::get () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+returns the current setting 
+.PP
+\fBReturns\fP
+.RS 4
+a copy of the setting at the current emplacement 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "std::unique_ptr<\fBISetting\fP> RayTracer::Scenes::SettingWrapper::get (const std::string & key) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+search the setting at the given key in the childs 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key to go to
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a copy of the setting, moved to the key 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "std::unique_ptr<\fBISetting\fP> RayTracer::Scenes::SettingWrapper::get (int index) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+search the setting at the given index in the childs 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP the index to go to
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a copy of the setting, moved to the index 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "std::shared_ptr<libconfig::Config> RayTracer::Scenes::SettingWrapper::getConfig () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+gets the config of a setting 
+.PP
+\fBReturns\fP
+.RS 4
+the config 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "std::string RayTracer::Scenes::SettingWrapper::getKey () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+gets the key of the setting 
+.PP
+\fBReturns\fP
+.RS 4
+the key 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "int RayTracer::Scenes::SettingWrapper::getLength () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+get the length of the current key works only for lists, array, groups 
+.PP
+\fBReturns\fP
+.RS 4
+-1 if invalid type or size 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "std::string RayTracer::Scenes::SettingWrapper::getPath () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+gets the full path of the current setting 
+.PP
+\fBReturns\fP
+.RS 4
+the path 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "void RayTracer::Scenes::SettingWrapper::getSetting (const std::string & key)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+get a precise setting of the config from key 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the setting exists, false otherwise 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "void RayTracer::Scenes::SettingWrapper::getSetting (int index)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+access element at index 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP the index
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the setting exists, false otherwise 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "void RayTracer::Scenes::SettingWrapper::moveTo (const std::string & key)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+move to the given key 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "void RayTracer::Scenes::SettingWrapper::moveTo (int index)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+move to the given index 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP the index 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "RayTracer::Scenes::SettingWrapper::operator bool () const\fC [explicit]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+cast operator to get bool from setting 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "RayTracer::Scenes::SettingWrapper::operator const char * () const\fC [explicit]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "RayTracer::Scenes::SettingWrapper::operator double () const\fC [explicit]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "RayTracer::Scenes::SettingWrapper::operator int () const\fC [explicit]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SS "RayTracer::Scenes::SettingWrapper::operator std::string () const\fC [explicit]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::shared_ptr<libconfig::Config> RayTracer::Scenes::SettingWrapper::_config\fC [private]\fP"
+
+.SS "libconfig::Setting* RayTracer::Scenes::SettingWrapper::_setting\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

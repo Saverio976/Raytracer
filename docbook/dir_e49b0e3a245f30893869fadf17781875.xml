@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_e49b0e3a245f30893869fadf17781875" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom Directory Reference</primary></indexterm>
+Directory dependency graph for FullCustom:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_e49b0e3a245f30893869fadf17781875_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00248">CameraCustomCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00251">CameraCustomEntity.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00254">CustomRayIterator.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

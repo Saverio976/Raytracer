@@ -1,0 +1,83 @@
+.TH "RayTracer::Scenes::ISceneState" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::ISceneState \- The \fBSceneState\fP interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ISceneState\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Scenes::SceneState\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBStates\fP { \fBRUNNING\fP, \fBCANCELLED\fP }"
+.br
+.RI "The States\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBStates\fP \fBgetState\fP () const =0"
+.br
+.RI "Get the state (thread safe) "
+.ti -1c
+.RI "virtual void \fBchangeState\fP (const \fBStates\fP &state)=0"
+.br
+.RI "Change the state (thread safe) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSceneState\fP interface\&. 
+
+class that represent a scene state (to know if the scene is running or not) (or if the scene render need to be cancelled) 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBRayTracer::Scenes::ISceneState::States\fP\fC [strong]\fP"
+
+.PP
+The States\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRUNNING \fP\fP
+.TP
+\fB\fICANCELLED \fP\fP
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void RayTracer::Scenes::ISceneState::changeState (const \fBStates\fP & state)\fC [pure virtual]\fP"
+
+.PP
+Change the state (thread safe) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstate\fP the state 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SceneState\fP\&.
+.SS "virtual \fBStates\fP RayTracer::Scenes::ISceneState::getState () const\fC [pure virtual]\fP"
+
+.PP
+Get the state (thread safe) 
+.PP
+\fBReturns\fP
+.RS 4
+the state 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SceneState\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

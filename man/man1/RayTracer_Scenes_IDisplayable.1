@@ -1,0 +1,138 @@
+.TH "RayTracer::Scenes::IDisplayable" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::IDisplayable \- The \fBIDisplayable\fP interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDisplayable\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Scenes::Displayable\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIDisplayableException\fP"
+.br
+.RI "an exception for when the key is not found "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual const std::vector< std::reference_wrapper< \fBEntities::ILight\fP > > & \fBgetLightList\fP () const =0"
+.br
+.RI "Get the light list (const) "
+.ti -1c
+.RI "virtual std::vector< std::reference_wrapper< \fBEntities::ILight\fP > > & \fBgetLightList\fP ()=0"
+.br
+.RI "Get the light list\&. "
+.ti -1c
+.RI "virtual const std::vector< std::reference_wrapper< \fBEntities::IPrimitive\fP > > & \fBgetPrimitiveList\fP () const =0"
+.br
+.RI "Get the primitive list (const) "
+.ti -1c
+.RI "virtual std::vector< std::reference_wrapper< \fBEntities::IPrimitive\fP > > & \fBgetPrimitiveList\fP ()=0"
+.br
+.RI "Get the primitive list\&. "
+.ti -1c
+.RI "virtual const \fBEntities::ILight\fP & \fBgetAmbientLight\fP () const =0"
+.br
+.RI "Get the ambient light\&. "
+.ti -1c
+.RI "virtual \fBEntities::ILight\fP & \fBgetAmbientLight\fP ()=0"
+.br
+.RI "Get the ambient light\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBIDisplayable\fP interface\&. 
+
+interface that represent a displayable 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const \fBEntities::ILight\fP& RayTracer::Scenes::IDisplayable::getAmbientLight () const\fC [pure virtual]\fP"
+
+.PP
+Get the ambient light\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the ambient light 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::Displayable\fP\&.
+.SS "virtual \fBEntities::ILight\fP& RayTracer::Scenes::IDisplayable::getAmbientLight ()\fC [pure virtual]\fP"
+
+.PP
+Get the ambient light\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the ambient light 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::Displayable\fP\&.
+.SS "virtual const std::vector<std::reference_wrapper<\fBEntities::ILight\fP> >& RayTracer::Scenes::IDisplayable::getLightList () const\fC [pure virtual]\fP"
+
+.PP
+Get the light list (const) 
+.PP
+\fBReturns\fP
+.RS 4
+the light list 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::Displayable\fP\&.
+.SS "virtual std::vector<std::reference_wrapper<\fBEntities::ILight\fP> >& RayTracer::Scenes::IDisplayable::getLightList ()\fC [pure virtual]\fP"
+
+.PP
+Get the light list\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the light list 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::Displayable\fP\&.
+.SS "virtual const std::vector<std::reference_wrapper<\fBEntities::IPrimitive\fP> >& RayTracer::Scenes::IDisplayable::getPrimitiveList () const\fC [pure virtual]\fP"
+
+.PP
+Get the primitive list (const) 
+.PP
+\fBReturns\fP
+.RS 4
+the primitive list 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::Displayable\fP\&.
+.SS "virtual std::vector<std::reference_wrapper<\fBEntities::IPrimitive\fP> >& RayTracer::Scenes::IDisplayable::getPrimitiveList ()\fC [pure virtual]\fP"
+
+.PP
+Get the primitive list\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the primitive list 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::Displayable\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,118 @@
+.TH "RayTracer::Scenes::ConfigWrapper" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::ConfigWrapper
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ConfigWrapper\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Scenes::IConfig\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBReadException\fP"
+.br
+.RI "an exception for when the file can't be read "
+.ti -1c
+.RI "class \fBWriteException\fP"
+.br
+.RI "an exception for when the file can't be written "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConfigWrapper\fP (\fBILogger\fP &logger)"
+.br
+.ti -1c
+.RI "\fB~ConfigWrapper\fP () override=default"
+.br
+.ti -1c
+.RI "void \fBreadFile\fP (const std::string &path) override"
+.br
+.RI "read and parse the file at given path "
+.ti -1c
+.RI "void \fBwriteFile\fP (const std::string &path) override"
+.br
+.RI "writes the current config in a file at the given path "
+.ti -1c
+.RI "std::shared_ptr< \fBISetting\fP > \fBgetSetting\fP () const override"
+.br
+.RI "returns the current \fBSettingWrapper\fP "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::shared_ptr< libconfig::Config > \fB_config\fP"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBISetting\fP > \fB_scene\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Scenes::ConfigWrapper::ConfigWrapper (\fBILogger\fP & logger)"
+
+.SS "RayTracer::Scenes::ConfigWrapper::~ConfigWrapper ()\fC [override]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::shared_ptr<\fBISetting\fP> RayTracer::Scenes::ConfigWrapper::getSetting () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+returns the current \fBSettingWrapper\fP 
+.PP
+\fBReturns\fP
+.RS 4
+the current \fBSettingWrapper\fP 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::IConfig\fP\&.
+.SS "void RayTracer::Scenes::ConfigWrapper::readFile (const std::string & path)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+read and parse the file at given path 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP the path to the file 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::IConfig\fP\&.
+.SS "void RayTracer::Scenes::ConfigWrapper::writeFile (const std::string & path)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+writes the current config in a file at the given path 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP the path to the file 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::IConfig\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::shared_ptr<libconfig::Config> RayTracer::Scenes::ConfigWrapper::_config\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Scenes::ConfigWrapper::_logger\fC [private]\fP"
+
+.SS "std::shared_ptr<\fBISetting\fP> RayTracer::Scenes::ConfigWrapper::_scene\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

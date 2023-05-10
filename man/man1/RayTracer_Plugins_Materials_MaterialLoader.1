@@ -1,0 +1,65 @@
+.TH "RayTracer::Plugins::Materials::MaterialLoader" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Materials::MaterialLoader \- The \fBMaterialLoader\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MaterialLoader\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::PluginLoader< MaterialHandler, RayTracer::Entities::IMaterial, Factories::MaterialFactory >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMaterialLoader\fP (const std::string &directory)"
+.br
+.RI "\fBMaterialLoader\fP constructor (doesn't load anything) "
+.ti -1c
+.RI "void \fBloadMaterials\fP ()"
+.br
+.RI "Load all the materials in the factory singleton\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_directory\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBMaterialLoader\fP\&. 
+
+class that represent an material loader (take a directory and create \fBMaterialHandler\fP) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Plugins::Materials::MaterialLoader::MaterialLoader (const std::string & directory)"
+
+.PP
+\fBMaterialLoader\fP constructor (doesn't load anything) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirectory\fP the directory 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Plugins::Materials::MaterialLoader::loadMaterials ()"
+
+.PP
+Load all the materials in the factory singleton\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string RayTracer::Plugins::Materials::MaterialLoader::_directory\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

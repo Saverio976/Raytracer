@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00179" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/MaterialLoader.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/MaterialLoader.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &quot;TFactory.hpp&quot;
+#include &quot;IMaterial.hpp&quot;
+#include &quot;PluginLoader.hpp&quot;
+#include &quot;MaterialHandler.hpp&quot;
+#include &quot;MaterialFactory.hpp&quot;
+</programlisting>Include dependency graph for MaterialLoader.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00180.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00181.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01339">RayTracer::Plugins::Materials::MaterialLoader</link></para>
+
+<para>The <link linkend="_a01339">MaterialLoader</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00333">RayTracer::Plugins</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00336">RayTracer::Plugins::Materials</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

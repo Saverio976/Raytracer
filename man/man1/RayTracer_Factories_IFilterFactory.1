@@ -1,0 +1,57 @@
+.TH "RayTracer::Factories::IFilterFactory" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Factories::IFilterFactory \- The \fBFilterFactory\fP (singleton factory)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IFilterFactory\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Factories::FilterFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IFilterFactory\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBFilters::IFilter\fP & \fBget\fP (const std::string &name, const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger)=0"
+.br
+.RI "Get a filter\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBFilterFactory\fP (singleton factory) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Factories::IFilterFactory::~IFilterFactory ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBFilters::IFilter\fP& RayTracer::Factories::IFilterFactory::get (const std::string & name, const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [pure virtual]\fP"
+
+.PP
+Get a filter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIsetting\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the filter 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Factories::FilterFactory\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_23797dfc4efa85139749bce11a446eac" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight Directory Reference</primary></indexterm>
+Directory dependency graph for AmbientLight:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_23797dfc4efa85139749bce11a446eac_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00221">AmbientLightCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00224">AmbientLightEntity.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

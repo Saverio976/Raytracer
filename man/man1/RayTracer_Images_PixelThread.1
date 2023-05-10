@@ -1,0 +1,81 @@
+.TH "RayTracer::Images::PixelThread" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::PixelThread \- The \fBPixelThread\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PixelThread\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPixelThread\fP (const \fBScenes::IDisplayable\fP &displayable, std::vector< std::reference_wrapper< \fBColor\fP >> colors, const \fBImages::Ray\fP &ray)"
+.br
+.RI "\fBPixelThread\fP constructor (this doesn't do anything) "
+.ti -1c
+.RI "\fB~PixelThread\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBoperator()\fP ()"
+.br
+.RI "The function that actualy do all the work\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBScenes::IDisplayable\fP & \fB_displayable\fP"
+.br
+.ti -1c
+.RI "std::vector< std::reference_wrapper< \fBColor\fP > > \fB_colors\fP"
+.br
+.ti -1c
+.RI "\fBImages::Ray\fP \fB_ray\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBPixelThread\fP class\&. 
+
+class that represent a ray pixel calcul 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::PixelThread::PixelThread (const \fBScenes::IDisplayable\fP & displayable, std::vector< std::reference_wrapper< \fBColor\fP >> colors, const \fBImages::Ray\fP & ray)"
+
+.PP
+\fBPixelThread\fP constructor (this doesn't do anything) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdisplayable\fP the displayable to calcul 
+.br
+\fIcolor\fP the color to modify 
+.br
+\fIray\fP the ray 
+.RE
+.PP
+
+.SS "RayTracer::Images::PixelThread::~PixelThread ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Images::PixelThread::operator() ()"
+
+.PP
+The function that actualy do all the work\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::reference_wrapper<\fBColor\fP> > RayTracer::Images::PixelThread::_colors\fC [private]\fP"
+
+.SS "const \fBScenes::IDisplayable\fP& RayTracer::Images::PixelThread::_displayable\fC [private]\fP"
+
+.SS "\fBImages::Ray\fP RayTracer::Images::PixelThread::_ray\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

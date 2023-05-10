@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_c584899c254c4b537d8e386d8cf94f87" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cylinder Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cylinder Directory Reference</primary></indexterm>
+Directory dependency graph for Cylinder:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_c584899c254c4b537d8e386d8cf94f87_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00263">CylinderCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00266">CylinderEntity.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

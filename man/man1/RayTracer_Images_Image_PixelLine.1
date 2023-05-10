@@ -1,0 +1,137 @@
+.TH "RayTracer::Images::Image::PixelLine" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::Image::PixelLine \- \fBPixelLine\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Image\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPixelLine\fP (const \fBEntities::Transform::Vector2i\fP &size, const std::size_t &y, std::vector< \fBColor\fP > &pixels)"
+.br
+.RI "\fBPixelLine\fP\&. "
+.ti -1c
+.RI "\fBPixelLine\fP (const \fBEntities::Transform::Vector2i\fP &size, const std::size_t &y, const std::vector< \fBColor\fP > &pixels)"
+.br
+.RI "\fBPixelLine\fP\&. "
+.ti -1c
+.RI "const \fBColor\fP & \fBoperator[]\fP (std::size_t x) const"
+.br
+.RI "Get the color (const) "
+.ti -1c
+.RI "\fBColor\fP & \fBoperator[]\fP (std::size_t x)"
+.br
+.RI "Get the color\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBEntities::Transform::Vector2i\fP & \fB_size\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBColor\fP > \fB_colors\fP"
+.br
+.ti -1c
+.RI "const std::size_t \fB_y\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBColor\fP > & \fB_pixels\fP"
+.br
+.ti -1c
+.RI "const std::vector< \fBColor\fP > & \fB_pixelsConst\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBPixelLine\fP class\&. 
+
+class that represent a \fBPixelLine\fP (the line of pixel at line \fCy\fP) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::Image::PixelLine::PixelLine (const \fBEntities::Transform::Vector2i\fP & size, const std::size_t & y, std::vector< \fBColor\fP > & pixels)"
+
+.PP
+\fBPixelLine\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP the size 
+.br
+\fIy\fP the y 
+.br
+\fIpixels\fP the orginal pixels 
+.RE
+.PP
+
+.SS "RayTracer::Images::Image::PixelLine::PixelLine (const \fBEntities::Transform::Vector2i\fP & size, const std::size_t & y, const std::vector< \fBColor\fP > & pixels)"
+
+.PP
+\fBPixelLine\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP the size 
+.br
+\fIy\fP the y 
+.br
+\fIpixels\fP the orginal pixels (const) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBColor\fP& RayTracer::Images::Image::PixelLine::operator[] (std::size_t x)"
+
+.PP
+Get the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the x
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.SS "const \fBColor\fP& RayTracer::Images::Image::PixelLine::operator[] (std::size_t x) const"
+
+.PP
+Get the color (const) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP the x
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBColor\fP> RayTracer::Images::Image::PixelLine::_colors\fC [private]\fP"
+
+.SS "std::vector<\fBColor\fP>& RayTracer::Images::Image::PixelLine::_pixels\fC [private]\fP"
+
+.SS "const std::vector<\fBColor\fP>& RayTracer::Images::Image::PixelLine::_pixelsConst\fC [private]\fP"
+
+.SS "const \fBEntities::Transform::Vector2i\fP& RayTracer::Images::Image::PixelLine::_size\fC [private]\fP"
+
+.SS "const std::size_t RayTracer::Images::Image::PixelLine::_y\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

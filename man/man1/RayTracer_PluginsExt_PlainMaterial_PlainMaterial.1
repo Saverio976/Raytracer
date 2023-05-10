@@ -1,0 +1,134 @@
+.TH "RayTracer::PluginsExt::PlainMaterial::PlainMaterial" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::PlainMaterial::PlainMaterial
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PlainMaterial\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::IMaterial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlainMaterial\fP (const \fBScenes::ISetting\fP &config)"
+.br
+.ti -1c
+.RI "\fBImages::Color\fP \fBgetColor\fP (const \fBImages::Ray\fP &ray, const \fBEntities::Transform::ITransform\fP &centerObj, const \fBEntities::Transform::Vector3f\fP &intersect, const \fBScenes::IDisplayable\fP &displayable) const final"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "void \fBsetColor\fP (const \fBImages::Color\fP &color) final"
+.br
+.RI "Set the color\&. "
+.ti -1c
+.RI "\fBImages::Color\fP \fBredirectionLight\fP (const \fBImages::Ray\fP &ray, const \fBScenes::IDisplayable\fP &displayable, const \fBEntities::Transform::Vector3f\fP &intersect) const final"
+.br
+.RI "this function is called when the object intercept the ray light "
+.ti -1c
+.RI "\fBImages::Color\fP \fBround\fP (const \fBImages::Color\fP &color) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBImages::Color\fP \fB_color\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_ambient\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_diffuse\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_specular\fP"
+.br
+.ti -1c
+.RI "double \fB_shininess\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::PlainMaterial::PlainMaterial::PlainMaterial (const \fBScenes::ISetting\fP & config)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::getColor (const \fBImages::Ray\fP & ray, const \fBEntities::Transform::ITransform\fP & centerObj, const \fBEntities::Transform::Vector3f\fP & intersect, const \fBScenes::IDisplayable\fP & displayable) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcenterObj\fP the center of the object impacted 
+.br
+\fIintersect\fP the intersection point on the object 
+.br
+\fIdisplayable\fP the displayable objects
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IMaterial\fP\&.
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::redirectionLight (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBEntities::Transform::Vector3f\fP & intersect) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+this function is called when the object intercept the ray light 
+.PP
+\fBParameters\fP
+.RS 4
+\fIray\fP the ray between the light and the object 
+.br
+\fIdisplayable\fP the displayable 
+.br
+\fIintersect\fP the intersection point between this point and the ray
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color of the shadow 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IMaterial\fP\&.
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::round (const \fBImages::Color\fP & color) const"
+
+.SS "void RayTracer::PluginsExt::PlainMaterial::PlainMaterial::setColor (const \fBImages::Color\fP & color)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP the color 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IMaterial\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::_ambient\fC [private]\fP"
+
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::_color\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::_diffuse\fC [private]\fP"
+
+.SS "double RayTracer::PluginsExt::PlainMaterial::PlainMaterial::_shininess\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::PlainMaterial::PlainMaterial::_specular\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

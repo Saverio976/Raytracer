@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_94f36a39fb90e1f2b0528819abd4baaf" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Filters Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Filters Directory Reference</primary></indexterm>
+Directory dependency graph for Filters:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_94f36a39fb90e1f2b0528819abd4baaf_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00164">FilterHandler.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00167">FilterLoader.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00170">IFilterCreator.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

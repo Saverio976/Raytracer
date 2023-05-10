@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00212" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp</primary></indexterm>
+<programlisting>#include &lt;exception&gt;
+#include &lt;string&gt;
+#include &lt;functional&gt;
+#include &lt;map&gt;
+#include &lt;fstream&gt;
+#include &lt;filesystem&gt;
+#include &quot;FilterLoader.hpp&quot;
+#include &quot;EntityLoader.hpp&quot;
+#include &quot;MaterialLoader.hpp&quot;
+#include &quot;ConfigWrapper.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+</programlisting>Include dependency graph for SceneLoader.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00213.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01407">RayTracer::Scenes::SceneLoader</link></para>
+
+<para>The <link linkend="_a01407">SceneLoader</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01411">RayTracer::Scenes::SceneLoader::BadFileError</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00337">RayTracer::Scenes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

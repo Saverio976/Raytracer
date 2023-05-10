@@ -1,0 +1,211 @@
+.TH "RayTracer::Images::RayIterrator::Iterrator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::RayIterrator::Iterrator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RayIterrator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Images::IRayIterator::IIterator\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBiterator_category\fP = std::forward_iterator_tag"
+.br
+.ti -1c
+.RI "using \fBdifference_type\fP = \fBRay\fP"
+.br
+.ti -1c
+.RI "using \fBvalue_type\fP = \fBRay\fP"
+.br
+.ti -1c
+.RI "using \fBpointer\fP = \fBRay\fP *"
+.br
+.ti -1c
+.RI "using \fBreference\fP = \fBRay\fP &"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIterrator\fP (const \fBRay\fP &last, const \fBEntities::Transform::Vector2i\fP &size, const \fBEntities::Transform::Vector3f\fP &screenPos, const \fBEntities::Transform::Vector3f\fP &pov)"
+.br
+.ti -1c
+.RI "\fBIIterator\fP & \fBoperator++\fP () final"
+.br
+.RI "create the next \fBRayIterrator\fP (modify current instance) "
+.ti -1c
+.RI "\fBRay\fP & \fBoperator*\fP () final"
+.br
+.RI "Get the ray of the current \fBRayIterrator\fP\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBIRayIterator::IIterator\fP &other) const final"
+.br
+.RI "Compare two \fBRayIterrator\fP\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBIRayIterator::IIterator\fP &other) const final"
+.br
+.RI "Compare two \fBRayIterrator\fP\&. "
+.ti -1c
+.RI "\fBRayIterrator::Iterrator\fP & \fBoperator=\fP (const \fBRayIterrator::Iterrator\fP &other)"
+.br
+.RI "Compare two RayIterrator::iterrator\&. "
+.ti -1c
+.RI "std::string \fBtoString\fP () const final"
+.br
+.RI "toString "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBRay\fP \fB_last\fP"
+.br
+.ti -1c
+.RI "const \fBEntities::Transform::Vector2i\fP \fB_size\fP"
+.br
+.ti -1c
+.RI "const \fBEntities::Transform::Vector3f\fP \fB_screenPos\fP"
+.br
+.ti -1c
+.RI "const \fBEntities::Transform::Vector3f\fP \fB_pov\fP"
+.br
+.ti -1c
+.RI "\fBRay\fP \fB_ray\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_cluster\fP"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using \fBRayTracer::Images::RayIterrator::Iterrator::difference_type\fP =  \fBRay\fP"
+
+.SS "using \fBRayTracer::Images::RayIterrator::Iterrator::iterator_category\fP =  std::forward_iterator_tag"
+
+.SS "using \fBRayTracer::Images::RayIterrator::Iterrator::pointer\fP =  \fBRay\fP *"
+
+.SS "using \fBRayTracer::Images::RayIterrator::Iterrator::reference\fP =  \fBRay\fP &"
+
+.SS "using \fBRayTracer::Images::RayIterrator::Iterrator::value_type\fP =  \fBRay\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::RayIterrator::Iterrator::Iterrator (const \fBRay\fP & last, const \fBEntities::Transform::Vector2i\fP & size, const \fBEntities::Transform::Vector3f\fP & screenPos, const \fBEntities::Transform::Vector3f\fP & pov)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RayTracer::Images::RayIterrator::Iterrator::operator!= (const \fBIRayIterator::IIterator\fP & other) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Compare two \fBRayIterrator\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if not equal 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator::IIterator\fP\&.
+.SS "\fBRay\fP& RayTracer::Images::RayIterrator::Iterrator::operator* ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the ray of the current \fBRayIterrator\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the ray 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator::IIterator\fP\&.
+.SS "\fBIIterator\fP& RayTracer::Images::RayIterrator::Iterrator::operator++ ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+create the next \fBRayIterrator\fP (modify current instance) 
+.PP
+\fBReturns\fP
+.RS 4
+the current instance modified 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator::IIterator\fP\&.
+.SS "\fBRayIterrator::Iterrator\fP& RayTracer::Images::RayIterrator::Iterrator::operator= (const \fBRayIterrator::Iterrator\fP & other)"
+
+.PP
+Compare two RayIterrator::iterrator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.SS "bool RayTracer::Images::RayIterrator::Iterrator::operator== (const \fBIRayIterator::IIterator\fP & other) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Compare two \fBRayIterrator\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator::IIterator\fP\&.
+.SS "std::string RayTracer::Images::RayIterrator::Iterrator::toString () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+toString 
+.PP
+\fBReturns\fP
+.RS 4
+the string 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator::IIterator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::size_t RayTracer::Images::RayIterrator::Iterrator::_cluster\fC [private]\fP"
+
+.SS "const \fBRay\fP RayTracer::Images::RayIterrator::Iterrator::_last\fC [private]\fP"
+
+.SS "const \fBEntities::Transform::Vector3f\fP RayTracer::Images::RayIterrator::Iterrator::_pov\fC [private]\fP"
+
+.SS "\fBRay\fP RayTracer::Images::RayIterrator::Iterrator::_ray\fC [private]\fP"
+
+.SS "const \fBEntities::Transform::Vector3f\fP RayTracer::Images::RayIterrator::Iterrator::_screenPos\fC [private]\fP"
+
+.SS "const \fBEntities::Transform::Vector2i\fP RayTracer::Images::RayIterrator::Iterrator::_size\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00083" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp</primary></indexterm>
+<programlisting>#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for ITransform.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00084.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00085.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01191">RayTracer::Entities::Transform::ITransform</link></para>
+
+<para>The <link linkend="_a01191">ITransform</link> class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00328">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00329">RayTracer::Entities::Transform</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

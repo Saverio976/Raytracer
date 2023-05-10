@@ -1,0 +1,54 @@
+.TH "RayTracer::Plugins::Filters::FilterLoader" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Filters::FilterLoader \- The \fBFilterLoader\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FilterLoader\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::PluginLoader< FilterHandler, RayTracer::Filters::IFilter, Factories::FilterFactory >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFilterLoader\fP (const std::string &directory)"
+.br
+.RI "\fBFilterLoader\fP constructor (doesn't load anything) "
+.ti -1c
+.RI "void \fBloadFilters\fP ()"
+.br
+.RI "Load all the filters in the factory singleton\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBFilterLoader\fP\&. 
+
+class that represent a filter loader (take a directory) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Plugins::Filters::FilterLoader::FilterLoader (const std::string & directory)"
+
+.PP
+\fBFilterLoader\fP constructor (doesn't load anything) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirectory\fP the directory 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Plugins::Filters::FilterLoader::loadFilters ()"
+
+.PP
+Load all the filters in the factory singleton\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

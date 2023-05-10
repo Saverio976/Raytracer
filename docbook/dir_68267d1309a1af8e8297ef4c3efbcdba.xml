@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_68267d1309a1af8e8297ef4c3efbcdba" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src Directory Reference</primary></indexterm>
+Directory dependency graph for src:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_68267d1309a1af8e8297ef4c3efbcdba_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_093f3b7f7c7a61ef21fffb3d339f67e1">Entities</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_3dbe57e65c50a7a17fba27939d267647">Factories</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_34df5910c3dede183eac518413f13c07">Filters</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_58e3c3ebd10c56521cbe2e4a6271b724">Images</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_022e325a8f259b9b8d324d8b04589350">Plugins</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_d665af80335f773f8bfcf2f56b3f3e8a">Scenes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00119">ILogger.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00143">Logger.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00146">Main.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00149">Parameters.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00188">Progress.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

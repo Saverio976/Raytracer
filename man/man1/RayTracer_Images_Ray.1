@@ -1,0 +1,171 @@
+.TH "RayTracer::Images::Ray" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::Ray \- The \fBRay\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Ray\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRay\fP (const \fBEntities::Transform::Vector3f\fP &startCamera, const \fBEntities::Transform::Vector3f\fP &screenPos)"
+.br
+.RI "\fBRay\fP constructor\&. "
+.ti -1c
+.RI "const \fBEntities::Transform::Vector3f\fP & \fBgetOrigin\fP () const"
+.br
+.RI "Get origin (\fCscreenPos\fP) "
+.ti -1c
+.RI "const \fBEntities::Transform::Vector3f\fP & \fBgetDirection\fP () const"
+.br
+.RI "Get direction (the normal) "
+.ti -1c
+.RI "const \fBEntities::Transform::Vector3f\fP & \fBgetStep\fP () const"
+.br
+.RI "Get step (the current position of the ray) "
+.ti -1c
+.RI "void \fBoperator+=\fP (double t)"
+.br
+.RI "Add \fCt*normal\fP "
+.ti -1c
+.RI "void \fBoperator\-=\fP (double t)"
+.br
+.RI "Substract \fCt*normal\fP "
+.ti -1c
+.RI "\fBRay\fP & \fBoperator++\fP ()"
+.br
+.RI "Increment \fC1*normal\fP "
+.ti -1c
+.RI "\fBRay\fP & \fBoperator\-\-\fP ()"
+.br
+.RI "Decrement \fC1*normal\fP "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_origin\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_normal\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_step\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBRay\fP class\&. 
+
+class that represent a ray 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::Ray::Ray (const \fBEntities::Transform::Vector3f\fP & startCamera, const \fBEntities::Transform::Vector3f\fP & screenPos)"
+
+.PP
+\fBRay\fP constructor\&. calcul the normal between \fCstartCamera\fP and \fCscreenPos\fP and set the origin to \fCscreenPos\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIstartCamera\fP the camera position 
+.br
+\fIscreenPos\fP the screen position 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBEntities::Transform::Vector3f\fP& RayTracer::Images::Ray::getDirection () const"
+
+.PP
+Get direction (the normal) 
+.PP
+\fBReturns\fP
+.RS 4
+the direction 
+.RE
+.PP
+
+.SS "const \fBEntities::Transform::Vector3f\fP& RayTracer::Images::Ray::getOrigin () const"
+
+.PP
+Get origin (\fCscreenPos\fP) 
+.PP
+\fBReturns\fP
+.RS 4
+the origin 
+.RE
+.PP
+
+.SS "const \fBEntities::Transform::Vector3f\fP& RayTracer::Images::Ray::getStep () const"
+
+.PP
+Get step (the current position of the ray) 
+.PP
+\fBReturns\fP
+.RS 4
+the step 
+.RE
+.PP
+
+.SS "\fBRay\fP& RayTracer::Images::Ray::operator++ ()"
+
+.PP
+Increment \fC1*normal\fP 
+.PP
+\fBReturns\fP
+.RS 4
+the incremented 
+.RE
+.PP
+
+.SS "void RayTracer::Images::Ray::operator+= (double t)"
+
+.PP
+Add \fCt*normal\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIt\fP the step to add 
+.RE
+.PP
+
+.SS "\fBRay\fP& RayTracer::Images::Ray::operator\-\- ()"
+
+.PP
+Decrement \fC1*normal\fP 
+.PP
+\fBReturns\fP
+.RS 4
+the decremented 
+.RE
+.PP
+
+.SS "void RayTracer::Images::Ray::operator\-= (double t)"
+
+.PP
+Substract \fCt*normal\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIt\fP the step to substract 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::Images::Ray::_normal\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::Images::Ray::_origin\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::Images::Ray::_step\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

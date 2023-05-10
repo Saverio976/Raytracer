@@ -1,0 +1,206 @@
+.TH "RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClusterRayIterator\&.hpp>\fP
+.PP
+Inherits IRayIterator::IIterator\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBiterator_category\fP = std::forward_iterator_tag"
+.br
+.ti -1c
+.RI "using \fBdifference_type\fP = \fBImages::Ray\fP"
+.br
+.ti -1c
+.RI "using \fBvalue_type\fP = \fBImages::Ray\fP"
+.br
+.ti -1c
+.RI "using \fBpointer\fP = \fBImages::Ray\fP *"
+.br
+.ti -1c
+.RI "using \fBreference\fP = \fBImages::Ray\fP &"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIterator\fP (const \fBEntities::Transform::Vector3f\fP &cameraPos, const \fBEntities::Transform::Vector2i\fP &screenSize, const \fBEntities::Transform::Vector3f\fP &screenPosCenter, std::size_t x, std::size_t y, std::size_t cluster)"
+.br
+.ti -1c
+.RI "\fBIIterator\fP & \fBoperator++\fP () final"
+.br
+.RI "create the next \fBClusterRayIterator\fP "
+.ti -1c
+.RI "\fBImages::Ray\fP & \fBoperator*\fP () final"
+.br
+.RI "Get the ray of the current \fBClusterRayIterator\fP\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBImages::IRayIterator::IIterator\fP &other) const final"
+.br
+.RI "Compare two \fBClusterRayIterator\fP\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBImages::IRayIterator::IIterator\fP &other) const final"
+.br
+.RI "Compare two \fBClusterRayIterator\fP\&. "
+.ti -1c
+.RI "std::string \fBtoString\fP () const final"
+.br
+.RI "toString "
+.ti -1c
+.RI "\fBClusterRayIterator::Iterator\fP & \fBoperator=\fP (const \fBClusterRayIterator::Iterator\fP &other)"
+.br
+.RI "Compare two ClusterRayIterator::iterrator\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_cameraPos\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector2i\fP \fB_screenSize\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_screenPosTopLeft\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_cluster\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_x\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_y\fP"
+.br
+.ti -1c
+.RI "\fBImages::Ray\fP \fB_ray\fP"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::difference_type\fP =  \fBImages::Ray\fP"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::iterator_category\fP =  std::forward_iterator_tag"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::pointer\fP =  \fBImages::Ray\fP *"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::reference\fP =  \fBImages::Ray\fP &"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::value_type\fP =  \fBImages::Ray\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::Iterator (const \fBEntities::Transform::Vector3f\fP & cameraPos, const \fBEntities::Transform::Vector2i\fP & screenSize, const \fBEntities::Transform::Vector3f\fP & screenPosCenter, std::size_t x, std::size_t y, std::size_t cluster)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator!= (const \fBImages::IRayIterator::IIterator\fP & other) const\fC [final]\fP"
+
+.PP
+Compare two \fBClusterRayIterator\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if not equal 
+.RE
+.PP
+
+.SS "\fBImages::Ray\fP& RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator* ()\fC [final]\fP"
+
+.PP
+Get the ray of the current \fBClusterRayIterator\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the ray 
+.RE
+.PP
+
+.SS "\fBIIterator\fP& RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator++ ()\fC [final]\fP"
+
+.PP
+create the next \fBClusterRayIterator\fP 
+.PP
+\fBReturns\fP
+.RS 4
+the next \fBClusterRayIterator\fP 
+.RE
+.PP
+
+.SS "\fBClusterRayIterator::Iterator\fP& RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator= (const \fBClusterRayIterator::Iterator\fP & other)"
+
+.PP
+Compare two ClusterRayIterator::iterrator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.SS "bool RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator== (const \fBImages::IRayIterator::IIterator\fP & other) const\fC [final]\fP"
+
+.PP
+Compare two \fBClusterRayIterator\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.SS "std::string RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::toString () const\fC [final]\fP"
+
+.PP
+toString 
+.PP
+\fBReturns\fP
+.RS 4
+the string 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_cameraPos\fC [private]\fP"
+
+.SS "std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_cluster\fC [private]\fP"
+
+.SS "\fBImages::Ray\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_ray\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_screenPosTopLeft\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector2i\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_screenSize\fC [private]\fP"
+
+.SS "std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_x\fC [private]\fP"
+
+.SS "std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_y\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

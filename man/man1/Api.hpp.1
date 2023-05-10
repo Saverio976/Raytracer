@@ -1,0 +1,47 @@
+.TH "/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBgetCreator\fP (void)"
+.br
+.RI "Get the creator\&. "
+.ti -1c
+.RI "void \fBdeleteCreator\fP (void *creator)"
+.br
+.RI "Delete the creator (created with the \fC\fBgetCreator()\fP\fP method) "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void deleteCreator (void * creator)"
+
+.PP
+Delete the creator (created with the \fC\fBgetCreator()\fP\fP method) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcreator\fP 
+.RE
+.PP
+
+.SS "void* getCreator (void)"
+
+.PP
+Get the creator\&. The creator must be a class that has a \fC\&.create(const ISetting &settings)\fP method\&. This method must create an [ ILight | ICamera | IPrimitive | IFilter ]\&. There is no verification that the returning value is ok\&. So be cautious\&. Thx\&. For [ ILight | ICamera | IPrimitive ] they must inherite from IEntityCreator\&. For [ IFilter ] they must inherite from IFilterCreator\&.
+.PP
+\fBReturns\fP
+.RS 4
+the creator 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

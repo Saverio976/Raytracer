@@ -1,0 +1,76 @@
+.TH "RayTracer::Images::IRayIterator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::IRayIterator \- The RayIterator class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IRayIterator\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Images::RayIterrator\fP, \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator\fP, and \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIIterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IRayIterator\fP ()=default"
+.br
+.ti -1c
+.RI "virtual std::unique_ptr< \fBIRayIterator::IIterator\fP > \fBbegin\fP () const =0"
+.br
+.RI "Get the begin\&. "
+.ti -1c
+.RI "virtual std::unique_ptr< \fBIRayIterator::IIterator\fP > \fBend\fP () const =0"
+.br
+.RI "Get the end (out of range) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The RayIterator class\&. 
+
+class that represent an iterator of a ray 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Images::IRayIterator::~IRayIterator ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::unique_ptr<\fBIRayIterator::IIterator\fP> RayTracer::Images::IRayIterator::begin () const\fC [pure virtual]\fP"
+
+.PP
+Get the begin\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the begin 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator\fP, \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator\fP, and \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator\fP\&.
+.SS "virtual std::unique_ptr<\fBIRayIterator::IIterator\fP> RayTracer::Images::IRayIterator::end () const\fC [pure virtual]\fP"
+
+.PP
+Get the end (out of range) 
+.PP
+\fBReturns\fP
+.RS 4
+the end 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator\fP, \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator\fP, and \fBRayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

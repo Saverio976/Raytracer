@@ -1,0 +1,180 @@
+.TH "RayTracer::Entities::Transform::Transform" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::Transform::Transform \- The \fBTransform\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Transform\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransform\fP (const \fBScenes::ISetting\fP &setting)"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (const \fBVector3f\fP &position) final"
+.br
+.RI "Set the position\&. "
+.ti -1c
+.RI "const \fBVector3f\fP & \fBgetPosition\fP () const final"
+.br
+.RI "Get the position\&. "
+.ti -1c
+.RI "void \fBsetRotation\fP (const \fBVector3f\fP &rotation) final"
+.br
+.RI "Set the rotation\&. "
+.ti -1c
+.RI "const \fBVector3f\fP & \fBgetRotation\fP () const final"
+.br
+.RI "Get the rotation\&. "
+.ti -1c
+.RI "void \fBsetScale\fP (const \fBVector3f\fP &scale) final"
+.br
+.RI "Set the scale\&. "
+.ti -1c
+.RI "const \fBVector3f\fP & \fBgetScale\fP () const final"
+.br
+.RI "Get the scale\&. "
+.ti -1c
+.RI "\fBITransform\fP & \fBoperator=\fP (const \fBITransform\fP &other) final"
+.br
+.RI "Assign a transform\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVector3f\fP \fB_position\fP"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fB_rotation\fP"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fB_scale\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBTransform\fP class\&. 
+
+class that represent a transform (position, rotation, scale, \&.\&.) of an \fC\fBIEntity\fP\fP 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Entities::Transform::Transform::Transform (const \fBScenes::ISetting\fP & setting)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBVector3f\fP& RayTracer::Entities::Transform::Transform::getPosition () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the position\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the position 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "const \fBVector3f\fP& RayTracer::Entities::Transform::Transform::getRotation () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the rotation\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the rotation 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "const \fBVector3f\fP& RayTracer::Entities::Transform::Transform::getScale () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the scale\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the scale 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "\fBITransform\fP& RayTracer::Entities::Transform::Transform::operator= (const \fBITransform\fP & other)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Assign a transform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other transform
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the same transform modified 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "void RayTracer::Entities::Transform::Transform::setPosition (const \fBVector3f\fP & position)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposition\fP the position 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "void RayTracer::Entities::Transform::Transform::setRotation (const \fBVector3f\fP & rotation)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the rotation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrotation\fP the rotation 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SS "void RayTracer::Entities::Transform::Transform::setScale (const \fBVector3f\fP & scale)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the scale\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIscale\fP the scale 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::Transform::ITransform\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Transform::_position\fC [private]\fP"
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Transform::_rotation\fC [private]\fP"
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Transform::_scale\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

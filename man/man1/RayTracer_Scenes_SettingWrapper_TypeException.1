@@ -1,0 +1,51 @@
+.TH "RayTracer::Scenes::SettingWrapper::TypeException" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::SettingWrapper::TypeException \- an exception for when the key is not found  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SettingWrapper\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Scenes::ISetting::ITypeException\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTypeException\fP (const std::string &key)"
+.br
+.ti -1c
+.RI "const char * \fBwhat\fP () const final  throw ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_msg\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+an exception for when the key is not found 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Scenes::SettingWrapper::TypeException::TypeException (const std::string & key)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* RayTracer::Scenes::SettingWrapper::TypeException::what () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Scenes::ISetting::ITypeException\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string RayTracer::Scenes::SettingWrapper::TypeException::_msg\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

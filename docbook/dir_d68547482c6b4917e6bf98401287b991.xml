@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_d68547482c6b4917e6bf98401287b991" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone Directory Reference</primary></indexterm>
+Directory dependency graph for LimitedCone:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_d68547482c6b4917e6bf98401287b991_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00275">LimitedConeCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00278">LimitedConeEntity.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

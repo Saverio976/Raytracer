@@ -1,0 +1,2486 @@
+aficher ... \label{index_md__home_runner_work_Raytracer_Raytracer_README}%
+\Hypertarget{index_md__home_runner_work_Raytracer_Raytracer_README}%
+ Projet réalisé en 2ème année à EPITECH
+
+membres du projet\+:
+\begin{DoxyItemize}
+\item \href{https://github.com/Saverio976}{\texttt{ @\+Saverio976}}
+\item \href{https://github.com/bahmez}{\texttt{ @bahmez}}
+\item \href{https://github.com/SimonVermeulen}{\texttt{ @\+Simon\+Vermeulen}}
+\item \href{https://github.com/Amaz31}{\texttt{ @\+Amaz31}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md1}{}\doxysection{Introduction}\label{index_autotoc_md1}
+L\textquotesingle{}objectif est de réaliser un \href{https://fr.wikipedia.org/wiki/Ray_tracing}{\texttt{ Raytracer}} en \href{https://fr.wikipedia.org/wiki/C\%2B\%2B}{\texttt{ C++}}
+
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{reprere.png}%image
+\end{DoxyInlineImage}
+\hypertarget{index_autotoc_md2}{}\doxysection{Usage}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{USAGE: ./raytracer -\/-\/scene-\/path <scene-\/conf.yaax> -\/-\/output-\/path <file> [-\/-\/log-\/level <int>]}
+\DoxyCodeLine{USAGE: ./raytracer -\/-\/help}
+\DoxyCodeLine{}
+\DoxyCodeLine{OPTIONS:}
+\DoxyCodeLine{    -\/-\/scene-\/path <scene-\/conf.yaax>  path to scene config}
+\DoxyCodeLine{    -\/-\/output-\/path <file>    path to output file (dont put .ppm or any extension, it is just a base file path)}
+\DoxyCodeLine{    -\/-\/help  to display the help message}
+\DoxyCodeLine{    -\/-\/log-\/level <int>   log level can be \{-\/1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace\} [3 by default]}
+\DoxyCodeLine{}
+\DoxyCodeLine{CREDITS:}
+\DoxyCodeLine{    Authors: Y A A X}
+\DoxyCodeLine{    Repository: https://github.com/Saverio976/Raytracer}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{Exemples/\+Documentation}\label{index_autotoc_md3}
+les primitives sont\+:
+\begin{DoxyItemize}
+\item \href{\#Sphere}{\texttt{ Sphere}}
+\item \href{\#Plan}{\texttt{ Plan}}
+\item \href{\#Plan-Limit\%C3\%A9}{\texttt{ Plan-\/\+Limité}}
+\item \href{\#Disque}{\texttt{ Disque}}
+\item \href{\#Cone}{\texttt{ Cone}}
+\item \href{\#Cone-Limit\%C3\%A9}{\texttt{ Cone-\/\+Limité}}
+\item \href{\#Cylindre}{\texttt{ Cylindre}}
+\item \href{\#Cylindre-Limit\%C3\%A9}{\texttt{ Cylindre-\/\+Limité}}
+\end{DoxyItemize}
+
+les lumières sont\+:
+\begin{DoxyItemize}
+\item \href{\#PointLight}{\texttt{ Point\+Light}} (mais la documentation est sur toutes les primitives)
+\item \href{\#AmbientLight}{\texttt{ Ambient\+Light}} (mais la documentation est sur toutes les primitives)
+\item \href{\#SpotLight}{\texttt{ Spot\+Light}}
+\end{DoxyItemize}
+
+les cameras sont\+:
+\begin{DoxyItemize}
+\item \href{\#Camera}{\texttt{ Camera}} (mais la documentation est sur toutes les primitives)
+\item \href{\#CameraCluster}{\texttt{ Camera\+Cluster}}
+\end{DoxyItemize}
+
+les filtres sont\+:
+\begin{DoxyItemize}
+\item \href{\#SSAAx4}{\texttt{ SSAAx4}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{Sphere}\label{index_autotoc_md4}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{sphere1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#sphere.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \# notre sphere est configuré ici}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la sphere}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la sphere}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur de la sphere}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche de la sphere}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md5}{}\doxysubsection{Plan}\label{index_autotoc_md5}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{plan2-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+aficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#plan.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des plans}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \# Plan numéro 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du plan}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert d'agrandir un plan infini ?)}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé perpendiculaire au plan}
+\DoxyCodeLine{                \# cette config va faire un plan parallelle à la caméra}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur du plan}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du plan}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \# Plan numéro 2}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du plan}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert d'agrandir un plan infini ?)}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé perpendiculaire au plan}
+\DoxyCodeLine{                \# cette config va faire un plan correspondant au sol}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Couleur du plan}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du plan}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md6}{}\doxysection{Plan-\/\+Limité}\label{index_autotoc_md6}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{plan2-basic-limited.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+aficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#plan-\/limited.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des plans limité}
+\DoxyCodeLine{    LimitedPlane = (}
+\DoxyCodeLine{        \# Plan numéro 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du plan}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminue la taille x}
+\DoxyCodeLine{                \# Y: agrandis/diminue la taille y}
+\DoxyCodeLine{                \# Z: mettre a 0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé perpendiculaire au plan}
+\DoxyCodeLine{                \# cette config va faire un plan parallelle à la caméra}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Taille du plan}
+\DoxyCodeLine{            size = \{x: 100; y = 200;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur du plan}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du plan}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \# Plan numéro 2}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du plan}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminue la taille x}
+\DoxyCodeLine{                \# Y: agrandis/diminue la taille y}
+\DoxyCodeLine{                \# Z: mettre a 0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé perpendiculaire au plan}
+\DoxyCodeLine{                \# cette config va faire un plan correspondant au sol}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Taille du plan}
+\DoxyCodeLine{            size = \{x: 100; y = 100;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du plan (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Couleur du plan}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du plan}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md7}{}\doxysection{Disque}\label{index_autotoc_md7}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{disk2-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#disk.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des disk}
+\DoxyCodeLine{    Disk: (}
+\DoxyCodeLine{        \# Disque numéro 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du disque}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon du disque}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé perpendiculaire au disque}
+\DoxyCodeLine{                \# cette config va faire un disque parallelle à la caméra}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur du disque}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du disque}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \# Disque numéro 2}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du disque}
+\DoxyCodeLine{                position = \{x = 15.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon du disque}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé perpendiculaire au disque}
+\DoxyCodeLine{                \# cette config va faire un truc que je sais pas expliqué, c.f. l'exemple ci-\/dessous}
+\DoxyCodeLine{                rotation = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur du disque}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du disque}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md8}{}\doxysection{Cone}\label{index_autotoc_md8}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{cone1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# cone.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des cones}
+\DoxyCodeLine{    Cone: (}
+\DoxyCodeLine{        \# Cone numéro 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Angle du cone}
+\DoxyCodeLine{            angle = 1.0}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du cone}
+\DoxyCodeLine{                position = \{x = 0.0; y = 200.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus l'angle}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur qui va vers la direction du cone}
+\DoxyCodeLine{                \# ce cone regardera le ciel}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.57\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur du disque}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du disque}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md9}{}\doxysection{Cone-\/\+Limité}\label{index_autotoc_md9}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{cone1-basic-limited.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# cone-\/limited.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des cones}
+\DoxyCodeLine{    LimitedCone: (}
+\DoxyCodeLine{        \# Cone numéro 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Angle du cone}
+\DoxyCodeLine{            angle = 1.0;}
+\DoxyCodeLine{            \# Taille du cone}
+\DoxyCodeLine{            height = 200.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du cone}
+\DoxyCodeLine{                position = \{x = 0.0; y = 200.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus l'angle}
+\DoxyCodeLine{                \# Y: agrandis/diminus la taille}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# vecteur qui va vers la direction du cone}
+\DoxyCodeLine{                \# ce cone regardera le ciel}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.57\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur du disque}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche du disque}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur du disque (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md10}{}\doxysection{Cylindre}\label{index_autotoc_md10}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{cylinder1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# cylinder.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des cylindres}
+\DoxyCodeLine{    Cylinder = (}
+\DoxyCodeLine{        \# Cylindre numero 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du cylindre}
+\DoxyCodeLine{                position = \{x = 100.0; y = 0.0; z = -\/100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon du cylindre}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (La roation n'est pas supportée)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            \# Rayon du cylindre}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Couleur du cylindre}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation du matériau}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md11}{}\doxysection{Cylindre-\/\+Limité}\label{index_autotoc_md11}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{cylinder1-basic-limited.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# cylinder-\/limited.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des cylindres}
+\DoxyCodeLine{    LimitedCylinder = (}
+\DoxyCodeLine{        \# Cylindre numero 1}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position du cylindre}
+\DoxyCodeLine{                position = \{x = 100.0; y = 0.0; z = -\/100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon du cylindre}
+\DoxyCodeLine{                \# Y: agrandis/diminus la taille du cylindre}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (La roation n'est pas supportée)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            \# Rayon du cylindre}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            \# Taille du cylindre}
+\DoxyCodeLine{            height = 60.0;}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Couleur du cylindre}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation du matériau}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md12}{}\doxysubsection{Ambient\+Light}\label{index_autotoc_md12}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{ambientlight1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    \# \#\#\#\#\#\#\# Atention}
+\DoxyCodeLine{    \# \#\#\#\#\#\# Pour une question de test, la point light à un rayon de 1 (donc elle éclaire rien)}
+\DoxyCodeLine{    \# \#\#\#\#\#\# La scene devient noir si il n'y a qu'une source de lumière}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md13}{}\doxysubsection{Point\+Light}\label{index_autotoc_md13}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{pointlight1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# ambientlight.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    \#\#\#\#\#\# Atention}
+\DoxyCodeLine{    \# \#\#\# Pour le test, la puissance est à 0}
+\DoxyCodeLine{    \# \#\#\# Il y est obligé d'avoir 2 lumière sinon la scene devient noire}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 0.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md14}{}\doxysubsection{Spot\+Light}\label{index_autotoc_md14}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{spotlight1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    SpotLight = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = -\/50.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: agrandis/diminus l'angle de la lampe}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé de direction de la lampe}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = -\/0.5;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 5.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{            \# Angle de la lampe (comme le cone)}
+\DoxyCodeLine{            angle = 50.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md15}{}\doxysubsection{Camera}\label{index_autotoc_md15}
+Regarder la documentation pour les primitives, elle explique déjà bien le principe\hypertarget{index_autotoc_md16}{}\doxysubsection{Camera\+Cluster}\label{index_autotoc_md16}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{camera-cluster1.png}%cluster1
+\end{DoxyInlineImage}
+ 
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{camera-cluster2.png}%cluster2
+\end{DoxyInlineImage}
+ 
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{camera-cluster5.png}%cluster5
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# camera-\/cluster1.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration of the camera}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    CameraCluster: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'écran}
+\DoxyCodeLine{            screenSize = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            screen = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance entre la caméra est l'écran}
+\DoxyCodeLine{            distanceFromScreen = 200.0;}
+\DoxyCodeLine{            \# le rapport entre 1 rayon -\/> pixel}
+\DoxyCodeLine{            \# dans le cas présent, 1 rayon = 1 pixel}
+\DoxyCodeLine{            cluster = 1;}
+\DoxyCodeLine{            \# Nombre maximum de threads utilisé (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = ()}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    SpotLight = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = -\/50.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: agrandis/diminus l'angle de la lampe}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé de direction de la lampe}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = -\/0.5;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 5.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{            \# Angle de la lampe (comme le cone)}
+\DoxyCodeLine{            angle = 50.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# camera-\/cluster2.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration of the camera}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    CameraCluster: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'écran}
+\DoxyCodeLine{            screenSize = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            screen = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance entre la caméra est l'écran}
+\DoxyCodeLine{            distanceFromScreen = 200.0;}
+\DoxyCodeLine{            \# le rapport entre 1 rayon -\/> pixel}
+\DoxyCodeLine{            \# dans le cas présent, 1 rayon = 4 pixels}
+\DoxyCodeLine{            cluster = 2;}
+\DoxyCodeLine{            \# Nombre maximum de threads utilisé (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = ()}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    SpotLight = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = -\/50.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: agrandis/diminus l'angle de la lampe}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé de direction de la lampe}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = -\/0.5;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 5.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{            \# Angle de la lampe (comme le cone)}
+\DoxyCodeLine{            angle = 50.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# camera-\/cluster5.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration of the camera}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    CameraCluster: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'écran}
+\DoxyCodeLine{            screenSize = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            screen = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance entre la caméra est l'écran}
+\DoxyCodeLine{            distanceFromScreen = 200.0;}
+\DoxyCodeLine{            \# le rapport entre 1 rayon -\/> pixel}
+\DoxyCodeLine{            \# dans le cas présent, 1 rayon = 25 pixels}
+\DoxyCodeLine{            cluster = 5;}
+\DoxyCodeLine{            \# Nombre maximum de threads utilisé (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = ()}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    SpotLight = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = -\/50.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: agrandis/diminus l'angle de la lampe}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé de direction de la lampe}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = -\/0.5;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 5.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{            \# Angle de la lampe (comme le cone)}
+\DoxyCodeLine{            angle = 50.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+$<$details$>$\hypertarget{index_autotoc_md17}{}\doxysubsection{SSAAx4}\label{index_autotoc_md17}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{ssaax4-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+SSAAx4 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Configuration of the camera}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    CameraCluster: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'écran}
+\DoxyCodeLine{            screenSize = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            screen = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: Mettre 0.0 (pas suporté)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance entre la caméra est l'écran}
+\DoxyCodeLine{            distanceFromScreen = 200.0;}
+\DoxyCodeLine{            \# le rapport entre 1 rayon -\/> pixel}
+\DoxyCodeLine{            \# dans le cas présent, 1 rayon = 1 pixel}
+\DoxyCodeLine{            cluster = 1;}
+\DoxyCodeLine{            \# Nombre maximum de threads utilisé (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{}
+\DoxyCodeLine{                \# Filtre de type SSAAx4 (anti aliasing basique)}
+\DoxyCodeLine{                SSAAx4: (}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        maxThreads = -\/1;}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{                )}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Primitives in the scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# List of spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 15.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    Plane = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 150.0; z = 0.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 50.0; y = 50.0; z = 0.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = 10.0; z = -\/100.0;\};}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 1.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            size = \{x = 1000.0; y = 500.0; z = 500.0;\};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights: \{}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    SpotLight = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = -\/50.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: agrandis/diminus l'angle de la lampe}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# vecteur normalisé de direction de la lampe}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = -\/0.5;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 5.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{            \# Angle de la lampe (comme le cone)}
+\DoxyCodeLine{            angle = 50.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+$<$/details$>$ 

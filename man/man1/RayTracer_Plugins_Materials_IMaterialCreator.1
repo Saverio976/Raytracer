@@ -1,0 +1,57 @@
+.TH "RayTracer::Plugins::Materials::IMaterialCreator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Materials::IMaterialCreator \- The \fBIMaterialCreator\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IMaterialCreator\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IMaterialCreator\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBRayTracer::Entities::IMaterial\fP * \fBcreate\fP (const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger)=0"
+.br
+.RI "Create a material with a setting\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBIMaterialCreator\fP class\&. 
+
+class that represent a material creator 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Plugins::Materials::IMaterialCreator::~IMaterialCreator ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBRayTracer::Entities::IMaterial\fP* RayTracer::Plugins::Materials::IMaterialCreator::create (const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [pure virtual]\fP"
+
+.PP
+Create a material with a setting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,133 @@
+.TH "RayTracer::Plugins::PluginHandler< Interface, Creator >" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::PluginHandler< Interface, Creator > \- The \fBPluginHandler\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PluginHandler\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPluginHandler\fP (const std::string &filePath)"
+.br
+.RI "\fBPluginHandler\fP constructor (take a \&.so) "
+.ti -1c
+.RI "\fB~PluginHandler\fP ()"
+.br
+.ti -1c
+.RI "Interface & \fBget\fP (const \fBRayTracer::Scenes::ISetting\fP &setting, \fBILogger\fP &logger)"
+.br
+.RI "Get an interface (and create it with setting) "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , typename\&.\&.\&. Args> T \fBgetResult\fP (const std::string &name, Args &&\&.\&.\&. __args)"
+.br
+.RI "Call function inside the handler\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Creator * \fB_creator\fP"
+.br
+.ti -1c
+.RI "std::vector< Interface * > \fB_elements\fP"
+.br
+.ti -1c
+.RI "std::string \fB_filePath\fP"
+.br
+.ti -1c
+.RI "void * \fB_handler\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Interface, typename Creator>
+.br
+class RayTracer::Plugins::PluginHandler< Interface, Creator >"
+The \fBPluginHandler\fP class\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIInterface\fP the interface type of the value to get 
+.br
+\fICreator\fP the creator type to create the interface 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Interface , typename Creator > \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::\fBPluginHandler\fP (const std::string & filePath)\fC [inline]\fP"
+
+.PP
+\fBPluginHandler\fP constructor (take a \&.so) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the file path 
+.RE
+.PP
+
+.SS "template<typename Interface , typename Creator > \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::~\fBPluginHandler\fP ()\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Interface , typename Creator > Interface& \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::get (const \fBRayTracer::Scenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [inline]\fP"
+
+.PP
+Get an interface (and create it with setting) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the interface 
+.RE
+.PP
+
+.SS "template<typename Interface , typename Creator > template<typename T , typename\&.\&.\&. Args> T \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::getResult (const std::string & name, Args &&\&.\&.\&. __args)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Call function inside the handler\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name of the function 
+.br
+\fI__args\fP arguments of the function
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the result of the function called 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename Interface , typename Creator > Creator* \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::_creator\fC [protected]\fP"
+
+.SS "template<typename Interface , typename Creator > std::vector<Interface *> \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::_elements\fC [protected]\fP"
+
+.SS "template<typename Interface , typename Creator > std::string \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::_filePath\fC [protected]\fP"
+
+.SS "template<typename Interface , typename Creator > void* \fBRayTracer::Plugins::PluginHandler\fP< Interface, Creator >::_handler\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

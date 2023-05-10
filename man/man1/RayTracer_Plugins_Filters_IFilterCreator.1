@@ -1,0 +1,57 @@
+.TH "RayTracer::Plugins::Filters::IFilterCreator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Filters::IFilterCreator \- The \fBIFilterCreator\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IFilterCreator\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IFilterCreator\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBRayTracer::Filters::IFilter\fP * \fBcreate\fP (const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger)=0"
+.br
+.RI "Create a filter with a setting\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBIFilterCreator\fP class\&. 
+
+class that represent a filter creator 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Plugins::Filters::IFilterCreator::~IFilterCreator ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBRayTracer::Filters::IFilter\fP* RayTracer::Plugins::Filters::IFilterCreator::create (const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [pure virtual]\fP"
+
+.PP
+Create a filter with a setting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the filter 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

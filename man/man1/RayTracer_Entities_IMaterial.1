@@ -1,0 +1,104 @@
+.TH "RayTracer::Entities::IMaterial" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::IMaterial \- The \fBIMaterial\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IMaterial\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IMaterial\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBImages::Color\fP \fBgetColor\fP (const \fBImages::Ray\fP &ray, const \fBTransform::ITransform\fP &centerObj, const \fBTransform::Vector3f\fP &intersect, const \fBScenes::IDisplayable\fP &displayable) const =0"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "virtual void \fBsetColor\fP (const \fBImages::Color\fP &color)=0"
+.br
+.RI "Set the color\&. "
+.ti -1c
+.RI "virtual \fBImages::Color\fP \fBredirectionLight\fP (const \fBImages::Ray\fP &ray, const \fBScenes::IDisplayable\fP &displayable, const \fBTransform::Vector3f\fP &intersect) const =0"
+.br
+.RI "this function is called when the object intercept the ray light "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBIMaterial\fP class\&. 
+
+class that represent a material (color/texture) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Entities::IMaterial::~IMaterial ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBImages::Color\fP RayTracer::Entities::IMaterial::getColor (const \fBImages::Ray\fP & ray, const \fBTransform::ITransform\fP & centerObj, const \fBTransform::Vector3f\fP & intersect, const \fBScenes::IDisplayable\fP & displayable) const\fC [pure virtual]\fP"
+
+.PP
+Get the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcenterObj\fP the center of the object impacted 
+.br
+\fIintersect\fP the intersection point on the object 
+.br
+\fIdisplayable\fP the displayable objects
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP\&.
+.SS "virtual \fBImages::Color\fP RayTracer::Entities::IMaterial::redirectionLight (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBTransform::Vector3f\fP & intersect) const\fC [pure virtual]\fP"
+
+.PP
+this function is called when the object intercept the ray light 
+.PP
+\fBParameters\fP
+.RS 4
+\fIray\fP the ray between the light and the object 
+.br
+\fIdisplayable\fP the displayable 
+.br
+\fIintersect\fP the intersection point between this point and the ray
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color of the shadow 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP\&.
+.SS "virtual void RayTracer::Entities::IMaterial::setColor (const \fBImages::Color\fP & color)\fC [pure virtual]\fP"
+
+.PP
+Set the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP the color 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

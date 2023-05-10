@@ -1,0 +1,146 @@
+.TH "RayTracer::Factories::TFactory< Handler, Interface >" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Factories::TFactory< Handler, Interface > \- The \fBTFactory\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TFactory\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~TFactory\fP ()=default"
+.br
+.ti -1c
+.RI "\fBTFactory\fP (const \fBTFactory\fP< Handler, Interface > &other)=delete"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const std::string &name, std::unique_ptr< Handler > handler)"
+.br
+.RI "Add an \fChandler\fP "
+.ti -1c
+.RI "Interface & \fBget\fP (const std::string &name, const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger)"
+.br
+.RI "Get an \fCinterface\fP "
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.RI "Clear all handler\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBTFactory\fP< Handler, Interface > & \fBgetFactory\fP ()"
+.br
+.RI "Get the factory\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTFactory\fP ()=default"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, std::unique_ptr< Handler > > \fB_stock\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::unique_ptr< \fBTFactory\fP< Handler, Interface > > \fB_factory\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Handler, typename Interface>
+.br
+class RayTracer::Factories::TFactory< Handler, Interface >"
+The \fBTFactory\fP\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIHandler\fP the handler class type 
+.br
+\fIInterface\fP the interface class type 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Handler , typename Interface > \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::~\fBTFactory\fP ()\fC [default]\fP"
+
+.SS "template<typename Handler , typename Interface > \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::\fBTFactory\fP (const \fBTFactory\fP< Handler, Interface > & other)\fC [delete]\fP"
+
+.SS "template<typename Handler , typename Interface > \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::\fBTFactory\fP ()\fC [protected]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Handler , typename Interface > void \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::add (const std::string & name, std::unique_ptr< Handler > handler)\fC [inline]\fP"
+
+.PP
+Add an \fChandler\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIhandler\fP the handler 
+.RE
+.PP
+
+.SS "template<typename Handler , typename Interface > void \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::clearAll ()\fC [inline]\fP"
+
+.PP
+Clear all handler\&. 
+.SS "template<typename Handler , typename Interface > Interface& \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::get (const std::string & name, const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [inline]\fP"
+
+.PP
+Get an \fCinterface\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIsetting\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the interface 
+.RE
+.PP
+
+.SS "template<typename Handler , typename Interface > static \fBTFactory\fP<Handler, Interface>& \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::getFactory ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Get the factory\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the factory 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename Handler , typename Interface > std::unique_ptr<\fBTFactory\fP<Handler, Interface> > \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::_factory\fC [static]\fP, \fC [protected]\fP"
+
+.SS "template<typename Handler , typename Interface > std::map<std::string, std::unique_ptr<Handler> > \fBRayTracer::Factories::TFactory\fP< Handler, Interface >::_stock\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

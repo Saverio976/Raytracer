@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00122" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp</primary></indexterm>
+<programlisting>#include &lt;mutex&gt;
+#include &lt;ostream&gt;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for Color.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00123.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00124.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01243">RayTracer::Images::Color</link></para>
+
+<para>The <link linkend="_a01243">Color</link> class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00332">RayTracer::Images</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::ostream &amp; <link linkend="_a00122_1a892349ff4da33acc2d79e3c5c7585374">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01243">RayTracer::Images::Color</link> &amp;color)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a00122_1a892349ff4da33acc2d79e3c5c7585374"/>    <section>
+    <title>operator&lt;&lt;()</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Color.hpp</secondary></indexterm>
+<indexterm><primary>Color.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01243">RayTracer::Images::Color</link> &amp; color)</computeroutput></para></section>
+</section>
+</section>

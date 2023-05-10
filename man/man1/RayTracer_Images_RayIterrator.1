@@ -1,0 +1,117 @@
+.TH "RayTracer::Images::RayIterrator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::RayIterrator \- The \fBRayIterrator\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RayIterrator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Images::IRayIterator\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIterrator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRayIterrator\fP (const \fBEntities::ICamera\fP &camera)"
+.br
+.RI "Constructor\&. "
+.ti -1c
+.RI "std::unique_ptr< \fBIRayIterator::IIterator\fP > \fBbegin\fP () const final"
+.br
+.RI "Get the begin\&. "
+.ti -1c
+.RI "std::unique_ptr< \fBIRayIterator::IIterator\fP > \fBend\fP () const final"
+.br
+.RI "Get the end (out of range) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBEntities::ICamera\fP & \fB_camera\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_pov\fP"
+.br
+.ti -1c
+.RI "\fBRay\fP \fB_beforeFirst\fP"
+.br
+.ti -1c
+.RI "\fBRay\fP \fB_afterLast\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_cluster\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBRayIterrator\fP class\&. 
+
+class that represent an iterator of a ray 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::RayIterrator::RayIterrator (const \fBEntities::ICamera\fP & camera)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcamera\fP the camera to create the ray itterator 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::unique_ptr<\fBIRayIterator::IIterator\fP> RayTracer::Images::RayIterrator::begin () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the begin\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the begin 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator\fP\&.
+.SS "std::unique_ptr<\fBIRayIterator::IIterator\fP> RayTracer::Images::RayIterrator::end () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the end (out of range) 
+.PP
+\fBReturns\fP
+.RS 4
+the end 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBRay\fP RayTracer::Images::RayIterrator::_afterLast\fC [private]\fP"
+
+.SS "\fBRay\fP RayTracer::Images::RayIterrator::_beforeFirst\fC [private]\fP"
+
+.SS "const \fBEntities::ICamera\fP& RayTracer::Images::RayIterrator::_camera\fC [private]\fP"
+
+.SS "std::size_t RayTracer::Images::RayIterrator::_cluster\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::Images::RayIterrator::_pov\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

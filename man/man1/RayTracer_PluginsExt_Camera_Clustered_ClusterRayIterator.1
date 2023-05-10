@@ -1,0 +1,117 @@
+.TH "RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator \- The \fBClusterRayIterator\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClusterRayIterator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Images::IRayIterator\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClusterRayIterator\fP (const \fBEntities::Transform::Vector3f\fP &cameraPos, const \fBEntities::Transform::Vector3f\fP &screenPosCenter, const \fBEntities::Transform::Vector2i\fP &screenSize, std::size_t unit)"
+.br
+.RI "Constructor\&. "
+.ti -1c
+.RI "std::unique_ptr< \fBImages::IRayIterator::IIterator\fP > \fBbegin\fP () const final"
+.br
+.RI "begin of the iterator "
+.ti -1c
+.RI "std::unique_ptr< \fBImages::IRayIterator::IIterator\fP > \fBend\fP () const final"
+.br
+.RI "end of the iterator "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_cameraPos\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_screenPosCenter\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_screenPosTopLeft\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector2i\fP \fB_screenSize\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_unit\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBClusterRayIterator\fP class\&. 
+
+class that represent an iterator of a ray 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::ClusterRayIterator (const \fBEntities::Transform::Vector3f\fP & cameraPos, const \fBEntities::Transform::Vector3f\fP & screenPosCenter, const \fBEntities::Transform::Vector2i\fP & screenSize, std::size_t unit)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcamera\fP the camera to create the ray itterator 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::unique_ptr<\fBImages::IRayIterator::IIterator\fP> RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::begin () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+begin of the iterator 
+.PP
+\fBReturns\fP
+.RS 4
+the iterator 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator\fP\&.
+.SS "std::unique_ptr<\fBImages::IRayIterator::IIterator\fP> RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::end () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+end of the iterator 
+.PP
+\fBReturns\fP
+.RS 4
+the iterator 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Images::IRayIterator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_cameraPos\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_screenPosCenter\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_screenPosTopLeft\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector2i\fP RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_screenSize\fC [private]\fP"
+
+.SS "std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_unit\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

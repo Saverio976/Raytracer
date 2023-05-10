@@ -1,0 +1,253 @@
+.TH "RayTracer::PluginsExt::Camera::CameraEntity" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Camera::CameraEntity
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CameraEntity\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::ICamera\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCameraEntity\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger)"
+.br
+.ti -1c
+.RI "\fB~CameraEntity\fP ()=default"
+.br
+.ti -1c
+.RI "\fBType\fP \fBgetType\fP () const final"
+.br
+.RI "Get the type (light, camera, primitive) "
+.ti -1c
+.RI "\fBEntities::Transform::ITransform\fP & \fBgetTransform\fP () final"
+.br
+.RI "Get the transform (position, rotation, scale) "
+.ti -1c
+.RI "const \fBEntities::Transform::ITransform\fP & \fBgetTransform\fP () const final"
+.br
+.RI "Get the transform (position, rotation, scale) (const) "
+.ti -1c
+.RI "double \fBgetFocal\fP () const final"
+.br
+.RI "Get the focal (distance from the camera) "
+.ti -1c
+.RI "void \fBsetFocal\fP (double value) final"
+.br
+.RI "Set the focal (distance from the camera) "
+.ti -1c
+.RI "void \fBsetSize\fP (const \fBEntities::Transform::Vector2i\fP &vector) final"
+.br
+.RI "Set the size (of the screen) "
+.ti -1c
+.RI "const \fBEntities::Transform::Vector2i\fP & \fBgetSize\fP () const final"
+.br
+.RI "Get the size (of the screen) "
+.ti -1c
+.RI "const \fBImages::Image\fP & \fBrender\fP (const \fBScenes::IDisplayable\fP &displayable, const \fBScenes::ISceneState\fP &state) final"
+.br
+.RI "Render an image\&. "
+.ti -1c
+.RI "const \fBImages::Image\fP & \fBgetImage\fP () const final"
+.br
+.RI "Get the image (possible when rendering) "
+.ti -1c
+.RI "std::list< std::reference_wrapper< \fBFilters::IFilter\fP > > & \fBgetFilters\fP () final"
+.br
+.RI "Get the filters\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBImages::Image\fP \fB_image\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector2i\fP \fB_size\fP"
+.br
+.ti -1c
+.RI "double \fB_focal\fP"
+.br
+.ti -1c
+.RI "std::list< std::reference_wrapper< \fBFilters::IFilter\fP > > \fB_filters\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Transform\fP \fB_transform\fP"
+.br
+.ti -1c
+.RI "int \fB_maxThread\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Camera::CameraEntity::CameraEntity (const \fBScenes::ISetting\fP & config, \fBILogger\fP & logger)"
+
+.SS "RayTracer::PluginsExt::Camera::CameraEntity::~CameraEntity ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::list<std::reference_wrapper<\fBFilters::IFilter\fP> >& RayTracer::PluginsExt::Camera::CameraEntity::getFilters ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the filters\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the filters 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "double RayTracer::PluginsExt::Camera::CameraEntity::getFocal () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the focal (distance from the camera) 
+.PP
+\fBReturns\fP
+.RS 4
+the focal 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "const \fBImages::Image\fP& RayTracer::PluginsExt::Camera::CameraEntity::getImage () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the image (possible when rendering) 
+.PP
+\fBReturns\fP
+.RS 4
+the image 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "const \fBEntities::Transform::Vector2i\fP& RayTracer::PluginsExt::Camera::CameraEntity::getSize () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the size (of the screen) 
+.PP
+\fBReturns\fP
+.RS 4
+the size 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "const \fBEntities::Transform::ITransform\fP& RayTracer::PluginsExt::Camera::CameraEntity::getTransform () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the transform (position, rotation, scale) (const) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "\fBEntities::Transform::ITransform\fP& RayTracer::PluginsExt::Camera::CameraEntity::getTransform ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the transform (position, rotation, scale) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "\fBType\fP RayTracer::PluginsExt::Camera::CameraEntity::getType () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the type (light, camera, primitive) 
+.PP
+\fBReturns\fP
+.RS 4
+the type 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "const \fBImages::Image\fP& RayTracer::PluginsExt::Camera::CameraEntity::render (const \fBScenes::IDisplayable\fP & displayable, const \fBScenes::ISceneState\fP & state)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Render an image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdisplayable\fP the displayable 
+.br
+\fIstate\fP the state (if cancel needed)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the image 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "void RayTracer::PluginsExt::Camera::CameraEntity::setFocal (double value)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the focal (distance from the camera) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP the focal 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "void RayTracer::PluginsExt::Camera::CameraEntity::setSize (const \fBEntities::Transform::Vector2i\fP & vector)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the size (of the screen) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP the size 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::list<std::reference_wrapper<\fBFilters::IFilter\fP> > RayTracer::PluginsExt::Camera::CameraEntity::_filters\fC [private]\fP"
+
+.SS "double RayTracer::PluginsExt::Camera::CameraEntity::_focal\fC [private]\fP"
+
+.SS "\fBImages::Image\fP RayTracer::PluginsExt::Camera::CameraEntity::_image\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::PluginsExt::Camera::CameraEntity::_logger\fC [private]\fP"
+
+.SS "int RayTracer::PluginsExt::Camera::CameraEntity::_maxThread\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector2i\fP RayTracer::PluginsExt::Camera::CameraEntity::_size\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Transform\fP RayTracer::PluginsExt::Camera::CameraEntity::_transform\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

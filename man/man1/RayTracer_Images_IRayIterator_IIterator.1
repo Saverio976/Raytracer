@@ -1,0 +1,155 @@
+.TH "RayTracer::Images::IRayIterator::IIterator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::IRayIterator::IIterator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IRayIterator\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Images::RayIterrator::Iterrator\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBiterator_category\fP = std::forward_iterator_tag"
+.br
+.ti -1c
+.RI "using \fBdifference_type\fP = \fBRay\fP"
+.br
+.ti -1c
+.RI "using \fBvalue_type\fP = \fBRay\fP"
+.br
+.ti -1c
+.RI "using \fBpointer\fP = \fBRay\fP *"
+.br
+.ti -1c
+.RI "using \fBreference\fP = \fBRay\fP &"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IIterator\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBIIterator\fP & \fBoperator++\fP ()=0"
+.br
+.RI "create the next RayIterator and modify current instance "
+.ti -1c
+.RI "virtual \fBRay\fP & \fBoperator*\fP ()=0"
+.br
+.RI "Get the ray of the current RayIterator\&. "
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const \fBIRayIterator::IIterator\fP &other) const =0"
+.br
+.RI "Compare two RayIterator\&. "
+.ti -1c
+.RI "virtual bool \fBoperator!=\fP (const \fBIRayIterator::IIterator\fP &other) const =0"
+.br
+.RI "Compare two RayIterator\&. "
+.ti -1c
+.RI "virtual std::string \fBtoString\fP () const =0"
+.br
+.RI "toString "
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using \fBRayTracer::Images::IRayIterator::IIterator::difference_type\fP =  \fBRay\fP"
+
+.SS "using \fBRayTracer::Images::IRayIterator::IIterator::iterator_category\fP =  std::forward_iterator_tag"
+
+.SS "using \fBRayTracer::Images::IRayIterator::IIterator::pointer\fP =  \fBRay\fP *"
+
+.SS "using \fBRayTracer::Images::IRayIterator::IIterator::reference\fP =  \fBRay\fP &"
+
+.SS "using \fBRayTracer::Images::IRayIterator::IIterator::value_type\fP =  \fBRay\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Images::IRayIterator::IIterator::~IIterator ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool RayTracer::Images::IRayIterator::IIterator::operator!= (const \fBIRayIterator::IIterator\fP & other) const\fC [pure virtual]\fP"
+
+.PP
+Compare two RayIterator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if not equal 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator::Iterrator\fP\&.
+.SS "virtual \fBRay\fP& RayTracer::Images::IRayIterator::IIterator::operator* ()\fC [pure virtual]\fP"
+
+.PP
+Get the ray of the current RayIterator\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the ray 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator::Iterrator\fP\&.
+.SS "virtual \fBIIterator\fP& RayTracer::Images::IRayIterator::IIterator::operator++ ()\fC [pure virtual]\fP"
+
+.PP
+create the next RayIterator and modify current instance 
+.PP
+\fBReturns\fP
+.RS 4
+the current instance 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator::Iterrator\fP\&.
+.SS "virtual bool RayTracer::Images::IRayIterator::IIterator::operator== (const \fBIRayIterator::IIterator\fP & other) const\fC [pure virtual]\fP"
+
+.PP
+Compare two RayIterator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator::Iterrator\fP\&.
+.SS "virtual std::string RayTracer::Images::IRayIterator::IIterator::toString () const\fC [pure virtual]\fP"
+
+.PP
+toString 
+.PP
+\fBReturns\fP
+.RS 4
+the string 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Images::RayIterrator::Iterrator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

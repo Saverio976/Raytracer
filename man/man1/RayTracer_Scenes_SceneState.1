@@ -1,0 +1,89 @@
+.TH "RayTracer::Scenes::SceneState" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::SceneState \- The \fBSceneState\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SceneState\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Scenes::ISceneState\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSceneState\fP ()"
+.br
+.RI "\fBSceneState\fP\&. "
+.ti -1c
+.RI "\fBISceneState::States\fP \fBgetState\fP () const final"
+.br
+.RI "Get the state (thread safe) "
+.ti -1c
+.RI "void \fBchangeState\fP (const \fBISceneState::States\fP &state) final"
+.br
+.RI "Change the state (thread safe) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBStates\fP \fB_state\fP"
+.br
+.ti -1c
+.RI "std::mutex \fBmutex\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBSceneState\fP class\&. 
+
+class that represent a scene state (to know if the scene is running or not) (or if the scene render need to be cancelled) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Scenes::SceneState::SceneState ()"
+
+.PP
+\fBSceneState\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Scenes::SceneState::changeState (const \fBISceneState::States\fP & state)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Change the state (thread safe) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstate\fP the state 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISceneState\fP\&.
+.SS "\fBISceneState::States\fP RayTracer::Scenes::SceneState::getState () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the state (thread safe) 
+.PP
+\fBReturns\fP
+.RS 4
+the state 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Scenes::ISceneState\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBStates\fP RayTracer::Scenes::SceneState::_state\fC [private]\fP"
+
+.SS "std::mutex RayTracer::Scenes::SceneState::mutex\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

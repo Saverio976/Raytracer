@@ -1,0 +1,347 @@
+.TH "RayTracer::Images::Color" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::Color \- The \fBColor\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Color\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBTypes\fP { \fBRED\fP, \fBGREEN\fP, \fBBLUE\fP, \fBALPHA\fP }"
+.br
+.RI "Type of color\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Color\fP ()=default"
+.br
+.ti -1c
+.RI "\fBColor\fP (const \fBColor\fP &color)"
+.br
+.RI "Construct a new \fBColor\fP object\&. "
+.ti -1c
+.RI "\fBColor\fP (double r, double g, double b, double a)"
+.br
+.RI "Construct a new \fBColor\fP object\&. "
+.ti -1c
+.RI "\fBColor\fP (const \fBScenes::ISetting\fP &setting)"
+.br
+.RI "Construct a new \fBColor\fP object with setting\&. "
+.ti -1c
+.RI "\fBColor\fP \fBoperator+\fP (const \fBColor\fP &other) const"
+.br
+.RI "Addition two colors\&. "
+.ti -1c
+.RI "\fBColor\fP \fBoperator\-\fP (const \fBColor\fP &other) const"
+.br
+.RI "Subtraction two colors\&. "
+.ti -1c
+.RI "\fBColor\fP \fBoperator*\fP (const \fBColor\fP &other) const"
+.br
+.RI "Multiplication two colors\&. "
+.ti -1c
+.RI "\fBColor\fP \fBoperator/\fP (const \fBColor\fP &other) const"
+.br
+.RI "Division two colors\&. "
+.ti -1c
+.RI "\fBColor\fP & \fBoperator=\fP (const \fBColor\fP &other)"
+.br
+.RI "Assign a color\&. "
+.ti -1c
+.RI "const double & \fBoperator[]\fP (const \fBTypes\fP &type) const"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "double & \fBoperator[]\fP (const \fBTypes\fP &type)"
+.br
+.RI "Get the color (not thread safe !!) "
+.ti -1c
+.RI "void \fBset\fP (const \fBTypes\fP &type, double value)"
+.br
+.RI "set the color (thread safe) "
+.ti -1c
+.RI "void \fBapplyAlpha\fP (const \fBColor\fP &background)"
+.br
+.RI "apply alpha of the color with background (thread safe) "
+.ti -1c
+.RI "void \fBmergeColor\fP (const \fBColor\fP &other)"
+.br
+.RI "merge color with another one (thread safe) "
+.ti -1c
+.RI "void \fBapplyDistance\fP (double distance, double maxDistance)"
+.br
+.RI "apply distance in the color "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fB_r\fP"
+.br
+.ti -1c
+.RI "double \fB_g\fP"
+.br
+.ti -1c
+.RI "double \fB_b\fP"
+.br
+.ti -1c
+.RI "double \fB_a\fP"
+.br
+.ti -1c
+.RI "std::mutex \fB_mutex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBColor\fP class\&. 
+
+class that represent a color 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBRayTracer::Images::Color::Types\fP\fC [strong]\fP"
+
+.PP
+Type of color\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIBLUE \fP\fP
+.TP
+\fB\fIALPHA \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::Color::~Color ()\fC [default]\fP"
+
+.SS "RayTracer::Images::Color::Color (const \fBColor\fP & color)"
+
+.PP
+Construct a new \fBColor\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP the color 
+.RE
+.PP
+
+.SS "RayTracer::Images::Color::Color (double r, double g, double b, double a)"
+
+.PP
+Construct a new \fBColor\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIr\fP red 
+.br
+\fIg\fP green 
+.br
+\fIb\fP blue 
+.br
+\fIa\fP alpha 
+.RE
+.PP
+
+.SS "RayTracer::Images::Color::Color (const \fBScenes::ISetting\fP & setting)"
+
+.PP
+Construct a new \fBColor\fP object with setting\&. Key needed: r, g, b, a
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Images::Color::applyAlpha (const \fBColor\fP & background)"
+
+.PP
+apply alpha of the color with background (thread safe) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the background 
+.RE
+.PP
+
+.SS "void RayTracer::Images::Color::applyDistance (double distance, double maxDistance)"
+
+.PP
+apply distance in the color 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdistance\fP the distance 
+.br
+\fIdistance\fP max distance (exemple: watt of the light) 
+.RE
+.PP
+
+.SS "void RayTracer::Images::Color::mergeColor (const \fBColor\fP & other)"
+
+.PP
+merge color with another one (thread safe) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the color that will be merged 
+.RE
+.PP
+
+.SS "\fBColor\fP RayTracer::Images::Color::operator* (const \fBColor\fP & other) const"
+
+.PP
+Multiplication two colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other color
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new color 
+.RE
+.PP
+
+.SS "\fBColor\fP RayTracer::Images::Color::operator+ (const \fBColor\fP & other) const"
+
+.PP
+Addition two colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other color
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new color 
+.RE
+.PP
+
+.SS "\fBColor\fP RayTracer::Images::Color::operator\- (const \fBColor\fP & other) const"
+
+.PP
+Subtraction two colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other color
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new color 
+.RE
+.PP
+
+.SS "\fBColor\fP RayTracer::Images::Color::operator/ (const \fBColor\fP & other) const"
+
+.PP
+Division two colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other color
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new color 
+.RE
+.PP
+
+.SS "\fBColor\fP& RayTracer::Images::Color::operator= (const \fBColor\fP & other)"
+
+.PP
+Assign a color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other color
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the same color modified 
+.RE
+.PP
+
+.SS "double& RayTracer::Images::Color::operator[] (const \fBTypes\fP & type)"
+
+.PP
+Get the color (not thread safe !!) 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the color type
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.SS "const double& RayTracer::Images::Color::operator[] (const \fBTypes\fP & type) const"
+
+.PP
+Get the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the color type
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.SS "void RayTracer::Images::Color::set (const \fBTypes\fP & type, double value)"
+
+.PP
+set the color (thread safe) 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the color type
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "double RayTracer::Images::Color::_a\fC [private]\fP"
+
+.SS "double RayTracer::Images::Color::_b\fC [private]\fP"
+
+.SS "double RayTracer::Images::Color::_g\fC [private]\fP"
+
+.SS "std::mutex RayTracer::Images::Color::_mutex\fC [private]\fP"
+
+.SS "double RayTracer::Images::Color::_r\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

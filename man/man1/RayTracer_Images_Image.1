@@ -1,0 +1,137 @@
+.TH "RayTracer::Images::Image" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::Image \- The \fBImage\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Image\&.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPixelLine\fP"
+.br
+.RI "\fBPixelLine\fP class\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP (const \fBEntities::Transform::Vector2i\fP &size)"
+.br
+.RI "\fBImage\fP\&. "
+.ti -1c
+.RI "void \fBconvertToPPM\fP (const std::string &filePath) const"
+.br
+.RI "convertToPPM file "
+.ti -1c
+.RI "const \fBPixelLine\fP \fBoperator[]\fP (std::size_t y) const"
+.br
+.RI "Get the pixels line at line \fCy\fP (const) "
+.ti -1c
+.RI "\fBPixelLine\fP \fBoperator[]\fP (std::size_t y)"
+.br
+.RI "Get the pixels line at line \fCy\fP "
+.ti -1c
+.RI "const \fBEntities::Transform::Vector2i\fP & \fBgetSize\fP () const"
+.br
+.RI "Get the size of \fBImage\fP\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBColor\fP > \fB_pixels\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector2i\fP \fB_size\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBImage\fP class\&. 
+
+class that represent an image 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::Image::Image (const \fBEntities::Transform::Vector2i\fP & size)"
+
+.PP
+\fBImage\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsize\fP the size 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Images::Image::convertToPPM (const std::string & filePath) const"
+
+.PP
+convertToPPM file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the file 
+.RE
+.PP
+
+.SS "const \fBEntities::Transform::Vector2i\fP& RayTracer::Images::Image::getSize () const"
+
+.PP
+Get the size of \fBImage\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the \fBImage\fP's size (Width, Height) 
+.RE
+.PP
+
+.SS "\fBPixelLine\fP RayTracer::Images::Image::operator[] (std::size_t y)"
+
+.PP
+Get the pixels line at line \fCy\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIy\fP the y
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the pixels line 
+.RE
+.PP
+
+.SS "const \fBPixelLine\fP RayTracer::Images::Image::operator[] (std::size_t y) const"
+
+.PP
+Get the pixels line at line \fCy\fP (const) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIy\fP the y
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the pixels line 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBColor\fP> RayTracer::Images::Image::_pixels\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector2i\fP RayTracer::Images::Image::_size\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

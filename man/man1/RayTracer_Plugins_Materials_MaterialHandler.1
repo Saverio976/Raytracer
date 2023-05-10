@@ -1,0 +1,74 @@
+.TH "RayTracer::Plugins::Materials::MaterialHandler" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Materials::MaterialHandler \- The \fBMaterialHandler\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MaterialHandler\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMaterialHandler\fP (const std::string &filePath)"
+.br
+.RI "\fBMaterialHandler\fP constructor\&. "
+.ti -1c
+.RI "\fBRayTracer::Entities::IMaterial\fP & \fBget\fP (const \fBRayTracer::Scenes::ISetting\fP &setting, \fBILogger\fP &logger)"
+.br
+.RI "Get an material (and create it with setting) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPluginHandler\fP< \fBRayTracer::Entities::IMaterial\fP, \fBIMaterialCreator\fP > \fB_handler\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMaterialHandler\fP\&. 
+
+class that represent an material handler (take a \&.so) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Plugins::Materials::MaterialHandler::MaterialHandler (const std::string & filePath)"
+
+.PP
+\fBMaterialHandler\fP constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the file path 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRayTracer::Entities::IMaterial\fP& RayTracer::Plugins::Materials::MaterialHandler::get (const \fBRayTracer::Scenes::ISetting\fP & setting, \fBILogger\fP & logger)"
+
+.PP
+Get an material (and create it with setting) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPluginHandler\fP<\fBRayTracer::Entities::IMaterial\fP, \fBIMaterialCreator\fP> RayTracer::Plugins::Materials::MaterialHandler::_handler\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

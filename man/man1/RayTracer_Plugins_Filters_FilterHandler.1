@@ -1,0 +1,74 @@
+.TH "RayTracer::Plugins::Filters::FilterHandler" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Filters::FilterHandler \- The \fBFilterHandler\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FilterHandler\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFilterHandler\fP (const std::string &filePath)"
+.br
+.RI "\fBFilterHandler\fP constructor\&. "
+.ti -1c
+.RI "\fBRayTracer::Filters::IFilter\fP & \fBget\fP (const \fBRayTracer::Scenes::ISetting\fP &setting, \fBILogger\fP &logger)"
+.br
+.RI "Get a filter (and create it with setting) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPluginHandler\fP< \fBRayTracer::Filters::IFilter\fP, \fBIFilterCreator\fP > \fB_handler\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBFilterHandler\fP\&. 
+
+class that represent a filter handler (take a \&.so) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Plugins::Filters::FilterHandler::FilterHandler (const std::string & filePath)"
+
+.PP
+\fBFilterHandler\fP constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the file path 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRayTracer::Filters::IFilter\fP& RayTracer::Plugins::Filters::FilterHandler::get (const \fBRayTracer::Scenes::ISetting\fP & setting, \fBILogger\fP & logger)"
+
+.PP
+Get a filter (and create it with setting) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the filter 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPluginHandler\fP<\fBRayTracer::Filters::IFilter\fP, \fBIFilterCreator\fP> RayTracer::Plugins::Filters::FilterHandler::_handler\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

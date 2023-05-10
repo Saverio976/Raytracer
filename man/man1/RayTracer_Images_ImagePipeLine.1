@@ -1,0 +1,110 @@
+.TH "RayTracer::Images::ImagePipeLine" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Images::ImagePipeLine \- The \fBImagePipeLine\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ImagePipeLine\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImagePipeLine\fP (\fBImage\fP &image, const \fBScenes::IDisplayable\fP &displayable, const \fBScenes::ISceneState\fP &state, const \fBIRayIterator\fP &rayIterrator)"
+.br
+.RI "\fBImagePipeLine\fP constructor\&. "
+.ti -1c
+.RI "void \fBgenerate\fP (\fBILogger\fP &logger, std::size_t maxThread=1, std::size_t cluster=1)"
+.br
+.RI "Generate the image with entities displayable\&. "
+.ti -1c
+.RI "void \fBapply\fP (\fBFilters::IFilter\fP &filter)"
+.br
+.RI "Apply the filter\&. "
+.ti -1c
+.RI "\fB~ImagePipeLine\fP ()=default"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP & \fB_image\fP"
+.br
+.ti -1c
+.RI "const \fBScenes::IDisplayable\fP & \fB_displayable\fP"
+.br
+.ti -1c
+.RI "const \fBScenes::ISceneState\fP & \fB_state\fP"
+.br
+.ti -1c
+.RI "const \fBIRayIterator\fP & \fB_rayIterrator\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBImagePipeLine\fP class\&. 
+
+class that represent pipeline modification on an image 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Images::ImagePipeLine::ImagePipeLine (\fBImage\fP & image, const \fBScenes::IDisplayable\fP & displayable, const \fBScenes::ISceneState\fP & state, const \fBIRayIterator\fP & rayIterrator)"
+
+.PP
+\fBImagePipeLine\fP constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimage\fP the image to modify 
+.br
+\fIdisplayable\fP the displayable entities to render 
+.br
+\fIstate\fP the state (if cancel needed) 
+.RE
+.PP
+
+.SS "RayTracer::Images::ImagePipeLine::~ImagePipeLine ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Images::ImagePipeLine::apply (\fBFilters::IFilter\fP & filter)"
+
+.PP
+Apply the filter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilter\fP the filter 
+.RE
+.PP
+
+.SS "void RayTracer::Images::ImagePipeLine::generate (\fBILogger\fP & logger, std::size_t maxThread = \fC1\fP, std::size_t cluster = \fC1\fP)"
+
+.PP
+Generate the image with entities displayable\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImaxThread\fP the max thread number to use 
+.br
+\fIcluster\fP the cluster number (1 ray represent \fCcluster\fP pixel) 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBScenes::IDisplayable\fP& RayTracer::Images::ImagePipeLine::_displayable\fC [private]\fP"
+
+.SS "\fBImage\fP& RayTracer::Images::ImagePipeLine::_image\fC [private]\fP"
+
+.SS "const \fBIRayIterator\fP& RayTracer::Images::ImagePipeLine::_rayIterrator\fC [private]\fP"
+
+.SS "const \fBScenes::ISceneState\fP& RayTracer::Images::ImagePipeLine::_state\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

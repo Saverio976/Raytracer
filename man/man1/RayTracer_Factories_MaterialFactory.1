@@ -1,0 +1,135 @@
+.TH "RayTracer::Factories::MaterialFactory" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Factories::MaterialFactory \- The \fBMaterialFactory\fP (singleton factory)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MaterialFactory\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Factories::IMaterialFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMaterialFactory\fP (const \fBMaterialFactory\fP &other)=delete"
+.br
+.ti -1c
+.RI "\fB~MaterialFactory\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const std::string &name, std::unique_ptr< \fBPlugins::Materials::MaterialHandler\fP > handler)"
+.br
+.RI "Add an material\&. "
+.ti -1c
+.RI "\fBEntities::IMaterial\fP & \fBget\fP (const std::string &name, const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger) final"
+.br
+.RI "Get an material\&. "
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.RI "Clear all handlers\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBMaterialFactory\fP & \fBgetInstance\fP ()"
+.br
+.RI "Get the singleton\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMaterialFactory\fP ()=default"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBTFactory\fP< \fBPlugins::Materials::MaterialHandler\fP, \fBEntities::IMaterial\fP > & \fBgetFactory\fP ()"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::unique_ptr< \fBMaterialFactory\fP > \fB_factory\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMaterialFactory\fP (singleton factory) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Factories::MaterialFactory::MaterialFactory (const \fBMaterialFactory\fP & other)\fC [delete]\fP"
+
+.SS "RayTracer::Factories::MaterialFactory::~MaterialFactory ()\fC [default]\fP"
+
+.SS "RayTracer::Factories::MaterialFactory::MaterialFactory ()\fC [protected]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Factories::MaterialFactory::add (const std::string & name, std::unique_ptr< \fBPlugins::Materials::MaterialHandler\fP > handler)"
+
+.PP
+Add an material\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIhandler\fP the handler 
+.RE
+.PP
+
+.SS "void RayTracer::Factories::MaterialFactory::clearAll ()"
+
+.PP
+Clear all handlers\&. 
+.SS "\fBEntities::IMaterial\fP& RayTracer::Factories::MaterialFactory::get (const std::string & name, const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get an material\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIsetting\fP the setting (to create the entity)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Factories::IMaterialFactory\fP\&.
+.SS "static \fBTFactory\fP<\fBPlugins::Materials::MaterialHandler\fP, \fBEntities::IMaterial\fP>& RayTracer::Factories::MaterialFactory::getFactory ()\fC [static]\fP, \fC [protected]\fP"
+
+.SS "static \fBMaterialFactory\fP& RayTracer::Factories::MaterialFactory::getInstance ()\fC [static]\fP"
+
+.PP
+Get the singleton\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the singleton 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unique_ptr<\fBMaterialFactory\fP> RayTracer::Factories::MaterialFactory::_factory\fC [static]\fP, \fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

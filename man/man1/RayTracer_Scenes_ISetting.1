@@ -1,0 +1,287 @@
+.TH "RayTracer::Scenes::ISetting" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::ISetting
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ISetting\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIParsingException\fP"
+.br
+.RI "an exception for when the key is not found "
+.ti -1c
+.RI "class \fBITypeException\fP"
+.br
+.RI "an exception for when the key is not found "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ISetting\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBgetSetting\fP (const std::string &key)=0"
+.br
+.RI "get a precise setting of the config from key "
+.ti -1c
+.RI "virtual void \fBgetSetting\fP (int index)=0"
+.br
+.RI "access element at index "
+.ti -1c
+.RI "virtual int \fBgetLength\fP () const =0"
+.br
+.RI "get the length of the current key works only for lists, array, groups "
+.ti -1c
+.RI "virtual std::string \fBgetPath\fP () const =0"
+.br
+.RI "gets the full path of the current setting "
+.ti -1c
+.RI "virtual std::string \fBgetKey\fP () const =0"
+.br
+.RI "gets the key of the current setting "
+.ti -1c
+.RI "virtual std::shared_ptr< libconfig::Config > \fBgetConfig\fP () const =0"
+.br
+.RI "gets the config of a setting "
+.ti -1c
+.RI "virtual void \fBmoveTo\fP (const std::string &key)=0"
+.br
+.ti -1c
+.RI "virtual void \fBmoveTo\fP (int index)=0"
+.br
+.ti -1c
+.RI "virtual std::unique_ptr< \fBISetting\fP > \fBget\fP (const std::string &key) const =0"
+.br
+.RI "search the setting at the given key in the childs "
+.ti -1c
+.RI "virtual std::unique_ptr< \fBISetting\fP > \fBget\fP (int index) const =0"
+.br
+.RI "search the setting at the given index in the childs "
+.ti -1c
+.RI "virtual std::unique_ptr< \fBISetting\fP > \fBget\fP () const =0"
+.br
+.RI "returns the current setting "
+.ti -1c
+.RI "virtual \fBoperator bool\fP () const =0"
+.br
+.RI "cast operator to get the value "
+.ti -1c
+.RI "virtual \fBoperator int\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBoperator double\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBoperator const char *\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBoperator std::string\fP () const =0"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Scenes::ISetting::~ISetting ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::unique_ptr<\fBISetting\fP> RayTracer::Scenes::ISetting::get () const\fC [pure virtual]\fP"
+
+.PP
+returns the current setting 
+.PP
+\fBReturns\fP
+.RS 4
+a copy of the setting at the current emplacement 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual std::unique_ptr<\fBISetting\fP> RayTracer::Scenes::ISetting::get (const std::string & key) const\fC [pure virtual]\fP"
+
+.PP
+search the setting at the given key in the childs 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key to go to
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a copy of the setting, moved to the key 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual std::unique_ptr<\fBISetting\fP> RayTracer::Scenes::ISetting::get (int index) const\fC [pure virtual]\fP"
+
+.PP
+search the setting at the given index in the childs 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP the index to go to
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a copy of the setting, moved to the index 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual std::shared_ptr<libconfig::Config> RayTracer::Scenes::ISetting::getConfig () const\fC [pure virtual]\fP"
+
+.PP
+gets the config of a setting 
+.PP
+\fBReturns\fP
+.RS 4
+the config 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual std::string RayTracer::Scenes::ISetting::getKey () const\fC [pure virtual]\fP"
+
+.PP
+gets the key of the current setting 
+.PP
+\fBReturns\fP
+.RS 4
+the key 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual int RayTracer::Scenes::ISetting::getLength () const\fC [pure virtual]\fP"
+
+.PP
+get the length of the current key works only for lists, array, groups 
+.PP
+\fBReturns\fP
+.RS 4
+-1 if invalid type or size 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual std::string RayTracer::Scenes::ISetting::getPath () const\fC [pure virtual]\fP"
+
+.PP
+gets the full path of the current setting 
+.PP
+\fBReturns\fP
+.RS 4
+the path 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual void RayTracer::Scenes::ISetting::getSetting (const std::string & key)\fC [pure virtual]\fP"
+
+.PP
+get a precise setting of the config from key 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the setting exists, false otherwise 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual void RayTracer::Scenes::ISetting::getSetting (int index)\fC [pure virtual]\fP"
+
+.PP
+access element at index 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP the index
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the setting exists, false otherwise 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual void RayTracer::Scenes::ISetting::moveTo (const std::string & key)\fC [pure virtual]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual void RayTracer::Scenes::ISetting::moveTo (int index)\fC [pure virtual]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual RayTracer::Scenes::ISetting::operator bool () const\fC [explicit]\fP, \fC [pure virtual]\fP"
+
+.PP
+cast operator to get the value 
+.PP
+\fBReturns\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual RayTracer::Scenes::ISetting::operator const char * () const\fC [explicit]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual RayTracer::Scenes::ISetting::operator double () const\fC [explicit]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual RayTracer::Scenes::ISetting::operator int () const\fC [explicit]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+.SS "virtual RayTracer::Scenes::ISetting::operator std::string () const\fC [explicit]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Scenes::SettingWrapper\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

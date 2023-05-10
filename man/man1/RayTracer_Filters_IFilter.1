@@ -1,0 +1,52 @@
+.TH "RayTracer::Filters::IFilter" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Filters::IFilter \- The \fBIFilter\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IFilter\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IFilter\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBapply\fP (\fBImages::Image\fP &image)=0"
+.br
+.RI "Apply the filter on an image\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBIFilter\fP class\&. 
+
+class that represent a filter 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Filters::IFilter::~IFilter ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void RayTracer::Filters::IFilter::apply (\fBImages::Image\fP & image)\fC [pure virtual]\fP"
+
+.PP
+Apply the filter on an image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimage\fP the image 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

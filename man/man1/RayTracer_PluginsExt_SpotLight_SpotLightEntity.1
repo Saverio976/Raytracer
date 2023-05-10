@@ -1,0 +1,222 @@
+.TH "RayTracer::PluginsExt::SpotLight::SpotLightEntity" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::SpotLight::SpotLightEntity
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SpotLightEntity\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::ILight\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSpotLightEntity\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger)"
+.br
+.RI "Construct a new \fBAmbientLight\fP\&. "
+.ti -1c
+.RI "\fB~SpotLightEntity\fP ()=default"
+.br
+.ti -1c
+.RI "\fBType\fP \fBgetType\fP () const final"
+.br
+.RI "Get the type (ILight) "
+.ti -1c
+.RI "\fBEntities::Transform::ITransform\fP & \fBgetTransform\fP () final"
+.br
+.RI "Get the transform\&. "
+.ti -1c
+.RI "const \fBEntities::Transform::ITransform\fP & \fBgetTransform\fP () const final"
+.br
+.RI "Get the transform (const) "
+.ti -1c
+.RI "const \fBImages::Color\fP & \fBgetColor\fP () const final"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "\fBImages::Color\fP \fBgetColor\fP (const \fBEntities::Transform::Vector3f\fP &point, const \fBScenes::IDisplayable\fP &displayable) const final"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "void \fBsetColor\fP (const \fBImages::Color\fP &color) final"
+.br
+.RI "Set the color\&. "
+.ti -1c
+.RI "bool \fBisAmbient\fP () const final"
+.br
+.RI "Check if the light is ambient\&. "
+.ti -1c
+.RI "double \fBgetPower\fP () const final"
+.br
+.RI "get the power of the light "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntities::Transform::Transform\fP \fB_transform\fP"
+.br
+.ti -1c
+.RI "\fBImages::Color\fP \fB_color\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.ti -1c
+.RI "double \fB_power\fP"
+.br
+.ti -1c
+.RI "double \fB_radius\fP"
+.br
+.ti -1c
+.RI "double \fB_angle\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::SpotLight::SpotLightEntity::SpotLightEntity (const \fBScenes::ISetting\fP & config, \fBILogger\fP & logger)"
+
+.PP
+Construct a new \fBAmbientLight\fP\&. transform: { position: {x= 0; y= 0; z= 0}; scale: {x= 1; y= 1; z= 1}; rotation: {x= 0; y= 0; z= 0} }; color = {r= 1; g= 1; b= 1};
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the config 
+.RE
+.PP
+
+.SS "RayTracer::PluginsExt::SpotLight::SpotLightEntity::~SpotLightEntity ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBImages::Color\fP& RayTracer::PluginsExt::SpotLight::SpotLightEntity::getColor () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the color\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ILight\fP\&.
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::SpotLight::SpotLightEntity::getColor (const \fBEntities::Transform::Vector3f\fP & point, const \fBScenes::IDisplayable\fP & displayable) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpoint\fP the point of the impact
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ILight\fP\&.
+.SS "double RayTracer::PluginsExt::SpotLight::SpotLightEntity::getPower () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+get the power of the light 
+.PP
+\fBReturns\fP
+.RS 4
+the value of the power 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ILight\fP\&.
+.SS "const \fBEntities::Transform::ITransform\fP& RayTracer::PluginsExt::SpotLight::SpotLightEntity::getTransform () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the transform (const) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "\fBEntities::Transform::ITransform\fP& RayTracer::PluginsExt::SpotLight::SpotLightEntity::getTransform ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the transform\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "\fBType\fP RayTracer::PluginsExt::SpotLight::SpotLightEntity::getType () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the type (ILight) 
+.PP
+\fBReturns\fP
+.RS 4
+the type 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "bool RayTracer::PluginsExt::SpotLight::SpotLightEntity::isAmbient () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Check if the light is ambient\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if the light is ambient 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ILight\fP\&.
+.SS "void RayTracer::PluginsExt::SpotLight::SpotLightEntity::setColor (const \fBImages::Color\fP & color)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP the color 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ILight\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double RayTracer::PluginsExt::SpotLight::SpotLightEntity::_angle\fC [private]\fP"
+
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::SpotLight::SpotLightEntity::_color\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::PluginsExt::SpotLight::SpotLightEntity::_logger\fC [private]\fP"
+
+.SS "double RayTracer::PluginsExt::SpotLight::SpotLightEntity::_power\fC [private]\fP"
+
+.SS "double RayTracer::PluginsExt::SpotLight::SpotLightEntity::_radius\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Transform\fP RayTracer::PluginsExt::SpotLight::SpotLightEntity::_transform\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

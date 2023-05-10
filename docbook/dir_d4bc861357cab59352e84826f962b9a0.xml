@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_d4bc861357cab59352e84826f962b9a0" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing Directory Reference</primary></indexterm>
+Directory dependency graph for AntiAliasing:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_d4bc861357cab59352e84826f962b9a0_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_d2bd47c18e6fb74ecf9809c13d3336b6">SSAAx4</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

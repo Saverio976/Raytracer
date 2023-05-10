@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_56d1ca5d3ff5391e378c4668801107ef" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane Directory Reference</primary></indexterm>
+Directory dependency graph for LimitedPlane:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_56d1ca5d3ff5391e378c4668801107ef_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00287">LimitedPlaneCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00290">LimitedPlaneEntity.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

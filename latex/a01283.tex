@@ -1,0 +1,198 @@
+\hypertarget{a01283}{}\doxysection{Ray\+Tracer\+::Logger Class Reference}
+\label{a01283}\index{RayTracer::Logger@{RayTracer::Logger}}
+
+
+\mbox{\hyperlink{a01283}{Logger}} singleton.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{a01282}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{a01281}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01283_a8741d2463dc26b159b91a83a69e7d82e}{fatal}} (const std\+::string \&message) final
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01283}{Logger}} fata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01283_af0d5fc305cc349ff3feb193afac0b519}{error}} (const std\+::string \&message) final
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01283}{Logger}} error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01283_ad22a5c95aef00b69b2d3c66d5275fa4b}{warn}} (const std\+::string \&message) final
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01283}{Logger}} warn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01283_a04c873d9cd4b42d7d36159bf1534ad9a}{info}} (const std\+::string \&message) final
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01283}{Logger}} info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01283_a7218cc8759088a1ebb97841208757d0a}{debug}} (const std\+::string \&message) final
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01283}{Logger}} debug. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01283_afad34b7b6a7d951e588ed2189f2f5d70}{trace}} (const std\+::string \&message) final
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01283}{Logger}} trace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01283_a50fd813f74b2b9161422581df6e849e7}{print}} (const std\+::string \&level, const std\+::string \&message)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{a01283}{Logger}} singleton. 
+
+Log\+Level\+: -\/1 -\/ no messages 0 -\/ only {\ttfamily fatal} are displayed 1 -\/ {\ttfamily error} and {\ttfamily fatal} are displayed 2 -\/ {\ttfamily warn}, {\ttfamily error} and {\ttfamily fatal} are displayed 3 -\/ {\ttfamily info}, {\ttfamily warn}, {\ttfamily error} and {\ttfamily fatal} are displayed 4 -\/ {\ttfamily debug}, {\ttfamily info}, {\ttfamily warn}, {\ttfamily error} and {\ttfamily fatal} are displayed 5 -\/ {\ttfamily trace}, {\ttfamily debug}, {\ttfamily info}, {\ttfamily warn}, {\ttfamily error} and {\ttfamily fatal} are displayed
+
+Attention\+: {\ttfamily debug} and {\ttfamily trace} will only do something in debug mode compilation. ({\ttfamily set(\+CMAKE\+\_\+\+BUILD\+\_\+\+TYPE Debug)} in {\ttfamily CMake\+Lists.\+txt}) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01283_a7218cc8759088a1ebb97841208757d0a}\label{a01283_a7218cc8759088a1ebb97841208757d0a}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!debug@{debug}}
+\index{debug@{debug}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{a01283}{Logger}} debug. 
+
+The DEBUG level is used for logging messages that help developers find out what went wrong during a debugging session.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01239_aaeb0984b17b04ad668bd22a0f6f43d1c}{Ray\+Tracer\+::\+ILogger}}.
+
+\mbox{\Hypertarget{a01283_af0d5fc305cc349ff3feb193afac0b519}\label{a01283_af0d5fc305cc349ff3feb193afac0b519}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!error@{error}}
+\index{error@{error}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{a01283}{Logger}} error. 
+
+The ERROR log level is used to represent error conditions in an application that prevent a specific operation from running, but the application itself can continue working even if it is at a reduced level of functionality or performance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01239_a90f646fcaf4d02c6af0faa7f5ce4e3c8}{Ray\+Tracer\+::\+ILogger}}.
+
+\mbox{\Hypertarget{a01283_a8741d2463dc26b159b91a83a69e7d82e}\label{a01283_a8741d2463dc26b159b91a83a69e7d82e}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!fatal@{fatal}}
+\index{fatal@{fatal}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{fatal()}{fatal()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::fatal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{a01283}{Logger}} fata. 
+
+Means that something critical is broken, and the application cannot continue to do any more useful work without the intervention of an engineer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01239_a7e6ea7896672d93467650551e5cd0dfe}{Ray\+Tracer\+::\+ILogger}}.
+
+\mbox{\Hypertarget{a01283_a04c873d9cd4b42d7d36159bf1534ad9a}\label{a01283_a04c873d9cd4b42d7d36159bf1534ad9a}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!info@{info}}
+\index{info@{info}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{a01283}{Logger}} info. 
+
+INFO-\/level messages indicate events in the system that are significant to the business purpose of the application. Such events are logged to show that the system is operating normally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01239_a13e2ae2a73b533040df4b36e20aba69f}{Ray\+Tracer\+::\+ILogger}}.
+
+\mbox{\Hypertarget{a01283_a50fd813f74b2b9161422581df6e849e7}\label{a01283_a50fd813f74b2b9161422581df6e849e7}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!print@{print}}
+\index{print@{print}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::print (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01283_afad34b7b6a7d951e588ed2189f2f5d70}\label{a01283_afad34b7b6a7d951e588ed2189f2f5d70}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!trace@{trace}}
+\index{trace@{trace}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{trace()}{trace()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::trace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{a01283}{Logger}} trace. 
+
+The TRACE level is used for tracing the path of code execution in a program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01239_acb05281ccd789116a6f5436748a0a20b}{Ray\+Tracer\+::\+ILogger}}.
+
+\mbox{\Hypertarget{a01283_ad22a5c95aef00b69b2d3c66d5275fa4b}\label{a01283_ad22a5c95aef00b69b2d3c66d5275fa4b}} 
+\index{RayTracer::Logger@{RayTracer::Logger}!warn@{warn}}
+\index{warn@{warn}!RayTracer::Logger@{RayTracer::Logger}}
+\doxysubsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{a01283}{Logger}} warn. 
+
+Messages logged at the WARN level typically indicate that something unexpected happened, but the application can recover and continue to function normally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01239_a149883bba192133a5d8cede10ab705a3}{Ray\+Tracer\+::\+ILogger}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\mbox{\hyperlink{a00143}{Logger.\+hpp}}\end{DoxyCompactItemize}

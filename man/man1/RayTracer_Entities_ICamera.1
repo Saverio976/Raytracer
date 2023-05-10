@@ -1,0 +1,164 @@
+.TH "RayTracer::Entities::ICamera" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::ICamera \- The \fBICamera\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ICamera\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::IEntity\fP\&.
+.PP
+Inherited by \fBRayTracer::PluginsExt::Camera::CameraEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ICamera\fP ()=default"
+.br
+.ti -1c
+.RI "virtual double \fBgetFocal\fP () const =0"
+.br
+.RI "Get the focal (distance from the camera) "
+.ti -1c
+.RI "virtual void \fBsetFocal\fP (double value)=0"
+.br
+.RI "Set the focal (distance from the camera) "
+.ti -1c
+.RI "virtual void \fBsetSize\fP (const \fBTransform::Vector2i\fP &vector)=0"
+.br
+.RI "Set the size (of the screen) "
+.ti -1c
+.RI "virtual const \fBTransform::Vector2i\fP & \fBgetSize\fP () const =0"
+.br
+.RI "Get the size (of the screen) "
+.ti -1c
+.RI "virtual const \fBImages::Image\fP & \fBrender\fP (const \fBScenes::IDisplayable\fP &displayable, const \fBScenes::ISceneState\fP &state)=0"
+.br
+.RI "Render an image\&. "
+.ti -1c
+.RI "virtual const \fBImages::Image\fP & \fBgetImage\fP () const =0"
+.br
+.RI "Get the image (possible when rendering) "
+.ti -1c
+.RI "virtual std::list< std::reference_wrapper< \fBFilters::IFilter\fP > > & \fBgetFilters\fP ()=0"
+.br
+.RI "Get the filters\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBICamera\fP class\&. 
+
+class that represent a camera (perspective, orthographic, panoramic, \&.\&.\&.) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Entities::ICamera::~ICamera ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::list<std::reference_wrapper<\fBFilters::IFilter\fP> >& RayTracer::Entities::ICamera::getFilters ()\fC [pure virtual]\fP"
+
+.PP
+Get the filters\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the filters 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual double RayTracer::Entities::ICamera::getFocal () const\fC [pure virtual]\fP"
+
+.PP
+Get the focal (distance from the camera) 
+.PP
+\fBReturns\fP
+.RS 4
+the focal 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual const \fBImages::Image\fP& RayTracer::Entities::ICamera::getImage () const\fC [pure virtual]\fP"
+
+.PP
+Get the image (possible when rendering) 
+.PP
+\fBReturns\fP
+.RS 4
+the image 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual const \fBTransform::Vector2i\fP& RayTracer::Entities::ICamera::getSize () const\fC [pure virtual]\fP"
+
+.PP
+Get the size (of the screen) 
+.PP
+\fBReturns\fP
+.RS 4
+the size 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual const \fBImages::Image\fP& RayTracer::Entities::ICamera::render (const \fBScenes::IDisplayable\fP & displayable, const \fBScenes::ISceneState\fP & state)\fC [pure virtual]\fP"
+
+.PP
+Render an image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdisplayable\fP the displayable 
+.br
+\fIstate\fP the state (if cancel needed)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the image 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual void RayTracer::Entities::ICamera::setFocal (double value)\fC [pure virtual]\fP"
+
+.PP
+Set the focal (distance from the camera) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP the focal 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual void RayTracer::Entities::ICamera::setSize (const \fBTransform::Vector2i\fP & vector)\fC [pure virtual]\fP"
+
+.PP
+Set the size (of the screen) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector\fP the size 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

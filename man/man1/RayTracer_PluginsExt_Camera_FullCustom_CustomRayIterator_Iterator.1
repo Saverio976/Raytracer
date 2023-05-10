@@ -1,0 +1,211 @@
+.TH "RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CustomRayIterator\&.hpp>\fP
+.PP
+Inherits IRayIterator::IIterator\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBiterator_category\fP = std::forward_iterator_tag"
+.br
+.ti -1c
+.RI "using \fBdifference_type\fP = \fBImages::Ray\fP"
+.br
+.ti -1c
+.RI "using \fBvalue_type\fP = \fBImages::Ray\fP"
+.br
+.ti -1c
+.RI "using \fBpointer\fP = \fBImages::Ray\fP *"
+.br
+.ti -1c
+.RI "using \fBreference\fP = \fBImages::Ray\fP &"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIterator\fP (const \fBEntities::Transform::Vector3f\fP &cameraPos, const \fBEntities::Transform::Vector2i\fP &screenSize, const \fBEntities::Transform::Vector3f\fP &fovXYZ, const \fBEntities::Transform::Vector3f\fP &fov, std::size_t x, std::size_t y)"
+.br
+.ti -1c
+.RI "\fBIIterator\fP & \fBoperator++\fP () final"
+.br
+.RI "create the next \fBCustomRayIterator\fP "
+.ti -1c
+.RI "\fBImages::Ray\fP & \fBoperator*\fP () final"
+.br
+.RI "Get the ray of the current \fBCustomRayIterator\fP\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBImages::IRayIterator::IIterator\fP &other) const final"
+.br
+.RI "Compare two \fBCustomRayIterator\fP\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBImages::IRayIterator::IIterator\fP &other) const final"
+.br
+.RI "Compare two \fBCustomRayIterator\fP\&. "
+.ti -1c
+.RI "std::string \fBtoString\fP () const final"
+.br
+.RI "toString "
+.ti -1c
+.RI "\fBCustomRayIterator::Iterator\fP & \fBoperator=\fP (const \fBCustomRayIterator::Iterator\fP &other)"
+.br
+.RI "Compare two CustomRayIterator::iterrator\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_cameraPos\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector2i\fP \fB_screenSize\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_fovXYZ\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_fov\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_x\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_y\fP"
+.br
+.ti -1c
+.RI "\fBEntities::Transform::Vector3f\fP \fB_normal\fP"
+.br
+.ti -1c
+.RI "\fBImages::Ray\fP \fB_ray\fP"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::difference_type\fP =  \fBImages::Ray\fP"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::iterator_category\fP =  std::forward_iterator_tag"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::pointer\fP =  \fBImages::Ray\fP *"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::reference\fP =  \fBImages::Ray\fP &"
+
+.SS "using \fBRayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::value_type\fP =  \fBImages::Ray\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::Iterator (const \fBEntities::Transform::Vector3f\fP & cameraPos, const \fBEntities::Transform::Vector2i\fP & screenSize, const \fBEntities::Transform::Vector3f\fP & fovXYZ, const \fBEntities::Transform::Vector3f\fP & fov, std::size_t x, std::size_t y)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::operator!= (const \fBImages::IRayIterator::IIterator\fP & other) const\fC [final]\fP"
+
+.PP
+Compare two \fBCustomRayIterator\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if not equal 
+.RE
+.PP
+
+.SS "\fBImages::Ray\fP& RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::operator* ()\fC [final]\fP"
+
+.PP
+Get the ray of the current \fBCustomRayIterator\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the ray 
+.RE
+.PP
+
+.SS "\fBIIterator\fP& RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::operator++ ()\fC [final]\fP"
+
+.PP
+create the next \fBCustomRayIterator\fP 
+.PP
+\fBReturns\fP
+.RS 4
+the next \fBCustomRayIterator\fP 
+.RE
+.PP
+
+.SS "\fBCustomRayIterator::Iterator\fP& RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::operator= (const \fBCustomRayIterator::Iterator\fP & other)"
+
+.PP
+Compare two CustomRayIterator::iterrator\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.SS "bool RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::operator== (const \fBImages::IRayIterator::IIterator\fP & other) const\fC [final]\fP"
+
+.PP
+Compare two \fBCustomRayIterator\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if equal 
+.RE
+.PP
+
+.SS "std::string RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::toString () const\fC [final]\fP"
+
+.PP
+toString 
+.PP
+\fBReturns\fP
+.RS 4
+the string 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_cameraPos\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_fov\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_fovXYZ\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector3f\fP RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_normal\fC [private]\fP"
+
+.SS "\fBImages::Ray\fP RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_ray\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Vector2i\fP RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_screenSize\fC [private]\fP"
+
+.SS "std::size_t RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_x\fC [private]\fP"
+
+.SS "std::size_t RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator::_y\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

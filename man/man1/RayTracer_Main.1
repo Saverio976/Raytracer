@@ -1,0 +1,142 @@
+.TH "RayTracer::Main" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Main
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Main\&.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBArgumentError\fP"
+.br
+.ti -1c
+.RI "class \fBMainError\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMain\fP (\fBILogger\fP &logger)"
+.br
+.RI "Construct a new \fBMain\fP object from argc and argv\&. "
+.ti -1c
+.RI "\fB~Main\fP ()=default"
+.br
+.ti -1c
+.RI "int \fBoperator()\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBexportScene\fP (const std::string &baseFilePath)"
+.br
+.RI "Export the scene to ppm files\&. "
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.RI "Run the main (like the main func but in a method :eyes:) "
+.ti -1c
+.RI "void \fBhelp\fP () const"
+.br
+.RI "Print the help\&. "
+.ti -1c
+.RI "bool \fBparseCmdArgs\fP (int argc, char **argv)"
+.br
+.RI "Parse the command line argumens\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_baseFilePath\fP"
+.br
+.ti -1c
+.RI "std::string \fB_sceneConfFilePath\fP"
+.br
+.ti -1c
+.RI "\fBScenes::Scene\fP \fB_scene\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Main::Main (\fBILogger\fP & logger)"
+
+.PP
+Construct a new \fBMain\fP object from argc and argv\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP (argc from main func) 
+.br
+\fIargv\fP (argv from main func) 
+.RE
+.PP
+
+.SS "RayTracer::Main::~Main ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Main::exportScene (const std::string & baseFilePath)\fC [private]\fP"
+
+.PP
+Export the scene to ppm files\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbaseFilePath\fP 
+.RE
+.PP
+
+.SS "void RayTracer::Main::help () const\fC [private]\fP"
+
+.PP
+Print the help\&. 
+.SS "int RayTracer::Main::operator() (int argc, char ** argv)"
+
+.SS "bool RayTracer::Main::parseCmdArgs (int argc, char ** argv)\fC [private]\fP"
+
+.PP
+Parse the command line argumens\&. This method can throw an \fBArgumentError\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP nb of arguments 
+.br
+\fIargv\fP arguments
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if can proceed, false otherwise (but it is not an error) 
+.RE
+.PP
+
+.SS "void RayTracer::Main::run ()\fC [private]\fP"
+
+.PP
+Run the main (like the main func but in a method :eyes:) 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string RayTracer::Main::_baseFilePath\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Main::_logger\fC [private]\fP"
+
+.SS "\fBScenes::Scene\fP RayTracer::Main::_scene\fC [private]\fP"
+
+.SS "std::string RayTracer::Main::_sceneConfFilePath\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

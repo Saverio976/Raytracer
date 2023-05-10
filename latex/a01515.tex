@@ -1,0 +1,247 @@
+\hypertarget{a01515}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Limited\+Cone\+::Limited\+Cone\+Entity Class Reference}
+\label{a01515}\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+
+
+{\ttfamily \#include $<$Limited\+Cone\+Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Limited\+Cone\+::Limited\+Cone\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01514}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Limited\+Cone\+::Limited\+Cone\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01513}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01515_af11cdcc6df956935511dde4bf79d9d67}{Limited\+Cone\+Entity}} (const \mbox{\hyperlink{a01391}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01239}{ILogger}} \&logger)
+\item 
+\mbox{\hyperlink{a01175_ab003087623e47600c09a76ff8138d37b}{Type}} \mbox{\hyperlink{a01515_aa14bb70fcfa10e42cf4e18e7ca8abe28}{get\+Type}} () const final
+\begin{DoxyCompactList}\small\item\em Get the type (light, camera, primitive) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01191}{Entities\+::\+Transform\+::\+ITransform}} \& \mbox{\hyperlink{a01515_a277173f16edcf7d815dab48d432983fa}{get\+Transform}} () final
+\begin{DoxyCompactList}\small\item\em Get the transform (position, rotation, scale) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01191}{Entities\+::\+Transform\+::\+ITransform}} \& \mbox{\hyperlink{a01515_adff1044a065fc9435a9209347806faa1}{get\+Transform}} () const final
+\begin{DoxyCompactList}\small\item\em Get the transform (position, rotation, scale) (const) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01515_a906cb6e999ad79fd4a9830cf12f14ef4}{is\+Collided}} (const \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} \&point) const final
+\begin{DoxyCompactList}\small\item\em Check if the point is collided with the box. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} $>$ \mbox{\hyperlink{a01515_a8983c50780528588e7fe9ffcdab9e518}{is\+Collided}} (const \mbox{\hyperlink{a01271}{Images\+::\+Ray}} \&ray) const final
+\begin{DoxyCompactList}\small\item\em Check if the ray is collided. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01243}{Images\+::\+Color}} \mbox{\hyperlink{a01515_a066e2b9f5ff575674a5912fb325b2eb3}{get\+Color}} (const \mbox{\hyperlink{a01271}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01379}{Scenes\+::\+IDisplayable}} \&displayable, const \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect) const final
+\begin{DoxyCompactList}\small\item\em Get the material. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01243}{Images\+::\+Color}} \mbox{\hyperlink{a01515_a4141037f0c635e1de7cd5a82765e3524}{redirection\+Light}} (const \mbox{\hyperlink{a01271}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01379}{Scenes\+::\+IDisplayable}} \&displayable, const \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect) const final
+\begin{DoxyCompactList}\small\item\em this function is called when the object intercept the ray light \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01195}{Entities\+::\+Transform\+::\+Transform}} \mbox{\hyperlink{a01515_a6aadc5810068ba3a30f71d334bec80bf}{\+\_\+transform}}
+\item 
+double \mbox{\hyperlink{a01515_a97edc750c5224fc1fa34dc0057d0bb03}{\+\_\+angle}}
+\item 
+\mbox{\hyperlink{a01239}{ILogger}} \& \mbox{\hyperlink{a01515_a8df7c0589b14681b39e67552c6b2341d}{\+\_\+logger}}
+\item 
+std\+::optional$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01183}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}} $>$ $>$ \mbox{\hyperlink{a01515_a590877b88181a1f5ab8187216e4ba360}{\+\_\+material}}
+\item 
+double \mbox{\hyperlink{a01515_a144859694fbbfde1fdd6df1ac7881edb}{\+\_\+height}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01515_af11cdcc6df956935511dde4bf79d9d67}\label{a01515_af11cdcc6df956935511dde4bf79d9d67}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!LimitedConeEntity@{LimitedConeEntity}}
+\index{LimitedConeEntity@{LimitedConeEntity}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{LimitedConeEntity()}{LimitedConeEntity()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::\+Limited\+Cone\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01391}{Scenes\+::\+ISetting}} \&}]{config,  }\item[{\mbox{\hyperlink{a01239}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01515_a066e2b9f5ff575674a5912fb325b2eb3}\label{a01515_a066e2b9f5ff575674a5912fb325b2eb3}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01243}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::get\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01271}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01379}{Scenes\+::\+IDisplayable}} \&}]{displayable,  }\item[{const \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the material. 
+
+\begin{DoxyReturn}{Returns}
+the material 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01187_a6c9c38a268043a21e98bd42661125e2e}{Ray\+Tracer\+::\+Entities\+::\+IPrimitive}}.
+
+\mbox{\Hypertarget{a01515_adff1044a065fc9435a9209347806faa1}\label{a01515_adff1044a065fc9435a9209347806faa1}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01191}{Entities\+::\+Transform\+::\+ITransform}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform (position, rotation, scale) (const) 
+
+\begin{DoxyReturn}{Returns}
+the transform 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01175_a703e6f7e78da30c2c7f4fecbe0bc580e}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01515_a277173f16edcf7d815dab48d432983fa}\label{a01515_a277173f16edcf7d815dab48d432983fa}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01191}{Entities\+::\+Transform\+::\+ITransform}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform (position, rotation, scale) 
+
+\begin{DoxyReturn}{Returns}
+the transform 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01175_ac97ca7c49d7a87c00bf6a95ca227108a}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01515_aa14bb70fcfa10e42cf4e18e7ca8abe28}\label{a01515_aa14bb70fcfa10e42cf4e18e7ca8abe28}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!getType@{getType}}
+\index{getType@{getType}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01175_ab003087623e47600c09a76ff8138d37b}{Type}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the type (light, camera, primitive) 
+
+\begin{DoxyReturn}{Returns}
+the type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01175_a68374ef5e0932ab3b3dea57a87be156e}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01515_a906cb6e999ad79fd4a9830cf12f14ef4}\label{a01515_a906cb6e999ad79fd4a9830cf12f14ef4}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!isCollided@{isCollided}}
+\index{isCollided@{isCollided}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{isCollided()}{isCollided()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::is\+Collided (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Check if the point is collided with the box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & the point\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the point is collided 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01187_a59076ea4dbff9d3617643678cb6bb266}{Ray\+Tracer\+::\+Entities\+::\+IPrimitive}}.
+
+\mbox{\Hypertarget{a01515_a8983c50780528588e7fe9ffcdab9e518}\label{a01515_a8983c50780528588e7fe9ffcdab9e518}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!isCollided@{isCollided}}
+\index{isCollided@{isCollided}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{isCollided()}{isCollided()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}}$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::is\+Collided (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01271}{Images\+::\+Ray}} \&}]{ray }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Check if the ray is collided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the ray is collided 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01187_aff9a474acf22c4d04959f8e8aaa5cac9}{Ray\+Tracer\+::\+Entities\+::\+IPrimitive}}.
+
+\mbox{\Hypertarget{a01515_a4141037f0c635e1de7cd5a82765e3524}\label{a01515_a4141037f0c635e1de7cd5a82765e3524}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!redirectionLight@{redirectionLight}}
+\index{redirectionLight@{redirectionLight}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{redirectionLight()}{redirectionLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01243}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::redirection\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01271}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01379}{Scenes\+::\+IDisplayable}} \&}]{displayable,  }\item[{const \mbox{\hyperlink{a01203}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+this function is called when the object intercept the ray light 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray between the light and the object \\
+\hline
+{\em displayable} & the displayable \\
+\hline
+{\em intersect} & the intersection point between this point and the ray\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color of the shadow 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01187_ae6a0b892920f7ea034475d7777ed5cf2}{Ray\+Tracer\+::\+Entities\+::\+IPrimitive}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01515_a97edc750c5224fc1fa34dc0057d0bb03}\label{a01515_a97edc750c5224fc1fa34dc0057d0bb03}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!\_angle@{\_angle}}
+\index{\_angle@{\_angle}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{\_angle}{\_angle}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01515_a144859694fbbfde1fdd6df1ac7881edb}\label{a01515_a144859694fbbfde1fdd6df1ac7881edb}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!\_height@{\_height}}
+\index{\_height@{\_height}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{\_height}{\_height}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01515_a8df7c0589b14681b39e67552c6b2341d}\label{a01515_a8df7c0589b14681b39e67552c6b2341d}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01239}{ILogger}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01515_a590877b88181a1f5ab8187216e4ba360}\label{a01515_a590877b88181a1f5ab8187216e4ba360}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!\_material@{\_material}}
+\index{\_material@{\_material}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{\_material}{\_material}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01183}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}$>$ $>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01515_a6aadc5810068ba3a30f71d334bec80bf}\label{a01515_a6aadc5810068ba3a30f71d334bec80bf}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}!\_transform@{\_transform}}
+\index{\_transform@{\_transform}!RayTracer::PluginsExt::LimitedCone::LimitedConeEntity@{RayTracer::PluginsExt::LimitedCone::LimitedConeEntity}}
+\doxysubsubsection{\texorpdfstring{\_transform}{\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01195}{Entities\+::\+Transform\+::\+Transform}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Entity\+::\+\_\+transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Limited\+Cone/\mbox{\hyperlink{a00278}{Limited\+Cone\+Entity.\+hpp}}\end{DoxyCompactItemize}

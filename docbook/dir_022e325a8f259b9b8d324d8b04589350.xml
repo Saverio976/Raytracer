@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_022e325a8f259b9b8d324d8b04589350" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins Directory Reference</primary></indexterm>
+Directory dependency graph for Plugins:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_022e325a8f259b9b8d324d8b04589350_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_99a9e5809d7dd3eea28a4e7b1821ca7c">Entities</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_94f36a39fb90e1f2b0528819abd4baaf">Filters</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_090dd539cb56febacd605ed05f9fccf1">Materials</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00152">Api.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00182">PluginHandler.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00185">PluginLoader.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,65 @@
+.TH "RayTracer::Plugins::Entities::EntityLoader" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Entities::EntityLoader \- The \fBEntityLoader\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EntityLoader\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::PluginLoader< EntityHandler, RayTracer::Entities::IEntity, Factories::EntityFactory >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityLoader\fP (const std::string &directory)"
+.br
+.RI "\fBEntityLoader\fP constructor (doesn't load anything) "
+.ti -1c
+.RI "void \fBloadEntities\fP ()"
+.br
+.RI "Load all the entities in the factory singleton\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_directory\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBEntityLoader\fP\&. 
+
+class that represent an entity loader (take a directory and create \fBEntityHandler\fP) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Plugins::Entities::EntityLoader::EntityLoader (const std::string & directory)"
+
+.PP
+\fBEntityLoader\fP constructor (doesn't load anything) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirectory\fP the directory 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Plugins::Entities::EntityLoader::loadEntities ()"
+
+.PP
+Load all the entities in the factory singleton\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string RayTracer::Plugins::Entities::EntityLoader::_directory\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

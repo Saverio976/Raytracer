@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00125" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp</primary></indexterm>
+<programlisting>#include &lt;cstddef&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &quot;Color.hpp&quot;
+#include &quot;Vector2i.hpp&quot;
+</programlisting>Include dependency graph for Image.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00126.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00127.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01247">RayTracer::Images::Image</link></para>
+
+<para>The <link linkend="_a01247">Image</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01251">RayTracer::Images::Image::PixelLine</link></para>
+
+<para><link linkend="_a01251">PixelLine</link> class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00332">RayTracer::Images</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

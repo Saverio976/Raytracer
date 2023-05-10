@@ -1,0 +1,62 @@
+.TH "RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SSAAx4Creator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::Filters::IFilterCreator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~SSAAx4Creator\fP ()"
+.br
+.ti -1c
+.RI "\fBFilters::IFilter\fP * \fBcreate\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger) final"
+.br
+.RI "Create a filter with a setting\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBSSAAx4Filter\fP * > \fB_elements\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::~SSAAx4Creator ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFilters::IFilter\fP* RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::create (const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Create a filter with a setting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the filter 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Plugins::Filters::IFilterCreator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBSSAAx4Filter\fP *> RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::_elements\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

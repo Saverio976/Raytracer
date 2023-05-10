@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01399" xml:lang="en-US">
+<title>RayTracer::Scenes::ISetting::ITypeException Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::ISetting::ITypeException</primary></indexterm>
+<para>
+
+<para>an exception for when the key is not found </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ISetting.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::ISetting::ITypeException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01398.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::ISetting::ITypeException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01397.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01399_1a7f70ecef08ce035b8bf3345fd5878d47">~ITypeException</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual const char * <link linkend="_a01399_1a1c73d8d9b56a99aba334a30924ac5b26">what</link> () const override=0  throw ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>an exception for when the key is not found </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01399_1a7f70ecef08ce035b8bf3345fd5878d47"/>    <section>
+    <title>~ITypeException()</title>
+<indexterm><primary>~ITypeException</primary><secondary>RayTracer::Scenes::ISetting::ITypeException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting::ITypeException</primary><secondary>~ITypeException</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::ITypeException::~ITypeException ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01399_1a1c73d8d9b56a99aba334a30924ac5b26"/>    <section>
+    <title>what()</title>
+<indexterm><primary>what</primary><secondary>RayTracer::Scenes::ISetting::ITypeException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting::ITypeException</primary><secondary>what</secondary></indexterm>
+<para><computeroutput>virtual const char* RayTracer::Scenes::ISetting::ITypeException::what ( ) const throw ( ) <computeroutput>[override]</computeroutput>, <computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01427_1a365cae9b2f596a7698b0ebeeffca4dec">RayTracer::Scenes::SettingWrapper::TypeException</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00206">ISetting.hpp</link></section>
+</section>

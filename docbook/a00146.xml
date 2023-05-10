@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00146" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Main.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Main.hpp</primary></indexterm>
+<programlisting>#include &lt;exception&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;Parameters.hpp&quot;
+#include &quot;Scene.hpp&quot;
+</programlisting>Include dependency graph for Main.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00147.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01287">RayTracer::Main</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01291">RayTracer::Main::MainError</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01295">RayTracer::Main::ArgumentError</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

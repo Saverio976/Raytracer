@@ -1,0 +1,236 @@
+.TH "RayTracer::Parameters" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Parameters \- The \fBParameters\fP class singleton\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Parameters\&.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBKeyNotFoundError\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Parameters\fP ()=default"
+.br
+.ti -1c
+.RI "\fBParameters\fP (const \fBParameters\fP &other)=delete"
+.br
+.ti -1c
+.RI "void \fBparseCmdArgs\fP (int argc, char **argv)"
+.br
+.RI "Parse the command line arguments\&. "
+.ti -1c
+.RI "const int \fBgetInt\fP (const std::string &key) const"
+.br
+.RI "Get config key value as int\&. "
+.ti -1c
+.RI "const double \fBgetDouble\fP (const std::string &key) const"
+.br
+.RI "Get config key value as double\&. "
+.ti -1c
+.RI "const std::string & \fBgetString\fP (const std::string &key) const"
+.br
+.RI "Get config key value as string\&. "
+.ti -1c
+.RI "void \fBset\fP (const std::string &key, int value)"
+.br
+.RI "Set config key value as int\&. "
+.ti -1c
+.RI "void \fBset\fP (const std::string &key, double value)"
+.br
+.RI "Set config key value as double\&. "
+.ti -1c
+.RI "void \fBset\fP (const std::string &key, const std::string &value)"
+.br
+.RI "Set config key value as string\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBParameters\fP & \fBgetInstance\fP ()"
+.br
+.RI "Get the singleton instance\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBparseCmdArg\fP (const std::string &key, const std::string &value)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, int > \fB_valuesInt\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, double > \fB_valuesDouble\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, std::string > \fB_valuesString\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::unique_ptr< \fBParameters\fP > \fB_parameters\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBParameters\fP class singleton\&. 
+
+(like a global config :eyes:) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Parameters::~Parameters ()\fC [default]\fP"
+
+.SS "RayTracer::Parameters::Parameters (const \fBParameters\fP & other)\fC [delete]\fP"
+
+.SS "RayTracer::Parameters::Parameters ()\fC [protected]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const double RayTracer::Parameters::getDouble (const std::string & key) const"
+
+.PP
+Get config key value as double\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the double 
+.RE
+.PP
+
+.SS "static \fBParameters\fP& RayTracer::Parameters::getInstance ()\fC [static]\fP"
+
+.PP
+Get the singleton instance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the parameters 
+.RE
+.PP
+
+.SS "const int RayTracer::Parameters::getInt (const std::string & key) const"
+
+.PP
+Get config key value as int\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the int 
+.RE
+.PP
+
+.SS "const std::string& RayTracer::Parameters::getString (const std::string & key) const"
+
+.PP
+Get config key value as string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the string 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::parseCmdArg (const std::string & key, const std::string & value)\fC [protected]\fP"
+
+.SS "void RayTracer::Parameters::parseCmdArgs (int argc, char ** argv)"
+
+.PP
+Parse the command line arguments\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP the number of arguments 
+.br
+\fIargv\fP the arguments 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::set (const std::string & key, const std::string & value)"
+
+.PP
+Set config key value as string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.br
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::set (const std::string & key, double value)"
+
+.PP
+Set config key value as double\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.br
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::set (const std::string & key, int value)"
+
+.PP
+Set config key value as int\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.br
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unique_ptr<\fBParameters\fP> RayTracer::Parameters::_parameters\fC [static]\fP, \fC [protected]\fP"
+
+.SS "std::map<std::string, double> RayTracer::Parameters::_valuesDouble\fC [protected]\fP"
+
+.SS "std::map<std::string, int> RayTracer::Parameters::_valuesInt\fC [protected]\fP"
+
+.SS "std::map<std::string, std::string> RayTracer::Parameters::_valuesString\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00263" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cylinder/CylinderCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cylinder/CylinderCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IEntityCreator.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+#include &quot;CylinderEntity.hpp&quot;
+</programlisting>Include dependency graph for CylinderCreator.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00264.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01495">RayTracer::PluginsExt::Cylinder::CylinderCreator</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00338">RayTracer::PluginsExt</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00346">RayTracer::PluginsExt::Cylinder</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

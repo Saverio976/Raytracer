@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00278" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone/LimitedConeEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone/LimitedConeEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;cmath&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
+#include &quot;Transform.hpp&quot;
+</programlisting>Include dependency graph for LimitedConeEntity.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00279.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00280.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01515">RayTracer::PluginsExt::LimitedCone::LimitedConeEntity</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00338">RayTracer::PluginsExt</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00348">RayTracer::PluginsExt::LimitedCone</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

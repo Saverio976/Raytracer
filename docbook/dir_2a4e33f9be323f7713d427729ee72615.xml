@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_2a4e33f9be323f7713d427729ee72615" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/SpotLight Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/SpotLight Directory Reference</primary></indexterm>
+Directory dependency graph for SpotLight:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_2a4e33f9be323f7713d427729ee72615_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00317">SpotLightCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00320">SpotLightEntity.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

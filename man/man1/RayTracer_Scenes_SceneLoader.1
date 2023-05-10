@@ -1,0 +1,145 @@
+.TH "RayTracer::Scenes::SceneLoader" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::SceneLoader \- The \fBSceneLoader\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SceneLoader\&.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBadFileError\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSceneLoader\fP (const std::string &filePath, \fBILogger\fP &logger)"
+.br
+.RI "\fBSceneLoader\fP constructor (doesn't load anything) "
+.ti -1c
+.RI "\fB~SceneLoader\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBsubscribe\fP (const std::string &event, std::function< void(const \fBISetting\fP &)> func)"
+.br
+.RI "Subscribe to an event\&. "
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "Check if the file has been modified and call subscribed events in consequence\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBcheckGoodFile\fP (const std::string &filePath)"
+.br
+.RI "Check if the file passed can be proceed by the class\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::unique_ptr< \fBIConfig\fP > \fB_configWrapper\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, std::function< void(const \fBISetting\fP &)> > \fB_events\fP"
+.br
+.ti -1c
+.RI "std::string \fB_filePath\fP"
+.br
+.ti -1c
+.RI "std::filesystem::file_time_type \fB_lastWriteTime\fP"
+.br
+.ti -1c
+.RI "std::unique_ptr< \fBPlugins::Entities::EntityLoader\fP > \fB_entityLoader\fP"
+.br
+.ti -1c
+.RI "std::unique_ptr< \fBPlugins::Filters::FilterLoader\fP > \fB_filterLoader\fP"
+.br
+.ti -1c
+.RI "std::unique_ptr< \fBPlugins::Materials::MaterialLoader\fP > \fB_materialLoader\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSceneLoader\fP class\&. 
+
+class that represent a scene loader (take a config file) and is an observer :eyes: 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Scenes::SceneLoader::SceneLoader (const std::string & filePath, \fBILogger\fP & logger)"
+
+.PP
+\fBSceneLoader\fP constructor (doesn't load anything) Throw \fBBadFileError\fP if the filePath doesn't ends with '\&.yaax' Throw \fBBadFileError\fP if the filePath is not a regular file
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the file path 
+.RE
+.PP
+
+.SS "RayTracer::Scenes::SceneLoader::~SceneLoader ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static void RayTracer::Scenes::SceneLoader::checkGoodFile (const std::string & filePath)\fC [static]\fP"
+
+.PP
+Check if the file passed can be proceed by the class\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the filePaht to check 
+.RE
+.PP
+
+.SS "void RayTracer::Scenes::SceneLoader::subscribe (const std::string & event, std::function< void(const \fBISetting\fP &)> func)"
+
+.PP
+Subscribe to an event\&. Available events : 'onChange', 'onBeforeChange' onChange : called when the scene is changed onBeforeChange : called before reloading the scene
+.PP
+\fBParameters\fP
+.RS 4
+\fIevent\fP the event 
+.br
+\fIstd::function\fP the function 
+.RE
+.PP
+
+.SS "void RayTracer::Scenes::SceneLoader::update ()"
+
+.PP
+Check if the file has been modified and call subscribed events in consequence\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unique_ptr<\fBIConfig\fP> RayTracer::Scenes::SceneLoader::_configWrapper\fC [private]\fP"
+
+.SS "std::unique_ptr<\fBPlugins::Entities::EntityLoader\fP> RayTracer::Scenes::SceneLoader::_entityLoader\fC [private]\fP"
+
+.SS "std::map<std::string, std::function<void(const \fBISetting\fP &)> > RayTracer::Scenes::SceneLoader::_events\fC [private]\fP"
+
+.SS "std::string RayTracer::Scenes::SceneLoader::_filePath\fC [private]\fP"
+
+.SS "std::unique_ptr<\fBPlugins::Filters::FilterLoader\fP> RayTracer::Scenes::SceneLoader::_filterLoader\fC [private]\fP"
+
+.SS "std::filesystem::file_time_type RayTracer::Scenes::SceneLoader::_lastWriteTime\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Scenes::SceneLoader::_logger\fC [private]\fP"
+
+.SS "std::unique_ptr<\fBPlugins::Materials::MaterialLoader\fP> RayTracer::Scenes::SceneLoader::_materialLoader\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

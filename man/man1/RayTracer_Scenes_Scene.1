@@ -1,0 +1,165 @@
+.TH "RayTracer::Scenes::Scene" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::Scene \- The \fBScene\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Scene\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScene\fP (\fBILogger\fP &logger)"
+.br
+.ti -1c
+.RI "\fB~Scene\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBoperator()\fP (const \fBISetting\fP &, const std::string &event)"
+.br
+.RI "\fBScene\fP config reloader\&. "
+.ti -1c
+.RI "void \fBrenders\fP ()"
+.br
+.RI "Renders the scene (execute internal process in the thread) "
+.ti -1c
+.RI "const std::vector< std::reference_wrapper< \fBEntities::ICamera\fP > > & \fBgetCameras\fP () const"
+.br
+.RI "Get the cameras\&. "
+.ti -1c
+.RI "bool \fBisReady\fP () const"
+.br
+.RI "Check if the scene is ready (internal render thread is stopped) "
+.ti -1c
+.RI "void \fBcancel\fP ()"
+.br
+.RI "Cancel the scene rendering\&. "
+.ti -1c
+.RI "void \fBwait_end\fP ()"
+.br
+.RI "wait until the end of the renders "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBloadConfig\fP (const \fBISetting\fP &setting)"
+.br
+.RI "Load the scene\&. "
+.ti -1c
+.RI "void \fBwaitTillCancel\fP ()"
+.br
+.RI "Wait till the cancel is active (and do the changestate cancel) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::reference_wrapper< \fBEntities::ICamera\fP > > \fB_cameras\fP"
+.br
+.ti -1c
+.RI "\fBSceneState\fP \fB_state\fP"
+.br
+.ti -1c
+.RI "std::future< void > \fB_future\fP"
+.br
+.ti -1c
+.RI "\fBDisplayable\fP \fB_displayable\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBScene\fP class\&. 
+
+class that represent a scene 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Scenes::Scene::Scene (\fBILogger\fP & logger)"
+
+.SS "RayTracer::Scenes::Scene::~Scene ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Scenes::Scene::cancel ()"
+
+.PP
+Cancel the scene rendering\&. 
+.SS "const std::vector<std::reference_wrapper<\fBEntities::ICamera\fP> >& RayTracer::Scenes::Scene::getCameras () const"
+
+.PP
+Get the cameras\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the cameras 
+.RE
+.PP
+
+.SS "bool RayTracer::Scenes::Scene::isReady () const"
+
+.PP
+Check if the scene is ready (internal render thread is stopped) 
+.PP
+\fBReturns\fP
+.RS 4
+true if the scene is ready 
+.RE
+.PP
+
+.SS "void RayTracer::Scenes::Scene::loadConfig (const \fBISetting\fP & setting)\fC [private]\fP"
+
+.PP
+Load the scene\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting 
+.RE
+.PP
+
+.SS "void RayTracer::Scenes::Scene::operator() (const \fBISetting\fP &, const std::string & event)"
+
+.PP
+\fBScene\fP config reloader\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the config changed 
+.RE
+.PP
+
+.SS "void RayTracer::Scenes::Scene::renders ()"
+
+.PP
+Renders the scene (execute internal process in the thread) So, it return imediatly after being called 
+.SS "void RayTracer::Scenes::Scene::wait_end ()"
+
+.PP
+wait until the end of the renders 
+.SS "void RayTracer::Scenes::Scene::waitTillCancel ()\fC [private]\fP"
+
+.PP
+Wait till the cancel is active (and do the changestate cancel) 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::reference_wrapper<\fBEntities::ICamera\fP> > RayTracer::Scenes::Scene::_cameras\fC [private]\fP"
+
+.SS "\fBDisplayable\fP RayTracer::Scenes::Scene::_displayable\fC [private]\fP"
+
+.SS "std::future<void> RayTracer::Scenes::Scene::_future\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Scenes::Scene::_logger\fC [private]\fP"
+
+.SS "\fBSceneState\fP RayTracer::Scenes::Scene::_state\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

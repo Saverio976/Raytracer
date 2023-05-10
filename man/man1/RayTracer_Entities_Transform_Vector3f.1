@@ -1,0 +1,391 @@
+.TH "RayTracer::Entities::Transform::Vector3f" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::Transform::Vector3f \- The \fBVector3f\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Vector3f\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Vector3f\fP ()=default"
+.br
+.ti -1c
+.RI "\fBVector3f\fP ()"
+.br
+.RI "Construct a new \fBVector3f\fP with x=0, y=0, z=0\&. "
+.ti -1c
+.RI "\fBVector3f\fP (const \fBVector3f\fP &vector3f)"
+.br
+.RI "Construct a new \fBVector3f\fP\&. "
+.ti -1c
+.RI "\fBVector3f\fP (double x, double y, double z)"
+.br
+.RI "Construct a new \fBVector3f\fP\&. "
+.ti -1c
+.RI "\fBVector3f\fP (const \fBScenes::ISetting\fP &setting)"
+.br
+.RI "Construct a new \fBVector3f\fP from a setting\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBoperator+\fP (const \fBVector3f\fP &other) const"
+.br
+.RI "Addition two vectors\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBoperator\-\fP (const \fBVector3f\fP &other) const"
+.br
+.RI "Subtraction two vectors\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBoperator*\fP (const \fBVector3f\fP &other) const"
+.br
+.RI "Multiplication two vectors\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBoperator/\fP (const \fBVector3f\fP &other) const"
+.br
+.RI "Division two vectors\&. "
+.ti -1c
+.RI "\fBVector3f\fP & \fBoperator=\fP (const \fBVector3f\fP &other)"
+.br
+.RI "Assign a vector\&. "
+.ti -1c
+.RI "double \fBgetX\fP () const"
+.br
+.RI "Get x\&. "
+.ti -1c
+.RI "double \fBgetY\fP () const"
+.br
+.RI "Get y\&. "
+.ti -1c
+.RI "double \fBgetZ\fP () const"
+.br
+.RI "Get z\&. "
+.ti -1c
+.RI "double \fBgetNorm\fP () const"
+.br
+.RI "Get the norm\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBgetNormalized\fP () const"
+.br
+.RI "Get normalized vector\&. "
+.ti -1c
+.RI "double \fBdot\fP (const \fBVector3f\fP &other) const"
+.br
+.RI "Get dot product\&. "
+.ti -1c
+.RI "double \fBgetDistance\fP (const \fBVector3f\fP &other) const"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBtoDegrees\fP () const"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBtoRadians\fP () const"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBrotateVector\fP (const \fBVector3f\fP &direction, const \fBVector3f\fP &rotation) const"
+.br
+.ti -1c
+.RI "double \fBgetAngle\fP (const \fBVector3f\fP &a, const \fBVector3f\fP &c) const"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBrotateX\fP (float angle) const"
+.br
+.RI "Rotate the vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBrotateY\fP (float angle) const"
+.br
+.RI "Rotate the vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBrotateZ\fP (float angle) const"
+.br
+.RI "Rotate the vector\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fB_x\fP"
+.br
+.ti -1c
+.RI "double \fB_y\fP"
+.br
+.ti -1c
+.RI "double \fB_z\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBVector3f\fP class\&. 
+
+point in 3D space 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Entities::Transform::Vector3f::~Vector3f ()\fC [default]\fP"
+
+.SS "RayTracer::Entities::Transform::Vector3f::Vector3f ()"
+
+.PP
+Construct a new \fBVector3f\fP with x=0, y=0, z=0\&. 
+.SS "RayTracer::Entities::Transform::Vector3f::Vector3f (const \fBVector3f\fP & vector3f)"
+
+.PP
+Construct a new \fBVector3f\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvector3f\fP the vector 
+.RE
+.PP
+
+.SS "RayTracer::Entities::Transform::Vector3f::Vector3f (double x, double y, double z)"
+
+.PP
+Construct a new \fBVector3f\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP x position 
+.br
+\fIy\fP y position 
+.br
+\fIz\fP z position 
+.RE
+.PP
+
+.SS "RayTracer::Entities::Transform::Vector3f::Vector3f (const \fBScenes::ISetting\fP & setting)"
+
+.PP
+Construct a new \fBVector3f\fP from a setting\&. needed: x, y, z
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double RayTracer::Entities::Transform::Vector3f::dot (const \fBVector3f\fP & other) const"
+
+.PP
+Get dot product\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+x^other\&.x + y^other\&.y + z^other\&.z 
+.RE
+.PP
+
+.SS "double RayTracer::Entities::Transform::Vector3f::getAngle (const \fBVector3f\fP & a, const \fBVector3f\fP & c) const"
+
+.SS "double RayTracer::Entities::Transform::Vector3f::getDistance (const \fBVector3f\fP & other) const"
+
+.SS "double RayTracer::Entities::Transform::Vector3f::getNorm () const"
+
+.PP
+Get the norm\&. 
+.PP
+\fBReturns\fP
+.RS 4
+sqrt(x^2 + y^2 + z^2) 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::getNormalized () const"
+
+.PP
+Get normalized vector\&. 
+.PP
+\fBReturns\fP
+.RS 4
+vector / \fBgetNorm()\fP 
+.RE
+.PP
+
+.SS "double RayTracer::Entities::Transform::Vector3f::getX () const"
+
+.PP
+Get x\&. 
+.PP
+\fBReturns\fP
+.RS 4
+x 
+.RE
+.PP
+
+.SS "double RayTracer::Entities::Transform::Vector3f::getY () const"
+
+.PP
+Get y\&. 
+.PP
+\fBReturns\fP
+.RS 4
+y 
+.RE
+.PP
+
+.SS "double RayTracer::Entities::Transform::Vector3f::getZ () const"
+
+.PP
+Get z\&. 
+.PP
+\fBReturns\fP
+.RS 4
+z 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::operator* (const \fBVector3f\fP & other) const"
+
+.PP
+Multiplication two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::operator+ (const \fBVector3f\fP & other) const"
+
+.PP
+Addition two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::operator\- (const \fBVector3f\fP & other) const"
+
+.PP
+Subtraction two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::operator/ (const \fBVector3f\fP & other) const"
+
+.PP
+Division two vectors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the new vector 
+.RE
+.PP
+
+.SS "\fBVector3f\fP& RayTracer::Entities::Transform::Vector3f::operator= (const \fBVector3f\fP & other)"
+
+.PP
+Assign a vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the same vector modified 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::rotateVector (const \fBVector3f\fP & direction, const \fBVector3f\fP & rotation) const"
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::rotateX (float angle) const"
+
+.PP
+Rotate the vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIangle\fP the angle (in degree)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a new vector 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::rotateY (float angle) const"
+
+.PP
+Rotate the vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIangle\fP the angle (in degree)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a new vector 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::rotateZ (float angle) const"
+
+.PP
+Rotate the vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIangle\fP the angle (in degree)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a new vector 
+.RE
+.PP
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::toDegrees () const"
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::toRadians () const"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "double RayTracer::Entities::Transform::Vector3f::_x\fC [private]\fP"
+
+.SS "double RayTracer::Entities::Transform::Vector3f::_y\fC [private]\fP"
+
+.SS "double RayTracer::Entities::Transform::Vector3f::_z\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

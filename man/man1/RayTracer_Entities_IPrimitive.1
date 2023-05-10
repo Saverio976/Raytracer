@@ -1,0 +1,125 @@
+.TH "RayTracer::Entities::IPrimitive" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::IPrimitive \- The \fBIPrimitive\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IPrimitive\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::IEntity\fP\&.
+.PP
+Inherited by \fBRayTracer::PluginsExt::Cone::ConeEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, and \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IPrimitive\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBImages::Color\fP \fBgetColor\fP (const \fBImages::Ray\fP &ray, const \fBScenes::IDisplayable\fP &displayable, const \fBTransform::Vector3f\fP &intersect) const =0"
+.br
+.RI "Get the material\&. "
+.ti -1c
+.RI "virtual bool \fBisCollided\fP (const \fBTransform::Vector3f\fP &point) const =0"
+.br
+.RI "Check if the point is collided with the box\&. "
+.ti -1c
+.RI "virtual std::optional< \fBTransform::Vector3f\fP > \fBisCollided\fP (const \fBImages::Ray\fP &ray) const =0"
+.br
+.RI "Check if the ray is collided\&. "
+.ti -1c
+.RI "virtual \fBImages::Color\fP \fBredirectionLight\fP (const \fBImages::Ray\fP &ray, const \fBScenes::IDisplayable\fP &displayable, const \fBTransform::Vector3f\fP &intersect) const =0"
+.br
+.RI "this function is called when the object intercept the ray light "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBIPrimitive\fP class\&. 
+
+class that represent a primitive (box, sphere, \&.\&.\&.) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Entities::IPrimitive::~IPrimitive ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBImages::Color\fP RayTracer::Entities::IPrimitive::getColor (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBTransform::Vector3f\fP & intersect) const\fC [pure virtual]\fP"
+
+.PP
+Get the material\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+.SS "virtual std::optional<\fBTransform::Vector3f\fP> RayTracer::Entities::IPrimitive::isCollided (const \fBImages::Ray\fP & ray) const\fC [pure virtual]\fP"
+
+.PP
+Check if the ray is collided\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIray\fP the ray
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the ray is collided 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+.SS "virtual bool RayTracer::Entities::IPrimitive::isCollided (const \fBTransform::Vector3f\fP & point) const\fC [pure virtual]\fP"
+
+.PP
+Check if the point is collided with the box\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpoint\fP the point
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the point is collided 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+.SS "virtual \fBImages::Color\fP RayTracer::Entities::IPrimitive::redirectionLight (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBTransform::Vector3f\fP & intersect) const\fC [pure virtual]\fP"
+
+.PP
+this function is called when the object intercept the ray light 
+.PP
+\fBParameters\fP
+.RS 4
+\fIray\fP the ray between the light and the object 
+.br
+\fIdisplayable\fP the displayable 
+.br
+\fIintersect\fP the intersection point between this point and the ray
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color of the shadow 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

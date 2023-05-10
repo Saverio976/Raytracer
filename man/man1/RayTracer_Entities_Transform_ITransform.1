@@ -1,0 +1,159 @@
+.TH "RayTracer::Entities::Transform::ITransform" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::Transform::ITransform \- The \fBITransform\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ITransform\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ITransform\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBsetPosition\fP (const \fBVector3f\fP &position)=0"
+.br
+.RI "Set the position\&. "
+.ti -1c
+.RI "virtual const \fBVector3f\fP & \fBgetPosition\fP () const =0"
+.br
+.RI "Get the position\&. "
+.ti -1c
+.RI "virtual void \fBsetRotation\fP (const \fBVector3f\fP &rotation)=0"
+.br
+.RI "Set the rotation\&. "
+.ti -1c
+.RI "virtual const \fBVector3f\fP & \fBgetRotation\fP () const =0"
+.br
+.RI "Get the rotation\&. "
+.ti -1c
+.RI "virtual void \fBsetScale\fP (const \fBVector3f\fP &scale)=0"
+.br
+.RI "Set the scale\&. "
+.ti -1c
+.RI "virtual const \fBVector3f\fP & \fBgetScale\fP () const =0"
+.br
+.RI "Get the scale\&. "
+.ti -1c
+.RI "virtual \fBITransform\fP & \fBoperator=\fP (const \fBITransform\fP &other)=0"
+.br
+.RI "Assign a transform\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBITransform\fP class\&. 
+
+class that represent a transform (position, rotation, scale, \&.\&.) of an \fC\fBIEntity\fP\fP 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Entities::Transform::ITransform::~ITransform ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const \fBVector3f\fP& RayTracer::Entities::Transform::ITransform::getPosition () const\fC [pure virtual]\fP"
+
+.PP
+Get the position\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the position 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "virtual const \fBVector3f\fP& RayTracer::Entities::Transform::ITransform::getRotation () const\fC [pure virtual]\fP"
+
+.PP
+Get the rotation\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the rotation 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "virtual const \fBVector3f\fP& RayTracer::Entities::Transform::ITransform::getScale () const\fC [pure virtual]\fP"
+
+.PP
+Get the scale\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the scale 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "virtual \fBITransform\fP& RayTracer::Entities::Transform::ITransform::operator= (const \fBITransform\fP & other)\fC [pure virtual]\fP"
+
+.PP
+Assign a transform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other transform
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the same transform modified 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "virtual void RayTracer::Entities::Transform::ITransform::setPosition (const \fBVector3f\fP & position)\fC [pure virtual]\fP"
+
+.PP
+Set the position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposition\fP the position 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "virtual void RayTracer::Entities::Transform::ITransform::setRotation (const \fBVector3f\fP & rotation)\fC [pure virtual]\fP"
+
+.PP
+Set the rotation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrotation\fP the rotation 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+.SS "virtual void RayTracer::Entities::Transform::ITransform::setScale (const \fBVector3f\fP & scale)\fC [pure virtual]\fP"
+
+.PP
+Set the scale\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIscale\fP the scale 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Entities::Transform::Transform\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

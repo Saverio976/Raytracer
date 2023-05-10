@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_093f3b7f7c7a61ef21fffb3d339f67e1" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities Directory Reference</primary></indexterm>
+Directory dependency graph for Entities:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_093f3b7f7c7a61ef21fffb3d339f67e1_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_c620aa3b560253f2e8f37318dc57b0b1">Transform</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00068">ICamera.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00071">IEntity.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00074">ILight.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00077">IMaterial.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00080">IPrimitive.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

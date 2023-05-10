@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_6f6b6a3ad8e0d5aad58943c777bbb4ef" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster Directory Reference</primary></indexterm>
+Directory dependency graph for Cluster:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_6f6b6a3ad8e0d5aad58943c777bbb4ef_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00239">CameraClusterCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00242">CameraClusterEntity.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00245">ClusterRayIterator.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

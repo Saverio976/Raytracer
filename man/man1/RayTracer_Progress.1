@@ -1,0 +1,85 @@
+.TH "RayTracer::Progress" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Progress
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Progress\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgress\fP (float max, float threshold, \fBILogger\fP &logger)"
+.br
+.RI "Construct a new \fBProgress\fP object\&. "
+.ti -1c
+.RI "void \fBadd\fP (float value)"
+.br
+.RI "Add a value\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.ti -1c
+.RI "double \fB_max\fP"
+.br
+.ti -1c
+.RI "double \fB_step\fP"
+.br
+.ti -1c
+.RI "double \fB_current\fP"
+.br
+.ti -1c
+.RI "double \fB_nextStep\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Progress::Progress (float max, float threshold, \fBILogger\fP & logger)"
+
+.PP
+Construct a new \fBProgress\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImax\fP what is 100% for you ? 
+.br
+\fIthreshold\fP when to prompt (0\&.1 = every 10% passed, 0\&.05 = every 5% passed) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Progress::add (float value)"
+
+.PP
+Add a value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "double RayTracer::Progress::_current\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Progress::_logger\fC [private]\fP"
+
+.SS "double RayTracer::Progress::_max\fC [private]\fP"
+
+.SS "double RayTracer::Progress::_nextStep\fC [private]\fP"
+
+.SS "double RayTracer::Progress::_step\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

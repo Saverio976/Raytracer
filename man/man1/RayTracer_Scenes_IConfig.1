@@ -1,0 +1,80 @@
+.TH "RayTracer::Scenes::IConfig" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Scenes::IConfig
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IConfig\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Scenes::ConfigWrapper\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IConfig\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBreadFile\fP (const std::string &path)=0"
+.br
+.RI "read and parse the file at given path "
+.ti -1c
+.RI "virtual void \fBwriteFile\fP (const std::string &path)=0"
+.br
+.RI "writes the current config in a file at the given path "
+.ti -1c
+.RI "virtual std::shared_ptr< \fBISetting\fP > \fBgetSetting\fP () const =0"
+.br
+.RI "returns the current \fBSettingWrapper\fP "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Scenes::IConfig::~IConfig ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::shared_ptr<\fBISetting\fP> RayTracer::Scenes::IConfig::getSetting () const\fC [pure virtual]\fP"
+
+.PP
+returns the current \fBSettingWrapper\fP 
+.PP
+\fBReturns\fP
+.RS 4
+the current \fBSettingWrapper\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::ConfigWrapper\fP\&.
+.SS "virtual void RayTracer::Scenes::IConfig::readFile (const std::string & path)\fC [pure virtual]\fP"
+
+.PP
+read and parse the file at given path 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP the path to the file 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::ConfigWrapper\fP\&.
+.SS "virtual void RayTracer::Scenes::IConfig::writeFile (const std::string & path)\fC [pure virtual]\fP"
+
+.PP
+writes the current config in a file at the given path 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP the path to the file 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Scenes::ConfigWrapper\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

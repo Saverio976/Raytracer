@@ -1,0 +1,62 @@
+.TH "RayTracer::PluginsExt::Plane::PlaneCreator" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Plane::PlaneCreator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PlaneCreator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::Entities::IEntityCreator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~PlaneCreator\fP ()"
+.br
+.ti -1c
+.RI "\fBRayTracer::Entities::IEntity\fP * \fBcreate\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger) final"
+.br
+.RI "Create an entity with a setting\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPlaneEntity\fP * > \fB_elements\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Plane::PlaneCreator::~PlaneCreator ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRayTracer::Entities::IEntity\fP* RayTracer::PluginsExt::Plane::PlaneCreator::create (const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Create an entity with a setting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the entity 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Plugins::Entities::IEntityCreator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBPlaneEntity\fP *> RayTracer::PluginsExt::Plane::PlaneCreator::_elements\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

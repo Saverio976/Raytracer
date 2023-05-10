@@ -1,0 +1,74 @@
+.TH "RayTracer::Plugins::Entities::EntityHandler" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Plugins::Entities::EntityHandler \- The \fBEntityHandler\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EntityHandler\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityHandler\fP (const std::string &filePath)"
+.br
+.RI "\fBEntityHandler\fP constructor\&. "
+.ti -1c
+.RI "\fBRayTracer::Entities::IEntity\fP & \fBget\fP (const \fBRayTracer::Scenes::ISetting\fP &setting, \fBILogger\fP &logger)"
+.br
+.RI "Get an entity (and create it with setting) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPluginHandler\fP< \fBRayTracer::Entities::IEntity\fP, \fBIEntityCreator\fP > \fB_handler\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBEntityHandler\fP\&. 
+
+class that represent an entity handler (take a \&.so) 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Plugins::Entities::EntityHandler::EntityHandler (const std::string & filePath)"
+
+.PP
+\fBEntityHandler\fP constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP the file path 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRayTracer::Entities::IEntity\fP& RayTracer::Plugins::Entities::EntityHandler::get (const \fBRayTracer::Scenes::ISetting\fP & setting, \fBILogger\fP & logger)"
+
+.PP
+Get an entity (and create it with setting) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the entity 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPluginHandler\fP<\fBRayTracer::Entities::IEntity\fP, \fBIEntityCreator\fP> RayTracer::Plugins::Entities::EntityHandler::_handler\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

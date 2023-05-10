@@ -1,0 +1,141 @@
+.TH "RayTracer::Logger" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Logger \- \fBLogger\fP singleton\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Logger\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::ILogger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfatal\fP (const std::string &message) final"
+.br
+.RI "\fBLogger\fP fata\&. "
+.ti -1c
+.RI "void \fBerror\fP (const std::string &message) final"
+.br
+.RI "\fBLogger\fP error\&. "
+.ti -1c
+.RI "void \fBwarn\fP (const std::string &message) final"
+.br
+.RI "\fBLogger\fP warn\&. "
+.ti -1c
+.RI "void \fBinfo\fP (const std::string &message) final"
+.br
+.RI "\fBLogger\fP info\&. "
+.ti -1c
+.RI "void \fBdebug\fP (const std::string &message) final"
+.br
+.RI "\fBLogger\fP debug\&. "
+.ti -1c
+.RI "void \fBtrace\fP (const std::string &message) final"
+.br
+.RI "\fBLogger\fP trace\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprint\fP (const std::string &level, const std::string &message)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBLogger\fP singleton\&. 
+
+LogLevel: -1 - no messages 0 - only \fCfatal\fP are displayed 1 - \fCerror\fP and \fCfatal\fP are displayed 2 - \fCwarn\fP, \fCerror\fP and \fCfatal\fP are displayed 3 - \fCinfo\fP, \fCwarn\fP, \fCerror\fP and \fCfatal\fP are displayed 4 - \fCdebug\fP, \fCinfo\fP, \fCwarn\fP, \fCerror\fP and \fCfatal\fP are displayed 5 - \fCtrace\fP, \fCdebug\fP, \fCinfo\fP, \fCwarn\fP, \fCerror\fP and \fCfatal\fP are displayed
+.PP
+Attention: \fCdebug\fP and \fCtrace\fP will only do something in debug mode compilation\&. (\fCset(CMAKE_BUILD_TYPE Debug)\fP in \fCCMakeLists\&.txt\fP) 
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Logger::debug (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP debug\&. The DEBUG level is used for logging messages that help developers find out what went wrong during a debugging session\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+.SS "void RayTracer::Logger::error (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP error\&. The ERROR log level is used to represent error conditions in an application that prevent a specific operation from running, but the application itself can continue working even if it is at a reduced level of functionality or performance\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+.SS "void RayTracer::Logger::fatal (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP fata\&. Means that something critical is broken, and the application cannot continue to do any more useful work without the intervention of an engineer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+.SS "void RayTracer::Logger::info (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP info\&. INFO-level messages indicate events in the system that are significant to the business purpose of the application\&. Such events are logged to show that the system is operating normally\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+.SS "void RayTracer::Logger::print (const std::string & level, const std::string & message)\fC [private]\fP"
+
+.SS "void RayTracer::Logger::trace (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP trace\&. The TRACE level is used for tracing the path of code execution in a program\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+.SS "void RayTracer::Logger::warn (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP warn\&. Messages logged at the WARN level typically indicate that something unexpected happened, but the application can recover and continue to function normally\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

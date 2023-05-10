@@ -1,0 +1,106 @@
+.TH "RayTracer::Entities::IEntity" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::IEntity \- The \fBIEntity\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IEntity\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Entities::ICamera\fP, \fBRayTracer::Entities::ILight\fP, and \fBRayTracer::Entities::IPrimitive\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBType\fP { \fBLight\fP, \fBCamera\fP, \fBPrimitive\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IEntity\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBTransform::ITransform\fP & \fBgetTransform\fP ()=0"
+.br
+.RI "Get the transform (position, rotation, scale) "
+.ti -1c
+.RI "virtual const \fBTransform::ITransform\fP & \fBgetTransform\fP () const =0"
+.br
+.RI "Get the transform (position, rotation, scale) (const) "
+.ti -1c
+.RI "virtual \fBType\fP \fBgetType\fP () const =0"
+.br
+.RI "Get the type (light, camera, primitive) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBIEntity\fP class\&. 
+
+Object available in a scene 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBRayTracer::Entities::IEntity::Type\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILight \fP\fP
+.TP
+\fB\fICamera \fP\fP
+.TP
+\fB\fIPrimitive \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Entities::IEntity::~IEntity ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const \fBTransform::ITransform\fP& RayTracer::Entities::IEntity::getTransform () const\fC [pure virtual]\fP"
+
+.PP
+Get the transform (position, rotation, scale) (const) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, \fBRayTracer::PluginsExt::Cone::ConeEntity\fP, \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, \fBRayTracer::PluginsExt::Camera::CameraEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+.SS "virtual \fBTransform::ITransform\fP& RayTracer::Entities::IEntity::getTransform ()\fC [pure virtual]\fP"
+
+.PP
+Get the transform (position, rotation, scale) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, \fBRayTracer::PluginsExt::Cone::ConeEntity\fP, \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, \fBRayTracer::PluginsExt::Camera::CameraEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+.SS "virtual \fBType\fP RayTracer::Entities::IEntity::getType () const\fC [pure virtual]\fP"
+
+.PP
+Get the type (light, camera, primitive) 
+.PP
+\fBReturns\fP
+.RS 4
+the type 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, \fBRayTracer::PluginsExt::Cone::ConeEntity\fP, \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, \fBRayTracer::PluginsExt::Camera::CameraEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

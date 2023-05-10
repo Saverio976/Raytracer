@@ -1,0 +1,53 @@
+.TH "RayTracer::Factories::IEntityFactory" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Factories::IEntityFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IEntityFactory\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Factories::EntityFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IEntityFactory\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fBEntities::IEntity\fP & \fBget\fP (const std::string &name, const \fBScenes::ISetting\fP &setting, \fBILogger\fP &logger)=0"
+.br
+.RI "Get an entity\&. "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Factories::IEntityFactory::~IEntityFactory ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBEntities::IEntity\fP& RayTracer::Factories::IEntityFactory::get (const std::string & name, const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [pure virtual]\fP"
+
+.PP
+Get an entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the name 
+.br
+\fIsetting\fP the setting (to create the entity)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the entity 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Factories::EntityFactory\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

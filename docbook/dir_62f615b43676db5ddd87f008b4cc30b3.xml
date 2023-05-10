@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_62f615b43676db5ddd87f008b4cc30b3" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera Directory Reference</primary></indexterm>
+Directory dependency graph for Camera:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_62f615b43676db5ddd87f008b4cc30b3_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_36f7b4cf007e3ad8108b966aa19e811a">Basic</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_6f6b6a3ad8e0d5aad58943c777bbb4ef">Cluster</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_e49b0e3a245f30893869fadf17781875">FullCustom</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

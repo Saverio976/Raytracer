@@ -1,0 +1,128 @@
+.TH "RayTracer::Entities::ILight" 1 "Wed May 10 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Entities::ILight \- The \fBILight\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ILight\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::IEntity\fP\&.
+.PP
+Inherited by \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, and \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ILight\fP ()=default"
+.br
+.ti -1c
+.RI "virtual const \fBImages::Color\fP & \fBgetColor\fP () const =0"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "virtual \fBImages::Color\fP \fBgetColor\fP (const \fBTransform::Vector3f\fP &point, const \fBScenes::IDisplayable\fP &displayable) const =0"
+.br
+.RI "Get the color\&. "
+.ti -1c
+.RI "virtual void \fBsetColor\fP (const \fBImages::Color\fP &color)=0"
+.br
+.RI "Set the color\&. "
+.ti -1c
+.RI "virtual bool \fBisAmbient\fP () const =0"
+.br
+.RI "Check if the light is ambient\&. "
+.ti -1c
+.RI "virtual double \fBgetPower\fP () const =0"
+.br
+.RI "get the power of the light "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBILight\fP class\&. 
+
+class that represent a light 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Entities::ILight::~ILight ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const \fBImages::Color\fP& RayTracer::Entities::ILight::getColor () const\fC [pure virtual]\fP"
+
+.PP
+Get the color\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+.SS "virtual \fBImages::Color\fP RayTracer::Entities::ILight::getColor (const \fBTransform::Vector3f\fP & point, const \fBScenes::IDisplayable\fP & displayable) const\fC [pure virtual]\fP"
+
+.PP
+Get the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpoint\fP the point of the impact
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+.SS "virtual double RayTracer::Entities::ILight::getPower () const\fC [pure virtual]\fP"
+
+.PP
+get the power of the light 
+.PP
+\fBReturns\fP
+.RS 4
+the value of the power 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+.SS "virtual bool RayTracer::Entities::ILight::isAmbient () const\fC [pure virtual]\fP"
+
+.PP
+Check if the light is ambient\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if the light is ambient 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+.SS "virtual void RayTracer::Entities::ILight::setColor (const \fBImages::Color\fP & color)\fC [pure virtual]\fP"
+
+.PP
+Set the color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP the color 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::SpotLight::SpotLightEntity\fP, \fBRayTracer::PluginsExt::PointLight::PointLightEntity\fP, and \fBRayTracer::PluginsExt::AmbientLight::AmbientLightEntity\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.
