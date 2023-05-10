@@ -14,15 +14,14 @@ namespace RayTracer::Display {
     _position(position) {
         while (!this->_scene.getCameras().size()) {
         }
-        Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
-        Entities::Transform::Vector2i size = camera.getSize();
-
-        this->_texture.create(size.getX(), size.getY());
     }
 
     void CanvasModule::tick(sf::RenderWindow &window) {
         Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
         Entities::Transform::Vector2i size = camera.getSize();
+        sf::Texture texture;
+        sf::Sprite sprite;
+        texture.create(size.getX(), size.getY());
         
         sf::Color *pixels = new sf::Color[size.getX() * size.getY()];
         for (int x = 0; x < size.getX(); x++) {
@@ -34,10 +33,10 @@ namespace RayTracer::Display {
                 }
             }
         }
-        this->_texture.update((sf::Uint8 *) pixels, size.getX(), size.getY(), 0, 0);
+        texture.update((sf::Uint8 *) pixels, size.getX(), size.getY(), 0, 0);
         delete [] pixels;
-        this->_sprite.setTexture(this->_texture);
-        window.draw(this->_sprite);
+        sprite.setTexture(texture);
+        window.draw(sprite);
     }
 
     void CanvasModule::start(sf::RenderWindow &window) {
@@ -48,8 +47,8 @@ namespace RayTracer::Display {
         Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
         Entities::Transform::Vector2i size = camera.getSize();
 
-        window.setSize({size.getX(), size.getY()});
-        window.setView(sf::View({0, 0, size.getX(), size.getY()}));
+        window.setSize({static_cast<unsigned int>(size.getX()), static_cast<unsigned int>(size.getY())});
+        window.setView(sf::View({0, 0, static_cast<float>(size.getX()), static_cast<float>(size.getY())}));
     }
 
     void CanvasModule::event(sf::RenderWindow &window, const sf::Event &event) {
