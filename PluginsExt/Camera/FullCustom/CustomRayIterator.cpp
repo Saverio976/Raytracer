@@ -16,7 +16,7 @@
 #include "Vector2i.hpp"
 #include "Vector3f.hpp"
 
-static const RayTracer::Entities::Transform::Vector3f baseDir(0, 0, 1);
+static const RayTracer::Entities::Transform::Vector3f baseDir(0, -1, 0);
 
 namespace RayTracer::PluginsExt::Camera::FullCustom {
     // -----------------------------------------------------------------------
@@ -31,22 +31,23 @@ namespace RayTracer::PluginsExt::Camera::FullCustom {
         _x(x),
         _y(y),
         _normal(
-            // cameraPos.rotateVector(
-            //     baseDir,
-            //     fovXYZ * (
-            //         Entities::Transform::Vector3f(
-            //             0 - (screenSize.getX() / 2.0) + x,
-            //             0 - (screenSize.getY() / 2.0) + y,
-            //             0
-            //         )
-            //     )
-            // )
-            baseDir
-                .rotateX(fovXYZ.getX() * (x - (screenSize.getX() / 2.0)))
-                .rotateY(fovXYZ.getY() * (y - (screenSize.getY() / 2.0)))
+            cameraPos.rotateVector(
+                baseDir,
+                _fovXYZ * (
+                    Entities::Transform::Vector3f(
+                        x - (screenSize.getX() / 2.0),
+                        0,
+                        (screenSize.getY() / 2.0) - y
+                    )
+                )
+            )
+            // baseDir
+            //     .rotateX(fovXYZ.getX() * (x - (screenSize.getX() / 2.0)))
+            //     .rotateZ(fovXYZ.getZ() * (y - (screenSize.getY() / 2.0)))
         ),
         _ray(_cameraPos - (_normal * Entities::Transform::Vector3f(100, 100, 100)), _cameraPos)
     {
+        // std::cout << _fovXYZ << std::endl;
     }
 
     Images::IRayIterator::IIterator &CustomRayIterator::Iterator::operator++()
@@ -115,10 +116,11 @@ namespace RayTracer::PluginsExt::Camera::FullCustom {
         _fov(fov),
         _fovXYZ(
             unit * fov.getX() / screenSize.getX(),
-            unit * fov.getY() / screenSize.getY(),
-            0
+            0,
+            unit * fov.getY() / screenSize.getY()
         )
     {
+        _fov = Entities::Transform::Vector3f(fov.getX(), fov.getZ(), fov.getY());
         std::cout << _fovXYZ << std::endl;
     }
 
