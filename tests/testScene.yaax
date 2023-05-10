@@ -20,18 +20,15 @@ cameras:
 primitives :
 {
     # List of spheres
-    LimitedCone = (
+    Plane = (
         {
-            angle = 0.5;
-            height = 100.0;
             transform = {
                 position = {x = 0.0; y = 15.0; z = 0.0;};
                 scale = {x = 60.0; y = 20.0; z = -10.0;};
-                rotation = {x = 0.0; y = 0.0; z = 1.57;};
+                rotation = {x = 1.5; y = 0.0; z = 0.0;};
             };
             size = {x = 50.0; y = 50.0; z = 50.0;};
             material = {
-                type = "PlainMaterial";
                 shininess = 1.0;
                 color = {r = 255.0; g = 255.0; b = 255.0; a = 255.0;};
             };
@@ -51,7 +48,6 @@ lights :
                 rotation = {x = 60.0; y = 20.0; z = -10.0;};
             };
             color = {r = 205.0; g = 135.0; b = 235.0; a = 255.0;};
-            power = 1.0;
         }
     );
 };
