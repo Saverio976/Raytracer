@@ -33,6 +33,9 @@ namespace RayTracer::PluginsExt::Sphere {
         if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
             _logger.warn("SPHERE: config: scale y z must be 0 (remainder: x is for radius)");
         }
+        if (_transform.getRotation().getY() != 0 || _transform.getRotation().getZ() != 0 || _transform.getRotation().getX() != 0) {
+            _logger.warn("SPHERE: config: rotation x y z must be 0 (why rotate a sphere ?)");
+        }
         _radius = std::abs(_radius * _transform.getScale().getX());
     }
 

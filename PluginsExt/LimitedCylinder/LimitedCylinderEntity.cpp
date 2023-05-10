@@ -34,7 +34,7 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
-        _direction = _transform.getRotation().getNormalized();
+        _direction = {0, 1, 0};
         if (_transform.getScale().getZ() != 0) {
             _logger.warn("LIMITED_CYLINDER: config: scale z must be 0 (remainder: x is for radius, z is for height)");
         }
@@ -90,18 +90,18 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
         auto m2 = ray.getDirection().dot(_direction) * t1 + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
         auto vec2 = ray.getOrigin() + ray.getDirection() * Entities::Transform::Vector3f(t2, t2, t2);
         if (ray.getOrigin().getDistance(vec1) < ray.getOrigin().getDistance(vec2)) {
-            if (m1 > 0 && _transform.getPosition().getDistance(vec1) < _height) {
+            if (_transform.getPosition().getDistance(vec1) < _height) {
                 return vec1;
             }
-            if (m2 > 0 && _transform.getPosition().getDistance(vec2) < _height) {
+            if (_transform.getPosition().getDistance(vec2) < _height) {
                 return vec2;
             }
             return std::nullopt;
         } else {
-            if (m2 > 0 && _transform.getPosition().getDistance(vec2) < _height) {
+            if (_transform.getPosition().getDistance(vec2) < _height) {
                 return vec2;
             }
-            if (m1 > 0 && _transform.getPosition().getDistance(vec1) < _height) {
+            if (_transform.getPosition().getDistance(vec1) < _height) {
                 return vec1;
             }
             return std::nullopt;
@@ -133,7 +133,7 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
         if (ray.getOrigin().getDistance(vec1) < ray.getOrigin().getDistance(vec2)) {
             m = m1;
         } else {
-            m = t2;
+            m = m2;
         }
 
         auto transform = _transform;

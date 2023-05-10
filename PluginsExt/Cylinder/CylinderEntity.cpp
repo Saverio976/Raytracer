@@ -28,7 +28,7 @@ namespace RayTracer::PluginsExt::Cylinder {
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
 
-        _direction = _transform.getRotation().toRadians();
+        _direction = {0, 0, 1};
         if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
             _logger.warn("CYLINDER: config: scale y z must be 0 (remainder: x is for radius");
         }
@@ -114,7 +114,7 @@ namespace RayTracer::PluginsExt::Cylinder {
         if (ray.getOrigin().getDistance(vec1) < ray.getOrigin().getDistance(vec2)) {
             m = m1;
         } else {
-            m = t2;
+            m = m2;
         }
 
         auto transform = _transform;

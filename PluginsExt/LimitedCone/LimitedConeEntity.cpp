@@ -20,11 +20,11 @@ namespace RayTracer::PluginsExt::LimitedCone {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
-        if (_transform.getScale().getX() != _transform.getScale().getY() ||
-            _transform.getScale().getX() != _transform.getScale().getZ()) {
-            _logger.warn("CONE: config: scale x y z must be the same: now using only x");
+        if (_transform.getScale().getZ() != 0) {
+            _logger.warn("CONE: config: scale z must be 0 (remainder: x is for angle, y is for height)");
         }
         _angle = _angle * _transform.getScale().getX();
+        _height = _height * _transform.getScale().getY();
     }
 
     Entities::IEntity::Type LimitedConeEntity::getType() const
@@ -101,7 +101,7 @@ namespace RayTracer::PluginsExt::LimitedCone {
 
         auto transform = _transform;
         auto m = ray.getDirection().dot(coneDirection) * t + (ray.getOrigin() - _transform.getPosition()).dot(coneDirection);
-        auto aa = point - _transform.getPosition() - (coneDirection * Entities::Transform::Vector3f(m, m, m));
+        auto aa = _transform.getPosition() - (coneDirection * Entities::Transform::Vector3f(m, m, m));
         transform.setPosition(aa);
         return _material->get().getColor(ray, _transform, point, displayable);
     }
