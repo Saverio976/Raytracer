@@ -6,16 +6,32 @@
 */
 
 #include <string>
+#include "ILogger.hpp"
 #include "Logger.hpp"
 #include "ConfigWrapper.hpp"
 
 namespace RayTracer::Scenes {
+    ConfigWrapper::ConfigWrapper(ILogger &logger):
+        _logger(logger)
+    {
+    }
+
+    ConfigWrapper::ReadException::ReadException(const std::string &message):
+        _message(message)
+    {
+    }
+
+    ConfigWrapper::WriteException::WriteException(const std::string &message):
+        _message(message)
+    {
+    }
+
     const char *ConfigWrapper::ReadException::what() const throw() {
-        return ("Error: can't read given file");
+        return _message.c_str();
     }
 
     const char *ConfigWrapper::WriteException::what() const throw() {
-        return ("Error: can't write given config");
+        return _message.c_str();
     }
 
     void ConfigWrapper::readFile(const std::string &path) {
@@ -28,8 +44,8 @@ namespace RayTracer::Scenes {
             std::string file = e.getFile();
             std::string line = std::to_string(e.getLine());
             std::string error = e.getError();
-            std::cerr << "Parse error at " << e.getFile() << ":" << e.getLine() << " - " << e.getError() << std::endl;
-            throw ConfigWrapper::ReadException();
+            std::string message = "Parse error at " + file + ":" + line + " - " + error;
+            throw ConfigWrapper::ReadException(message);
         }
         _scene = std::make_unique<SettingWrapper>(_config);
     }
@@ -38,8 +54,8 @@ namespace RayTracer::Scenes {
         try {
             _config->writeFile(path.c_str());
         } catch (libconfig::FileIOException &e) {
-            std::cerr << "Writing error: " << e.what() << std::endl;
-            throw ConfigWrapper::WriteException();
+            std::string message = e.what();
+            throw ConfigWrapper::WriteException("Wrting error: " + path + ": "+ message);
         }
     }
 

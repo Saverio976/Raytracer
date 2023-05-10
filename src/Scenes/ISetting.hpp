@@ -7,7 +7,7 @@
 
 #ifndef ISETTING_HPP_
     #define ISETTING_HPP_
-    #include <iostream>
+
     #include <memory>
     #include <libconfig.h++>
 

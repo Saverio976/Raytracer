@@ -54,16 +54,22 @@ namespace RayTracer::PluginsExt::Cone {
         double b = 2 * (rayToConeOrigin.dot(coneDirection) * rayDirection.dot(coneDirection) - testAngle * rayToConeOrigin.dot(rayDirection));
         double c = pow(rayToConeOrigin.dot(coneDirection), 2) - testAngle * rayToConeOrigin.dot(rayToConeOrigin);
         double delta = (b * b) - (4 * a * c);
+        double t1 = 0;
+        double t2 = 0;
 
         Entities::Transform::Vector3f collision(0, 0, 0);
         if (delta < 0) {
             return std::nullopt;
-        } else {
-            double t1 = ((-1 * b) + sqrt(delta)) / (2 * a);
-            double t2 = ((-1 * b) - sqrt(delta)) / (2 * a);
+        } else if (delta == 0) {
+            double t = -b / (2 * a);
 
-            if (t1 > 0 && t2 > 0)
-                std::swap(t1, t2);
+            collision = rayOrigin + rayDirection * Entities::Transform::Vector3f(t, t, t);
+            Entities::Transform::Vector3f remove(collision.getX() - coneOrigin.getX(), collision.getY() - coneOrigin.getY(), collision.getZ() - coneOrigin.getZ());
+            if (remove.dot(coneDirection) > 0)
+                return collision;
+        } else {
+            t1 = ((-1 * b) + sqrt(delta)) / (2 * a);
+
             if (t1 > 0) {
                 collision = rayOrigin + rayDirection * Entities::Transform::Vector3f(t1, t1, t1);
                 Entities::Transform::Vector3f remove(collision.getX() - coneOrigin.getX(), collision.getY() - coneOrigin.getY(), collision.getZ() - coneOrigin.getZ());
@@ -86,7 +92,6 @@ namespace RayTracer::PluginsExt::Cone {
         const Entities::Transform::Vector3f coneDirection = _transform.getRotation();
         const Entities::Transform::Vector3f coneOrigin = _transform.getPosition();
         const Entities::Transform::Vector3f rayToConeOrigin(rayOrigin.getX() - coneOrigin.getX(), rayOrigin.getY() - coneOrigin.getY(), rayOrigin.getZ() - coneOrigin.getZ());
-
         double testAngle = pow(tan(_angle), 2);
 
         double a = pow(rayDirection.dot(coneDirection), 2) - testAngle * rayDirection.dot(rayDirection);
@@ -94,18 +99,13 @@ namespace RayTracer::PluginsExt::Cone {
         double c = pow(rayToConeOrigin.dot(coneDirection), 2) - testAngle * rayToConeOrigin.dot(rayToConeOrigin);
         double delta = (b * b) - (4 * a * c);
 
-        Entities::Transform::Vector3f collision(0, 0, 0);
-        double t1 = ((-1 * b) + sqrt(delta)) / (2 * a);
-        double t2 = ((-1 * b) - sqrt(delta)) / (2 * a);
+        double t = (-b - std::sqrt(delta)) / (2 * a);
 
-        if (t1 > 0 && t2 > 0)
-            std::swap(t1, t2);
-
-        auto m1 = ray.getDirection().dot(_transform.getRotation()) * t1 + (ray.getOrigin() - _transform.getPosition()).dot(_transform.getRotation());
-        auto aa = _transform.getPosition() + (_transform.getRotation() * Entities::Transform::Vector3f(m1, m1, m1));
         auto transform = _transform;
+        auto m = ray.getDirection().dot(coneDirection) * t + (ray.getOrigin() - _transform.getPosition()).dot(coneDirection);
+        auto aa = _transform.getPosition() - (coneDirection * Entities::Transform::Vector3f(m, m, m));
         transform.setPosition(aa);
-        return _material->get().getColor(ray, transform, point, displayable);
+        return _material->get().getColor(ray, _transform, point, displayable);
     }
 
     Images::Color ConeEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,

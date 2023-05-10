@@ -17,7 +17,7 @@ namespace RayTracer::Scenes {
         _logger(logger)
     {
         SceneLoader::checkGoodFile(filePath);
-        _configWrapper = std::make_unique<ConfigWrapper>();
+        _configWrapper = std::make_unique<ConfigWrapper>(_logger);
         _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>("./EntitiesPlugins"); // TODO: use parameters path
         _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>("./FiltersPlugins"); // TODO: use parameters path
         _materialLoader = std::make_unique<Plugins::Materials::MaterialLoader>("./MaterialsPlugins"); // TODO: use parameters path
