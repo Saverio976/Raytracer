@@ -50,7 +50,7 @@ namespace RayTracer::PluginsExt::Cone {
         const Entities::Transform::Vector3f coneOrigin = _transform.getPosition();
         const Entities::Transform::Vector3f rayToConeOrigin(rayOrigin.getX() - coneOrigin.getX(), rayOrigin.getY() - coneOrigin.getY(), rayOrigin.getZ() - coneOrigin.getZ());
 
-        double testAngle = pow(-0.4777070063694 * _angle + 1.5, 2);
+        double testAngle = pow(tan(_angle), 2);
 
         double a = pow(rayDirection.dot(coneDirection), 2) - testAngle * rayDirection.dot(rayDirection);
         double b = 2 * (rayToConeOrigin.dot(coneDirection) * rayDirection.dot(coneDirection) - testAngle * rayToConeOrigin.dot(rayDirection));
@@ -64,21 +64,16 @@ namespace RayTracer::PluginsExt::Cone {
             double t1 = ((-1 * b) + sqrt(delta)) / (2 * a);
             double t2 = ((-1 * b) - sqrt(delta)) / (2 * a);
 
-            double t = -1;
-            if (t1 > 0 && t2 > 0) {
-                t = std::min(t1, t2);
-            } else if (t1 > 0) {
-                t = t1;
-            } else if (t2 > 0) {
-                t = t2;
-            }
-            if (t > 0) {
-                collision = rayOrigin + rayDirection * Entities::Transform::Vector3f(t, t, t);
-                return collision;
-            } else {
-                return std::nullopt;
+            if (t1 > 0 && t2 > 0)
+                std::swap(t1, t2);
+            if (t1 > 0) {
+                collision = rayOrigin + rayDirection * Entities::Transform::Vector3f(t1, t1, t1);
+                Entities::Transform::Vector3f remove(collision.getX() - coneOrigin.getX(), collision.getY() - coneOrigin.getY(), collision.getZ() - coneOrigin.getZ());
+                if (remove.dot(coneDirection) > 0)
+                    return collision;
             }
         }
+        return std::nullopt;
     }
 
     bool ConeEntity::isCollided(const Entities::Transform::Vector3f &point) const
