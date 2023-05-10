@@ -27,7 +27,7 @@ jobs:
           pip install -r ./requirements.txt
 
       - name: Build uml
-        run: make -C documentation uml EXTRA_PARAMS_PLANTUML="java -jar ./.github/workflows/plantuml.jar"
+        run: make -C documentation uml EXTRA_PARAMS_PLANTUML="java -jar ../.github/workflows/plantuml.jar"
 
       - name: Build documentation
         run: make -C documentation doxygen
