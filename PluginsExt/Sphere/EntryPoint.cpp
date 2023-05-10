@@ -6,7 +6,6 @@
 */
 
 #include <vector>
-#include "SphereEntity.hpp"
 #include "Api.hpp"
 #include "SphereCreator.hpp"
 

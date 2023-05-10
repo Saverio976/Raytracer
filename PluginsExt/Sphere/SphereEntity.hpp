@@ -13,7 +13,6 @@
     #include "IMaterial.hpp"
     #include "IPrimitive.hpp"
     #include "ISetting.hpp"
-    #include "PlainMaterial.hpp"
     #include "Transform.hpp"
     #include "Vector3f.hpp"
 
@@ -34,7 +33,7 @@ namespace RayTracer::PluginsExt::Sphere {
         private:
             Entities::Transform::Transform _transform;
             double _radius;
-            PlainMaterial _material;
+            std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
             ILogger &_logger;
     };
 }

@@ -51,6 +51,9 @@ namespace RayTracer::PluginsExt::Camera {
         }
         _maxThread = (_maxThread <= 0) ? 1 : _maxThread;
         _logger.info("Camera Max threads : " + std::to_string(_maxThread));
+        if (_transform.getScale().getX() != 0 || _transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
+            _logger.warn("CAMERA: config: scale x y z must be 0 (not suported to scale camera)");
+        }
     }
 
     Entities::IEntity::Type CameraEntity::getType() const {

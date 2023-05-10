@@ -1,15 +1,13 @@
 ##
 ## EPITECH PROJECT, 2023
-## RayTracer
+## Documentation
 ## File description:
-## Documentation makefile
+## make
 ##
 
-
-EXTRA_PARAMS_PLANTUML 	= 	plantuml
-PLANTUML_PUML			=	uml.puml
-PLANTUML_TARGET			=	$(PLANTUML_PUML:%.puml=%.svg)
-
+EXTRA_PARAMS_PLANTUML       =    plantuml
+PLANTUML_PUML               =    uml.puml
+PLANTUML_TARGET             =    $(PLANTUML_PUML:%.puml=%.svg)
 
 docs: uml doxygen
 

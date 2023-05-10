@@ -13,7 +13,7 @@
     #include "ISetting.hpp"
     #include "ILogger.hpp"
     #include "Transform.hpp"
-    #include "PlainMaterial.hpp"
+    #include "IMaterial.hpp"
     #include "Ray.hpp"
 
 namespace RayTracer::PluginsExt::Cylinder {
@@ -35,7 +35,7 @@ namespace RayTracer::PluginsExt::Cylinder {
             Entities::Transform::Vector3f _direction;
             double _radius;
             ILogger &_logger;
-            PlainMaterial _material;
+            std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
     };
 }
 

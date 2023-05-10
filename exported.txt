@@ -3,5 +3,6 @@
     {
         getEntityFactoryInstance;
         getFilterFactoryInstance;
+        getMaterialFactoryInstance;
     };
 };

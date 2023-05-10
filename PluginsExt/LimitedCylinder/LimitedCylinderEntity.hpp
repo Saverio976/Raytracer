@@ -13,7 +13,7 @@
     #include "ISetting.hpp"
     #include "ILogger.hpp"
     #include "Transform.hpp"
-    #include "PlainMaterial.hpp"
+    #include "IMaterial.hpp"
     #include "Ray.hpp"
 
 namespace RayTracer::PluginsExt::LimitedCylinder {
@@ -33,10 +33,10 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
         private:
             std::array<double, 2> isCollidedInfiniteCylinder(const Images::Ray &ray) const;
             Entities::Transform::Transform _transform;
-            Entities::Transform::Vector3f _direction;
+            const Entities::Transform::Vector3f &_direction;
             double _radius;
             ILogger &_logger;
-            PlainMaterial _material;
+            std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
             double _height;
     };
 }

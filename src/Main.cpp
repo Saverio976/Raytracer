@@ -56,6 +56,12 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             Parameters::getInstance().set("log-level", 3);
         }
+        try {
+            Scenes::SceneLoader::checkGoodFile(_sceneConfFilePath);
+        } catch (const Scenes::SceneLoader::BadFileError &e) {
+            std::string message = e.what();
+            throw ArgumentError("bad argument:: --scene-path <path>:: " + message);
+        }
         _logger.trace("Finishing Parsing Command Arguments");
         return true;
     }
@@ -65,13 +71,15 @@ namespace RayTracer {
         Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
-            _scene(setting);
+            _scene(setting, "onChange");
+        });
+        loader.subscribe("onBeforeChange", [&](const Scenes::ISetting &setting) {
+            _scene(setting, "onBeforeChange");
         });
         try {
             _logger.info("Loading Scene...");
             loader.update();
             _logger.info("Rendering Scene...");
-            this->_scene.renders();
         } catch (const std::exception &e) {
             std::string message = e.what();
             _logger.fatal("Loader/Render error:: " + message);
