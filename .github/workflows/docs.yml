@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: create dependencies
+      - name: Create dependencies
         run: echo "hpp2plantuml" >> requirements.txt
 
       - name: Install python
@@ -25,9 +25,9 @@ jobs:
         run: |
           sudo apt-get install -y graphviz doxygen plantuml curl default-jre default-jdk
           pip install -r ./requirements.txt
-          curl -Lo plantuml.jar "https://github.com/plantuml/plantuml/releases/download/v1.2023.4/plantuml.jar"
+
       - name: Build uml
-        run: make -C documentation uml EXTRA_PARAMS_PLANTUML="java -jar ./plantuml.jar"
+        run: make -C documentation uml EXTRA_PARAMS_PLANTUML="java -jar ./.github/workflows/plantuml.jar"
 
       - name: Build documentation
         run: make -C documentation doxygen
