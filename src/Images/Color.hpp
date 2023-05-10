@@ -9,6 +9,7 @@
     #define COLOR_HPP_
     #include <mutex>
     #include <ostream>
+    #include <SFML/Graphics/Color.hpp>
     #include "ISetting.hpp"
 
 namespace RayTracer::Images {
@@ -135,6 +136,12 @@ namespace RayTracer::Images {
              * @param distance max distance (exemple: watt of the light)
              */
             void applyDistance(double distance, double maxDistance);
+            /**
+             * @brief convert color to sfColor
+             *
+             * @return the sfcolor
+             */
+            sf::Color toSfColor() const;
 
         private:
             double _r;

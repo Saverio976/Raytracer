@@ -14,7 +14,7 @@
 namespace RayTracer::Display {
     class CanvasModule : public IDisplayModule {
         public:
-            CanvasModule(Scenes::Scene &scene);
+            CanvasModule(Scenes::Scene &scene, std::size_t &position);
             void tick(sf::RenderWindow &window) final;
             void event(sf::RenderWindow &window, const sf::Event &event) final;
             void start(sf::RenderWindow &window) final;
@@ -23,6 +23,9 @@ namespace RayTracer::Display {
         protected:
         private:
             Scenes::Scene &_scene;
+            std::size_t &_position;
+            sf::Texture _texture;
+            sf::Sprite _sprite;
     };
 }
 

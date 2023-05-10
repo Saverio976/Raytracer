@@ -24,7 +24,7 @@ namespace RayTracer::Display {
             std::vector<std::unique_ptr<IDisplayModule>> _modules;
             Scenes::Scene &_scene;
             sf::Font _font;
-            size_t position = 0;
+            size_t _position = 0;
     };
 
 }

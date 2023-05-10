@@ -10,7 +10,7 @@ cameras:
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
             focal = 200.0;
-            maxThreads = 1000;
+            maxThreads = -1;
             filters = {
                 SSAAx4: (
                     {
