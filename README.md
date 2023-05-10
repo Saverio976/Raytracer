@@ -48,6 +48,13 @@ les lumières sont:
 - [AmbientLight](#AmbientLight) (mais la documentation est sur toutes les primitives)
 - [SpotLight](#SpotLight)
 
+les cameras sont:
+- [Camera](#Camera) (mais la documentation est sur toutes les primitives)
+- [CameraCluster](#CameraCluster)
+
+les filtres sont:
+- [SSAAx4](#SSAAx4)
+
 ## Sphere
 
 ![image](/documentation/sphere1-basic.png)
@@ -1614,6 +1621,784 @@ lights: {
             color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
             # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
             power = 1.0;
+        }
+    );
+}
+```
+
+</details>
+
+## Camera
+
+Regarder la documentation pour les primitives, elle explique déjà bien le principe
+
+## CameraCluster
+
+![cluster1](/documentation/camera-cluster1.png)
+![cluster2](/documentation/camera-cluster2.png)
+![cluster5](/documentation/camera-cluster5.png)
+
+<details>
+    <summary>afficher ...</summary>
+
+```python
+# camera-cluster1.yaax
+
+# Configuration of the camera
+cameras:
+{
+    CameraCluster: (
+        {
+            # Taille de l'écran
+            screenSize = {x: 500; y = 500;};
+            screen = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance entre la caméra est l'écran
+            distanceFromScreen = 200.0;
+            # le rapport entre 1 rayon -> pixel
+            # dans le cas présent, 1 rayon = 1 pixel
+            cluster = 1;
+            # Nombre maximum de threads utilisé (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = ()
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    Sphere = (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            radius = 50.0;
+            transform = {
+                position = {x = 15.0; y = 100.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+    Plane = (
+        {
+            transform = {
+                position = {x = 0.0; y = 150.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            size = {x = 50.0; y = 50.0; z = 0.0;};
+            material = {
+                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            transform = {
+                position = {x = 0.0; y = 10.0; z = -100.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            size = {x = 1000.0; y = 500.0; z = 500.0;};
+            material = {
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+};
+
+# Configuration de la lumière
+lights: {
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+    SpotLight = (
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = -50.0; y = 0.0; z = 0.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: agrandis/diminus l'angle de la lampe
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                # vecteur normalisé de direction de la lampe
+                rotation = {x = 0.0; y = 1.0; z = -0.5;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 5.0;
+            # Rayon du chants d'actions de la lumière
+            radius = 500.0;
+            # Angle de la lampe (comme le cone)
+            angle = 50.0;
+        }
+    );
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+}
+```
+
+
+```python
+# camera-cluster2.yaax
+
+# Configuration of the camera
+cameras:
+{
+    CameraCluster: (
+        {
+            # Taille de l'écran
+            screenSize = {x: 500; y = 500;};
+            screen = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance entre la caméra est l'écran
+            distanceFromScreen = 200.0;
+            # le rapport entre 1 rayon -> pixel
+            # dans le cas présent, 1 rayon = 4 pixels
+            cluster = 2;
+            # Nombre maximum de threads utilisé (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = ()
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    Sphere = (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            radius = 50.0;
+            transform = {
+                position = {x = 15.0; y = 100.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+    Plane = (
+        {
+            transform = {
+                position = {x = 0.0; y = 150.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            size = {x = 50.0; y = 50.0; z = 0.0;};
+            material = {
+                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            transform = {
+                position = {x = 0.0; y = 10.0; z = -100.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            size = {x = 1000.0; y = 500.0; z = 500.0;};
+            material = {
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+};
+
+# Configuration de la lumière
+lights: {
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+    SpotLight = (
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = -50.0; y = 0.0; z = 0.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: agrandis/diminus l'angle de la lampe
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                # vecteur normalisé de direction de la lampe
+                rotation = {x = 0.0; y = 1.0; z = -0.5;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 5.0;
+            # Rayon du chants d'actions de la lumière
+            radius = 500.0;
+            # Angle de la lampe (comme le cone)
+            angle = 50.0;
+        }
+    );
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+}
+```
+
+```python
+# camera-cluster5.yaax
+
+# Configuration of the camera
+cameras:
+{
+    CameraCluster: (
+        {
+            # Taille de l'écran
+            screenSize = {x: 500; y = 500;};
+            screen = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance entre la caméra est l'écran
+            distanceFromScreen = 200.0;
+            # le rapport entre 1 rayon -> pixel
+            # dans le cas présent, 1 rayon = 25 pixels
+            cluster = 5;
+            # Nombre maximum de threads utilisé (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = ()
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    Sphere = (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            radius = 50.0;
+            transform = {
+                position = {x = 15.0; y = 100.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+    Plane = (
+        {
+            transform = {
+                position = {x = 0.0; y = 150.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            size = {x = 50.0; y = 50.0; z = 0.0;};
+            material = {
+                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            transform = {
+                position = {x = 0.0; y = 10.0; z = -100.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            size = {x = 1000.0; y = 500.0; z = 500.0;};
+            material = {
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+};
+
+# Configuration de la lumière
+lights: {
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+    SpotLight = (
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = -50.0; y = 0.0; z = 0.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: agrandis/diminus l'angle de la lampe
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                # vecteur normalisé de direction de la lampe
+                rotation = {x = 0.0; y = 1.0; z = -0.5;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 5.0;
+            # Rayon du chants d'actions de la lumière
+            radius = 500.0;
+            # Angle de la lampe (comme le cone)
+            angle = 50.0;
+        }
+    );
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+}
+```
+
+<details>
+
+## SSAAx4
+
+![image](/documentation/ssaax4-basic.png)
+
+<details>
+	<summary>SSAAx4</summary>
+
+```python
+# Configuration of the camera
+cameras:
+{
+    CameraCluster: (
+        {
+            # Taille de l'écran
+            screenSize = {x: 500; y = 500;};
+            screen = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: Mettre 0.0 (pas suporté)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance entre la caméra est l'écran
+            distanceFromScreen = 200.0;
+            # le rapport entre 1 rayon -> pixel
+            # dans le cas présent, 1 rayon = 1 pixel
+            cluster = 1;
+            # Nombre maximum de threads utilisé (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = {
+                # Filtre de type SSAAx4 (anti aliasing basique)
+                SSAAx4: (
+                    {
+                        maxThreads = -1;
+                    }
+                )
+            }
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    Sphere = (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            radius = 50.0;
+            transform = {
+                position = {x = 15.0; y = 100.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+    Plane = (
+        {
+            transform = {
+                position = {x = 0.0; y = 150.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            size = {x = 50.0; y = 50.0; z = 0.0;};
+            material = {
+                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        },
+        {
+            transform = {
+                position = {x = 0.0; y = 10.0; z = -100.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            size = {x = 1000.0; y = 500.0; z = 500.0;};
+            material = {
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                type = "PlainMaterial";
+            };
+        }
+    );
+};
+
+# Configuration de la lumière
+lights: {
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+    SpotLight = (
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = -50.0; y = 0.0; z = 0.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: agrandis/diminus l'angle de la lampe
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                # vecteur normalisé de direction de la lampe
+                rotation = {x = 0.0; y = 1.0; z = -0.5;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 5.0;
+            # Rayon du chants d'actions de la lumière
+            radius = 500.0;
+            # Angle de la lampe (comme le cone)
+            angle = 50.0;
+        }
+    );
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
         }
     );
 }
