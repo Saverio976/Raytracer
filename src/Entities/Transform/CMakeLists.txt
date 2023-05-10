@@ -17,6 +17,10 @@ target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_ray PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_image PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(CameraCluster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(ray_image_pipeline PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(ray_image_pixelthread PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(ray_transform PRIVATE
     Transform.cpp
@@ -55,3 +59,7 @@ target_sources(PlainMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 target_sources(LimitedCylinder PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(SSAAx4 PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
+target_sources(CameraCustom PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
+target_sources(CameraCluster PRIVATE $<TARGET_OBJECTS:ray_transform>)

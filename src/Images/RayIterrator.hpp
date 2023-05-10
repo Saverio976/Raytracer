@@ -9,8 +9,12 @@
     #define RAYITERATOR_HPP_
 
 #include <algorithm>
+#include <cstddef>
 #include <iterator>
+#include <memory>
+#include <string>
 #include "ICamera.hpp"
+#include "IRayIterator.hpp"
 #include "Ray.hpp"
 #include "Vector2i.hpp"
 #include "Vector3f.hpp"
@@ -21,9 +25,9 @@ namespace RayTracer::Images {
      *
      * class that represent an iterator of a ray
      */
-    class RayIterrator {
+    class RayIterrator : public IRayIterator {
         public:
-            class iterrator {
+            class Iterrator : public IRayIterator::IIterator {
                 public:
                     using iterator_category = std::forward_iterator_tag;
                     using difference_type   = Ray;
@@ -31,19 +35,23 @@ namespace RayTracer::Images {
                     using pointer           = Ray *;
                     using reference         = Ray &;
 
-                    iterrator(const Ray &last, const Entities::Transform::Vector2i &size, const Entities::Transform::Vector3f &screenPos, const Entities::Transform::Vector3f &pov);
+                    Iterrator(
+                            const Ray &last,
+                            const Entities::Transform::Vector2i &size,
+                            const Entities::Transform::Vector3f &screenPos,
+                            const Entities::Transform::Vector3f &pov);
                     /**
-                    * @brief create the next RayIterrator
+                    * @brief create the next RayIterrator (modify current instance)
                     *
-                    * @return the next RayIterrator
+                    * @return the current instance modified
                     */
-                    iterrator operator++();
+                    IIterator &operator++() final;
                     /**
                     * @brief Get the ray of the current RayIterrator
                     *
                     * @return the ray
                     */
-                    Ray operator*();
+                    Ray &operator*() final;
                     /**
                     * @brief Compare two RayIterrator
                     *
@@ -51,7 +59,7 @@ namespace RayTracer::Images {
                     *
                     * @return true if equal
                     */
-                    bool operator==(const RayIterrator::iterrator &other) const;
+                    bool operator==(const IRayIterator::IIterator &other) const final;
                     /**
                     * @brief Compare two RayIterrator
                     *
@@ -59,7 +67,7 @@ namespace RayTracer::Images {
                     *
                     * @return true if not equal
                     */
-                    bool operator!=(const RayIterrator::iterrator &other) const;
+                    bool operator!=(const IRayIterator::IIterator &other) const final;
                     /**
                      * @brief Compare two RayIterrator::iterrator
                      *
@@ -67,13 +75,20 @@ namespace RayTracer::Images {
                      *
                      * @return true if equal
                      */
-                    RayIterrator::iterrator &operator=(const RayIterrator::iterrator &other);
+                    RayIterrator::Iterrator &operator=(const RayIterrator::Iterrator &other);
+                    /**
+                     * @brief toString
+                     *
+                     * @return the string
+                     */
+                    std::string toString() const final;
                 private:
                     const Ray _last;
                     const Entities::Transform::Vector2i _size;
                     const Entities::Transform::Vector3f _screenPos;
                     const Entities::Transform::Vector3f _pov;
                     Ray _ray;
+                    std::size_t _cluster;
             };
             /**
              * @brief Constructor
@@ -81,14 +96,15 @@ namespace RayTracer::Images {
              * @param camera the camera to create the ray itterator
              */
             RayIterrator(const Entities::ICamera &camera);
-            RayIterrator::iterrator begin() const;
-            RayIterrator::iterrator end() const;
+            std::unique_ptr<IRayIterator::IIterator> begin() const final;
+            std::unique_ptr<IRayIterator::IIterator> end() const final;
 
         private:
             const Entities::ICamera &_camera;
             Entities::Transform::Vector3f _pov;
             Ray _beforeFirst;
             Ray _afterLast;
+            std::size_t _cluster;
     };
 }
 

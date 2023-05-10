@@ -47,7 +47,7 @@ namespace RayTracer::Scenes {
 
     void SettingWrapper::getSetting(int index) {
         try {
-            *_setting[index];
+            auto _ = *_setting[index];
         } catch (libconfig::SettingNotFoundException &e) {
             throw ParsingException(e.getPath());
         }

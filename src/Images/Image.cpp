@@ -7,7 +7,6 @@
 
 #include "Image.hpp"
 #include <cstddef>
-#include <iostream>
 #include <fstream>
 
 namespace RayTracer::Images {

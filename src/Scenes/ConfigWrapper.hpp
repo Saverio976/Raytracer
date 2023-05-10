@@ -7,30 +7,37 @@
 
 #ifndef RAYTRACER_CONFIGWRAPPER_HPP
     #define RAYTRACER_CONFIGWRAPPER_HPP
-    #include <iostream>
+
     #include <libconfig.h++>
     #include <memory>
     #include "IConfig.hpp"
+#include "ILogger.hpp"
     #include "SettingWrapper.hpp"
 
 namespace RayTracer::Scenes {
     class ConfigWrapper: public IConfig {
         public:
-            ConfigWrapper() = default;
+            ConfigWrapper(ILogger &logger);
             ~ConfigWrapper() override = default;
             /**
              * @brief an exception for when the file can't be read
              */
             class ReadException: public std::exception {
                 public:
+                    ReadException(const std::string &message);
                     const char *what() const throw();
+                private:
+                    std::string _message;
             };
             /**
              * @brief an exception for when the file can't be written
              */
             class WriteException: public std::exception {
                 public:
+                    WriteException(const std::string &message);
                     const char *what() const throw();
+                private:
+                    std::string _message;
             };
             /**
              * @brief read and parse the file at given path
@@ -53,6 +60,7 @@ namespace RayTracer::Scenes {
         private:
             std::shared_ptr<libconfig::Config> _config;
             std::shared_ptr<ISetting> _scene;
+            ILogger &_logger;
     };
 }
 

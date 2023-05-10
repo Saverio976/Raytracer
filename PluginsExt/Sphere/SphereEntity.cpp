@@ -7,7 +7,6 @@
 
 #include <algorithm>
 #include <cmath>
-#include <iostream>
 #include <optional>
 #include <utility>
 #include "Color.hpp"
