@@ -29,7 +29,7 @@ namespace RayTracer::Images {
         } else {
             onScreenPos = onScreenPos + right;
         }
-        _ray = Ray(pov, onScreenPos, {10, 0, 0});
+        _ray = Ray(pov, onScreenPos);
     }
 
     IRayIterator::IIterator &RayIterrator::Iterrator::operator++() {

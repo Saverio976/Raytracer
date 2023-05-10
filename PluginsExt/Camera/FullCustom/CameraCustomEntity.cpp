@@ -5,7 +5,6 @@
 ** CameraCustom.cpp
 */
 
-#include <iostream>
 #include <string>
 #include <thread>
 #include "ILogger.hpp"
@@ -39,7 +38,7 @@ namespace RayTracer::PluginsExt::Camera::FullCustom {
                 }
             }
         } catch (const Scenes::ISetting::IParsingException &e) {
-            std::cerr << e.what() << std::endl;
+            _logger.error("CAMERA_CUSTOM: " + std::string(e.what()));
         }
         try {
             _maxThread = static_cast<int>(*config.get("maxThreads"));

@@ -7,7 +7,6 @@
 
 #include <cmath>
 #include <cstddef>
-#include <iostream>
 #include <memory>
 #include <string>
 #include "CustomRayIterator.hpp"
@@ -121,7 +120,6 @@ namespace RayTracer::PluginsExt::Camera::FullCustom {
         )
     {
         _fov = Entities::Transform::Vector3f(fov.getX(), fov.getZ(), fov.getY());
-        std::cout << _fovXYZ << std::endl;
     }
 
     std::unique_ptr<Images::IRayIterator::IIterator> CustomRayIterator::begin() const

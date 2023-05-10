@@ -9,6 +9,7 @@
     #define RAYITERATOR_HPP_
 
 #include <algorithm>
+#include <cstddef>
 #include <iterator>
 #include <memory>
 #include <string>
@@ -34,11 +35,15 @@ namespace RayTracer::Images {
                     using pointer           = Ray *;
                     using reference         = Ray &;
 
-                    Iterrator(const Ray &last, const Entities::Transform::Vector2i &size, const Entities::Transform::Vector3f &screenPos, const Entities::Transform::Vector3f &pov);
+                    Iterrator(
+                            const Ray &last,
+                            const Entities::Transform::Vector2i &size,
+                            const Entities::Transform::Vector3f &screenPos,
+                            const Entities::Transform::Vector3f &pov);
                     /**
-                    * @brief create the next RayIterrator
+                    * @brief create the next RayIterrator (modify current instance)
                     *
-                    * @return the next RayIterrator
+                    * @return the current instance modified
                     */
                     IIterator &operator++() final;
                     /**
@@ -83,6 +88,7 @@ namespace RayTracer::Images {
                     const Entities::Transform::Vector3f _screenPos;
                     const Entities::Transform::Vector3f _pov;
                     Ray _ray;
+                    std::size_t _cluster;
             };
             /**
              * @brief Constructor
@@ -98,6 +104,7 @@ namespace RayTracer::Images {
             Entities::Transform::Vector3f _pov;
             Ray _beforeFirst;
             Ray _afterLast;
+            std::size_t _cluster;
     };
 }
 

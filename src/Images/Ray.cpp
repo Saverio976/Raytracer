@@ -18,18 +18,6 @@ namespace RayTracer::Images {
         _normal = screenPos - startCamera;
     }
 
-    Ray::Ray(const Entities::Transform::Vector3f &startCamera, const Entities::Transform::Vector3f &screenPos, const Entities::Transform::Vector3f rotation):
-        _origin(screenPos),
-        _normal(0, 0, 0),
-        _step(screenPos)
-    {
-        // auto pos = startCamera.rotateVector(screenPos - startCamera, rotation);
-        auto pos = (screenPos - startCamera).rotateX(rotation.getX()).rotateY(rotation.getY()).rotateZ(rotation.getZ());
-        _normal = pos;
-        _origin = startCamera + pos;
-        std::cout << _origin << pos << std::endl;
-    }
-
     const Entities::Transform::Vector3f &Ray::getOrigin() const
     {
         return _origin;

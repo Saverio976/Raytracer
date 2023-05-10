@@ -7,7 +7,7 @@
 
 #ifndef ICONFIG_HPP_
 	#define ICONFIG_HPP_
-    #include <iostream>
+
     #include <memory>
     #include "ISetting.hpp"
 

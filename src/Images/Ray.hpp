@@ -28,7 +28,6 @@ namespace RayTracer::Images {
              * @param screenPos the screen position
              */
             Ray(const Entities::Transform::Vector3f &startCamera, const Entities::Transform::Vector3f &screenPos);
-            Ray(const Entities::Transform::Vector3f &startCamera, const Entities::Transform::Vector3f &screenPos, const Entities::Transform::Vector3f rotation);
             /**
              * @brief Get origin (`screenPos`)
              *

@@ -19,6 +19,10 @@ target_sources(CameraCustom PRIVATE
     $<TARGET_OBJECTS:ray_progress>
 )
 
+target_sources(CameraCluster PRIVATE
+    $<TARGET_OBJECTS:ray_progress>
+)
+
 target_include_directories(raytracer PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Sphere PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(AmbientLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -35,6 +39,7 @@ target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}"
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(CameraCluster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_pipeline PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_subdirectory(Filters)

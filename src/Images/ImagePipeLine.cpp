@@ -7,6 +7,7 @@
 
 #include <future>
 #include <vector>
+#include "Color.hpp"
 #include "ILogger.hpp"
 #include "Progress.hpp"
 #include "ImagePipeLine.hpp"
@@ -32,16 +33,23 @@ namespace RayTracer::Images {
         size_t length = this->_image.getSize().getX() * this->_image.getSize().getY();
         maxThread = (maxThread > length) ? length : maxThread;
         Progress progress(length, 0.05, logger);
+        std::size_t clusterProgress = cluster * cluster;
 
         while (this->_state.getState() == RayTracer::Scenes::ISceneState::States::RUNNING && !stop) {
             if (threads.size() < maxThread) {
-                PixelThread pixelThread = PixelThread(this->_displayable, this->_image[y][x], *it);
+                std::vector<std::reference_wrapper<Color>> toModify;
+                for (auto xx = x; xx < x + cluster && xx < this->_image.getSize().getX(); ++xx) {
+                    for (auto yy = y; yy < y + cluster && yy < this->_image.getSize().getY(); ++yy) {
+                        toModify.push_back(this->_image[yy][xx]);
+                    }
+                }
+                PixelThread pixelThread = PixelThread(this->_displayable, toModify, *it);
                 threads.push_back(std::async(std::launch::async, pixelThread));
                 ++it;
-                x++;
+                x += cluster;
                 if (x >= this->_image.getSize().getX()) {
                     x = 0;
-                    y++;
+                    y += cluster;
                 }
                 if (y >= this->_image.getSize().getY() || it == *_rayIterrator.end()) {
                     stop = true;
@@ -51,16 +59,16 @@ namespace RayTracer::Images {
             for (auto it2 = threads.begin(); it2 != threads.end(); ++it2) {
                 if (it2->wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
                     it2 = threads.erase(it2);
-                    progress.add(cluster);
+                    progress.add(clusterProgress);
                     break;
                 }
             }
         }
         while (!threads.empty()) {
-            for (auto it = threads.begin(); it != threads.end(); ++it) {
-                if (it->wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
-                    it = threads.erase(it);
-                    progress.add(cluster);
+            for (auto itT = threads.begin(); itT != threads.end(); ++itT) {
+                if (itT->wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
+                    itT = threads.erase(itT);
+                    progress.add(clusterProgress);
                     break;
                 }
             }
