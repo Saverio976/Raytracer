@@ -15,6 +15,7 @@
 #include "IFilterFactory.hpp"
 #include "ISetting.hpp"
 #include "ImagePipeLine.hpp"
+#include "RayIterrator.hpp"
 
 namespace RayTracer::PluginsExt::Camera {
 

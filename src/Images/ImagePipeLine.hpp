@@ -12,7 +12,7 @@
     #include "IDisplayable.hpp"
     #include "IFilter.hpp"
     #include "ISceneState.hpp"
-    #include "RayIterrator.hpp"
+    #include "IRayIterator.hpp"
 
 namespace RayTracer::Images {
     /**
@@ -29,7 +29,7 @@ namespace RayTracer::Images {
              * @param displayable the displayable entities to render
              * @param state the state (if cancel needed)
              */
-            ImagePipeLine(Image &image, const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state, const RayIterrator &rayIterrator);
+            ImagePipeLine(Image &image, const Scenes::IDisplayable &displayable, const Scenes::ISceneState &state, const IRayIterator &rayIterrator);
             /**
              * @brief Generate the image with entities displayable
              *
@@ -50,7 +50,7 @@ namespace RayTracer::Images {
             Image &_image;
             const Scenes::IDisplayable &_displayable;
             const Scenes::ISceneState &_state;
-            RayIterrator _rayIterrator;
+            const IRayIterator &_rayIterrator;
     };
 }
 

@@ -131,6 +131,72 @@ namespace RayTracer::Entities::Transform {
         return {xRotation, yRotation, zRotation};
     }
 
+/*
+ *
+  PVector rotateX(float angle) {
+    float cosa = cos(angle);
+    float sina = sin(angle);
+    float tempy = y;
+    y = cosa * y - sina * z;
+    z = cosa * z + sina * tempy;
+    return this;
+  }
+
+  PVector rotateY(float angle) {
+    float cosa = cos(angle);
+    float sina = sin(angle);
+    float tempz = z;
+    z = cosa * z - sina * x;
+    x = cosa * x + sina * tempz;
+    return this;
+  }
+
+  PVector rotateZ(float angle) {
+    float cosa = cos(angle);
+    float sina = sin(angle);
+    float tempx = x;
+    x = cosa * x - sina * y;
+    y = cosa * y + sina * tempx;
+    return this;
+  }
+ */
+
+    Vector3f Vector3f::rotateX(float angle) const
+    {
+        Vector3f newVector = *this;
+        Vector3f rad = Vector3f(angle, angle, angle).toRadians();
+
+        float cosa = std::cos(rad.getX());
+        float sina = std::sin(rad.getX());
+        newVector._y = cosa * _y - sina * _z;
+        newVector._z = cosa * _z + sina * _y;
+        return newVector;
+    }
+
+    Vector3f Vector3f::rotateY(float angle) const
+    {
+        Vector3f newVector = *this;
+        Vector3f rad = Vector3f(angle, angle, angle).toRadians();
+
+        float cosa = std::cos(rad.getX());
+        float sina = std::sin(rad.getX());
+        newVector._z = cosa * _z - sina * _x;
+        newVector._x = cosa * _x + sina * _z;
+        return newVector;
+    }
+
+    Vector3f Vector3f::rotateZ(float angle) const
+    {
+        Vector3f newVector = *this;
+        Vector3f rad = Vector3f(angle, angle, angle).toRadians();
+
+        float cosa = cos(rad.getX());
+        float sina = sin(rad.getX());
+        newVector._x = cosa * _x - sina * _y;
+        newVector._y = cosa * _y + sina * _x;
+        return newVector;
+    }
+
     double Vector3f::getAngle(const Vector3f &a, const Vector3f &c) const {
         double dot_product = (this->getX() - a.getX()) * (c.getX() - this->getX()) + (this->getY() - a.getY()) * (c.getY() - this->getY()) + (this->getZ() - a.getZ()) * (c.getZ() - this->getZ());
         double mag_ab = std::sqrt((this->getX() - a.getX()) * (this->getX() - a.getX()) + (this->getY() - a.getY()) * (this->getY() - a.getY()) + (this->getZ() - a.getZ()) * (this->getZ() - a.getZ()));
