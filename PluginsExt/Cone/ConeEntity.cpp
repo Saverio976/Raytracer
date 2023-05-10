@@ -56,7 +56,7 @@ namespace RayTracer::PluginsExt::Cone {
 
             if (t1 > 0 && t2 > 0)
                 std::swap(t1, t2);
-            if (t > 0) {
+            if (t1 > 0) {
                 collision = rayOrigin + rayDirection * Entities::Transform::Vector3f(t1, t1, t1);
                 Entities::Transform::Vector3f remove(collision.getX() - coneOrigin.getX(), collision.getY() - coneOrigin.getY(), collision.getZ() - coneOrigin.getZ());
                 if (remove.dot(coneDirection) > 0)
