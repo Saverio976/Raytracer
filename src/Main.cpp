@@ -18,6 +18,7 @@
 #include "Scene.hpp"
 #include "SceneLoader.hpp"
 #include "Parameters.hpp"
+#include "Display.hpp"
 
 namespace RayTracer {
     Main::Main(ILogger &logger):
@@ -69,6 +70,7 @@ namespace RayTracer {
     void Main::run()
     {
         Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
+        Display::Display display(this->_scene);
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting, "onChange");
@@ -85,6 +87,7 @@ namespace RayTracer {
             _logger.fatal("Loader/Render error:: " + message);
             throw MainError("Loader/Render error:: " + message);
         }
+        display.start();
         while (!_scene.isReady()) {
             std::this_thread::sleep_for(std::chrono::seconds(5));
             try {
