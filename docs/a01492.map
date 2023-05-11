@@ -1,5 +1,5 @@
 <map id="RayTracer::Scenes::Scene" name="RayTracer::Scenes::Scene">
-<area shape="rect" id="node1" title="The Scene class." alt="" coords="625,829,773,1068"/>
+<area shape="rect" id="node1" title="The Scene class." alt="" coords="625,829,773,1097"/>
 <area shape="rect" id="node2" href="$a01458.html" title="The Displayable class." alt="" coords="255,587,409,752"/>
 <area shape="rect" id="node3" href="$a01470.html" title="The IDisplayable interface." alt="" coords="255,344,409,509"/>
 <area shape="rect" id="node4" title=" " alt="" coords="433,373,652,480"/>

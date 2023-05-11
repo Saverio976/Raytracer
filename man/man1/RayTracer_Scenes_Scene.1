@@ -46,6 +46,14 @@ RayTracer::Scenes::Scene \- The \fBScene\fP class\&.
 .RI "void \fBwait_end\fP ()"
 .br
 .RI "wait until the end of the renders "
+.ti -1c
+.RI "\fBSceneState\fP & \fBgetState\fP ()"
+.br
+.RI "Get the state\&. "
+.ti -1c
+.RI "const \fBSceneState\fP & \fBgetState\fP () const"
+.br
+.RI "Get the state: "
 .in -1c
 .SS "Private Member Functions"
 
@@ -114,6 +122,28 @@ Get the cameras\&.
 \fBReturns\fP
 .RS 4
 the cameras 
+.RE
+.PP
+
+.SS "\fBSceneState\fP& RayTracer::Scenes::Scene::getState ()"
+
+.PP
+Get the state\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the state 
+.RE
+.PP
+
+.SS "const \fBSceneState\fP& RayTracer::Scenes::Scene::getState () const"
+
+.PP
+Get the state: 
+.PP
+\fBReturns\fP
+.RS 4
+the state 
 .RE
 .PP
 

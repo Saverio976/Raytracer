@@ -54,6 +54,14 @@ Collaboration diagram for RayTracer::Scenes::Scene:<para>
 
 <para>wait until the end of the renders </para>
 </listitem>
+            <listitem><para><link linkend="_a01506">SceneState</link> &amp; <link linkend="_a01494_1ab966df1a295b491374bd1a3eb1491711">getState</link> ()</para>
+
+<para>Get the state. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01506">SceneState</link> &amp; <link linkend="_a01494_1a558a287e27d1f8697da954d1a2532209">getState</link> () const</para>
+
+<para>Get the state: </para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -141,6 +149,34 @@ Collaboration diagram for RayTracer::Scenes::Scene:<para>
 <para><formalpara><title>Returns</title>
 
 <para>the cameras </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01494_1ab966df1a295b491374bd1a3eb1491711"/>    <section>
+    <title>getState()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getState</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>getState</secondary></indexterm>
+<para><computeroutput><link linkend="_a01506">SceneState</link>&amp; RayTracer::Scenes::Scene::getState ( )</computeroutput></para><para>
+
+<para>Get the state. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the state </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01494_1a558a287e27d1f8697da954d1a2532209"/>    <section>
+    <title>getState()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getState</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>getState</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01506">SceneState</link>&amp; RayTracer::Scenes::Scene::getState ( ) const</computeroutput></para><para>
+
+<para>Get the state: </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the state </para>
 </formalpara>
 </para>
     </section><anchor xml:id="_a01494_1a5e775828e7fef6d2fb5aef42c4c93668"/>    <section>

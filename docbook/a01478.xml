@@ -35,6 +35,8 @@ Collaboration diagram for RayTracer::Scenes::ISceneState:<para>
 <link linkend="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RUNNING</link>
 , 
 <link linkend="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">CANCELLED</link>
+, 
+<link linkend="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">FINISHED</link>
  }</para>
 
 <para>The States. </para>
@@ -83,7 +85,9 @@ Collaboration diagram for RayTracer::Scenes::ISceneState:<para>
 <indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>RUNNING</secondary></indexterm>
 <anchor xml:id="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd"/>RUNNING</entry><entry></entry></row><row><entry><indexterm><primary>CANCELLED</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
 <indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>CANCELLED</secondary></indexterm>
-<anchor xml:id="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"/>CANCELLED</entry><entry></entry></row>    </tbody>
+<anchor xml:id="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"/>CANCELLED</entry><entry></entry></row><row><entry><indexterm><primary>FINISHED</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>FINISHED</secondary></indexterm>
+<anchor xml:id="_a01478_1a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133"/>FINISHED</entry><entry></entry></row>    </tbody>
     </tgroup>
 </informaltable>
 </section>

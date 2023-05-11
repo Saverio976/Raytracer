@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['primitive_1275',['Primitive',['../a01266.html#ab003087623e47600c09a76ff8138d37ba07ee3427562e4f1a5c9f2bfb17fd9eee',1,'RayTracer::Entities::IEntity']]]
+  ['light_1278',['Light',['../a01266.html#ab003087623e47600c09a76ff8138d37ba9914a0ce04a7b7b6a8e39bec55064b82',1,'RayTracer::Entities::IEntity']]]
 ];

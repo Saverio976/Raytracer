@@ -35,4 +35,19 @@
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a00158_1acfd30268d8cf7ee855a54804242fce5d">catch_sigint</link> (int sig)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a00158_1acfd30268d8cf7ee855a54804242fce5d"/>    <section>
+    <title>catch_sigint()</title>
+<indexterm><primary>catch_sigint</primary><secondary>Main.hpp</secondary></indexterm>
+<indexterm><primary>Main.hpp</primary><secondary>catch_sigint</secondary></indexterm>
+<para><computeroutput>void catch_sigint (int sig)</computeroutput></para></section>
+</section>
 </section>

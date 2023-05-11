@@ -39,7 +39,11 @@ bool \mbox{\hyperlink{a01494_a5e775828e7fef6d2fb5aef42c4c93668}{is\+Ready}} () c
 void \mbox{\hyperlink{a01494_a30095f564a868e741a1f29d3d1f80b7f}{cancel}} ()
 \begin{DoxyCompactList}\small\item\em Cancel the scene rendering. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{a01494_ad4e9d99d1b3580602e49c15beb50ed7e}{wait\+\_\+end}} ()
-\begin{DoxyCompactList}\small\item\em wait until the end of the renders \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em wait until the end of the renders \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01506}{Scene\+State}} \& \mbox{\hyperlink{a01494_ab966df1a295b491374bd1a3eb1491711}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the state. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01506}{Scene\+State}} \& \mbox{\hyperlink{a01494_a558a287e27d1f8697da954d1a2532209}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Get the state\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -118,6 +122,32 @@ Get the cameras.
 
 \begin{DoxyReturn}{Returns}
 the cameras 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01494_ab966df1a295b491374bd1a3eb1491711}\label{a01494_ab966df1a295b491374bd1a3eb1491711}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!getState@{getState}}
+\index{getState@{getState}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01506}{Scene\+State}}\& Ray\+Tracer\+::\+Scenes\+::\+Scene\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the state. 
+
+\begin{DoxyReturn}{Returns}
+the state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01494_a558a287e27d1f8697da954d1a2532209}\label{a01494_a558a287e27d1f8697da954d1a2532209}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!getState@{getState}}
+\index{getState@{getState}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01506}{Scene\+State}}\& Ray\+Tracer\+::\+Scenes\+::\+Scene\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the state\+: 
+
+\begin{DoxyReturn}{Returns}
+the state 
 \end{DoxyReturn}
 \mbox{\Hypertarget{a01494_a5e775828e7fef6d2fb5aef42c4c93668}\label{a01494_a5e775828e7fef6d2fb5aef42c4c93668}} 
 \index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!isReady@{isReady}}
