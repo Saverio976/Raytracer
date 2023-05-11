@@ -14,13 +14,13 @@ Directory dependency graph for Transform:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00116">ITransform.hpp</link></para>
+            <listitem><para>file <link linkend="_a00119">ITransform.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00119">Transform.hpp</link></para>
+            <listitem><para>file <link linkend="_a00122">Transform.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00122">Vector2i.hpp</link></para>
+            <listitem><para>file <link linkend="_a00125">Vector2i.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00125">Vector3f.hpp</link></para>
+            <listitem><para>file <link linkend="_a00128">Vector3f.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

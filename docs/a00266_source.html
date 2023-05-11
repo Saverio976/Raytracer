@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Filter.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,62 +62,73 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_a1e7b0f6c8c966f643def133f499c25f.html">BlackAndWhite</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_d4bc861357cab59352e84826f962b9a0.html">AntiAliasing</a></li><li class="navelem"><a class="el" href="dir_d2bd47c18e6fb74ecf9809c13d3336b6.html">SSAAx4</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">BlackAndWhiteCreator.hpp</div>  </div>
+<div class="title">SSAAx4Filter.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00266.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** BlackAndWhiteCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** SSAAx4Filter.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SPHERE_CREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define SPHERE_CREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BASICENTITY_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define BASICENTITY_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">IFilter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00203.html">IFilterCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00152.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00239.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00269.html">BlackAndWhiteFilter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;future&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00158.html">Color.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00152.html">IFilter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">Image.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00424.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00424.html">RayTracer::PluginsExt::BlackAndWhite</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01573.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01573.html">BlackAndWhiteCreator</a> : <span class="keyword">public</span> <a class="code" href="a01453.html">Plugins::Filters::IFilterCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00426.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01572.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01572.html">SSAAx4Filter</a> : <span class="keyword">public</span> <a class="code" href="a01364.html">Filters::IFilter</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01573.html#aba1ca04a4a1a43278614d48a241b4eb4">   22</a></span>&#160;            <a class="code" href="a01573.html#aba1ca04a4a1a43278614d48a241b4eb4">~BlackAndWhiteCreator</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01573.html#a8ff0bc4874fde1535f06f5e469762103">   23</a></span>&#160;            <a class="code" href="a01361.html">Filters::IFilter</a> *<a class="code" href="a01573.html#a8ff0bc4874fde1535f06f5e469762103">create</a>(<span class="keyword">const</span> <a class="code" href="a01517.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01365.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01572.html#a1bf2f87af2996d500658225386cdbfeb">   22</a></span>&#160;            <a class="code" href="a01572.html#a1bf2f87af2996d500658225386cdbfeb">SSAAx4Filter</a>(<span class="keyword">const</span> <a class="code" href="a01520.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01368.html">ILogger</a> &amp;logger);</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01572.html#ae3b5388bd81c8a07286febecd4797315">   23</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01572.html#ae3b5388bd81c8a07286febecd4797315">apply</a>(<a class="code" href="a01376.html">Images::Image</a> &amp;image) <span class="keyword">final</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01573.html#a496357cce881381c326afd6df9bcf3fc">   26</a></span>&#160;            std::vector&lt;BlackAndWhiteFilter *&gt; <a class="code" href="a01573.html#a496357cce881381c326afd6df9bcf3fc">_elements</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">IFilter.hpp</a></div></div>
-<div class="ttc" id="aa00152_html"><div class="ttname"><a href="a00152.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00203_html"><div class="ttname"><a href="a00203.html">IFilterCreator.hpp</a></div></div>
-<div class="ttc" id="aa00239_html"><div class="ttname"><a href="a00239.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00269_html"><div class="ttname"><a href="a00269.html">BlackAndWhiteFilter.hpp</a></div></div>
-<div class="ttc" id="aa00424_html"><div class="ttname"><a href="a00424.html">RayTracer::PluginsExt::BlackAndWhite</a></div><div class="ttdef"><b>Definition:</b> BlackAndWhiteCreator.hpp:19</div></div>
-<div class="ttc" id="aa01361_html"><div class="ttname"><a href="a01361.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01365_html"><div class="ttname"><a href="a01365.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01453_html"><div class="ttname"><a href="a01453.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
-<div class="ttc" id="aa01517_html"><div class="ttname"><a href="a01517.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01573_html"><div class="ttname"><a href="a01573.html">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</a></div><div class="ttdef"><b>Definition:</b> BlackAndWhiteCreator.hpp:20</div></div>
-<div class="ttc" id="aa01573_html_a496357cce881381c326afd6df9bcf3fc"><div class="ttname"><a href="a01573.html#a496357cce881381c326afd6df9bcf3fc">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::_elements</a></div><div class="ttdeci">std::vector&lt; BlackAndWhiteFilter * &gt; _elements</div><div class="ttdef"><b>Definition:</b> BlackAndWhiteCreator.hpp:26</div></div>
-<div class="ttc" id="aa01573_html_a8ff0bc4874fde1535f06f5e469762103"><div class="ttname"><a href="a01573.html#a8ff0bc4874fde1535f06f5e469762103">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::create</a></div><div class="ttdeci">Filters::IFilter * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a filter with a setting.</div></div>
-<div class="ttc" id="aa01573_html_aba1ca04a4a1a43278614d48a241b4eb4"><div class="ttname"><a href="a01573.html#aba1ca04a4a1a43278614d48a241b4eb4">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::~BlackAndWhiteCreator</a></div><div class="ttdeci">~BlackAndWhiteCreator()</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01572.html#a7ede4ae4b426a35305baed6a91af4af6">   29</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01572.html#a7ede4ae4b426a35305baed6a91af4af6">waitOnePlace</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01572.html#a086f208ae32f1aeddf8fa3594458f8ab">   33</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01572.html#a086f208ae32f1aeddf8fa3594458f8ab">waitAllFinisehd</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01572.html#a8c53c391e3901a32d6b82c2fae2bc72a">   41</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="a01372.html">Images::Color</a> <a class="code" href="a01572.html#a8c53c391e3901a32d6b82c2fae2bc72a">getColorsMean</a>(<span class="keyword">const</span> std::vector&lt;Images::Color&gt; &amp;colors);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01572.html#a4b04f87e58a93120bb0cacf89a9ee6ee">   42</a></span>&#160;            <a class="code" href="a01368.html">ILogger</a> &amp;<a class="code" href="a01572.html#a4b04f87e58a93120bb0cacf89a9ee6ee">_logger</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01572.html#a4eafda71c1e352dac59133dc10898ec9">   43</a></span>&#160;            <span class="keywordtype">int</span> <a class="code" href="a01572.html#a4eafda71c1e352dac59133dc10898ec9">_maxThread</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01572.html#ad5eee64be8484cc83190fcb6cabcdf97">   44</a></span>&#160;            std::vector&lt;std::future&lt;void&gt;&gt; <a class="code" href="a01572.html#ad5eee64be8484cc83190fcb6cabcdf97">_futures</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00152_html"><div class="ttname"><a href="a00152.html">IFilter.hpp</a></div></div>
+<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00158_html"><div class="ttname"><a href="a00158.html">Color.hpp</a></div></div>
+<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">Image.hpp</a></div></div>
+<div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00426_html"><div class="ttname"><a href="a00426.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:19</div></div>
+<div class="ttc" id="aa01364_html"><div class="ttname"><a href="a01364.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
+<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01372_html"><div class="ttname"><a href="a01372.html">RayTracer::Images::Color</a></div><div class="ttdoc">The Color class.</div><div class="ttdef"><b>Definition:</b> Color.hpp:21</div></div>
+<div class="ttc" id="aa01376_html"><div class="ttname"><a href="a01376.html">RayTracer::Images::Image</a></div><div class="ttdoc">The Image class.</div><div class="ttdef"><b>Definition:</b> Image.hpp:23</div></div>
+<div class="ttc" id="aa01520_html"><div class="ttname"><a href="a01520.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01572_html"><div class="ttname"><a href="a01572.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Filter.hpp:20</div></div>
+<div class="ttc" id="aa01572_html_a086f208ae32f1aeddf8fa3594458f8ab"><div class="ttname"><a href="a01572.html#a086f208ae32f1aeddf8fa3594458f8ab">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::waitAllFinisehd</a></div><div class="ttdeci">void waitAllFinisehd()</div><div class="ttdoc">Wait all places in the vector of futures.</div></div>
+<div class="ttc" id="aa01572_html_a1bf2f87af2996d500658225386cdbfeb"><div class="ttname"><a href="a01572.html#a1bf2f87af2996d500658225386cdbfeb">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::SSAAx4Filter</a></div><div class="ttdeci">SSAAx4Filter(const Scenes::ISetting &amp;config, ILogger &amp;logger)</div></div>
+<div class="ttc" id="aa01572_html_a4b04f87e58a93120bb0cacf89a9ee6ee"><div class="ttname"><a href="a01572.html#a4b04f87e58a93120bb0cacf89a9ee6ee">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> SSAAx4Filter.hpp:42</div></div>
+<div class="ttc" id="aa01572_html_a4eafda71c1e352dac59133dc10898ec9"><div class="ttname"><a href="a01572.html#a4eafda71c1e352dac59133dc10898ec9">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::_maxThread</a></div><div class="ttdeci">int _maxThread</div><div class="ttdef"><b>Definition:</b> SSAAx4Filter.hpp:43</div></div>
+<div class="ttc" id="aa01572_html_a7ede4ae4b426a35305baed6a91af4af6"><div class="ttname"><a href="a01572.html#a7ede4ae4b426a35305baed6a91af4af6">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::waitOnePlace</a></div><div class="ttdeci">void waitOnePlace()</div><div class="ttdoc">Wait one place in the vector of futures.</div></div>
+<div class="ttc" id="aa01572_html_a8c53c391e3901a32d6b82c2fae2bc72a"><div class="ttname"><a href="a01572.html#a8c53c391e3901a32d6b82c2fae2bc72a">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::getColorsMean</a></div><div class="ttdeci">static Images::Color getColorsMean(const std::vector&lt; Images::Color &gt; &amp;colors)</div><div class="ttdoc">Mean of the colors.</div></div>
+<div class="ttc" id="aa01572_html_ad5eee64be8484cc83190fcb6cabcdf97"><div class="ttname"><a href="a01572.html#ad5eee64be8484cc83190fcb6cabcdf97">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::_futures</a></div><div class="ttdeci">std::vector&lt; std::future&lt; void &gt; &gt; _futures</div><div class="ttdef"><b>Definition:</b> SSAAx4Filter.hpp:44</div></div>
+<div class="ttc" id="aa01572_html_ae3b5388bd81c8a07286febecd4797315"><div class="ttname"><a href="a01572.html#ae3b5388bd81c8a07286febecd4797315">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter::apply</a></div><div class="ttdeci">void apply(Images::Image &amp;image) final</div><div class="ttdoc">Apply the filter on an image.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:06:09 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

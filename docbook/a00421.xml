@@ -1,13 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00421" xml:lang="en-US">
-<title>RayTracer::PluginsExt::AmbientLight Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::AmbientLight</primary></indexterm>
+<title>RayTracer::Plugins::Materials Namespace Reference</title>
+<indexterm><primary>RayTracer::Plugins::Materials</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01557">AmbientLightCreator</link></para>
+            <listitem><para>class <link linkend="_a01460">IMaterialCreator</link></para>
+
+<para>The <link linkend="_a01460">IMaterialCreator</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01561">AmbientLightEntity</link></para>
+            <listitem><para>class <link linkend="_a01464">MaterialHandler</link></para>
+
+<para>The <link linkend="_a01464">MaterialHandler</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01468">MaterialLoader</link></para>
+
+<para>The <link linkend="_a01468">MaterialLoader</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

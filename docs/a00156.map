@@ -1,9 +1,5 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="93,5,323,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,69,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="94,95,170,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="194,95,377,121"/>
-<area shape="rect" id="node5" href="$a00239.html" title=" " alt="" coords="401,95,501,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="352,169,429,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="454,169,565,196"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/ILogger.hpp" name="/home/runner/work/Raytracer/Raytracer/src/ILogger.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,217,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="20,95,107,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="131,95,190,121"/>
 </map>

@@ -1,12 +1,26 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Images/IRayIterator.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Images/IRayIterator.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="88,5,360,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,91,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="115,95,186,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="220,319,297,345"/>
-<area shape="rect" id="node5" title=" " alt="" coords="261,95,320,121"/>
-<area shape="rect" id="node6" href="$a00170.html" title=" " alt="" coords="345,95,418,121"/>
-<area shape="rect" id="node7" href="$a00125.html" title=" " alt="" coords="330,169,433,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="262,244,338,271"/>
-<area shape="rect" id="node9" href="$a00239.html" title=" " alt="" coords="362,244,462,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="357,319,467,345"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/Images/ImagePipeLine.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Images/ImagePipeLine.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="470,5,707,61"/>
+<area shape="rect" id="node2" href="$a00155.html" title=" " alt="" coords="413,109,511,136"/>
+<area shape="rect" id="node5" href="$a00161.html" title=" " alt="" coords="573,184,663,211"/>
+<area shape="rect" id="node17" href="$a00236.html" title=" " alt="" coords="695,184,826,211"/>
+<area shape="rect" id="node18" href="$a00152.html" title=" " alt="" coords="587,109,673,136"/>
+<area shape="rect" id="node19" href="$a00239.html" title=" " alt="" coords="749,109,876,136"/>
+<area shape="rect" id="node20" href="$a00167.html" title=" " alt="" coords="200,184,327,211"/>
+<area shape="rect" id="node3" title=" " alt="" coords="431,184,517,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="363,259,422,285"/>
+<area shape="rect" id="node6" title=" " alt="" coords="583,259,653,285"/>
+<area shape="rect" id="node7" title=" " alt="" coords="729,259,792,285"/>
+<area shape="rect" id="node8" href="$a00158.html" title=" " alt="" coords="655,333,738,360"/>
+<area shape="rect" id="node15" href="$a00125.html" title=" " alt="" coords="456,259,559,285"/>
+<area shape="rect" id="node9" title=" " alt="" coords="841,408,905,435"/>
+<area shape="rect" id="node10" title=" " alt="" coords="533,408,609,435"/>
+<area shape="rect" id="node11" title=" " alt="" coords="633,408,816,435"/>
+<area shape="rect" id="node12" href="$a00242.html" title=" " alt="" coords="409,408,509,435"/>
+<area shape="rect" id="node13" title=" " alt="" coords="333,483,410,509"/>
+<area shape="rect" id="node14" title=" " alt="" coords="435,483,545,509"/>
+<area shape="rect" id="node16" href="$a00233.html" title=" " alt="" coords="359,333,453,360"/>
+<area shape="rect" id="node21" title=" " alt="" coords="198,259,283,285"/>
+<area shape="rect" id="node22" title=" " alt="" coords="103,259,173,285"/>
+<area shape="rect" id="node23" href="$a00173.html" title=" " alt="" coords="5,259,79,285"/>
+<area shape="rect" id="node24" href="$a00128.html" title=" " alt="" coords="477,333,580,360"/>
 </map>

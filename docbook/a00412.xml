@@ -1,33 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00412" xml:lang="en-US">
-<title>RayTracer::Factories Namespace Reference</title>
-<indexterm><primary>RayTracer::Factories</primary></indexterm>
+<title>RayTracer::Display Namespace Reference</title>
+<indexterm><primary>RayTracer::Display</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01333">EntityFactory</link></para>
-
-<para>The <link linkend="_a01333">EntityFactory</link> (singleton factory) </para>
+            <listitem><para>class <link linkend="_a01264">Display</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01337">FilterFactory</link></para>
-
-<para>The <link linkend="_a01337">FilterFactory</link> (singleton factory) </para>
+            <listitem><para>class <link linkend="_a01272">IDisplayModule</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01341">IEntityFactory</link></para>
+            <listitem><para>class <link linkend="_a01292">CanvasModule</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01345">IFilterFactory</link></para>
-
-<para>The <link linkend="_a01337">FilterFactory</link> (singleton factory) </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01349">IMaterialFactory</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01353">MaterialFactory</link></para>
-
-<para>The <link linkend="_a01353">MaterialFactory</link> (singleton factory) </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01357">TFactory</link></para>
-
-<para>The <link linkend="_a01357">TFactory</link>. </para>
+            <listitem><para>class <link linkend="_a01296">ProgressModule</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

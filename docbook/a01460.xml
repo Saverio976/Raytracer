@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01460" xml:lang="en-US">
+<title>RayTracer::Plugins::Materials::IMaterialCreator Class Reference</title>
+<indexterm><primary>RayTracer::Plugins::Materials::IMaterialCreator</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01460">IMaterialCreator</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;IMaterialCreator.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Plugins::Materials::IMaterialCreator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01459.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Plugins::Materials::IMaterialCreator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01458.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01460_1af5340be3d5aa1d28785fa10de0af795a">~IMaterialCreator</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01312">RayTracer::Entities::IMaterial</link> * <link linkend="_a01460_1a16ac237d1dc493bb11cdaa1ff1c0b140">create</link> (const <link linkend="_a01520">Scenes::ISetting</link> &amp;setting, <link linkend="_a01368">ILogger</link> &amp;logger)=0</para>
+
+<para>Create a material with a setting. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01460">IMaterialCreator</link> class. </para>
+
+
+
+<para>class that represent a material creator </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01460_1af5340be3d5aa1d28785fa10de0af795a"/>    <section>
+    <title>~IMaterialCreator()</title>
+<indexterm><primary>~IMaterialCreator</primary><secondary>RayTracer::Plugins::Materials::IMaterialCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::Plugins::Materials::IMaterialCreator</primary><secondary>~IMaterialCreator</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Plugins::Materials::IMaterialCreator::~IMaterialCreator ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01460_1a16ac237d1dc493bb11cdaa1ff1c0b140"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>RayTracer::Plugins::Materials::IMaterialCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::Plugins::Materials::IMaterialCreator</primary><secondary>create</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01312">RayTracer::Entities::IMaterial</link>* RayTracer::Plugins::Materials::IMaterialCreator::create (const <link linkend="_a01520">Scenes::ISetting</link> &amp; setting, <link linkend="_a01368">ILogger</link> &amp; logger)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Create a material with a setting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>config</entry>
+                                <entry>
+<para>the setting</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the material </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01760_1a79a4225c54f4d64c320b4907a5e4f7a5">RayTracer::PluginsExt::Zebra::ZebraCreator</link>, <link linkend="_a01744_1adcac0717d91647865820544e51a38886">RayTracer::PluginsExt::Transparency::TransparencyCreator</link>, <link linkend="_a01712_1a8050c4ddf2e8f85f9eae3286c06b69bc">RayTracer::PluginsExt::Refraction::RefractionCreator</link>, <link linkend="_a01692_1a50404648ed5b94b546a6e853c636a7e5">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</link>, <link linkend="_a01680_1a17ebe90adc51f2cf3ac49eccf626944b">RayTracer::PluginsExt::Mirror::MirrorCreator</link>, and <link linkend="_a01624_1ac99b373f056a762891d3297dd58e6660">RayTracer::PluginsExt::ChessBoard::ChessBoardCreator</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/<link linkend="_a00209">IMaterialCreator.hpp</link></section>
+</section>

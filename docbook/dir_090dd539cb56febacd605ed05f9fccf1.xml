@@ -14,11 +14,11 @@ Directory dependency graph for Materials:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00206">IMaterialCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00209">IMaterialCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00209">MaterialHandler.hpp</link></para>
+            <listitem><para>file <link linkend="_a00212">MaterialHandler.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00212">MaterialLoader.hpp</link></para>
+            <listitem><para>file <link linkend="_a00215">MaterialLoader.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

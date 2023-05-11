@@ -1,21 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00416" xml:lang="en-US">
-<title>RayTracer::Plugins::Entities Namespace Reference</title>
-<indexterm><primary>RayTracer::Plugins::Entities</primary></indexterm>
+<title>RayTracer::Filters Namespace Reference</title>
+<indexterm><primary>RayTracer::Filters</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01433">EntityHandler</link></para>
+            <listitem><para>class <link linkend="_a01364">IFilter</link></para>
 
-<para>The <link linkend="_a01433">EntityHandler</link>. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01437">EntityLoader</link></para>
-
-<para>The <link linkend="_a01437">EntityLoader</link>. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01441">IEntityCreator</link></para>
-
-<para>The <link linkend="_a01441">IEntityCreator</link>. </para>
+<para>The <link linkend="_a01364">IFilter</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

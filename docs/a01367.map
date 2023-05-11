@@ -1,5 +1,4 @@
-<map id="RayTracer::Images::Color" name="RayTracer::Images::Color">
-<area shape="rect" id="node1" title="The Color class." alt="" coords="15,189,166,501"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,72,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="97,5,189,83"/>
+<map id="RayTracer::ILogger" name="RayTracer::ILogger">
+<area shape="rect" id="node1" title="Logger singleton." alt="" coords="5,5,187,200"/>
+<area shape="rect" id="node2" href="$a01412.html" title="Logger singleton." alt="" coords="5,248,187,443"/>
 </map>

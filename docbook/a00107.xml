@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00107" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/ILight.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/ILight.hpp</primary></indexterm>
-<programlisting>#include &quot;Color.hpp&quot;
-#include &quot;IDisplayable.hpp&quot;
-#include &quot;Transform/Vector3f.hpp&quot;
-#include &quot;IEntity.hpp&quot;
-</programlisting>Include dependency graph for ILight.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp</primary></indexterm>
+<programlisting>#include &quot;Transform/ITransform.hpp&quot;
+</programlisting>Include dependency graph for IEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -27,18 +24,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01305">RayTracer::Entities::ILight</link></para>
+            <listitem><para>class <link linkend="_a01304">RayTracer::Entities::IEntity</link></para>
 
-<para>The <link linkend="_a01305">ILight</link> class. </para>
+<para>The <link linkend="_a01304">IEntity</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00410">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00413">RayTracer::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

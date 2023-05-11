@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/CameraClusterCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraEntity.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,98 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_62f615b43676db5ddd87f008b4cc30b3.html">Camera</a></li><li class="navelem"><a class="el" href="dir_6f6b6a3ad8e0d5aad58943c777bbb4ef.html">Cluster</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_62f615b43676db5ddd87f008b4cc30b3.html">Camera</a></li><li class="navelem"><a class="el" href="dir_36f7b4cf007e3ad8108b966aa19e811a.html">Basic</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">CameraClusterCreator.hpp</div>  </div>
+<div class="title">CameraEntity.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00278.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** CameraClusterCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Camera.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CAMERACREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define CAMERACREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CAMERA_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define CAMERA_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00194.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00152.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00281.html">CameraClusterEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00426.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00426.html">RayTracer::PluginsExt::Camera::Clustered</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01589.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01589.html">CameraClusterCreator</a> : <span class="keyword">public</span> <a class="code" href="a01441.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01589.html#aca76b08509235ddda188814ed3056f64">   20</a></span>&#160;            <a class="code" href="a01589.html#aca76b08509235ddda188814ed3056f64">~CameraClusterCreator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01589.html#a25404e4542804e3b327acf2ec5c0fba5">   21</a></span>&#160;            <a class="code" href="a01301.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01589.html#a25404e4542804e3b327acf2ec5c0fba5">create</a>(<span class="keyword">const</span> <a class="code" href="a01517.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01365.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01589.html#a21f32fd3548b0b1b1bc1235745f248fb">   25</a></span>&#160;            std::vector&lt;CameraClusterEntity *&gt; <a class="code" href="a01589.html#a21f32fd3548b0b1b1bc1235745f248fb">_elements</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*CAMERACREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00152_html"><div class="ttname"><a href="a00152.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00194_html"><div class="ttname"><a href="a00194.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00281_html"><div class="ttname"><a href="a00281.html">CameraClusterEntity.hpp</a></div></div>
-<div class="ttc" id="aa00426_html"><div class="ttname"><a href="a00426.html">RayTracer::PluginsExt::Camera::Clustered</a></div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:17</div></div>
-<div class="ttc" id="aa01301_html"><div class="ttname"><a href="a01301.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01365_html"><div class="ttname"><a href="a01365.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01441_html"><div class="ttname"><a href="a01441.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01517_html"><div class="ttname"><a href="a01517.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01589_html"><div class="ttname"><a href="a01589.html">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator</a></div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:18</div></div>
-<div class="ttc" id="aa01589_html_a21f32fd3548b0b1b1bc1235745f248fb"><div class="ttname"><a href="a01589.html#a21f32fd3548b0b1b1bc1235745f248fb">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator::_elements</a></div><div class="ttdeci">std::vector&lt; CameraClusterEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:25</div></div>
-<div class="ttc" id="aa01589_html_a25404e4542804e3b327acf2ec5c0fba5"><div class="ttname"><a href="a01589.html#a25404e4542804e3b327acf2ec5c0fba5">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01589_html_aca76b08509235ddda188814ed3056f64"><div class="ttname"><a href="a01589.html#aca76b08509235ddda188814ed3056f64">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator::~CameraClusterCreator</a></div><div class="ttdeci">~CameraClusterCreator()</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00104.html">ICamera.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00239.html">ISceneState.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00236.html">IDisplayable.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Transform.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00428.html">RayTracer::PluginsExt::Camera</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01588.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01588.html">CameraEntity</a> : <span class="keyword">public</span> <a class="code" href="a01300.html">RayTracer::Entities::ICamera</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01588.html#a5242e9d64256628448318a97b30d1c65">   22</a></span>&#160;            <a class="code" href="a01588.html#a5242e9d64256628448318a97b30d1c65">CameraEntity</a>(<span class="keyword">const</span> <a class="code" href="a01520.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01368.html">ILogger</a> &amp;logger);</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01588.html#ad11f45a47dfcc77ea55227308af532e2">   23</a></span>&#160;            <a class="code" href="a01588.html#ad11f45a47dfcc77ea55227308af532e2">~CameraEntity</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01588.html#a7c47a9a55f589897b3182c213ee8cae5">   24</a></span>&#160;            <a class="code" href="a01304.html#ab003087623e47600c09a76ff8138d37b">Type</a> <a class="code" href="a01588.html#a7c47a9a55f589897b3182c213ee8cae5">getType</a>() const final;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01588.html#a94e8667f44b8b7e797f3beadbf79ee30">   25</a></span>&#160;            Entities::Transform::ITransform &amp;<a class="code" href="a01588.html#a94e8667f44b8b7e797f3beadbf79ee30">getTransform</a>() final;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01588.html#ae2de2882395c7bd76758d01d9f083dc8">   26</a></span>&#160;            const Entities::Transform::ITransform &amp;<a class="code" href="a01588.html#a94e8667f44b8b7e797f3beadbf79ee30">getTransform</a>() const final;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01588.html#a70eac7f57a3943eaceeb28fbe69b27ab">   32</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="a01588.html#a70eac7f57a3943eaceeb28fbe69b27ab">getFocal</a>() const final;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01588.html#abd751ab74903bad3ba14dfbfd5197763">   38</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01588.html#abd751ab74903bad3ba14dfbfd5197763">setFocal</a>(<span class="keywordtype">double</span> value) final;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01588.html#a6a4a45291b79a76553b4f961e46a3b06">   44</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01588.html#a6a4a45291b79a76553b4f961e46a3b06">setSize</a>(const Entities::Transform::Vector2i &amp;vector) final;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01588.html#ae3b85580387a30d8f8a42f7c170fbe75">   50</a></span>&#160;            const Entities::Transform::Vector2i &amp;<a class="code" href="a01588.html#ae3b85580387a30d8f8a42f7c170fbe75">getSize</a>() const final;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a01588.html#ab966131d9b2863bf71fd1161f9009ec1">   59</a></span>&#160;            const Images::Image &amp;<a class="code" href="a01588.html#ab966131d9b2863bf71fd1161f9009ec1">render</a>(const Scenes::IDisplayable &amp;displayable, const Scenes::ISceneState &amp;state) final;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01588.html#a516bb3a9c980eb7728de5f903637ae73">   65</a></span>&#160;            const Images::Image &amp;<a class="code" href="a01588.html#a516bb3a9c980eb7728de5f903637ae73">getImage</a>() const final;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a01588.html#a36c3d5d2ea566404dbb95c519ab455eb">   71</a></span>&#160;            std::list&lt;std::reference_wrapper&lt;Filters::IFilter&gt;&gt; &amp;<a class="code" href="a01588.html#a36c3d5d2ea566404dbb95c519ab455eb">getFilters</a>() final;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a01588.html#a9dc424dd65cf62ce1e6f2b07d7b20b82">   75</a></span>&#160;            std::<span class="keywordtype">size_t</span> <a class="code" href="a01588.html#a9dc424dd65cf62ce1e6f2b07d7b20b82">getCluster</a>() const final;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a01588.html#a292d250db9a33558f1ae311d92131409">   81</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01588.html#a292d250db9a33558f1ae311d92131409">setCluster</a>(std::<span class="keywordtype">size_t</span> cluster) final;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        protected:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        private:</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="a01588.html#acceed139c58bbdc574d5cb2a7c40ffe0">   85</a></span>&#160;            Images::Image <a class="code" href="a01588.html#acceed139c58bbdc574d5cb2a7c40ffe0">_image</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a01588.html#a84218a11a2c84222c71a996be3c5dbab">   86</a></span>&#160;            Entities::Transform::Vector2i <a class="code" href="a01588.html#a84218a11a2c84222c71a996be3c5dbab">_size</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a01588.html#a1d833bfebac77833dc8ee993e444eeee">   87</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="a01588.html#a1d833bfebac77833dc8ee993e444eeee">_focal</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="a01588.html#ace433abc8efc7d3bc1f5d60671c8ec48">   88</a></span>&#160;            std::list&lt;std::reference_wrapper&lt;Filters::IFilter&gt;&gt; <a class="code" href="a01588.html#ace433abc8efc7d3bc1f5d60671c8ec48">_filters</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a01588.html#a37c13414dd7e16643b25fe646f409712">   89</a></span>&#160;            Entities::Transform::Transform <a class="code" href="a01588.html#a37c13414dd7e16643b25fe646f409712">_transform</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a01588.html#ae0d2e1906f86f964222820f748e6ca7b">   90</a></span>&#160;            <span class="keywordtype">int</span> <a class="code" href="a01588.html#ae0d2e1906f86f964222820f748e6ca7b">_maxThread</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a01588.html#af50e99bff9a5a37c0b14208aeeb422cf">   91</a></span>&#160;            <a class="code" href="a01368.html">ILogger</a> &amp;<a class="code" href="a01588.html#af50e99bff9a5a37c0b14208aeeb422cf">_logger</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*CAMERA_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">ICamera.hpp</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Transform.hpp</a></div></div>
+<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00236_html"><div class="ttname"><a href="a00236.html">IDisplayable.hpp</a></div></div>
+<div class="ttc" id="aa00239_html"><div class="ttname"><a href="a00239.html">ISceneState.hpp</a></div></div>
+<div class="ttc" id="aa00428_html"><div class="ttname"><a href="a00428.html">RayTracer::PluginsExt::Camera</a></div><div class="ttdef"><b>Definition:</b> CameraCreator.hpp:17</div></div>
+<div class="ttc" id="aa01300_html"><div class="ttname"><a href="a01300.html">RayTracer::Entities::ICamera</a></div><div class="ttdoc">The ICamera class.</div><div class="ttdef"><b>Definition:</b> ICamera.hpp:26</div></div>
+<div class="ttc" id="aa01304_html_ab003087623e47600c09a76ff8138d37b"><div class="ttname"><a href="a01304.html#ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:20</div></div>
+<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01520_html"><div class="ttname"><a href="a01520.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01588_html"><div class="ttname"><a href="a01588.html">RayTracer::PluginsExt::Camera::CameraEntity</a></div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:20</div></div>
+<div class="ttc" id="aa01588_html_a1d833bfebac77833dc8ee993e444eeee"><div class="ttname"><a href="a01588.html#a1d833bfebac77833dc8ee993e444eeee">RayTracer::PluginsExt::Camera::CameraEntity::_focal</a></div><div class="ttdeci">double _focal</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:87</div></div>
+<div class="ttc" id="aa01588_html_a292d250db9a33558f1ae311d92131409"><div class="ttname"><a href="a01588.html#a292d250db9a33558f1ae311d92131409">RayTracer::PluginsExt::Camera::CameraEntity::setCluster</a></div><div class="ttdeci">void setCluster(std::size_t cluster) final</div><div class="ttdoc">Set the cluster (1 is more precision, +infini is less precision)</div></div>
+<div class="ttc" id="aa01588_html_a36c3d5d2ea566404dbb95c519ab455eb"><div class="ttname"><a href="a01588.html#a36c3d5d2ea566404dbb95c519ab455eb">RayTracer::PluginsExt::Camera::CameraEntity::getFilters</a></div><div class="ttdeci">std::list&lt; std::reference_wrapper&lt; Filters::IFilter &gt; &gt; &amp; getFilters() final</div><div class="ttdoc">Get the filters.</div></div>
+<div class="ttc" id="aa01588_html_a37c13414dd7e16643b25fe646f409712"><div class="ttname"><a href="a01588.html#a37c13414dd7e16643b25fe646f409712">RayTracer::PluginsExt::Camera::CameraEntity::_transform</a></div><div class="ttdeci">Entities::Transform::Transform _transform</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:89</div></div>
+<div class="ttc" id="aa01588_html_a516bb3a9c980eb7728de5f903637ae73"><div class="ttname"><a href="a01588.html#a516bb3a9c980eb7728de5f903637ae73">RayTracer::PluginsExt::Camera::CameraEntity::getImage</a></div><div class="ttdeci">const Images::Image &amp; getImage() const final</div><div class="ttdoc">Get the image (possible when rendering)</div></div>
+<div class="ttc" id="aa01588_html_a5242e9d64256628448318a97b30d1c65"><div class="ttname"><a href="a01588.html#a5242e9d64256628448318a97b30d1c65">RayTracer::PluginsExt::Camera::CameraEntity::CameraEntity</a></div><div class="ttdeci">CameraEntity(const Scenes::ISetting &amp;config, ILogger &amp;logger)</div></div>
+<div class="ttc" id="aa01588_html_a6a4a45291b79a76553b4f961e46a3b06"><div class="ttname"><a href="a01588.html#a6a4a45291b79a76553b4f961e46a3b06">RayTracer::PluginsExt::Camera::CameraEntity::setSize</a></div><div class="ttdeci">void setSize(const Entities::Transform::Vector2i &amp;vector) final</div><div class="ttdoc">Set the size (of the screen)</div></div>
+<div class="ttc" id="aa01588_html_a70eac7f57a3943eaceeb28fbe69b27ab"><div class="ttname"><a href="a01588.html#a70eac7f57a3943eaceeb28fbe69b27ab">RayTracer::PluginsExt::Camera::CameraEntity::getFocal</a></div><div class="ttdeci">double getFocal() const final</div><div class="ttdoc">Get the focal (distance from the camera)</div></div>
+<div class="ttc" id="aa01588_html_a7c47a9a55f589897b3182c213ee8cae5"><div class="ttname"><a href="a01588.html#a7c47a9a55f589897b3182c213ee8cae5">RayTracer::PluginsExt::Camera::CameraEntity::getType</a></div><div class="ttdeci">Type getType() const final</div><div class="ttdoc">Get the type (light, camera, primitive)</div></div>
+<div class="ttc" id="aa01588_html_a84218a11a2c84222c71a996be3c5dbab"><div class="ttname"><a href="a01588.html#a84218a11a2c84222c71a996be3c5dbab">RayTracer::PluginsExt::Camera::CameraEntity::_size</a></div><div class="ttdeci">Entities::Transform::Vector2i _size</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:86</div></div>
+<div class="ttc" id="aa01588_html_a94e8667f44b8b7e797f3beadbf79ee30"><div class="ttname"><a href="a01588.html#a94e8667f44b8b7e797f3beadbf79ee30">RayTracer::PluginsExt::Camera::CameraEntity::getTransform</a></div><div class="ttdeci">Entities::Transform::ITransform &amp; getTransform() final</div><div class="ttdoc">Get the transform (position, rotation, scale)</div></div>
+<div class="ttc" id="aa01588_html_a9dc424dd65cf62ce1e6f2b07d7b20b82"><div class="ttname"><a href="a01588.html#a9dc424dd65cf62ce1e6f2b07d7b20b82">RayTracer::PluginsExt::Camera::CameraEntity::getCluster</a></div><div class="ttdeci">std::size_t getCluster() const final</div><div class="ttdoc">Get the cluster.</div></div>
+<div class="ttc" id="aa01588_html_ab966131d9b2863bf71fd1161f9009ec1"><div class="ttname"><a href="a01588.html#ab966131d9b2863bf71fd1161f9009ec1">RayTracer::PluginsExt::Camera::CameraEntity::render</a></div><div class="ttdeci">const Images::Image &amp; render(const Scenes::IDisplayable &amp;displayable, const Scenes::ISceneState &amp;state) final</div><div class="ttdoc">Render an image.</div></div>
+<div class="ttc" id="aa01588_html_abd751ab74903bad3ba14dfbfd5197763"><div class="ttname"><a href="a01588.html#abd751ab74903bad3ba14dfbfd5197763">RayTracer::PluginsExt::Camera::CameraEntity::setFocal</a></div><div class="ttdeci">void setFocal(double value) final</div><div class="ttdoc">Set the focal (distance from the camera)</div></div>
+<div class="ttc" id="aa01588_html_acceed139c58bbdc574d5cb2a7c40ffe0"><div class="ttname"><a href="a01588.html#acceed139c58bbdc574d5cb2a7c40ffe0">RayTracer::PluginsExt::Camera::CameraEntity::_image</a></div><div class="ttdeci">Images::Image _image</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:85</div></div>
+<div class="ttc" id="aa01588_html_ace433abc8efc7d3bc1f5d60671c8ec48"><div class="ttname"><a href="a01588.html#ace433abc8efc7d3bc1f5d60671c8ec48">RayTracer::PluginsExt::Camera::CameraEntity::_filters</a></div><div class="ttdeci">std::list&lt; std::reference_wrapper&lt; Filters::IFilter &gt; &gt; _filters</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:88</div></div>
+<div class="ttc" id="aa01588_html_ad11f45a47dfcc77ea55227308af532e2"><div class="ttname"><a href="a01588.html#ad11f45a47dfcc77ea55227308af532e2">RayTracer::PluginsExt::Camera::CameraEntity::~CameraEntity</a></div><div class="ttdeci">~CameraEntity()=default</div></div>
+<div class="ttc" id="aa01588_html_ae0d2e1906f86f964222820f748e6ca7b"><div class="ttname"><a href="a01588.html#ae0d2e1906f86f964222820f748e6ca7b">RayTracer::PluginsExt::Camera::CameraEntity::_maxThread</a></div><div class="ttdeci">int _maxThread</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:90</div></div>
+<div class="ttc" id="aa01588_html_ae3b85580387a30d8f8a42f7c170fbe75"><div class="ttname"><a href="a01588.html#ae3b85580387a30d8f8a42f7c170fbe75">RayTracer::PluginsExt::Camera::CameraEntity::getSize</a></div><div class="ttdeci">const Entities::Transform::Vector2i &amp; getSize() const final</div><div class="ttdoc">Get the size (of the screen)</div></div>
+<div class="ttc" id="aa01588_html_af50e99bff9a5a37c0b14208aeeb422cf"><div class="ttname"><a href="a01588.html#af50e99bff9a5a37c0b14208aeeb422cf">RayTracer::PluginsExt::Camera::CameraEntity::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> CameraEntity.hpp:91</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

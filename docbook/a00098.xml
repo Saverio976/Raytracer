@@ -1,19 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00098" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Display/Modules/ProgressModule.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Display/Modules/ProgressModule.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/src/Display/Modules/CanvasModule.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Display/Modules/CanvasModule.hpp</primary></indexterm>
 <programlisting>#include &lt;SFML/Graphics/Font.hpp&gt;
 #include &lt;SFML/Graphics/Image.hpp&gt;
 #include &lt;SFML/System/Clock.hpp&gt;
 #include &lt;functional&gt;
 #include &quot;ICamera.hpp&quot;
 #include &quot;IDisplayModule.hpp&quot;
-#include &quot;ILogger.hpp&quot;
 #include &quot;ITransform.hpp&quot;
 #include &quot;Scene.hpp&quot;
 #include &quot;Transform.hpp&quot;
 #include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for ProgressModule.hpp:<para>
+</programlisting>Include dependency graph for CanvasModule.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -25,16 +24,16 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01293">RayTracer::Display::ProgressModule</link></para>
+            <listitem><para>class <link linkend="_a01292">RayTracer::Display::CanvasModule</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00409">RayTracer::Display</link></para>
+            <listitem><para> <link linkend="_a00412">RayTracer::Display</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

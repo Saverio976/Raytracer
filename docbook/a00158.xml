@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00158" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp</primary></indexterm>
-<programlisting>#include &lt;cstddef&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &quot;Color.hpp&quot;
-#include &quot;Vector2i.hpp&quot;
-</programlisting>Include dependency graph for Image.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp</primary></indexterm>
+<programlisting>#include &lt;mutex&gt;
+#include &lt;ostream&gt;
+#include &lt;SFML/Graphics/Color.hpp&gt;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for Color.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,23 +27,34 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01373">RayTracer::Images::Image</link></para>
+            <listitem><para>class <link linkend="_a01372">RayTracer::Images::Color</link></para>
 
-<para>The <link linkend="_a01373">Image</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01377">RayTracer::Images::Image::PixelLine</link></para>
-
-<para><link linkend="_a01377">PixelLine</link> class. </para>
+<para>The <link linkend="_a01372">Color</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00414">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::ostream &amp; <link linkend="_a00158_1a892349ff4da33acc2d79e3c5c7585374">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01372">RayTracer::Images::Color</link> &amp;color)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a00158_1a892349ff4da33acc2d79e3c5c7585374"/>    <section>
+    <title>operator&lt;&lt;()</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Color.hpp</secondary></indexterm>
+<indexterm><primary>Color.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01372">RayTracer::Images::Color</link> &amp; color)</computeroutput></para></section>
+</section>
 </section>

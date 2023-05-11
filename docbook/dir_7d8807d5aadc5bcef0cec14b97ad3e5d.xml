@@ -14,9 +14,9 @@ Directory dependency graph for Plane:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00350">PlaneCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00353">PlaneCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00353">PlaneEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00356">PlaneEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

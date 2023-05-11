@@ -33,15 +33,15 @@ Directory dependency graph for src:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00152">ILogger.hpp</link></para>
+            <listitem><para>file <link linkend="_a00155">ILogger.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00176">Logger.hpp</link></para>
+            <listitem><para>file <link linkend="_a00179">Logger.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00179">Main.hpp</link></para>
+            <listitem><para>file <link linkend="_a00182">Main.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00182">Parameters.hpp</link></para>
+            <listitem><para>file <link linkend="_a00185">Parameters.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00221">Progress.hpp</link></para>
+            <listitem><para>file <link linkend="_a00224">Progress.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

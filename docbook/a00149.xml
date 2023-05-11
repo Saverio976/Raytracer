@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00149" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Filters/IFilter.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Filters/IFilter.hpp</primary></indexterm>
-<programlisting>#include &quot;Image.hpp&quot;
-</programlisting>Include dependency graph for IFilter.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Factories/TFactory.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/TFactory.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;memory&gt;
+#include &lt;map&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for TFactory.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -24,18 +28,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01361">RayTracer::Filters::IFilter</link></para>
+            <listitem><para>class <link linkend="_a01360">RayTracer::Factories::TFactory&lt; Handler, Interface &gt;</link></para>
 
-<para>The <link linkend="_a01361">IFilter</link> class. </para>
+<para>The <link linkend="_a01360">TFactory</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00413">RayTracer::Filters</link></para>
+            <listitem><para> <link linkend="_a00415">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

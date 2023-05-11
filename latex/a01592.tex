@@ -1,0 +1,86 @@
+\hypertarget{a01592}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Clustered\+::Camera\+Cluster\+Creator Class Reference}
+\label{a01592}\index{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}}
+
+
+{\ttfamily \#include $<$Camera\+Cluster\+Creator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Clustered\+::Camera\+Cluster\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{a01591}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Clustered\+::Camera\+Cluster\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01590}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01592_aca76b08509235ddda188814ed3056f64}{$\sim$\+Camera\+Cluster\+Creator}} ()
+\item 
+\mbox{\hyperlink{a01304}{Ray\+Tracer\+::\+Entities\+::\+IEntity}} $\ast$ \mbox{\hyperlink{a01592_a25404e4542804e3b327acf2ec5c0fba5}{create}} (const \mbox{\hyperlink{a01520}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01368}{ILogger}} \&logger) final
+\begin{DoxyCompactList}\small\item\em Create an entity with a setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01596}{Camera\+Cluster\+Entity}} $\ast$ $>$ \mbox{\hyperlink{a01592_a21f32fd3548b0b1b1bc1235745f248fb}{\+\_\+elements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01592_aca76b08509235ddda188814ed3056f64}\label{a01592_aca76b08509235ddda188814ed3056f64}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}!````~CameraClusterCreator@{$\sim$CameraClusterCreator}}
+\index{````~CameraClusterCreator@{$\sim$CameraClusterCreator}!RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}}
+\doxysubsubsection{\texorpdfstring{$\sim$CameraClusterCreator()}{~CameraClusterCreator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Camera\+Cluster\+Creator\+::$\sim$\+Camera\+Cluster\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01592_a25404e4542804e3b327acf2ec5c0fba5}\label{a01592_a25404e4542804e3b327acf2ec5c0fba5}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}!create@{create}}
+\index{create@{create}!RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01304}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}$\ast$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Camera\+Cluster\+Creator\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01520}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01368}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Create an entity with a setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01444_ab6cc749aa296fe5fc205ad2cad321d30}{Ray\+Tracer\+::\+Plugins\+::\+Entities\+::\+IEntity\+Creator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01592_a21f32fd3548b0b1b1bc1235745f248fb}\label{a01592_a21f32fd3548b0b1b1bc1235745f248fb}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}!\_elements@{\_elements}}
+\index{\_elements@{\_elements}!RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator@{RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator}}
+\doxysubsubsection{\texorpdfstring{\_elements}{\_elements}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01596}{Camera\+Cluster\+Entity}} $\ast$$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Camera\+Cluster\+Creator\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Camera/\+Cluster/\mbox{\hyperlink{a00281}{Camera\+Cluster\+Creator.\+hpp}}\end{DoxyCompactItemize}

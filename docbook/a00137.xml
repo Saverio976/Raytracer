@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00137" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp</primary></indexterm>
-<programlisting>#include &quot;ISetting.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;memory&gt;
 #include &quot;ILogger.hpp&quot;
-#include &quot;IFilter.hpp&quot;
-</programlisting>Include dependency graph for IFilterFactory.hpp:<para>
+#include &quot;IEntity.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for IEntityFactory.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -26,34 +28,32 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01345">RayTracer::Factories::IFilterFactory</link></para>
-
-<para>The <link linkend="_a01337">FilterFactory</link> (singleton factory) </para>
+            <listitem><para>class <link linkend="_a01344">RayTracer::Factories::IEntityFactory</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00412">RayTracer::Factories</link></para>
+            <listitem><para> <link linkend="_a00415">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_a01345">RayTracer::Factories::IFilterFactory</link> * <link linkend="_a00137_1acec3911c130ba3937e3a2a2a34177fdc">getFilterFactoryInstance</link> (void)</para>
+            <listitem><para><link linkend="_a01344">RayTracer::Factories::IEntityFactory</link> * <link linkend="_a00137_1aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</link> (void)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Function Documentation</title>
-<anchor xml:id="_a00137_1acec3911c130ba3937e3a2a2a34177fdc"/>    <section>
-    <title>getFilterFactoryInstance()</title>
-<indexterm><primary>getFilterFactoryInstance</primary><secondary>IFilterFactory.hpp</secondary></indexterm>
-<indexterm><primary>IFilterFactory.hpp</primary><secondary>getFilterFactoryInstance</secondary></indexterm>
-<para><computeroutput><link linkend="_a01345">RayTracer::Factories::IFilterFactory</link>* getFilterFactoryInstance (void )</computeroutput></para></section>
+<anchor xml:id="_a00137_1aae10664f77a8c9a9fbbc43b95ecc5d03"/>    <section>
+    <title>getEntityFactoryInstance()</title>
+<indexterm><primary>getEntityFactoryInstance</primary><secondary>IEntityFactory.hpp</secondary></indexterm>
+<indexterm><primary>IEntityFactory.hpp</primary><secondary>getEntityFactoryInstance</secondary></indexterm>
+<para><computeroutput><link linkend="_a01344">RayTracer::Factories::IEntityFactory</link>* getEntityFactoryInstance (void )</computeroutput></para></section>
 </section>
 </section>

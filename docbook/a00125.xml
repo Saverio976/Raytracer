@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00125" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector3f.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector3f.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp</primary></indexterm>
 <programlisting>#include &lt;ostream&gt;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for Vector3f.hpp:<para>
+#include &quot;IConfig.hpp&quot;
+</programlisting>Include dependency graph for Vector2i.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -25,36 +25,36 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01329">RayTracer::Entities::Transform::Vector3f</link></para>
+            <listitem><para>class <link linkend="_a01328">RayTracer::Entities::Transform::Vector2i</link></para>
 
-<para>The <link linkend="_a01329">Vector3f</link> class. </para>
+<para>The <link linkend="_a01328">Vector2i</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00410">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00413">RayTracer::Entities</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00411">RayTracer::Entities::Transform</link></para>
+            <listitem><para> <link linkend="_a00414">RayTracer::Entities::Transform</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>std::ostream &amp; <link linkend="_a00125_1a8e34b2349337972e4f3250fd8aa76592">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01329">RayTracer::Entities::Transform::Vector3f</link> &amp;vector)</para>
+            <listitem><para>std::ostream &amp; <link linkend="_a00125_1a92abfcf0771ed10b742e6e8f20e79f0d">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01328">RayTracer::Entities::Transform::Vector2i</link> &amp;vector)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Function Documentation</title>
-<anchor xml:id="_a00125_1a8e34b2349337972e4f3250fd8aa76592"/>    <section>
+<anchor xml:id="_a00125_1a92abfcf0771ed10b742e6e8f20e79f0d"/>    <section>
     <title>operator&lt;&lt;()</title>
-<indexterm><primary>operator&lt;&lt;</primary><secondary>Vector3f.hpp</secondary></indexterm>
-<indexterm><primary>Vector3f.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
-<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01329">RayTracer::Entities::Transform::Vector3f</link> &amp; vector)</computeroutput></para></section>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Vector2i.hpp</secondary></indexterm>
+<indexterm><primary>Vector2i.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01328">RayTracer::Entities::Transform::Vector2i</link> &amp; vector)</computeroutput></para></section>
 </section>
 </section>

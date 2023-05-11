@@ -1,0 +1,86 @@
+\hypertarget{a01568}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Anti\+Aliasing\+::SSAAx4\+::SSAAx4\+Creator Class Reference}
+\label{a01568}\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}}
+
+
+{\ttfamily \#include $<$SSAAx4\+Creator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Anti\+Aliasing\+::SSAAx4\+::SSAAx4\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{a01567}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Anti\+Aliasing\+::SSAAx4\+::SSAAx4\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01566}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01568_ab8a4d564fb91dce7d2e171379fd173ec}{$\sim$\+SSAAx4\+Creator}} ()
+\item 
+\mbox{\hyperlink{a01364}{Filters\+::\+IFilter}} $\ast$ \mbox{\hyperlink{a01568_a126b9903c84dbeaf947155c00755e6f0}{create}} (const \mbox{\hyperlink{a01520}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01368}{ILogger}} \&logger) final
+\begin{DoxyCompactList}\small\item\em Create a filter with a setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01572}{SSAAx4\+Filter}} $\ast$ $>$ \mbox{\hyperlink{a01568_a23987d89e741cdc47e8fa7e148ac17b9}{\+\_\+elements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01568_ab8a4d564fb91dce7d2e171379fd173ec}\label{a01568_ab8a4d564fb91dce7d2e171379fd173ec}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}!````~SSAAx4Creator@{$\sim$SSAAx4Creator}}
+\index{````~SSAAx4Creator@{$\sim$SSAAx4Creator}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}}
+\doxysubsubsection{\texorpdfstring{$\sim$SSAAx4Creator()}{~SSAAx4Creator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Creator\+::$\sim$\+SSAAx4\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01568_a126b9903c84dbeaf947155c00755e6f0}\label{a01568_a126b9903c84dbeaf947155c00755e6f0}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}!create@{create}}
+\index{create@{create}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01364}{Filters\+::\+IFilter}}$\ast$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Creator\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01520}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01368}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Create a filter with a setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01456_af72d84e7508e57e56fef9f48753f571f}{Ray\+Tracer\+::\+Plugins\+::\+Filters\+::\+IFilter\+Creator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01568_a23987d89e741cdc47e8fa7e148ac17b9}\label{a01568_a23987d89e741cdc47e8fa7e148ac17b9}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}!\_elements@{\_elements}}
+\index{\_elements@{\_elements}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator}}
+\doxysubsubsection{\texorpdfstring{\_elements}{\_elements}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01572}{SSAAx4\+Filter}} $\ast$$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Creator\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Anti\+Aliasing/\+SSAAx4/\mbox{\hyperlink{a00263}{SSAAx4\+Creator.\+hpp}}\end{DoxyCompactItemize}

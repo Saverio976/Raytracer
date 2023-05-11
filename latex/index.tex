@@ -2154,6 +2154,10 @@ afficher ...
 
 $<$/details$>$\hypertarget{index_autotoc_md19}{}\doxysubsection{Mirror\+Material}\label{index_autotoc_md19}
 
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{mirrormaterial1-basic.png}%image
+\end{DoxyInlineImage}
+
 
 $<$details$>$
 
@@ -2163,7 +2167,7 @@ afficher ...
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\# mirrormaterial.yaax}
 \DoxyCodeLine{}
-\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{\# Configuration of the camera}
 \DoxyCodeLine{cameras:}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{    CameraCluster: (}
@@ -2188,7 +2192,7 @@ afficher ...
 \DoxyCodeLine{    );}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{\# Primitives in the scene}
 \DoxyCodeLine{primitives :}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{    \# List of spheres}
@@ -2201,9 +2205,34 @@ afficher ...
 \DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
 \DoxyCodeLine{            \}}
 \DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Type de material}
+\DoxyCodeLine{                type = "{}MirrorMaterial"{};}
 \DoxyCodeLine{                shininess = 1.0;}
-\DoxyCodeLine{                color = \{r = 222.0; g = 102.0; b = 97.0; a = 25.0;\};}
-\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 255.0; a = 50.0;\};}
+\DoxyCodeLine{                \# Transparence}
+\DoxyCodeLine{                \# 0: c'est un pure mirroir (pas d'ombre dessus)}
+\DoxyCodeLine{                \# 255: c'est plus trop un mirroir}
+\DoxyCodeLine{                transparency = 50.0;}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 25.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = 0.0; y = -\/50.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                color = \{r = 255.0; g = 255.0; b = 255.0; a = 25.0;\};}
+\DoxyCodeLine{                type = "{}MirrorMaterial"{};}
+\DoxyCodeLine{                \# Transparence}
+\DoxyCodeLine{                \# 0: c'est un pure mirroir (pas d'ombre dessus)}
+\DoxyCodeLine{                \# 255: c'est plus trop un mirroir}
+\DoxyCodeLine{                transparency = 50.0;}
 \DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
@@ -2218,37 +2247,32 @@ afficher ...
 \DoxyCodeLine{            \}}
 \DoxyCodeLine{            material = \{}
 \DoxyCodeLine{                shininess = 1.0;}
-\DoxyCodeLine{                color = \{r = 50.0; g = 50.0; b = 50.0; a = 10.0;\};}
-\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                color = \{r = 50.0; g = 50.0; b = 50.0; a = 50.0;\};}
+\DoxyCodeLine{                type = "{}MirrorMaterial"{};}
+\DoxyCodeLine{                \# Transparence}
+\DoxyCodeLine{                \# 0: c'est un pure mirroir (pas d'ombre dessus)}
+\DoxyCodeLine{                \# 255: c'est plus trop un mirroir}
 \DoxyCodeLine{                transparency = 50.0;}
 \DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{            \};}
-\DoxyCodeLine{        \}}
-\DoxyCodeLine{    );}
-\DoxyCodeLine{    LimitedPlane = (}
+\DoxyCodeLine{        \},}
 \DoxyCodeLine{        \{}
+\DoxyCodeLine{            radius = 50.0;}
 \DoxyCodeLine{            transform = \{}
-\DoxyCodeLine{                position = \{x = -\/30.0; y = 25.0; z = -\/15.0;\};}
-\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
-\DoxyCodeLine{                rotation = \{x = 0.0; y = 1.0; z = 0.0;\};}
-\DoxyCodeLine{            \};}
-\DoxyCodeLine{            size = \{x = 100; y = 150;\};}
+\DoxyCodeLine{                position = \{x = 125.0; y = 100.0; z = 50.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
 \DoxyCodeLine{            material = \{}
-\DoxyCodeLine{                \# Taux d'éblouissement de la lumière}
 \DoxyCodeLine{                shininess = 1.0;}
-\DoxyCodeLine{                \# Couleur du materiel}
-\DoxyCodeLine{                color = \{r = 50.0; g = 50.0; b = 0.0; a = 50.0;\};}
-\DoxyCodeLine{                \# Type de materiel}
-\DoxyCodeLine{                type = "{}RefractionMaterial"{};}
-\DoxyCodeLine{                \# Transparence (de 0 à 255)}
-\DoxyCodeLine{                \# 0 = invisible}
-\DoxyCodeLine{                \# 255 = opaque}
-\DoxyCodeLine{                transparency = 25.0;}
-\DoxyCodeLine{                \# Refraction [x=0.0, y=0.0, z=0.0] correspond à un plan transparent}
-\DoxyCodeLine{                \# Vecteur ajouté à la normal de l'object}
-\DoxyCodeLine{                refraction = \{x = 0.5; y = 0.7; z = -\/0.2\};}
+\DoxyCodeLine{                color = \{r = 50.0; g = 50.0; b = 50.0; a = 50.0;\};}
+\DoxyCodeLine{                type = "{}MirrorMaterial"{};}
+\DoxyCodeLine{                \# Transparence}
+\DoxyCodeLine{                \# 0: c'est un pure mirroir (pas d'ombre dessus)}
+\DoxyCodeLine{                \# 255: c'est plus trop un mirroir}
+\DoxyCodeLine{                transparency = 50.0;}
 \DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
 \DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
@@ -2291,46 +2315,39 @@ afficher ...
 \DoxyCodeLine{    );}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{\# Light configuration}
 \DoxyCodeLine{lights :}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
 \DoxyCodeLine{    PointLight = (}
-\DoxyCodeLine{        \# Première lampe de type PointLight}
 \DoxyCodeLine{        \{}
 \DoxyCodeLine{            transform = \{}
-\DoxyCodeLine{                \# Position de la lampe}
 \DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
-\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
-\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
-\DoxyCodeLine{                \# Z: mettre 0.0}
 \DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
-\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
 \DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
 \DoxyCodeLine{            \};}
-\DoxyCodeLine{            \# Couleur de la lampe}
 \DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
-\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 3.0;}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            color = \{r = 255.0; g = 0.0; b = 0.0; a = 255.0;\};}
 \DoxyCodeLine{            power = 1.0;}
-\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
 \DoxyCodeLine{            radius = 500.0;}
 \DoxyCodeLine{        \}}
 \DoxyCodeLine{    );}
 \DoxyCodeLine{    AmbientLight = (}
-\DoxyCodeLine{        \# Première lampe de type AmbientLight}
 \DoxyCodeLine{        \{}
 \DoxyCodeLine{            transform = \{}
-\DoxyCodeLine{                \# Position de la lampe}
 \DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
-\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
-\DoxyCodeLine{                \# Y/Z: mettre 0.0}
 \DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
-\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
 \DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
 \DoxyCodeLine{            \};}
-\DoxyCodeLine{            \# Couleur de la lampe}
 \DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
-\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
 \DoxyCodeLine{            power = 1.0;}
 \DoxyCodeLine{        \}}
 \DoxyCodeLine{    );}

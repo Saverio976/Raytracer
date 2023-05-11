@@ -63,7 +63,7 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="a00408.html">RayTracer</a> </div>  </div>
+<div class="title"><a class="el" href="a00411.html">RayTracer</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>aficher ... <a class="anchor" id="md__home_runner_work_Raytracer_Raytracer_README"></a> Projet réalisé en 2ème année à EPITECH</p>
@@ -2041,12 +2041,12 @@ RefractionMaterial</h2>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 MirrorMaterial</h2>
-<p><img src="/documentation/mirrormaterial1-basic.png" alt="image" class="inline"/></p>
+<p><img src="mirrormaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
 <p>afficher ... </p>
 <div class="fragment"><div class="line"># mirrormaterial.yaax</div>
 <div class="line"> </div>
-<div class="line"># Configuration des cameras</div>
+<div class="line"># Configuration of the camera</div>
 <div class="line">cameras:</div>
 <div class="line">{</div>
 <div class="line">    CameraCluster: (</div>
@@ -2071,7 +2071,7 @@ MirrorMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"># Les objets de la scene</div>
+<div class="line"># Primitives in the scene</div>
 <div class="line">primitives :</div>
 <div class="line">{</div>
 <div class="line">    # List of spheres</div>
@@ -2084,9 +2084,34 @@ MirrorMaterial</h2>
 <div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
 <div class="line">            }</div>
 <div class="line">            material = {</div>
+<div class="line">                # Type de material</div>
+<div class="line">                type = &quot;MirrorMaterial&quot;;</div>
 <div class="line">                shininess = 1.0;</div>
-<div class="line">                color = {r = 222.0; g = 102.0; b = 97.0; a = 25.0;};</div>
-<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                color = {r = 255.0; g = 255.0; b = 255.0; a = 50.0;};</div>
+<div class="line">                # Transparence</div>
+<div class="line">                # 0: c&#39;est un pure mirroir (pas d&#39;ombre dessus)</div>
+<div class="line">                # 255: c&#39;est plus trop un mirroir</div>
+<div class="line">                transparency = 50.0;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            radius = 25.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 0.0; y = -50.0; z = 50.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 255.0; g = 255.0; b = 255.0; a = 25.0;};</div>
+<div class="line">                type = &quot;MirrorMaterial&quot;;</div>
+<div class="line">                # Transparence</div>
+<div class="line">                # 0: c&#39;est un pure mirroir (pas d&#39;ombre dessus)</div>
+<div class="line">                # 255: c&#39;est plus trop un mirroir</div>
+<div class="line">                transparency = 50.0;</div>
 <div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
@@ -2101,37 +2126,32 @@ MirrorMaterial</h2>
 <div class="line">            }</div>
 <div class="line">            material = {</div>
 <div class="line">                shininess = 1.0;</div>
-<div class="line">                color = {r = 50.0; g = 50.0; b = 50.0; a = 10.0;};</div>
-<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                color = {r = 50.0; g = 50.0; b = 50.0; a = 50.0;};</div>
+<div class="line">                type = &quot;MirrorMaterial&quot;;</div>
+<div class="line">                # Transparence</div>
+<div class="line">                # 0: c&#39;est un pure mirroir (pas d&#39;ombre dessus)</div>
+<div class="line">                # 255: c&#39;est plus trop un mirroir</div>
 <div class="line">                transparency = 50.0;</div>
 <div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">            };</div>
-<div class="line">        }</div>
-<div class="line">    );</div>
-<div class="line">    LimitedPlane = (</div>
+<div class="line">        },</div>
 <div class="line">        {</div>
+<div class="line">            radius = 50.0;</div>
 <div class="line">            transform = {</div>
-<div class="line">                position = {x = -30.0; y = 25.0; z = -15.0;};</div>
-<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
-<div class="line">                rotation = {x = 0.0; y = 1.0; z = 0.0;};</div>
-<div class="line">            };</div>
-<div class="line">            size = {x = 100; y = 150;};</div>
+<div class="line">                position = {x = 125.0; y = 100.0; z = 50.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
 <div class="line">            material = {</div>
-<div class="line">                # Taux d&#39;éblouissement de la lumière</div>
 <div class="line">                shininess = 1.0;</div>
-<div class="line">                # Couleur du materiel</div>
-<div class="line">                color = {r = 50.0; g = 50.0; b = 0.0; a = 50.0;};</div>
-<div class="line">                # Type de materiel</div>
-<div class="line">                type = &quot;RefractionMaterial&quot;;</div>
-<div class="line">                # Transparence (de 0 à 255)</div>
-<div class="line">                # 0 = invisible</div>
-<div class="line">                # 255 = opaque</div>
-<div class="line">                transparency = 25.0;</div>
-<div class="line">                # Refraction [x=0.0, y=0.0, z=0.0] correspond à un plan transparent</div>
-<div class="line">                # Vecteur ajouté à la normal de l&#39;object</div>
-<div class="line">                refraction = {x = 0.5; y = 0.7; z = -0.2};</div>
+<div class="line">                color = {r = 50.0; g = 50.0; b = 50.0; a = 50.0;};</div>
+<div class="line">                type = &quot;MirrorMaterial&quot;;</div>
+<div class="line">                # Transparence</div>
+<div class="line">                # 0: c&#39;est un pure mirroir (pas d&#39;ombre dessus)</div>
+<div class="line">                # 255: c&#39;est plus trop un mirroir</div>
+<div class="line">                transparency = 50.0;</div>
 <div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
 <div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
@@ -2174,46 +2194,39 @@ MirrorMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"># Configuration de la lumière</div>
+<div class="line"># Light configuration</div>
 <div class="line">lights :</div>
 <div class="line">{</div>
-<div class="line">    # Point de lumière (une lampe par example)</div>
 <div class="line">    PointLight = (</div>
-<div class="line">        # Première lampe de type PointLight</div>
 <div class="line">        {</div>
 <div class="line">            transform = {</div>
-<div class="line">                # Position de la lampe</div>
 <div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
-<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
-<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
-<div class="line">                # Z: mettre 0.0</div>
 <div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
-<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
 <div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
 <div class="line">            };</div>
-<div class="line">            # Couleur de la lampe</div>
 <div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
-<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 3.0;</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = -150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            color = {r = 255.0; g = 0.0; b = 0.0; a = 255.0;};</div>
 <div class="line">            power = 1.0;</div>
-<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
 <div class="line">            radius = 500.0;</div>
 <div class="line">        }</div>
 <div class="line">    );</div>
 <div class="line">    AmbientLight = (</div>
-<div class="line">        # Première lampe de type AmbientLight</div>
 <div class="line">        {</div>
 <div class="line">            transform = {</div>
-<div class="line">                # Position de la lampe</div>
 <div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
-<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
-<div class="line">                # Y/Z: mettre 0.0</div>
 <div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
-<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
 <div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
 <div class="line">            };</div>
-<div class="line">            # Couleur de la lampe</div>
 <div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
-<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
 <div class="line">            power = 1.0;</div>
 <div class="line">        }</div>
 <div class="line">    );</div>
@@ -3482,7 +3495,7 @@ SSAAx4</h2>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:09:14 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

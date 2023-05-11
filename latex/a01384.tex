@@ -1,0 +1,143 @@
+\hypertarget{a01384}{}\doxysection{Ray\+Tracer\+::Images\+::Image\+Pipe\+Line Class Reference}
+\label{a01384}\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+
+
+The \mbox{\hyperlink{a01384}{Image\+Pipe\+Line}} class.  
+
+
+
+
+{\ttfamily \#include $<$Image\+Pipe\+Line.\+hpp$>$}
+
+
+
+Collaboration diagram for Ray\+Tracer\+::Images\+::Image\+Pipe\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01382}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01384_adcb8eb1f8760bd9a3763a446600b1cfc}{Image\+Pipe\+Line}} (\mbox{\hyperlink{a01376}{Image}} \&image, const \mbox{\hyperlink{a01508}{Scenes\+::\+IDisplayable}} \&displayable, const \mbox{\hyperlink{a01516}{Scenes\+::\+IScene\+State}} \&state, const \mbox{\hyperlink{a01388}{IRay\+Iterator}} \&ray\+Iterrator)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01384}{Image\+Pipe\+Line}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01384_a334f2fc98699d1ebf2aa03831fd579ba}{generate}} (\mbox{\hyperlink{a01368}{ILogger}} \&logger, std\+::size\+\_\+t max\+Thread=1, std\+::size\+\_\+t cluster=1)
+\begin{DoxyCompactList}\small\item\em Generate the image with entities displayable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01384_a1480abb46258a4827960dab3448b0041}{apply}} (\mbox{\hyperlink{a01364}{Filters\+::\+IFilter}} \&filter)
+\begin{DoxyCompactList}\small\item\em Apply the filter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01384_abde10b0d2bb72b27ea0f1e9a9a5ac03d}{$\sim$\+Image\+Pipe\+Line}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01376}{Image}} \& \mbox{\hyperlink{a01384_a75e82efc180d4205954c385f37c0e0d2}{\+\_\+image}}
+\item 
+const \mbox{\hyperlink{a01508}{Scenes\+::\+IDisplayable}} \& \mbox{\hyperlink{a01384_a87e2e909fbb996ef27981fbfe77c86cd}{\+\_\+displayable}}
+\item 
+const \mbox{\hyperlink{a01516}{Scenes\+::\+IScene\+State}} \& \mbox{\hyperlink{a01384_a6981ce661854bc5314157aef96827e08}{\+\_\+state}}
+\item 
+const \mbox{\hyperlink{a01388}{IRay\+Iterator}} \& \mbox{\hyperlink{a01384_ae95c9b067c79dd8ac453c4931c36bc4a}{\+\_\+ray\+Iterrator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01384}{Image\+Pipe\+Line}} class. 
+
+class that represent pipeline modification on an image 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01384_adcb8eb1f8760bd9a3763a446600b1cfc}\label{a01384_adcb8eb1f8760bd9a3763a446600b1cfc}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!ImagePipeLine@{ImagePipeLine}}
+\index{ImagePipeLine@{ImagePipeLine}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{ImagePipeLine()}{ImagePipeLine()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::\+Image\+Pipe\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01376}{Image}} \&}]{image,  }\item[{const \mbox{\hyperlink{a01508}{Scenes\+::\+IDisplayable}} \&}]{displayable,  }\item[{const \mbox{\hyperlink{a01516}{Scenes\+::\+IScene\+State}} \&}]{state,  }\item[{const \mbox{\hyperlink{a01388}{IRay\+Iterator}} \&}]{ray\+Iterrator }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01384}{Image\+Pipe\+Line}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & the image to modify \\
+\hline
+{\em displayable} & the displayable entities to render \\
+\hline
+{\em state} & the state (if cancel needed) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01384_abde10b0d2bb72b27ea0f1e9a9a5ac03d}\label{a01384_abde10b0d2bb72b27ea0f1e9a9a5ac03d}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!````~ImagePipeLine@{$\sim$ImagePipeLine}}
+\index{````~ImagePipeLine@{$\sim$ImagePipeLine}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{$\sim$ImagePipeLine()}{~ImagePipeLine()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::$\sim$\+Image\+Pipe\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01384_a1480abb46258a4827960dab3448b0041}\label{a01384_a1480abb46258a4827960dab3448b0041}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!apply@{apply}}
+\index{apply@{apply}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01364}{Filters\+::\+IFilter}} \&}]{filter }\end{DoxyParamCaption})}
+
+
+
+Apply the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & the filter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01384_a334f2fc98699d1ebf2aa03831fd579ba}\label{a01384_a334f2fc98699d1ebf2aa03831fd579ba}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!generate@{generate}}
+\index{generate@{generate}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::generate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01368}{ILogger}} \&}]{logger,  }\item[{std\+::size\+\_\+t}]{max\+Thread = {\ttfamily 1},  }\item[{std\+::size\+\_\+t}]{cluster = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Generate the image with entities displayable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Thread} & the max thread number to use \\
+\hline
+{\em cluster} & the cluster number (1 ray represent {\ttfamily cluster} pixel) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01384_a87e2e909fbb996ef27981fbfe77c86cd}\label{a01384_a87e2e909fbb996ef27981fbfe77c86cd}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!\_displayable@{\_displayable}}
+\index{\_displayable@{\_displayable}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{\_displayable}{\_displayable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01508}{Scenes\+::\+IDisplayable}}\& Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::\+\_\+displayable\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01384_a75e82efc180d4205954c385f37c0e0d2}\label{a01384_a75e82efc180d4205954c385f37c0e0d2}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!\_image@{\_image}}
+\index{\_image@{\_image}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{\_image}{\_image}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01376}{Image}}\& Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::\+\_\+image\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01384_ae95c9b067c79dd8ac453c4931c36bc4a}\label{a01384_ae95c9b067c79dd8ac453c4931c36bc4a}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!\_rayIterrator@{\_rayIterrator}}
+\index{\_rayIterrator@{\_rayIterrator}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{\_rayIterrator}{\_rayIterrator}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01388}{IRay\+Iterator}}\& Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::\+\_\+ray\+Iterrator\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01384_a6981ce661854bc5314157aef96827e08}\label{a01384_a6981ce661854bc5314157aef96827e08}} 
+\index{RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}!\_state@{\_state}}
+\index{\_state@{\_state}!RayTracer::Images::ImagePipeLine@{RayTracer::Images::ImagePipeLine}}
+\doxysubsubsection{\texorpdfstring{\_state}{\_state}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01516}{Scenes\+::\+IScene\+State}}\& Ray\+Tracer\+::\+Images\+::\+Image\+Pipe\+Line\+::\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\mbox{\hyperlink{a00164}{Image\+Pipe\+Line.\+hpp}}\end{DoxyCompactItemize}

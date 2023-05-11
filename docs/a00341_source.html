@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial/MirrorMaterial.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial/MirrorCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,80 +67,53 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">MirrorMaterial.hpp</div>  </div>
+<div class="title">MirrorCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00341.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PlainMaterial.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PlaneCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MIRRORMATERIAL_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define MIRRORMATERIAL_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MIRRORMATERIALCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define MIRRORMATERIALCREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00239.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00170.html">Ray.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">Color.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00116.html">ITransform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">Vector3f.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00110.html">IMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00435.html">RayTracer::PluginsExt::Mirror</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01681.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01681.html">MirrorMaterial</a> : <span class="keyword">public</span> <a class="code" href="a01309.html">Entities::IMaterial</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01681.html#a3888aaa94f20d34c725baa090b8bd068">   21</a></span>&#160;        <a class="code" href="a01681.html#a3888aaa94f20d34c725baa090b8bd068">MirrorMaterial</a>(<span class="keyword">const</span> <a class="code" href="a01517.html">Scenes::ISetting</a> &amp;config);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01681.html#ae378673fbede57a6120ff8bd93715cde">   23</a></span>&#160;        <a class="code" href="a01369.html">Images::Color</a> <a class="code" href="a01681.html#ae378673fbede57a6120ff8bd93715cde">getColor</a>(<span class="keyword">const</span> <a class="code" href="a01397.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01317.html">Entities::Transform::ITransform</a> &amp;centerObj, <span class="keyword">const</span> <a class="code" href="a01329.html">Entities::Transform::Vector3f</a> &amp;intersect, <span class="keyword">const</span> <a class="code" href="a01505.html">Scenes::IDisplayable</a> &amp;displayable) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01681.html#a8511a0aa3f1ed907c3833cfa3be19bbd">   24</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a01681.html#a8511a0aa3f1ed907c3833cfa3be19bbd">setColor</a>(<span class="keyword">const</span> <a class="code" href="a01369.html">Images::Color</a> &amp;color) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01681.html#a1fe74527a636f0370d8dd5bfac951a12">   25</a></span>&#160;        <a class="code" href="a01369.html">Images::Color</a> <a class="code" href="a01681.html#a1fe74527a636f0370d8dd5bfac951a12">redirectionLight</a>(<span class="keyword">const</span> <a class="code" href="a01397.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01505.html">Scenes::IDisplayable</a> &amp;displayable,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">const</span> <a class="code" href="a01329.html">Entities::Transform::Vector3f</a> &amp;intersect) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00209.html">IMaterialCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00344.html">MirrorMaterial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00438.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00438.html">RayTracer::PluginsExt::Mirror</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01680.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01680.html">MirrorCreator</a> : <span class="keyword">public</span> <a class="code" href="a01460.html">RayTracer::Plugins::Materials::IMaterialCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01680.html#aa46864349acd23211db80ef48cb4b7a3">   20</a></span>&#160;        <a class="code" href="a01680.html#aa46864349acd23211db80ef48cb4b7a3">~MirrorCreator</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01680.html#a17ebe90adc51f2cf3ac49eccf626944b">   21</a></span>&#160;        <a class="code" href="a01312.html">RayTracer::Entities::IMaterial</a> *<a class="code" href="a01680.html#a17ebe90adc51f2cf3ac49eccf626944b">create</a>(<span class="keyword">const</span> <a class="code" href="a01520.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01368.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01680.html#a0406873501b9caf819ea63b2df02c400">   24</a></span>&#160;        std::vector&lt;MirrorMaterial *&gt; <a class="code" href="a01680.html#a0406873501b9caf819ea63b2df02c400">_elements</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01681.html#a88377377761ea59c7351cdd4055d017c">   29</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01681.html#a88377377761ea59c7351cdd4055d017c">randomDouble</a>(<span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01681.html#ae5299a27c439ee5b1da98e4feab06633">   30</a></span>&#160;        <a class="code" href="a01369.html">Images::Color</a> <a class="code" href="a01681.html#ae5299a27c439ee5b1da98e4feab06633">getNextColor</a>(<span class="keyword">const</span> <a class="code" href="a01397.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01317.html">Entities::Transform::ITransform</a> &amp;centerObj, <span class="keyword">const</span> <a class="code" href="a01329.html">Entities::Transform::Vector3f</a> &amp;intersect, <span class="keyword">const</span> <a class="code" href="a01505.html">Scenes::IDisplayable</a> &amp;displayable) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01681.html#a314f5395602e09f296b6b677626df518">   31</a></span>&#160;        <a class="code" href="a01369.html">Images::Color</a> <a class="code" href="a01681.html#a314f5395602e09f296b6b677626df518">_color</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01681.html#afab5e53a1157bfbdaecf8458bd735108">   32</a></span>&#160;        <a class="code" href="a01329.html">Entities::Transform::Vector3f</a> <a class="code" href="a01681.html#afab5e53a1157bfbdaecf8458bd735108">_ambient</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01681.html#a67514d3ba5da31865e117bab00babc3a">   33</a></span>&#160;        <a class="code" href="a01329.html">Entities::Transform::Vector3f</a> <a class="code" href="a01681.html#a67514d3ba5da31865e117bab00babc3a">_diffuse</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01681.html#a1f74136e6efb6d8c8cbc02d7ebd9f8a6">   34</a></span>&#160;        <a class="code" href="a01329.html">Entities::Transform::Vector3f</a> <a class="code" href="a01681.html#a1f74136e6efb6d8c8cbc02d7ebd9f8a6">_specular</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01681.html#acfa80e6428bb40af4ef88721bf2ebad9">   35</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01681.html#acfa80e6428bb40af4ef88721bf2ebad9">_shininess</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01681.html#a1a27f2659736e1dee1b7e6d1352fa334">   36</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01681.html#a1a27f2659736e1dee1b7e6d1352fa334">_transparency</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00110_html"><div class="ttname"><a href="a00110.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">ITransform.hpp</a></div></div>
-<div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">Vector3f.hpp</a></div></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">Color.hpp</a></div></div>
-<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Ray.hpp</a></div></div>
-<div class="ttc" id="aa00239_html"><div class="ttname"><a href="a00239.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00435_html"><div class="ttname"><a href="a00435.html">RayTracer::PluginsExt::Mirror</a></div><div class="ttdef"><b>Definition:</b> MirrorCreator.hpp:17</div></div>
-<div class="ttc" id="aa01309_html"><div class="ttname"><a href="a01309.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
-<div class="ttc" id="aa01317_html"><div class="ttname"><a href="a01317.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
-<div class="ttc" id="aa01329_html"><div class="ttname"><a href="a01329.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
-<div class="ttc" id="aa01369_html"><div class="ttname"><a href="a01369.html">RayTracer::Images::Color</a></div><div class="ttdoc">The Color class.</div><div class="ttdef"><b>Definition:</b> Color.hpp:21</div></div>
-<div class="ttc" id="aa01397_html"><div class="ttname"><a href="a01397.html">RayTracer::Images::Ray</a></div><div class="ttdoc">The Ray class.</div><div class="ttdef"><b>Definition:</b> Ray.hpp:19</div></div>
-<div class="ttc" id="aa01505_html"><div class="ttname"><a href="a01505.html">RayTracer::Scenes::IDisplayable</a></div><div class="ttdoc">The IDisplayable interface.</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:25</div></div>
-<div class="ttc" id="aa01517_html"><div class="ttname"><a href="a01517.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01681_html"><div class="ttname"><a href="a01681.html">RayTracer::PluginsExt::Mirror::MirrorMaterial</a></div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:19</div></div>
-<div class="ttc" id="aa01681_html_a1a27f2659736e1dee1b7e6d1352fa334"><div class="ttname"><a href="a01681.html#a1a27f2659736e1dee1b7e6d1352fa334">RayTracer::PluginsExt::Mirror::MirrorMaterial::_transparency</a></div><div class="ttdeci">double _transparency</div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:36</div></div>
-<div class="ttc" id="aa01681_html_a1f74136e6efb6d8c8cbc02d7ebd9f8a6"><div class="ttname"><a href="a01681.html#a1f74136e6efb6d8c8cbc02d7ebd9f8a6">RayTracer::PluginsExt::Mirror::MirrorMaterial::_specular</a></div><div class="ttdeci">Entities::Transform::Vector3f _specular</div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:34</div></div>
-<div class="ttc" id="aa01681_html_a1fe74527a636f0370d8dd5bfac951a12"><div class="ttname"><a href="a01681.html#a1fe74527a636f0370d8dd5bfac951a12">RayTracer::PluginsExt::Mirror::MirrorMaterial::redirectionLight</a></div><div class="ttdeci">Images::Color redirectionLight(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">this function is called when the object intercept the ray light</div></div>
-<div class="ttc" id="aa01681_html_a314f5395602e09f296b6b677626df518"><div class="ttname"><a href="a01681.html#a314f5395602e09f296b6b677626df518">RayTracer::PluginsExt::Mirror::MirrorMaterial::_color</a></div><div class="ttdeci">Images::Color _color</div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:31</div></div>
-<div class="ttc" id="aa01681_html_a3888aaa94f20d34c725baa090b8bd068"><div class="ttname"><a href="a01681.html#a3888aaa94f20d34c725baa090b8bd068">RayTracer::PluginsExt::Mirror::MirrorMaterial::MirrorMaterial</a></div><div class="ttdeci">MirrorMaterial(const Scenes::ISetting &amp;config)</div></div>
-<div class="ttc" id="aa01681_html_a67514d3ba5da31865e117bab00babc3a"><div class="ttname"><a href="a01681.html#a67514d3ba5da31865e117bab00babc3a">RayTracer::PluginsExt::Mirror::MirrorMaterial::_diffuse</a></div><div class="ttdeci">Entities::Transform::Vector3f _diffuse</div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:33</div></div>
-<div class="ttc" id="aa01681_html_a8511a0aa3f1ed907c3833cfa3be19bbd"><div class="ttname"><a href="a01681.html#a8511a0aa3f1ed907c3833cfa3be19bbd">RayTracer::PluginsExt::Mirror::MirrorMaterial::setColor</a></div><div class="ttdeci">void setColor(const Images::Color &amp;color) final</div><div class="ttdoc">Set the color.</div></div>
-<div class="ttc" id="aa01681_html_a88377377761ea59c7351cdd4055d017c"><div class="ttname"><a href="a01681.html#a88377377761ea59c7351cdd4055d017c">RayTracer::PluginsExt::Mirror::MirrorMaterial::randomDouble</a></div><div class="ttdeci">double randomDouble(double min, double max) const</div></div>
-<div class="ttc" id="aa01681_html_acfa80e6428bb40af4ef88721bf2ebad9"><div class="ttname"><a href="a01681.html#acfa80e6428bb40af4ef88721bf2ebad9">RayTracer::PluginsExt::Mirror::MirrorMaterial::_shininess</a></div><div class="ttdeci">double _shininess</div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:35</div></div>
-<div class="ttc" id="aa01681_html_ae378673fbede57a6120ff8bd93715cde"><div class="ttname"><a href="a01681.html#ae378673fbede57a6120ff8bd93715cde">RayTracer::PluginsExt::Mirror::MirrorMaterial::getColor</a></div><div class="ttdeci">Images::Color getColor(const Images::Ray &amp;ray, const Entities::Transform::ITransform &amp;centerObj, const Entities::Transform::Vector3f &amp;intersect, const Scenes::IDisplayable &amp;displayable) const final</div><div class="ttdoc">Get the color.</div></div>
-<div class="ttc" id="aa01681_html_ae5299a27c439ee5b1da98e4feab06633"><div class="ttname"><a href="a01681.html#ae5299a27c439ee5b1da98e4feab06633">RayTracer::PluginsExt::Mirror::MirrorMaterial::getNextColor</a></div><div class="ttdeci">Images::Color getNextColor(const Images::Ray &amp;ray, const Entities::Transform::ITransform &amp;centerObj, const Entities::Transform::Vector3f &amp;intersect, const Scenes::IDisplayable &amp;displayable) const</div></div>
-<div class="ttc" id="aa01681_html_afab5e53a1157bfbdaecf8458bd735108"><div class="ttname"><a href="a01681.html#afab5e53a1157bfbdaecf8458bd735108">RayTracer::PluginsExt::Mirror::MirrorMaterial::_ambient</a></div><div class="ttdeci">Entities::Transform::Vector3f _ambient</div><div class="ttdef"><b>Definition:</b> MirrorMaterial.hpp:32</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*PLANECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00209_html"><div class="ttname"><a href="a00209.html">IMaterialCreator.hpp</a></div></div>
+<div class="ttc" id="aa00344_html"><div class="ttname"><a href="a00344.html">MirrorMaterial.hpp</a></div></div>
+<div class="ttc" id="aa00438_html"><div class="ttname"><a href="a00438.html">RayTracer::PluginsExt::Mirror</a></div><div class="ttdef"><b>Definition:</b> MirrorCreator.hpp:17</div></div>
+<div class="ttc" id="aa01312_html"><div class="ttname"><a href="a01312.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
+<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01460_html"><div class="ttname"><a href="a01460.html">RayTracer::Plugins::Materials::IMaterialCreator</a></div><div class="ttdoc">The IMaterialCreator class.</div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:22</div></div>
+<div class="ttc" id="aa01520_html"><div class="ttname"><a href="a01520.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01680_html"><div class="ttname"><a href="a01680.html">RayTracer::PluginsExt::Mirror::MirrorCreator</a></div><div class="ttdef"><b>Definition:</b> MirrorCreator.hpp:18</div></div>
+<div class="ttc" id="aa01680_html_a0406873501b9caf819ea63b2df02c400"><div class="ttname"><a href="a01680.html#a0406873501b9caf819ea63b2df02c400">RayTracer::PluginsExt::Mirror::MirrorCreator::_elements</a></div><div class="ttdeci">std::vector&lt; MirrorMaterial * &gt; _elements</div><div class="ttdef"><b>Definition:</b> MirrorCreator.hpp:24</div></div>
+<div class="ttc" id="aa01680_html_a17ebe90adc51f2cf3ac49eccf626944b"><div class="ttname"><a href="a01680.html#a17ebe90adc51f2cf3ac49eccf626944b">RayTracer::PluginsExt::Mirror::MirrorCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IMaterial * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a material with a setting.</div></div>
+<div class="ttc" id="aa01680_html_aa46864349acd23211db80ef48cb4b7a3"><div class="ttname"><a href="a01680.html#aa46864349acd23211db80ef48cb4b7a3">RayTracer::PluginsExt::Mirror::MirrorCreator::~MirrorCreator</a></div><div class="ttdeci">~MirrorCreator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,0 +1,86 @@
+\hypertarget{a01656}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Limited\+Cone\+::Limited\+Cone\+Creator Class Reference}
+\label{a01656}\index{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}}
+
+
+{\ttfamily \#include $<$Limited\+Cone\+Creator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Limited\+Cone\+::Limited\+Cone\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{a01655}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Limited\+Cone\+::Limited\+Cone\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01654}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01656_a7b5fd25624d52b06eae95ec6aba54f56}{$\sim$\+Limited\+Cone\+Creator}} ()
+\item 
+\mbox{\hyperlink{a01304}{Ray\+Tracer\+::\+Entities\+::\+IEntity}} $\ast$ \mbox{\hyperlink{a01656_adf6fef6da750a152bb41c1c6bc753339}{create}} (const \mbox{\hyperlink{a01520}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01368}{ILogger}} \&logger) final
+\begin{DoxyCompactList}\small\item\em Create an entity with a setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01660}{Limited\+Cone\+Entity}} $\ast$ $>$ \mbox{\hyperlink{a01656_a02fe2b1ad110a7a5d1d8e3225dc94af9}{\+\_\+elements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01656_a7b5fd25624d52b06eae95ec6aba54f56}\label{a01656_a7b5fd25624d52b06eae95ec6aba54f56}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}!````~LimitedConeCreator@{$\sim$LimitedConeCreator}}
+\index{````~LimitedConeCreator@{$\sim$LimitedConeCreator}!RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}}
+\doxysubsubsection{\texorpdfstring{$\sim$LimitedConeCreator()}{~LimitedConeCreator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Creator\+::$\sim$\+Limited\+Cone\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01656_adf6fef6da750a152bb41c1c6bc753339}\label{a01656_adf6fef6da750a152bb41c1c6bc753339}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}!create@{create}}
+\index{create@{create}!RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01304}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}$\ast$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Creator\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01520}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01368}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Create an entity with a setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01444_ab6cc749aa296fe5fc205ad2cad321d30}{Ray\+Tracer\+::\+Plugins\+::\+Entities\+::\+IEntity\+Creator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01656_a02fe2b1ad110a7a5d1d8e3225dc94af9}\label{a01656_a02fe2b1ad110a7a5d1d8e3225dc94af9}} 
+\index{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}!\_elements@{\_elements}}
+\index{\_elements@{\_elements}!RayTracer::PluginsExt::LimitedCone::LimitedConeCreator@{RayTracer::PluginsExt::LimitedCone::LimitedConeCreator}}
+\doxysubsubsection{\texorpdfstring{\_elements}{\_elements}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01660}{Limited\+Cone\+Entity}} $\ast$$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Limited\+Cone\+::\+Limited\+Cone\+Creator\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Limited\+Cone/\mbox{\hyperlink{a00323}{Limited\+Cone\+Creator.\+hpp}}\end{DoxyCompactItemize}

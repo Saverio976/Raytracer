@@ -21,15 +21,15 @@ Directory dependency graph for Entities:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00101">ICamera.hpp</link></para>
+            <listitem><para>file <link linkend="_a00104">ICamera.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00104">IEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00107">IEntity.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00107">ILight.hpp</link></para>
+            <listitem><para>file <link linkend="_a00110">ILight.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00110">IMaterial.hpp</link></para>
+            <listitem><para>file <link linkend="_a00113">IMaterial.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00113">IPrimitive.hpp</link></para>
+            <listitem><para>file <link linkend="_a00116">IPrimitive.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

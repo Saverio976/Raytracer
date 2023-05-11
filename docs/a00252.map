@@ -1,7 +1,5 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="16,5,311,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,169,116,196"/>
-<area shape="rect" id="node3" title=" " alt="" coords="202,169,279,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="179,95,265,121"/>
-<area shape="rect" id="node5" href="$a00239.html" title=" " alt="" coords="55,95,155,121"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,272,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="47,95,111,121"/>
+<area shape="rect" id="node3" href="$a00239.html" title=" " alt="" coords="135,95,262,121"/>
 </map>

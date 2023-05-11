@@ -1,4 +1,4 @@
-<map id="RayTracer::Scenes::ISetting::IParsingException" name="RayTracer::Scenes::ISetting::IParsingException">
-<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="5,131,200,237"/>
-<area shape="rect" id="node2" title=" " alt="" coords="45,5,160,83"/>
+<map id="RayTracer::Scenes::ISetting" name="RayTracer::Scenes::ISetting">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,189,332"/>
+<area shape="rect" id="node2" href="$a01548.html" title="The SettingWrapper class." alt="" coords="5,380,189,751"/>
 </map>

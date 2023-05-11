@@ -1,6 +1,7 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Factories/MaterialFactory.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Factories/MaterialFactory.hpp">
+<map id="/home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="37,5,249,61"/>
-<area shape="rect" id="node2" href="$a00212.html" title=" " alt="" coords="29,109,257,165"/>
-<area shape="rect" id="node3" href="$a00245.html" title=" " alt="" coords="5,213,281,255"/>
-<area shape="rect" id="node4" href="$a00089.html" title=" " alt="" coords="21,303,265,344"/>
+<area shape="rect" id="node2" href="$a00146.html" title=" " alt="" coords="37,109,249,165"/>
+<area shape="rect" id="node3" href="$a00215.html" title=" " alt="" coords="29,213,257,269"/>
+<area shape="rect" id="node4" href="$a00248.html" title=" " alt="" coords="5,317,281,359"/>
+<area shape="rect" id="node5" href="$a00092.html" title=" " alt="" coords="21,407,265,448"/>
 </map>

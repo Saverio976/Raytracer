@@ -1,13 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00287" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom/CameraCustomCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom/CameraCustomCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/ClusterRayIterator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/ClusterRayIterator.hpp</primary></indexterm>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;cstddef&gt;
+#include &lt;iterator&gt;
 #include &lt;memory&gt;
-#include &quot;IEntityCreator.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-#include &quot;CameraCustomEntity.hpp&quot;
-</programlisting>Include dependency graph for CameraCustomCreator.hpp:<para>
+#include &lt;string&gt;
+#include &quot;ICamera.hpp&quot;
+#include &quot;IRayIterator.hpp&quot;
+#include &quot;Ray.hpp&quot;
+#include &quot;Vector2i.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for ClusterRayIterator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,20 +24,24 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01605">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator</link></para>
+            <listitem><para>class <link linkend="_a01600">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator</link></para>
+
+<para>The <link linkend="_a01600">ClusterRayIterator</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01604">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00420">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00423">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00425">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00428">RayTracer::PluginsExt::Camera</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00427">RayTracer::PluginsExt::Camera::FullCustom</link></para>
+            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt::Camera::Clustered</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

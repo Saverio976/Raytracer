@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereEntity.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,78 +67,56 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">SphereEntity.hpp</div>  </div>
+<div class="title">SphereCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00371.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** SphereEntity.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** SphereCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SPHEREENTITY_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define SPHEREENTITY_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SPHERE_CREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define SPHERE_CREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00233.html">IDisplayable.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00152.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00110.html">IMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">IPrimitive.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00239.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">Transform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">Vector3f.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00197.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00374.html">SphereEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00440.html">RayTracer::PluginsExt::Sphere</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01721.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01721.html">SphereEntity</a> : <span class="keyword">public</span> <a class="code" href="a01313.html">RayTracer::Entities::IPrimitive</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00443.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00443.html">RayTracer::PluginsExt::Sphere</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01720.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01720.html">SphereCreator</a> : <span class="keyword">public</span> <a class="code" href="a01444.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01721.html#a4eb023f69a4142ab0a5f6c7cee160c42">   22</a></span>&#160;            <a class="code" href="a01721.html#a4eb023f69a4142ab0a5f6c7cee160c42">SphereEntity</a>(<span class="keyword">const</span> <a class="code" href="a01517.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01365.html">ILogger</a> &amp;logger);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01721.html#a44805cfa4eb1d0e282d5b2dbc436886a">   24</a></span>&#160;            <a class="code" href="a01301.html#ab003087623e47600c09a76ff8138d37b">Type</a> <a class="code" href="a01721.html#a44805cfa4eb1d0e282d5b2dbc436886a">getType</a>() const final;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01721.html#aa9dfdd2a6caf00b259ba12eeee4c42a2">   25</a></span>&#160;            Entities::Transform::ITransform &amp;<a class="code" href="a01721.html#aa9dfdd2a6caf00b259ba12eeee4c42a2">getTransform</a>() final;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01721.html#a666898ba8544f9352c35d604c68db6a8">   26</a></span>&#160;            const Entities::Transform::ITransform &amp;<a class="code" href="a01721.html#aa9dfdd2a6caf00b259ba12eeee4c42a2">getTransform</a>() const final;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01721.html#af7a662faf2a05329d53bcf09f24eb7d7">   27</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="a01721.html#af7a662faf2a05329d53bcf09f24eb7d7">isCollided</a>(const Entities::Transform::Vector3f &amp;point) const final;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01721.html#ad9fa68e2ac7014bccf47ae16dd3b4cbf">   28</a></span>&#160;            std::optional&lt;Entities::Transform::Vector3f&gt; <a class="code" href="a01721.html#af7a662faf2a05329d53bcf09f24eb7d7">isCollided</a>(const Images::Ray &amp;ray) const final;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01721.html#a20b848feb094a38fcac57aec91621f09">   29</a></span>&#160;            Images::Color <a class="code" href="a01721.html#a20b848feb094a38fcac57aec91621f09">getColor</a>(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                const Entities::Transform::Vector3f &amp;intersect) const final;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01721.html#a6527a5980f0edb5ba197969a866e3dde">   31</a></span>&#160;            Images::Color <a class="code" href="a01721.html#a6527a5980f0edb5ba197969a866e3dde">redirectionLight</a>(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                const Entities::Transform::Vector3f &amp;intersect) const final;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        private:</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01721.html#a52d968d429d6d36f850be1d1bfa889e4">   34</a></span>&#160;            Entities::Transform::Transform <a class="code" href="a01721.html#a52d968d429d6d36f850be1d1bfa889e4">_transform</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01721.html#a167435871af3eb601b0863802ca6f79e">   35</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="a01721.html#a167435871af3eb601b0863802ca6f79e">_radius</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01721.html#a9ddd18910dfc68845ed9cbdc284a9a5c">   36</a></span>&#160;            std::optional&lt;std::reference_wrapper&lt;<a class="code" href="a00408.html">RayTracer</a>::Entities::IMaterial&gt;&gt; <a class="code" href="a01721.html#a9ddd18910dfc68845ed9cbdc284a9a5c">_material</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a01721.html#a6363c7936bdbe54d4b6e3f3ae657d9f8">   37</a></span>&#160;            <a class="code" href="a01365.html">ILogger</a> &amp;<a class="code" href="a01721.html#a6363c7936bdbe54d4b6e3f3ae657d9f8">_logger</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00110_html"><div class="ttname"><a href="a00110.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">IPrimitive.hpp</a></div></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">Transform.hpp</a></div></div>
-<div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">Vector3f.hpp</a></div></div>
-<div class="ttc" id="aa00152_html"><div class="ttname"><a href="a00152.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00233_html"><div class="ttname"><a href="a00233.html">IDisplayable.hpp</a></div></div>
-<div class="ttc" id="aa00239_html"><div class="ttname"><a href="a00239.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00408_html"><div class="ttname"><a href="a00408.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:18</div></div>
-<div class="ttc" id="aa00440_html"><div class="ttname"><a href="a00440.html">RayTracer::PluginsExt::Sphere</a></div><div class="ttdef"><b>Definition:</b> SphereCreator.hpp:19</div></div>
-<div class="ttc" id="aa01301_html_ab003087623e47600c09a76ff8138d37b"><div class="ttname"><a href="a01301.html#ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:20</div></div>
-<div class="ttc" id="aa01313_html"><div class="ttname"><a href="a01313.html">RayTracer::Entities::IPrimitive</a></div><div class="ttdoc">The IPrimitive class.</div><div class="ttdef"><b>Definition:</b> IPrimitive.hpp:25</div></div>
-<div class="ttc" id="aa01365_html"><div class="ttname"><a href="a01365.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01517_html"><div class="ttname"><a href="a01517.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01721_html"><div class="ttname"><a href="a01721.html">RayTracer::PluginsExt::Sphere::SphereEntity</a></div><div class="ttdef"><b>Definition:</b> SphereEntity.hpp:20</div></div>
-<div class="ttc" id="aa01721_html_a167435871af3eb601b0863802ca6f79e"><div class="ttname"><a href="a01721.html#a167435871af3eb601b0863802ca6f79e">RayTracer::PluginsExt::Sphere::SphereEntity::_radius</a></div><div class="ttdeci">double _radius</div><div class="ttdef"><b>Definition:</b> SphereEntity.hpp:35</div></div>
-<div class="ttc" id="aa01721_html_a20b848feb094a38fcac57aec91621f09"><div class="ttname"><a href="a01721.html#a20b848feb094a38fcac57aec91621f09">RayTracer::PluginsExt::Sphere::SphereEntity::getColor</a></div><div class="ttdeci">Images::Color getColor(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">Get the material.</div></div>
-<div class="ttc" id="aa01721_html_a44805cfa4eb1d0e282d5b2dbc436886a"><div class="ttname"><a href="a01721.html#a44805cfa4eb1d0e282d5b2dbc436886a">RayTracer::PluginsExt::Sphere::SphereEntity::getType</a></div><div class="ttdeci">Type getType() const final</div><div class="ttdoc">Get the type (light, camera, primitive)</div></div>
-<div class="ttc" id="aa01721_html_a4eb023f69a4142ab0a5f6c7cee160c42"><div class="ttname"><a href="a01721.html#a4eb023f69a4142ab0a5f6c7cee160c42">RayTracer::PluginsExt::Sphere::SphereEntity::SphereEntity</a></div><div class="ttdeci">SphereEntity(const Scenes::ISetting &amp;config, ILogger &amp;logger)</div></div>
-<div class="ttc" id="aa01721_html_a52d968d429d6d36f850be1d1bfa889e4"><div class="ttname"><a href="a01721.html#a52d968d429d6d36f850be1d1bfa889e4">RayTracer::PluginsExt::Sphere::SphereEntity::_transform</a></div><div class="ttdeci">Entities::Transform::Transform _transform</div><div class="ttdef"><b>Definition:</b> SphereEntity.hpp:34</div></div>
-<div class="ttc" id="aa01721_html_a6363c7936bdbe54d4b6e3f3ae657d9f8"><div class="ttname"><a href="a01721.html#a6363c7936bdbe54d4b6e3f3ae657d9f8">RayTracer::PluginsExt::Sphere::SphereEntity::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> SphereEntity.hpp:37</div></div>
-<div class="ttc" id="aa01721_html_a6527a5980f0edb5ba197969a866e3dde"><div class="ttname"><a href="a01721.html#a6527a5980f0edb5ba197969a866e3dde">RayTracer::PluginsExt::Sphere::SphereEntity::redirectionLight</a></div><div class="ttdeci">Images::Color redirectionLight(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">this function is called when the object intercept the ray light</div></div>
-<div class="ttc" id="aa01721_html_a9ddd18910dfc68845ed9cbdc284a9a5c"><div class="ttname"><a href="a01721.html#a9ddd18910dfc68845ed9cbdc284a9a5c">RayTracer::PluginsExt::Sphere::SphereEntity::_material</a></div><div class="ttdeci">std::optional&lt; std::reference_wrapper&lt; RayTracer::Entities::IMaterial &gt; &gt; _material</div><div class="ttdef"><b>Definition:</b> SphereEntity.hpp:36</div></div>
-<div class="ttc" id="aa01721_html_aa9dfdd2a6caf00b259ba12eeee4c42a2"><div class="ttname"><a href="a01721.html#aa9dfdd2a6caf00b259ba12eeee4c42a2">RayTracer::PluginsExt::Sphere::SphereEntity::getTransform</a></div><div class="ttdeci">Entities::Transform::ITransform &amp; getTransform() final</div><div class="ttdoc">Get the transform (position, rotation, scale)</div></div>
-<div class="ttc" id="aa01721_html_af7a662faf2a05329d53bcf09f24eb7d7"><div class="ttname"><a href="a01721.html#af7a662faf2a05329d53bcf09f24eb7d7">RayTracer::PluginsExt::Sphere::SphereEntity::isCollided</a></div><div class="ttdeci">bool isCollided(const Entities::Transform::Vector3f &amp;point) const final</div><div class="ttdoc">Check if the point is collided with the box.</div></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01720.html#ad0d7daa45135aba5dddd8e8e0cea6b84">   22</a></span>&#160;            <a class="code" href="a01720.html#ad0d7daa45135aba5dddd8e8e0cea6b84">~SphereCreator</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01720.html#aed3cd596de7552263c608ce94cbc07d7">   23</a></span>&#160;            <a class="code" href="a01304.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01720.html#aed3cd596de7552263c608ce94cbc07d7">create</a>(<span class="keyword">const</span> <a class="code" href="a01520.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01368.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01720.html#accc6b41f059ef195b5ff4d22be72b57d">   26</a></span>&#160;            std::vector&lt;SphereEntity *&gt; <a class="code" href="a01720.html#accc6b41f059ef195b5ff4d22be72b57d">_elements</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00374_html"><div class="ttname"><a href="a00374.html">SphereEntity.hpp</a></div></div>
+<div class="ttc" id="aa00443_html"><div class="ttname"><a href="a00443.html">RayTracer::PluginsExt::Sphere</a></div><div class="ttdef"><b>Definition:</b> SphereCreator.hpp:19</div></div>
+<div class="ttc" id="aa01304_html"><div class="ttname"><a href="a01304.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01444_html"><div class="ttname"><a href="a01444.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01520_html"><div class="ttname"><a href="a01520.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01720_html"><div class="ttname"><a href="a01720.html">RayTracer::PluginsExt::Sphere::SphereCreator</a></div><div class="ttdef"><b>Definition:</b> SphereCreator.hpp:20</div></div>
+<div class="ttc" id="aa01720_html_accc6b41f059ef195b5ff4d22be72b57d"><div class="ttname"><a href="a01720.html#accc6b41f059ef195b5ff4d22be72b57d">RayTracer::PluginsExt::Sphere::SphereCreator::_elements</a></div><div class="ttdeci">std::vector&lt; SphereEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> SphereCreator.hpp:26</div></div>
+<div class="ttc" id="aa01720_html_ad0d7daa45135aba5dddd8e8e0cea6b84"><div class="ttname"><a href="a01720.html#ad0d7daa45135aba5dddd8e8e0cea6b84">RayTracer::PluginsExt::Sphere::SphereCreator::~SphereCreator</a></div><div class="ttdeci">~SphereCreator()</div></div>
+<div class="ttc" id="aa01720_html_aed3cd596de7552263c608ce94cbc07d7"><div class="ttname"><a href="a01720.html#aed3cd596de7552263c608ce94cbc07d7">RayTracer::PluginsExt::Sphere::SphereCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

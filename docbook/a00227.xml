@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00227" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp</primary></indexterm>
-<programlisting>#include &lt;string&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ConfigWrapper.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ConfigWrapper.hpp</primary></indexterm>
+<programlisting>#include &lt;libconfig.h++&gt;
 #include &lt;memory&gt;
-#include &lt;vector&gt;
-#include &lt;functional&gt;
-#include &quot;IDisplayable.hpp&quot;
-</programlisting>Include dependency graph for Displayable.hpp:<para>
+#include &quot;IConfig.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;SettingWrapper.hpp&quot;
+</programlisting>Include dependency graph for ConfigWrapper.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,24 +28,24 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01493">RayTracer::Scenes::Displayable</link></para>
-
-<para>The <link linkend="_a01493">Displayable</link> class. </para>
+            <listitem><para>class <link linkend="_a01484">RayTracer::Scenes::ConfigWrapper</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01497">RayTracer::Scenes::Displayable::DisplayableException</link></para>
+            <listitem><para>class <link linkend="_a01488">RayTracer::Scenes::ConfigWrapper::ReadException</link></para>
 
-<para>an exception for when the key is not found </para>
+<para>an exception for when the file can&apos;t be read </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01492">RayTracer::Scenes::ConfigWrapper::WriteException</link></para>
+
+<para>an exception for when the file can&apos;t be written </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00410">RayTracer::Entities</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00419">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00422">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

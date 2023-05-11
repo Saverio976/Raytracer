@@ -1,50 +1,69 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00188" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityHandler.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityHandler.hpp</primary></indexterm>
-<programlisting>#include &lt;memory&gt;
-#include &lt;string&gt;
-#include &quot;IEntity.hpp&quot;
-#include &quot;IEntityCreator.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-#include &quot;PluginHandler.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for EntityHandler.hpp:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00189.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00190.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp</primary></indexterm>
 <simplesect>
-    <title>Classes    </title>
+    <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01433">RayTracer::Plugins::Entities::EntityHandler</link></para>
+            <listitem><para>void * <link linkend="_a00188_1a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator</link> (void)</para>
 
-<para>The <link linkend="_a01433">EntityHandler</link>. </para>
+<para>Get the creator. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a00188_1adb15eac6ad612e5de35b2bf82f199739">deleteCreator</link> (void *creator)</para>
+
+<para>Delete the creator (created with the <computeroutput><link linkend="_a00188_1a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator()</link></computeroutput> method) </para>
 </listitem>
         </itemizedlist>
 </simplesect>
-<simplesect>
-    <title>Namespaces    </title>
-        <itemizedlist>
-            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00415">RayTracer::Plugins</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00416">RayTracer::Plugins::Entities</link></para>
-</listitem>
-        </itemizedlist>
-</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a00188_1adb15eac6ad612e5de35b2bf82f199739"/>    <section>
+    <title>deleteCreator()</title>
+<indexterm><primary>deleteCreator</primary><secondary>Api.hpp</secondary></indexterm>
+<indexterm><primary>Api.hpp</primary><secondary>deleteCreator</secondary></indexterm>
+<para><computeroutput>void deleteCreator (void * creator)</computeroutput></para><para>
+
+<para>Delete the creator (created with the <computeroutput><link linkend="_a00188_1a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator()</link></computeroutput> method) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>creator</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a00188_1a6c4bc04f8b3ed3e6ca1a056499438ab3"/>    <section>
+    <title>getCreator()</title>
+<indexterm><primary>getCreator</primary><secondary>Api.hpp</secondary></indexterm>
+<indexterm><primary>Api.hpp</primary><secondary>getCreator</secondary></indexterm>
+<para><computeroutput>void* getCreator (void )</computeroutput></para><para>
+
+<para>Get the creator. </para>
+</para>
+
+<para>The creator must be a class that has a <computeroutput>.create(const ISetting &amp;settings)</computeroutput> method. This method must create an [ ILight | ICamera | IPrimitive | IFilter ]. There is no verification that the returning value is ok. So be cautious. Thx. For [ ILight | ICamera | IPrimitive ] they must inherite from IEntityCreator. For [ IFilter ] they must inherite from IFilterCreator.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the creator </para>
+</formalpara>
+</para>
+</section>
+</section>
 </section>
