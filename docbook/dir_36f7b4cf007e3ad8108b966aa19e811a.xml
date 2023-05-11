@@ -14,9 +14,9 @@ Directory dependency graph for Basic:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00269">CameraCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00272">CameraCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00272">CameraEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00275">CameraEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

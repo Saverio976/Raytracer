@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Main.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Logger.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,92 +67,60 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Main.hpp</div>  </div>
+<div class="title">Logger.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00176.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Parameters.cpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Logger.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MAIN_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define MAIN_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYLOGGER_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYLOGGER_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00179.html">Parameters.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00239.html">Scene.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00176.html#acfd30268d8cf7ee855a54804242fce5d">   19</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00176.html#acfd30268d8cf7ee855a54804242fce5d">catch_sigint</a>(<span class="keywordtype">int</span> sig);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00405.html">RayTracer</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01410.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01410.html">Main</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01414.html">   25</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01414.html">MainError</a> : <span class="keyword">public</span> std::exception {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01414.html#a830b40cc4e74a0ad900c9714c0faa60b">   27</a></span>&#160;                    <span class="keyword">explicit</span> <a class="code" href="a01414.html#a830b40cc4e74a0ad900c9714c0faa60b">MainError</a>(<span class="keyword">const</span> std::string &amp;message);</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01414.html#a38f949a0b2a4d34abc8167d5aa13265a">   28</a></span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01414.html#a38f949a0b2a4d34abc8167d5aa13265a">what</a>() const noexcept override;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                private:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01414.html#a123ba5da478836742a237d1e27033a40">   30</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01414.html#a123ba5da478836742a237d1e27033a40">_message</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            };</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01410.html#a0a56937e6ce5b4c55451617a9e72ba61">   38</a></span>&#160;            <a class="code" href="a01410.html">Main</a>(<a class="code" href="a01362.html">ILogger</a> &amp;logger);</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01410.html#a67c8130e366f95481ca6b163e18c8cf5">   39</a></span>&#160;            ~<a class="code" href="a01410.html">Main</a>() = default;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01410.html#a2cfbeb56d56e0de841832fba6942f9a0">   41</a></span>&#160;            <span class="keywordtype">int</span> operator()(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        private:</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01418.html">   44</a></span>&#160;            class <a class="code" href="a01418.html">ArgumentError</a> : public std::exception {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01418.html#afe2cb91676ffaec3708b6e6948ab09b7">   46</a></span>&#160;                    <span class="keyword">explicit</span> <a class="code" href="a01418.html#afe2cb91676ffaec3708b6e6948ab09b7">ArgumentError</a>(<span class="keyword">const</span> std::string &amp;message);</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a01418.html#ae1dbc70a4a359762069862a369f6b485">   47</a></span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01418.html#ae1dbc70a4a359762069862a369f6b485">what</a>() const noexcept override;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                private:</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a01418.html#a356828f7fd99fc417acbd9bea7aa6b7b">   49</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01414.html#a123ba5da478836742a237d1e27033a40">_message</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            };</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01410.html#a2a218028362b3cb4d4f0e11436d5b8f3">   56</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01410.html#a2a218028362b3cb4d4f0e11436d5b8f3">exportScene</a>(const std::<span class="keywordtype">string</span> &amp;baseFilePath);</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a01410.html#a0a4fda1ebed4d4b3d21024174ec454b9">   60</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01410.html#a0a4fda1ebed4d4b3d21024174ec454b9">run</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a01410.html#aa069d0fa1a4c757d745684ef1f17b646">   64</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01410.html#aa069d0fa1a4c757d745684ef1f17b646">help</a>() const;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a01410.html#a933dc11fbc4f3e98aef3b58e55ffa6f4">   75</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="a01410.html#a933dc11fbc4f3e98aef3b58e55ffa6f4">parseCmdArgs</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a01410.html#a711a6d375f7c44a344874a2f3e451a5f">   77</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01410.html#a711a6d375f7c44a344874a2f3e451a5f">_baseFilePath</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="a01410.html#a8fd6bf597956a69a3f7552f2e77b57ff">   78</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01410.html#a8fd6bf597956a69a3f7552f2e77b57ff">_sceneConfFilePath</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="a01410.html#af55edbf60888bfa40ebe04d5cf1aa530">   79</a></span>&#160;            Scenes::Scene <a class="code" href="a01410.html#af55edbf60888bfa40ebe04d5cf1aa530">_scene</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="a01410.html#a9e5248148d6c2aa481828c6cbf71818b">   80</a></span>&#160;            <a class="code" href="a01362.html">ILogger</a> &amp;<a class="code" href="a01410.html#a9e5248148d6c2aa481828c6cbf71818b">_logger</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    };</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00176_html_acfd30268d8cf7ee855a54804242fce5d"><div class="ttname"><a href="a00176.html#acfd30268d8cf7ee855a54804242fce5d">catch_sigint</a></div><div class="ttdeci">void catch_sigint(int sig)</div></div>
-<div class="ttc" id="aa00179_html"><div class="ttname"><a href="a00179.html">Parameters.hpp</a></div></div>
-<div class="ttc" id="aa00239_html"><div class="ttname"><a href="a00239.html">Scene.hpp</a></div></div>
-<div class="ttc" id="aa00405_html"><div class="ttname"><a href="a00405.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:18</div></div>
-<div class="ttc" id="aa01362_html"><div class="ttname"><a href="a01362.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01410_html"><div class="ttname"><a href="a01410.html">RayTracer::Main</a></div><div class="ttdef"><b>Definition:</b> Main.hpp:23</div></div>
-<div class="ttc" id="aa01410_html_a0a4fda1ebed4d4b3d21024174ec454b9"><div class="ttname"><a href="a01410.html#a0a4fda1ebed4d4b3d21024174ec454b9">RayTracer::Main::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Run the main (like the main func but in a method :eyes:)</div></div>
-<div class="ttc" id="aa01410_html_a2a218028362b3cb4d4f0e11436d5b8f3"><div class="ttname"><a href="a01410.html#a2a218028362b3cb4d4f0e11436d5b8f3">RayTracer::Main::exportScene</a></div><div class="ttdeci">void exportScene(const std::string &amp;baseFilePath)</div><div class="ttdoc">Export the scene to ppm files.</div></div>
-<div class="ttc" id="aa01410_html_a711a6d375f7c44a344874a2f3e451a5f"><div class="ttname"><a href="a01410.html#a711a6d375f7c44a344874a2f3e451a5f">RayTracer::Main::_baseFilePath</a></div><div class="ttdeci">std::string _baseFilePath</div><div class="ttdef"><b>Definition:</b> Main.hpp:77</div></div>
-<div class="ttc" id="aa01410_html_a8fd6bf597956a69a3f7552f2e77b57ff"><div class="ttname"><a href="a01410.html#a8fd6bf597956a69a3f7552f2e77b57ff">RayTracer::Main::_sceneConfFilePath</a></div><div class="ttdeci">std::string _sceneConfFilePath</div><div class="ttdef"><b>Definition:</b> Main.hpp:78</div></div>
-<div class="ttc" id="aa01410_html_a933dc11fbc4f3e98aef3b58e55ffa6f4"><div class="ttname"><a href="a01410.html#a933dc11fbc4f3e98aef3b58e55ffa6f4">RayTracer::Main::parseCmdArgs</a></div><div class="ttdeci">bool parseCmdArgs(int argc, char **argv)</div><div class="ttdoc">Parse the command line argumens.</div></div>
-<div class="ttc" id="aa01410_html_a9e5248148d6c2aa481828c6cbf71818b"><div class="ttname"><a href="a01410.html#a9e5248148d6c2aa481828c6cbf71818b">RayTracer::Main::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> Main.hpp:80</div></div>
-<div class="ttc" id="aa01410_html_aa069d0fa1a4c757d745684ef1f17b646"><div class="ttname"><a href="a01410.html#aa069d0fa1a4c757d745684ef1f17b646">RayTracer::Main::help</a></div><div class="ttdeci">void help() const</div><div class="ttdoc">Print the help.</div></div>
-<div class="ttc" id="aa01410_html_af55edbf60888bfa40ebe04d5cf1aa530"><div class="ttname"><a href="a01410.html#af55edbf60888bfa40ebe04d5cf1aa530">RayTracer::Main::_scene</a></div><div class="ttdeci">Scenes::Scene _scene</div><div class="ttdef"><b>Definition:</b> Main.hpp:79</div></div>
-<div class="ttc" id="aa01414_html"><div class="ttname"><a href="a01414.html">RayTracer::Main::MainError</a></div><div class="ttdef"><b>Definition:</b> Main.hpp:25</div></div>
-<div class="ttc" id="aa01414_html_a123ba5da478836742a237d1e27033a40"><div class="ttname"><a href="a01414.html#a123ba5da478836742a237d1e27033a40">RayTracer::Main::MainError::_message</a></div><div class="ttdeci">std::string _message</div><div class="ttdef"><b>Definition:</b> Main.hpp:30</div></div>
-<div class="ttc" id="aa01414_html_a38f949a0b2a4d34abc8167d5aa13265a"><div class="ttname"><a href="a01414.html#a38f949a0b2a4d34abc8167d5aa13265a">RayTracer::Main::MainError::what</a></div><div class="ttdeci">const char * what() const noexcept override</div></div>
-<div class="ttc" id="aa01414_html_a830b40cc4e74a0ad900c9714c0faa60b"><div class="ttname"><a href="a01414.html#a830b40cc4e74a0ad900c9714c0faa60b">RayTracer::Main::MainError::MainError</a></div><div class="ttdeci">MainError(const std::string &amp;message)</div></div>
-<div class="ttc" id="aa01418_html"><div class="ttname"><a href="a01418.html">RayTracer::Main::ArgumentError</a></div><div class="ttdef"><b>Definition:</b> Main.hpp:44</div></div>
-<div class="ttc" id="aa01418_html_ae1dbc70a4a359762069862a369f6b485"><div class="ttname"><a href="a01418.html#ae1dbc70a4a359762069862a369f6b485">RayTracer::Main::ArgumentError::what</a></div><div class="ttdeci">const char * what() const noexcept override</div></div>
-<div class="ttc" id="aa01418_html_afe2cb91676ffaec3708b6e6948ab09b7"><div class="ttname"><a href="a01418.html#afe2cb91676ffaec3708b6e6948ab09b7">RayTracer::Main::ArgumentError::ArgumentError</a></div><div class="ttdeci">ArgumentError(const std::string &amp;message)</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;map&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00152.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00408.html">RayTracer</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01409.html">   32</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01409.html">Logger</a> : <span class="keyword">public</span> <a class="code" href="a01365.html">ILogger</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01409.html#a8741d2463dc26b159b91a83a69e7d82e">   43</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#a8741d2463dc26b159b91a83a69e7d82e">fatal</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01409.html#af0d5fc305cc349ff3feb193afac0b519">   54</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#af0d5fc305cc349ff3feb193afac0b519">error</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a01409.html#ad22a5c95aef00b69b2d3c66d5275fa4b">   64</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#ad22a5c95aef00b69b2d3c66d5275fa4b">warn</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a01409.html#a04c873d9cd4b42d7d36159bf1534ad9a">   74</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#a04c873d9cd4b42d7d36159bf1534ad9a">info</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a01409.html#a7218cc8759088a1ebb97841208757d0a">   83</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#a7218cc8759088a1ebb97841208757d0a">debug</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a01409.html#afad34b7b6a7d951e588ed2189f2f5d70">   92</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#afad34b7b6a7d951e588ed2189f2f5d70">trace</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="a01409.html#a411199d517a082833d6b61d10b8aa541">  100</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#a411199d517a082833d6b61d10b8aa541">subscribeCallback</a>(<span class="keywordtype">int</span> type, <span class="keyword">const</span> std::string &amp;name, std::function&lt;<span class="keywordtype">void</span> (<span class="keyword">const</span> std::string &amp;)&gt; callback) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="a01409.html#ab9d543234e1abc62f63c390c004e7e4b">  107</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#ab9d543234e1abc62f63c390c004e7e4b">unsubscribeCallback</a>(<span class="keywordtype">int</span> type, <span class="keyword">const</span> std::string &amp;name) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="a01409.html#aac34acbb841cc8fdb1209a01dbc044b1">  110</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#aac34acbb841cc8fdb1209a01dbc044b1">print</a>(<span class="keywordtype">int</span> levelT, <span class="keyword">const</span> std::string &amp;level, <span class="keyword">const</span> std::string &amp;message);</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="a01409.html#a678da74c684eb55f7aa9e9e30d345a7e">  111</a></span>&#160;            std::map&lt;int, std::map&lt;std::string, std::function&lt;void(<span class="keyword">const</span> std::string &amp;)&gt;&gt;&gt; <a class="code" href="a01409.html#a678da74c684eb55f7aa9e9e30d345a7e">_callbacks</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00152_html"><div class="ttname"><a href="a00152.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00408_html"><div class="ttname"><a href="a00408.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:18</div></div>
+<div class="ttc" id="aa01365_html"><div class="ttname"><a href="a01365.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01409_html"><div class="ttname"><a href="a01409.html">RayTracer::Logger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> Logger.hpp:32</div></div>
+<div class="ttc" id="aa01409_html_a04c873d9cd4b42d7d36159bf1534ad9a"><div class="ttname"><a href="a01409.html#a04c873d9cd4b42d7d36159bf1534ad9a">RayTracer::Logger::info</a></div><div class="ttdeci">void info(const std::string &amp;message) final</div><div class="ttdoc">Logger info.</div></div>
+<div class="ttc" id="aa01409_html_a411199d517a082833d6b61d10b8aa541"><div class="ttname"><a href="a01409.html#a411199d517a082833d6b61d10b8aa541">RayTracer::Logger::subscribeCallback</a></div><div class="ttdeci">void subscribeCallback(int type, const std::string &amp;name, std::function&lt; void(const std::string &amp;)&gt; callback) final</div><div class="ttdoc">Logger subscribe.</div></div>
+<div class="ttc" id="aa01409_html_a678da74c684eb55f7aa9e9e30d345a7e"><div class="ttname"><a href="a01409.html#a678da74c684eb55f7aa9e9e30d345a7e">RayTracer::Logger::_callbacks</a></div><div class="ttdeci">std::map&lt; int, std::map&lt; std::string, std::function&lt; void(const std::string &amp;)&gt; &gt; &gt; _callbacks</div><div class="ttdef"><b>Definition:</b> Logger.hpp:111</div></div>
+<div class="ttc" id="aa01409_html_a7218cc8759088a1ebb97841208757d0a"><div class="ttname"><a href="a01409.html#a7218cc8759088a1ebb97841208757d0a">RayTracer::Logger::debug</a></div><div class="ttdeci">void debug(const std::string &amp;message) final</div><div class="ttdoc">Logger debug.</div></div>
+<div class="ttc" id="aa01409_html_a8741d2463dc26b159b91a83a69e7d82e"><div class="ttname"><a href="a01409.html#a8741d2463dc26b159b91a83a69e7d82e">RayTracer::Logger::fatal</a></div><div class="ttdeci">void fatal(const std::string &amp;message) final</div><div class="ttdoc">Logger fata.</div></div>
+<div class="ttc" id="aa01409_html_aac34acbb841cc8fdb1209a01dbc044b1"><div class="ttname"><a href="a01409.html#aac34acbb841cc8fdb1209a01dbc044b1">RayTracer::Logger::print</a></div><div class="ttdeci">void print(int levelT, const std::string &amp;level, const std::string &amp;message)</div></div>
+<div class="ttc" id="aa01409_html_ab9d543234e1abc62f63c390c004e7e4b"><div class="ttname"><a href="a01409.html#ab9d543234e1abc62f63c390c004e7e4b">RayTracer::Logger::unsubscribeCallback</a></div><div class="ttdeci">void unsubscribeCallback(int type, const std::string &amp;name) final</div><div class="ttdoc">Logger remove.</div></div>
+<div class="ttc" id="aa01409_html_ad22a5c95aef00b69b2d3c66d5275fa4b"><div class="ttname"><a href="a01409.html#ad22a5c95aef00b69b2d3c66d5275fa4b">RayTracer::Logger::warn</a></div><div class="ttdeci">void warn(const std::string &amp;message) final</div><div class="ttdoc">Logger warn.</div></div>
+<div class="ttc" id="aa01409_html_af0d5fc305cc349ff3feb193afac0b519"><div class="ttname"><a href="a01409.html#af0d5fc305cc349ff3feb193afac0b519">RayTracer::Logger::error</a></div><div class="ttdeci">void error(const std::string &amp;message) final</div><div class="ttdoc">Logger error.</div></div>
+<div class="ttc" id="aa01409_html_afad34b7b6a7d951e588ed2189f2f5d70"><div class="ttname"><a href="a01409.html#afad34b7b6a7d951e588ed2189f2f5d70">RayTracer::Logger::trace</a></div><div class="ttdeci">void trace(const std::string &amp;message) final</div><div class="ttdoc">Logger trace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:32:12 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

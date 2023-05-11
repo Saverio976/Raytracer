@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01517" xml:lang="en-US">
+<title>RayTracer::Scenes::ISetting Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ISetting.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::ISetting:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01516.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::ISetting:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01515.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01521">IParsingException</link></para>
+
+<para>an exception for when the key is not found </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01525">ITypeException</link></para>
+
+<para>an exception for when the key is not found </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01517_1aa7833cd7cabb4a146abeb9797239b7d6">~ISetting</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01517_1a6ef82306555ce131d6ff7d75596dd8d5">getSetting</link> (const std::string &amp;key)=0</para>
+
+<para>get a precise setting of the config from key </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01517_1ae4d9bd09a28ccd4cbaa16851db85555f">getSetting</link> (int index)=0</para>
+
+<para>access element at index </para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_a01517_1a62fb98c88cb8cc0fba637b104d84ce1f">getLength</link> () const =0</para>
+
+<para>get the length of the current key works only for lists, array, groups </para>
+</listitem>
+            <listitem><para>virtual std::string <link linkend="_a01517_1a9f84f57ada001e8dc64ec56791ca4c82">getPath</link> () const =0</para>
+
+<para>gets the full path of the current setting </para>
+</listitem>
+            <listitem><para>virtual std::string <link linkend="_a01517_1a906cf80d206ea8e8105b297bd3a11cc6">getKey</link> () const =0</para>
+
+<para>gets the key of the current setting </para>
+</listitem>
+            <listitem><para>virtual std::shared_ptr&lt; libconfig::Config &gt; <link linkend="_a01517_1a7b63f5d483c473ad3d77a12097cb6ce8">getConfig</link> () const =0</para>
+
+<para>gets the config of a setting </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01517_1ad34eb603060626c24bf50065642142b7">moveTo</link> (const std::string &amp;key)=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01517_1afa5db77d88aaf77ff146a146cd991d7c">moveTo</link> (int index)=0</para>
+</listitem>
+            <listitem><para>virtual std::unique_ptr&lt; <link linkend="_a01517">ISetting</link> &gt; <link linkend="_a01517_1a6f04996c87bad9e48fc85ef26d5ee8a7">get</link> (const std::string &amp;key) const =0</para>
+
+<para>search the setting at the given key in the childs </para>
+</listitem>
+            <listitem><para>virtual std::unique_ptr&lt; <link linkend="_a01517">ISetting</link> &gt; <link linkend="_a01517_1ae7484ffc05c6071d01e589c3c9cec0d7">get</link> (int index) const =0</para>
+
+<para>search the setting at the given index in the childs </para>
+</listitem>
+            <listitem><para>virtual std::unique_ptr&lt; <link linkend="_a01517">ISetting</link> &gt; <link linkend="_a01517_1aecafb2dc2dacffcae5029f81bde4321a">get</link> () const =0</para>
+
+<para>returns the current setting </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01517_1aa24a4c685c14038967e2795e210b265d">operator bool</link> () const =0</para>
+
+<para>cast operator to get the value </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01517_1ab97ab9cba5f7cbfa7d8db3b3b56592b1">operator int</link> () const =0</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01517_1afbceda8dc0b26c9e330cca69b8ebf209">operator double</link> () const =0</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01517_1acc73c57e8acc780a87dce5cf0943833a">operator const char *</link> () const =0</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01517_1a1e2ab6e2e70e53a9d090706a3cdadbd6">operator std::string</link> () const =0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01517_1aa7833cd7cabb4a146abeb9797239b7d6"/>    <section>
+    <title>~ISetting()</title>
+<indexterm><primary>~ISetting</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>~ISetting</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::~ISetting ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01517_1aecafb2dc2dacffcae5029f81bde4321a"/>    <section>
+    <title>get()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>get</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>virtual std::unique_ptr&lt;<link linkend="_a01517">ISetting</link>&gt; RayTracer::Scenes::ISetting::get ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>returns the current setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>a copy of the setting at the current emplacement </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1aab54e51787b0c8d9eeaee5b4dc2871a0">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a6f04996c87bad9e48fc85ef26d5ee8a7"/>    <section>
+    <title>get()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>get</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>virtual std::unique_ptr&lt;<link linkend="_a01517">ISetting</link>&gt; RayTracer::Scenes::ISetting::get (const std::string &amp; key) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>search the setting at the given key in the childs </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>key</entry>
+                                <entry>
+<para>the key to go to</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a copy of the setting, moved to the key </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1a524874e4530299a30735e14bf939805b">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1ae7484ffc05c6071d01e589c3c9cec0d7"/>    <section>
+    <title>get()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>get</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>virtual std::unique_ptr&lt;<link linkend="_a01517">ISetting</link>&gt; RayTracer::Scenes::ISetting::get (int index) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>search the setting at the given index in the childs </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>the index to go to</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a copy of the setting, moved to the index </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1a187240284b49de24444b4a7fabc990fe">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a7b63f5d483c473ad3d77a12097cb6ce8"/>    <section>
+    <title>getConfig()</title>
+<indexterm><primary>getConfig</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>getConfig</secondary></indexterm>
+<para><computeroutput>virtual std::shared_ptr&lt;libconfig::Config&gt; RayTracer::Scenes::ISetting::getConfig ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>gets the config of a setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the config </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1a5df8bcdfa6c27017fe25a1ed2a665619">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a906cf80d206ea8e8105b297bd3a11cc6"/>    <section>
+    <title>getKey()</title>
+<indexterm><primary>getKey</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>getKey</secondary></indexterm>
+<para><computeroutput>virtual std::string RayTracer::Scenes::ISetting::getKey ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>gets the key of the current setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the key </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1ad8966e0597a177003494a498389df4da">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a62fb98c88cb8cc0fba637b104d84ce1f"/>    <section>
+    <title>getLength()</title>
+<indexterm><primary>getLength</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>getLength</secondary></indexterm>
+<para><computeroutput>virtual int RayTracer::Scenes::ISetting::getLength ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>get the length of the current key works only for lists, array, groups </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>-1 if invalid type or size </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1aaaa74848aca6bf32bba62a3c9f64969c">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a9f84f57ada001e8dc64ec56791ca4c82"/>    <section>
+    <title>getPath()</title>
+<indexterm><primary>getPath</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>getPath</secondary></indexterm>
+<para><computeroutput>virtual std::string RayTracer::Scenes::ISetting::getPath ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>gets the full path of the current setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the path </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1ab13cc485cf09e9eda992da5487b23a50">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a6ef82306555ce131d6ff7d75596dd8d5"/>    <section>
+    <title>getSetting()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getSetting</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>getSetting</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::ISetting::getSetting (const std::string &amp; key)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>get a precise setting of the config from key </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>key</entry>
+                                <entry>
+<para>the key</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the setting exists, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1ad343aaeac8166e70f4b007e776ffe9d0">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1ae4d9bd09a28ccd4cbaa16851db85555f"/>    <section>
+    <title>getSetting()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getSetting</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>getSetting</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::ISetting::getSetting (int index)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>access element at index </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>the index</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the setting exists, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1a24995c271c9eb067a880a7ed92b1039a">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1ad34eb603060626c24bf50065642142b7"/>    <section>
+    <title>moveTo()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>moveTo</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>moveTo</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::ISetting::moveTo (const std::string &amp; key)<computeroutput>[pure virtual]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>key</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01545_1a794348f6c0c89c90875594f866da94dc">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1afa5db77d88aaf77ff146a146cd991d7c"/>    <section>
+    <title>moveTo()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>moveTo</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>moveTo</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::ISetting::moveTo (int index)<computeroutput>[pure virtual]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01545_1ac0242a53b300beaa958cd1781bf28788">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1aa24a4c685c14038967e2795e210b265d"/>    <section>
+    <title>operator bool()</title>
+<indexterm><primary>operator bool</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>operator bool</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::operator bool ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>cast operator to get the value </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01545_1aaca34afb39b48e960753509cfbd26fc0">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1acc73c57e8acc780a87dce5cf0943833a"/>    <section>
+    <title>operator const char *()</title>
+<indexterm><primary>operator const char *</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>operator const char *</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::operator const char * ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01545_1a8301053aac11e5a7131871654ef07c64">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1afbceda8dc0b26c9e330cca69b8ebf209"/>    <section>
+    <title>operator double()</title>
+<indexterm><primary>operator double</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>operator double</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::operator double ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01545_1a4b632bc6babafc9447cdd3cfe4fcf660">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1ab97ab9cba5f7cbfa7d8db3b3b56592b1"/>    <section>
+    <title>operator int()</title>
+<indexterm><primary>operator int</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>operator int</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::operator int ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01545_1ae5a79e7a6de98ab88b9a61519a54b751">RayTracer::Scenes::SettingWrapper</link>.</para>
+    </section><anchor xml:id="_a01517_1a1e2ab6e2e70e53a9d090706a3cdadbd6"/>    <section>
+    <title>operator std::string()</title>
+<indexterm><primary>operator std::string</primary><secondary>RayTracer::Scenes::ISetting</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISetting</primary><secondary>operator std::string</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::ISetting::operator std::string ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01545_1abb6ab38f87302788982e47c3b82af9d9">RayTracer::Scenes::SettingWrapper</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00239">ISetting.hpp</link></section>
+</section>

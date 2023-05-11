@@ -1,7 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00233" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for IDisplayable.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00234.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 This graph shows which files directly or indirectly include this file:<para>
     <informalfigure>
         <mediaobject>
@@ -14,18 +25,24 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01510">RayTracer::Scenes::ISceneState</link></para>
+            <listitem><para>class <link linkend="_a01505">RayTracer::Scenes::IDisplayable</link></para>
 
-<para>The <link linkend="_a01538">SceneState</link> interface. </para>
+<para>The <link linkend="_a01505">IDisplayable</link> interface. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01509">RayTracer::Scenes::IDisplayable::IDisplayableException</link></para>
+
+<para>an exception for when the key is not found </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00416">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00410">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00419">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

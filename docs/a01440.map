@@ -1,13 +1,19 @@
-<map id="RayTracer::Plugins::Filters::FilterHandler" name="RayTracer::Plugins::Filters::FilterHandler">
-<area shape="rect" id="node1" title="The FilterHandler." alt="" coords="153,955,315,1061"/>
-<area shape="rect" id="node2" href="$a01466.html" title=" " alt="" coords="117,683,351,892"/>
-<area shape="rect" id="node3" href="$a01466.html" title="The PluginHandler class." alt="" coords="135,440,333,591"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,300,87,377"/>
-<area shape="rect" id="node5" title=" " alt="" coords="111,300,197,377"/>
-<area shape="rect" id="node6" title=" " alt="" coords="85,145,223,237"/>
-<area shape="rect" id="node7" title=" " alt="" coords="221,300,412,377"/>
-<area shape="rect" id="node8" title=" " alt="" coords="259,153,350,230"/>
-<area shape="rect" id="node9" title=" " alt="" coords="375,153,504,230"/>
-<area shape="rect" id="node10" title=" " alt="" coords="420,5,459,83"/>
-<area shape="rect" id="node11" title=" " alt="" coords="437,300,498,377"/>
+<map id="RayTracer::Plugins::Entities::IEntityCreator" name="RayTracer::Plugins::Entities::IEntityCreator">
+<area shape="rect" id="node1" title="The IEntityCreator." alt="" coords="1677,5,1855,112"/>
+<area shape="rect" id="node2" href="$a01557.html" title=" " alt="" coords="5,160,217,281"/>
+<area shape="rect" id="node3" href="$a01581.html" title=" " alt="" coords="241,167,429,274"/>
+<area shape="rect" id="node4" href="$a01589.html" title=" " alt="" coords="454,160,657,281"/>
+<area shape="rect" id="node5" href="$a01605.html" title=" " alt="" coords="681,160,888,281"/>
+<area shape="rect" id="node6" href="$a01629.html" title=" " alt="" coords="913,167,1075,274"/>
+<area shape="rect" id="node7" href="$a01637.html" title=" " alt="" coords="1099,167,1294,274"/>
+<area shape="rect" id="node8" href="$a01645.html" title=" " alt="" coords="1318,167,1481,274"/>
+<area shape="rect" id="node9" href="$a01653.html" title=" " alt="" coords="1505,167,1755,274"/>
+<area shape="rect" id="node10" href="$a01661.html" title=" " alt="" coords="1780,160,2024,281"/>
+<area shape="rect" id="node11" href="$a01669.html" title=" " alt="" coords="2049,160,2257,281"/>
+<area shape="rect" id="node12" href="$a01693.html" title=" " alt="" coords="2281,167,2443,274"/>
+<area shape="rect" id="node13" href="$a01701.html" title=" " alt="" coords="2467,167,2683,274"/>
+<area shape="rect" id="node14" href="$a01717.html" title=" " alt="" coords="2707,167,2883,274"/>
+<area shape="rect" id="node15" href="$a01725.html" title=" " alt="" coords="2907,167,3115,274"/>
+<area shape="rect" id="node16" href="$a01733.html" title=" " alt="" coords="3139,167,3302,274"/>
+<area shape="rect" id="node17" href="$a01749.html" title=" " alt="" coords="3327,167,3515,274"/>
 </map>

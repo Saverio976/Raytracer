@@ -1,6 +1,4 @@
-<map id="RayTracer::Scenes::ConfigWrapper::ReadException" name="RayTracer::Scenes::ConfigWrapper::ReadException">
-<area shape="rect" id="node1" title="an exception for when the file can&#39;t be read" alt="" coords="5,287,228,393"/>
-<area shape="rect" id="node2" title=" " alt="" coords="38,147,153,224"/>
-<area shape="rect" id="node3" title=" " alt="" coords="177,147,264,224"/>
-<area shape="rect" id="node4" title=" " alt="" coords="151,5,290,97"/>
+<map id="RayTracer::Scenes::ConfigWrapper" name="RayTracer::Scenes::ConfigWrapper">
+<area shape="rect" id="node1" title=" " alt="" coords="5,189,160,369"/>
+<area shape="rect" id="node2" href="$a01501.html" title=" " alt="" coords="9,5,157,141"/>
 </map>

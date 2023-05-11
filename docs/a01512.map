@@ -1,3 +1,4 @@
-<map id="RayTracer::Scenes::ISetting" name="RayTracer::Scenes::ISetting">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,189,332"/>
+<map id="RayTracer::Scenes::ISceneState" name="RayTracer::Scenes::ISceneState">
+<area shape="rect" id="node1" title="The SceneState interface." alt="" coords="5,5,153,112"/>
+<area shape="rect" id="node2" href="$a01541.html" title="The SceneState class." alt="" coords="5,160,153,296"/>
 </map>

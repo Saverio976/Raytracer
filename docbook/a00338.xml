@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00338" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial/MirrorMaterial.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial/MirrorMaterial.hpp</primary></indexterm>
-<programlisting>#include &quot;ISetting.hpp&quot;
-#include &quot;Ray.hpp&quot;
-#include &quot;Color.hpp&quot;
-#include &quot;ITransform.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
-#include &quot;IMaterial.hpp&quot;
-</programlisting>Include dependency graph for MirrorMaterial.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial/MirrorCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial/MirrorCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IMaterialCreator.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;MirrorMaterial.hpp&quot;
+</programlisting>Include dependency graph for MirrorCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -17,30 +16,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00340.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01678">RayTracer::PluginsExt::Mirror::MirrorMaterial</link></para>
+            <listitem><para>class <link linkend="_a01677">RayTracer::PluginsExt::Mirror::MirrorCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00417">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt::Mirror</link></para>
+            <listitem><para> <link linkend="_a00435">RayTracer::PluginsExt::Mirror</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

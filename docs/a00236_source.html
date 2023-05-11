@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/ISetting.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,75 +67,45 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ISetting.hpp</div>  </div>
+<div class="title">ISceneState.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00236.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ISetting.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ISceneState.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ISETTING_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ISETTING_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ISCENESTATE_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ISCENESTATE_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;libconfig.h++&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00416.html">RayTracer::Scenes</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a01514.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01514.html">ISetting</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01518.html">   20</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01518.html">IParsingException</a>: <span class="keyword">public</span> std::exception {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01518.html#a6c0e22b8ed2ae8ea23d9dcb15f914b1d">   22</a></span>&#160;                    <span class="keyword">virtual</span> <a class="code" href="a01518.html#a6c0e22b8ed2ae8ea23d9dcb15f914b1d">~IParsingException</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01518.html#a475e1c111acc801c1bd54e2a9d19700d">   23</a></span>&#160;                    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01518.html#a475e1c111acc801c1bd54e2a9d19700d">what</a>() <span class="keyword">const</span> throw() override = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            };</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01522.html">   28</a></span>&#160;            class <a class="code" href="a01522.html">ITypeException</a>: public std::exception {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01522.html#a7f70ecef08ce035b8bf3345fd5878d47">   30</a></span>&#160;                    <span class="keyword">virtual</span> <a class="code" href="a01522.html#a7f70ecef08ce035b8bf3345fd5878d47">~ITypeException</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01522.html#a1c73d8d9b56a99aba334a30924ac5b26">   31</a></span>&#160;                    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01522.html#a1c73d8d9b56a99aba334a30924ac5b26">what</a>() <span class="keyword">const</span> throw() override = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            };</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01514.html#aa7833cd7cabb4a146abeb9797239b7d6">   33</a></span>&#160;            virtual ~<a class="code" href="a01514.html">ISetting</a>() = default;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01514.html#a6ef82306555ce131d6ff7d75596dd8d5">   41</a></span>&#160;            virtual <span class="keywordtype">void</span> <a class="code" href="a01514.html#a6ef82306555ce131d6ff7d75596dd8d5">getSetting</a>(const std::<span class="keywordtype">string</span> &amp;key) = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a01514.html#ae4d9bd09a28ccd4cbaa16851db85555f">   49</a></span>&#160;            virtual <span class="keywordtype">void</span> <a class="code" href="a01514.html#a6ef82306555ce131d6ff7d75596dd8d5">getSetting</a>(<span class="keywordtype">int</span> index) = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01514.html#a62fb98c88cb8cc0fba637b104d84ce1f">   56</a></span>&#160;            virtual <span class="keywordtype">int</span> <a class="code" href="a01514.html#a62fb98c88cb8cc0fba637b104d84ce1f">getLength</a>() const = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a01514.html#a9f84f57ada001e8dc64ec56791ca4c82">   62</a></span>&#160;            virtual std::<span class="keywordtype">string</span> <a class="code" href="a01514.html#a9f84f57ada001e8dc64ec56791ca4c82">getPath</a>() const = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a01514.html#a906cf80d206ea8e8105b297bd3a11cc6">   68</a></span>&#160;            virtual std::<span class="keywordtype">string</span> <a class="code" href="a01514.html#a906cf80d206ea8e8105b297bd3a11cc6">getKey</a>() const = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a01514.html#a7b63f5d483c473ad3d77a12097cb6ce8">   74</a></span>&#160;            virtual std::shared_ptr&lt;libconfig::Config&gt; <a class="code" href="a01514.html#a7b63f5d483c473ad3d77a12097cb6ce8">getConfig</a>() const = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="a01514.html#ad34eb603060626c24bf50065642142b7">   80</a></span>&#160;            virtual <span class="keywordtype">void</span> <a class="code" href="a01514.html#ad34eb603060626c24bf50065642142b7">moveTo</a>(const std::<span class="keywordtype">string</span> &amp;key) = 0;</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a01514.html#afa5db77d88aaf77ff146a146cd991d7c">   86</a></span>&#160;            virtual <span class="keywordtype">void</span> <a class="code" href="a01514.html#ad34eb603060626c24bf50065642142b7">moveTo</a>(<span class="keywordtype">int</span> index) = 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="a01514.html#a6f04996c87bad9e48fc85ef26d5ee8a7">   94</a></span>&#160;            virtual std::unique_ptr&lt;<a class="code" href="a01514.html">ISetting</a>&gt; <a class="code" href="a01514.html#aecafb2dc2dacffcae5029f81bde4321a">get</a>(const std::<span class="keywordtype">string</span> &amp;key) const = 0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="a01514.html#ae7484ffc05c6071d01e589c3c9cec0d7">  102</a></span>&#160;            virtual std::unique_ptr&lt;<a class="code" href="a01514.html">ISetting</a>&gt; <a class="code" href="a01514.html#aecafb2dc2dacffcae5029f81bde4321a">get</a>(<span class="keywordtype">int</span> index) const = 0;</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="a01514.html#aecafb2dc2dacffcae5029f81bde4321a">  108</a></span>&#160;            virtual std::unique_ptr&lt;<a class="code" href="a01514.html">ISetting</a>&gt; <a class="code" href="a01514.html#aecafb2dc2dacffcae5029f81bde4321a">get</a>() const = 0;</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="a01514.html#aa24a4c685c14038967e2795e210b265d">  114</a></span>&#160;            virtual explicit operator <span class="keywordtype">bool</span>() const = 0;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="a01514.html#ab97ab9cba5f7cbfa7d8db3b3b56592b1">  115</a></span>&#160;            virtual explicit operator <span class="keywordtype">int</span>() const = 0;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a01514.html#afbceda8dc0b26c9e330cca69b8ebf209">  116</a></span>&#160;            virtual explicit operator <span class="keywordtype">double</span>() const = 0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="a01514.html#acc73c57e8acc780a87dce5cf0943833a">  117</a></span>&#160;            virtual explicit operator const <span class="keywordtype">char</span> *() const = 0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="a01514.html#a1e2ab6e2e70e53a9d090706a3cdadbd6">  118</a></span>&#160;            virtual explicit operator std::<span class="keywordtype">string</span>() const = 0;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    };</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ISETTING_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00416_html"><div class="ttname"><a href="a00416.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
-<div class="ttc" id="aa01514_html"><div class="ttname"><a href="a01514.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01514_html_a62fb98c88cb8cc0fba637b104d84ce1f"><div class="ttname"><a href="a01514.html#a62fb98c88cb8cc0fba637b104d84ce1f">RayTracer::Scenes::ISetting::getLength</a></div><div class="ttdeci">virtual int getLength() const =0</div><div class="ttdoc">get the length of the current key works only for lists, array, groups</div></div>
-<div class="ttc" id="aa01514_html_a6ef82306555ce131d6ff7d75596dd8d5"><div class="ttname"><a href="a01514.html#a6ef82306555ce131d6ff7d75596dd8d5">RayTracer::Scenes::ISetting::getSetting</a></div><div class="ttdeci">virtual void getSetting(const std::string &amp;key)=0</div><div class="ttdoc">get a precise setting of the config from key</div></div>
-<div class="ttc" id="aa01514_html_a7b63f5d483c473ad3d77a12097cb6ce8"><div class="ttname"><a href="a01514.html#a7b63f5d483c473ad3d77a12097cb6ce8">RayTracer::Scenes::ISetting::getConfig</a></div><div class="ttdeci">virtual std::shared_ptr&lt; libconfig::Config &gt; getConfig() const =0</div><div class="ttdoc">gets the config of a setting</div></div>
-<div class="ttc" id="aa01514_html_a906cf80d206ea8e8105b297bd3a11cc6"><div class="ttname"><a href="a01514.html#a906cf80d206ea8e8105b297bd3a11cc6">RayTracer::Scenes::ISetting::getKey</a></div><div class="ttdeci">virtual std::string getKey() const =0</div><div class="ttdoc">gets the key of the current setting</div></div>
-<div class="ttc" id="aa01514_html_a9f84f57ada001e8dc64ec56791ca4c82"><div class="ttname"><a href="a01514.html#a9f84f57ada001e8dc64ec56791ca4c82">RayTracer::Scenes::ISetting::getPath</a></div><div class="ttdeci">virtual std::string getPath() const =0</div><div class="ttdoc">gets the full path of the current setting</div></div>
-<div class="ttc" id="aa01514_html_ad34eb603060626c24bf50065642142b7"><div class="ttname"><a href="a01514.html#ad34eb603060626c24bf50065642142b7">RayTracer::Scenes::ISetting::moveTo</a></div><div class="ttdeci">virtual void moveTo(const std::string &amp;key)=0</div></div>
-<div class="ttc" id="aa01514_html_aecafb2dc2dacffcae5029f81bde4321a"><div class="ttname"><a href="a01514.html#aecafb2dc2dacffcae5029f81bde4321a">RayTracer::Scenes::ISetting::get</a></div><div class="ttdeci">virtual std::unique_ptr&lt; ISetting &gt; get() const =0</div><div class="ttdoc">returns the current setting</div></div>
-<div class="ttc" id="aa01518_html"><div class="ttname"><a href="a01518.html">RayTracer::Scenes::ISetting::IParsingException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> ISetting.hpp:20</div></div>
-<div class="ttc" id="aa01518_html_a475e1c111acc801c1bd54e2a9d19700d"><div class="ttname"><a href="a01518.html#a475e1c111acc801c1bd54e2a9d19700d">RayTracer::Scenes::ISetting::IParsingException::what</a></div><div class="ttdeci">virtual const char * what() const override=0</div></div>
-<div class="ttc" id="aa01518_html_a6c0e22b8ed2ae8ea23d9dcb15f914b1d"><div class="ttname"><a href="a01518.html#a6c0e22b8ed2ae8ea23d9dcb15f914b1d">RayTracer::Scenes::ISetting::IParsingException::~IParsingException</a></div><div class="ttdeci">virtual ~IParsingException()=default</div></div>
-<div class="ttc" id="aa01522_html"><div class="ttname"><a href="a01522.html">RayTracer::Scenes::ISetting::ITypeException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> ISetting.hpp:28</div></div>
-<div class="ttc" id="aa01522_html_a1c73d8d9b56a99aba334a30924ac5b26"><div class="ttname"><a href="a01522.html#a1c73d8d9b56a99aba334a30924ac5b26">RayTracer::Scenes::ISetting::ITypeException::what</a></div><div class="ttdeci">virtual const char * what() const override=0</div></div>
-<div class="ttc" id="aa01522_html_a7f70ecef08ce035b8bf3345fd5878d47"><div class="ttname"><a href="a01522.html#a7f70ecef08ce035b8bf3345fd5878d47">RayTracer::Scenes::ISetting::ITypeException::~ITypeException</a></div><div class="ttdeci">virtual ~ITypeException()=default</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00419.html">RayTracer::Scenes</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01513.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01513.html">ISceneState</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6">   23</a></span>&#160;            <span class="keyword">enum class</span> <a class="code" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RUNNING</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">CANCELLED</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">FINISHED</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            };</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01513.html#a2987cac49fef7a48b80aa2d1e4aa84da">   33</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> <a class="code" href="a01513.html#a2987cac49fef7a48b80aa2d1e4aa84da">getState</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01513.html#a9794d2a8b28b9753686931e78d5e315c">   39</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01513.html#a9794d2a8b28b9753686931e78d5e315c">changeState</a>(<span class="keyword">const</span> <a class="code" href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> &amp;state) = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00419_html"><div class="ttname"><a href="a00419.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
+<div class="ttc" id="aa01513_html"><div class="ttname"><a href="a01513.html">RayTracer::Scenes::ISceneState</a></div><div class="ttdoc">The SceneState interface.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:18</div></div>
+<div class="ttc" id="aa01513_html_a2987cac49fef7a48b80aa2d1e4aa84da"><div class="ttname"><a href="a01513.html#a2987cac49fef7a48b80aa2d1e4aa84da">RayTracer::Scenes::ISceneState::getState</a></div><div class="ttdeci">virtual States getState() const =0</div><div class="ttdoc">Get the state (thread safe)</div></div>
+<div class="ttc" id="aa01513_html_a3abb46616bc66e9744ad0bed1635afe6"><div class="ttname"><a href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6">RayTracer::Scenes::ISceneState::States</a></div><div class="ttdeci">States</div><div class="ttdoc">The States.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:23</div></div>
+<div class="ttc" id="aa01513_html_a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133"><div class="ttname"><a href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">RayTracer::Scenes::ISceneState::States::FINISHED</a></div><div class="ttdeci">@ FINISHED</div></div>
+<div class="ttc" id="aa01513_html_a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd"><div class="ttname"><a href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RayTracer::Scenes::ISceneState::States::RUNNING</a></div><div class="ttdeci">@ RUNNING</div></div>
+<div class="ttc" id="aa01513_html_a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"><div class="ttname"><a href="a01513.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">RayTracer::Scenes::ISceneState::States::CANCELLED</a></div><div class="ttdeci">@ CANCELLED</div></div>
+<div class="ttc" id="aa01513_html_a9794d2a8b28b9753686931e78d5e315c"><div class="ttname"><a href="a01513.html#a9794d2a8b28b9753686931e78d5e315c">RayTracer::Scenes::ISceneState::changeState</a></div><div class="ttdeci">virtual void changeState(const States &amp;state)=0</div><div class="ttdoc">Change the state (thread safe)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:32:12 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

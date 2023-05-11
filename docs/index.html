@@ -63,7 +63,7 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="a00405.html">RayTracer</a> </div>  </div>
+<div class="title"><a class="el" href="a00408.html">RayTracer</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>aficher ... <a class="anchor" id="md__home_runner_work_Raytracer_Raytracer_README"></a> Projet réalisé en 2ème année à EPITECH</p>
@@ -140,6 +140,8 @@ Exemples/Documentation</h1>
 <li><a href="#ChessBoardMaterial">ChessBoardMaterial</a></li>
 <li><a href="#ZebraMaterial">ZebraMaterial</a></li>
 <li><a href="#TransparencyMaterial">TransparencyMaterial</a></li>
+<li><a href="#RefractionMaterial">RefractionMaterial</a></li>
+<li><a href="#MirrorMaterial">MirrorMaterial</a></li>
 </ul>
 <p>les lumières sont:</p><ul>
 <li><a href="#PointLight">PointLight</a> (mais la documentation est sur toutes les primitives)</li>
@@ -1858,6 +1860,366 @@ TransparencyMaterial</h2>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
 <h2><a class="anchor" id="autotoc_md18"></a>
+RefractionMaterial</h2>
+<p><img src="refractionmaterial1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># refractionmaterial.yaax</div>
+<div class="line"> </div>
+<div class="line"># Configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    CameraCluster: (</div>
+<div class="line">        {</div>
+<div class="line">            screenSize = {x: 500; y = 500;};</div>
+<div class="line">            screen = {</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 90.0; y = 90.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            maxThreads = 1;</div>
+<div class="line">            cluster = 1,</div>
+<div class="line">            distanceFromScreen = 200.0;</div>
+<div class="line">            filters = {</div>
+<div class="line">                SSAAx4: (</div>
+<div class="line">                    {</div>
+<div class="line">                        maxThreads = -1</div>
+<div class="line">                    }</div>
+<div class="line">                )</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # List of spheres</div>
+<div class="line">    Sphere = (</div>
+<div class="line">        {</div>
+<div class="line">            radius = 100.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = -150.0; y = 150.0; z = 50.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 222.0; g = 102.0; b = 97.0; a = 25.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            radius = 50.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 15.0; y = 100.0; z = 50.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 50.0; g = 50.0; b = 50.0; a = 10.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                transparency = 50.0;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    LimitedPlane = (</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = -30.0; y = 25.0; z = -15.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 1.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            size = {x = 100; y = 150;};</div>
+<div class="line">            material = {</div>
+<div class="line">                # Taux d&#39;éblouissement de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # Couleur du materiel</div>
+<div class="line">                color = {r = 50.0; g = 50.0; b = 0.0; a = 50.0;};</div>
+<div class="line">                # Type de materiel</div>
+<div class="line">                type = &quot;RefractionMaterial&quot;;</div>
+<div class="line">                # Transparence (de 0 à 255)</div>
+<div class="line">                # 0 = invisible</div>
+<div class="line">                # 255 = opaque</div>
+<div class="line">                transparency = 25.0;</div>
+<div class="line">                # Refraction [x=0.0, y=0.0, z=0.0] correspond à un plan transparent</div>
+<div class="line">                # Vecteur ajouté à la normal de l&#39;object</div>
+<div class="line">                refraction = {x = 0.5; y = 0.7; z = -0.2};</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    Plane = (</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 0.0; y = 150.0; z = 0.0;};</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 1.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            size = {x = 50.0; y = 50.0; z = 0.0;};</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 0.0; y = 10.0; z = -100.0;};</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 1.0;};</div>
+<div class="line">            };</div>
+<div class="line">            size = {x = 1000.0; y = 500.0; z = 500.0;};</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # Point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # Première lampe de type PointLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # Première lampe de type AmbientLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+MirrorMaterial</h2>
+<p><img src="/documentation/mirrormaterial1-basic.png" alt="image" class="inline"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># mirrormaterial.yaax</div>
+<div class="line"> </div>
+<div class="line"># Configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    CameraCluster: (</div>
+<div class="line">        {</div>
+<div class="line">            screenSize = {x: 500; y = 500;};</div>
+<div class="line">            screen = {</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 90.0; y = 90.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            maxThreads = 1;</div>
+<div class="line">            cluster = 1,</div>
+<div class="line">            distanceFromScreen = 200.0;</div>
+<div class="line">            filters = {</div>
+<div class="line">                SSAAx4: (</div>
+<div class="line">                    {</div>
+<div class="line">                        maxThreads = -1</div>
+<div class="line">                    }</div>
+<div class="line">                )</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # List of spheres</div>
+<div class="line">    Sphere = (</div>
+<div class="line">        {</div>
+<div class="line">            radius = 100.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = -150.0; y = 150.0; z = 50.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 222.0; g = 102.0; b = 97.0; a = 25.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            radius = 50.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 15.0; y = 100.0; z = 50.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 50.0; g = 50.0; b = 50.0; a = 10.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                transparency = 50.0;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    LimitedPlane = (</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = -30.0; y = 25.0; z = -15.0;};</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 1.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            size = {x = 100; y = 150;};</div>
+<div class="line">            material = {</div>
+<div class="line">                # Taux d&#39;éblouissement de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # Couleur du materiel</div>
+<div class="line">                color = {r = 50.0; g = 50.0; b = 0.0; a = 50.0;};</div>
+<div class="line">                # Type de materiel</div>
+<div class="line">                type = &quot;RefractionMaterial&quot;;</div>
+<div class="line">                # Transparence (de 0 à 255)</div>
+<div class="line">                # 0 = invisible</div>
+<div class="line">                # 255 = opaque</div>
+<div class="line">                transparency = 25.0;</div>
+<div class="line">                # Refraction [x=0.0, y=0.0, z=0.0] correspond à un plan transparent</div>
+<div class="line">                # Vecteur ajouté à la normal de l&#39;object</div>
+<div class="line">                refraction = {x = 0.5; y = 0.7; z = -0.2};</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    Plane = (</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 0.0; y = 150.0; z = 0.0;};</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 1.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            size = {x = 50.0; y = 50.0; z = 0.0;};</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                position = {x = 0.0; y = 10.0; z = -100.0;};</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 1.0;};</div>
+<div class="line">            };</div>
+<div class="line">            size = {x = 1000.0; y = 500.0; z = 500.0;};</div>
+<div class="line">            material = {</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # Point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # Première lampe de type PointLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # Première lampe de type AmbientLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md20"></a>
 AmbientLight</h2>
 <p><img src="ambientlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2025,7 +2387,7 @@ AmbientLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 PointLight</h2>
 <p><img src="pointlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2195,7 +2557,7 @@ PointLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 SpotLight</h2>
 <p><img src="spotlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2360,10 +2722,10 @@ SpotLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Camera</h2>
 <p>Regarder la documentation pour les primitives, elle explique déjà bien le principe</p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 CameraCluster</h2>
 <p><img src="camera-cluster1.png" alt="" class="inline" title="cluster1"/> <img src="camera-cluster2.png" alt="" class="inline" title="cluster2"/> <img src="camera-cluster5.png" alt="" class="inline" title="cluster5"/></p>
 <p>&lt;details&gt;</p>
@@ -2921,7 +3283,7 @@ CameraCluster</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 SSAAx4</h2>
 <p><img src="ssaax4-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -3120,7 +3482,7 @@ SSAAx4</h2>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:32:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

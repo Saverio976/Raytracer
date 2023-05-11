@@ -14,9 +14,9 @@ Directory dependency graph for AmbientLight:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00251">AmbientLightCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00254">AmbientLightCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00254">AmbientLightEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00257">AmbientLightEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00440" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Transparency Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Transparency</primary></indexterm>
+<title>RayTracer::PluginsExt::Sphere Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Sphere</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01738">TransparencyCreator</link></para>
+            <listitem><para>class <link linkend="_a01717">SphereCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01742">TransparencyMaterial</link></para>
+            <listitem><para>class <link linkend="_a01721">SphereEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

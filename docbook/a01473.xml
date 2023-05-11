@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01473" xml:lang="en-US">
+<title>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt; Class Template Reference</title>
+<indexterm><primary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;PluginLoader.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01472.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01471.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01473_1a1172ca46ef18b385f243654f036234a6">PluginLoader</link> (const std::string &amp;directory)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01473_1a46618935de8534e70b310c5f97a40b8a">load</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01473_1abb9a32a2ed89b78558a8a10a70b39a7c">_directory</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01473_1a1172ca46ef18b385f243654f036234a6"/>    <section>
+    <title>PluginLoader()</title>
+<indexterm><primary>PluginLoader</primary><secondary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</secondary></indexterm>
+<indexterm><primary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</primary><secondary>PluginLoader</secondary></indexterm>
+<computeroutput>template&lt;typename Handler , typename Interface , typename Factory &gt; </computeroutput><para><computeroutput><link linkend="_a01473">RayTracer::Plugins::PluginLoader</link>&lt; Handler, Interface, Factory &gt;::<link linkend="_a01473">PluginLoader</link> (const std::string &amp; directory)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01473_1a46618935de8534e70b310c5f97a40b8a"/>    <section>
+    <title>load()</title>
+<indexterm><primary>load</primary><secondary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</secondary></indexterm>
+<indexterm><primary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</primary><secondary>load</secondary></indexterm>
+<computeroutput>template&lt;typename Handler , typename Interface , typename Factory &gt; </computeroutput><para><computeroutput>void <link linkend="_a01473">RayTracer::Plugins::PluginLoader</link>&lt; Handler, Interface, Factory &gt;::load ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01473_1abb9a32a2ed89b78558a8a10a70b39a7c"/>    <section>
+    <title>_directory</title>
+<indexterm><primary>_directory</primary><secondary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</secondary></indexterm>
+<indexterm><primary>RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</primary><secondary>_directory</secondary></indexterm>
+<computeroutput>template&lt;typename Handler , typename Interface , typename Factory &gt; </computeroutput><para><computeroutput>std::string <link linkend="_a01473">RayTracer::Plugins::PluginLoader</link>&lt; Handler, Interface, Factory &gt;::_directory<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Plugins/<link linkend="_a00218">PluginLoader.hpp</link></section>
+</section>

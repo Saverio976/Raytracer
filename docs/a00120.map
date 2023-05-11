@@ -1,8 +1,9 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,217,61"/>
-<area shape="rect" id="node2" title=" " alt="" coords="19,109,95,136"/>
-<area shape="rect" id="node3" href="$a00227.html" title=" " alt="" coords="119,109,213,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="83,259,161,285"/>
-<area shape="rect" id="node5" href="$a00236.html" title=" " alt="" coords="160,184,260,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="185,259,296,285"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Transform.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Transform.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="56,5,268,61"/>
+<area shape="rect" id="node2" href="$a00116.html" title=" " alt="" coords="5,109,124,136"/>
+<area shape="rect" id="node3" href="$a00125.html" title=" " alt="" coords="60,184,163,211"/>
+<area shape="rect" id="node5" href="$a00239.html" title=" " alt="" coords="163,259,263,285"/>
+<area shape="rect" id="node4" title=" " alt="" coords="63,259,139,285"/>
+<area shape="rect" id="node6" title=" " alt="" coords="115,333,193,360"/>
+<area shape="rect" id="node7" title=" " alt="" coords="217,333,328,360"/>
 </map>

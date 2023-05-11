@@ -1,13 +1,5 @@
-<map id="RayTracer::PluginsExt::Refraction::RefractionCreator" name="RayTracer::PluginsExt::Refraction::RefractionCreator">
-<area shape="rect" id="node1" title=" " alt="" coords="210,1137,430,1244"/>
-<area shape="rect" id="node2" href="$a01454.html" title="The IMaterialCreator class." alt="" coords="196,968,401,1075"/>
-<area shape="rect" id="node3" title=" " alt="" coords="426,968,603,1075"/>
-<area shape="rect" id="node4" href="$a01710.html" title=" " alt="" coords="289,740,516,891"/>
-<area shape="rect" id="node5" href="$a01306.html" title="The IMaterial class." alt="" coords="5,343,155,479"/>
-<area shape="rect" id="node6" title=" " alt="" coords="369,5,436,83"/>
-<area shape="rect" id="node7" href="$a01326.html" title="The Vector3f class." alt="" coords="324,189,481,633"/>
-<area shape="rect" id="node8" href="$a01366.html" title="The Color class." alt="" coords="506,255,657,567"/>
-<area shape="rect" id="node9" title=" " alt="" coords="535,5,627,83"/>
-<area shape="rect" id="node10" title=" " alt="" coords="587,777,717,854"/>
-<area shape="rect" id="node11" title=" " alt="" coords="681,373,719,450"/>
+<map id="RayTracer::PluginsExt::PointLight::PointLightEntity" name="RayTracer::PluginsExt::PointLight::PointLightEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="5,403,212,685"/>
+<area shape="rect" id="node2" href="$a01305.html" title="The ILight class." alt="" coords="37,189,180,355"/>
+<area shape="rect" id="node3" href="$a01301.html" title="The IEntity class." alt="" coords="37,5,180,141"/>
 </map>

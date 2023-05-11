@@ -1,0 +1,149 @@
+\hypertarget{a01569}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Anti\+Aliasing\+::SSAAx4\+::SSAAx4\+Filter Class Reference}
+\label{a01569}\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+
+
+{\ttfamily \#include $<$SSAAx4\+Filter.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Anti\+Aliasing\+::SSAAx4\+::SSAAx4\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{a01568}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Anti\+Aliasing\+::SSAAx4\+::SSAAx4\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01567}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01569_a1bf2f87af2996d500658225386cdbfeb}{SSAAx4\+Filter}} (const \mbox{\hyperlink{a01517}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01365}{ILogger}} \&logger)
+\item 
+void \mbox{\hyperlink{a01569_ae3b5388bd81c8a07286febecd4797315}{apply}} (\mbox{\hyperlink{a01373}{Images\+::\+Image}} \&image) final
+\begin{DoxyCompactList}\small\item\em Apply the filter on an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01569_a7ede4ae4b426a35305baed6a91af4af6}{wait\+One\+Place}} ()
+\begin{DoxyCompactList}\small\item\em Wait one place in the vector of futures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01569_a086f208ae32f1aeddf8fa3594458f8ab}{wait\+All\+Finisehd}} ()
+\begin{DoxyCompactList}\small\item\em Wait all places in the vector of futures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01369}{Images\+::\+Color}} \mbox{\hyperlink{a01569_a8c53c391e3901a32d6b82c2fae2bc72a}{get\+Colors\+Mean}} (const std\+::vector$<$ \mbox{\hyperlink{a01369}{Images\+::\+Color}} $>$ \&colors)
+\begin{DoxyCompactList}\small\item\em Mean of the colors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01365}{ILogger}} \& \mbox{\hyperlink{a01569_a4b04f87e58a93120bb0cacf89a9ee6ee}{\+\_\+logger}}
+\item 
+int \mbox{\hyperlink{a01569_a4eafda71c1e352dac59133dc10898ec9}{\+\_\+max\+Thread}}
+\item 
+std\+::vector$<$ std\+::future$<$ void $>$ $>$ \mbox{\hyperlink{a01569_ad5eee64be8484cc83190fcb6cabcdf97}{\+\_\+futures}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01569_a1bf2f87af2996d500658225386cdbfeb}\label{a01569_a1bf2f87af2996d500658225386cdbfeb}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!SSAAx4Filter@{SSAAx4Filter}}
+\index{SSAAx4Filter@{SSAAx4Filter}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{SSAAx4Filter()}{SSAAx4Filter()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::\+SSAAx4\+Filter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01517}{Scenes\+::\+ISetting}} \&}]{config,  }\item[{\mbox{\hyperlink{a01365}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01569_ae3b5388bd81c8a07286febecd4797315}\label{a01569_ae3b5388bd81c8a07286febecd4797315}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!apply@{apply}}
+\index{apply@{apply}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01373}{Images\+::\+Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Apply the filter on an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & the image \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01361_a3db0669688266d28dfefd7e65fc6e5cf}{Ray\+Tracer\+::\+Filters\+::\+IFilter}}.
+
+\mbox{\Hypertarget{a01569_a8c53c391e3901a32d6b82c2fae2bc72a}\label{a01569_a8c53c391e3901a32d6b82c2fae2bc72a}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!getColorsMean@{getColorsMean}}
+\index{getColorsMean@{getColorsMean}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{getColorsMean()}{getColorsMean()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01369}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::get\+Colors\+Mean (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{a01369}{Images\+::\+Color}} $>$ \&}]{colors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Mean of the colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colors} & The colors to mean\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mean 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01569_a086f208ae32f1aeddf8fa3594458f8ab}\label{a01569_a086f208ae32f1aeddf8fa3594458f8ab}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!waitAllFinisehd@{waitAllFinisehd}}
+\index{waitAllFinisehd@{waitAllFinisehd}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{waitAllFinisehd()}{waitAllFinisehd()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::wait\+All\+Finisehd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wait all places in the vector of futures. 
+
+\mbox{\Hypertarget{a01569_a7ede4ae4b426a35305baed6a91af4af6}\label{a01569_a7ede4ae4b426a35305baed6a91af4af6}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!waitOnePlace@{waitOnePlace}}
+\index{waitOnePlace@{waitOnePlace}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{waitOnePlace()}{waitOnePlace()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::wait\+One\+Place (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wait one place in the vector of futures. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01569_ad5eee64be8484cc83190fcb6cabcdf97}\label{a01569_ad5eee64be8484cc83190fcb6cabcdf97}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!\_futures@{\_futures}}
+\index{\_futures@{\_futures}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{\_futures}{\_futures}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::future$<$void$>$ $>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::\+\_\+futures\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01569_a4b04f87e58a93120bb0cacf89a9ee6ee}\label{a01569_a4b04f87e58a93120bb0cacf89a9ee6ee}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01365}{ILogger}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01569_a4eafda71c1e352dac59133dc10898ec9}\label{a01569_a4eafda71c1e352dac59133dc10898ec9}} 
+\index{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}!\_maxThread@{\_maxThread}}
+\index{\_maxThread@{\_maxThread}!RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter@{RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter}}
+\doxysubsubsection{\texorpdfstring{\_maxThread}{\_maxThread}}
+{\footnotesize\ttfamily int Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Filter\+::\+\_\+max\+Thread\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Anti\+Aliasing/\+SSAAx4/\mbox{\hyperlink{a00263}{SSAAx4\+Filter.\+hpp}}\end{DoxyCompactItemize}

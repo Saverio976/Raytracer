@@ -1,9 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00101" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp</primary></indexterm>
-<programlisting>#include &quot;Transform/ITransform.hpp&quot;
-</programlisting>Include dependency graph for IEntity.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/ICamera.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/ICamera.hpp</primary></indexterm>
+<programlisting>#include &lt;cstddef&gt;
+#include &lt;list&gt;
+#include &quot;Transform/Vector2i.hpp&quot;
+#include &quot;IDisplayable.hpp&quot;
+#include &quot;Image.hpp&quot;
+#include &quot;IFilter.hpp&quot;
+#include &quot;ISceneState.hpp&quot;
+#include &quot;IEntity.hpp&quot;
+</programlisting>Include dependency graph for ICamera.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -24,18 +31,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01298">RayTracer::Entities::IEntity</link></para>
+            <listitem><para>class <link linkend="_a01297">RayTracer::Entities::ICamera</link></para>
 
-<para>The <link linkend="_a01298">IEntity</link> class. </para>
+<para>The <link linkend="_a01297">ICamera</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00407">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00410">RayTracer::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

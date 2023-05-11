@@ -1,4 +1,9 @@
-<map id="RayTracer::Entities::IPrimitive" name="RayTracer::Entities::IPrimitive">
-<area shape="rect" id="node1" title="The IPrimitive class." alt="" coords="5,189,155,340"/>
-<area shape="rect" id="node2" href="$a01298.html" title="The IEntity class." alt="" coords="9,5,151,141"/>
+<map id="RayTracer::Entities::IMaterial" name="RayTracer::Entities::IMaterial">
+<area shape="rect" id="node1" title="The IMaterial class." alt="" coords="623,5,773,141"/>
+<area shape="rect" id="node2" href="$a01625.html" title=" " alt="" coords="5,197,252,421"/>
+<area shape="rect" id="node3" href="$a01681.html" title=" " alt="" coords="277,189,447,428"/>
+<area shape="rect" id="node4" href="$a01685.html" title=" " alt="" coords="471,204,682,413"/>
+<area shape="rect" id="node5" href="$a01713.html" title=" " alt="" coords="706,189,933,428"/>
+<area shape="rect" id="node6" href="$a01745.html" title=" " alt="" coords="957,189,1167,428"/>
+<area shape="rect" id="node7" href="$a01761.html" title=" " alt="" coords="1191,197,1359,421"/>
 </map>

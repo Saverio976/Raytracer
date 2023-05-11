@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01381" xml:lang="en-US">
+<title>RayTracer::Images::ImagePipeLine Class Reference</title>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01381">ImagePipeLine</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ImagePipeLine.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Images::ImagePipeLine:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01379.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01381_1adcb8eb1f8760bd9a3763a446600b1cfc">ImagePipeLine</link> (<link linkend="_a01373">Image</link> &amp;image, const <link linkend="_a01505">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01513">Scenes::ISceneState</link> &amp;state, const <link linkend="_a01385">IRayIterator</link> &amp;rayIterrator)</para>
+
+<para><link linkend="_a01381">ImagePipeLine</link> constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01381_1a334f2fc98699d1ebf2aa03831fd579ba">generate</link> (<link linkend="_a01365">ILogger</link> &amp;logger, std::size_t maxThread=1, std::size_t cluster=1)</para>
+
+<para>Generate the image with entities displayable. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01381_1a1480abb46258a4827960dab3448b0041">apply</link> (<link linkend="_a01361">Filters::IFilter</link> &amp;filter)</para>
+
+<para>Apply the filter. </para>
+</listitem>
+            <listitem><para><link linkend="_a01381_1abde10b0d2bb72b27ea0f1e9a9a5ac03d">~ImagePipeLine</link> ()=default</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01373">Image</link> &amp; <link linkend="_a01381_1a75e82efc180d4205954c385f37c0e0d2">_image</link></para>
+</listitem>
+            <listitem><para>const <link linkend="_a01505">Scenes::IDisplayable</link> &amp; <link linkend="_a01381_1a87e2e909fbb996ef27981fbfe77c86cd">_displayable</link></para>
+</listitem>
+            <listitem><para>const <link linkend="_a01513">Scenes::ISceneState</link> &amp; <link linkend="_a01381_1a6981ce661854bc5314157aef96827e08">_state</link></para>
+</listitem>
+            <listitem><para>const <link linkend="_a01385">IRayIterator</link> &amp; <link linkend="_a01381_1ae95c9b067c79dd8ac453c4931c36bc4a">_rayIterrator</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01381">ImagePipeLine</link> class. </para>
+
+
+
+<para>class that represent pipeline modification on an image </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01381_1adcb8eb1f8760bd9a3763a446600b1cfc"/>    <section>
+    <title>ImagePipeLine()</title>
+<indexterm><primary>ImagePipeLine</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>ImagePipeLine</secondary></indexterm>
+<para><computeroutput>RayTracer::Images::ImagePipeLine::ImagePipeLine (<link linkend="_a01373">Image</link> &amp; image, const <link linkend="_a01505">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01513">Scenes::ISceneState</link> &amp; state, const <link linkend="_a01385">IRayIterator</link> &amp; rayIterrator)</computeroutput></para><para>
+
+<para><link linkend="_a01381">ImagePipeLine</link> constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>image</entry>
+                                <entry>
+<para>the image to modify </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable entities to render </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>state</entry>
+                                <entry>
+<para>the state (if cancel needed) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01381_1abde10b0d2bb72b27ea0f1e9a9a5ac03d"/>    <section>
+    <title>~ImagePipeLine()</title>
+<indexterm><primary>~ImagePipeLine</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>~ImagePipeLine</secondary></indexterm>
+<para><computeroutput>RayTracer::Images::ImagePipeLine::~ImagePipeLine ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01381_1a1480abb46258a4827960dab3448b0041"/>    <section>
+    <title>apply()</title>
+<indexterm><primary>apply</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>apply</secondary></indexterm>
+<para><computeroutput>void RayTracer::Images::ImagePipeLine::apply (<link linkend="_a01361">Filters::IFilter</link> &amp; filter)</computeroutput></para><para>
+
+<para>Apply the filter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filter</entry>
+                                <entry>
+<para>the filter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01381_1a334f2fc98699d1ebf2aa03831fd579ba"/>    <section>
+    <title>generate()</title>
+<indexterm><primary>generate</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>generate</secondary></indexterm>
+<para><computeroutput>void RayTracer::Images::ImagePipeLine::generate (<link linkend="_a01365">ILogger</link> &amp; logger, std::size_t maxThread = <computeroutput>1</computeroutput>
+, std::size_t cluster = <computeroutput>1</computeroutput>
+)</computeroutput></para><para>
+
+<para>Generate the image with entities displayable. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>maxThread</entry>
+                                <entry>
+<para>the max thread number to use </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cluster</entry>
+                                <entry>
+<para>the cluster number (1 ray represent <computeroutput>cluster</computeroutput> pixel) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01381_1a87e2e909fbb996ef27981fbfe77c86cd"/>    <section>
+    <title>_displayable</title>
+<indexterm><primary>_displayable</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>_displayable</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01505">Scenes::IDisplayable</link>&amp; RayTracer::Images::ImagePipeLine::_displayable<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01381_1a75e82efc180d4205954c385f37c0e0d2"/>    <section>
+    <title>_image</title>
+<indexterm><primary>_image</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>_image</secondary></indexterm>
+<para><computeroutput><link linkend="_a01373">Image</link>&amp; RayTracer::Images::ImagePipeLine::_image<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01381_1ae95c9b067c79dd8ac453c4931c36bc4a"/>    <section>
+    <title>_rayIterrator</title>
+<indexterm><primary>_rayIterrator</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>_rayIterrator</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01385">IRayIterator</link>&amp; RayTracer::Images::ImagePipeLine::_rayIterrator<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01381_1a6981ce661854bc5314157aef96827e08"/>    <section>
+    <title>_state</title>
+<indexterm><primary>_state</primary><secondary>RayTracer::Images::ImagePipeLine</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::ImagePipeLine</primary><secondary>_state</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01513">Scenes::ISceneState</link>&amp; RayTracer::Images::ImagePipeLine::_state<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Images/<link linkend="_a00161">ImagePipeLine.hpp</link></section>
+</section>

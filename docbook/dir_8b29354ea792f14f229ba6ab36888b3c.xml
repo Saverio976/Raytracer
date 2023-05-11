@@ -21,9 +21,9 @@ Directory dependency graph for Display:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00086">Display.hpp</link></para>
+            <listitem><para>file <link linkend="_a00089">Display.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00089">IDisplayModule.hpp</link></para>
+            <listitem><para>file <link linkend="_a00092">IDisplayModule.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

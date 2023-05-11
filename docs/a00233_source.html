@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,45 +67,58 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ISceneState.hpp</div>  </div>
+<div class="title">IDisplayable.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00233.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ISceneState.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IDisplayable.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ISCENESTATE_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ISCENESTATE_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IDISPLAYABLE_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IDISPLAYABLE_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00416.html">RayTracer::Scenes</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01510.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01510.html">ISceneState</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6">   23</a></span>&#160;            <span class="keyword">enum class</span> <a class="code" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RUNNING</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">CANCELLED</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">FINISHED</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            };</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01510.html#a2987cac49fef7a48b80aa2d1e4aa84da">   33</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> <a class="code" href="a01510.html#a2987cac49fef7a48b80aa2d1e4aa84da">getState</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01510.html#a9794d2a8b28b9753686931e78d5e315c">   39</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01510.html#a9794d2a8b28b9753686931e78d5e315c">changeState</a>(<span class="keyword">const</span> <a class="code" href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> &amp;state) = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00416_html"><div class="ttname"><a href="a00416.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
-<div class="ttc" id="aa01510_html"><div class="ttname"><a href="a01510.html">RayTracer::Scenes::ISceneState</a></div><div class="ttdoc">The SceneState interface.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:18</div></div>
-<div class="ttc" id="aa01510_html_a2987cac49fef7a48b80aa2d1e4aa84da"><div class="ttname"><a href="a01510.html#a2987cac49fef7a48b80aa2d1e4aa84da">RayTracer::Scenes::ISceneState::getState</a></div><div class="ttdeci">virtual States getState() const =0</div><div class="ttdoc">Get the state (thread safe)</div></div>
-<div class="ttc" id="aa01510_html_a3abb46616bc66e9744ad0bed1635afe6"><div class="ttname"><a href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6">RayTracer::Scenes::ISceneState::States</a></div><div class="ttdeci">States</div><div class="ttdoc">The States.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:23</div></div>
-<div class="ttc" id="aa01510_html_a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133"><div class="ttname"><a href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">RayTracer::Scenes::ISceneState::States::FINISHED</a></div><div class="ttdeci">@ FINISHED</div></div>
-<div class="ttc" id="aa01510_html_a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd"><div class="ttname"><a href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RayTracer::Scenes::ISceneState::States::RUNNING</a></div><div class="ttdeci">@ RUNNING</div></div>
-<div class="ttc" id="aa01510_html_a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"><div class="ttname"><a href="a01510.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">RayTracer::Scenes::ISceneState::States::CANCELLED</a></div><div class="ttdeci">@ CANCELLED</div></div>
-<div class="ttc" id="aa01510_html_a9794d2a8b28b9753686931e78d5e315c"><div class="ttname"><a href="a01510.html#a9794d2a8b28b9753686931e78d5e315c">RayTracer::Scenes::ISceneState::changeState</a></div><div class="ttdeci">virtual void changeState(const States &amp;state)=0</div><div class="ttdoc">Change the state (thread safe)</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00410.html">RayTracer::Entities</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">class </span>IPrimitive;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">class </span>ILight;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00419.html">RayTracer::Scenes</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01505.html">   25</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01505.html">IDisplayable</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01509.html">   30</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01509.html">IDisplayableException</a>: <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01509.html#a24eee56d94c2e71cd0c71aded2288396">   32</a></span>&#160;                    <span class="keyword">virtual</span> <a class="code" href="a01509.html#a24eee56d94c2e71cd0c71aded2288396">~IDisplayableException</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01509.html#a2f5f2c3dc457cb9db7b6f5d8df5f7f6e">   33</a></span>&#160;                    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01509.html#a2f5f2c3dc457cb9db7b6f5d8df5f7f6e">what</a>() <span class="keyword">const</span> throw() override = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            };</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01505.html#a617417eddf2ffcbdc09dbeece19aeaec">   40</a></span>&#160;            virtual const std::vector&lt;std::reference_wrapper&lt;Entities::ILight&gt;&gt; &amp;<a class="code" href="a01505.html#a617417eddf2ffcbdc09dbeece19aeaec">getLightList</a>() const = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01505.html#a34e70ed442d05131965b23354f145638">   46</a></span>&#160;            virtual std::vector&lt;std::reference_wrapper&lt;Entities::ILight&gt;&gt; &amp;<a class="code" href="a01505.html#a617417eddf2ffcbdc09dbeece19aeaec">getLightList</a>() = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01505.html#a4ad763383b511e1ff52f16a6cbf74bd5">   52</a></span>&#160;            virtual const std::vector&lt;std::reference_wrapper&lt;Entities::IPrimitive&gt;&gt; &amp;<a class="code" href="a01505.html#a4ad763383b511e1ff52f16a6cbf74bd5">getPrimitiveList</a>() const = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a01505.html#ad75904a51bdc0eab0d6ea7fe0c567e7a">   58</a></span>&#160;            virtual std::vector&lt;std::reference_wrapper&lt;Entities::IPrimitive&gt;&gt; &amp;<a class="code" href="a01505.html#a4ad763383b511e1ff52f16a6cbf74bd5">getPrimitiveList</a>() = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a01505.html#af511aa8520b8445d649edb3e10fadb62">   64</a></span>&#160;            virtual const Entities::ILight &amp;<a class="code" href="a01505.html#af511aa8520b8445d649edb3e10fadb62">getAmbientLight</a>() const = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a01505.html#a9e1ce230855d0adab38b44d70179f33b">   70</a></span>&#160;            virtual Entities::ILight &amp;<a class="code" href="a01505.html#af511aa8520b8445d649edb3e10fadb62">getAmbientLight</a>() = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*DISPLAYABLE_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00410_html"><div class="ttname"><a href="a00410.html">RayTracer::Entities</a></div><div class="ttdef"><b>Definition:</b> ICamera.hpp:19</div></div>
+<div class="ttc" id="aa00419_html"><div class="ttname"><a href="a00419.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
+<div class="ttc" id="aa01505_html"><div class="ttname"><a href="a01505.html">RayTracer::Scenes::IDisplayable</a></div><div class="ttdoc">The IDisplayable interface.</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:25</div></div>
+<div class="ttc" id="aa01505_html_a4ad763383b511e1ff52f16a6cbf74bd5"><div class="ttname"><a href="a01505.html#a4ad763383b511e1ff52f16a6cbf74bd5">RayTracer::Scenes::IDisplayable::getPrimitiveList</a></div><div class="ttdeci">virtual const std::vector&lt; std::reference_wrapper&lt; Entities::IPrimitive &gt; &gt; &amp; getPrimitiveList() const =0</div><div class="ttdoc">Get the primitive list (const)</div></div>
+<div class="ttc" id="aa01505_html_a617417eddf2ffcbdc09dbeece19aeaec"><div class="ttname"><a href="a01505.html#a617417eddf2ffcbdc09dbeece19aeaec">RayTracer::Scenes::IDisplayable::getLightList</a></div><div class="ttdeci">virtual const std::vector&lt; std::reference_wrapper&lt; Entities::ILight &gt; &gt; &amp; getLightList() const =0</div><div class="ttdoc">Get the light list (const)</div></div>
+<div class="ttc" id="aa01505_html_af511aa8520b8445d649edb3e10fadb62"><div class="ttname"><a href="a01505.html#af511aa8520b8445d649edb3e10fadb62">RayTracer::Scenes::IDisplayable::getAmbientLight</a></div><div class="ttdeci">virtual const Entities::ILight &amp; getAmbientLight() const =0</div><div class="ttdoc">Get the ambient light.</div></div>
+<div class="ttc" id="aa01509_html"><div class="ttname"><a href="a01509.html">RayTracer::Scenes::IDisplayable::IDisplayableException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:30</div></div>
+<div class="ttc" id="aa01509_html_a24eee56d94c2e71cd0c71aded2288396"><div class="ttname"><a href="a01509.html#a24eee56d94c2e71cd0c71aded2288396">RayTracer::Scenes::IDisplayable::IDisplayableException::~IDisplayableException</a></div><div class="ttdeci">virtual ~IDisplayableException()=default</div></div>
+<div class="ttc" id="aa01509_html_a2f5f2c3dc457cb9db7b6f5d8df5f7f6e"><div class="ttname"><a href="a01509.html#a2f5f2c3dc457cb9db7b6f5d8df5f7f6e">RayTracer::Scenes::IDisplayable::IDisplayableException::what</a></div><div class="ttdeci">virtual const char * what() const override=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:32:12 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

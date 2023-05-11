@@ -1,0 +1,82 @@
+\hypertarget{a01453}{}\doxysection{Ray\+Tracer\+::Plugins\+::Filters\+::IFilter\+Creator Class Reference}
+\label{a01453}\index{RayTracer::Plugins::Filters::IFilterCreator@{RayTracer::Plugins::Filters::IFilterCreator}}
+
+
+The \mbox{\hyperlink{a01453}{IFilter\+Creator}} class.  
+
+
+
+
+{\ttfamily \#include $<$IFilter\+Creator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+::Filters\+::IFilter\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01452}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+::Filters\+::IFilter\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{a01451}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01453_ab5c1f23072e4c526505de148c36d4ec5}{$\sim$\+IFilter\+Creator}} ()=default
+\item 
+virtual \mbox{\hyperlink{a01361}{Ray\+Tracer\+::\+Filters\+::\+IFilter}} $\ast$ \mbox{\hyperlink{a01453_af72d84e7508e57e56fef9f48753f571f}{create}} (const \mbox{\hyperlink{a01517}{Scenes\+::\+ISetting}} \&setting, \mbox{\hyperlink{a01365}{ILogger}} \&logger)=0
+\begin{DoxyCompactList}\small\item\em Create a filter with a setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01453}{IFilter\+Creator}} class. 
+
+class that represent a filter creator 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01453_ab5c1f23072e4c526505de148c36d4ec5}\label{a01453_ab5c1f23072e4c526505de148c36d4ec5}} 
+\index{RayTracer::Plugins::Filters::IFilterCreator@{RayTracer::Plugins::Filters::IFilterCreator}!````~IFilterCreator@{$\sim$IFilterCreator}}
+\index{````~IFilterCreator@{$\sim$IFilterCreator}!RayTracer::Plugins::Filters::IFilterCreator@{RayTracer::Plugins::Filters::IFilterCreator}}
+\doxysubsubsection{\texorpdfstring{$\sim$IFilterCreator()}{~IFilterCreator()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Plugins\+::\+Filters\+::\+IFilter\+Creator\+::$\sim$\+IFilter\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01453_af72d84e7508e57e56fef9f48753f571f}\label{a01453_af72d84e7508e57e56fef9f48753f571f}} 
+\index{RayTracer::Plugins::Filters::IFilterCreator@{RayTracer::Plugins::Filters::IFilterCreator}!create@{create}}
+\index{create@{create}!RayTracer::Plugins::Filters::IFilterCreator@{RayTracer::Plugins::Filters::IFilterCreator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01361}{Ray\+Tracer\+::\+Filters\+::\+IFilter}}$\ast$ Ray\+Tracer\+::\+Plugins\+::\+Filters\+::\+IFilter\+Creator\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01517}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01365}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a filter with a setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the filter 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01573_a8ff0bc4874fde1535f06f5e469762103}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Creator}}, and \mbox{\hyperlink{a01565_a126b9903c84dbeaf947155c00755e6f0}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Anti\+Aliasing\+::\+SSAAx4\+::\+SSAAx4\+Creator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Plugins/\+Filters/\mbox{\hyperlink{a00203}{IFilter\+Creator.\+hpp}}\end{DoxyCompactItemize}

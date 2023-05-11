@@ -1,0 +1,198 @@
+\hypertarget{a01713}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Refraction\+::Refraction\+Material Class Reference}
+\label{a01713}\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+
+
+{\ttfamily \#include $<$Refraction\+Material.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Refraction\+::Refraction\+Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{a01712}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Refraction\+::Refraction\+Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01711}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01713_a10f78d08b422ff7a622d8df82eb85081}{Refraction\+Material}} (const \mbox{\hyperlink{a01517}{Scenes\+::\+ISetting}} \&config)
+\item 
+\mbox{\hyperlink{a01369}{Images\+::\+Color}} \mbox{\hyperlink{a01713_aedf23f607ca1676c86f236499c3625e5}{get\+Color}} (const \mbox{\hyperlink{a01397}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01317}{Entities\+::\+Transform\+::\+ITransform}} \&center\+Obj, const \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect, const \mbox{\hyperlink{a01505}{Scenes\+::\+IDisplayable}} \&displayable) const final
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01713_a1ec5f965cf2e2a17f880867ed8a2ab92}{set\+Color}} (const \mbox{\hyperlink{a01369}{Images\+::\+Color}} \&color) final
+\begin{DoxyCompactList}\small\item\em Set the color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01369}{Images\+::\+Color}} \mbox{\hyperlink{a01713_a43c4d9b97c8b760011cd2259aa7ab4f7}{redirection\+Light}} (const \mbox{\hyperlink{a01397}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01505}{Scenes\+::\+IDisplayable}} \&displayable, const \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect) const final
+\begin{DoxyCompactList}\small\item\em this function is called when the object intercept the ray light \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01369}{Images\+::\+Color}} \mbox{\hyperlink{a01713_a54ba5acbfcc6d016b7133985e1c209e5}{get\+Next\+Color}} (const \mbox{\hyperlink{a01397}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect, const \mbox{\hyperlink{a01505}{Scenes\+::\+IDisplayable}} \&displayable) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01369}{Images\+::\+Color}} \mbox{\hyperlink{a01713_a08912b2ddff1d3835bf651b369af09b0}{\+\_\+color}}
+\item 
+\mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01713_a1a43d8c754868a11f968579d287d2cda}{\+\_\+ambient}}
+\item 
+\mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01713_a4240d73114e7cd9642eaefd6189aa91e}{\+\_\+diffuse}}
+\item 
+\mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01713_ae6463937a88e70d27d2a5fcc451e11b9}{\+\_\+specular}}
+\item 
+\mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01713_ae97cd7f4248a716717c42a99d96dac5c}{\+\_\+refraction}}
+\item 
+double \mbox{\hyperlink{a01713_ae3586a2ba77811a4185c1c82954b1bab}{\+\_\+shininess}}
+\item 
+double \mbox{\hyperlink{a01713_a67d31518c708de6b1313d5f22e33ac40}{\+\_\+transparency}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01713_a10f78d08b422ff7a622d8df82eb85081}\label{a01713_a10f78d08b422ff7a622d8df82eb85081}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!RefractionMaterial@{RefractionMaterial}}
+\index{RefractionMaterial@{RefractionMaterial}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{RefractionMaterial()}{RefractionMaterial()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+Refraction\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01517}{Scenes\+::\+ISetting}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01713_aedf23f607ca1676c86f236499c3625e5}\label{a01713_aedf23f607ca1676c86f236499c3625e5}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01369}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::get\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01397}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01317}{Entities\+::\+Transform\+::\+ITransform}} \&}]{center\+Obj,  }\item[{const \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect,  }\item[{const \mbox{\hyperlink{a01505}{Scenes\+::\+IDisplayable}} \&}]{displayable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center\+Obj} & the center of the object impacted \\
+\hline
+{\em intersect} & the intersection point on the object \\
+\hline
+{\em displayable} & the displayable objects\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01309_ace27fcd7ec81aa60ff66fc944042b0cb}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}.
+
+\mbox{\Hypertarget{a01713_a54ba5acbfcc6d016b7133985e1c209e5}\label{a01713_a54ba5acbfcc6d016b7133985e1c209e5}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!getNextColor@{getNextColor}}
+\index{getNextColor@{getNextColor}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{getNextColor()}{getNextColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01369}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::get\+Next\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01397}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect,  }\item[{const \mbox{\hyperlink{a01505}{Scenes\+::\+IDisplayable}} \&}]{displayable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_a43c4d9b97c8b760011cd2259aa7ab4f7}\label{a01713_a43c4d9b97c8b760011cd2259aa7ab4f7}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!redirectionLight@{redirectionLight}}
+\index{redirectionLight@{redirectionLight}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{redirectionLight()}{redirectionLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01369}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::redirection\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01397}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01505}{Scenes\+::\+IDisplayable}} \&}]{displayable,  }\item[{const \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+this function is called when the object intercept the ray light 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray between the light and the object \\
+\hline
+{\em displayable} & the displayable \\
+\hline
+{\em intersect} & the intersection point between this point and the ray\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color of the shadow 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01309_afcb781871a3292f695efc25f38e6d3ff}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}.
+
+\mbox{\Hypertarget{a01713_a1ec5f965cf2e2a17f880867ed8a2ab92}\label{a01713_a1ec5f965cf2e2a17f880867ed8a2ab92}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!setColor@{setColor}}
+\index{setColor@{setColor}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01369}{Images\+::\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Set the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & the color \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01309_a1d980e34030a879414065a9993f428b4}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01713_a1a43d8c754868a11f968579d287d2cda}\label{a01713_a1a43d8c754868a11f968579d287d2cda}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_ambient@{\_ambient}}
+\index{\_ambient@{\_ambient}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_ambient}{\_ambient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_a08912b2ddff1d3835bf651b369af09b0}\label{a01713_a08912b2ddff1d3835bf651b369af09b0}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_color@{\_color}}
+\index{\_color@{\_color}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_color}{\_color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01369}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_a4240d73114e7cd9642eaefd6189aa91e}\label{a01713_a4240d73114e7cd9642eaefd6189aa91e}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_diffuse@{\_diffuse}}
+\index{\_diffuse@{\_diffuse}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_diffuse}{\_diffuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_ae97cd7f4248a716717c42a99d96dac5c}\label{a01713_ae97cd7f4248a716717c42a99d96dac5c}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_refraction@{\_refraction}}
+\index{\_refraction@{\_refraction}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_refraction}{\_refraction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+refraction\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_ae3586a2ba77811a4185c1c82954b1bab}\label{a01713_ae3586a2ba77811a4185c1c82954b1bab}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_shininess@{\_shininess}}
+\index{\_shininess@{\_shininess}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_shininess}{\_shininess}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+shininess\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_ae6463937a88e70d27d2a5fcc451e11b9}\label{a01713_ae6463937a88e70d27d2a5fcc451e11b9}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_specular@{\_specular}}
+\index{\_specular@{\_specular}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_specular}{\_specular}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01329}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01713_a67d31518c708de6b1313d5f22e33ac40}\label{a01713_a67d31518c708de6b1313d5f22e33ac40}} 
+\index{RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}!\_transparency@{\_transparency}}
+\index{\_transparency@{\_transparency}!RayTracer::PluginsExt::Refraction::RefractionMaterial@{RayTracer::PluginsExt::Refraction::RefractionMaterial}}
+\doxysubsubsection{\texorpdfstring{\_transparency}{\_transparency}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Refraction\+::\+Refraction\+Material\+::\+\_\+transparency\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Refraction\+Material/\mbox{\hyperlink{a00365}{Refraction\+Material.\+hpp}}\end{DoxyCompactItemize}

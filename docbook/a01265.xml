@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01265" xml:lang="en-US">
+<title>RayTracer::Display::Display::StartFailed Class Reference</title>
+<indexterm><primary>RayTracer::Display::Display::StartFailed</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Display.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Display::Display::StartFailed:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01264.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Display::Display::StartFailed:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01263.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01265_1ab154ad33908e4d8a609a482e722ab580">StartFailed</link> (const std::string &amp;msg)</para>
+</listitem>
+            <listitem><para>virtual const char * <link linkend="_a01265_1a81903fea91ba60ce79ce7a92e6183025">what</link> () const  throw ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01265_1a018d234f3a3b999b72cacc355e43095b">_msg</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01265_1ab154ad33908e4d8a609a482e722ab580"/>    <section>
+    <title>StartFailed()</title>
+<indexterm><primary>StartFailed</primary><secondary>RayTracer::Display::Display::StartFailed</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display::StartFailed</primary><secondary>StartFailed</secondary></indexterm>
+<para><computeroutput>RayTracer::Display::Display::StartFailed::StartFailed (const std::string &amp; msg)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01265_1a81903fea91ba60ce79ce7a92e6183025"/>    <section>
+    <title>what()</title>
+<indexterm><primary>what</primary><secondary>RayTracer::Display::Display::StartFailed</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display::StartFailed</primary><secondary>what</secondary></indexterm>
+<para><computeroutput>virtual const char* RayTracer::Display::Display::StartFailed::what ( ) const throw ( ) <computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01265_1a018d234f3a3b999b72cacc355e43095b"/>    <section>
+    <title>_msg</title>
+<indexterm><primary>_msg</primary><secondary>RayTracer::Display::Display::StartFailed</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display::StartFailed</primary><secondary>_msg</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Display::Display::StartFailed::_msg<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Display/<link linkend="_a00089">Display.hpp</link></section>
+</section>

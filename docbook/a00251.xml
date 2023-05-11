@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00251" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp</primary></indexterm>
+<programlisting>#include &lt;libconfig.h++&gt;
 #include &lt;memory&gt;
-#include &quot;ILogger.hpp&quot;
-#include &quot;IEntityCreator.hpp&quot;
-#include &quot;AmbientLightEntity.hpp&quot;
-</programlisting>Include dependency graph for AmbientLightCreator.hpp:<para>
+#include &lt;exception&gt;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for SettingWrapper.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -16,21 +15,38 @@
         </mediaobject>
     </informalfigure>
 </para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00253.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01554">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</link></para>
+            <listitem><para>class <link linkend="_a01545">RayTracer::Scenes::SettingWrapper</link></para>
+
+<para>The <link linkend="_a01545">SettingWrapper</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01549">RayTracer::Scenes::SettingWrapper::ParsingException</link></para>
+
+<para>an exception for when the key is not found </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01553">RayTracer::Scenes::SettingWrapper::TypeException</link></para>
+
+<para>an exception for when the key is not found </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00408">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00417">RayTracer::PluginsExt</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00418">RayTracer::PluginsExt::AmbientLight</link></para>
+            <listitem><para> <link linkend="_a00419">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/ICamera.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,55 +67,74 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">IEntity.hpp</div>  </div>
+<div class="title">ICamera.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00101.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Entity.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ICamera.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ENTITY_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ENTITY_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">Transform/ITransform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00407.html">RayTracer::Entities</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01298.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01298.html">IEntity</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01298.html#ab003087623e47600c09a76ff8138d37b">   20</a></span>&#160;            <span class="keyword">enum class</span> <a class="code" href="a01298.html#ab003087623e47600c09a76ff8138d37b">Type</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <a class="code" href="a01298.html#ab003087623e47600c09a76ff8138d37ba9914a0ce04a7b7b6a8e39bec55064b82">Light</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <a class="code" href="a01298.html#ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b">Camera</a>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <a class="code" href="a01298.html#ab003087623e47600c09a76ff8138d37ba07ee3427562e4f1a5c9f2bfb17fd9eee">Primitive</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            };</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01298.html#a1f03c5b791fa1e32583ff42a6694468b">   25</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01298.html#a1f03c5b791fa1e32583ff42a6694468b">~IEntity</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01298.html#ac97ca7c49d7a87c00bf6a95ca227108a">   31</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01314.html">Transform::ITransform</a> &amp;<a class="code" href="a01298.html#ac97ca7c49d7a87c00bf6a95ca227108a">getTransform</a>() = 0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a01298.html#a703e6f7e78da30c2c7f4fecbe0bc580e">   37</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01314.html">Transform::ITransform</a> &amp;<a class="code" href="a01298.html#a703e6f7e78da30c2c7f4fecbe0bc580e">getTransform</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01298.html#a68374ef5e0932ab3b3dea57a87be156e">   43</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01298.html#ab003087623e47600c09a76ff8138d37b">Type</a> <a class="code" href="a01298.html#a68374ef5e0932ab3b3dea57a87be156e">getType</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ENTITY_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">ITransform.hpp</a></div></div>
-<div class="ttc" id="aa00407_html"><div class="ttname"><a href="a00407.html">RayTracer::Entities</a></div><div class="ttdef"><b>Definition:</b> ICamera.hpp:19</div></div>
-<div class="ttc" id="aa01298_html"><div class="ttname"><a href="a01298.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01298_html_a1f03c5b791fa1e32583ff42a6694468b"><div class="ttname"><a href="a01298.html#a1f03c5b791fa1e32583ff42a6694468b">RayTracer::Entities::IEntity::~IEntity</a></div><div class="ttdeci">virtual ~IEntity()=default</div></div>
-<div class="ttc" id="aa01298_html_a68374ef5e0932ab3b3dea57a87be156e"><div class="ttname"><a href="a01298.html#a68374ef5e0932ab3b3dea57a87be156e">RayTracer::Entities::IEntity::getType</a></div><div class="ttdeci">virtual Type getType() const =0</div><div class="ttdoc">Get the type (light, camera, primitive)</div></div>
-<div class="ttc" id="aa01298_html_a703e6f7e78da30c2c7f4fecbe0bc580e"><div class="ttname"><a href="a01298.html#a703e6f7e78da30c2c7f4fecbe0bc580e">RayTracer::Entities::IEntity::getTransform</a></div><div class="ttdeci">virtual const Transform::ITransform &amp; getTransform() const =0</div><div class="ttdoc">Get the transform (position, rotation, scale) (const)</div></div>
-<div class="ttc" id="aa01298_html_ab003087623e47600c09a76ff8138d37b"><div class="ttname"><a href="a01298.html#ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:20</div></div>
-<div class="ttc" id="aa01298_html_ab003087623e47600c09a76ff8138d37ba07ee3427562e4f1a5c9f2bfb17fd9eee"><div class="ttname"><a href="a01298.html#ab003087623e47600c09a76ff8138d37ba07ee3427562e4f1a5c9f2bfb17fd9eee">RayTracer::Entities::IEntity::Type::Primitive</a></div><div class="ttdeci">@ Primitive</div></div>
-<div class="ttc" id="aa01298_html_ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b"><div class="ttname"><a href="a01298.html#ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b">RayTracer::Entities::IEntity::Type::Camera</a></div><div class="ttdeci">@ Camera</div></div>
-<div class="ttc" id="aa01298_html_ab003087623e47600c09a76ff8138d37ba9914a0ce04a7b7b6a8e39bec55064b82"><div class="ttname"><a href="a01298.html#ab003087623e47600c09a76ff8138d37ba9914a0ce04a7b7b6a8e39bec55064b82">RayTracer::Entities::IEntity::Type::Light</a></div><div class="ttdeci">@ Light</div></div>
-<div class="ttc" id="aa01298_html_ac97ca7c49d7a87c00bf6a95ca227108a"><div class="ttname"><a href="a01298.html#ac97ca7c49d7a87c00bf6a95ca227108a">RayTracer::Entities::IEntity::getTransform</a></div><div class="ttdeci">virtual Transform::ITransform &amp; getTransform()=0</div><div class="ttdoc">Get the transform (position, rotation, scale)</div></div>
-<div class="ttc" id="aa01314_html"><div class="ttname"><a href="a01314.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ICAMERA_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ICAMERA_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Transform/Vector2i.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00233.html">IDisplayable.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00158.html">Image.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">IFilter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00236.html">ISceneState.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00104.html">IEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00410.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00410.html">RayTracer::Entities</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01297.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01297.html">ICamera</a> : <span class="keyword">public</span> <a class="code" href="a01301.html">IEntity</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01297.html#a4eb08fab65ef169cf8fa4e03065bc4cd">   28</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01297.html#a4eb08fab65ef169cf8fa4e03065bc4cd">~ICamera</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01297.html#a548bf7da2cf92f03d1b251fd46a63523">   34</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="a01297.html#a548bf7da2cf92f03d1b251fd46a63523">getFocal</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01297.html#ad636b677d2aa96af8d5bfb58fe6e4aec">   40</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01297.html#ad636b677d2aa96af8d5bfb58fe6e4aec">setFocal</a>(<span class="keywordtype">double</span> value) = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01297.html#a7d5f89da8b205c97855a25c99ed6ed2c">   46</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01297.html#a7d5f89da8b205c97855a25c99ed6ed2c">setSize</a>(<span class="keyword">const</span> <a class="code" href="a01325.html">Transform::Vector2i</a> &amp;vector) = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01297.html#a0fd939f947002d94158528cb916d2e62">   52</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01325.html">Transform::Vector2i</a> &amp;<a class="code" href="a01297.html#a0fd939f947002d94158528cb916d2e62">getSize</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a01297.html#a914fa640b82a3b050f5f3bc63dd07536">   61</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01373.html">Images::Image</a> &amp;<a class="code" href="a01297.html#a914fa640b82a3b050f5f3bc63dd07536">render</a>(<span class="keyword">const</span> <a class="code" href="a01505.html">Scenes::IDisplayable</a> &amp;displayable, <span class="keyword">const</span> <a class="code" href="a01513.html">Scenes::ISceneState</a> &amp;state) = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a01297.html#a72790d0c7c3b9f4ce87cbb57767448ec">   67</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01373.html">Images::Image</a> &amp;<a class="code" href="a01297.html#a72790d0c7c3b9f4ce87cbb57767448ec">getImage</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01297.html#a8c001d43360383cd0e530c785fa73099">   73</a></span>&#160;            <span class="keyword">virtual</span> std::list&lt;std::reference_wrapper&lt;Filters::IFilter&gt;&gt; &amp;<a class="code" href="a01297.html#a8c001d43360383cd0e530c785fa73099">getFilters</a>() = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="a01297.html#a9edc0c7053e4bcfbf649d8121c54cc1a">   79</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01297.html#a9edc0c7053e4bcfbf649d8121c54cc1a">setCluster</a>(std::size_t cluster) = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a01297.html#aab1a39d426743e4ea2765ef3155166ac">   83</a></span>&#160;            <span class="keyword">virtual</span> std::size_t <a class="code" href="a01297.html#aab1a39d426743e4ea2765ef3155166ac">getCluster</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ICAMERA_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">IEntity.hpp</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Vector2i.hpp</a></div></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">IFilter.hpp</a></div></div>
+<div class="ttc" id="aa00158_html"><div class="ttname"><a href="a00158.html">Image.hpp</a></div></div>
+<div class="ttc" id="aa00233_html"><div class="ttname"><a href="a00233.html">IDisplayable.hpp</a></div></div>
+<div class="ttc" id="aa00236_html"><div class="ttname"><a href="a00236.html">ISceneState.hpp</a></div></div>
+<div class="ttc" id="aa00410_html"><div class="ttname"><a href="a00410.html">RayTracer::Entities</a></div><div class="ttdef"><b>Definition:</b> ICamera.hpp:19</div></div>
+<div class="ttc" id="aa01297_html"><div class="ttname"><a href="a01297.html">RayTracer::Entities::ICamera</a></div><div class="ttdoc">The ICamera class.</div><div class="ttdef"><b>Definition:</b> ICamera.hpp:26</div></div>
+<div class="ttc" id="aa01297_html_a0fd939f947002d94158528cb916d2e62"><div class="ttname"><a href="a01297.html#a0fd939f947002d94158528cb916d2e62">RayTracer::Entities::ICamera::getSize</a></div><div class="ttdeci">virtual const Transform::Vector2i &amp; getSize() const =0</div><div class="ttdoc">Get the size (of the screen)</div></div>
+<div class="ttc" id="aa01297_html_a4eb08fab65ef169cf8fa4e03065bc4cd"><div class="ttname"><a href="a01297.html#a4eb08fab65ef169cf8fa4e03065bc4cd">RayTracer::Entities::ICamera::~ICamera</a></div><div class="ttdeci">virtual ~ICamera()=default</div></div>
+<div class="ttc" id="aa01297_html_a548bf7da2cf92f03d1b251fd46a63523"><div class="ttname"><a href="a01297.html#a548bf7da2cf92f03d1b251fd46a63523">RayTracer::Entities::ICamera::getFocal</a></div><div class="ttdeci">virtual double getFocal() const =0</div><div class="ttdoc">Get the focal (distance from the camera)</div></div>
+<div class="ttc" id="aa01297_html_a72790d0c7c3b9f4ce87cbb57767448ec"><div class="ttname"><a href="a01297.html#a72790d0c7c3b9f4ce87cbb57767448ec">RayTracer::Entities::ICamera::getImage</a></div><div class="ttdeci">virtual const Images::Image &amp; getImage() const =0</div><div class="ttdoc">Get the image (possible when rendering)</div></div>
+<div class="ttc" id="aa01297_html_a7d5f89da8b205c97855a25c99ed6ed2c"><div class="ttname"><a href="a01297.html#a7d5f89da8b205c97855a25c99ed6ed2c">RayTracer::Entities::ICamera::setSize</a></div><div class="ttdeci">virtual void setSize(const Transform::Vector2i &amp;vector)=0</div><div class="ttdoc">Set the size (of the screen)</div></div>
+<div class="ttc" id="aa01297_html_a8c001d43360383cd0e530c785fa73099"><div class="ttname"><a href="a01297.html#a8c001d43360383cd0e530c785fa73099">RayTracer::Entities::ICamera::getFilters</a></div><div class="ttdeci">virtual std::list&lt; std::reference_wrapper&lt; Filters::IFilter &gt; &gt; &amp; getFilters()=0</div><div class="ttdoc">Get the filters.</div></div>
+<div class="ttc" id="aa01297_html_a914fa640b82a3b050f5f3bc63dd07536"><div class="ttname"><a href="a01297.html#a914fa640b82a3b050f5f3bc63dd07536">RayTracer::Entities::ICamera::render</a></div><div class="ttdeci">virtual const Images::Image &amp; render(const Scenes::IDisplayable &amp;displayable, const Scenes::ISceneState &amp;state)=0</div><div class="ttdoc">Render an image.</div></div>
+<div class="ttc" id="aa01297_html_a9edc0c7053e4bcfbf649d8121c54cc1a"><div class="ttname"><a href="a01297.html#a9edc0c7053e4bcfbf649d8121c54cc1a">RayTracer::Entities::ICamera::setCluster</a></div><div class="ttdeci">virtual void setCluster(std::size_t cluster)=0</div><div class="ttdoc">Set the cluster (1 is more precision, +infini is less precision)</div></div>
+<div class="ttc" id="aa01297_html_aab1a39d426743e4ea2765ef3155166ac"><div class="ttname"><a href="a01297.html#aab1a39d426743e4ea2765ef3155166ac">RayTracer::Entities::ICamera::getCluster</a></div><div class="ttdeci">virtual std::size_t getCluster() const =0</div><div class="ttdoc">Get the cluster.</div></div>
+<div class="ttc" id="aa01297_html_ad636b677d2aa96af8d5bfb58fe6e4aec"><div class="ttname"><a href="a01297.html#ad636b677d2aa96af8d5bfb58fe6e4aec">RayTracer::Entities::ICamera::setFocal</a></div><div class="ttdeci">virtual void setFocal(double value)=0</div><div class="ttdoc">Set the focal (distance from the camera)</div></div>
+<div class="ttc" id="aa01301_html"><div class="ttname"><a href="a01301.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01325_html"><div class="ttname"><a href="a01325.html">RayTracer::Entities::Transform::Vector2i</a></div><div class="ttdoc">The Vector2i class.</div><div class="ttdef"><b>Definition:</b> Vector2i.hpp:20</div></div>
+<div class="ttc" id="aa01373_html"><div class="ttname"><a href="a01373.html">RayTracer::Images::Image</a></div><div class="ttdoc">The Image class.</div><div class="ttdef"><b>Definition:</b> Image.hpp:23</div></div>
+<div class="ttc" id="aa01505_html"><div class="ttname"><a href="a01505.html">RayTracer::Scenes::IDisplayable</a></div><div class="ttdoc">The IDisplayable interface.</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:25</div></div>
+<div class="ttc" id="aa01513_html"><div class="ttname"><a href="a01513.html">RayTracer::Scenes::ISceneState</a></div><div class="ttdoc">The SceneState interface.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:32:12 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 17:06:10 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

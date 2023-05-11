@@ -1,13 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00427" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Cylinder Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Cylinder</primary></indexterm>
+<title>RayTracer::PluginsExt::Camera::FullCustom Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Camera::FullCustom</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01634">CylinderCreator</link></para>
+            <listitem><para>class <link linkend="_a01605">CameraCustomCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01638">CylinderEntity</link></para>
+            <listitem><para>class <link linkend="_a01609">CameraCustomEntity</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01613">CustomRayIterator</link></para>
+
+<para>The <link linkend="_a01613">CustomRayIterator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,6 +1,4 @@
-<map id="RayTracer::Display::IDisplayModule::EventFailed" name="RayTracer::Display::IDisplayModule::EventFailed">
-<area shape="rect" id="node1" title="If the function event failed, but it can continue without being completed." alt="" coords="5,287,220,393"/>
-<area shape="rect" id="node2" title=" " alt="" coords="34,147,149,224"/>
-<area shape="rect" id="node3" title=" " alt="" coords="173,147,260,224"/>
-<area shape="rect" id="node4" title=" " alt="" coords="147,5,286,97"/>
+<map id="RayTracer::Display::IDisplayModule::EndFailed" name="RayTracer::Display::IDisplayModule::EndFailed">
+<area shape="rect" id="node1" title="If the function end failed, but it can continue without being completed." alt="" coords="5,131,207,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="49,5,163,83"/>
 </map>

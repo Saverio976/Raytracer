@@ -1,37 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00411" xml:lang="en-US">
-<title>RayTracer::Images Namespace Reference</title>
-<indexterm><primary>RayTracer::Images</primary></indexterm>
+<title>RayTracer::Entities::Transform Namespace Reference</title>
+<indexterm><primary>RayTracer::Entities::Transform</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01366">Color</link></para>
+            <listitem><para>class <link linkend="_a01317">ITransform</link></para>
 
-<para>The <link linkend="_a01366">Color</link> class. </para>
+<para>The <link linkend="_a01317">ITransform</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01370">Image</link></para>
+            <listitem><para>class <link linkend="_a01321">Transform</link></para>
 
-<para>The <link linkend="_a01370">Image</link> class. </para>
+<para>The <link linkend="_a01321">Transform</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01378">ImagePipeLine</link></para>
+            <listitem><para>class <link linkend="_a01325">Vector2i</link></para>
 
-<para>The <link linkend="_a01378">ImagePipeLine</link> class. </para>
+<para>The <link linkend="_a01325">Vector2i</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01382">IRayIterator</link></para>
+            <listitem><para>class <link linkend="_a01329">Vector3f</link></para>
 
-<para>The RayIterator class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01390">PixelThread</link></para>
-
-<para>The <link linkend="_a01390">PixelThread</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01394">Ray</link></para>
-
-<para>The <link linkend="_a01394">Ray</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01398">RayIterrator</link></para>
-
-<para>The <link linkend="_a01398">RayIterrator</link> class. </para>
+<para>The <link linkend="_a01329">Vector3f</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

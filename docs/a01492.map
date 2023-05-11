@@ -1,7 +1,4 @@
-<map id="RayTracer::Scenes::Displayable::DisplayableException" name="RayTracer::Scenes::Displayable::DisplayableException">
-<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="67,331,315,437"/>
-<area shape="rect" id="node2" href="$a01506.html" title="an exception for when the key is not found" alt="" coords="5,147,208,268"/>
-<area shape="rect" id="node3" title=" " alt="" coords="49,13,164,90"/>
-<area shape="rect" id="node4" title=" " alt="" coords="233,169,319,246"/>
-<area shape="rect" id="node5" title=" " alt="" coords="207,5,345,97"/>
+<map id="RayTracer::Scenes::Displayable" name="RayTracer::Scenes::Displayable">
+<area shape="rect" id="node1" title="The Displayable class." alt="" coords="5,219,160,399"/>
+<area shape="rect" id="node2" href="$a01505.html" title="The IDisplayable interface." alt="" coords="5,5,160,171"/>
 </map>

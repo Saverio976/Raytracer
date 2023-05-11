@@ -1,21 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00414" xml:lang="en-US">
-<title>RayTracer::Plugins::Filters Namespace Reference</title>
-<indexterm><primary>RayTracer::Plugins::Filters</primary></indexterm>
+<title>RayTracer::Images Namespace Reference</title>
+<indexterm><primary>RayTracer::Images</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01442">FilterHandler</link></para>
+            <listitem><para>class <link linkend="_a01369">Color</link></para>
 
-<para>The <link linkend="_a01442">FilterHandler</link>. </para>
+<para>The <link linkend="_a01369">Color</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01446">FilterLoader</link></para>
+            <listitem><para>class <link linkend="_a01373">Image</link></para>
 
-<para>The <link linkend="_a01446">FilterLoader</link>. </para>
+<para>The <link linkend="_a01373">Image</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01450">IFilterCreator</link></para>
+            <listitem><para>class <link linkend="_a01381">ImagePipeLine</link></para>
 
-<para>The <link linkend="_a01450">IFilterCreator</link> class. </para>
+<para>The <link linkend="_a01381">ImagePipeLine</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01385">IRayIterator</link></para>
+
+<para>The RayIterator class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01393">PixelThread</link></para>
+
+<para>The <link linkend="_a01393">PixelThread</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01397">Ray</link></para>
+
+<para>The <link linkend="_a01397">Ray</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01401">RayIterrator</link></para>
+
+<para>The <link linkend="_a01401">RayIterrator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -14,9 +14,9 @@ Directory dependency graph for ZebraMaterial:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00395">ZebraCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00398">ZebraCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00398">ZebraMaterial.hpp</link></para>
+            <listitem><para>file <link linkend="_a00401">ZebraMaterial.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

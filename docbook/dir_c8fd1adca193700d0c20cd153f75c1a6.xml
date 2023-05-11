@@ -14,9 +14,9 @@ Directory dependency graph for Cone:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00299">ConeCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00302">ConeCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00302">ConeEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00305">ConeEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
