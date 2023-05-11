@@ -19,6 +19,7 @@ target_include_directories(RefractionMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DI
 target_include_directories(TransparencyMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ChessBoardMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ZebraMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(MirrorMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(raytracer PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/MaterialLoader.cpp"
