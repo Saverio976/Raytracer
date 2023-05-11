@@ -22,7 +22,8 @@ namespace RayTracer::Scenes {
              */
             enum class States {
                 RUNNING,
-                CANCELLED
+                CANCELLED,
+                FINISHED
             };
             /**
              * @brief Get the state (thread safe)

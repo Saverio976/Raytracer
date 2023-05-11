@@ -8,6 +8,7 @@
 #include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Scene.hpp"
+#include "SceneState.hpp"
 #include <future>
 #include <string>
 
@@ -116,5 +117,15 @@ namespace RayTracer::Scenes {
         while (!this->isReady()) {
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
+    }
+
+    SceneState &Scene::getState()
+    {
+        return this->_state;
+    }
+
+    const SceneState &Scene::getState() const
+    {
+        return this->_state;
     }
 }

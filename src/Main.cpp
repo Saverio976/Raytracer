@@ -11,6 +11,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <csignal>
 #include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Logger.hpp"
@@ -19,6 +20,7 @@
 #include "SceneLoader.hpp"
 #include "Parameters.hpp"
 #include "Display.hpp"
+#include "SceneState.hpp"
 
 namespace RayTracer {
     static const std::vector<std::string> mainHelpHeader = {
@@ -39,6 +41,38 @@ namespace RayTracer {
 "`---'      `--`---'        \\  ' ;                   `--`---'     `----'    `----'            ",
 "                            `--`                                                             "
     };
+
+    // -----------------------------------------------------------------------
+    // Main::MainError
+    // -----------------------------------------------------------------------
+
+    Main::MainError::MainError(const std::string &message):
+        _message(message)
+    {
+    }
+
+    const char *Main::MainError::what() const noexcept
+    {
+        return _message.c_str();
+    }
+
+    // -----------------------------------------------------------------------
+    // Main::ArgumentError
+    // -----------------------------------------------------------------------
+
+    Main::ArgumentError::ArgumentError(const std::string &message):
+        _message(message)
+    {
+    }
+
+    const char *Main::ArgumentError::what() const noexcept
+    {
+        return _message.c_str();
+    }
+
+    // -----------------------------------------------------------------------
+    // Main
+    // -----------------------------------------------------------------------
 
     Main::Main(ILogger &logger):
         _logger(logger),
@@ -88,7 +122,8 @@ namespace RayTracer {
     void Main::run()
     {
         Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
-        bool isGui = Parameters::getInstance().getString("display-mode") == "gui"; // TODO: Faire le mode displayMode
+        bool isGui = Parameters::getInstance().getString("display-mode") == "gui";
+        bool isCtrlC = false;
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting, "onChange");
@@ -109,15 +144,23 @@ namespace RayTracer {
             Display::Display display(this->_logger, this->_scene, loader);
             display.start();
         } else {
+            std::signal(SIGINT, catch_sigint);
             while (!_scene.isReady()) {
-            std::this_thread::sleep_for(std::chrono::seconds(5));
-            try {
-                loader.update();
-            } catch (const std::exception &e) {
-                std::string message = e.what();
-                _logger.warn(message + ": Waiting 5 more seconds (unlimited times)");
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+                if (isCtrlC) {
+                    continue;
+                }
+                try {
+                    Parameters::getInstance().getInt("signal");
+                    this->_scene.cancel();
+                    isCtrlC = true;
+                } catch (const Parameters::KeyNotFoundError &e) {}
+                try {
+                    loader.update();
+                } catch (const std::exception &e) {
+                    _logger.warn(std::string(e.what()) + ": Waiting 5 more seconds (unlimited times)");
+                }
             }
-        }
         }
     }
 
@@ -126,6 +169,9 @@ namespace RayTracer {
         int i = 0;
         std::vector<std::future<void>> futures;
 
+        if (_scene.getState().getState() != Scenes::SceneState::States::FINISHED) {
+            return;
+        }
         for (const auto &camera : _scene.getCameras()) {
             futures.push_back(std::async(std::launch::async, [camera, baseFilePath, i, this]() {
                 _logger.info("Exporting camera index " + std::to_string(i) + "...");
@@ -192,36 +238,19 @@ namespace RayTracer {
             return 0;
         }
         run();
+        if (this->_scene.getState().getState() == Scenes::SceneState::States::CANCELLED) {
+            throw MainError("Cancelled..");
+        }
         exportScene(_baseFilePath);
         return 0;
     }
+}
 
-    // -----------------------------------------------------------------------
-    // Main::MainError
-    // -----------------------------------------------------------------------
-
-    Main::MainError::MainError(const std::string &message):
-        _message(message)
+extern "C" {
+    void catch_sigint(int sig)
     {
-    }
-
-    const char *Main::MainError::what() const noexcept
-    {
-        return _message.c_str();
-    }
-
-    // -----------------------------------------------------------------------
-    // Main::ArgumentError
-    // -----------------------------------------------------------------------
-
-    Main::ArgumentError::ArgumentError(const std::string &message):
-        _message(message)
-    {
-    }
-
-    const char *Main::ArgumentError::what() const noexcept
-    {
-        return _message.c_str();
+        RayTracer::Parameters::getInstance().set("signal", sig);
+        std::signal(SIGINT, SIG_DFL);
     }
 }
 
