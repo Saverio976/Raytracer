@@ -28,19 +28,16 @@ namespace RayTracer {
 
     bool Main::parseCmdArgs(int argc, char **argv)
     {
-        std::string isHelp;
-        int logLevel = 0;
-
         Parameters::getInstance().parseCmdArgs(argc, argv);
-        try {
-            isHelp = Parameters::getInstance().getString("help");
-            if (isHelp == "true" || isHelp == "") {
-                help();
-                return false;
-            } else {
-                throw ArgumentError("bad argument:: --help");
-            }
-        } catch (const Parameters::KeyNotFoundError &e) { }
+        Parameters::getInstance().setIfNotExists("help", "false");
+        if (Parameters::getInstance().getString("help") == "") {
+            this->help();
+            return false;
+        }
+        Parameters::getInstance().setIfNotExists("EntitiesSO", "./plugins/Entities");
+        Parameters::getInstance().setIfNotExists("FiltersSO", "./plugins/Filters");
+        Parameters::getInstance().setIfNotExists("MaterialsSO", "./plugins/Materials");
+        Parameters::getInstance().setIfNotExists("log-level", 3);
         try {
             _sceneConfFilePath = Parameters::getInstance().getString("scene-path");
         } catch (const Parameters::KeyNotFoundError &e) {
@@ -52,15 +49,9 @@ namespace RayTracer {
             throw ArgumentError("missing argument:: --output-path <path>");
         }
         try {
-            logLevel = Parameters::getInstance().getInt("log-level");
-        } catch (const Parameters::KeyNotFoundError &e) {
-            Parameters::getInstance().set("log-level", 3);
-        }
-        try {
             Scenes::SceneLoader::checkGoodFile(_sceneConfFilePath);
         } catch (const Scenes::SceneLoader::BadFileError &e) {
-            std::string message = e.what();
-            throw ArgumentError("bad argument:: --scene-path <path>:: " + message);
+            throw ArgumentError("bad argument:: --scene-path <path>:: " + std::string(e.what()));
         }
         _logger.trace("Finishing Parsing Command Arguments");
         return true;

@@ -15,7 +15,7 @@ add_library(Sphere SHARED)
 set_target_properties(Sphere PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Sphere PROPERTIES
@@ -29,7 +29,7 @@ add_library(Camera SHARED)
 set_target_properties(Camera PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Camera PROPERTIES
@@ -43,7 +43,7 @@ add_library(CameraCustom SHARED)
 set_target_properties(CameraCustom PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(CameraCustom PROPERTIES
@@ -57,7 +57,7 @@ add_library(CameraCluster SHARED)
 set_target_properties(CameraCluster PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(CameraCluster PROPERTIES
@@ -71,7 +71,7 @@ add_library(AmbientLight SHARED)
 set_target_properties(AmbientLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(AmbientLight PROPERTIES
@@ -85,7 +85,7 @@ add_library(Plane SHARED)
 set_target_properties(Plane PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Plane PROPERTIES
@@ -99,7 +99,7 @@ add_library(LimitedPlane SHARED)
 set_target_properties(LimitedPlane PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(LimitedPlane PROPERTIES
@@ -113,7 +113,7 @@ add_library(Disk SHARED)
 set_target_properties(Disk PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Disk PROPERTIES
@@ -127,7 +127,7 @@ add_library(Cone SHARED)
 set_target_properties(Cone PROPERTIES
         CXX_STANDARD 20
         PREFIX ""
-        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Cone PROPERTIES
@@ -141,7 +141,7 @@ add_library(LimitedCone SHARED)
 set_target_properties(LimitedCone PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(LimitedCone PROPERTIES
@@ -155,7 +155,7 @@ add_library(PointLight SHARED)
 set_target_properties(PointLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(PointLight PROPERTIES
@@ -169,7 +169,7 @@ add_library(SpotLight SHARED)
 set_target_properties(SpotLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(SpotLight PROPERTIES
@@ -183,7 +183,7 @@ add_library(Cylinder SHARED)
 set_target_properties(Cylinder PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Cylinder PROPERTIES
@@ -197,7 +197,7 @@ add_library(LimitedCylinder SHARED)
 set_target_properties(LimitedCylinder PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(LimitedCylinder PROPERTIES
@@ -211,7 +211,7 @@ add_library(Triangle SHARED)
 set_target_properties(Triangle PROPERTIES
         CXX_STANDARD 20
         PREFIX ""
-        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
         )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Triangle PROPERTIES
@@ -225,7 +225,7 @@ add_library(SSAAx4 SHARED)
 set_target_properties(SSAAx4 PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/FiltersPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Filters"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(SSAAx4 PROPERTIES
@@ -239,7 +239,7 @@ add_library(PlainMaterial SHARED)
 set_target_properties(PlainMaterial PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(PlainMaterial PROPERTIES
@@ -252,7 +252,7 @@ add_library(ChessBoardMaterial SHARED)
 set_target_properties(ChessBoardMaterial PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(ChessBoardMaterial PROPERTIES
@@ -265,7 +265,7 @@ add_library(ZebraMaterial SHARED)
 set_target_properties(ZebraMaterial PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(ZebraMaterial PROPERTIES
