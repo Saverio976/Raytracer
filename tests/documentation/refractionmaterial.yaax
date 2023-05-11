@@ -1,0 +1,172 @@
+# Configuration des cameras
+cameras:
+{
+    CameraCluster: (
+        {
+            screenSize = {x: 500; y = 500;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 90.0; y = 90.0; z = 0.0;};
+            };
+            maxThreads = 1;
+            cluster = 1,
+            distanceFromScreen = 200.0;
+            filters = {
+                SSAAx4: (
+                    {
+                        maxThreads = -1
+                    }
+                )
+            }
+        }
+    );
+};
+
+# Les objets de la scene
+primitives :
+{
+    # List of spheres
+    Sphere = (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                shininess = 1.0;
+                color = {r = 222.0; g = 102.0; b = 97.0; a = 25.0;};
+                type = "PlainMaterial";
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        },
+        {
+            radius = 50.0;
+            transform = {
+                position = {x = 15.0; y = 100.0; z = 50.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                shininess = 1.0;
+                color = {r = 50.0; g = 50.0; b = 50.0; a = 10.0;};
+                type = "PlainMaterial";
+                transparency = 50.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        }
+    );
+    LimitedPlane = (
+        {
+            transform = {
+                position = {x = -30.0; y = 25.0; z = -15.0;};
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            size = {x = 100; y = 150;};
+            material = {
+                # Taux d'éblouissement de la lumière
+                shininess = 1.0;
+                # Couleur du materiel
+                color = {r = 50.0; g = 50.0; b = 0.0; a = 50.0;};
+                # Type de materiel
+                type = "RefractionMaterial";
+                # Transparence (de 0 à 255)
+                # 0 = invisible
+                # 255 = opaque
+                transparency = 25.0;
+                # Refraction [x=0.0, y=0.0, z=0.0] correspond à un plan transparent
+                # Vecteur ajouté à la normal de l'object
+                refraction = {x = 0.5; y = 0.7; z = -0.2};
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        }
+    );
+    Plane = (
+        {
+            transform = {
+                position = {x = 0.0; y = 150.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            size = {x = 50.0; y = 50.0; z = 0.0;};
+            material = {
+                shininess = 1.0;
+                color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
+                type = "PlainMaterial";
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        },
+        {
+            transform = {
+                position = {x = 0.0; y = 10.0; z = -100.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            size = {x = 1000.0; y = 500.0; z = 500.0;};
+            material = {
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                type = "PlainMaterial";
+            };
+        }
+    );
+};
+
+# Configuration de la lumière
+lights :
+{
+    # Point de lumière (une lampe par example)
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
