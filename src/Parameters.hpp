@@ -74,6 +74,13 @@ namespace RayTracer {
              */
             void set(const std::string &key, int value);
             /**
+             * @brief Set config key value if not exists
+             *
+             * @param key the key
+             * @param value the value
+             */
+            void setIfNotExists(const std::string &key, int value);
+            /**
              * @brief Set config key value as double
              *
              * @param key the key
@@ -81,12 +88,26 @@ namespace RayTracer {
              */
             void set(const std::string &key, double value);
             /**
+             * @brief Set config key value if not exists
+             *
+             * @param key the key
+             * @param value the value
+             */
+            void setIfNotExists(const std::string &key, double value);
+            /**
              * @brief Set config key value as string
              *
              * @param key the key
              * @param value the value
              */
             void set(const std::string &key, const std::string &value);
+            /**
+             * @brief Set config key value if not exists
+             *
+             * @param key the key
+             * @param value the value
+             */
+            void setIfNotExists(const std::string &key, const std::string &value);
 
         protected:
             Parameters();

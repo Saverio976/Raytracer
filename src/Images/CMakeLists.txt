@@ -14,6 +14,7 @@ target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Triangle PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Torus PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(TransparencyMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -105,6 +106,11 @@ target_sources(Cone PRIVATE
 )
 
 target_sources(LimitedCone PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+)
+
+target_sources(Torus PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
 )
