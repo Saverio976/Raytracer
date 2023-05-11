@@ -17,6 +17,7 @@ target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}"
 target_include_directories(Torus PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(RefractionMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(TransparencyMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ChessBoardMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ZebraMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -138,6 +139,11 @@ target_sources(PlainMaterial PRIVATE
 )
 
 target_sources(TransparencyMaterial PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_ray>
+    $<TARGET_OBJECTS:ray_image_pixelthread>
+)
+target_sources(RefractionMaterial PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_ray>
     $<TARGET_OBJECTS:ray_image_pixelthread>
