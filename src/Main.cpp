@@ -18,8 +18,28 @@
 #include "Scene.hpp"
 #include "SceneLoader.hpp"
 #include "Parameters.hpp"
+#include "Display.hpp"
 
 namespace RayTracer {
+    static const std::vector<std::string> mainHelpHeader = {
+"                                        ,----,                                               ",
+"                                      ,/   .`|                                               ",
+",-.----.                            ,`   .'  :                                               ",
+"\\    /  \\                         ;    ;     /                                               ",
+";   :    \\                      .'___,/    ,' __  ,-.                                __  ,-. ",
+"|   | .\\ :                      |    :     |,' ,'/ /|                              ,' ,'/ /| ",
+".   : |: |   ,--.--.        .--,;    |.';  ;'  | |' | ,--.--.     ,---.     ,---.  '  | |' | ",
+"|   |  \\ :  /       \\     /_ ./|`----'  |  ||  |   ,'/       \\   /     \\   /     \\ |  |   ,' ",
+"|   : .  / .--.  .-. | , ' , ' :    '   :  ;'  :  / .--.  .-. | /    / '  /    /  |'  :  /   ",
+";   | |  \\  \\__\\/: . ./___/ \\: |    |   |  '|  | '   \\__\\/: . ..    ' /  .    ' / ||  | '    ",
+"|   | ;\\  \\ ,\" .--.; | .  \\  ' |    '   :  |;  : |   ,\" .--.; |'   ; :__ '   ;   /|;  : |    ",
+":   ' | \\.'/  /  ,.  |  \\  ;   :    ;   |.' |  , ;  /  /  ,.  |'   | '.'|'   |  / ||  , ;    ",
+":   : :-' ;  :   .'   \\  \\  \\  ;    '---'    ---'  ;  :   .'   \\   :    :|   :    | ---'     ",
+"|   |.'   |  ,     .-./   :  \\  \\                  |  ,     .-./\\   \\  /  \\   \\  /           ",
+"`---'      `--`---'        \\  ' ;                   `--`---'     `----'    `----'            ",
+"                            `--`                                                             "
+    };
+
     Main::Main(ILogger &logger):
         _logger(logger),
         _scene(logger)
@@ -28,19 +48,24 @@ namespace RayTracer {
 
     bool Main::parseCmdArgs(int argc, char **argv)
     {
-        std::string isHelp;
-        int logLevel = 0;
-
         Parameters::getInstance().parseCmdArgs(argc, argv);
+        Parameters::getInstance().setIfNotExists("help", "false");
+        if (Parameters::getInstance().getString("help") == "") {
+            this->help();
+            return false;
+        }
+        Parameters::getInstance().setIfNotExists("EntitiesSO", "./plugins/Entities");
+        Parameters::getInstance().setIfNotExists("FiltersSO", "./plugins/Filters");
+        Parameters::getInstance().setIfNotExists("MaterialsSO", "./plugins/Materials");
+        Parameters::getInstance().setIfNotExists("log-level", 3);
         try {
-            isHelp = Parameters::getInstance().getString("help");
-            if (isHelp == "true" || isHelp == "") {
-                help();
-                return false;
-            } else {
-                throw ArgumentError("bad argument:: --help");
-            }
-        } catch (const Parameters::KeyNotFoundError &e) { }
+            Parameters::getInstance().getString("gui");
+            Parameters::getInstance().set("display-mode", "gui");
+        } catch (const Parameters::KeyNotFoundError &e) {
+            Parameters::getInstance().set("display-mode", "console");
+        }
+        Parameters::getInstance().setIfNotExists("display-mode", "console");
+        Parameters::getInstance().setIfNotExists("font-path", "./Assets/arial.ttf");
         try {
             _sceneConfFilePath = Parameters::getInstance().getString("scene-path");
         } catch (const Parameters::KeyNotFoundError &e) {
@@ -52,15 +77,9 @@ namespace RayTracer {
             throw ArgumentError("missing argument:: --output-path <path>");
         }
         try {
-            logLevel = Parameters::getInstance().getInt("log-level");
-        } catch (const Parameters::KeyNotFoundError &e) {
-            Parameters::getInstance().set("log-level", 3);
-        }
-        try {
             Scenes::SceneLoader::checkGoodFile(_sceneConfFilePath);
         } catch (const Scenes::SceneLoader::BadFileError &e) {
-            std::string message = e.what();
-            throw ArgumentError("bad argument:: --scene-path <path>:: " + message);
+            throw ArgumentError("bad argument:: --scene-path <path>:: " + std::string(e.what()));
         }
         _logger.trace("Finishing Parsing Command Arguments");
         return true;
@@ -69,6 +88,7 @@ namespace RayTracer {
     void Main::run()
     {
         Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
+        bool isGui = Parameters::getInstance().getString("display-mode") == "gui"; // TODO: Faire le mode displayMode
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting, "onChange");
@@ -85,7 +105,11 @@ namespace RayTracer {
             _logger.fatal("Loader/Render error:: " + message);
             throw MainError("Loader/Render error:: " + message);
         }
-        while (!_scene.isReady()) {
+        if (isGui) {
+            Display::Display display(this->_logger, this->_scene, loader);
+            display.start();
+        } else {
+            while (!_scene.isReady()) {
             std::this_thread::sleep_for(std::chrono::seconds(5));
             try {
                 loader.update();
@@ -93,6 +117,7 @@ namespace RayTracer {
                 std::string message = e.what();
                 _logger.warn(message + ": Waiting 5 more seconds (unlimited times)");
             }
+        }
         }
     }
 
@@ -123,16 +148,32 @@ namespace RayTracer {
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>]" << std::endl;
-        std::cout << "USAGE: ./raytracer --help" << std::endl;
+        for (const auto &line : mainHelpHeader) {
+            std::cout << line << std::endl;
+        }
+        std::cout << "__USAGE__:" << std::endl;
+        std::cout << "\t./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui] [--font-path <font file>]" << std::endl;
+        std::cout << "\t./raytracer --help" << std::endl;
         std::cout << std::endl;
-        std::cout << "OPTIONS:" << std::endl;
-        std::cout << "\t--scene-path <scene-conf.yaax>\tpath to scene config" << std::endl;
-        std::cout << "\t--output-path <file>\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
-        std::cout << "\t--help\tto display the help message" << std::endl;
-        std::cout << "\t--log-level <int>\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
+        std::cout << "__OPTIONS__:" << std::endl;
+        std::cout << "\t--scene-path <scene-conf.yaax> path to scene config" << std::endl;
+        std::cout << "\t--output-path <file>           path to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << "\t--help                         to display the help message" << std::endl;
+        std::cout << "\t--log-level <int>              log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
+        std::cout << "\t--gui                          to display the images in GUI mode" << std::endl;
+        std::cout << "\t--font-path <font file>        path to font file [./Assets/arial.ttf by default]" << std::endl;
         std::cout << std::endl;
-        std::cout << "CREDITS:" << std::endl;
+        std::cout << "__IN WINDOW__:" << std::endl;
+        std::cout << "\tZ                              : go forward to exit" << std::endl;
+        std::cout << "\tQ                              : go left" << std::endl;
+        std::cout << "\tS                              : go backward to exit" << std::endl;
+        std::cout << "\tD                              : go right" << std::endl;
+        std::cout << "\tSpace                          : go up" << std::endl;
+        std::cout << "\tLeft Shift                     : go down" << std::endl;
+        std::cout << "\tLeft Arrow                     : go previous camera" << std::endl;
+        std::cout << "\tRight Arrow                    : go next camera" << std::endl;
+        std::cout << std::endl;
+        std::cout << "__CREDITS__:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
         std::cout << "\tRepository: https://github.com/Saverio976/Raytracer" << std::endl;
     }

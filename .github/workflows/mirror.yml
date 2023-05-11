@@ -24,12 +24,9 @@ jobs:
         timeout 2m cmake .. || exit 2
         timeout 2m make || exit 3
 
-    - name: check binary
+    - name: check exec
       run: |
-        cd build || exit 1
-        if [[ ! -f $BINARY ]]; then
-          echo "::error title=Executable not found::$BINARY"
-        fi
+        find tests/documentation -type f -name '*.yaax' -exec ./raytracer --scene-path {} --output-path testit \;
 
   publish:
     needs: [compil]

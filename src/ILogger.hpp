@@ -8,7 +8,8 @@
 #ifndef RAYILOGGER_HPP
     #define RAYILOGGER_HPP
 
-    #include <string>
+    #include <functional>
+#include <string>
 
 namespace RayTracer {
     /**
@@ -89,6 +90,21 @@ namespace RayTracer {
              * @param message the message
              */
             virtual void trace(const std::string &message) = 0;
+            /**
+             * @brief Logger subscribe
+             *
+             * @param type the type to subscribe for
+             * @param name the name
+             * @param callback the callback
+             */
+            virtual void subscribeCallback(int type, const std::string &name, std::function<void(const std::string &)> callback) = 0;
+            /**
+             * @brief Logger remove callback
+             *
+             * @param type the type
+             * @param name the name
+             */
+            virtual void unsubscribeCallback(int type, const std::string &name) = 0;
     };
 }
 

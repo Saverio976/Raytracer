@@ -7,6 +7,7 @@
 
 #include <filesystem>
 #include <fstream>
+#include "Parameters.hpp"
 #include "SceneLoader.hpp"
 #include "ILogger.hpp"
 #include "Logger.hpp"
@@ -17,10 +18,10 @@ namespace RayTracer::Scenes {
         _logger(logger)
     {
         SceneLoader::checkGoodFile(filePath);
-        _configWrapper = std::make_unique<ConfigWrapper>();
-        _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>("./EntitiesPlugins"); // TODO: use parameters path
-        _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>("./FiltersPlugins"); // TODO: use parameters path
-        _materialLoader = std::make_unique<Plugins::Materials::MaterialLoader>("./MaterialsPlugins"); // TODO: use parameters path
+        _configWrapper = std::make_unique<ConfigWrapper>(_logger);
+        _entityLoader = std::make_unique<Plugins::Entities::EntityLoader>(Parameters::getInstance().getString("EntitiesSO"));
+        _filterLoader = std::make_unique<Plugins::Filters::FilterLoader>(Parameters::getInstance().getString("FiltersSO"));
+        _materialLoader = std::make_unique<Plugins::Materials::MaterialLoader>(Parameters::getInstance().getString("MaterialsSO"));
     };
 
     void SceneLoader::subscribe(const std::string &event, std::function<void(const ISetting &)> func) {

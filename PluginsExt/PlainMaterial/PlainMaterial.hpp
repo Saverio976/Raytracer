@@ -28,6 +28,9 @@ namespace RayTracer::PluginsExt::PlainMaterial {
             Images::Color round(const Images::Color &color) const;
         private:
             Images::Color _color;
+            Entities::Transform::Vector3f _ambient;
+            Entities::Transform::Vector3f _diffuse;
+            Entities::Transform::Vector3f _specular;
             double _shininess;
     };
 }

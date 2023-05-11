@@ -21,7 +21,7 @@ namespace RayTracer {
         catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
-        Logger::print("FATAL", message);
+        Logger::print(0, "FATAL", message);
     }
 
     void Logger::error(const std::string &message)
@@ -33,7 +33,7 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
-        Logger::print("ERROR", message);
+        Logger::print(1, "ERROR", message);
     }
 
     void Logger::warn(const std::string &message)
@@ -45,7 +45,7 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
-        Logger::print("WARN", message);
+        Logger::print(2, "WARN", message);
     }
 
     void Logger::info(const std::string &message)
@@ -57,7 +57,7 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
-        Logger::print("INFO", message);
+        Logger::print(3, "INFO", message);
     }
 
     void Logger::debug(const std::string &message)
@@ -72,7 +72,7 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
-        Logger::print("DEBUG", message);
+        Logger::print(4, "DEBUG", message);
 #endif
     }
 
@@ -88,20 +88,47 @@ namespace RayTracer {
         } catch (const Parameters::KeyNotFoundError &e) {
             return;
         }
-        Logger::print("TRACE", message);
+        Logger::print(5, "TRACE", message);
 #endif
     }
 
-    void Logger::print(const std::string &level, const std::string &message)
+    void Logger::print(int levelT, const std::string &level, const std::string &message)
     {
         std::time_t rawtime;
         struct tm *timeinfo;
         std::string time;
+        std::string mes;
+        auto it = _callbacks.find(levelT);
 
         std::time(&rawtime);
         timeinfo = std::localtime(&rawtime);
         time = std::asctime(timeinfo);
         time.erase(time.find_last_of("\n"));
-        std::cerr << time << " [" << level << "] " << message << std::endl;
+        mes = time + " [" + level + "] " + message;
+        std::cerr << mes << std::endl;
+        if (it != _callbacks.end()) {
+            for (auto it1 = it->second.begin(); it1 != it->second.end(); ++it1) {
+                it1->second(mes);
+            }
+        }
+    }
+
+    void Logger::subscribeCallback(int type, const std::string &name, std::function<void(const std::string &)> callback)
+    {
+        if (_callbacks.find(type) == _callbacks.end()) {
+            _callbacks.emplace(type, std::map<std::string, std::function<void(const std::string &)>>());
+        }
+        _callbacks[type].emplace(name, callback);
+    }
+
+    void Logger::unsubscribeCallback(int type, const std::string &name)
+    {
+        if (_callbacks.find(type) == _callbacks.end()) {
+            return;
+        }
+        if (_callbacks[type].find(name) == _callbacks[type].end()) {
+            return;
+        }
+        _callbacks[type].erase(name);
     }
 }
