@@ -1,0 +1,86 @@
+\hypertarget{a01485}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Full\+Custom\+::Camera\+Custom\+Creator Class Reference}
+\label{a01485}\index{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}}
+
+
+{\ttfamily \#include $<$Camera\+Custom\+Creator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Full\+Custom\+::Camera\+Custom\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{a01484}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Full\+Custom\+::Camera\+Custom\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01483}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01485_a9796367fd4b1e4dfbfde99b45e373b8c}{$\sim$\+Camera\+Custom\+Creator}} ()
+\item 
+\mbox{\hyperlink{a01189}{Ray\+Tracer\+::\+Entities\+::\+IEntity}} $\ast$ \mbox{\hyperlink{a01485_a24142f8369f2bf9e2c7fdcc50fdbfad4}{create}} (const \mbox{\hyperlink{a01405}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01253}{ILogger}} \&logger) final
+\begin{DoxyCompactList}\small\item\em Create an entity with a setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01489}{Camera\+Custom\+Entity}} $\ast$ $>$ \mbox{\hyperlink{a01485_a9d6c22689ddb142cb5b575953684cda0}{\+\_\+elements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01485_a9796367fd4b1e4dfbfde99b45e373b8c}\label{a01485_a9796367fd4b1e4dfbfde99b45e373b8c}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}!````~CameraCustomCreator@{$\sim$CameraCustomCreator}}
+\index{````~CameraCustomCreator@{$\sim$CameraCustomCreator}!RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}}
+\doxysubsubsection{\texorpdfstring{$\sim$CameraCustomCreator()}{~CameraCustomCreator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Camera\+Custom\+Creator\+::$\sim$\+Camera\+Custom\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01485_a24142f8369f2bf9e2c7fdcc50fdbfad4}\label{a01485_a24142f8369f2bf9e2c7fdcc50fdbfad4}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}!create@{create}}
+\index{create@{create}!RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01189}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}$\ast$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Camera\+Custom\+Creator\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01405}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01253}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Create an entity with a setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01329_ab6cc749aa296fe5fc205ad2cad321d30}{Ray\+Tracer\+::\+Plugins\+::\+Entities\+::\+IEntity\+Creator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01485_a9d6c22689ddb142cb5b575953684cda0}\label{a01485_a9d6c22689ddb142cb5b575953684cda0}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}!\_elements@{\_elements}}
+\index{\_elements@{\_elements}!RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator@{RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator}}
+\doxysubsubsection{\texorpdfstring{\_elements}{\_elements}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01489}{Camera\+Custom\+Entity}} $\ast$$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Camera\+Custom\+Creator\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Camera/\+Full\+Custom/\mbox{\hyperlink{a00248}{Camera\+Custom\+Creator.\+hpp}}\end{DoxyCompactItemize}

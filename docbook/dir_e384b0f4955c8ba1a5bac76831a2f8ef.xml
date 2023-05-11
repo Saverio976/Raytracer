@@ -14,9 +14,9 @@ Directory dependency graph for Disk:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00269">DiskCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00275">DiskCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00272">DiskEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00278">DiskEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

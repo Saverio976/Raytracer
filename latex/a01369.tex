@@ -1,0 +1,154 @@
+\hypertarget{a01369}{}\doxysection{Ray\+Tracer\+::Scenes\+::Config\+Wrapper Class Reference}
+\label{a01369}\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+
+
+{\ttfamily \#include $<$Config\+Wrapper.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Scenes\+::Config\+Wrapper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{a01368}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Scenes\+::Config\+Wrapper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01367}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01373}{Read\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the file can\textquotesingle{}t be read \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01377}{Write\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the file can\textquotesingle{}t be written \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01369_a8f84a5f3ff6b68280d3204bb25e4a2e8}{Config\+Wrapper}} (\mbox{\hyperlink{a01253}{ILogger}} \&logger)
+\item 
+\mbox{\hyperlink{a01369_ad20ec945ae92fd6172e339eddc03c5d0}{$\sim$\+Config\+Wrapper}} () override=default
+\item 
+void \mbox{\hyperlink{a01369_aeb17cab1863ea71f5f8ea1f0eed7a46c}{read\+File}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em read and parse the file at given path \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01369_a579a6c990bd028bc77ffeb4227bec6b8}{write\+File}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em writes the current config in a file at the given path \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a01405}{ISetting}} $>$ \mbox{\hyperlink{a01369_a2b7fb0c31aaaac0ef381d2d8ffcf9026}{get\+Setting}} () const override
+\begin{DoxyCompactList}\small\item\em returns the current \mbox{\hyperlink{a01433}{Setting\+Wrapper}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ libconfig\+::\+Config $>$ \mbox{\hyperlink{a01369_a9c77449f2cb221183afafe713bd4c5dc}{\+\_\+config}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a01405}{ISetting}} $>$ \mbox{\hyperlink{a01369_a7c3555aef4a28c7b4b10fadc6613ac46}{\+\_\+scene}}
+\item 
+\mbox{\hyperlink{a01253}{ILogger}} \& \mbox{\hyperlink{a01369_ae6fe0d105912f9366abc658fad6885d0}{\+\_\+logger}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01369_a8f84a5f3ff6b68280d3204bb25e4a2e8}\label{a01369_a8f84a5f3ff6b68280d3204bb25e4a2e8}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!ConfigWrapper@{ConfigWrapper}}
+\index{ConfigWrapper@{ConfigWrapper}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{ConfigWrapper()}{ConfigWrapper()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::\+Config\+Wrapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01253}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a01369_ad20ec945ae92fd6172e339eddc03c5d0}\label{a01369_ad20ec945ae92fd6172e339eddc03c5d0}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!````~ConfigWrapper@{$\sim$ConfigWrapper}}
+\index{````~ConfigWrapper@{$\sim$ConfigWrapper}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConfigWrapper()}{~ConfigWrapper()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::$\sim$\+Config\+Wrapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01369_a2b7fb0c31aaaac0ef381d2d8ffcf9026}\label{a01369_a2b7fb0c31aaaac0ef381d2d8ffcf9026}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!getSetting@{getSetting}}
+\index{getSetting@{getSetting}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{getSetting()}{getSetting()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{a01405}{ISetting}}$>$ Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::get\+Setting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+returns the current \mbox{\hyperlink{a01433}{Setting\+Wrapper}} 
+
+\begin{DoxyReturn}{Returns}
+the current \mbox{\hyperlink{a01433}{Setting\+Wrapper}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01389_a95797d99d37d2ad238a8e83af7b3ceb1}{Ray\+Tracer\+::\+Scenes\+::\+IConfig}}.
+
+\mbox{\Hypertarget{a01369_aeb17cab1863ea71f5f8ea1f0eed7a46c}\label{a01369_aeb17cab1863ea71f5f8ea1f0eed7a46c}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!readFile@{readFile}}
+\index{readFile@{readFile}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+read and parse the file at given path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the file \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01389_a71aeba4627fd3383648ea5c562612147}{Ray\+Tracer\+::\+Scenes\+::\+IConfig}}.
+
+\mbox{\Hypertarget{a01369_a579a6c990bd028bc77ffeb4227bec6b8}\label{a01369_a579a6c990bd028bc77ffeb4227bec6b8}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+writes the current config in a file at the given path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the file \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01389_a0a0911b751314421eb36a73cbe2391e0}{Ray\+Tracer\+::\+Scenes\+::\+IConfig}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01369_a9c77449f2cb221183afafe713bd4c5dc}\label{a01369_a9c77449f2cb221183afafe713bd4c5dc}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!\_config@{\_config}}
+\index{\_config@{\_config}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{\_config}{\_config}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$libconfig\+::\+Config$>$ Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::\+\_\+config\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01369_ae6fe0d105912f9366abc658fad6885d0}\label{a01369_ae6fe0d105912f9366abc658fad6885d0}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01253}{ILogger}}\& Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01369_a7c3555aef4a28c7b4b10fadc6613ac46}\label{a01369_a7c3555aef4a28c7b4b10fadc6613ac46}} 
+\index{RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}!\_scene@{\_scene}}
+\index{\_scene@{\_scene}!RayTracer::Scenes::ConfigWrapper@{RayTracer::Scenes::ConfigWrapper}}
+\doxysubsubsection{\texorpdfstring{\_scene}{\_scene}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{a01405}{ISetting}}$>$ Ray\+Tracer\+::\+Scenes\+::\+Config\+Wrapper\+::\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\mbox{\hyperlink{a00191}{Config\+Wrapper.\+hpp}}\end{DoxyCompactItemize}

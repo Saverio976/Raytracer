@@ -1,13 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00341" xml:lang="en-US">
-<title>RayTracer::PluginsExt::AntiAliasing::SSAAx4 Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::AntiAliasing::SSAAx4</primary></indexterm>
+<title>RayTracer::Entities::Transform Namespace Reference</title>
+<indexterm><primary>RayTracer::Entities::Transform</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01439">SSAAx4Creator</link></para>
+            <listitem><para>class <link linkend="_a01205">ITransform</link></para>
+
+<para>The <link linkend="_a01205">ITransform</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01443">SSAAx4Filter</link></para>
+            <listitem><para>class <link linkend="_a01209">Transform</link></para>
+
+<para>The <link linkend="_a01209">Transform</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01213">Vector2i</link></para>
+
+<para>The <link linkend="_a01213">Vector2i</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01217">Vector3f</link></para>
+
+<para>The <link linkend="_a01217">Vector3f</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

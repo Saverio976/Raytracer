@@ -1,13 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00347" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Disk Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Disk</primary></indexterm>
+<title>RayTracer::Plugins::Filters Namespace Reference</title>
+<indexterm><primary>RayTracer::Plugins::Filters</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01503">DiskCreator</link></para>
+            <listitem><para>class <link linkend="_a01333">FilterHandler</link></para>
+
+<para>The <link linkend="_a01333">FilterHandler</link>. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01507">DiskEntity</link></para>
+            <listitem><para>class <link linkend="_a01337">FilterLoader</link></para>
+
+<para>The <link linkend="_a01337">FilterLoader</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01341">IFilterCreator</link></para>
+
+<para>The <link linkend="_a01341">IFilterCreator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

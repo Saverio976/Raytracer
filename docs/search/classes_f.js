@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writeexception_616',['WriteException',['../a01363.html',1,'RayTracer::Scenes::ConfigWrapper']]]
+  ['writeexception_632',['WriteException',['../a01377.html',1,'RayTracer::Scenes::ConfigWrapper']]]
 ];

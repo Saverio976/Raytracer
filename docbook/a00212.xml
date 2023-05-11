@@ -25,20 +25,20 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01407">RayTracer::Scenes::SceneLoader</link></para>
+            <listitem><para>class <link linkend="_a01421">RayTracer::Scenes::SceneLoader</link></para>
 
-<para>The <link linkend="_a01407">SceneLoader</link> class. </para>
+<para>The <link linkend="_a01421">SceneLoader</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01411">RayTracer::Scenes::SceneLoader::BadFileError</link></para>
+            <listitem><para>class <link linkend="_a01425">RayTracer::Scenes::SceneLoader::BadFileError</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00337">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00349">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

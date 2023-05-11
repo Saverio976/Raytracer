@@ -28,22 +28,22 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01247">RayTracer::Images::Image</link></para>
+            <listitem><para>class <link linkend="_a01261">RayTracer::Images::Image</link></para>
 
-<para>The <link linkend="_a01247">Image</link> class. </para>
+<para>The <link linkend="_a01261">Image</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01251">RayTracer::Images::Image::PixelLine</link></para>
+            <listitem><para>class <link linkend="_a01265">RayTracer::Images::Image::PixelLine</link></para>
 
-<para><link linkend="_a01251">PixelLine</link> class. </para>
+<para><link linkend="_a01265">PixelLine</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00332">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00344">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

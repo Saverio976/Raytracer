@@ -1,14 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00281" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCylinder/LimitedCylinderCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCylinder/LimitedCylinderCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone/LimitedConeCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone/LimitedConeCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
-#include &lt;memory&gt;
 #include &quot;IEntityCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-#include &quot;LimitedCylinderEntity.hpp&quot;
-</programlisting>Include dependency graph for LimitedCylinderCreator.hpp:<para>
+#include &quot;LimitedConeEntity.hpp&quot;
+</programlisting>Include dependency graph for LimitedConeCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -20,18 +18,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01519">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator</link></para>
+            <listitem><para>class <link linkend="_a01533">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00338">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00349">RayTracer::PluginsExt::LimitedCylinder</link></para>
+            <listitem><para> <link linkend="_a00361">RayTracer::PluginsExt::LimitedCone</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

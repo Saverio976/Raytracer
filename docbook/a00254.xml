@@ -24,24 +24,24 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01479">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</link></para>
+            <listitem><para>class <link linkend="_a01493">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</link></para>
 
-<para>The <link linkend="_a01479">CustomRayIterator</link> class. </para>
+<para>The <link linkend="_a01493">CustomRayIterator</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01483">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator</link></para>
+            <listitem><para>class <link linkend="_a01497">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00338">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00342">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00354">RayTracer::PluginsExt::Camera</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00344">RayTracer::PluginsExt::Camera::FullCustom</link></para>
+            <listitem><para> <link linkend="_a00356">RayTracer::PluginsExt::Camera::FullCustom</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

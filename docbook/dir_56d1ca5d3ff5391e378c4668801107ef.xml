@@ -14,9 +14,9 @@ Directory dependency graph for LimitedPlane:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00287">LimitedPlaneCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00293">LimitedPlaneCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00290">LimitedPlaneEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00296">LimitedPlaneEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

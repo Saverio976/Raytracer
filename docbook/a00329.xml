@@ -1,25 +1,36 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00329" xml:lang="en-US">
-<title>RayTracer::Entities::Transform Namespace Reference</title>
-<indexterm><primary>RayTracer::Entities::Transform</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/ZebraMaterial/ZebraCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/ZebraMaterial/ZebraCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IMaterialCreator.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;ZebraMaterial.hpp&quot;
+</programlisting>Include dependency graph for ZebraCreator.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00330.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01191">ITransform</link></para>
-
-<para>The <link linkend="_a01191">ITransform</link> class. </para>
+            <listitem><para>class <link linkend="_a01597">RayTracer::PluginsExt::Zebra::ZebraCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01195">Transform</link></para>
-
-<para>The <link linkend="_a01195">Transform</link> class. </para>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01199">Vector2i</link></para>
-
-<para>The <link linkend="_a01199">Vector2i</link> class. </para>
+            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01203">Vector3f</link></para>
-
-<para>The <link linkend="_a01203">Vector3f</link> class. </para>
+            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt::Zebra</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

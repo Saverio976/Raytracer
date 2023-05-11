@@ -25,16 +25,16 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01375">RayTracer::Scenes::IConfig</link></para>
+            <listitem><para>class <link linkend="_a01389">RayTracer::Scenes::IConfig</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00337">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00349">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

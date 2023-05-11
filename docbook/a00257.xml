@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00257" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/ChessBoardMaterial/ChessBoardCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/ChessBoardMaterial/ChessBoardCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
-#include &quot;IEntityCreator.hpp&quot;
+#include &lt;memory&gt;
+#include &quot;IMaterialCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ConeEntity.hpp&quot;
-</programlisting>Include dependency graph for ConeCreator.hpp:<para>
+#include &quot;ChessBoardMaterial.hpp&quot;
+</programlisting>Include dependency graph for ChessBoardCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -18,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01487">RayTracer::PluginsExt::Cone::ConeCreator</link></para>
+            <listitem><para>class <link linkend="_a01501">RayTracer::PluginsExt::ChessBoard::ChessBoardCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00338">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00345">RayTracer::PluginsExt::Cone</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer::PluginsExt::ChessBoard</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

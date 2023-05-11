@@ -14,9 +14,9 @@ Directory dependency graph for Cylinder:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00263">CylinderCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00269">CylinderCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00266">CylinderEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00272">CylinderEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

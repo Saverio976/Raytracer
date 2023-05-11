@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01375.html" target="_top" xlink:title=" ">
+<g id="a_node1"><a xlink:href="a01389.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 111,-30.5 111,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="55.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">IConfig</text>
@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01355.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="a01369.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="147,-0.5 147,-30.5 258,-30.5 258,-0.5 147,-0.5"/>
 <text text-anchor="start" x="155" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="202.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigWrapper</text>

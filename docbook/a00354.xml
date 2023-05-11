@@ -1,13 +1,22 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00354" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Sphere Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Sphere</primary></indexterm>
+<title>RayTracer::PluginsExt::Camera Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Camera</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00355">Clustered</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00356">FullCustom</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01559">SphereCreator</link></para>
+            <listitem><para>class <link linkend="_a01461">CameraCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01563">SphereEntity</link></para>
+            <listitem><para>class <link linkend="_a01465">CameraEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

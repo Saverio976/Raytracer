@@ -25,13 +25,13 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01391">RayTracer::Scenes::ISetting</link></para>
+            <listitem><para>class <link linkend="_a01405">RayTracer::Scenes::ISetting</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01395">RayTracer::Scenes::ISetting::IParsingException</link></para>
+            <listitem><para>class <link linkend="_a01409">RayTracer::Scenes::ISetting::IParsingException</link></para>
 
 <para>an exception for when the key is not found </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01399">RayTracer::Scenes::ISetting::ITypeException</link></para>
+            <listitem><para>class <link linkend="_a01413">RayTracer::Scenes::ISetting::ITypeException</link></para>
 
 <para>an exception for when the key is not found </para>
 </listitem>
@@ -40,9 +40,9 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00337">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00349">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01385" xml:lang="en-US">
+<title>RayTracer::Scenes::Displayable::DisplayableException Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::Displayable::DisplayableException</primary></indexterm>
+<para>
+
+<para>an exception for when the key is not found </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Displayable.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::Displayable::DisplayableException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01384.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::Displayable::DisplayableException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01383.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01385_1a0734491f62143a8fbde9be919caff41c">DisplayableException</link> (const std::string &amp;key)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_a01385_1a5253928d287a1a3d4977d6159de0bde0">what</link> () const final  throw ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01385_1a2895beea61b9883584a7d3812ece8520">_msg</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>an exception for when the key is not found </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01385_1a0734491f62143a8fbde9be919caff41c"/>    <section>
+    <title>DisplayableException()</title>
+<indexterm><primary>DisplayableException</primary><secondary>RayTracer::Scenes::Displayable::DisplayableException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable::DisplayableException</primary><secondary>DisplayableException</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::Displayable::DisplayableException::DisplayableException (const std::string &amp; key)<computeroutput>[explicit]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01385_1a5253928d287a1a3d4977d6159de0bde0"/>    <section>
+    <title>what()</title>
+<indexterm><primary>what</primary><secondary>RayTracer::Scenes::Displayable::DisplayableException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable::DisplayableException</primary><secondary>what</secondary></indexterm>
+<para><computeroutput>const char* RayTracer::Scenes::Displayable::DisplayableException::what ( ) const throw ( ) <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01397_1a2f5f2c3dc457cb9db7b6f5d8df5f7f6e">RayTracer::Scenes::IDisplayable::IDisplayableException</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01385_1a2895beea61b9883584a7d3812ece8520"/>    <section>
+    <title>_msg</title>
+<indexterm><primary>_msg</primary><secondary>RayTracer::Scenes::Displayable::DisplayableException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable::DisplayableException</primary><secondary>_msg</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Scenes::Displayable::DisplayableException::_msg<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00194">Displayable.hpp</link></section>
+</section>

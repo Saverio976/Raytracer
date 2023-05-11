@@ -1,15 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00314" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereEntity.hpp</primary></indexterm>
-<programlisting>#include &quot;IDisplayable.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightEntity.hpp</primary></indexterm>
+<programlisting>#include &quot;ILight.hpp&quot;
+#include &quot;IConfig.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;IMaterial.hpp&quot;
-#include &quot;IPrimitive.hpp&quot;
-#include &quot;ISetting.hpp&quot;
 #include &quot;Transform.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for SphereEntity.hpp:<para>
+</programlisting>Include dependency graph for PointLightEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -30,18 +27,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01563">RayTracer::PluginsExt::Sphere::SphereEntity</link></para>
+            <listitem><para>class <link linkend="_a01577">RayTracer::PluginsExt::PointLight::PointLightEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00327">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00338">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00354">RayTracer::PluginsExt::Sphere</link></para>
+            <listitem><para> <link linkend="_a00366">RayTracer::PluginsExt::PointLight</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

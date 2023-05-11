@@ -86,11 +86,11 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00185.html">PluginLoader.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00098.html">FilterFactory.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00335.html">RayTracer::Plugins::Filters</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01323.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01323.html">FilterLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01347.html">PluginLoader</a>&lt;FilterHandler, RayTracer::Filters::IFilter, Factories::FilterFactory&gt; {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00347.html">RayTracer::Plugins::Filters</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01337.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01337.html">FilterLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01361.html">PluginLoader</a>&lt;FilterHandler, RayTracer::Filters::IFilter, Factories::FilterFactory&gt; {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01323.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">   30</a></span>&#160;            <a class="code" href="a01323.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">FilterLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01323.html#ad7a0421cff475c80bb59141dfbba4c0d">   34</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01323.html#ad7a0421cff475c80bb59141dfbba4c0d">loadFilters</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01337.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">   30</a></span>&#160;            <a class="code" href="a01337.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">FilterLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01337.html#ad7a0421cff475c80bb59141dfbba4c0d">   34</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01337.html#ad7a0421cff475c80bb59141dfbba4c0d">loadFilters</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">private</span>:</div>
@@ -103,15 +103,15 @@ $(function() {
 <div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">IFilter.hpp</a></div></div>
 <div class="ttc" id="aa00164_html"><div class="ttname"><a href="a00164.html">FilterHandler.hpp</a></div></div>
 <div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">PluginLoader.hpp</a></div></div>
-<div class="ttc" id="aa00335_html"><div class="ttname"><a href="a00335.html">RayTracer::Plugins::Filters</a></div><div class="ttdef"><b>Definition:</b> FilterHandler.hpp:18</div></div>
-<div class="ttc" id="aa01323_html"><div class="ttname"><a href="a01323.html">RayTracer::Plugins::Filters::FilterLoader</a></div><div class="ttdoc">The FilterLoader.</div><div class="ttdef"><b>Definition:</b> FilterLoader.hpp:23</div></div>
-<div class="ttc" id="aa01323_html_a5a1f7ace06778e2bc4c46a6a87ef2f57"><div class="ttname"><a href="a01323.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">RayTracer::Plugins::Filters::FilterLoader::FilterLoader</a></div><div class="ttdeci">FilterLoader(const std::string &amp;directory)</div><div class="ttdoc">FilterLoader constructor (doesn't load anything)</div></div>
-<div class="ttc" id="aa01323_html_ad7a0421cff475c80bb59141dfbba4c0d"><div class="ttname"><a href="a01323.html#ad7a0421cff475c80bb59141dfbba4c0d">RayTracer::Plugins::Filters::FilterLoader::loadFilters</a></div><div class="ttdeci">void loadFilters()</div><div class="ttdoc">Load all the filters in the factory singleton.</div></div>
-<div class="ttc" id="aa01347_html"><div class="ttname"><a href="a01347.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
+<div class="ttc" id="aa00347_html"><div class="ttname"><a href="a00347.html">RayTracer::Plugins::Filters</a></div><div class="ttdef"><b>Definition:</b> FilterHandler.hpp:18</div></div>
+<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::Plugins::Filters::FilterLoader</a></div><div class="ttdoc">The FilterLoader.</div><div class="ttdef"><b>Definition:</b> FilterLoader.hpp:23</div></div>
+<div class="ttc" id="aa01337_html_a5a1f7ace06778e2bc4c46a6a87ef2f57"><div class="ttname"><a href="a01337.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">RayTracer::Plugins::Filters::FilterLoader::FilterLoader</a></div><div class="ttdeci">FilterLoader(const std::string &amp;directory)</div><div class="ttdoc">FilterLoader constructor (doesn't load anything)</div></div>
+<div class="ttc" id="aa01337_html_ad7a0421cff475c80bb59141dfbba4c0d"><div class="ttname"><a href="a01337.html#ad7a0421cff475c80bb59141dfbba4c0d">RayTracer::Plugins::Filters::FilterLoader::loadFilters</a></div><div class="ttdeci">void loadFilters()</div><div class="ttdoc">Load all the filters in the factory singleton.</div></div>
+<div class="ttc" id="aa01361_html"><div class="ttname"><a href="a01361.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 00:50:12 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 03:01:27 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['cameraclustercreator_515',['CameraClusterCreator',['../a01455.html',1,'RayTracer::PluginsExt::Camera::Clustered']]],
-  ['cameraclusterentity_516',['CameraClusterEntity',['../a01459.html',1,'RayTracer::PluginsExt::Camera::Clustered']]],
-  ['cameracreator_517',['CameraCreator',['../a01447.html',1,'RayTracer::PluginsExt::Camera']]],
-  ['cameracustomcreator_518',['CameraCustomCreator',['../a01471.html',1,'RayTracer::PluginsExt::Camera::FullCustom']]],
-  ['cameracustomentity_519',['CameraCustomEntity',['../a01475.html',1,'RayTracer::PluginsExt::Camera::FullCustom']]],
-  ['cameraentity_520',['CameraEntity',['../a01451.html',1,'RayTracer::PluginsExt::Camera']]],
-  ['clusterrayiterator_521',['ClusterRayIterator',['../a01463.html',1,'RayTracer::PluginsExt::Camera::Clustered']]],
-  ['color_522',['Color',['../a01243.html',1,'RayTracer::Images']]],
-  ['conecreator_523',['ConeCreator',['../a01487.html',1,'RayTracer::PluginsExt::Cone']]],
-  ['coneentity_524',['ConeEntity',['../a01491.html',1,'RayTracer::PluginsExt::Cone']]],
-  ['configwrapper_525',['ConfigWrapper',['../a01355.html',1,'RayTracer::Scenes']]],
-  ['customrayiterator_526',['CustomRayIterator',['../a01479.html',1,'RayTracer::PluginsExt::Camera::FullCustom']]],
-  ['cylindercreator_527',['CylinderCreator',['../a01495.html',1,'RayTracer::PluginsExt::Cylinder']]],
-  ['cylinderentity_528',['CylinderEntity',['../a01499.html',1,'RayTracer::PluginsExt::Cylinder']]]
+  ['cameraclustercreator_529',['CameraClusterCreator',['../a01469.html',1,'RayTracer::PluginsExt::Camera::Clustered']]],
+  ['cameraclusterentity_530',['CameraClusterEntity',['../a01473.html',1,'RayTracer::PluginsExt::Camera::Clustered']]],
+  ['cameracreator_531',['CameraCreator',['../a01461.html',1,'RayTracer::PluginsExt::Camera']]],
+  ['cameracustomcreator_532',['CameraCustomCreator',['../a01485.html',1,'RayTracer::PluginsExt::Camera::FullCustom']]],
+  ['cameracustomentity_533',['CameraCustomEntity',['../a01489.html',1,'RayTracer::PluginsExt::Camera::FullCustom']]],
+  ['cameraentity_534',['CameraEntity',['../a01465.html',1,'RayTracer::PluginsExt::Camera']]],
+  ['chessboardcreator_535',['ChessBoardCreator',['../a01501.html',1,'RayTracer::PluginsExt::ChessBoard']]],
+  ['chessboardmaterial_536',['ChessBoardMaterial',['../a01505.html',1,'RayTracer::PluginsExt::ChessBoard']]],
+  ['clusterrayiterator_537',['ClusterRayIterator',['../a01477.html',1,'RayTracer::PluginsExt::Camera::Clustered']]],
+  ['color_538',['Color',['../a01257.html',1,'RayTracer::Images']]],
+  ['conecreator_539',['ConeCreator',['../a01509.html',1,'RayTracer::PluginsExt::Cone']]],
+  ['coneentity_540',['ConeEntity',['../a01513.html',1,'RayTracer::PluginsExt::Cone']]],
+  ['configwrapper_541',['ConfigWrapper',['../a01369.html',1,'RayTracer::Scenes']]],
+  ['customrayiterator_542',['CustomRayIterator',['../a01493.html',1,'RayTracer::PluginsExt::Camera::FullCustom']]],
+  ['cylindercreator_543',['CylinderCreator',['../a01517.html',1,'RayTracer::PluginsExt::Cylinder']]],
+  ['cylinderentity_544',['CylinderEntity',['../a01521.html',1,'RayTracer::PluginsExt::Cylinder']]]
 ];

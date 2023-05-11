@@ -1,0 +1,12 @@
+<map id="RayTracer::PluginsExt::PointLight::PointLightEntity" name="RayTracer::PluginsExt::PointLight::PointLightEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="460,968,667,1192"/>
+<area shape="rect" id="node2" href="$a01193.html" title="The ILight class." alt="" coords="99,725,241,891"/>
+<area shape="rect" id="node3" href="$a01189.html" title="The IEntity class." alt="" coords="5,336,148,472"/>
+<area shape="rect" id="node4" href="$a01209.html" title="The Transform class." alt="" coords="358,711,526,905"/>
+<area shape="rect" id="node5" href="$a01205.html" title="The ITransform class." alt="" coords="172,307,344,501"/>
+<area shape="rect" id="node6" href="$a01217.html" title="The Vector3f class." alt="" coords="369,189,526,619"/>
+<area shape="rect" id="node7" title=" " alt="" coords="530,5,597,83"/>
+<area shape="rect" id="node8" href="$a01257.html" title="The Color class." alt="" coords="601,255,752,553"/>
+<area shape="rect" id="node9" title=" " alt="" coords="631,5,723,83"/>
+<area shape="rect" id="node10" href="$a01253.html" title="Logger singleton." alt="" coords="715,725,857,891"/>
+</map>
