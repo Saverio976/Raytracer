@@ -22,15 +22,18 @@ namespace RayTracer::PluginsExt::Obj {
             class Face {
                 public:
                     Face(std::string &faceString);
+                    Face(int firstPoint, int secondPoint, int thirdPoint, int firstNormal, int secondNormal, int thirdNormal);
                     ~Face() = default;
                     const std::vector<int> &getPointsIndexes() const;
                     const std::vector<int> &getNormalsIndexes() const;
+                    int _size = 0;
                 private:
                     std::vector<int> _points;
                     std::vector<int> _normals;
                     std::vector<int> _textures;
             };
             ObjEntity(const Scenes::ISetting &config, ILogger &logger);
+            void triangulatePolygon(Face face);
             Type getType() const final;
             Entities::Transform::ITransform &getTransform() final;
             const Entities::Transform::ITransform &getTransform() const final;
@@ -46,6 +49,7 @@ namespace RayTracer::PluginsExt::Obj {
             std::vector<Entities::Transform::Vector3f> _pointList;
             std::vector<Entities::Transform::Vector3f> _normalList;
             std::vector<Face> _faceList;
+            std::vector<Face> _triangleList;
         ILogger &_logger;
     };
 }

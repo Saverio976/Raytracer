@@ -16,8 +16,11 @@ namespace RayTracer::PluginsExt::Obj {
         std::istringstream lineStream(faceString);
         int value = 0;
 
+        int nb_spaces = 0;
+        for (int i = 0; lineStream.str()[i]; i++)
+            nb_spaces += lineStream.str()[i] == ' ' ? 1 : 0;
         lineStream.ignore();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < nb_spaces; i++) {
             std::string facePart;
             lineStream >> facePart;
             std::istringstream faceStringStream(facePart);
@@ -29,7 +32,19 @@ namespace RayTracer::PluginsExt::Obj {
             faceStringStream.ignore();
             faceStringStream >> value;
             _normals.push_back(value);
+            _size++;
         }
+    }
+
+    ObjEntity::Face::Face(int firstPoint, int secondPoint, int thirdPoint, int firstNormal, int secondNormal,
+        int thirdNormal) {
+        _points.push_back(firstPoint);
+        _points.push_back(secondPoint);
+        _points.push_back(thirdPoint);
+        _normals.push_back(firstNormal);
+        _normals.push_back(secondNormal);
+        _normals.push_back(thirdNormal);
+        _size = 3;
     }
 
     const std::vector<int> &ObjEntity::Face::getNormalsIndexes() const {
@@ -48,7 +63,6 @@ namespace RayTracer::PluginsExt::Obj {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
-
 
         std::string filePath = static_cast<std::string>(*config.get("filePath"));
         std::ifstream file(filePath);
@@ -72,6 +86,33 @@ namespace RayTracer::PluginsExt::Obj {
                 _faceList.emplace_back(line);
             }
         }
+        for (const auto &face : _faceList) {
+            triangulatePolygon(face);
+        }
+    }
+
+    void ObjEntity::triangulatePolygon(Face face) {
+        int size = face._size;
+        std::vector<int> pointIndexes = face.getPointsIndexes();
+        std::vector<int> normalIndexes = face.getNormalsIndexes();
+
+        if (face._size < 3)
+            return;
+        if (face._size == 3) {
+            _triangleList.push_back(face);
+            return;
+        }
+
+        int firstNormal = normalIndexes[0];
+        int firstPoint = pointIndexes[0];
+        for (size_t i = 1; i < size - 1; i++) {
+            int secondNormal = normalIndexes[i];
+            int thirdNormal = normalIndexes[i + 1];
+            int secondPoint = pointIndexes[i];
+            int thirdPoint = pointIndexes[i + 1];
+
+            _triangleList.emplace_back(firstPoint, secondPoint, thirdPoint, firstNormal, secondNormal, thirdNormal);
+        }
     }
 
     Entities::IEntity::Type ObjEntity::getType() const {
@@ -90,8 +131,8 @@ namespace RayTracer::PluginsExt::Obj {
         const Entities::Transform::Vector3f &rayOrigin = ray.getOrigin();
         const Entities::Transform::Vector3f &rayDirection = ray.getDirection();
 
-        for (const auto &face : _faceList) {
-            std::vector<int> pointIndexes = face.getPointsIndexes();
+        for (const auto &triangle : _triangleList) {
+            std::vector<int> pointIndexes = triangle.getPointsIndexes();
 
             Entities::Transform::Vector3f pointOne = _pointList[pointIndexes[0] - 1];
             Entities::Transform::Vector3f pointTwo = _pointList[pointIndexes[1] - 1];
