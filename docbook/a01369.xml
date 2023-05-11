@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01369" xml:lang="en-US">
+<title>RayTracer::Images::Ray Class Reference</title>
+<indexterm><primary>RayTracer::Images::Ray</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01369">Ray</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Ray.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Images::Ray:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01367.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01369_1a45de7a5fa0d8cee182df0426c34f8cc7">Ray</link> (const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp;startCamera, const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp;screenPos)</para>
+
+<para><link linkend="_a01369">Ray</link> constructor. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; <link linkend="_a01369_1ae2ceedb604ea68035aab35b241ecc19a">getOrigin</link> () const</para>
+
+<para>Get origin (<computeroutput>screenPos</computeroutput>) </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; <link linkend="_a01369_1a945aca3ad13be6d3e2d8ad42e0f98cc4">getDirection</link> () const</para>
+
+<para>Get direction (the normal) </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; <link linkend="_a01369_1ab1435026751be16faad5e5f840fe8940">getStep</link> () const</para>
+
+<para>Get step (the current position of the ray) </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01369_1a64ab6a60ab9d687e402090ed82fac91d">operator+=</link> (double t)</para>
+
+<para>Add <computeroutput>t*normal</computeroutput> </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01369_1a3b66a56663fe591674035dbcc1ed1787">operator-=</link> (double t)</para>
+
+<para>Substract <computeroutput>t*normal</computeroutput> </para>
+</listitem>
+            <listitem><para><link linkend="_a01369">Ray</link> &amp; <link linkend="_a01369_1ab909dca707c3f284a3b4daba73226acb">operator++</link> ()</para>
+
+<para>Increment <computeroutput>1*normal</computeroutput> </para>
+</listitem>
+            <listitem><para><link linkend="_a01369">Ray</link> &amp; <link linkend="_a01369_1a37a55005418b15dd10ce6ae7184f93c4">operator--</link> ()</para>
+
+<para>Decrement <computeroutput>1*normal</computeroutput> </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01301">Entities::Transform::Vector3f</link> <link linkend="_a01369_1a92ab9e508fa90fbfac9aebc64f3ab19f">_origin</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01301">Entities::Transform::Vector3f</link> <link linkend="_a01369_1abee2fb774a936d0b5de1e2fd36edd5bc">_normal</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01301">Entities::Transform::Vector3f</link> <link linkend="_a01369_1a6de1fabc60eedf2751e3c678e185ba95">_step</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01369">Ray</link> class. </para>
+
+
+
+<para>class that represent a ray </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01369_1a45de7a5fa0d8cee182df0426c34f8cc7"/>    <section>
+    <title>Ray()</title>
+<indexterm><primary>Ray</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>Ray</secondary></indexterm>
+<para><computeroutput>RayTracer::Images::Ray::Ray (const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; startCamera, const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; screenPos)</computeroutput></para><para>
+
+<para><link linkend="_a01369">Ray</link> constructor. </para>
+</para>
+
+<para>calcul the normal between <computeroutput>startCamera</computeroutput> and <computeroutput>screenPos</computeroutput> and set the origin to <computeroutput>screenPos</computeroutput></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>startCamera</entry>
+                                <entry>
+<para>the camera position </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>screenPos</entry>
+                                <entry>
+<para>the screen position </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01369_1a945aca3ad13be6d3e2d8ad42e0f98cc4"/>    <section>
+    <title>getDirection()</title>
+<indexterm><primary>getDirection</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>getDirection</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01301">Entities::Transform::Vector3f</link>&amp; RayTracer::Images::Ray::getDirection ( ) const</computeroutput></para><para>
+
+<para>Get direction (the normal) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the direction </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01369_1ae2ceedb604ea68035aab35b241ecc19a"/>    <section>
+    <title>getOrigin()</title>
+<indexterm><primary>getOrigin</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>getOrigin</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01301">Entities::Transform::Vector3f</link>&amp; RayTracer::Images::Ray::getOrigin ( ) const</computeroutput></para><para>
+
+<para>Get origin (<computeroutput>screenPos</computeroutput>) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the origin </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01369_1ab1435026751be16faad5e5f840fe8940"/>    <section>
+    <title>getStep()</title>
+<indexterm><primary>getStep</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>getStep</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01301">Entities::Transform::Vector3f</link>&amp; RayTracer::Images::Ray::getStep ( ) const</computeroutput></para><para>
+
+<para>Get step (the current position of the ray) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the step </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01369_1ab909dca707c3f284a3b4daba73226acb"/>    <section>
+    <title>operator++()</title>
+<indexterm><primary>operator++</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>operator++</secondary></indexterm>
+<para><computeroutput><link linkend="_a01369">Ray</link>&amp; RayTracer::Images::Ray::operator++ ( )</computeroutput></para><para>
+
+<para>Increment <computeroutput>1*normal</computeroutput> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the incremented </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01369_1a64ab6a60ab9d687e402090ed82fac91d"/>    <section>
+    <title>operator+=()</title>
+<indexterm><primary>operator+=</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>operator+=</secondary></indexterm>
+<para><computeroutput>void RayTracer::Images::Ray::operator+= (double t)</computeroutput></para><para>
+
+<para>Add <computeroutput>t*normal</computeroutput> </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>the step to add </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01369_1a37a55005418b15dd10ce6ae7184f93c4"/>    <section>
+    <title>operator--()</title>
+<indexterm><primary>operator--</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>operator--</secondary></indexterm>
+<para><computeroutput><link linkend="_a01369">Ray</link>&amp; RayTracer::Images::Ray::operator-- ( )</computeroutput></para><para>
+
+<para>Decrement <computeroutput>1*normal</computeroutput> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the decremented </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01369_1a3b66a56663fe591674035dbcc1ed1787"/>    <section>
+    <title>operator-=()</title>
+<indexterm><primary>operator-=</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>operator-=</secondary></indexterm>
+<para><computeroutput>void RayTracer::Images::Ray::operator-= (double t)</computeroutput></para><para>
+
+<para>Substract <computeroutput>t*normal</computeroutput> </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>the step to substract </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01369_1abee2fb774a936d0b5de1e2fd36edd5bc"/>    <section>
+    <title>_normal</title>
+<indexterm><primary>_normal</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>_normal</secondary></indexterm>
+<para><computeroutput><link linkend="_a01301">Entities::Transform::Vector3f</link> RayTracer::Images::Ray::_normal<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01369_1a92ab9e508fa90fbfac9aebc64f3ab19f"/>    <section>
+    <title>_origin</title>
+<indexterm><primary>_origin</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>_origin</secondary></indexterm>
+<para><computeroutput><link linkend="_a01301">Entities::Transform::Vector3f</link> RayTracer::Images::Ray::_origin<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01369_1a6de1fabc60eedf2751e3c678e185ba95"/>    <section>
+    <title>_step</title>
+<indexterm><primary>_step</primary><secondary>RayTracer::Images::Ray</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Ray</primary><secondary>_step</secondary></indexterm>
+<para><computeroutput><link linkend="_a01301">Entities::Transform::Vector3f</link> RayTracer::Images::Ray::_step<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Images/<link linkend="_a00149">Ray.hpp</link></section>
+</section>

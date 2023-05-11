@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01725" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Zebra::ZebraMaterial Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ZebraMaterial.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::Zebra::ZebraMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01724.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Zebra::ZebraMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01723.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01725_1a81e2278947185e088f9523820add5046">ZebraMaterial</link> (const <link linkend="_a01489">Scenes::ISetting</link> &amp;config)</para>
+</listitem>
+            <listitem><para><link linkend="_a01341">Images::Color</link> <link linkend="_a01725_1a06f2bc786569d6dccab0fdfec04d9088">getColor</link> (const <link linkend="_a01369">Images::Ray</link> &amp;ray, const <link linkend="_a01289">Entities::Transform::ITransform</link> &amp;centerObj, const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp;intersect, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp;displayable) const final</para>
+
+<para>Get the color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01725_1a0b6d1fdf94d382bbc4cdfc83d93f4b13">setColor</link> (const <link linkend="_a01341">Images::Color</link> &amp;color) final</para>
+
+<para>Set the color. </para>
+</listitem>
+            <listitem><para><link linkend="_a01341">Images::Color</link> <link linkend="_a01725_1a29cb4cceaaea2b694f69572c0a0fc3e4">redirectionLight</link> (const <link linkend="_a01369">Images::Ray</link> &amp;ray, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp;intersect) const final</para>
+
+<para>this function is called when the object intercept the ray light </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01301">Entities::Transform::Vector3f</link> <link linkend="_a01725_1a060256d10b1977462fb4c8d9b2736243">_ambient</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01301">Entities::Transform::Vector3f</link> <link linkend="_a01725_1ae7241b88ced63c400d1bd4d3332dfd6a">_diffuse</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01301">Entities::Transform::Vector3f</link> <link linkend="_a01725_1a8292453ca9a264dcd2978473e41ab81f">_specular</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01725_1a43b110198134274d188cf1e4497f0740">_shininess</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01341">Images::Color</link> <link linkend="_a01725_1ab2bc438992d65f7fc16ca80e4978d219">_pair</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01341">Images::Color</link> <link linkend="_a01725_1aa8d70d4db1711dec67368c8d488599f0">_impair</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01725_1a9245ec2b971ff7d25cbe011e0a08a48e">_size</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01725_1a81e2278947185e088f9523820add5046"/>    <section>
+    <title>ZebraMaterial()</title>
+<indexterm><primary>ZebraMaterial</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>ZebraMaterial</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Zebra::ZebraMaterial::ZebraMaterial (const <link linkend="_a01489">Scenes::ISetting</link> &amp; config)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01725_1a06f2bc786569d6dccab0fdfec04d9088"/>    <section>
+    <title>getColor()</title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput><link linkend="_a01341">Images::Color</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::getColor (const <link linkend="_a01369">Images::Ray</link> &amp; ray, const <link linkend="_a01289">Entities::Transform::ITransform</link> &amp; centerObj, const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; intersect, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp; displayable) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>centerObj</entry>
+                                <entry>
+<para>the center of the object impacted </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point on the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable objects</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01281_1ace27fcd7ec81aa60ff66fc944042b0cb">RayTracer::Entities::IMaterial</link>.</para>
+    </section><anchor xml:id="_a01725_1a29cb4cceaaea2b694f69572c0a0fc3e4"/>    <section>
+    <title>redirectionLight()</title>
+<indexterm><primary>redirectionLight</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>redirectionLight</secondary></indexterm>
+<para><computeroutput><link linkend="_a01341">Images::Color</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::redirectionLight (const <link linkend="_a01369">Images::Ray</link> &amp; ray, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01301">Entities::Transform::Vector3f</link> &amp; intersect) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>this function is called when the object intercept the ray light </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray between the light and the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point between this point and the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color of the shadow </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01281_1afcb781871a3292f695efc25f38e6d3ff">RayTracer::Entities::IMaterial</link>.</para>
+    </section><anchor xml:id="_a01725_1a0b6d1fdf94d382bbc4cdfc83d93f4b13"/>    <section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::Zebra::ZebraMaterial::setColor (const <link linkend="_a01341">Images::Color</link> &amp; color)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>the color </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01281_1a1d980e34030a879414065a9993f428b4">RayTracer::Entities::IMaterial</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01725_1a060256d10b1977462fb4c8d9b2736243"/>    <section>
+    <title>_ambient</title>
+<indexterm><primary>_ambient</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_ambient</secondary></indexterm>
+<para><computeroutput><link linkend="_a01301">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::_ambient<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01725_1ae7241b88ced63c400d1bd4d3332dfd6a"/>    <section>
+    <title>_diffuse</title>
+<indexterm><primary>_diffuse</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_diffuse</secondary></indexterm>
+<para><computeroutput><link linkend="_a01301">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::_diffuse<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01725_1aa8d70d4db1711dec67368c8d488599f0"/>    <section>
+    <title>_impair</title>
+<indexterm><primary>_impair</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_impair</secondary></indexterm>
+<para><computeroutput><link linkend="_a01341">Images::Color</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::_impair<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01725_1ab2bc438992d65f7fc16ca80e4978d219"/>    <section>
+    <title>_pair</title>
+<indexterm><primary>_pair</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_pair</secondary></indexterm>
+<para><computeroutput><link linkend="_a01341">Images::Color</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::_pair<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01725_1a43b110198134274d188cf1e4497f0740"/>    <section>
+    <title>_shininess</title>
+<indexterm><primary>_shininess</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_shininess</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::Zebra::ZebraMaterial::_shininess<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01725_1a9245ec2b971ff7d25cbe011e0a08a48e"/>    <section>
+    <title>_size</title>
+<indexterm><primary>_size</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_size</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::Zebra::ZebraMaterial::_size<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01725_1a8292453ca9a264dcd2978473e41ab81f"/>    <section>
+    <title>_specular</title>
+<indexterm><primary>_specular</primary><secondary>RayTracer::PluginsExt::Zebra::ZebraMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Zebra::ZebraMaterial</primary><secondary>_specular</secondary></indexterm>
+<para><computeroutput><link linkend="_a01301">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Zebra::ZebraMaterial::_specular<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/ZebraMaterial/<link linkend="_a00374">ZebraMaterial.hpp</link></section>
+</section>

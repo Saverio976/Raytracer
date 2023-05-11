@@ -30,20 +30,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01534">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</link></para>
+            <listitem><para>class <link linkend="_a01541">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00393">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00389">RayTracer::PluginsExt::AntiAliasing</link></para>
+            <listitem><para> <link linkend="_a00395">RayTracer::PluginsExt::AntiAliasing</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00390">RayTracer::PluginsExt::AntiAliasing::SSAAx4</link></para>
+            <listitem><para> <link linkend="_a00396">RayTracer::PluginsExt::AntiAliasing::SSAAx4</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

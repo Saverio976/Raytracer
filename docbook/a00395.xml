@@ -1,13 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00395" xml:lang="en-US">
-<title>RayTracer::PluginsExt::ChessBoard Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::ChessBoard</primary></indexterm>
+<title>RayTracer::PluginsExt::AntiAliasing Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::AntiAliasing</primary></indexterm>
 <simplesect>
-    <title>Classes    </title>
+    <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01586">ChessBoardCreator</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01590">ChessBoardMaterial</link></para>
+            <listitem><para> <link linkend="_a00396">SSAAx4</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

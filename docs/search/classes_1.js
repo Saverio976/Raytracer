@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['badfileerror_608',['BadFileError',['../a01502.html',1,'RayTracer::Scenes::SceneLoader']]],
-  ['blackandwhitecreator_609',['BlackAndWhiteCreator',['../a01538.html',1,'RayTracer::PluginsExt::BlackAndWhite']]],
-  ['blackandwhitefilter_610',['BlackAndWhiteFilter',['../a01542.html',1,'RayTracer::PluginsExt::BlackAndWhite']]]
+  ['badfileerror_615',['BadFileError',['../a01509.html',1,'RayTracer::Scenes::SceneLoader']]],
+  ['blackandwhitecreator_616',['BlackAndWhiteCreator',['../a01545.html',1,'RayTracer::PluginsExt::BlackAndWhite']]],
+  ['blackandwhitefilter_617',['BlackAndWhiteFilter',['../a01549.html',1,'RayTracer::PluginsExt::BlackAndWhite']]]
 ];

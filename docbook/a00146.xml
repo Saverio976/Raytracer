@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01358">RayTracer::Images::PixelThread</link></para>
+            <listitem><para>class <link linkend="_a01365">RayTracer::Images::PixelThread</link></para>
 
-<para>The <link linkend="_a01358">PixelThread</link> class. </para>
+<para>The <link linkend="_a01365">PixelThread</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

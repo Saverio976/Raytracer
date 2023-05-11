@@ -1,8 +1,4 @@
-<map id="RayTracer::PluginsExt::PlainMaterial::PlainMaterial" name="RayTracer::PluginsExt::PlainMaterial::PlainMaterial">
-<area shape="rect" id="node1" title=" " alt="" coords="153,725,364,876"/>
-<area shape="rect" id="node2" href="$a01274.html" title="The IMaterial class." alt="" coords="5,343,155,479"/>
-<area shape="rect" id="node3" title=" " alt="" coords="349,5,416,83"/>
-<area shape="rect" id="node4" href="$a01294.html" title="The Vector3f class." alt="" coords="304,189,461,633"/>
-<area shape="rect" id="node5" href="$a01334.html" title="The Color class." alt="" coords="486,255,637,567"/>
-<area shape="rect" id="node6" title=" " alt="" coords="515,5,607,83"/>
+<map id="RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator" name="RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,160,213,281"/>
+<area shape="rect" id="node2" href="$a01413.html" title="The IEntityCreator." alt="" coords="21,5,198,112"/>
 </map>

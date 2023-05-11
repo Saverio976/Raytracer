@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01350.html" target="_top" xlink:title="The RayIterator class.">
+<g id="a_node1"><a xlink:href="a01357.html" target="_top" xlink:title="The RayIterator class.">
 <polygon fill="white" stroke="black" points="0,-66 0,-96 113,-96 113,-66 0,-66"/>
 <text text-anchor="start" x="8" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Images::</text>
 <text text-anchor="middle" x="56.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">IRayIterator</text>
@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01366.html" target="_top" xlink:title="The RayIterrator class.">
+<g id="a_node2"><a xlink:href="a01373.html" target="_top" xlink:title="The RayIterrator class.">
 <polygon fill="white" stroke="black" points="153.5,-121 153.5,-151 266.5,-151 266.5,-121 153.5,-121"/>
 <text text-anchor="start" x="161.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Images::</text>
 <text text-anchor="middle" x="210" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">RayIterrator</text>
@@ -38,7 +38,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="a01562.html" target="_top" xlink:title="The ClusterRayIterator class.">
+<g id="a_node3"><a xlink:href="a01569.html" target="_top" xlink:title="The ClusterRayIterator class.">
 <polygon fill="white" stroke="black" points="149,-60.5 149,-101.5 271,-101.5 271,-60.5 149,-60.5"/>
 <text text-anchor="start" x="157" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="157" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::Clustered::</text>
@@ -55,7 +55,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="a01578.html" target="_top" xlink:title="The CustomRayIterator class.">
+<g id="a_node4"><a xlink:href="a01585.html" target="_top" xlink:title="The CustomRayIterator class.">
 <polygon fill="white" stroke="black" points="149,-0.5 149,-41.5 271,-41.5 271,-0.5 149,-0.5"/>
 <text text-anchor="start" x="157" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="157" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::FullCustom</text>

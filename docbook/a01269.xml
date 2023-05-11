@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01269" xml:lang="en-US">
+<title>RayTracer::Entities::ICamera Class Reference</title>
+<indexterm><primary>RayTracer::Entities::ICamera</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01269">ICamera</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ICamera.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Entities::ICamera:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01268.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Entities::ICamera:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01267.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01269_1a4eb08fab65ef169cf8fa4e03065bc4cd">~ICamera</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual double <link linkend="_a01269_1a548bf7da2cf92f03d1b251fd46a63523">getFocal</link> () const =0</para>
+
+<para>Get the focal (distance from the camera) </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01269_1ad636b677d2aa96af8d5bfb58fe6e4aec">setFocal</link> (double value)=0</para>
+
+<para>Set the focal (distance from the camera) </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01269_1a7d5f89da8b205c97855a25c99ed6ed2c">setSize</link> (const <link linkend="_a01297">Transform::Vector2i</link> &amp;vector)=0</para>
+
+<para>Set the size (of the screen) </para>
+</listitem>
+            <listitem><para>virtual const <link linkend="_a01297">Transform::Vector2i</link> &amp; <link linkend="_a01269_1a0fd939f947002d94158528cb916d2e62">getSize</link> () const =0</para>
+
+<para>Get the size (of the screen) </para>
+</listitem>
+            <listitem><para>virtual const <link linkend="_a01345">Images::Image</link> &amp; <link linkend="_a01269_1a914fa640b82a3b050f5f3bc63dd07536">render</link> (const <link linkend="_a01477">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01485">Scenes::ISceneState</link> &amp;state)=0</para>
+
+<para>Render an image. </para>
+</listitem>
+            <listitem><para>virtual const <link linkend="_a01345">Images::Image</link> &amp; <link linkend="_a01269_1a72790d0c7c3b9f4ce87cbb57767448ec">getImage</link> () const =0</para>
+
+<para>Get the image (possible when rendering) </para>
+</listitem>
+            <listitem><para>virtual std::list&lt; std::reference_wrapper&lt; <link linkend="_a01333">Filters::IFilter</link> &gt; &gt; &amp; <link linkend="_a01269_1a8c001d43360383cd0e530c785fa73099">getFilters</link> ()=0</para>
+
+<para>Get the filters. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01269_1a9edc0c7053e4bcfbf649d8121c54cc1a">setCluster</link> (std::size_t cluster)=0</para>
+
+<para>Set the cluster (1 is more precision, +infini is less precision) </para>
+</listitem>
+            <listitem><para>virtual std::size_t <link linkend="_a01269_1aab1a39d426743e4ea2765ef3155166ac">getCluster</link> () const =0</para>
+
+<para>Get the cluster. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01269">ICamera</link> class. </para>
+
+
+
+<para>class that represent a camera (perspective, orthographic, panoramic, ...) </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01269_1a4eb08fab65ef169cf8fa4e03065bc4cd"/>    <section>
+    <title>~ICamera()</title>
+<indexterm><primary>~ICamera</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>~ICamera</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Entities::ICamera::~ICamera ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01269_1aab1a39d426743e4ea2765ef3155166ac"/>    <section>
+    <title>getCluster()</title>
+<indexterm><primary>getCluster</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>getCluster</secondary></indexterm>
+<para><computeroutput>virtual std::size_t RayTracer::Entities::ICamera::getCluster ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the cluster. </para>
+</para>
+<para>
+Implemented in <link linkend="_a01581_1a1ce726eef6a1f2899003a73bfcb5fb67">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1a63c71d73bf79feed8b602bc56d83f49a">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1a9dc424dd65cf62ce1e6f2b07d7b20b82">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a8c001d43360383cd0e530c785fa73099"/>    <section>
+    <title>getFilters()</title>
+<indexterm><primary>getFilters</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>getFilters</secondary></indexterm>
+<para><computeroutput>virtual std::list&lt;std::reference_wrapper&lt;<link linkend="_a01333">Filters::IFilter</link>&gt; &gt;&amp; RayTracer::Entities::ICamera::getFilters ( )<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the filters. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the filters </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01581_1a16b6ff6d2d619b4f265e88954da23bf5">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1ab822db014addf22a5a41c0125922a1c2">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1a36c3d5d2ea566404dbb95c519ab455eb">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a548bf7da2cf92f03d1b251fd46a63523"/>    <section>
+    <title>getFocal()</title>
+<indexterm><primary>getFocal</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>getFocal</secondary></indexterm>
+<para><computeroutput>virtual double RayTracer::Entities::ICamera::getFocal ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the focal (distance from the camera) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the focal </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01581_1a068760a8751c2505d54b06f9b6fe6576">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1add20d555144cc6618472f1eed7569d3f">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1a70eac7f57a3943eaceeb28fbe69b27ab">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a72790d0c7c3b9f4ce87cbb57767448ec"/>    <section>
+    <title>getImage()</title>
+<indexterm><primary>getImage</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>getImage</secondary></indexterm>
+<para><computeroutput>virtual const <link linkend="_a01345">Images::Image</link>&amp; RayTracer::Entities::ICamera::getImage ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the image (possible when rendering) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the image </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01581_1a632f9eaefbce8c32fd52c2f7696c9fcd">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1a2bc9634fd7a208acf7630786bc60e0bd">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1a516bb3a9c980eb7728de5f903637ae73">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a0fd939f947002d94158528cb916d2e62"/>    <section>
+    <title>getSize()</title>
+<indexterm><primary>getSize</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>getSize</secondary></indexterm>
+<para><computeroutput>virtual const <link linkend="_a01297">Transform::Vector2i</link>&amp; RayTracer::Entities::ICamera::getSize ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the size (of the screen) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the size </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01581_1a9695d9668a8f7a771224f19c86749e65">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1a5a23cec15c7da220cb3fd43a719faa07">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1ae3b85580387a30d8f8a42f7c170fbe75">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a914fa640b82a3b050f5f3bc63dd07536"/>    <section>
+    <title>render()</title>
+<indexterm><primary>render</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>render</secondary></indexterm>
+<para><computeroutput>virtual const <link linkend="_a01345">Images::Image</link>&amp; RayTracer::Entities::ICamera::render (const <link linkend="_a01477">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01485">Scenes::ISceneState</link> &amp; state)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Render an image. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>state</entry>
+                                <entry>
+<para>the state (if cancel needed)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the image </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01581_1a9974656e2e8f24b87796f0c3d74db971">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1a88932c61a485d1fcad0bd61f7577de8d">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1ab966131d9b2863bf71fd1161f9009ec1">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a9edc0c7053e4bcfbf649d8121c54cc1a"/>    <section>
+    <title>setCluster()</title>
+<indexterm><primary>setCluster</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>setCluster</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Entities::ICamera::setCluster (std::size_t cluster)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the cluster (1 is more precision, +infini is less precision) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>cluster</entry>
+                                <entry>
+<para>the cluster </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01581_1abb33241c8409acda3db2c1056d979d60">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1a654ad5993619e247e7ba7442e84d7f8a">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1a292d250db9a33558f1ae311d92131409">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1ad636b677d2aa96af8d5bfb58fe6e4aec"/>    <section>
+    <title>setFocal()</title>
+<indexterm><primary>setFocal</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>setFocal</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Entities::ICamera::setFocal (double value)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the focal (distance from the camera) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>the focal </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01581_1ac57c50b71e4a547ddec50908ad78701d">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1a1ddf396823c911c5a4d1fce7ef7be9bc">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1abd751ab74903bad3ba14dfbfd5197763">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+    </section><anchor xml:id="_a01269_1a7d5f89da8b205c97855a25c99ed6ed2c"/>    <section>
+    <title>setSize()</title>
+<indexterm><primary>setSize</primary><secondary>RayTracer::Entities::ICamera</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::ICamera</primary><secondary>setSize</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Entities::ICamera::setSize (const <link linkend="_a01297">Transform::Vector2i</link> &amp; vector)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the size (of the screen) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para>the size </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01581_1aca3791fc244850b88d11a064638096ce">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01565_1aa2814da3194bd049a60072dfefebea23">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, and <link linkend="_a01557_1a6a4a45291b79a76553b4f961e46a3b06">RayTracer::PluginsExt::Camera::CameraEntity</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Entities/<link linkend="_a00080">ICamera.hpp</link></section>
+</section>

@@ -1,0 +1,74 @@
+\hypertarget{a01313}{}\doxysection{Ray\+Tracer\+::Factories\+::IEntity\+Factory Class Reference}
+\label{a01313}\index{RayTracer::Factories::IEntityFactory@{RayTracer::Factories::IEntityFactory}}
+
+
+{\ttfamily \#include $<$IEntity\+Factory.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Factories\+::IEntity\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{a01312}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Factories\+::IEntity\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{a01311}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01313_aa8bca4d6e23129b4196e1c4c87a4e835}{$\sim$\+IEntity\+Factory}} ()=default
+\item 
+virtual \mbox{\hyperlink{a01273}{Entities\+::\+IEntity}} \& \mbox{\hyperlink{a01313_a1ba3cef71daf8a51706eb080edd8115d}{get}} (const std\+::string \&name, const \mbox{\hyperlink{a01489}{Scenes\+::\+ISetting}} \&setting, \mbox{\hyperlink{a01337}{ILogger}} \&logger)=0
+\begin{DoxyCompactList}\small\item\em Get an entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01313_aa8bca4d6e23129b4196e1c4c87a4e835}\label{a01313_aa8bca4d6e23129b4196e1c4c87a4e835}} 
+\index{RayTracer::Factories::IEntityFactory@{RayTracer::Factories::IEntityFactory}!````~IEntityFactory@{$\sim$IEntityFactory}}
+\index{````~IEntityFactory@{$\sim$IEntityFactory}!RayTracer::Factories::IEntityFactory@{RayTracer::Factories::IEntityFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$IEntityFactory()}{~IEntityFactory()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Factories\+::\+IEntity\+Factory\+::$\sim$\+IEntity\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01313_a1ba3cef71daf8a51706eb080edd8115d}\label{a01313_a1ba3cef71daf8a51706eb080edd8115d}} 
+\index{RayTracer::Factories::IEntityFactory@{RayTracer::Factories::IEntityFactory}!get@{get}}
+\index{get@{get}!RayTracer::Factories::IEntityFactory@{RayTracer::Factories::IEntityFactory}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01273}{Entities\+::\+IEntity}}\& Ray\+Tracer\+::\+Factories\+::\+IEntity\+Factory\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{a01489}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01337}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name \\
+\hline
+{\em setting} & the setting (to create the entity)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the entity 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01305_ad649c019712532e3a26d468ffb6754c5}{Ray\+Tracer\+::\+Factories\+::\+Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\mbox{\hyperlink{a00113}{IEntity\+Factory.\+hpp}}\end{DoxyCompactItemize}

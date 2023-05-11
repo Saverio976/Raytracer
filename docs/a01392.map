@@ -1,6 +1,4 @@
-<map id="RayTracer::Parameters::KeyNotFoundError" name="RayTracer::Parameters::KeyNotFoundError">
-<area shape="rect" id="node1" title=" " alt="" coords="5,287,173,393"/>
-<area shape="rect" id="node2" title=" " alt="" coords="11,147,125,224"/>
-<area shape="rect" id="node3" title=" " alt="" coords="150,147,237,224"/>
-<area shape="rect" id="node4" title=" " alt="" coords="124,5,263,97"/>
+<map id="RayTracer::Main::ArgumentError" name="RayTracer::Main::ArgumentError">
+<area shape="rect" id="node1" title=" " alt="" coords="5,131,204,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="47,5,162,83"/>
 </map>

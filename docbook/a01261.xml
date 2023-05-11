@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01261" xml:lang="en-US">
+<title>RayTracer::Display::CanvasModule Class Reference</title>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary></indexterm>
+<para>
+<computeroutput>#include &lt;CanvasModule.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Display::CanvasModule:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01260.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Display::CanvasModule:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01259.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01261_1aa96ffdb915a4730079b883870ea3182b">CanvasModule</link> (<link linkend="_a01501">Scenes::Scene</link> &amp;scene, std::size_t &amp;position)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a4525e245621da6c4af7b5d6848bdfb88">tick</link> (sf::RenderWindow &amp;window) final</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link> (sf::RenderWindow &amp;window, const sf::Event &amp;event) final</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a9d1dd20b4aeded5e5f99597710cf3902">start</link> (sf::RenderWindow &amp;window) final</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a3ee02c659ba1cd38bd0ec3132c108003">end</link> () final</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01261_1a95781ba88742675a0d60586d2c859ccd">getName</link> () const final</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a01261_1ab74a3190a75f4193f63541720f168f65">resizeWindow</link> (sf::RenderWindow &amp;window)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a7a636aca8943ca5c05cd8b041d60eabc">execIfReady</link> (std::function&lt; void(<link linkend="_a01269">Entities::ICamera</link> &amp;, <link linkend="_a01289">Entities::Transform::ITransform</link> &amp;)&gt; func)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a0cd3c9c86a96a55bd4d603882d51a7c5">goToNextCamera</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a5438b24283b203e4ee8f3d34879f69ed">goToPreviousCamera</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a303cf76d4997b10409e316bbed6ee33f">addFocalLength</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a1da1528cf580ca85646bac70f0bf6159">removeFocalLength</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a65a861cd0156fb064de22282accdf407">goLeft</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a1e218903f0ddedb627e457dbcc949192">goRight</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a6036ec6701099c7dd1278aeff5f8cb5b">goForward</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1ac21b1ebfdba2961ac13ed9893e8db00a">goBackward</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1ae32c5665c503281d1ac2b50e63764e73">goUp</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01261_1a1079bd67c48c841dd5704a880b65ffb9">goDown</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01261_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01501">Scenes::Scene</link> &amp; <link linkend="_a01261_1a733e78c6d31cddf2937175920acfff7e">_scene</link></para>
+</listitem>
+            <listitem><para>std::size_t &amp; <link linkend="_a01261_1a8e981f274333fe48efd9f690ec86857c">_position</link></para>
+</listitem>
+            <listitem><para>sf::Font <link linkend="_a01261_1a6d956c766055de837ebd395299f1abd1">_font</link></para>
+</listitem>
+            <listitem><para>sf::Clock <link linkend="_a01261_1aaea54f7836044d85cec365d41a586ba5">_clock</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01261_1aa96ffdb915a4730079b883870ea3182b"/>    <section>
+    <title>CanvasModule()</title>
+<indexterm><primary>CanvasModule</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>CanvasModule</secondary></indexterm>
+<para><computeroutput>RayTracer::Display::CanvasModule::CanvasModule (<link linkend="_a01501">Scenes::Scene</link> &amp; scene, std::size_t &amp; position)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01261_1a303cf76d4997b10409e316bbed6ee33f"/>    <section>
+    <title>addFocalLength()</title>
+<indexterm><primary>addFocalLength</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>addFocalLength</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::addFocalLength (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a3ee02c659ba1cd38bd0ec3132c108003"/>    <section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>end</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::end ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01241_1af49fc72ce860bb732ac3e95c57a9684f">RayTracer::Display::IDisplayModule</link>.</para>
+    </section><anchor xml:id="_a01261_1ad48792782cf179be2008d5647f42134d"/>    <section>
+    <title>event()</title>
+<indexterm><primary>event</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>event</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::event (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01241_1afb3d740a5cfc3b34936d16df8dec9ac8">RayTracer::Display::IDisplayModule</link>.</para>
+    </section><anchor xml:id="_a01261_1a7a636aca8943ca5c05cd8b041d60eabc"/>    <section>
+    <title>execIfReady()</title>
+<indexterm><primary>execIfReady</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>execIfReady</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::execIfReady (std::function&lt; void(<link linkend="_a01269">Entities::ICamera</link> &amp;, <link linkend="_a01289">Entities::Transform::ITransform</link> &amp;)&gt; func)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a95781ba88742675a0d60586d2c859ccd"/>    <section>
+    <title>getName()</title>
+<indexterm><primary>getName</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>getName</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Display::CanvasModule::getName ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01241_1aa1166ce7a418d8925502d67674c15c9a">RayTracer::Display::IDisplayModule</link>.</para>
+    </section><anchor xml:id="_a01261_1ac21b1ebfdba2961ac13ed9893e8db00a"/>    <section>
+    <title>goBackward()</title>
+<indexterm><primary>goBackward</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goBackward</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goBackward (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a1079bd67c48c841dd5704a880b65ffb9"/>    <section>
+    <title>goDown()</title>
+<indexterm><primary>goDown</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goDown</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goDown (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a6036ec6701099c7dd1278aeff5f8cb5b"/>    <section>
+    <title>goForward()</title>
+<indexterm><primary>goForward</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goForward</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goForward (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a65a861cd0156fb064de22282accdf407"/>    <section>
+    <title>goLeft()</title>
+<indexterm><primary>goLeft</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goLeft</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goLeft (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a1e218903f0ddedb627e457dbcc949192"/>    <section>
+    <title>goRight()</title>
+<indexterm><primary>goRight</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goRight</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goRight (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a0cd3c9c86a96a55bd4d603882d51a7c5"/>    <section>
+    <title>goToNextCamera()</title>
+<indexterm><primary>goToNextCamera</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goToNextCamera</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goToNextCamera (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a5438b24283b203e4ee8f3d34879f69ed"/>    <section>
+    <title>goToPreviousCamera()</title>
+<indexterm><primary>goToPreviousCamera</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goToPreviousCamera</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goToPreviousCamera (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1ae32c5665c503281d1ac2b50e63764e73"/>    <section>
+    <title>goUp()</title>
+<indexterm><primary>goUp</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>goUp</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::goUp (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a1da1528cf580ca85646bac70f0bf6159"/>    <section>
+    <title>removeFocalLength()</title>
+<indexterm><primary>removeFocalLength</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>removeFocalLength</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::removeFocalLength (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1ab74a3190a75f4193f63541720f168f65"/>    <section>
+    <title>resizeWindow()</title>
+<indexterm><primary>resizeWindow</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>resizeWindow</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::resizeWindow (sf::RenderWindow &amp; window)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a9d1dd20b4aeded5e5f99597710cf3902"/>    <section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::start (sf::RenderWindow &amp; window)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01241_1a0fd793ae621d180e3a609f69df8e4315">RayTracer::Display::IDisplayModule</link>.</para>
+    </section><anchor xml:id="_a01261_1a4525e245621da6c4af7b5d6848bdfb88"/>    <section>
+    <title>tick()</title>
+<indexterm><primary>tick</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>tick</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::tick (sf::RenderWindow &amp; window)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01241_1a5ac097661d1f612000e583ee1163746c">RayTracer::Display::IDisplayModule</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01261_1aaea54f7836044d85cec365d41a586ba5"/>    <section>
+    <title>_clock</title>
+<indexterm><primary>_clock</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_clock</secondary></indexterm>
+<para><computeroutput>sf::Clock RayTracer::Display::CanvasModule::_clock<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a6d956c766055de837ebd395299f1abd1"/>    <section>
+    <title>_font</title>
+<indexterm><primary>_font</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_font</secondary></indexterm>
+<para><computeroutput>sf::Font RayTracer::Display::CanvasModule::_font<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a8e981f274333fe48efd9f690ec86857c"/>    <section>
+    <title>_position</title>
+<indexterm><primary>_position</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_position</secondary></indexterm>
+<para><computeroutput>std::size_t&amp; RayTracer::Display::CanvasModule::_position<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01261_1a733e78c6d31cddf2937175920acfff7e"/>    <section>
+    <title>_scene</title>
+<indexterm><primary>_scene</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_scene</secondary></indexterm>
+<para><computeroutput><link linkend="_a01501">Scenes::Scene</link>&amp; RayTracer::Display::CanvasModule::_scene<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Display/Modules/<link linkend="_a00074">CanvasModule.hpp</link></section>
+</section>

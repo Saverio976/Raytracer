@@ -86,14 +86,14 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00326.html">PlaneEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00403.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00403.html">RayTracer::PluginsExt::Plane</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01650.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01650.html">PlaneCreator</a> : <span class="keyword">public</span> <a class="code" href="a01406.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00409.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00409.html">RayTracer::PluginsExt::Plane</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01657.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01657.html">PlaneCreator</a> : <span class="keyword">public</span> <a class="code" href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01650.html#ae13a9e2136c852e4cb3fef7c03e5f31d">   20</a></span>&#160;            <a class="code" href="a01650.html#ae13a9e2136c852e4cb3fef7c03e5f31d">~PlaneCreator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01650.html#a9bc5919d558728ed53848db4c124d5c8">   21</a></span>&#160;            <a class="code" href="a01266.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01650.html#a9bc5919d558728ed53848db4c124d5c8">create</a>(<span class="keyword">const</span> <a class="code" href="a01482.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01330.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01657.html#ae13a9e2136c852e4cb3fef7c03e5f31d">   20</a></span>&#160;            <a class="code" href="a01657.html#ae13a9e2136c852e4cb3fef7c03e5f31d">~PlaneCreator</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01657.html#a9bc5919d558728ed53848db4c124d5c8">   21</a></span>&#160;            <a class="code" href="a01273.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01657.html#a9bc5919d558728ed53848db4c124d5c8">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01337.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01650.html#afaf11bfe74cfef19b12600b4bdc55c96">   24</a></span>&#160;            std::vector&lt;PlaneEntity *&gt; <a class="code" href="a01650.html#afaf11bfe74cfef19b12600b4bdc55c96">_elements</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01657.html#afaf11bfe74cfef19b12600b4bdc55c96">   24</a></span>&#160;            std::vector&lt;PlaneEntity *&gt; <a class="code" href="a01657.html#afaf11bfe74cfef19b12600b4bdc55c96">_elements</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -101,19 +101,19 @@ $(function() {
 <div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
 <div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">IEntityCreator.hpp</a></div></div>
 <div class="ttc" id="aa00326_html"><div class="ttname"><a href="a00326.html">PlaneEntity.hpp</a></div></div>
-<div class="ttc" id="aa00403_html"><div class="ttname"><a href="a00403.html">RayTracer::PluginsExt::Plane</a></div><div class="ttdef"><b>Definition:</b> PlaneCreator.hpp:17</div></div>
-<div class="ttc" id="aa01266_html"><div class="ttname"><a href="a01266.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01330_html"><div class="ttname"><a href="a01330.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01406_html"><div class="ttname"><a href="a01406.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01482_html"><div class="ttname"><a href="a01482.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01650_html"><div class="ttname"><a href="a01650.html">RayTracer::PluginsExt::Plane::PlaneCreator</a></div><div class="ttdef"><b>Definition:</b> PlaneCreator.hpp:18</div></div>
-<div class="ttc" id="aa01650_html_a9bc5919d558728ed53848db4c124d5c8"><div class="ttname"><a href="a01650.html#a9bc5919d558728ed53848db4c124d5c8">RayTracer::PluginsExt::Plane::PlaneCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01650_html_ae13a9e2136c852e4cb3fef7c03e5f31d"><div class="ttname"><a href="a01650.html#ae13a9e2136c852e4cb3fef7c03e5f31d">RayTracer::PluginsExt::Plane::PlaneCreator::~PlaneCreator</a></div><div class="ttdeci">~PlaneCreator()</div></div>
-<div class="ttc" id="aa01650_html_afaf11bfe74cfef19b12600b4bdc55c96"><div class="ttname"><a href="a01650.html#afaf11bfe74cfef19b12600b4bdc55c96">RayTracer::PluginsExt::Plane::PlaneCreator::_elements</a></div><div class="ttdeci">std::vector&lt; PlaneEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> PlaneCreator.hpp:24</div></div>
+<div class="ttc" id="aa00409_html"><div class="ttname"><a href="a00409.html">RayTracer::PluginsExt::Plane</a></div><div class="ttdef"><b>Definition:</b> PlaneCreator.hpp:17</div></div>
+<div class="ttc" id="aa01273_html"><div class="ttname"><a href="a01273.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01413_html"><div class="ttname"><a href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01657_html"><div class="ttname"><a href="a01657.html">RayTracer::PluginsExt::Plane::PlaneCreator</a></div><div class="ttdef"><b>Definition:</b> PlaneCreator.hpp:18</div></div>
+<div class="ttc" id="aa01657_html_a9bc5919d558728ed53848db4c124d5c8"><div class="ttname"><a href="a01657.html#a9bc5919d558728ed53848db4c124d5c8">RayTracer::PluginsExt::Plane::PlaneCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01657_html_ae13a9e2136c852e4cb3fef7c03e5f31d"><div class="ttname"><a href="a01657.html#ae13a9e2136c852e4cb3fef7c03e5f31d">RayTracer::PluginsExt::Plane::PlaneCreator::~PlaneCreator</a></div><div class="ttdeci">~PlaneCreator()</div></div>
+<div class="ttc" id="aa01657_html_afaf11bfe74cfef19b12600b4bdc55c96"><div class="ttname"><a href="a01657.html#afaf11bfe74cfef19b12600b4bdc55c96">RayTracer::PluginsExt::Plane::PlaneCreator::_elements</a></div><div class="ttdeci">std::vector&lt; PlaneEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> PlaneCreator.hpp:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 14:05:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

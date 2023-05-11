@@ -21,18 +21,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01226">RayTracer::Display::Display</link></para>
+            <listitem><para>class <link linkend="_a01233">RayTracer::Display::Display</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01230">RayTracer::Display::Display::StartFailed</link></para>
+            <listitem><para>class <link linkend="_a01237">RayTracer::Display::Display::StartFailed</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00376">RayTracer::Display</link></para>
+            <listitem><para> <link linkend="_a00382">RayTracer::Display</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

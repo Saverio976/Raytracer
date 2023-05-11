@@ -1,0 +1,200 @@
+\hypertarget{a01369}{}\doxysection{Ray\+Tracer\+::Images\+::Ray Class Reference}
+\label{a01369}\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+
+
+The \mbox{\hyperlink{a01369}{Ray}} class.  
+
+
+
+
+{\ttfamily \#include $<$Ray.\+hpp$>$}
+
+
+
+Collaboration diagram for Ray\+Tracer\+::Images\+::Ray\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01367}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01369_a45de7a5fa0d8cee182df0426c34f8cc7}{Ray}} (const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \&start\+Camera, const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \&screen\+Pos)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01369}{Ray}} constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \& \mbox{\hyperlink{a01369_ae2ceedb604ea68035aab35b241ecc19a}{get\+Origin}} () const
+\begin{DoxyCompactList}\small\item\em Get origin ({\ttfamily screen\+Pos}) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \& \mbox{\hyperlink{a01369_a945aca3ad13be6d3e2d8ad42e0f98cc4}{get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Get direction (the normal) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \& \mbox{\hyperlink{a01369_ab1435026751be16faad5e5f840fe8940}{get\+Step}} () const
+\begin{DoxyCompactList}\small\item\em Get step (the current position of the ray) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01369_a64ab6a60ab9d687e402090ed82fac91d}{operator+=}} (double t)
+\begin{DoxyCompactList}\small\item\em Add {\ttfamily t$\ast$normal} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01369_a3b66a56663fe591674035dbcc1ed1787}{operator-\/=}} (double t)
+\begin{DoxyCompactList}\small\item\em Substract {\ttfamily t$\ast$normal} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01369}{Ray}} \& \mbox{\hyperlink{a01369_ab909dca707c3f284a3b4daba73226acb}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Increment {\ttfamily 1$\ast$normal} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01369}{Ray}} \& \mbox{\hyperlink{a01369_a37a55005418b15dd10ce6ae7184f93c4}{operator-\/-\/}} ()
+\begin{DoxyCompactList}\small\item\em Decrement {\ttfamily 1$\ast$normal} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01369_a92ab9e508fa90fbfac9aebc64f3ab19f}{\+\_\+origin}}
+\item 
+\mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01369_abee2fb774a936d0b5de1e2fd36edd5bc}{\+\_\+normal}}
+\item 
+\mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01369_a6de1fabc60eedf2751e3c678e185ba95}{\+\_\+step}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01369}{Ray}} class. 
+
+class that represent a ray 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01369_a45de7a5fa0d8cee182df0426c34f8cc7}\label{a01369_a45de7a5fa0d8cee182df0426c34f8cc7}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{Ray()}{Ray()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{start\+Camera,  }\item[{const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{screen\+Pos }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01369}{Ray}} constructor. 
+
+calcul the normal between {\ttfamily start\+Camera} and {\ttfamily screen\+Pos} and set the origin to {\ttfamily screen\+Pos}
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Camera} & the camera position \\
+\hline
+{\em screen\+Pos} & the screen position \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01369_a945aca3ad13be6d3e2d8ad42e0f98cc4}\label{a01369_a945aca3ad13be6d3e2d8ad42e0f98cc4}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get direction (the normal) 
+
+\begin{DoxyReturn}{Returns}
+the direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01369_ae2ceedb604ea68035aab35b241ecc19a}\label{a01369_ae2ceedb604ea68035aab35b241ecc19a}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!getOrigin@{getOrigin}}
+\index{getOrigin@{getOrigin}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{getOrigin()}{getOrigin()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get origin ({\ttfamily screen\+Pos}) 
+
+\begin{DoxyReturn}{Returns}
+the origin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01369_ab1435026751be16faad5e5f840fe8940}\label{a01369_ab1435026751be16faad5e5f840fe8940}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!getStep@{getStep}}
+\index{getStep@{getStep}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{getStep()}{getStep()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+::get\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get step (the current position of the ray) 
+
+\begin{DoxyReturn}{Returns}
+the step 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01369_ab909dca707c3f284a3b4daba73226acb}\label{a01369_ab909dca707c3f284a3b4daba73226acb}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!operator++@{operator++}}
+\index{operator++@{operator++}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01369}{Ray}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increment {\ttfamily 1$\ast$normal} 
+
+\begin{DoxyReturn}{Returns}
+the incremented 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01369_a64ab6a60ab9d687e402090ed82fac91d}\label{a01369_a64ab6a60ab9d687e402090ed82fac91d}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Images\+::\+Ray\+::operator+= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+Add {\ttfamily t$\ast$normal} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the step to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01369_a37a55005418b15dd10ce6ae7184f93c4}\label{a01369_a37a55005418b15dd10ce6ae7184f93c4}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01369}{Ray}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrement {\ttfamily 1$\ast$normal} 
+
+\begin{DoxyReturn}{Returns}
+the decremented 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01369_a3b66a56663fe591674035dbcc1ed1787}\label{a01369_a3b66a56663fe591674035dbcc1ed1787}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Images\+::\+Ray\+::operator-\/= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+Substract {\ttfamily t$\ast$normal} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the step to substract \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01369_abee2fb774a936d0b5de1e2fd36edd5bc}\label{a01369_abee2fb774a936d0b5de1e2fd36edd5bc}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!\_normal@{\_normal}}
+\index{\_normal@{\_normal}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{\_normal}{\_normal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Images\+::\+Ray\+::\+\_\+normal\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01369_a92ab9e508fa90fbfac9aebc64f3ab19f}\label{a01369_a92ab9e508fa90fbfac9aebc64f3ab19f}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!\_origin@{\_origin}}
+\index{\_origin@{\_origin}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{\_origin}{\_origin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Images\+::\+Ray\+::\+\_\+origin\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01369_a6de1fabc60eedf2751e3c678e185ba95}\label{a01369_a6de1fabc60eedf2751e3c678e185ba95}} 
+\index{RayTracer::Images::Ray@{RayTracer::Images::Ray}!\_step@{\_step}}
+\index{\_step@{\_step}!RayTracer::Images::Ray@{RayTracer::Images::Ray}}
+\doxysubsubsection{\texorpdfstring{\_step}{\_step}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01301}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Images\+::\+Ray\+::\+\_\+step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\mbox{\hyperlink{a00149}{Ray.\+hpp}}\end{DoxyCompactItemize}

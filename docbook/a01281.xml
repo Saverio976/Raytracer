@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01281" xml:lang="en-US">
+<title>RayTracer::Entities::IMaterial Class Reference</title>
+<indexterm><primary>RayTracer::Entities::IMaterial</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01281">IMaterial</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;IMaterial.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Entities::IMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01280.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Entities::IMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01279.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01281_1ac557ec5d24c91baa2d493f5104beaddf">~IMaterial</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01341">Images::Color</link> <link linkend="_a01281_1ace27fcd7ec81aa60ff66fc944042b0cb">getColor</link> (const <link linkend="_a01369">Images::Ray</link> &amp;ray, const <link linkend="_a01289">Transform::ITransform</link> &amp;centerObj, const <link linkend="_a01301">Transform::Vector3f</link> &amp;intersect, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp;displayable) const =0</para>
+
+<para>Get the color. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01281_1a1d980e34030a879414065a9993f428b4">setColor</link> (const <link linkend="_a01341">Images::Color</link> &amp;color)=0</para>
+
+<para>Set the color. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01341">Images::Color</link> <link linkend="_a01281_1afcb781871a3292f695efc25f38e6d3ff">redirectionLight</link> (const <link linkend="_a01369">Images::Ray</link> &amp;ray, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01301">Transform::Vector3f</link> &amp;intersect) const =0</para>
+
+<para>this function is called when the object intercept the ray light </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01281">IMaterial</link> class. </para>
+
+
+
+<para>class that represent a material (color/texture) </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01281_1ac557ec5d24c91baa2d493f5104beaddf"/>    <section>
+    <title>~IMaterial()</title>
+<indexterm><primary>~IMaterial</primary><secondary>RayTracer::Entities::IMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IMaterial</primary><secondary>~IMaterial</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Entities::IMaterial::~IMaterial ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01281_1ace27fcd7ec81aa60ff66fc944042b0cb"/>    <section>
+    <title>getColor()</title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::Entities::IMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IMaterial</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01341">Images::Color</link> RayTracer::Entities::IMaterial::getColor (const <link linkend="_a01369">Images::Ray</link> &amp; ray, const <link linkend="_a01289">Transform::ITransform</link> &amp; centerObj, const <link linkend="_a01301">Transform::Vector3f</link> &amp; intersect, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp; displayable) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>centerObj</entry>
+                                <entry>
+<para>the center of the object impacted </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point on the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable objects</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01725_1a06f2bc786569d6dccab0fdfec04d9088">RayTracer::PluginsExt::Zebra::ZebraMaterial</link>, <link linkend="_a01709_1abccd38b6f11c2840a37bb1a29ca0ad8d">RayTracer::PluginsExt::Transparency::TransparencyMaterial</link>, <link linkend="_a01677_1aedf23f607ca1676c86f236499c3625e5">RayTracer::PluginsExt::Refraction::RefractionMaterial</link>, <link linkend="_a01649_1aa02667c7ec17b45c5aca3cf5382f7744">RayTracer::PluginsExt::PlainMaterial::PlainMaterial</link>, and <link linkend="_a01597_1aca7674697ba417664041a3739d052a3c">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial</link>.</para>
+    </section><anchor xml:id="_a01281_1afcb781871a3292f695efc25f38e6d3ff"/>    <section>
+    <title>redirectionLight()</title>
+<indexterm><primary>redirectionLight</primary><secondary>RayTracer::Entities::IMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IMaterial</primary><secondary>redirectionLight</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01341">Images::Color</link> RayTracer::Entities::IMaterial::redirectionLight (const <link linkend="_a01369">Images::Ray</link> &amp; ray, const <link linkend="_a01477">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01301">Transform::Vector3f</link> &amp; intersect) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>this function is called when the object intercept the ray light </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray between the light and the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point between this point and the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color of the shadow </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01725_1a29cb4cceaaea2b694f69572c0a0fc3e4">RayTracer::PluginsExt::Zebra::ZebraMaterial</link>, <link linkend="_a01709_1a51b71a32c3a4b1647e35544bbc188794">RayTracer::PluginsExt::Transparency::TransparencyMaterial</link>, <link linkend="_a01677_1a43c4d9b97c8b760011cd2259aa7ab4f7">RayTracer::PluginsExt::Refraction::RefractionMaterial</link>, <link linkend="_a01649_1af030255f4223852c403ca4d8462f17d6">RayTracer::PluginsExt::PlainMaterial::PlainMaterial</link>, and <link linkend="_a01597_1a49e30eacb6de37a689986ddee9934ff9">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial</link>.</para>
+    </section><anchor xml:id="_a01281_1a1d980e34030a879414065a9993f428b4"/>    <section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>RayTracer::Entities::IMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IMaterial</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Entities::IMaterial::setColor (const <link linkend="_a01341">Images::Color</link> &amp; color)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>the color </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01725_1a0b6d1fdf94d382bbc4cdfc83d93f4b13">RayTracer::PluginsExt::Zebra::ZebraMaterial</link>, <link linkend="_a01709_1a7e0ba0fb9b05afb7d958b873db082889">RayTracer::PluginsExt::Transparency::TransparencyMaterial</link>, <link linkend="_a01677_1a1ec5f965cf2e2a17f880867ed8a2ab92">RayTracer::PluginsExt::Refraction::RefractionMaterial</link>, <link linkend="_a01649_1acacfe70c6b94d56d13441240c80cc316">RayTracer::PluginsExt::PlainMaterial::PlainMaterial</link>, and <link linkend="_a01597_1aae92675cd6d9027535b61dad7b0af969">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Entities/<link linkend="_a00089">IMaterial.hpp</link></section>
+</section>

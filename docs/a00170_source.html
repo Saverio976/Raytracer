@@ -87,15 +87,15 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00167.html">EntityHandler.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00107.html">EntityFactory.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00383.html">RayTracer::Plugins::Entities</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01402.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01402.html">EntityLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01438.html">PluginLoader</a>&lt;EntityHandler, RayTracer::Entities::IEntity, Factories::EntityFactory&gt; {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00389.html">RayTracer::Plugins::Entities</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01409.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01409.html">EntityLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01445.html">PluginLoader</a>&lt;EntityHandler, RayTracer::Entities::IEntity, Factories::EntityFactory&gt; {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01402.html#ae4c0b2318578996867d5486fcd6bb04f">   31</a></span>&#160;            <a class="code" href="a01402.html#ae4c0b2318578996867d5486fcd6bb04f">EntityLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01402.html#ab3564931a0542396d5e6ea85cc32c064">   35</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01402.html#ab3564931a0542396d5e6ea85cc32c064">loadEntities</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01409.html#ae4c0b2318578996867d5486fcd6bb04f">   31</a></span>&#160;            <a class="code" href="a01409.html#ae4c0b2318578996867d5486fcd6bb04f">EntityLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01409.html#ab3564931a0542396d5e6ea85cc32c064">   35</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01409.html#ab3564931a0542396d5e6ea85cc32c064">loadEntities</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01402.html#acd1c962a4738e078e5fb532741162e89">   39</a></span>&#160;            std::string <a class="code" href="a01402.html#acd1c962a4738e078e5fb532741162e89">_directory</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01409.html#acd1c962a4738e078e5fb532741162e89">   39</a></span>&#160;            std::string <a class="code" href="a01409.html#acd1c962a4738e078e5fb532741162e89">_directory</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
@@ -105,16 +105,16 @@ $(function() {
 <div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">TFactory.hpp</a></div></div>
 <div class="ttc" id="aa00167_html"><div class="ttname"><a href="a00167.html">EntityHandler.hpp</a></div></div>
 <div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">PluginLoader.hpp</a></div></div>
-<div class="ttc" id="aa00383_html"><div class="ttname"><a href="a00383.html">RayTracer::Plugins::Entities</a></div><div class="ttdef"><b>Definition:</b> EntityHandler.hpp:19</div></div>
-<div class="ttc" id="aa01402_html"><div class="ttname"><a href="a01402.html">RayTracer::Plugins::Entities::EntityLoader</a></div><div class="ttdoc">The EntityLoader.</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:24</div></div>
-<div class="ttc" id="aa01402_html_ab3564931a0542396d5e6ea85cc32c064"><div class="ttname"><a href="a01402.html#ab3564931a0542396d5e6ea85cc32c064">RayTracer::Plugins::Entities::EntityLoader::loadEntities</a></div><div class="ttdeci">void loadEntities()</div><div class="ttdoc">Load all the entities in the factory singleton.</div></div>
-<div class="ttc" id="aa01402_html_acd1c962a4738e078e5fb532741162e89"><div class="ttname"><a href="a01402.html#acd1c962a4738e078e5fb532741162e89">RayTracer::Plugins::Entities::EntityLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:39</div></div>
-<div class="ttc" id="aa01402_html_ae4c0b2318578996867d5486fcd6bb04f"><div class="ttname"><a href="a01402.html#ae4c0b2318578996867d5486fcd6bb04f">RayTracer::Plugins::Entities::EntityLoader::EntityLoader</a></div><div class="ttdeci">EntityLoader(const std::string &amp;directory)</div><div class="ttdoc">EntityLoader constructor (doesn't load anything)</div></div>
-<div class="ttc" id="aa01438_html"><div class="ttname"><a href="a01438.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
+<div class="ttc" id="aa00389_html"><div class="ttname"><a href="a00389.html">RayTracer::Plugins::Entities</a></div><div class="ttdef"><b>Definition:</b> EntityHandler.hpp:19</div></div>
+<div class="ttc" id="aa01409_html"><div class="ttname"><a href="a01409.html">RayTracer::Plugins::Entities::EntityLoader</a></div><div class="ttdoc">The EntityLoader.</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:24</div></div>
+<div class="ttc" id="aa01409_html_ab3564931a0542396d5e6ea85cc32c064"><div class="ttname"><a href="a01409.html#ab3564931a0542396d5e6ea85cc32c064">RayTracer::Plugins::Entities::EntityLoader::loadEntities</a></div><div class="ttdeci">void loadEntities()</div><div class="ttdoc">Load all the entities in the factory singleton.</div></div>
+<div class="ttc" id="aa01409_html_acd1c962a4738e078e5fb532741162e89"><div class="ttname"><a href="a01409.html#acd1c962a4738e078e5fb532741162e89">RayTracer::Plugins::Entities::EntityLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:39</div></div>
+<div class="ttc" id="aa01409_html_ae4c0b2318578996867d5486fcd6bb04f"><div class="ttname"><a href="a01409.html#ae4c0b2318578996867d5486fcd6bb04f">RayTracer::Plugins::Entities::EntityLoader::EntityLoader</a></div><div class="ttdeci">EntityLoader(const std::string &amp;directory)</div><div class="ttdoc">EntityLoader constructor (doesn't load anything)</div></div>
+<div class="ttc" id="aa01445_html"><div class="ttname"><a href="a01445.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 14:05:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -42,6 +42,8 @@ Directory dependency graph for PluginsExt:<para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_6ca2c1351489a3b7c4c79e847604cc6e">PointLight</link></para>
 </listitem>
+            <listitem><para>directory <link linkend="_dir_a1be71b4a87ea0a43842201df25556cd">RefractionMaterial</link></para>
+</listitem>
             <listitem><para>directory <link linkend="_dir_3f92ed83a6efedd91e4e130b78a07f9b">Sphere</link></para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_2a4e33f9be323f7713d427729ee72615">SpotLight</link></para>
