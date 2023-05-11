@@ -9,8 +9,9 @@
     #define CANVASMODULE_HPP_
 
     #include <SFML/Graphics/Font.hpp>
-#include <SFML/Graphics/Image.hpp>
-#include <SFML/System/Clock.hpp>
+    #include <SFML/Graphics/Image.hpp>
+    #include <SFML/System/Clock.hpp>
+    #include <cstddef>
     #include <functional>
     #include "ICamera.hpp"
     #include "IDisplayModule.hpp"
@@ -44,11 +45,14 @@ namespace RayTracer::Display {
             void goBackward(sf::RenderWindow &window, const sf::Event &event);
             void goUp(sf::RenderWindow &window, const sf::Event &event);
             void goDown(sf::RenderWindow &window, const sf::Event &event);
+            void resetCluster();
 
             Scenes::Scene &_scene;
             std::size_t &_position;
             sf::Font _font;
             sf::Clock _clock;
+            bool _isScreenShot;
+            std::size_t _nbPrinted;
     };
 }
 
