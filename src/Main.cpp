@@ -29,12 +29,9 @@ namespace RayTracer {
 
     bool Main::parseCmdArgs(int argc, char **argv)
     {
-        std::string isHelp;
-        int logLevel = 0;
-
         Parameters::getInstance().parseCmdArgs(argc, argv);
         try {
-            isHelp = Parameters::getInstance().getString("help");
+            std::string isHelp = Parameters::getInstance().getString("help");
             if (isHelp == "true" || isHelp == "") {
                 help();
                 return false;
@@ -42,6 +39,16 @@ namespace RayTracer {
                 throw ArgumentError("bad argument:: --help");
             }
         } catch (const Parameters::KeyNotFoundError &e) { }
+        try {
+            std::string isGui = Parameters::getInstance().getString("gui");
+            if (isGui == "true" || isGui == "") {
+                Parameters::getInstance().set("display-mode", "gui");
+            } else {
+                Parameters::getInstance().set("display-mode", "console");
+            }
+        } catch (const Parameters::KeyNotFoundError &e) {
+            Parameters::getInstance().set("display-mode", "console");
+        }
         try {
             _sceneConfFilePath = Parameters::getInstance().getString("scene-path");
         } catch (const Parameters::KeyNotFoundError &e) {
@@ -53,7 +60,7 @@ namespace RayTracer {
             throw ArgumentError("missing argument:: --output-path <path>");
         }
         try {
-            logLevel = Parameters::getInstance().getInt("log-level");
+            int logLevel = Parameters::getInstance().getInt("log-level");
         } catch (const Parameters::KeyNotFoundError &e) {
             Parameters::getInstance().set("log-level", 3);
         }
@@ -70,7 +77,7 @@ namespace RayTracer {
     void Main::run()
     {
         Scenes::SceneLoader loader(_sceneConfFilePath, _logger);
-        bool displayMode = true; // TODO: Faire le mode displayMode
+        bool isGui = Parameters::getInstance().getString("display-mode") == "gui"; // TODO: Faire le mode displayMode
 
         loader.subscribe("onChange", [&](const Scenes::ISetting &setting) {
             _scene(setting, "onChange");
@@ -87,7 +94,7 @@ namespace RayTracer {
             _logger.fatal("Loader/Render error:: " + message);
             throw MainError("Loader/Render error:: " + message);
         }
-        if (displayMode) {
+        if (isGui) {
             Display::Display display(this->_logger, this->_scene, loader);
             display.start();
         } else {
@@ -130,14 +137,15 @@ namespace RayTracer {
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>]" << std::endl;
+        std::cout << "USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui]" << std::endl;
         std::cout << "USAGE: ./raytracer --help" << std::endl;
         std::cout << std::endl;
         std::cout << "OPTIONS:" << std::endl;
         std::cout << "\t--scene-path <scene-conf.yaax>\tpath to scene config" << std::endl;
-        std::cout << "\t--output-path <file>\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
-        std::cout << "\t--help\tto display the help message" << std::endl;
-        std::cout << "\t--log-level <int>\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
+        std::cout << "\t--output-path <file>\t\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << "\t--help\t\t\t\tto display the help message" << std::endl;
+        std::cout << "\t--log-level <int>\t\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
+        std::cout << "\t--gui\t\t\t\tto display the images in GUI mode" << std::endl;
         std::cout << std::endl;
         std::cout << "IN Window:" << std::endl;
         std::cout << "\tZ\t\t: go forward to exit" << std::endl;

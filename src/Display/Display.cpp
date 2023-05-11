@@ -7,6 +7,7 @@
 
 #include "Display.hpp"
 #include "CanvasModule.hpp"
+#include "ProgressModule.hpp"
 #include "IDisplayModule.hpp"
 #include "ILogger.hpp"
 
@@ -20,6 +21,7 @@ namespace RayTracer::Display {
             throw StartFailed("error init font");
         }
         this->_modules.push_back(std::make_unique<CanvasModule>(scene, this->_position));
+        this->_modules.push_back(std::make_unique<ProgressModule>(this->_logger));
     }
 
     void Display::start() {
@@ -40,6 +42,7 @@ namespace RayTracer::Display {
         removeModule(namesToDelete);
         namesToDelete.clear();
         run(window);
+        end();
     }
 
     void Display::removeModule(const std::vector<std::string> &modulesToRemove)

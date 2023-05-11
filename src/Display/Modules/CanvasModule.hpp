@@ -8,14 +8,14 @@
 #ifndef CANVASMODULE_HPP_
     #define CANVASMODULE_HPP_
 
+    #include <SFML/Graphics/Image.hpp>
+    #include <functional>
     #include "ICamera.hpp"
-#include "IDisplayModule.hpp"
-#include "ITransform.hpp"
+    #include "IDisplayModule.hpp"
+    #include "ITransform.hpp"
     #include "Scene.hpp"
-#include "Transform.hpp"
-#include "Vector3f.hpp"
-#include <SFML/Graphics/Image.hpp>
-#include <functional>
+    #include "Transform.hpp"
+    #include "Vector3f.hpp"
 
 namespace RayTracer::Display {
     class CanvasModule : public IDisplayModule {
