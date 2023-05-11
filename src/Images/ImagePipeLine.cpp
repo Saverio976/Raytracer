@@ -77,6 +77,9 @@ namespace RayTracer::Images {
     }
 
     void ImagePipeLine::apply(Filters::IFilter &filter) {
+        if (this->_state.getState() == RayTracer::Scenes::ISceneState::States::CANCELLED) {
+            return;
+        }
         filter.apply(this->_image);
     }
 }
