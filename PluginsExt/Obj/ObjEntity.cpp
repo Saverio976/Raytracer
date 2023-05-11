@@ -177,7 +177,49 @@ namespace RayTracer::PluginsExt::Obj {
     Images::Color ObjEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const
     {
-        return {255, 0, 0, 255};
+        const Entities::Transform::Vector3f &rayOrigin = ray.getOrigin();
+        const Entities::Transform::Vector3f &rayDirection = ray.getDirection();
+
+        for (const auto &triangle : _triangleList) {
+            std::vector<int> pointIndexes = triangle.getPointsIndexes();
+            std::vector<int> normalIndexes = triangle.getNormalsIndexes();
+
+            Entities::Transform::Vector3f pointOne = _pointList[pointIndexes[0] - 1];
+            Entities::Transform::Vector3f pointTwo = _pointList[pointIndexes[1] - 1];
+            Entities::Transform::Vector3f pointThree = _pointList[pointIndexes[2] - 1];
+
+            Entities::Transform::Vector3f edgeOne = pointTwo - pointOne;
+            Entities::Transform::Vector3f edgeTwo = pointThree - pointOne;
+            Entities::Transform::Vector3f normal = edgeOne.getCrossed(edgeTwo).getNormalized();
+            Entities::Transform::Vector3f pointOneRayOrigin(pointOne.getX() - rayOrigin.getX(), pointOne.getY() - rayOrigin.getY(), pointOne.getZ() - rayOrigin.getZ());
+
+            double denominator = normal.dot(rayDirection);
+            if (std::abs(denominator) < std::numeric_limits<float>::epsilon())
+                continue;
+            double numerator = normal.dot(pointOneRayOrigin);
+            double t = numerator / denominator;
+
+            if (t < 0)
+                continue;
+            Entities::Transform::Vector3f point = rayOrigin + rayDirection * Entities::Transform::Vector3f(t, t, t);
+
+            Entities::Transform::Vector3f collisionEdgeOne = pointTwo - pointOne;
+            Entities::Transform::Vector3f crossedCollisionEdgeOne = collisionEdgeOne.getCrossed(point - pointOne);
+            if (normal.dot(crossedCollisionEdgeOne) < 0)
+                continue;
+            Entities::Transform::Vector3f collisionEdgeTwo = pointThree - pointTwo;
+            Entities::Transform::Vector3f crossedCollisionEdgeTwo = collisionEdgeTwo.getCrossed(point - pointTwo);
+            if (normal.dot(crossedCollisionEdgeTwo) < 0)
+                continue;
+            Entities::Transform::Vector3f collisionEdgeThree = pointOne - pointThree;
+            Entities::Transform::Vector3f crossedCollisionEdgeThree = collisionEdgeThree.getCrossed(point - pointThree);
+            if (normal.dot(crossedCollisionEdgeThree) < 0)
+                continue;
+            Entities::Transform::Transform transform = _transform;
+            transform.setPosition(intersect - normal);
+            return _material->get().getColor(ray, transform, intersect, displayable);
+        }
+        return _material->get().getColor(ray, _transform, intersect, displayable);
     }
 
     Images::Color ObjEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
