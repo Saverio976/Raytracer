@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['badfileerror_582',['BadFileError',['../a01481.html',1,'RayTracer::Scenes::SceneLoader']]]
+  ['badfileerror_590',['BadFileError',['../a01488.html',1,'RayTracer::Scenes::SceneLoader']]]
 ];

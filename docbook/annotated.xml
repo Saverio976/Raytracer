@@ -1,118 +1,118 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
 <title>Class List</title>
-Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_a01501">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</link><link linkend="_a01505">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity</link><link linkend="_a01365">RayTracer::Main::ArgumentError</link><link linkend="_a01481">RayTracer::Scenes::SceneLoader::BadFileError</link><link linkend="_a01525">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator</link><link linkend="_a01529">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link><link linkend="_a01517">RayTracer::PluginsExt::Camera::CameraCreator</link><link linkend="_a01541">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator</link><link linkend="_a01545">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link><link linkend="_a01521">RayTracer::PluginsExt::Camera::CameraEntity</link><link linkend="_a01233">RayTracer::Display::CanvasModule</link><link linkend="_a01557">RayTracer::PluginsExt::ChessBoard::ChessBoardCreator</link><link linkend="_a01561">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial</link><link linkend="_a01533">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator</link>
-<para>The <link linkend="_a01533">ClusterRayIterator</link> class </para>
-<link linkend="_a01313">RayTracer::Images::Color</link>
-<para>The <link linkend="_a01313">Color</link> class </para>
-<link linkend="_a01565">RayTracer::PluginsExt::Cone::ConeCreator</link><link linkend="_a01569">RayTracer::PluginsExt::Cone::ConeEntity</link><link linkend="_a01425">RayTracer::Scenes::ConfigWrapper</link><link linkend="_a01549">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</link>
-<para>The <link linkend="_a01549">CustomRayIterator</link> class </para>
-<link linkend="_a01573">RayTracer::PluginsExt::Cylinder::CylinderCreator</link><link linkend="_a01577">RayTracer::PluginsExt::Cylinder::CylinderEntity</link><link linkend="_a01581">RayTracer::PluginsExt::Disk::DiskCreator</link><link linkend="_a01585">RayTracer::PluginsExt::Disk::DiskEntity</link><link linkend="_a01205">RayTracer::Display::Display</link><link linkend="_a01437">RayTracer::Scenes::Displayable</link>
-<para>The <link linkend="_a01437">Displayable</link> class </para>
-<link linkend="_a01441">RayTracer::Scenes::Displayable::DisplayableException</link>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_a01508">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</link><link linkend="_a01512">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity</link><link linkend="_a01372">RayTracer::Main::ArgumentError</link><link linkend="_a01488">RayTracer::Scenes::SceneLoader::BadFileError</link><link linkend="_a01532">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator</link><link linkend="_a01536">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link><link linkend="_a01524">RayTracer::PluginsExt::Camera::CameraCreator</link><link linkend="_a01548">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator</link><link linkend="_a01552">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link><link linkend="_a01528">RayTracer::PluginsExt::Camera::CameraEntity</link><link linkend="_a01240">RayTracer::Display::CanvasModule</link><link linkend="_a01564">RayTracer::PluginsExt::ChessBoard::ChessBoardCreator</link><link linkend="_a01568">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial</link><link linkend="_a01540">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator</link>
+<para>The <link linkend="_a01540">ClusterRayIterator</link> class </para>
+<link linkend="_a01320">RayTracer::Images::Color</link>
+<para>The <link linkend="_a01320">Color</link> class </para>
+<link linkend="_a01572">RayTracer::PluginsExt::Cone::ConeCreator</link><link linkend="_a01576">RayTracer::PluginsExt::Cone::ConeEntity</link><link linkend="_a01432">RayTracer::Scenes::ConfigWrapper</link><link linkend="_a01556">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</link>
+<para>The <link linkend="_a01556">CustomRayIterator</link> class </para>
+<link linkend="_a01580">RayTracer::PluginsExt::Cylinder::CylinderCreator</link><link linkend="_a01584">RayTracer::PluginsExt::Cylinder::CylinderEntity</link><link linkend="_a01588">RayTracer::PluginsExt::Disk::DiskCreator</link><link linkend="_a01592">RayTracer::PluginsExt::Disk::DiskEntity</link><link linkend="_a01212">RayTracer::Display::Display</link><link linkend="_a01444">RayTracer::Scenes::Displayable</link>
+<para>The <link linkend="_a01444">Displayable</link> class </para>
+<link linkend="_a01448">RayTracer::Scenes::Displayable::DisplayableException</link>
 <para>Exception for when the key is not found </para>
-<link linkend="_a01221">RayTracer::Display::IDisplayModule::EndFailed</link>
+<link linkend="_a01228">RayTracer::Display::IDisplayModule::EndFailed</link>
 <para>If the function end failed, but it can continue without being completed </para>
-<link linkend="_a01277">RayTracer::Factories::EntityFactory</link>
-<para>The <link linkend="_a01277">EntityFactory</link> (singleton factory) </para>
-<link linkend="_a01377">RayTracer::Plugins::Entities::EntityHandler</link>
-<para>The <link linkend="_a01377">EntityHandler</link> </para>
-<link linkend="_a01381">RayTracer::Plugins::Entities::EntityLoader</link>
-<para>The <link linkend="_a01381">EntityLoader</link> </para>
-<link linkend="_a01225">RayTracer::Display::IDisplayModule::EventFailed</link>
+<link linkend="_a01284">RayTracer::Factories::EntityFactory</link>
+<para>The <link linkend="_a01284">EntityFactory</link> (singleton factory) </para>
+<link linkend="_a01384">RayTracer::Plugins::Entities::EntityHandler</link>
+<para>The <link linkend="_a01384">EntityHandler</link> </para>
+<link linkend="_a01388">RayTracer::Plugins::Entities::EntityLoader</link>
+<para>The <link linkend="_a01388">EntityLoader</link> </para>
+<link linkend="_a01232">RayTracer::Display::IDisplayModule::EventFailed</link>
 <para>If the function event failed, but it can continue without being completed </para>
-<link linkend="_a01281">RayTracer::Factories::FilterFactory</link>
-<para>The <link linkend="_a01281">FilterFactory</link> (singleton factory) </para>
-<link linkend="_a01389">RayTracer::Plugins::Filters::FilterHandler</link>
-<para>The <link linkend="_a01389">FilterHandler</link> </para>
-<link linkend="_a01393">RayTracer::Plugins::Filters::FilterLoader</link>
-<para>The <link linkend="_a01393">FilterLoader</link> </para>
-<link linkend="_a01241">RayTracer::Entities::ICamera</link>
-<para>The <link linkend="_a01241">ICamera</link> class </para>
-<link linkend="_a01445">RayTracer::Scenes::IConfig</link><link linkend="_a01449">RayTracer::Scenes::IDisplayable</link>
-<para>The <link linkend="_a01449">IDisplayable</link> interface </para>
-<link linkend="_a01453">RayTracer::Scenes::IDisplayable::IDisplayableException</link>
+<link linkend="_a01288">RayTracer::Factories::FilterFactory</link>
+<para>The <link linkend="_a01288">FilterFactory</link> (singleton factory) </para>
+<link linkend="_a01396">RayTracer::Plugins::Filters::FilterHandler</link>
+<para>The <link linkend="_a01396">FilterHandler</link> </para>
+<link linkend="_a01400">RayTracer::Plugins::Filters::FilterLoader</link>
+<para>The <link linkend="_a01400">FilterLoader</link> </para>
+<link linkend="_a01248">RayTracer::Entities::ICamera</link>
+<para>The <link linkend="_a01248">ICamera</link> class </para>
+<link linkend="_a01452">RayTracer::Scenes::IConfig</link><link linkend="_a01456">RayTracer::Scenes::IDisplayable</link>
+<para>The <link linkend="_a01456">IDisplayable</link> interface </para>
+<link linkend="_a01460">RayTracer::Scenes::IDisplayable::IDisplayableException</link>
 <para>Exception for when the key is not found </para>
-<link linkend="_a01213">RayTracer::Display::IDisplayModule</link><link linkend="_a01245">RayTracer::Entities::IEntity</link>
-<para>The <link linkend="_a01245">IEntity</link> class </para>
-<link linkend="_a01385">RayTracer::Plugins::Entities::IEntityCreator</link>
-<para>The <link linkend="_a01385">IEntityCreator</link> </para>
-<link linkend="_a01285">RayTracer::Factories::IEntityFactory</link><link linkend="_a01305">RayTracer::Filters::IFilter</link>
-<para>The <link linkend="_a01305">IFilter</link> class </para>
-<link linkend="_a01397">RayTracer::Plugins::Filters::IFilterCreator</link>
-<para>The <link linkend="_a01397">IFilterCreator</link> class </para>
-<link linkend="_a01289">RayTracer::Factories::IFilterFactory</link>
-<para>The <link linkend="_a01281">FilterFactory</link> (singleton factory) </para>
-<link linkend="_a01333">RayTracer::Images::IRayIterator::IIterator</link><link linkend="_a01249">RayTracer::Entities::ILight</link>
-<para>The <link linkend="_a01249">ILight</link> class </para>
-<link linkend="_a01309">RayTracer::ILogger</link>
-<para><link linkend="_a01353">Logger</link> singleton </para>
-<link linkend="_a01317">RayTracer::Images::Image</link>
-<para>The <link linkend="_a01317">Image</link> class </para>
-<link linkend="_a01325">RayTracer::Images::ImagePipeLine</link>
-<para>The <link linkend="_a01325">ImagePipeLine</link> class </para>
-<link linkend="_a01253">RayTracer::Entities::IMaterial</link>
-<para>The <link linkend="_a01253">IMaterial</link> class </para>
-<link linkend="_a01401">RayTracer::Plugins::Materials::IMaterialCreator</link>
-<para>The <link linkend="_a01401">IMaterialCreator</link> class </para>
-<link linkend="_a01293">RayTracer::Factories::IMaterialFactory</link><link linkend="_a01465">RayTracer::Scenes::ISetting::IParsingException</link>
+<link linkend="_a01220">RayTracer::Display::IDisplayModule</link><link linkend="_a01252">RayTracer::Entities::IEntity</link>
+<para>The <link linkend="_a01252">IEntity</link> class </para>
+<link linkend="_a01392">RayTracer::Plugins::Entities::IEntityCreator</link>
+<para>The <link linkend="_a01392">IEntityCreator</link> </para>
+<link linkend="_a01292">RayTracer::Factories::IEntityFactory</link><link linkend="_a01312">RayTracer::Filters::IFilter</link>
+<para>The <link linkend="_a01312">IFilter</link> class </para>
+<link linkend="_a01404">RayTracer::Plugins::Filters::IFilterCreator</link>
+<para>The <link linkend="_a01404">IFilterCreator</link> class </para>
+<link linkend="_a01296">RayTracer::Factories::IFilterFactory</link>
+<para>The <link linkend="_a01288">FilterFactory</link> (singleton factory) </para>
+<link linkend="_a01340">RayTracer::Images::IRayIterator::IIterator</link><link linkend="_a01256">RayTracer::Entities::ILight</link>
+<para>The <link linkend="_a01256">ILight</link> class </para>
+<link linkend="_a01316">RayTracer::ILogger</link>
+<para><link linkend="_a01360">Logger</link> singleton </para>
+<link linkend="_a01324">RayTracer::Images::Image</link>
+<para>The <link linkend="_a01324">Image</link> class </para>
+<link linkend="_a01332">RayTracer::Images::ImagePipeLine</link>
+<para>The <link linkend="_a01332">ImagePipeLine</link> class </para>
+<link linkend="_a01260">RayTracer::Entities::IMaterial</link>
+<para>The <link linkend="_a01260">IMaterial</link> class </para>
+<link linkend="_a01408">RayTracer::Plugins::Materials::IMaterialCreator</link>
+<para>The <link linkend="_a01408">IMaterialCreator</link> class </para>
+<link linkend="_a01300">RayTracer::Factories::IMaterialFactory</link><link linkend="_a01472">RayTracer::Scenes::ISetting::IParsingException</link>
 <para>Exception for when the key is not found </para>
-<link linkend="_a01257">RayTracer::Entities::IPrimitive</link>
-<para>The <link linkend="_a01257">IPrimitive</link> class </para>
-<link linkend="_a01329">RayTracer::Images::IRayIterator</link>
+<link linkend="_a01264">RayTracer::Entities::IPrimitive</link>
+<para>The <link linkend="_a01264">IPrimitive</link> class </para>
+<link linkend="_a01336">RayTracer::Images::IRayIterator</link>
 <para>The RayIterator class </para>
-<link linkend="_a01457">RayTracer::Scenes::ISceneState</link>
-<para>The <link linkend="_a01485">SceneState</link> interface </para>
-<link linkend="_a01461">RayTracer::Scenes::ISetting</link><link linkend="_a01537">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</link><link linkend="_a01553">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator</link><link linkend="_a01349">RayTracer::Images::RayIterrator::Iterrator</link><link linkend="_a01261">RayTracer::Entities::Transform::ITransform</link>
-<para>The <link linkend="_a01261">ITransform</link> class </para>
-<link linkend="_a01469">RayTracer::Scenes::ISetting::ITypeException</link>
+<link linkend="_a01464">RayTracer::Scenes::ISceneState</link>
+<para>The <link linkend="_a01492">SceneState</link> interface </para>
+<link linkend="_a01468">RayTracer::Scenes::ISetting</link><link linkend="_a01544">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</link><link linkend="_a01560">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator</link><link linkend="_a01356">RayTracer::Images::RayIterrator::Iterrator</link><link linkend="_a01268">RayTracer::Entities::Transform::ITransform</link>
+<para>The <link linkend="_a01268">ITransform</link> class </para>
+<link linkend="_a01476">RayTracer::Scenes::ISetting::ITypeException</link>
 <para>Exception for when the key is not found </para>
-<link linkend="_a01373">RayTracer::Parameters::KeyNotFoundError</link><link linkend="_a01589">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator</link><link linkend="_a01593">RayTracer::PluginsExt::LimitedCone::LimitedConeEntity</link><link linkend="_a01597">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator</link><link linkend="_a01601">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link><link linkend="_a01605">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator</link><link linkend="_a01609">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</link><link linkend="_a01353">RayTracer::Logger</link>
-<para><link linkend="_a01353">Logger</link> singleton </para>
-<link linkend="_a01357">RayTracer::Main</link><link linkend="_a01361">RayTracer::Main::MainError</link><link linkend="_a01297">RayTracer::Factories::MaterialFactory</link>
-<para>The <link linkend="_a01297">MaterialFactory</link> (singleton factory) </para>
-<link linkend="_a01405">RayTracer::Plugins::Materials::MaterialHandler</link>
-<para>The <link linkend="_a01405">MaterialHandler</link> </para>
-<link linkend="_a01409">RayTracer::Plugins::Materials::MaterialLoader</link>
-<para>The <link linkend="_a01409">MaterialLoader</link> </para>
-<link linkend="_a01369">RayTracer::Parameters</link>
+<link linkend="_a01380">RayTracer::Parameters::KeyNotFoundError</link><link linkend="_a01596">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator</link><link linkend="_a01600">RayTracer::PluginsExt::LimitedCone::LimitedConeEntity</link><link linkend="_a01604">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator</link><link linkend="_a01608">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link><link linkend="_a01612">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator</link><link linkend="_a01616">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</link><link linkend="_a01360">RayTracer::Logger</link>
+<para><link linkend="_a01360">Logger</link> singleton </para>
+<link linkend="_a01364">RayTracer::Main</link><link linkend="_a01368">RayTracer::Main::MainError</link><link linkend="_a01304">RayTracer::Factories::MaterialFactory</link>
+<para>The <link linkend="_a01304">MaterialFactory</link> (singleton factory) </para>
+<link linkend="_a01412">RayTracer::Plugins::Materials::MaterialHandler</link>
+<para>The <link linkend="_a01412">MaterialHandler</link> </para>
+<link linkend="_a01416">RayTracer::Plugins::Materials::MaterialLoader</link>
+<para>The <link linkend="_a01416">MaterialLoader</link> </para>
+<link linkend="_a01376">RayTracer::Parameters</link>
 <para>Singleton </para>
-<link linkend="_a01493">RayTracer::Scenes::SettingWrapper::ParsingException</link>
+<link linkend="_a01500">RayTracer::Scenes::SettingWrapper::ParsingException</link>
 <para>Exception for when the key is not found </para>
-<link linkend="_a01321">RayTracer::Images::Image::PixelLine</link>
-<para><link linkend="_a01321">PixelLine</link> class </para>
-<link linkend="_a01337">RayTracer::Images::PixelThread</link>
-<para>The <link linkend="_a01337">PixelThread</link> class </para>
-<link linkend="_a01613">RayTracer::PluginsExt::PlainMaterial::PlainMaterial</link><link linkend="_a01617">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</link><link linkend="_a01621">RayTracer::PluginsExt::Plane::PlaneCreator</link><link linkend="_a01625">RayTracer::PluginsExt::Plane::PlaneEntity</link><link linkend="_a01413">RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;</link>
-<para>The <link linkend="_a01413">PluginHandler</link> class </para>
-<link linkend="_a01417">RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</link><link linkend="_a01629">RayTracer::PluginsExt::PointLight::PointLightCreator</link><link linkend="_a01633">RayTracer::PluginsExt::PointLight::PointLightEntity</link><link linkend="_a01421">RayTracer::Progress</link><link linkend="_a01237">RayTracer::Display::ProgressModule</link><link linkend="_a01341">RayTracer::Images::Ray</link>
-<para>The <link linkend="_a01341">Ray</link> class </para>
-<link linkend="_a01345">RayTracer::Images::RayIterrator</link>
-<para>The <link linkend="_a01345">RayIterrator</link> class </para>
-<link linkend="_a01429">RayTracer::Scenes::ConfigWrapper::ReadException</link>
+<link linkend="_a01328">RayTracer::Images::Image::PixelLine</link>
+<para><link linkend="_a01328">PixelLine</link> class </para>
+<link linkend="_a01344">RayTracer::Images::PixelThread</link>
+<para>The <link linkend="_a01344">PixelThread</link> class </para>
+<link linkend="_a01620">RayTracer::PluginsExt::PlainMaterial::PlainMaterial</link><link linkend="_a01624">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</link><link linkend="_a01628">RayTracer::PluginsExt::Plane::PlaneCreator</link><link linkend="_a01632">RayTracer::PluginsExt::Plane::PlaneEntity</link><link linkend="_a01420">RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;</link>
+<para>The <link linkend="_a01420">PluginHandler</link> class </para>
+<link linkend="_a01424">RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</link><link linkend="_a01636">RayTracer::PluginsExt::PointLight::PointLightCreator</link><link linkend="_a01640">RayTracer::PluginsExt::PointLight::PointLightEntity</link><link linkend="_a01428">RayTracer::Progress</link><link linkend="_a01244">RayTracer::Display::ProgressModule</link><link linkend="_a01348">RayTracer::Images::Ray</link>
+<para>The <link linkend="_a01348">Ray</link> class </para>
+<link linkend="_a01352">RayTracer::Images::RayIterrator</link>
+<para>The <link linkend="_a01352">RayIterrator</link> class </para>
+<link linkend="_a01436">RayTracer::Scenes::ConfigWrapper::ReadException</link>
 <para>Exception for when the file can&apos;t be read </para>
-<link linkend="_a01473">RayTracer::Scenes::Scene</link>
-<para>The <link linkend="_a01473">Scene</link> class </para>
-<link linkend="_a01477">RayTracer::Scenes::SceneLoader</link>
-<para>The <link linkend="_a01477">SceneLoader</link> class </para>
-<link linkend="_a01485">RayTracer::Scenes::SceneState</link>
-<para>The <link linkend="_a01485">SceneState</link> class </para>
-<link linkend="_a01489">RayTracer::Scenes::SettingWrapper</link>
-<para>The <link linkend="_a01489">SettingWrapper</link> class </para>
-<link linkend="_a01637">RayTracer::PluginsExt::Sphere::SphereCreator</link><link linkend="_a01641">RayTracer::PluginsExt::Sphere::SphereEntity</link><link linkend="_a01645">RayTracer::PluginsExt::SpotLight::SpotLightCreator</link><link linkend="_a01649">RayTracer::PluginsExt::SpotLight::SpotLightEntity</link><link linkend="_a01509">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator</link><link linkend="_a01513">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</link><link linkend="_a01209">RayTracer::Display::Display::StartFailed</link><link linkend="_a01217">RayTracer::Display::IDisplayModule::StartFailed</link>
+<link linkend="_a01480">RayTracer::Scenes::Scene</link>
+<para>The <link linkend="_a01480">Scene</link> class </para>
+<link linkend="_a01484">RayTracer::Scenes::SceneLoader</link>
+<para>The <link linkend="_a01484">SceneLoader</link> class </para>
+<link linkend="_a01492">RayTracer::Scenes::SceneState</link>
+<para>The <link linkend="_a01492">SceneState</link> class </para>
+<link linkend="_a01496">RayTracer::Scenes::SettingWrapper</link>
+<para>The <link linkend="_a01496">SettingWrapper</link> class </para>
+<link linkend="_a01644">RayTracer::PluginsExt::Sphere::SphereCreator</link><link linkend="_a01648">RayTracer::PluginsExt::Sphere::SphereEntity</link><link linkend="_a01652">RayTracer::PluginsExt::SpotLight::SpotLightCreator</link><link linkend="_a01656">RayTracer::PluginsExt::SpotLight::SpotLightEntity</link><link linkend="_a01516">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator</link><link linkend="_a01520">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</link><link linkend="_a01216">RayTracer::Display::Display::StartFailed</link><link linkend="_a01224">RayTracer::Display::IDisplayModule::StartFailed</link>
 <para>If the function start failed, but it can continue without being completed </para>
-<link linkend="_a01301">RayTracer::Factories::TFactory&lt; Handler, Interface &gt;</link>
-<para>The <link linkend="_a01301">TFactory</link> </para>
-<link linkend="_a01229">RayTracer::Display::IDisplayModule::TickFailed</link>
+<link linkend="_a01308">RayTracer::Factories::TFactory&lt; Handler, Interface &gt;</link>
+<para>The <link linkend="_a01308">TFactory</link> </para>
+<link linkend="_a01236">RayTracer::Display::IDisplayModule::TickFailed</link>
 <para>If the function tick failed, but it can continue without being completed </para>
-<link linkend="_a01265">RayTracer::Entities::Transform::Transform</link>
-<para>The <link linkend="_a01265">Transform</link> class </para>
-<link linkend="_a01653">RayTracer::PluginsExt::Triangle::TriangleCreator</link><link linkend="_a01657">RayTracer::PluginsExt::Triangle::TriangleEntity</link><link linkend="_a01497">RayTracer::Scenes::SettingWrapper::TypeException</link>
+<link linkend="_a01660">RayTracer::PluginsExt::Torus::TorusCreator</link><link linkend="_a01664">RayTracer::PluginsExt::Torus::TorusEntity</link><link linkend="_a01272">RayTracer::Entities::Transform::Transform</link>
+<para>The <link linkend="_a01272">Transform</link> class </para>
+<link linkend="_a01668">RayTracer::PluginsExt::Triangle::TriangleCreator</link><link linkend="_a01672">RayTracer::PluginsExt::Triangle::TriangleEntity</link><link linkend="_a01504">RayTracer::Scenes::SettingWrapper::TypeException</link>
 <para>Exception for when the key is not found </para>
-<link linkend="_a01269">RayTracer::Entities::Transform::Vector2i</link>
-<para>The <link linkend="_a01269">Vector2i</link> class </para>
-<link linkend="_a01273">RayTracer::Entities::Transform::Vector3f</link>
-<para>The <link linkend="_a01273">Vector3f</link> class </para>
-<link linkend="_a01433">RayTracer::Scenes::ConfigWrapper::WriteException</link>
+<link linkend="_a01276">RayTracer::Entities::Transform::Vector2i</link>
+<para>The <link linkend="_a01276">Vector2i</link> class </para>
+<link linkend="_a01280">RayTracer::Entities::Transform::Vector3f</link>
+<para>The <link linkend="_a01280">Vector3f</link> class </para>
+<link linkend="_a01440">RayTracer::Scenes::ConfigWrapper::WriteException</link>
 <para>Exception for when the file can&apos;t be written </para>
-<link linkend="_a01661">RayTracer::PluginsExt::Zebra::ZebraCreator</link><link linkend="_a01665">RayTracer::PluginsExt::Zebra::ZebraMaterial</link></section>
+<link linkend="_a01676">RayTracer::PluginsExt::Zebra::ZebraCreator</link><link linkend="_a01680">RayTracer::PluginsExt::Zebra::ZebraMaterial</link></section>

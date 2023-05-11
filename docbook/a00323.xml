@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01629">RayTracer::PluginsExt::PointLight::PointLightCreator</link></para>
+            <listitem><para>class <link linkend="_a01636">RayTracer::PluginsExt::PointLight::PointLightCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00385">RayTracer::PluginsExt::PointLight</link></para>
+            <listitem><para> <link linkend="_a00391">RayTracer::PluginsExt::PointLight</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

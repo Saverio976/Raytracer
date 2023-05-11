@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01253.html" target="_top" xlink:title="The IMaterial class.">
+<g id="a_node1"><a xlink:href="a01260.html" target="_top" xlink:title="The IMaterial class.">
 <polygon fill="white" stroke="black" points="0,-49.5 0,-79.5 107,-79.5 107,-49.5 0,-49.5"/>
 <text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Entities</text>
 <text text-anchor="middle" x="53.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IMaterial</text>
@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01561.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="a01568.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="143,-98.5 143,-128.5 328,-128.5 328,-98.5 143,-98.5"/>
 <text text-anchor="start" x="151" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="235.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::ChessBoard::ChessBoardMaterial</text>
@@ -38,7 +38,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="a01613.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="a01620.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="156.5,-49.5 156.5,-79.5 314.5,-79.5 314.5,-49.5 156.5,-49.5"/>
 <text text-anchor="start" x="164.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="235.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::PlainMaterial::PlainMaterial</text>
@@ -54,7 +54,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="a01665.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="a01680.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="172.5,-0.5 172.5,-30.5 298.5,-30.5 298.5,-0.5 172.5,-0.5"/>
 <text text-anchor="start" x="180.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="235.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Zebra::ZebraMaterial</text>

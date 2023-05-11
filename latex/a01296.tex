@@ -1,0 +1,82 @@
+\hypertarget{a01296}{}\doxysection{Ray\+Tracer\+::Factories\+::IFilter\+Factory Class Reference}
+\label{a01296}\index{RayTracer::Factories::IFilterFactory@{RayTracer::Factories::IFilterFactory}}
+
+
+The \mbox{\hyperlink{a01288}{Filter\+Factory}} (singleton factory)  
+
+
+
+
+{\ttfamily \#include $<$IFilter\+Factory.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Factories\+::IFilter\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{a01295}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Factories\+::IFilter\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{a01294}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01296_a5b8e762b8a179ba7c25cfe66c0f6da63}{$\sim$\+IFilter\+Factory}} ()=default
+\item 
+virtual \mbox{\hyperlink{a01312}{Filters\+::\+IFilter}} \& \mbox{\hyperlink{a01296_a9b178f7a1ae9cad80648b033a449660c}{get}} (const std\+::string \&name, const \mbox{\hyperlink{a01468}{Scenes\+::\+ISetting}} \&setting, \mbox{\hyperlink{a01316}{ILogger}} \&logger)=0
+\begin{DoxyCompactList}\small\item\em Get a filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01288}{Filter\+Factory}} (singleton factory) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01296_a5b8e762b8a179ba7c25cfe66c0f6da63}\label{a01296_a5b8e762b8a179ba7c25cfe66c0f6da63}} 
+\index{RayTracer::Factories::IFilterFactory@{RayTracer::Factories::IFilterFactory}!````~IFilterFactory@{$\sim$IFilterFactory}}
+\index{````~IFilterFactory@{$\sim$IFilterFactory}!RayTracer::Factories::IFilterFactory@{RayTracer::Factories::IFilterFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$IFilterFactory()}{~IFilterFactory()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Factories\+::\+IFilter\+Factory\+::$\sim$\+IFilter\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01296_a9b178f7a1ae9cad80648b033a449660c}\label{a01296_a9b178f7a1ae9cad80648b033a449660c}} 
+\index{RayTracer::Factories::IFilterFactory@{RayTracer::Factories::IFilterFactory}!get@{get}}
+\index{get@{get}!RayTracer::Factories::IFilterFactory@{RayTracer::Factories::IFilterFactory}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01312}{Filters\+::\+IFilter}}\& Ray\+Tracer\+::\+Factories\+::\+IFilter\+Factory\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{a01468}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01316}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name \\
+\hline
+{\em setting} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the filter 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01288_a6496476d3abed0281fcc77fcca786c1d}{Ray\+Tracer\+::\+Factories\+::\+Filter\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\mbox{\hyperlink{a00116}{IFilter\+Factory.\+hpp}}\end{DoxyCompactItemize}

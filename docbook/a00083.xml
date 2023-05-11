@@ -24,18 +24,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01245">RayTracer::Entities::IEntity</link></para>
+            <listitem><para>class <link linkend="_a01252">RayTracer::Entities::IEntity</link></para>
 
-<para>The <link linkend="_a01245">IEntity</link> class. </para>
+<para>The <link linkend="_a01252">IEntity</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00359">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00365">RayTracer::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

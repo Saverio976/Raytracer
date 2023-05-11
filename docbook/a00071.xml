@@ -25,21 +25,21 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01213">RayTracer::Display::IDisplayModule</link></para>
+            <listitem><para>class <link linkend="_a01220">RayTracer::Display::IDisplayModule</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01217">RayTracer::Display::IDisplayModule::StartFailed</link></para>
+            <listitem><para>class <link linkend="_a01224">RayTracer::Display::IDisplayModule::StartFailed</link></para>
 
 <para>If the function start failed, but it can continue without being completed. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01221">RayTracer::Display::IDisplayModule::EndFailed</link></para>
+            <listitem><para>class <link linkend="_a01228">RayTracer::Display::IDisplayModule::EndFailed</link></para>
 
 <para>If the function end failed, but it can continue without being completed. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01225">RayTracer::Display::IDisplayModule::EventFailed</link></para>
+            <listitem><para>class <link linkend="_a01232">RayTracer::Display::IDisplayModule::EventFailed</link></para>
 
 <para>If the function event failed, but it can continue without being completed. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01229">RayTracer::Display::IDisplayModule::TickFailed</link></para>
+            <listitem><para>class <link linkend="_a01236">RayTracer::Display::IDisplayModule::TickFailed</link></para>
 
 <para>If the function tick failed, but it can continue without being completed. </para>
 </listitem>
@@ -48,9 +48,9 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00358">RayTracer::Display</link></para>
+            <listitem><para> <link linkend="_a00364">RayTracer::Display</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

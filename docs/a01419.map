@@ -1,5 +1,6 @@
-<map id="RayTracer::Progress" name="RayTracer::Progress">
-<area shape="rect" id="node1" title=" " alt="" coords="37,307,187,399"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,64,72,141"/>
-<area shape="rect" id="node3" href="$a01309.html" title="Logger singleton." alt="" coords="96,5,277,200"/>
+<map id="RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;" name="RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;">
+<area shape="rect" id="node1" title="The PluginHandler class." alt="" coords="301,5,500,200"/>
+<area shape="rect" id="node2" href="$a01420.html" title=" " alt="" coords="5,307,239,516"/>
+<area shape="rect" id="node3" href="$a01420.html" title=" " alt="" coords="263,307,538,516"/>
+<area shape="rect" id="node4" href="$a01420.html" title=" " alt="" coords="563,307,809,516"/>
 </map>

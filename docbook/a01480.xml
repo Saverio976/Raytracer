@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01480" xml:lang="en-US">
+<title>RayTracer::Scenes::Scene Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::Scene</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01480">Scene</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Scene.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Scenes::Scene:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01478.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01480_1a5e16c2855a2f7b7b33eae0267d477c8e">Scene</link> (<link linkend="_a01316">ILogger</link> &amp;logger)</para>
+</listitem>
+            <listitem><para><link linkend="_a01480_1adfda5955715dbfbb28da86d5ea4cbdf7">~Scene</link> ()=default</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01480_1a5308abe8cab46b4ab0a9d1a6da133e5b">operator()</link> (const <link linkend="_a01468">ISetting</link> &amp;, const std::string &amp;event)</para>
+
+<para><link linkend="_a01480">Scene</link> config reloader. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01480_1a6b0e5f1d04ec62afc4569b3e508a7ac7">renders</link> ()</para>
+
+<para>Renders the scene (execute internal process in the thread) </para>
+</listitem>
+            <listitem><para>const std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01248">Entities::ICamera</link> &gt; &gt; &amp; <link linkend="_a01480_1a4a516d239f37864fbfc2e7c1c515591c">getCameras</link> () const</para>
+
+<para>Get the cameras. </para>
+</listitem>
+            <listitem><para>std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01248">Entities::ICamera</link> &gt; &gt; &amp; <link linkend="_a01480_1ab74a1e37a33f06c3671c9c8863512bdc">getCameras</link> ()</para>
+
+<para>Get the cameras. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01480_1a5e775828e7fef6d2fb5aef42c4c93668">isReady</link> () const</para>
+
+<para>Check if the scene is ready (internal render thread is stopped) </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01480_1a30095f564a868e741a1f29d3d1f80b7f">cancel</link> ()</para>
+
+<para>Cancel the scene rendering. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01480_1ad4e9d99d1b3580602e49c15beb50ed7e">wait_end</link> ()</para>
+
+<para>wait until the end of the renders </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a01480_1abc8a0c2715d4922477dbf3541e2afc4b">loadConfig</link> (const <link linkend="_a01468">ISetting</link> &amp;setting)</para>
+
+<para>Load the scene. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01480_1a79daa1e7c9ddf0c13d8ff9499a557890">waitTillCancel</link> ()</para>
+
+<para>Wait till the cancel is active (and do the changestate cancel) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01248">Entities::ICamera</link> &gt; &gt; <link linkend="_a01480_1a9ca9245bba305415ad7f61bc4452539d">_cameras</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01492">SceneState</link> <link linkend="_a01480_1a570392eca9d512e4ada88d9d27741676">_state</link></para>
+</listitem>
+            <listitem><para>std::future&lt; void &gt; <link linkend="_a01480_1a99b2019870a92ed63fbe8b33d951f612">_future</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01444">Displayable</link> <link linkend="_a01480_1a1b35bada57e491e45efb2f48d4bb93f3">_displayable</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01316">ILogger</link> &amp; <link linkend="_a01480_1a763004b5a3d9447bbac4254cecf26265">_logger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01480">Scene</link> class. </para>
+
+
+
+<para>class that represent a scene </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01480_1a5e16c2855a2f7b7b33eae0267d477c8e"/>    <section>
+    <title>Scene()</title>
+<indexterm><primary>Scene</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>Scene</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::Scene::Scene (<link linkend="_a01316">ILogger</link> &amp; logger)</computeroutput></para>    </section><anchor xml:id="_a01480_1adfda5955715dbfbb28da86d5ea4cbdf7"/>    <section>
+    <title>~Scene()</title>
+<indexterm><primary>~Scene</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>~Scene</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::Scene::~Scene ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01480_1a30095f564a868e741a1f29d3d1f80b7f"/>    <section>
+    <title>cancel()</title>
+<indexterm><primary>cancel</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>cancel</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::Scene::cancel ( )</computeroutput></para><para>
+
+<para>Cancel the scene rendering. </para>
+</para>
+    </section><anchor xml:id="_a01480_1ab74a1e37a33f06c3671c9c8863512bdc"/>    <section>
+    <title>getCameras()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getCameras</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>getCameras</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01248">Entities::ICamera</link>&gt; &gt;&amp; RayTracer::Scenes::Scene::getCameras ( )</computeroutput></para><para>
+
+<para>Get the cameras. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the cameras </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01480_1a4a516d239f37864fbfc2e7c1c515591c"/>    <section>
+    <title>getCameras()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getCameras</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>getCameras</secondary></indexterm>
+<para><computeroutput>const std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01248">Entities::ICamera</link>&gt; &gt;&amp; RayTracer::Scenes::Scene::getCameras ( ) const</computeroutput></para><para>
+
+<para>Get the cameras. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the cameras </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01480_1a5e775828e7fef6d2fb5aef42c4c93668"/>    <section>
+    <title>isReady()</title>
+<indexterm><primary>isReady</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>isReady</secondary></indexterm>
+<para><computeroutput>bool RayTracer::Scenes::Scene::isReady ( ) const</computeroutput></para><para>
+
+<para>Check if the scene is ready (internal render thread is stopped) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if the scene is ready </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01480_1abc8a0c2715d4922477dbf3541e2afc4b"/>    <section>
+    <title>loadConfig()</title>
+<indexterm><primary>loadConfig</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>loadConfig</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::Scene::loadConfig (const <link linkend="_a01468">ISetting</link> &amp; setting)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Load the scene. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>setting</entry>
+                                <entry>
+<para>the setting </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01480_1a5308abe8cab46b4ab0a9d1a6da133e5b"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::Scene::operator() (const <link linkend="_a01468">ISetting</link> &amp; , const std::string &amp; event)</computeroutput></para><para>
+
+<para><link linkend="_a01480">Scene</link> config reloader. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>config</entry>
+                                <entry>
+<para>the config changed </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01480_1a6b0e5f1d04ec62afc4569b3e508a7ac7"/>    <section>
+    <title>renders()</title>
+<indexterm><primary>renders</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>renders</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::Scene::renders ( )</computeroutput></para><para>
+
+<para>Renders the scene (execute internal process in the thread) </para>
+</para>
+
+<para>So, it return imediatly after being called </para>
+    </section><anchor xml:id="_a01480_1ad4e9d99d1b3580602e49c15beb50ed7e"/>    <section>
+    <title>wait_end()</title>
+<indexterm><primary>wait_end</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>wait_end</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::Scene::wait_end ( )</computeroutput></para><para>
+
+<para>wait until the end of the renders </para>
+</para>
+    </section><anchor xml:id="_a01480_1a79daa1e7c9ddf0c13d8ff9499a557890"/>    <section>
+    <title>waitTillCancel()</title>
+<indexterm><primary>waitTillCancel</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>waitTillCancel</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::Scene::waitTillCancel ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Wait till the cancel is active (and do the changestate cancel) </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01480_1a9ca9245bba305415ad7f61bc4452539d"/>    <section>
+    <title>_cameras</title>
+<indexterm><primary>_cameras</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>_cameras</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01248">Entities::ICamera</link>&gt; &gt; RayTracer::Scenes::Scene::_cameras<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01480_1a1b35bada57e491e45efb2f48d4bb93f3"/>    <section>
+    <title>_displayable</title>
+<indexterm><primary>_displayable</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>_displayable</secondary></indexterm>
+<para><computeroutput><link linkend="_a01444">Displayable</link> RayTracer::Scenes::Scene::_displayable<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01480_1a99b2019870a92ed63fbe8b33d951f612"/>    <section>
+    <title>_future</title>
+<indexterm><primary>_future</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>_future</secondary></indexterm>
+<para><computeroutput>std::future&lt;void&gt; RayTracer::Scenes::Scene::_future<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01480_1a763004b5a3d9447bbac4254cecf26265"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01316">ILogger</link>&amp; RayTracer::Scenes::Scene::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01480_1a570392eca9d512e4ada88d9d27741676"/>    <section>
+    <title>_state</title>
+<indexterm><primary>_state</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>_state</secondary></indexterm>
+<para><computeroutput><link linkend="_a01492">SceneState</link> RayTracer::Scenes::Scene::_state<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00221">Scene.hpp</link></section>
+</section>

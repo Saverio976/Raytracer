@@ -1,6 +1,4 @@
-<map id="RayTracer::Scenes::ConfigWrapper::WriteException" name="RayTracer::Scenes::ConfigWrapper::WriteException">
-<area shape="rect" id="node1" title="an exception for when the file can&#39;t be written" alt="" coords="5,287,231,393"/>
-<area shape="rect" id="node2" title=" " alt="" coords="39,147,154,224"/>
-<area shape="rect" id="node3" title=" " alt="" coords="179,147,265,224"/>
-<area shape="rect" id="node4" title=" " alt="" coords="153,5,291,97"/>
+<map id="RayTracer::Scenes::ConfigWrapper" name="RayTracer::Scenes::ConfigWrapper">
+<area shape="rect" id="node1" title=" " alt="" coords="5,189,160,369"/>
+<area shape="rect" id="node2" href="$a01452.html" title=" " alt="" coords="9,5,157,141"/>
 </map>

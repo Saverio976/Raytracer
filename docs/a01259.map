@@ -1,3 +1,6 @@
-<map id="RayTracer::Entities::Transform::ITransform" name="RayTracer::Entities::Transform::ITransform">
-<area shape="rect" id="node1" title="The ITransform class." alt="" coords="5,5,177,200"/>
+<map id="RayTracer::Entities::IMaterial" name="RayTracer::Entities::IMaterial">
+<area shape="rect" id="node1" title="The IMaterial class." alt="" coords="306,5,455,141"/>
+<area shape="rect" id="node2" href="$a01568.html" title=" " alt="" coords="5,189,252,413"/>
+<area shape="rect" id="node3" href="$a01620.html" title=" " alt="" coords="275,197,486,406"/>
+<area shape="rect" id="node4" href="$a01680.html" title=" " alt="" coords="510,189,678,413"/>
 </map>

@@ -1,0 +1,273 @@
+\hypertarget{a01356}{}\doxysection{Ray\+Tracer\+::Images\+::Ray\+Iterrator\+::Iterrator Class Reference}
+\label{a01356}\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+
+
+{\ttfamily \#include $<$Ray\+Iterrator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Images\+::Ray\+Iterrator\+::Iterrator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{a01355}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Images\+::Ray\+Iterrator\+::Iterrator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01354}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01356_a8269f801293c573091eb1d0aac32f844}{iterator\+\_\+category}} = std\+::forward\+\_\+iterator\+\_\+tag
+\item 
+using \mbox{\hyperlink{a01356_aad4b00281ce1379ff5e02f5c41eb1518}{difference\+\_\+type}} = \mbox{\hyperlink{a01348}{Ray}}
+\item 
+using \mbox{\hyperlink{a01356_a980cc30113f804f860f68e68a1efacc2}{value\+\_\+type}} = \mbox{\hyperlink{a01348}{Ray}}
+\item 
+using \mbox{\hyperlink{a01356_abf9d59b8c7d9bd4c8980595241f40736}{pointer}} = \mbox{\hyperlink{a01348}{Ray}} $\ast$
+\item 
+using \mbox{\hyperlink{a01356_a44fcfa12c1246c71c37419732c4dc7ed}{reference}} = \mbox{\hyperlink{a01348}{Ray}} \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01356_ac8ae5ca0b45f5256d658ab76a02a0a73}{Iterrator}} (const \mbox{\hyperlink{a01348}{Ray}} \&last, const \mbox{\hyperlink{a01276}{Entities\+::\+Transform\+::\+Vector2i}} \&size, const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} \&screen\+Pos, const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} \&pov)
+\item 
+\mbox{\hyperlink{a01340}{IIterator}} \& \mbox{\hyperlink{a01356_a175c0f23f75d6adc48caf81ba4c96299}{operator++}} () final
+\begin{DoxyCompactList}\small\item\em create the next \mbox{\hyperlink{a01352}{Ray\+Iterrator}} (modify current instance) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01348}{Ray}} \& \mbox{\hyperlink{a01356_a35a0670402cef0c2044560d84f0ae0fd}{operator$\ast$}} () final
+\begin{DoxyCompactList}\small\item\em Get the ray of the current \mbox{\hyperlink{a01352}{Ray\+Iterrator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01356_a7b95f43845dffabf3f646ef7d29de5dc}{operator==}} (const \mbox{\hyperlink{a01340}{IRay\+Iterator\+::\+IIterator}} \&other) const final
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{a01352}{Ray\+Iterrator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01356_adce8f700708cb8b362d404a51f7624e6}{operator!=}} (const \mbox{\hyperlink{a01340}{IRay\+Iterator\+::\+IIterator}} \&other) const final
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{a01352}{Ray\+Iterrator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01356}{Ray\+Iterrator\+::\+Iterrator}} \& \mbox{\hyperlink{a01356_a01b4177323fb7b9394cfa35aee077e98}{operator=}} (const \mbox{\hyperlink{a01356}{Ray\+Iterrator\+::\+Iterrator}} \&other)
+\begin{DoxyCompactList}\small\item\em Compare two Ray\+Iterrator\+::iterrator. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01356_a7682736e140eae7c1c8bb7845758c5c0}{to\+String}} () const final
+\begin{DoxyCompactList}\small\item\em to\+String \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a01348}{Ray}} \mbox{\hyperlink{a01356_ad62e62ca68c8a1a9f6fe773ad68d565a}{\+\_\+last}}
+\item 
+const \mbox{\hyperlink{a01276}{Entities\+::\+Transform\+::\+Vector2i}} \mbox{\hyperlink{a01356_af434a930c74817b0eca52c2cd7deb8dc}{\+\_\+size}}
+\item 
+const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01356_a73ea96e140998200cff07105f0c1b9da}{\+\_\+screen\+Pos}}
+\item 
+const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01356_aac5b3c373e37b88b489be56c78b9a1c8}{\+\_\+pov}}
+\item 
+\mbox{\hyperlink{a01348}{Ray}} \mbox{\hyperlink{a01356_a2267eb38ce2c73c80a3358a8df0aaea2}{\+\_\+ray}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01356_a5daa596e40e596f273090f9bf9c5736f}{\+\_\+cluster}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{a01356_aad4b00281ce1379ff5e02f5c41eb1518}\label{a01356_aad4b00281ce1379ff5e02f5c41eb1518}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01356_aad4b00281ce1379ff5e02f5c41eb1518}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::difference\+\_\+type}} =  \mbox{\hyperlink{a01348}{Ray}}}
+
+\mbox{\Hypertarget{a01356_a8269f801293c573091eb1d0aac32f844}\label{a01356_a8269f801293c573091eb1d0aac32f844}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!iterator\_category@{iterator\_category}}
+\index{iterator\_category@{iterator\_category}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{iterator\_category}{iterator\_category}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01356_a8269f801293c573091eb1d0aac32f844}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::iterator\+\_\+category}} =  std\+::forward\+\_\+iterator\+\_\+tag}
+
+\mbox{\Hypertarget{a01356_abf9d59b8c7d9bd4c8980595241f40736}\label{a01356_abf9d59b8c7d9bd4c8980595241f40736}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!pointer@{pointer}}
+\index{pointer@{pointer}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01356_abf9d59b8c7d9bd4c8980595241f40736}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::pointer}} =  \mbox{\hyperlink{a01348}{Ray}} $\ast$}
+
+\mbox{\Hypertarget{a01356_a44fcfa12c1246c71c37419732c4dc7ed}\label{a01356_a44fcfa12c1246c71c37419732c4dc7ed}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!reference@{reference}}
+\index{reference@{reference}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01356_a44fcfa12c1246c71c37419732c4dc7ed}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::reference}} =  \mbox{\hyperlink{a01348}{Ray}} \&}
+
+\mbox{\Hypertarget{a01356_a980cc30113f804f860f68e68a1efacc2}\label{a01356_a980cc30113f804f860f68e68a1efacc2}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01356_a980cc30113f804f860f68e68a1efacc2}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::value\+\_\+type}} =  \mbox{\hyperlink{a01348}{Ray}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01356_ac8ae5ca0b45f5256d658ab76a02a0a73}\label{a01356_ac8ae5ca0b45f5256d658ab76a02a0a73}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!Iterrator@{Iterrator}}
+\index{Iterrator@{Iterrator}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{Iterrator()}{Iterrator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+Iterrator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01348}{Ray}} \&}]{last,  }\item[{const \mbox{\hyperlink{a01276}{Entities\+::\+Transform\+::\+Vector2i}} \&}]{size,  }\item[{const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{screen\+Pos,  }\item[{const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{pov }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01356_adce8f700708cb8b362d404a51f7624e6}\label{a01356_adce8f700708cb8b362d404a51f7624e6}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01340}{IRay\+Iterator\+::\+IIterator}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Compare two \mbox{\hyperlink{a01352}{Ray\+Iterrator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if not equal 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01340_a68edf117388a0d588b1d5030a5e0ec51}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator\+::\+IIterator}}.
+
+\mbox{\Hypertarget{a01356_a35a0670402cef0c2044560d84f0ae0fd}\label{a01356_a35a0670402cef0c2044560d84f0ae0fd}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01348}{Ray}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the ray of the current \mbox{\hyperlink{a01352}{Ray\+Iterrator}}. 
+
+\begin{DoxyReturn}{Returns}
+the ray 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01340_a693bf2ce1b2846569514ac383df1d638}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator\+::\+IIterator}}.
+
+\mbox{\Hypertarget{a01356_a175c0f23f75d6adc48caf81ba4c96299}\label{a01356_a175c0f23f75d6adc48caf81ba4c96299}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!operator++@{operator++}}
+\index{operator++@{operator++}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01340}{IIterator}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+create the next \mbox{\hyperlink{a01352}{Ray\+Iterrator}} (modify current instance) 
+
+\begin{DoxyReturn}{Returns}
+the current instance modified 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01340_a8a9611aab72a7d1df506abf5b1eb4383}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator\+::\+IIterator}}.
+
+\mbox{\Hypertarget{a01356_a01b4177323fb7b9394cfa35aee077e98}\label{a01356_a01b4177323fb7b9394cfa35aee077e98}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!operator=@{operator=}}
+\index{operator=@{operator=}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01356}{Ray\+Iterrator\+::\+Iterrator}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01356}{Ray\+Iterrator\+::\+Iterrator}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Compare two Ray\+Iterrator\+::iterrator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01356_a7b95f43845dffabf3f646ef7d29de5dc}\label{a01356_a7b95f43845dffabf3f646ef7d29de5dc}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!operator==@{operator==}}
+\index{operator==@{operator==}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01340}{IRay\+Iterator\+::\+IIterator}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Compare two \mbox{\hyperlink{a01352}{Ray\+Iterrator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01340_aeca58e7e75242864403c243e34f7a6b7}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator\+::\+IIterator}}.
+
+\mbox{\Hypertarget{a01356_a7682736e140eae7c1c8bb7845758c5c0}\label{a01356_a7682736e140eae7c1c8bb7845758c5c0}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!toString@{toString}}
+\index{toString@{toString}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+to\+String 
+
+\begin{DoxyReturn}{Returns}
+the string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01340_a8e194702b273968c7c036253af0233d4}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator\+::\+IIterator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01356_a5daa596e40e596f273090f9bf9c5736f}\label{a01356_a5daa596e40e596f273090f9bf9c5736f}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!\_cluster@{\_cluster}}
+\index{\_cluster@{\_cluster}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{\_cluster}{\_cluster}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+\_\+cluster\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01356_ad62e62ca68c8a1a9f6fe773ad68d565a}\label{a01356_ad62e62ca68c8a1a9f6fe773ad68d565a}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!\_last@{\_last}}
+\index{\_last@{\_last}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{\_last}{\_last}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01348}{Ray}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+\_\+last\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01356_aac5b3c373e37b88b489be56c78b9a1c8}\label{a01356_aac5b3c373e37b88b489be56c78b9a1c8}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!\_pov@{\_pov}}
+\index{\_pov@{\_pov}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{\_pov}{\_pov}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+\_\+pov\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01356_a2267eb38ce2c73c80a3358a8df0aaea2}\label{a01356_a2267eb38ce2c73c80a3358a8df0aaea2}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!\_ray@{\_ray}}
+\index{\_ray@{\_ray}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{\_ray}{\_ray}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01348}{Ray}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+\_\+ray\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01356_a73ea96e140998200cff07105f0c1b9da}\label{a01356_a73ea96e140998200cff07105f0c1b9da}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!\_screenPos@{\_screenPos}}
+\index{\_screenPos@{\_screenPos}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{\_screenPos}{\_screenPos}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01280}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+\_\+screen\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01356_af434a930c74817b0eca52c2cd7deb8dc}\label{a01356_af434a930c74817b0eca52c2cd7deb8dc}} 
+\index{RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}!\_size@{\_size}}
+\index{\_size@{\_size}!RayTracer::Images::RayIterrator::Iterrator@{RayTracer::Images::RayIterrator::Iterrator}}
+\doxysubsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01276}{Entities\+::\+Transform\+::\+Vector2i}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator\+::\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\mbox{\hyperlink{a00152}{Ray\+Iterrator.\+hpp}}\end{DoxyCompactItemize}

@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01617">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</link></para>
+            <listitem><para>class <link linkend="_a01624">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00383">RayTracer::PluginsExt::PlainMaterial</link></para>
+            <listitem><para> <link linkend="_a00389">RayTracer::PluginsExt::PlainMaterial</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

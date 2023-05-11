@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: RayTracer::Images::IRayIterator Class Reference</title>
+<title>RayTracer: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,149 +62,29 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00357.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00363.html">Images</a></li><li class="navelem"><a class="el" href="a01329.html">IRayIterator</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00363.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00369.html">Images</a></li><li class="navelem"><a class="el" href="a01332.html">ImagePipeLine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01326.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RayTracer::Images::IRayIterator Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">RayTracer::Images::ImagePipeLine Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The RayIterator class.  
- <a href="a01329.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00143_source.html">IRayIterator.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for RayTracer::Images::IRayIterator:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01328.svg" width="548" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Collaboration diagram for RayTracer::Images::IRayIterator:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01327.svg" width="162" height="132"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01333.html">IIterator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a12e7f392ecb48b4460e02a9a198e1c9b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01329.html#a12e7f392ecb48b4460e02a9a198e1c9b">~IRayIterator</a> ()=default</td></tr>
-<tr class="separator:a12e7f392ecb48b4460e02a9a198e1c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1091fd7e65db524ab307d648a05b2e6f"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="a01333.html">IRayIterator::IIterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01329.html#a1091fd7e65db524ab307d648a05b2e6f">begin</a> () const =0</td></tr>
-<tr class="memdesc:a1091fd7e65db524ab307d648a05b2e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the begin.  <a href="a01329.html#a1091fd7e65db524ab307d648a05b2e6f">More...</a><br /></td></tr>
-<tr class="separator:a1091fd7e65db524ab307d648a05b2e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a54ffc59239a7865fbc4fd7569ba80b"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="a01333.html">IRayIterator::IIterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01329.html#a6a54ffc59239a7865fbc4fd7569ba80b">end</a> () const =0</td></tr>
-<tr class="memdesc:a6a54ffc59239a7865fbc4fd7569ba80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end (out of range)  <a href="a01329.html#a6a54ffc59239a7865fbc4fd7569ba80b">More...</a><br /></td></tr>
-<tr class="separator:a6a54ffc59239a7865fbc4fd7569ba80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The RayIterator class. </p>
-<p>class that represent an iterator of a ray </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a12e7f392ecb48b4460e02a9a198e1c9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12e7f392ecb48b4460e02a9a198e1c9b">&#9670;&nbsp;</a></span>~IRayIterator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual RayTracer::Images::IRayIterator::~IRayIterator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1091fd7e65db524ab307d648a05b2e6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1091fd7e65db524ab307d648a05b2e6f">&#9670;&nbsp;</a></span>begin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="a01333.html">IRayIterator::IIterator</a>&gt; RayTracer::Images::IRayIterator::begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the begin. </p>
-<dl class="section return"><dt>Returns</dt><dd>the begin </dd></dl>
-
-<p>Implemented in <a class="el" href="a01345.html#a8edc5e425f9ea78bd28417c9bbcb6f62">RayTracer::Images::RayIterrator</a>, <a class="el" href="a01549.html#a5ce764aee9a48a05a3a00b434a841a06">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</a>, and <a class="el" href="a01533.html#ac67fd3d19dfee9267f0572502dade208">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator</a>.</p>
-
-</div>
-</div>
-<a id="a6a54ffc59239a7865fbc4fd7569ba80b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a54ffc59239a7865fbc4fd7569ba80b">&#9670;&nbsp;</a></span>end()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="a01333.html">IRayIterator::IIterator</a>&gt; RayTracer::Images::IRayIterator::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the end (out of range) </p>
-<dl class="section return"><dt>Returns</dt><dd>the end </dd></dl>
-
-<p>Implemented in <a class="el" href="a01345.html#a09940f5ca315fc3cfc04b8627682f124">RayTracer::Images::RayIterrator</a>, <a class="el" href="a01549.html#aeb74f5baf7988ff13997e217ccc9a5c5">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</a>, and <a class="el" href="a01533.html#aced1432cbb6b6a933d0c78ca0d4fdbe2">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/runner/work/Raytracer/Raytracer/src/Images/<a class="el" href="a00143_source.html">IRayIterator.hpp</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a01332.html#a87e2e909fbb996ef27981fbfe77c86cd">_displayable</a></td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01332.html#a75e82efc180d4205954c385f37c0e0d2">_image</a></td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01332.html#ae95c9b067c79dd8ac453c4931c36bc4a">_rayIterrator</a></td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01332.html#a6981ce661854bc5314157aef96827e08">_state</a></td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01332.html#a1480abb46258a4827960dab3448b0041">apply</a>(Filters::IFilter &amp;filter)</td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01332.html#a334f2fc98699d1ebf2aa03831fd579ba">generate</a>(ILogger &amp;logger, std::size_t maxThread=1, std::size_t cluster=1)</td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01332.html#adcb8eb1f8760bd9a3763a446600b1cfc">ImagePipeLine</a>(Image &amp;image, const Scenes::IDisplayable &amp;displayable, const Scenes::ISceneState &amp;state, const IRayIterator &amp;rayIterrator)</td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01332.html#abde10b0d2bb72b27ea0f1e9a9a5ac03d">~ImagePipeLine</a>()=default</td><td class="entry"><a class="el" href="a01332.html">RayTracer::Images::ImagePipeLine</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 04:15:34 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:48:15 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

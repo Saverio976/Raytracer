@@ -1,17 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00374" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Camera::Clustered Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered</primary></indexterm>
+<title>RayTracer::Scenes Namespace Reference</title>
+<indexterm><primary>RayTracer::Scenes</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01525">CameraClusterCreator</link></para>
+            <listitem><para>class <link linkend="_a01432">ConfigWrapper</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01529">CameraClusterEntity</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01533">ClusterRayIterator</link></para>
+            <listitem><para>class <link linkend="_a01444">Displayable</link></para>
 
-<para>The <link linkend="_a01533">ClusterRayIterator</link> class. </para>
+<para>The <link linkend="_a01444">Displayable</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01452">IConfig</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01456">IDisplayable</link></para>
+
+<para>The <link linkend="_a01456">IDisplayable</link> interface. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01464">ISceneState</link></para>
+
+<para>The <link linkend="_a01492">SceneState</link> interface. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01468">ISetting</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01480">Scene</link></para>
+
+<para>The <link linkend="_a01480">Scene</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01484">SceneLoader</link></para>
+
+<para>The <link linkend="_a01484">SceneLoader</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01492">SceneState</link></para>
+
+<para>The <link linkend="_a01492">SceneState</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01496">SettingWrapper</link></para>
+
+<para>The <link linkend="_a01496">SettingWrapper</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

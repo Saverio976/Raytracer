@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01304" xml:lang="en-US">
+<title>RayTracer::Factories::MaterialFactory Class Reference</title>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01304">MaterialFactory</link> (singleton factory) </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MaterialFactory.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Factories::MaterialFactory:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01303.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Factories::MaterialFactory:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01302.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01304_1a360fdf8c4cb4010496fa6bfe059ca4ed">MaterialFactory</link> (const <link linkend="_a01304">MaterialFactory</link> &amp;other)=delete</para>
+</listitem>
+            <listitem><para><link linkend="_a01304_1a99b89756e60ef6478553010b16141160">~MaterialFactory</link> ()=default</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01304_1ab11e2eb0ca6481ac48d6f5b6b0e6e3c1">add</link> (const std::string &amp;name, std::unique_ptr&lt; <link linkend="_a01412">Plugins::Materials::MaterialHandler</link> &gt; handler)</para>
+
+<para>Add an material. </para>
+</listitem>
+            <listitem><para><link linkend="_a01260">Entities::IMaterial</link> &amp; <link linkend="_a01304_1a44015146f20c0890701da39a442d6a12">get</link> (const std::string &amp;name, const <link linkend="_a01468">Scenes::ISetting</link> &amp;setting, <link linkend="_a01316">ILogger</link> &amp;logger) final</para>
+
+<para>Get an material. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01304_1ae1e8809963cbf5dc421d39a042dd04c8">clearAll</link> ()</para>
+
+<para>Clear all handlers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_a01304">MaterialFactory</link> &amp; <link linkend="_a01304_1a819b284c93a61f717a05a996b0ecaa2c">getInstance</link> ()</para>
+
+<para>Get the singleton. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01304_1a6d46b0b1bccc928f96c5311e9117ff0c">MaterialFactory</link> ()=default</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_a01308">TFactory</link>&lt; <link linkend="_a01412">Plugins::Materials::MaterialHandler</link>, <link linkend="_a01260">Entities::IMaterial</link> &gt; &amp; <link linkend="_a01304_1a9c046777ea4a3aceb6fbe6c6910dc201">getFactory</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static std::unique_ptr&lt; <link linkend="_a01304">MaterialFactory</link> &gt; <link linkend="_a01304_1abfced7974dae1bb80a94b5deb0d4c978">_factory</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01304">MaterialFactory</link> (singleton factory) </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01304_1a360fdf8c4cb4010496fa6bfe059ca4ed"/>    <section>
+    <title>MaterialFactory()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>MaterialFactory</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>MaterialFactory</secondary></indexterm>
+<para><computeroutput>RayTracer::Factories::MaterialFactory::MaterialFactory (const <link linkend="_a01304">MaterialFactory</link> &amp; other)<computeroutput>[delete]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01304_1a99b89756e60ef6478553010b16141160"/>    <section>
+    <title>~MaterialFactory()</title>
+<indexterm><primary>~MaterialFactory</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>~MaterialFactory</secondary></indexterm>
+<para><computeroutput>RayTracer::Factories::MaterialFactory::~MaterialFactory ( )<computeroutput>[default]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01304_1a6d46b0b1bccc928f96c5311e9117ff0c"/>    <section>
+    <title>MaterialFactory()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>MaterialFactory</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>MaterialFactory</secondary></indexterm>
+<para><computeroutput>RayTracer::Factories::MaterialFactory::MaterialFactory ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01304_1ab11e2eb0ca6481ac48d6f5b6b0e6e3c1"/>    <section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>add</secondary></indexterm>
+<para><computeroutput>void RayTracer::Factories::MaterialFactory::add (const std::string &amp; name, std::unique_ptr&lt; <link linkend="_a01412">Plugins::Materials::MaterialHandler</link> &gt; handler)</computeroutput></para><para>
+
+<para>Add an material. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>the name </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>handler</entry>
+                                <entry>
+<para>the handler </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01304_1ae1e8809963cbf5dc421d39a042dd04c8"/>    <section>
+    <title>clearAll()</title>
+<indexterm><primary>clearAll</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>clearAll</secondary></indexterm>
+<para><computeroutput>void RayTracer::Factories::MaterialFactory::clearAll ( )</computeroutput></para><para>
+
+<para>Clear all handlers. </para>
+</para>
+    </section><anchor xml:id="_a01304_1a44015146f20c0890701da39a442d6a12"/>    <section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>get</secondary></indexterm>
+<para><computeroutput><link linkend="_a01260">Entities::IMaterial</link>&amp; RayTracer::Factories::MaterialFactory::get (const std::string &amp; name, const <link linkend="_a01468">Scenes::ISetting</link> &amp; setting, <link linkend="_a01316">ILogger</link> &amp; logger)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get an material. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>the name </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>setting</entry>
+                                <entry>
+<para>the setting (to create the entity)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the material </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01300_1ab278e040b21266a3ec5ef70fd0ecbc03">RayTracer::Factories::IMaterialFactory</link>.</para>
+    </section><anchor xml:id="_a01304_1a9c046777ea4a3aceb6fbe6c6910dc201"/>    <section>
+    <title>getFactory()</title>
+<indexterm><primary>getFactory</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>getFactory</secondary></indexterm>
+<para><computeroutput>static <link linkend="_a01308">TFactory</link>&lt;<link linkend="_a01412">Plugins::Materials::MaterialHandler</link>, <link linkend="_a01260">Entities::IMaterial</link>&gt;&amp; RayTracer::Factories::MaterialFactory::getFactory ( )<computeroutput>[static]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01304_1a819b284c93a61f717a05a996b0ecaa2c"/>    <section>
+    <title>getInstance()</title>
+<indexterm><primary>getInstance</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>getInstance</secondary></indexterm>
+<para><computeroutput>static <link linkend="_a01304">MaterialFactory</link>&amp; RayTracer::Factories::MaterialFactory::getInstance ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Get the singleton. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the singleton </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01304_1abfced7974dae1bb80a94b5deb0d4c978"/>    <section>
+    <title>_factory</title>
+<indexterm><primary>_factory</primary><secondary>RayTracer::Factories::MaterialFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::MaterialFactory</primary><secondary>_factory</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01304">MaterialFactory</link>&gt; RayTracer::Factories::MaterialFactory::_factory<computeroutput>[static]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Factories/<link linkend="_a00122">MaterialFactory.hpp</link></section>
+</section>

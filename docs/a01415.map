@@ -1,5 +1,5 @@
-<map id="RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;" name="RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,287,189,408"/>
-<area shape="rect" id="node2" title=" " alt="" coords="54,147,141,224"/>
-<area shape="rect" id="node3" title=" " alt="" coords="28,5,167,97"/>
+<map id="RayTracer::Plugins::Materials::MaterialLoader" name="RayTracer::Plugins::Materials::MaterialLoader">
+<area shape="rect" id="node1" title="The MaterialLoader." alt="" coords="26,419,223,525"/>
+<area shape="rect" id="node2" href="$a01424.html" title=" " alt="" coords="5,233,244,369"/>
+<area shape="rect" id="node3" href="$a01424.html" title=" " alt="" coords="33,5,217,127"/>
 </map>

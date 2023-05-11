@@ -1,0 +1,125 @@
+\hypertarget{a01492}{}\doxysection{Ray\+Tracer\+::Scenes\+::Scene\+State Class Reference}
+\label{a01492}\index{RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}}
+
+
+The \mbox{\hyperlink{a01492}{Scene\+State}} class.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Scenes\+::Scene\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{a01491}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Scenes\+::Scene\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{a01490}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01492_acc138b3c85e7d17d6972649af2ebea52}{Scene\+State}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01492}{Scene\+State}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01464_a3abb46616bc66e9744ad0bed1635afe6}{IScene\+State\+::\+States}} \mbox{\hyperlink{a01492_a653dac2bab1fce46419d0c3f11b56430}{get\+State}} () const final
+\begin{DoxyCompactList}\small\item\em Get the state (thread safe) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01492_ab88b04dafcbca0baedc27fbdc3d4c61e}{change\+State}} (const \mbox{\hyperlink{a01464_a3abb46616bc66e9744ad0bed1635afe6}{IScene\+State\+::\+States}} \&state) final
+\begin{DoxyCompactList}\small\item\em Change the state (thread safe) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01464_a3abb46616bc66e9744ad0bed1635afe6}{States}} \mbox{\hyperlink{a01492_a4f2867c6cc43488b30af5c708d8d59e8}{\+\_\+state}}
+\item 
+std\+::mutex \mbox{\hyperlink{a01492_a46554a8aaa9282e67984689da6ddd89b}{mutex}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01492}{Scene\+State}} class. 
+
+class that represent a scene state (to know if the scene is running or not) (or if the scene render need to be cancelled) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01492_acc138b3c85e7d17d6972649af2ebea52}\label{a01492_acc138b3c85e7d17d6972649af2ebea52}} 
+\index{RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}!SceneState@{SceneState}}
+\index{SceneState@{SceneState}!RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}}
+\doxysubsubsection{\texorpdfstring{SceneState()}{SceneState()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Scene\+State\+::\+Scene\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01492}{Scene\+State}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01492_ab88b04dafcbca0baedc27fbdc3d4c61e}\label{a01492_ab88b04dafcbca0baedc27fbdc3d4c61e}} 
+\index{RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}!changeState@{changeState}}
+\index{changeState@{changeState}!RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}}
+\doxysubsubsection{\texorpdfstring{changeState()}{changeState()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+State\+::change\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01464_a3abb46616bc66e9744ad0bed1635afe6}{IScene\+State\+::\+States}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Change the state (thread safe) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01464_a9794d2a8b28b9753686931e78d5e315c}{Ray\+Tracer\+::\+Scenes\+::\+IScene\+State}}.
+
+\mbox{\Hypertarget{a01492_a653dac2bab1fce46419d0c3f11b56430}\label{a01492_a653dac2bab1fce46419d0c3f11b56430}} 
+\index{RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}!getState@{getState}}
+\index{getState@{getState}!RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01464_a3abb46616bc66e9744ad0bed1635afe6}{IScene\+State\+::\+States}} Ray\+Tracer\+::\+Scenes\+::\+Scene\+State\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the state (thread safe) 
+
+\begin{DoxyReturn}{Returns}
+the state 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01464_a2987cac49fef7a48b80aa2d1e4aa84da}{Ray\+Tracer\+::\+Scenes\+::\+IScene\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01492_a4f2867c6cc43488b30af5c708d8d59e8}\label{a01492_a4f2867c6cc43488b30af5c708d8d59e8}} 
+\index{RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}!\_state@{\_state}}
+\index{\_state@{\_state}!RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}}
+\doxysubsubsection{\texorpdfstring{\_state}{\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01464_a3abb46616bc66e9744ad0bed1635afe6}{States}} Ray\+Tracer\+::\+Scenes\+::\+Scene\+State\+::\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01492_a46554a8aaa9282e67984689da6ddd89b}\label{a01492_a46554a8aaa9282e67984689da6ddd89b}} 
+\index{RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}!mutex@{mutex}}
+\index{mutex@{mutex}!RayTracer::Scenes::SceneState@{RayTracer::Scenes::SceneState}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::mutex Ray\+Tracer\+::\+Scenes\+::\+Scene\+State\+::mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\mbox{\hyperlink{a00227}{Scene\+State.\+hpp}}\end{DoxyCompactItemize}

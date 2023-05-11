@@ -87,15 +87,15 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00188.html">MaterialHandler.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">MaterialFactory.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00367.html">RayTracer::Plugins::Materials</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01409.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01409.html">MaterialLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01417.html">PluginLoader</a>&lt;MaterialHandler, RayTracer::Entities::IMaterial, Factories::MaterialFactory&gt; {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00373.html">RayTracer::Plugins::Materials</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01416.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01416.html">MaterialLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01424.html">PluginLoader</a>&lt;MaterialHandler, RayTracer::Entities::IMaterial, Factories::MaterialFactory&gt; {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01409.html#a59b717a6c6a694e4eb3885e9e02019b7">   31</a></span>&#160;        <a class="code" href="a01409.html#a59b717a6c6a694e4eb3885e9e02019b7">MaterialLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01409.html#abd8435c9b17e040199c57326d2a59b24">   35</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a01409.html#abd8435c9b17e040199c57326d2a59b24">loadMaterials</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01416.html#a59b717a6c6a694e4eb3885e9e02019b7">   31</a></span>&#160;        <a class="code" href="a01416.html#a59b717a6c6a694e4eb3885e9e02019b7">MaterialLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01416.html#abd8435c9b17e040199c57326d2a59b24">   35</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a01416.html#abd8435c9b17e040199c57326d2a59b24">loadMaterials</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01409.html#ae81f0e31968edf29ce3edd8c3f2ed215">   39</a></span>&#160;        std::string <a class="code" href="a01409.html#ae81f0e31968edf29ce3edd8c3f2ed215">_directory</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01416.html#ae81f0e31968edf29ce3edd8c3f2ed215">   39</a></span>&#160;        std::string <a class="code" href="a01416.html#ae81f0e31968edf29ce3edd8c3f2ed215">_directory</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
@@ -105,16 +105,16 @@ $(function() {
 <div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">TFactory.hpp</a></div></div>
 <div class="ttc" id="aa00188_html"><div class="ttname"><a href="a00188.html">MaterialHandler.hpp</a></div></div>
 <div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">PluginLoader.hpp</a></div></div>
-<div class="ttc" id="aa00367_html"><div class="ttname"><a href="a00367.html">RayTracer::Plugins::Materials</a></div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:16</div></div>
-<div class="ttc" id="aa01409_html"><div class="ttname"><a href="a01409.html">RayTracer::Plugins::Materials::MaterialLoader</a></div><div class="ttdoc">The MaterialLoader.</div><div class="ttdef"><b>Definition:</b> MaterialLoader.hpp:24</div></div>
-<div class="ttc" id="aa01409_html_a59b717a6c6a694e4eb3885e9e02019b7"><div class="ttname"><a href="a01409.html#a59b717a6c6a694e4eb3885e9e02019b7">RayTracer::Plugins::Materials::MaterialLoader::MaterialLoader</a></div><div class="ttdeci">MaterialLoader(const std::string &amp;directory)</div><div class="ttdoc">MaterialLoader constructor (doesn't load anything)</div></div>
-<div class="ttc" id="aa01409_html_abd8435c9b17e040199c57326d2a59b24"><div class="ttname"><a href="a01409.html#abd8435c9b17e040199c57326d2a59b24">RayTracer::Plugins::Materials::MaterialLoader::loadMaterials</a></div><div class="ttdeci">void loadMaterials()</div><div class="ttdoc">Load all the materials in the factory singleton.</div></div>
-<div class="ttc" id="aa01409_html_ae81f0e31968edf29ce3edd8c3f2ed215"><div class="ttname"><a href="a01409.html#ae81f0e31968edf29ce3edd8c3f2ed215">RayTracer::Plugins::Materials::MaterialLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> MaterialLoader.hpp:39</div></div>
-<div class="ttc" id="aa01417_html"><div class="ttname"><a href="a01417.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
+<div class="ttc" id="aa00373_html"><div class="ttname"><a href="a00373.html">RayTracer::Plugins::Materials</a></div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:16</div></div>
+<div class="ttc" id="aa01416_html"><div class="ttname"><a href="a01416.html">RayTracer::Plugins::Materials::MaterialLoader</a></div><div class="ttdoc">The MaterialLoader.</div><div class="ttdef"><b>Definition:</b> MaterialLoader.hpp:24</div></div>
+<div class="ttc" id="aa01416_html_a59b717a6c6a694e4eb3885e9e02019b7"><div class="ttname"><a href="a01416.html#a59b717a6c6a694e4eb3885e9e02019b7">RayTracer::Plugins::Materials::MaterialLoader::MaterialLoader</a></div><div class="ttdeci">MaterialLoader(const std::string &amp;directory)</div><div class="ttdoc">MaterialLoader constructor (doesn't load anything)</div></div>
+<div class="ttc" id="aa01416_html_abd8435c9b17e040199c57326d2a59b24"><div class="ttname"><a href="a01416.html#abd8435c9b17e040199c57326d2a59b24">RayTracer::Plugins::Materials::MaterialLoader::loadMaterials</a></div><div class="ttdeci">void loadMaterials()</div><div class="ttdoc">Load all the materials in the factory singleton.</div></div>
+<div class="ttc" id="aa01416_html_ae81f0e31968edf29ce3edd8c3f2ed215"><div class="ttname"><a href="a01416.html#ae81f0e31968edf29ce3edd8c3f2ed215">RayTracer::Plugins::Materials::MaterialLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> MaterialLoader.hpp:39</div></div>
+<div class="ttc" id="aa01424_html"><div class="ttname"><a href="a01424.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:48:14 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

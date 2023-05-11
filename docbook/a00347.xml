@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00347" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/ZebraMaterial/ZebraCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/ZebraMaterial/ZebraCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;IMaterialCreator.hpp&quot;
+#include &quot;IEntityCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ZebraMaterial.hpp&quot;
-</programlisting>Include dependency graph for ZebraCreator.hpp:<para>
+#include &quot;TriangleEntity.hpp&quot;
+</programlisting>Include dependency graph for TriangleCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01661">RayTracer::PluginsExt::Zebra::ZebraCreator</link></para>
+            <listitem><para>class <link linkend="_a01668">RayTracer::PluginsExt::Triangle::TriangleCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00389">RayTracer::PluginsExt::Zebra</link></para>
+            <listitem><para> <link linkend="_a00395">RayTracer::PluginsExt::Triangle</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

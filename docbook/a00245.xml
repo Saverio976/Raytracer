@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01517">RayTracer::PluginsExt::Camera::CameraCreator</link></para>
+            <listitem><para>class <link linkend="_a01524">RayTracer::PluginsExt::Camera::CameraCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00373">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00379">RayTracer::PluginsExt::Camera</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

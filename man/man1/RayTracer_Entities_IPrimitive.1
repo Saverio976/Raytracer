@@ -12,7 +12,7 @@ RayTracer::Entities::IPrimitive \- The \fBIPrimitive\fP class\&.
 .PP
 Inherits \fBRayTracer::Entities::IEntity\fP\&.
 .PP
-Inherited by \fBRayTracer::PluginsExt::Cone::ConeEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, and \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP\&.
+Inherited by \fBRayTracer::PluginsExt::Cone::ConeEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Torus::TorusEntity\fP, and \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -60,7 +60,7 @@ the material
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Torus::TorusEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
 .SS "virtual std::optional<\fBTransform::Vector3f\fP> RayTracer::Entities::IPrimitive::isCollided (const \fBImages::Ray\fP & ray) const\fC [pure virtual]\fP"
 
 .PP
@@ -78,7 +78,7 @@ true if the ray is collided
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Torus::TorusEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
 .SS "virtual bool RayTracer::Entities::IPrimitive::isCollided (const \fBTransform::Vector3f\fP & point) const\fC [pure virtual]\fP"
 
 .PP
@@ -96,7 +96,7 @@ true if the point is collided
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Torus::TorusEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
 .SS "virtual \fBImages::Color\fP RayTracer::Entities::IPrimitive::redirectionLight (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBTransform::Vector3f\fP & intersect) const\fC [pure virtual]\fP"
 
 .PP
@@ -118,7 +118,7 @@ the color of the shadow
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Triangle::TriangleEntity\fP, \fBRayTracer::PluginsExt::Torus::TorusEntity\fP, \fBRayTracer::PluginsExt::Sphere::SphereEntity\fP, \fBRayTracer::PluginsExt::Plane::PlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity\fP, \fBRayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity\fP, \fBRayTracer::PluginsExt::LimitedCone::LimitedConeEntity\fP, \fBRayTracer::PluginsExt::Disk::DiskEntity\fP, \fBRayTracer::PluginsExt::Cylinder::CylinderEntity\fP, and \fBRayTracer::PluginsExt::Cone::ConeEntity\fP\&.
 
 .SH "Author"
 .PP 

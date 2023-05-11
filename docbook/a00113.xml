@@ -28,23 +28,23 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01285">RayTracer::Factories::IEntityFactory</link></para>
+            <listitem><para>class <link linkend="_a01292">RayTracer::Factories::IEntityFactory</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00361">RayTracer::Factories</link></para>
+            <listitem><para> <link linkend="_a00367">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_a01285">RayTracer::Factories::IEntityFactory</link> * <link linkend="_a00113_1aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</link> (void)</para>
+            <listitem><para><link linkend="_a01292">RayTracer::Factories::IEntityFactory</link> * <link linkend="_a00113_1aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</link> (void)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -54,6 +54,6 @@ This graph shows which files directly or indirectly include this file:<para>
     <title>getEntityFactoryInstance()</title>
 <indexterm><primary>getEntityFactoryInstance</primary><secondary>IEntityFactory.hpp</secondary></indexterm>
 <indexterm><primary>IEntityFactory.hpp</primary><secondary>getEntityFactoryInstance</secondary></indexterm>
-<para><computeroutput><link linkend="_a01285">RayTracer::Factories::IEntityFactory</link>* getEntityFactoryInstance (void )</computeroutput></para></section>
+<para><computeroutput><link linkend="_a01292">RayTracer::Factories::IEntityFactory</link>* getEntityFactoryInstance (void )</computeroutput></para></section>
 </section>
 </section>
