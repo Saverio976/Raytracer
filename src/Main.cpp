@@ -218,6 +218,8 @@ namespace RayTracer {
         std::cout << "\tLeft Shift                     : go down" << std::endl;
         std::cout << "\tLeft Arrow                     : go previous camera" << std::endl;
         std::cout << "\tRight Arrow                    : go next camera" << std::endl;
+        std::cout << "\tR                              : set cluster to 1" << std::endl;
+        std::cout << "\tP                              : take a screenshot to current screen" << std::endl;
         std::cout << std::endl;
         std::cout << "__CREDITS__:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;

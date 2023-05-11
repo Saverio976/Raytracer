@@ -7,6 +7,7 @@
 
 #include "ILogger.hpp"
 #include "ISetting.hpp"
+#include "Parameters.hpp"
 #include "Scene.hpp"
 #include "SceneState.hpp"
 #include <future>
@@ -127,5 +128,10 @@ namespace RayTracer::Scenes {
     const SceneState &Scene::getState() const
     {
         return this->_state;
+    }
+
+    const std::string &Scene::getFileBase() const
+    {
+        return Parameters::getInstance().getString("output-path");
     }
 }

@@ -85,6 +85,12 @@ namespace RayTracer::Scenes {
              * @return the state
              */
             const SceneState &getState() const;
+            /**
+             * @brief Get the file base
+             *
+             * @return the file base
+             */
+            const std::string &getFileBase() const;
         protected:
         private:
             /**
