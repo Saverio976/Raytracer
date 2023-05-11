@@ -7,6 +7,7 @@
 
 #include "Api.hpp"
 #include "TriangleEntity.hpp"
+#include "TriangleCreator.hpp"
 
 extern "C" {
     void *getCreator(void)

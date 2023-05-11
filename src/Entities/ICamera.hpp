@@ -7,7 +7,8 @@
 
 #ifndef ICAMERA_HPP_
     #define ICAMERA_HPP_
-    #include <list>
+    #include <cstddef>
+#include <list>
     #include "Transform/Vector2i.hpp"
     #include "IDisplayable.hpp"
     #include "Image.hpp"
@@ -70,6 +71,16 @@ namespace RayTracer::Entities {
              * @return the filters
              */
             virtual std::list<std::reference_wrapper<Filters::IFilter>> &getFilters() = 0;
+            /**
+             * @brief Set the cluster (1 is more precision, +infini is less precision)
+             *
+             * @param cluster the cluster
+             */
+            virtual void setCluster(std::size_t cluster) = 0;
+            /**
+             * @brief Get the cluster
+             */
+            virtual std::size_t getCluster() const = 0;
 
         protected:
         private:

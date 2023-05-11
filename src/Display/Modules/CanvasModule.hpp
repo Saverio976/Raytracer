@@ -10,6 +10,7 @@
 
     #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Image.hpp>
+#include <SFML/System/Clock.hpp>
     #include <functional>
     #include "ICamera.hpp"
     #include "IDisplayModule.hpp"
@@ -47,6 +48,7 @@ namespace RayTracer::Display {
             Scenes::Scene &_scene;
             std::size_t &_position;
             sf::Font _font;
+            sf::Clock _clock;
     };
 }
 

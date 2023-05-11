@@ -88,9 +88,18 @@ namespace RayTracer::Display {
             {sf::Keyboard::Z,               std::bind(&CanvasModule::goForward, this, std::ref(window), std::ref(event))},
         };
 
+        if (_clock.getElapsedTime() > sf::seconds(0.5) && this->_scene.getCameras()[this->_position].get().getCluster() != 1) {
+            this->_scene.getCameras()[this->_position].get().setCluster(1);
+            this->_scene.cancel();
+            this->_scene.renders();
+        }
         if (event.type == sf::Event::KeyPressed) {
             auto it = keyMap.find(event.key.code);
             if (it != keyMap.end()) {
+                if (_clock.getElapsedTime() > sf::seconds(0.5)) {
+                    this->_scene.getCameras()[this->_position].get().setCluster(5);
+                }
+                _clock.restart();
                 it->second();
             }
         }
@@ -110,6 +119,7 @@ namespace RayTracer::Display {
             Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
             Entities::Transform::ITransform &transform = camera.getTransform();
             func(camera, transform);
+            this->_scene.cancel();
             this->_scene.renders();
         }
     }
