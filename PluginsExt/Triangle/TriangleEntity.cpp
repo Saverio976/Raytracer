@@ -75,7 +75,12 @@ namespace RayTracer::PluginsExt::Triangle {
     Images::Color TriangleEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const
     {
-        return {255, 0, 0, 255};
+        Entities::Transform::Vector3f edgeOne = _pointTwo - _pointOne;
+        Entities::Transform::Vector3f edgeTwo = _pointThree - _pointOne;
+        Entities::Transform::Vector3f normal = edgeOne.getCrossed(edgeTwo).getNormalized();
+        Entities::Transform::Transform transform = _transform;
+        transform.setPosition(intersect - normal);
+        return _material->get().getColor(ray, transform, intersect, displayable);
     }
 
     Images::Color TriangleEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
