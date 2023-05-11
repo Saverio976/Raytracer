@@ -1,0 +1,146 @@
+/*
+** EPITECH PROJECT, 2023
+** Raytracer
+** File description:
+** ObjEntity.cpp
+*/
+
+#include "ILogger.hpp"
+#include "ObjEntity.hpp"
+#include "IMaterialFactory.hpp"
+#include "Vector2i.hpp"
+
+namespace RayTracer::PluginsExt::Obj {
+
+    ObjEntity::Face::Face(std::string &faceString) {
+        std::istringstream lineStream(faceString);
+        int value = 0;
+
+        lineStream.ignore();
+        for (int i = 0; i < 3; i++) {
+            std::string facePart;
+            lineStream >> facePart;
+            std::istringstream faceStringStream(facePart);
+            faceStringStream >> value;
+            _points.push_back(value);
+            faceStringStream.ignore();
+            faceStringStream >> value;
+            _textures.push_back(value);
+            faceStringStream.ignore();
+            faceStringStream >> value;
+            _normals.push_back(value);
+        }
+    }
+
+    const std::vector<int> &ObjEntity::Face::getNormalsIndexes() const {
+        return _normals;
+    }
+
+    const std::vector<int> &ObjEntity::Face::getPointsIndexes() const {
+        return _points;
+    }
+
+    ObjEntity::ObjEntity(const Scenes::ISetting &config, ILogger &logger):
+        _transform(Entities::Transform::Transform(*config.get("transform"))),
+        _logger(logger)
+    {
+        std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");
+
+        std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
+        _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
+
+
+        std::string filePath = static_cast<std::string>(*config.get("filePath"));
+        std::ifstream file(filePath);
+
+        if (!file.good())
+            return;
+        std::string line;
+        double x, y, z;
+        while (std::getline(file, line)) {
+            std::istringstream lineStream(line);
+            std::string prefix;
+
+            lineStream >> prefix;
+            if (prefix == "v") {
+                lineStream >> x >> y >> z;
+                _pointList.emplace_back(x, y, z);
+            } else if (prefix == "vn") {
+                lineStream >> x >> y >> z;
+                _normalList.emplace_back(x, y, z);
+            } else if (prefix == "f") {
+                _faceList.emplace_back(line);
+            }
+        }
+    }
+
+    Entities::IEntity::Type ObjEntity::getType() const {
+        return Type::Primitive;
+    }
+
+    Entities::Transform::ITransform &ObjEntity::getTransform() {
+        return this->_transform;
+    }
+
+    const Entities::Transform::ITransform &ObjEntity::getTransform() const {
+        return this->_transform;
+    }
+
+    std::optional<Entities::Transform::Vector3f> ObjEntity::isCollided(const Images::Ray &ray) const {
+        const Entities::Transform::Vector3f &rayOrigin = ray.getOrigin();
+        const Entities::Transform::Vector3f &rayDirection = ray.getDirection();
+
+        for (const auto &face : _faceList) {
+            std::vector<int> pointIndexes = face.getPointsIndexes();
+
+            Entities::Transform::Vector3f pointOne = _pointList[pointIndexes[0] - 1];
+            Entities::Transform::Vector3f pointTwo = _pointList[pointIndexes[1] - 1];
+            Entities::Transform::Vector3f pointThree = _pointList[pointIndexes[2] - 1];
+
+            Entities::Transform::Vector3f edgeOne = pointTwo - pointOne;
+            Entities::Transform::Vector3f edgeTwo = pointThree - pointOne;
+            Entities::Transform::Vector3f normal = edgeOne.getCrossed(edgeTwo).getNormalized();
+            Entities::Transform::Vector3f pointOneRayOrigin(pointOne.getX() - rayOrigin.getX(), pointOne.getY() - rayOrigin.getY(), pointOne.getZ() - rayOrigin.getZ());
+
+            double denominator = normal.dot(rayDirection);
+            if (std::abs(denominator) < std::numeric_limits<float>::epsilon())
+                continue;
+            double numerator = normal.dot(pointOneRayOrigin);
+            double t = numerator / denominator;
+
+            if (t < 0)
+                continue;
+            Entities::Transform::Vector3f point = rayOrigin + rayDirection * Entities::Transform::Vector3f(t, t, t);
+
+            Entities::Transform::Vector3f collisionEdgeOne = pointTwo - pointOne;
+            Entities::Transform::Vector3f crossedCollisionEdgeOne = collisionEdgeOne.getCrossed(point - pointOne);
+            if (normal.dot(crossedCollisionEdgeOne) < 0)
+                continue;
+            Entities::Transform::Vector3f collisionEdgeTwo = pointThree - pointTwo;
+            Entities::Transform::Vector3f crossedCollisionEdgeTwo = collisionEdgeTwo.getCrossed(point - pointTwo);
+            if (normal.dot(crossedCollisionEdgeTwo) < 0)
+                continue;
+            Entities::Transform::Vector3f collisionEdgeThree = pointOne - pointThree;
+            Entities::Transform::Vector3f crossedCollisionEdgeThree = collisionEdgeThree.getCrossed(point - pointThree);
+            if (normal.dot(crossedCollisionEdgeThree) < 0)
+                continue;
+            return point;
+        }
+        return std::nullopt;
+    }
+
+    bool ObjEntity::isCollided(const Entities::Transform::Vector3f &point) const {
+        return false;
+    }
+
+    Images::Color ObjEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const
+    {
+        return {255, 0, 0, 255};
+    }
+
+    Images::Color ObjEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
+        const Entities::Transform::Vector3f &intersect) const {
+        return _material->get().redirectionLight(ray, displayable, intersect);
+    }
+}
