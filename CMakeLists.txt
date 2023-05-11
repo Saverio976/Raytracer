@@ -233,6 +233,20 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
             )
 endif()
 
+# OBJ
+add_library(Obj SHARED)
+set_target_properties(Obj PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Obj PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
 # --------- Filters plugins ---------
 
 # SSAAx4
