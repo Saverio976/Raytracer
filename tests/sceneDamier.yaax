@@ -35,7 +35,7 @@ primitives :
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             }
             material = {
-                type = "ChessBoardMaterial";
+                type = "ZebraMaterial";
                 size = 1.0;
                 impair = {r = 255.0; g = 255.0; b = 255.0; a = 255.0;};
                 pair = {r = 0.0; g = 0.0; b = 0.0; a = 255.0;};

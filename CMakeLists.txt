@@ -247,6 +247,19 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+add_library(ZebraMaterial SHARED)
+set_target_properties(ZebraMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ZebraMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
 # -----------------------------------
 # --------- Main executable ---------
 
