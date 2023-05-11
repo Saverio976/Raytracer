@@ -1592,6 +1592,8 @@ lights:&#32;{
 &#32;&#32;&#32;&#32;);
 }
 </computeroutput></literallayout></para>
+
+<para>&lt;/details&gt;</para>
 </section>
 <section xml:id="_index_1autotoc_md14">
 <title>SpotLight</title>
@@ -2373,7 +2375,7 @@ lights:&#32;{
 }
 </computeroutput></literallayout></para>
 
-<para>&lt;details&gt;</para>
+<para>&lt;/details&gt;</para>
 </section>
 <section xml:id="_index_1autotoc_md17">
 <title>SSAAx4</title>
