@@ -1,0 +1,157 @@
+\hypertarget{a01587}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Black\+And\+White\+::Black\+And\+White\+Filter Class Reference}
+\label{a01587}\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+
+
+{\ttfamily \#include $<$Black\+And\+White\+Filter.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Black\+And\+White\+::Black\+And\+White\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{a01586}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Black\+And\+White\+::Black\+And\+White\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01585}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01587_a2b690d26133d6bf641a34c7beb872112}{Black\+And\+White\+Filter}} (const \mbox{\hyperlink{a01527}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01375}{ILogger}} \&logger)
+\item 
+void \mbox{\hyperlink{a01587_a66abcbb5b969caada1326cc3c6d238c9}{apply}} (\mbox{\hyperlink{a01383}{Images\+::\+Image}} \&image) final
+\begin{DoxyCompactList}\small\item\em Apply the filter on an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01587_a119d9cb7203630fc5ba3d04151735e46}{wait\+One\+Place}} ()
+\begin{DoxyCompactList}\small\item\em Wait one place in the vector of futures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01587_a640246a8e6410659de68843860db3e11}{wait\+All\+Finisehd}} ()
+\begin{DoxyCompactList}\small\item\em Wait all places in the vector of futures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01379}{Images\+::\+Color}} \mbox{\hyperlink{a01587_a1ce34edef94d410f7d52b325b60d3058}{get\+Colors\+Mean}} (const \mbox{\hyperlink{a01379}{Images\+::\+Color}} \&color, const std\+::string \&method)
+\begin{DoxyCompactList}\small\item\em Mean of the colors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01375}{ILogger}} \& \mbox{\hyperlink{a01587_afe4d1dadb733b738dfec912324640da8}{\+\_\+logger}}
+\item 
+int \mbox{\hyperlink{a01587_a1892559025bfcfd1e8b98ccca4097001}{\+\_\+max\+Thread}}
+\item 
+std\+::vector$<$ std\+::future$<$ void $>$ $>$ \mbox{\hyperlink{a01587_ac965d72f818c0852514f183a0649dda7}{\+\_\+futures}}
+\item 
+std\+::string \mbox{\hyperlink{a01587_aec74591d7ed55a03651382e8e728ece8}{\+\_\+method}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01587_a2b690d26133d6bf641a34c7beb872112}\label{a01587_a2b690d26133d6bf641a34c7beb872112}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!BlackAndWhiteFilter@{BlackAndWhiteFilter}}
+\index{BlackAndWhiteFilter@{BlackAndWhiteFilter}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{BlackAndWhiteFilter()}{BlackAndWhiteFilter()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::\+Black\+And\+White\+Filter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01527}{Scenes\+::\+ISetting}} \&}]{config,  }\item[{\mbox{\hyperlink{a01375}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01587_a66abcbb5b969caada1326cc3c6d238c9}\label{a01587_a66abcbb5b969caada1326cc3c6d238c9}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!apply@{apply}}
+\index{apply@{apply}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01383}{Images\+::\+Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Apply the filter on an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & the image \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01371_a3db0669688266d28dfefd7e65fc6e5cf}{Ray\+Tracer\+::\+Filters\+::\+IFilter}}.
+
+\mbox{\Hypertarget{a01587_a1ce34edef94d410f7d52b325b60d3058}\label{a01587_a1ce34edef94d410f7d52b325b60d3058}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!getColorsMean@{getColorsMean}}
+\index{getColorsMean@{getColorsMean}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{getColorsMean()}{getColorsMean()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01379}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::get\+Colors\+Mean (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01379}{Images\+::\+Color}} \&}]{color,  }\item[{const std\+::string \&}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Mean of the colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colors} & The colors to mean\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mean 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01587_a640246a8e6410659de68843860db3e11}\label{a01587_a640246a8e6410659de68843860db3e11}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!waitAllFinisehd@{waitAllFinisehd}}
+\index{waitAllFinisehd@{waitAllFinisehd}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{waitAllFinisehd()}{waitAllFinisehd()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::wait\+All\+Finisehd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wait all places in the vector of futures. 
+
+\mbox{\Hypertarget{a01587_a119d9cb7203630fc5ba3d04151735e46}\label{a01587_a119d9cb7203630fc5ba3d04151735e46}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!waitOnePlace@{waitOnePlace}}
+\index{waitOnePlace@{waitOnePlace}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{waitOnePlace()}{waitOnePlace()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::wait\+One\+Place (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wait one place in the vector of futures. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01587_ac965d72f818c0852514f183a0649dda7}\label{a01587_ac965d72f818c0852514f183a0649dda7}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!\_futures@{\_futures}}
+\index{\_futures@{\_futures}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{\_futures}{\_futures}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::future$<$void$>$ $>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::\+\_\+futures\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01587_afe4d1dadb733b738dfec912324640da8}\label{a01587_afe4d1dadb733b738dfec912324640da8}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01375}{ILogger}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01587_a1892559025bfcfd1e8b98ccca4097001}\label{a01587_a1892559025bfcfd1e8b98ccca4097001}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!\_maxThread@{\_maxThread}}
+\index{\_maxThread@{\_maxThread}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{\_maxThread}{\_maxThread}}
+{\footnotesize\ttfamily int Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::\+\_\+max\+Thread\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01587_aec74591d7ed55a03651382e8e728ece8}\label{a01587_aec74591d7ed55a03651382e8e728ece8}} 
+\index{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}!\_method@{\_method}}
+\index{\_method@{\_method}!RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter@{RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter}}
+\doxysubsubsection{\texorpdfstring{\_method}{\_method}}
+{\footnotesize\ttfamily std\+::string Ray\+Tracer\+::\+Plugins\+Ext\+::\+Black\+And\+White\+::\+Black\+And\+White\+Filter\+::\+\_\+method\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Black\+And\+White/\mbox{\hyperlink{a00272}{Black\+And\+White\+Filter.\+hpp}}\end{DoxyCompactItemize}

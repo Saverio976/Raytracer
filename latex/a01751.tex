@@ -1,0 +1,281 @@
+\hypertarget{a01751}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Spot\+Light\+::Spot\+Light\+Entity Class Reference}
+\label{a01751}\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+
+
+{\ttfamily \#include $<$Spot\+Light\+Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Spot\+Light\+::Spot\+Light\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01750}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Spot\+Light\+::Spot\+Light\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01749}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01751_ab260e3359e77dbe137ec4a9fd1949211}{Spot\+Light\+Entity}} (const \mbox{\hyperlink{a01527}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01375}{ILogger}} \&logger)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{a00430}{Ambient\+Light}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01751_af48f20f7e4cd7de59a3863a11a19e7df}{$\sim$\+Spot\+Light\+Entity}} ()=default
+\item 
+\mbox{\hyperlink{a01311_ab003087623e47600c09a76ff8138d37b}{Type}} \mbox{\hyperlink{a01751_a3e562e65065032eb0e5e429abab31648}{get\+Type}} () const final
+\begin{DoxyCompactList}\small\item\em Get the type (ILight) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01327}{Entities\+::\+Transform\+::\+ITransform}} \& \mbox{\hyperlink{a01751_a7c358a1b478dbbd337cfc00ed3fd4415}{get\+Transform}} () final
+\begin{DoxyCompactList}\small\item\em Get the transform. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01327}{Entities\+::\+Transform\+::\+ITransform}} \& \mbox{\hyperlink{a01751_a30dc83dde71200a494debca9bdf95db6}{get\+Transform}} () const final
+\begin{DoxyCompactList}\small\item\em Get the transform (const) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01379}{Images\+::\+Color}} \& \mbox{\hyperlink{a01751_a4af65a3be2e683d961aad6340af6eb38}{get\+Color}} () const final
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01379}{Images\+::\+Color}} \mbox{\hyperlink{a01751_ad67d048e3bac060ab3c4be595dbe33d1}{get\+Color}} (const \mbox{\hyperlink{a01339}{Entities\+::\+Transform\+::\+Vector3f}} \&point, const \mbox{\hyperlink{a01515}{Scenes\+::\+IDisplayable}} \&displayable) const final
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01751_a9fc066adc92c0b3360f8175af9118fff}{set\+Color}} (const \mbox{\hyperlink{a01379}{Images\+::\+Color}} \&color) final
+\begin{DoxyCompactList}\small\item\em Set the color. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01751_af1cee3b65afbea48ef55d3f121f20ee0}{is\+Ambient}} () const final
+\begin{DoxyCompactList}\small\item\em Check if the light is ambient. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a01751_a60a9a2246de1312c078d7c3b877cde88}{get\+Power}} () const final
+\begin{DoxyCompactList}\small\item\em get the power of the light \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01331}{Entities\+::\+Transform\+::\+Transform}} \mbox{\hyperlink{a01751_a24d1e646d8cd721db9bab9f5b5fc7a4a}{\+\_\+transform}}
+\item 
+\mbox{\hyperlink{a01379}{Images\+::\+Color}} \mbox{\hyperlink{a01751_aee09877e568740f448240a3bf7da1394}{\+\_\+color}}
+\item 
+\mbox{\hyperlink{a01375}{ILogger}} \& \mbox{\hyperlink{a01751_ae100157425b1ade65d45d4ae882dcb8d}{\+\_\+logger}}
+\item 
+double \mbox{\hyperlink{a01751_a69b81c9adfd36f8eb34b2d93238b7604}{\+\_\+power}}
+\item 
+double \mbox{\hyperlink{a01751_a237d916587df5e0f54df6fb5304e87b3}{\+\_\+radius}}
+\item 
+double \mbox{\hyperlink{a01751_a75067ded1b06aa17d9b48797ec0d2b6e}{\+\_\+angle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01751_ab260e3359e77dbe137ec4a9fd1949211}\label{a01751_ab260e3359e77dbe137ec4a9fd1949211}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!SpotLightEntity@{SpotLightEntity}}
+\index{SpotLightEntity@{SpotLightEntity}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{SpotLightEntity()}{SpotLightEntity()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+Spot\+Light\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01527}{Scenes\+::\+ISetting}} \&}]{config,  }\item[{\mbox{\hyperlink{a01375}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{a00430}{Ambient\+Light}}. 
+
+transform\+: \{ position\+: \{x= 0; y= 0; z= 0\}; scale\+: \{x= 1; y= 1; z= 1\}; rotation\+: \{x= 0; y= 0; z= 0\} \}; color = \{r= 1; g= 1; b= 1\};
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & the config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01751_af48f20f7e4cd7de59a3863a11a19e7df}\label{a01751_af48f20f7e4cd7de59a3863a11a19e7df}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!````~SpotLightEntity@{$\sim$SpotLightEntity}}
+\index{````~SpotLightEntity@{$\sim$SpotLightEntity}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{$\sim$SpotLightEntity()}{~SpotLightEntity()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::$\sim$\+Spot\+Light\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01751_a4af65a3be2e683d961aad6340af6eb38}\label{a01751_a4af65a3be2e683d961aad6340af6eb38}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01379}{Images\+::\+Color}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the color. 
+
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01315_aab6b55e1ad937edb532cce372516f5e4}{Ray\+Tracer\+::\+Entities\+::\+ILight}}.
+
+\mbox{\Hypertarget{a01751_ad67d048e3bac060ab3c4be595dbe33d1}\label{a01751_ad67d048e3bac060ab3c4be595dbe33d1}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01379}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::get\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01339}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{point,  }\item[{const \mbox{\hyperlink{a01515}{Scenes\+::\+IDisplayable}} \&}]{displayable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & the point of the impact\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01315_ab2623f1fbf4edd888616bf467602ee89}{Ray\+Tracer\+::\+Entities\+::\+ILight}}.
+
+\mbox{\Hypertarget{a01751_a60a9a2246de1312c078d7c3b877cde88}\label{a01751_a60a9a2246de1312c078d7c3b877cde88}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!getPower@{getPower}}
+\index{getPower@{getPower}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+get the power of the light 
+
+\begin{DoxyReturn}{Returns}
+the value of the power 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01315_a453a82618ff179b62b852f2249ef7358}{Ray\+Tracer\+::\+Entities\+::\+ILight}}.
+
+\mbox{\Hypertarget{a01751_a30dc83dde71200a494debca9bdf95db6}\label{a01751_a30dc83dde71200a494debca9bdf95db6}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01327}{Entities\+::\+Transform\+::\+ITransform}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform (const) 
+
+\begin{DoxyReturn}{Returns}
+the transform 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01311_a703e6f7e78da30c2c7f4fecbe0bc580e}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01751_a7c358a1b478dbbd337cfc00ed3fd4415}\label{a01751_a7c358a1b478dbbd337cfc00ed3fd4415}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01327}{Entities\+::\+Transform\+::\+ITransform}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform. 
+
+\begin{DoxyReturn}{Returns}
+the transform 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01311_ac97ca7c49d7a87c00bf6a95ca227108a}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01751_a3e562e65065032eb0e5e429abab31648}\label{a01751_a3e562e65065032eb0e5e429abab31648}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!getType@{getType}}
+\index{getType@{getType}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01311_ab003087623e47600c09a76ff8138d37b}{Type}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the type (ILight) 
+
+\begin{DoxyReturn}{Returns}
+the type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01311_a68374ef5e0932ab3b3dea57a87be156e}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01751_af1cee3b65afbea48ef55d3f121f20ee0}\label{a01751_af1cee3b65afbea48ef55d3f121f20ee0}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!isAmbient@{isAmbient}}
+\index{isAmbient@{isAmbient}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{isAmbient()}{isAmbient()}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::is\+Ambient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Check if the light is ambient. 
+
+\begin{DoxyReturn}{Returns}
+true if the light is ambient 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01315_a4fad9aee9e3df30c7f0f9b9f41596960}{Ray\+Tracer\+::\+Entities\+::\+ILight}}.
+
+\mbox{\Hypertarget{a01751_a9fc066adc92c0b3360f8175af9118fff}\label{a01751_a9fc066adc92c0b3360f8175af9118fff}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!setColor@{setColor}}
+\index{setColor@{setColor}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01379}{Images\+::\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Set the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & the color \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01315_a0b4a00caa3baefa7ed7b7d35c39e4fb0}{Ray\+Tracer\+::\+Entities\+::\+ILight}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01751_a75067ded1b06aa17d9b48797ec0d2b6e}\label{a01751_a75067ded1b06aa17d9b48797ec0d2b6e}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!\_angle@{\_angle}}
+\index{\_angle@{\_angle}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{\_angle}{\_angle}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01751_aee09877e568740f448240a3bf7da1394}\label{a01751_aee09877e568740f448240a3bf7da1394}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!\_color@{\_color}}
+\index{\_color@{\_color}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{\_color}{\_color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01379}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+\_\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01751_ae100157425b1ade65d45d4ae882dcb8d}\label{a01751_ae100157425b1ade65d45d4ae882dcb8d}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01375}{ILogger}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01751_a69b81c9adfd36f8eb34b2d93238b7604}\label{a01751_a69b81c9adfd36f8eb34b2d93238b7604}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!\_power@{\_power}}
+\index{\_power@{\_power}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{\_power}{\_power}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+\_\+power\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01751_a237d916587df5e0f54df6fb5304e87b3}\label{a01751_a237d916587df5e0f54df6fb5304e87b3}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!\_radius@{\_radius}}
+\index{\_radius@{\_radius}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{\_radius}{\_radius}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01751_a24d1e646d8cd721db9bab9f5b5fc7a4a}\label{a01751_a24d1e646d8cd721db9bab9f5b5fc7a4a}} 
+\index{RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}!\_transform@{\_transform}}
+\index{\_transform@{\_transform}!RayTracer::PluginsExt::SpotLight::SpotLightEntity@{RayTracer::PluginsExt::SpotLight::SpotLightEntity}}
+\doxysubsubsection{\texorpdfstring{\_transform}{\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01331}{Entities\+::\+Transform\+::\+Transform}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity\+::\+\_\+transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Spot\+Light/\mbox{\hyperlink{a00386}{Spot\+Light\+Entity.\+hpp}}\end{DoxyCompactItemize}

@@ -1,37 +1,46 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00417" xml:lang="en-US">
-<title>RayTracer::Images Namespace Reference</title>
-<indexterm><primary>RayTracer::Images</primary></indexterm>
+<title>RayTracer Namespace Reference</title>
+<indexterm><primary>RayTracer</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00418">Display</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00419">Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00421">Factories</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00422">Filters</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00423">Images</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00424">Plugins</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00429">PluginsExt</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00428">Scenes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01372">Color</link></para>
+            <listitem><para>class <link linkend="_a01375">ILogger</link></para>
 
-<para>The <link linkend="_a01372">Color</link> class. </para>
+<para><link linkend="_a01419">Logger</link> singleton. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01376">Image</link></para>
+            <listitem><para>class <link linkend="_a01419">Logger</link></para>
 
-<para>The <link linkend="_a01376">Image</link> class. </para>
+<para><link linkend="_a01419">Logger</link> singleton. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01384">ImagePipeLine</link></para>
-
-<para>The <link linkend="_a01384">ImagePipeLine</link> class. </para>
+            <listitem><para>class <link linkend="_a01423">Main</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01388">IRayIterator</link></para>
+            <listitem><para>class <link linkend="_a01435">Parameters</link></para>
 
-<para>The RayIterator class. </para>
+<para>The <link linkend="_a01435">Parameters</link> class singleton. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01396">PixelThread</link></para>
-
-<para>The <link linkend="_a01396">PixelThread</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01400">Ray</link></para>
-
-<para>The <link linkend="_a01400">Ray</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01404">RayIterrator</link></para>
-
-<para>The <link linkend="_a01404">RayIterrator</link> class. </para>
+            <listitem><para>class <link linkend="_a01487">Progress</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

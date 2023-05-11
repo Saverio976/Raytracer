@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00445" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Torus Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Torus</primary></indexterm>
+<title>RayTracer::PluginsExt::Obj Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Obj</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01736">TorusCreator</link></para>
+            <listitem><para>class <link linkend="_a01695">ObjCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01740">TorusEntity</link></para>
+            <listitem><para>class <link linkend="_a01699">ObjEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -20,18 +20,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01416">RayTracer::Main</link></para>
+            <listitem><para>class <link linkend="_a01423">RayTracer::Main</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01420">RayTracer::Main::MainError</link></para>
+            <listitem><para>class <link linkend="_a01427">RayTracer::Main::MainError</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01424">RayTracer::Main::ArgumentError</link></para>
+            <listitem><para>class <link linkend="_a01431">RayTracer::Main::ArgumentError</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

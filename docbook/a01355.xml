@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01355" xml:lang="en-US">
+<title>RayTracer::Factories::IFilterFactory Class Reference</title>
+<indexterm><primary>RayTracer::Factories::IFilterFactory</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01347">FilterFactory</link> (singleton factory) </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;IFilterFactory.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Factories::IFilterFactory:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01354.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Factories::IFilterFactory:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01353.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01355_1a5b8e762b8a179ba7c25cfe66c0f6da63">~IFilterFactory</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01371">Filters::IFilter</link> &amp; <link linkend="_a01355_1a9b178f7a1ae9cad80648b033a449660c">get</link> (const std::string &amp;name, const <link linkend="_a01527">Scenes::ISetting</link> &amp;setting, <link linkend="_a01375">ILogger</link> &amp;logger)=0</para>
+
+<para>Get a filter. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01347">FilterFactory</link> (singleton factory) </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01355_1a5b8e762b8a179ba7c25cfe66c0f6da63"/>    <section>
+    <title>~IFilterFactory()</title>
+<indexterm><primary>~IFilterFactory</primary><secondary>RayTracer::Factories::IFilterFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::IFilterFactory</primary><secondary>~IFilterFactory</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Factories::IFilterFactory::~IFilterFactory ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01355_1a9b178f7a1ae9cad80648b033a449660c"/>    <section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>RayTracer::Factories::IFilterFactory</secondary></indexterm>
+<indexterm><primary>RayTracer::Factories::IFilterFactory</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01371">Filters::IFilter</link>&amp; RayTracer::Factories::IFilterFactory::get (const std::string &amp; name, const <link linkend="_a01527">Scenes::ISetting</link> &amp; setting, <link linkend="_a01375">ILogger</link> &amp; logger)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get a filter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>the name </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>setting</entry>
+                                <entry>
+<para>the setting</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the filter </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01347_1a6496476d3abed0281fcc77fcca786c1d">RayTracer::Factories::FilterFactory</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Factories/<link linkend="_a00140">IFilterFactory.hpp</link></section>
+</section>

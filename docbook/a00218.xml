@@ -30,18 +30,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01472">RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;</link></para>
+            <listitem><para>class <link linkend="_a01479">RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;</link></para>
 
-<para>The <link linkend="_a01472">PluginHandler</link> class. </para>
+<para>The <link linkend="_a01479">PluginHandler</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00418">RayTracer::Plugins</link></para>
+            <listitem><para> <link linkend="_a00424">RayTracer::Plugins</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

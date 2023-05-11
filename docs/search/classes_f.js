@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['writeexception_746',['WriteException',['../a01492.html',1,'RayTracer::Scenes::ConfigWrapper']]]
+  ['vector2i_765',['Vector2i',['../a01335.html',1,'RayTracer::Entities::Transform']]],
+  ['vector3f_766',['Vector3f',['../a01339.html',1,'RayTracer::Entities::Transform']]]
 ];

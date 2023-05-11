@@ -1,12 +1,4 @@
-<map id="RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter" name="RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter">
-<area shape="rect" id="node1" title=" " alt="" coords="255,557,491,723"/>
-<area shape="rect" id="node2" href="$a01364.html" title="The IFilter class." alt="" coords="5,344,140,451"/>
-<area shape="rect" id="node3" title=" " alt="" coords="165,351,338,443"/>
-<area shape="rect" id="node4" title=" " alt="" coords="91,153,209,230"/>
-<area shape="rect" id="node5" title=" " alt="" coords="233,153,363,230"/>
-<area shape="rect" id="node6" title=" " alt="" coords="279,5,317,83"/>
-<area shape="rect" id="node7" title=" " alt="" coords="363,359,401,436"/>
-<area shape="rect" id="node8" title=" " alt="" coords="443,359,529,436"/>
-<area shape="rect" id="node9" title=" " alt="" coords="417,145,555,237"/>
-<area shape="rect" id="node10" href="$a01368.html" title="Logger singleton." alt="" coords="554,300,735,495"/>
+<map id="RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter" name="RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter">
+<area shape="rect" id="node1" title=" " alt="" coords="5,160,172,355"/>
+<area shape="rect" id="node2" href="$a01371.html" title="The IFilter class." alt="" coords="21,5,156,112"/>
 </map>

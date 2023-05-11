@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01703" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Obj::ObjEntity::Face Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ObjEntity.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Obj::ObjEntity::Face:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01701.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01703_1ae6f1f2a50ec734ba0db5a634f4983988">Face</link> (std::string &amp;faceString)</para>
+</listitem>
+            <listitem><para><link linkend="_a01703_1ae9622ed4b59aaeed41ffe18535b0894a">Face</link> (int firstPoint, int secondPoint, int thirdPoint, int firstNormal, int secondNormal, int thirdNormal)</para>
+</listitem>
+            <listitem><para><link linkend="_a01703_1aafe8b7bc261de9e5959d82632f43a47d">~Face</link> ()=default</para>
+</listitem>
+            <listitem><para>const std::vector&lt; int &gt; &amp; <link linkend="_a01703_1a123db764638a582f46411b4597acb992">getPointsIndexes</link> () const</para>
+</listitem>
+            <listitem><para>const std::vector&lt; int &gt; &amp; <link linkend="_a01703_1a948b2d8fb6d54a95c55a4b11e9210bc7">getNormalsIndexes</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_a01703_1a891303ba616886e0ccb1acdbd55c110b">_size</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; int &gt; <link linkend="_a01703_1a356e5318467bdfa9854ab68314d90345">_points</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; int &gt; <link linkend="_a01703_1a8688b3cdf94a4ec1268442fc983bbe20">_normals</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; int &gt; <link linkend="_a01703_1abc2a126786bdfcd643b3a3136399751f">_textures</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01703_1ae6f1f2a50ec734ba0db5a634f4983988"/>    <section>
+    <title>Face()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Face</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>Face</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Obj::ObjEntity::Face::Face (std::string &amp; faceString)</computeroutput></para>    </section><anchor xml:id="_a01703_1ae9622ed4b59aaeed41ffe18535b0894a"/>    <section>
+    <title>Face()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Face</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>Face</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Obj::ObjEntity::Face::Face (int firstPoint, int secondPoint, int thirdPoint, int firstNormal, int secondNormal, int thirdNormal)</computeroutput></para>    </section><anchor xml:id="_a01703_1aafe8b7bc261de9e5959d82632f43a47d"/>    <section>
+    <title>~Face()</title>
+<indexterm><primary>~Face</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>~Face</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Obj::ObjEntity::Face::~Face ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01703_1a948b2d8fb6d54a95c55a4b11e9210bc7"/>    <section>
+    <title>getNormalsIndexes()</title>
+<indexterm><primary>getNormalsIndexes</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>getNormalsIndexes</secondary></indexterm>
+<para><computeroutput>const std::vector&lt;int&gt;&amp; RayTracer::PluginsExt::Obj::ObjEntity::Face::getNormalsIndexes ( ) const</computeroutput></para>    </section><anchor xml:id="_a01703_1a123db764638a582f46411b4597acb992"/>    <section>
+    <title>getPointsIndexes()</title>
+<indexterm><primary>getPointsIndexes</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>getPointsIndexes</secondary></indexterm>
+<para><computeroutput>const std::vector&lt;int&gt;&amp; RayTracer::PluginsExt::Obj::ObjEntity::Face::getPointsIndexes ( ) const</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01703_1a8688b3cdf94a4ec1268442fc983bbe20"/>    <section>
+    <title>_normals</title>
+<indexterm><primary>_normals</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>_normals</secondary></indexterm>
+<para><computeroutput>std::vector&lt;int&gt; RayTracer::PluginsExt::Obj::ObjEntity::Face::_normals<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01703_1a356e5318467bdfa9854ab68314d90345"/>    <section>
+    <title>_points</title>
+<indexterm><primary>_points</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>_points</secondary></indexterm>
+<para><computeroutput>std::vector&lt;int&gt; RayTracer::PluginsExt::Obj::ObjEntity::Face::_points<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01703_1a891303ba616886e0ccb1acdbd55c110b"/>    <section>
+    <title>_size</title>
+<indexterm><primary>_size</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>_size</secondary></indexterm>
+<para><computeroutput>int RayTracer::PluginsExt::Obj::ObjEntity::Face::_size = 0</computeroutput></para>    </section><anchor xml:id="_a01703_1abc2a126786bdfcd643b3a3136399751f"/>    <section>
+    <title>_textures</title>
+<indexterm><primary>_textures</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity::Face</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity::Face</primary><secondary>_textures</secondary></indexterm>
+<para><computeroutput>std::vector&lt;int&gt; RayTracer::PluginsExt::Obj::ObjEntity::Face::_textures<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/Obj/<link linkend="_a00350">ObjEntity.hpp</link></section>
+</section>

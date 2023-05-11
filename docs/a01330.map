@@ -1,4 +1,4 @@
-<map id="RayTracer::Entities::Transform::Vector3f" name="RayTracer::Entities::Transform::Vector3f">
-<area shape="rect" id="node1" title="The Vector3f class." alt="" coords="5,175,163,619"/>
-<area shape="rect" id="node2" title=" " alt="" coords="51,5,117,83"/>
+<map id="RayTracer::Entities::Transform::Transform" name="RayTracer::Entities::Transform::Transform">
+<area shape="rect" id="node1" title="The Transform class." alt="" coords="7,248,175,472"/>
+<area shape="rect" id="node2" href="$a01327.html" title="The ITransform class." alt="" coords="5,5,177,200"/>
 </map>

@@ -1,11 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00425" xml:lang="en-US">
-<title>RayTracer::PluginsExt::AntiAliasing Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::AntiAliasing</primary></indexterm>
+<title>RayTracer::Plugins::Entities Namespace Reference</title>
+<indexterm><primary>RayTracer::Plugins::Entities</primary></indexterm>
 <simplesect>
-    <title>Namespaces    </title>
+    <title>Classes    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00426">SSAAx4</link></para>
+            <listitem><para>class <link linkend="_a01443">EntityHandler</link></para>
+
+<para>The <link linkend="_a01443">EntityHandler</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01447">EntityLoader</link></para>
+
+<para>The <link linkend="_a01447">EntityLoader</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01451">IEntityCreator</link></para>
+
+<para>The <link linkend="_a01451">IEntityCreator</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

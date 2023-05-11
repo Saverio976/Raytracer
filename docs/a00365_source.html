@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/RefractionMaterial/RefractionCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,58 +62,59 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_a1be71b4a87ea0a43842201df25556cd.html">RefractionMaterial</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_6ca2c1351489a3b7c4c79e847604cc6e.html">PointLight</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">RefractionCreator.hpp</div>  </div>
+<div class="title">PointLightCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00365.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PlaneCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PointLightCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef REFRACTIONMATERIALCREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define REFRACTIONMATERIALCREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef POINTLIGHTCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define POINTLIGHTCREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00209.html">IMaterialCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00368.html">RefractionMaterial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00197.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00368.html">PointLightEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00442.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00442.html">RayTracer::PluginsExt::Refraction</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01712.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01712.html">RefractionCreator</a> : <span class="keyword">public</span> <a class="code" href="a01460.html">RayTracer::Plugins::Materials::IMaterialCreator</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00448.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00448.html">RayTracer::PluginsExt::PointLight</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01723.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01723.html">PointLightCreator</a> : <span class="keyword">public</span> <a class="code" href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01712.html#a6c94a82c14bf24d5cf802ed8fa449da6">   20</a></span>&#160;        <a class="code" href="a01712.html#a6c94a82c14bf24d5cf802ed8fa449da6">~RefractionCreator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01712.html#a8050c4ddf2e8f85f9eae3286c06b69bc">   21</a></span>&#160;        <a class="code" href="a01312.html">RayTracer::Entities::IMaterial</a> *<a class="code" href="a01712.html#a8050c4ddf2e8f85f9eae3286c06b69bc">create</a>(<span class="keyword">const</span> <a class="code" href="a01520.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01368.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01712.html#ab4dd09e280c56ed300e169deb635900c">   24</a></span>&#160;        std::vector&lt;RefractionMaterial *&gt; <a class="code" href="a01712.html#ab4dd09e280c56ed300e169deb635900c">_elements</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*PLANECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01723.html#a1beb583a1be8a55584324c0839182286">   20</a></span>&#160;        <a class="code" href="a01311.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01723.html#a1beb583a1be8a55584324c0839182286">create</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01723.html#a57e299502048ac02c8c02711ecf627f9">   21</a></span>&#160;        <a class="code" href="a01723.html#a57e299502048ac02c8c02711ecf627f9">~PointLightCreator</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01723.html#a7f2ffa0f28882db5d9e405dd0ec44ee1">   25</a></span>&#160;        std::vector&lt;PointLightEntity *&gt; <a class="code" href="a01723.html#a7f2ffa0f28882db5d9e405dd0ec44ee1">_elements</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00209_html"><div class="ttname"><a href="a00209.html">IMaterialCreator.hpp</a></div></div>
-<div class="ttc" id="aa00368_html"><div class="ttname"><a href="a00368.html">RefractionMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00442_html"><div class="ttname"><a href="a00442.html">RayTracer::PluginsExt::Refraction</a></div><div class="ttdef"><b>Definition:</b> RefractionCreator.hpp:17</div></div>
-<div class="ttc" id="aa01312_html"><div class="ttname"><a href="a01312.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
-<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01460_html"><div class="ttname"><a href="a01460.html">RayTracer::Plugins::Materials::IMaterialCreator</a></div><div class="ttdoc">The IMaterialCreator class.</div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:22</div></div>
-<div class="ttc" id="aa01520_html"><div class="ttname"><a href="a01520.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01712_html"><div class="ttname"><a href="a01712.html">RayTracer::PluginsExt::Refraction::RefractionCreator</a></div><div class="ttdef"><b>Definition:</b> RefractionCreator.hpp:18</div></div>
-<div class="ttc" id="aa01712_html_a6c94a82c14bf24d5cf802ed8fa449da6"><div class="ttname"><a href="a01712.html#a6c94a82c14bf24d5cf802ed8fa449da6">RayTracer::PluginsExt::Refraction::RefractionCreator::~RefractionCreator</a></div><div class="ttdeci">~RefractionCreator()</div></div>
-<div class="ttc" id="aa01712_html_a8050c4ddf2e8f85f9eae3286c06b69bc"><div class="ttname"><a href="a01712.html#a8050c4ddf2e8f85f9eae3286c06b69bc">RayTracer::PluginsExt::Refraction::RefractionCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IMaterial * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a material with a setting.</div></div>
-<div class="ttc" id="aa01712_html_ab4dd09e280c56ed300e169deb635900c"><div class="ttname"><a href="a01712.html#ab4dd09e280c56ed300e169deb635900c">RayTracer::PluginsExt::Refraction::RefractionCreator::_elements</a></div><div class="ttdeci">std::vector&lt; RefractionMaterial * &gt; _elements</div><div class="ttdef"><b>Definition:</b> RefractionCreator.hpp:24</div></div>
+<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00368_html"><div class="ttname"><a href="a00368.html">PointLightEntity.hpp</a></div></div>
+<div class="ttc" id="aa00448_html"><div class="ttname"><a href="a00448.html">RayTracer::PluginsExt::PointLight</a></div><div class="ttdef"><b>Definition:</b> PointLightCreator.hpp:17</div></div>
+<div class="ttc" id="aa01311_html"><div class="ttname"><a href="a01311.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01451_html"><div class="ttname"><a href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01723_html"><div class="ttname"><a href="a01723.html">RayTracer::PluginsExt::PointLight::PointLightCreator</a></div><div class="ttdef"><b>Definition:</b> PointLightCreator.hpp:18</div></div>
+<div class="ttc" id="aa01723_html_a1beb583a1be8a55584324c0839182286"><div class="ttname"><a href="a01723.html#a1beb583a1be8a55584324c0839182286">RayTracer::PluginsExt::PointLight::PointLightCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01723_html_a57e299502048ac02c8c02711ecf627f9"><div class="ttname"><a href="a01723.html#a57e299502048ac02c8c02711ecf627f9">RayTracer::PluginsExt::PointLight::PointLightCreator::~PointLightCreator</a></div><div class="ttdeci">~PointLightCreator()</div></div>
+<div class="ttc" id="aa01723_html_a7f2ffa0f28882db5d9e405dd0ec44ee1"><div class="ttname"><a href="a01723.html#a7f2ffa0f28882db5d9e405dd0ec44ee1">RayTracer::PluginsExt::PointLight::PointLightCreator::_elements</a></div><div class="ttdeci">std::vector&lt; PointLightEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> PointLightCreator.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 18:14:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

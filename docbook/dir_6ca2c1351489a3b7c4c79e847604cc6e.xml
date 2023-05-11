@@ -14,9 +14,9 @@ Directory dependency graph for PointLight:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00359">PointLightCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00365">PointLightCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00362">PointLightEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00368">PointLightEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

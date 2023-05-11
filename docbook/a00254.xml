@@ -27,15 +27,15 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01548">RayTracer::Scenes::SettingWrapper</link></para>
+            <listitem><para>class <link linkend="_a01555">RayTracer::Scenes::SettingWrapper</link></para>
 
-<para>The <link linkend="_a01548">SettingWrapper</link> class. </para>
+<para>The <link linkend="_a01555">SettingWrapper</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01552">RayTracer::Scenes::SettingWrapper::ParsingException</link></para>
+            <listitem><para>class <link linkend="_a01559">RayTracer::Scenes::SettingWrapper::ParsingException</link></para>
 
 <para>an exception for when the key is not found </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01556">RayTracer::Scenes::SettingWrapper::TypeException</link></para>
+            <listitem><para>class <link linkend="_a01563">RayTracer::Scenes::SettingWrapper::TypeException</link></para>
 
 <para>an exception for when the key is not found </para>
 </listitem>
@@ -44,9 +44,9 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00422">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00428">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

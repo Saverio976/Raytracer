@@ -29,18 +29,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01684">RayTracer::PluginsExt::Mirror::MirrorMaterial</link></para>
+            <listitem><para>class <link linkend="_a01691">RayTracer::PluginsExt::Mirror::MirrorMaterial</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00423">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00438">RayTracer::PluginsExt::Mirror</link></para>
+            <listitem><para> <link linkend="_a00444">RayTracer::PluginsExt::Mirror</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

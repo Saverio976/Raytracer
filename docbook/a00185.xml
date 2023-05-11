@@ -27,18 +27,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01428">RayTracer::Parameters</link></para>
+            <listitem><para>class <link linkend="_a01435">RayTracer::Parameters</link></para>
 
-<para>The <link linkend="_a01428">Parameters</link> class singleton. </para>
+<para>The <link linkend="_a01435">Parameters</link> class singleton. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01432">RayTracer::Parameters::KeyNotFoundError</link></para>
+            <listitem><para>class <link linkend="_a01439">RayTracer::Parameters::KeyNotFoundError</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

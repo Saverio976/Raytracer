@@ -1,0 +1,156 @@
+\hypertarget{a01411}{}\doxysection{Ray\+Tracer\+::Images\+::Ray\+Iterrator Class Reference}
+\label{a01411}\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+
+
+The \mbox{\hyperlink{a01411}{Ray\+Iterrator}} class.  
+
+
+
+
+{\ttfamily \#include $<$Ray\+Iterrator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Images\+::Ray\+Iterrator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{a01410}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Images\+::Ray\+Iterrator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01409}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01415}{Iterrator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01411_a2cba8b494b9909d6721f195bde6bf565}{Ray\+Iterrator}} (const \mbox{\hyperlink{a01307}{Entities\+::\+ICamera}} \&camera)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01399}{IRay\+Iterator\+::\+IIterator}} $>$ \mbox{\hyperlink{a01411_a8edc5e425f9ea78bd28417c9bbcb6f62}{begin}} () const final
+\begin{DoxyCompactList}\small\item\em Get the begin. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01399}{IRay\+Iterator\+::\+IIterator}} $>$ \mbox{\hyperlink{a01411_a09940f5ca315fc3cfc04b8627682f124}{end}} () const final
+\begin{DoxyCompactList}\small\item\em Get the end (out of range) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a01307}{Entities\+::\+ICamera}} \& \mbox{\hyperlink{a01411_a4f48d15ad9f3e626c9442388500611ea}{\+\_\+camera}}
+\item 
+\mbox{\hyperlink{a01339}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01411_aff0d27597bf79a22e7b54377f145c91a}{\+\_\+pov}}
+\item 
+\mbox{\hyperlink{a01407}{Ray}} \mbox{\hyperlink{a01411_aa9f312a732d5b9a6a3b8ffa556cd3151}{\+\_\+before\+First}}
+\item 
+\mbox{\hyperlink{a01407}{Ray}} \mbox{\hyperlink{a01411_ae5def240e0737ba0b77de0228215ff11}{\+\_\+after\+Last}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01411_a1c2632aa1e28bd81262143f596191472}{\+\_\+cluster}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01411}{Ray\+Iterrator}} class. 
+
+class that represent an iterator of a ray 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01411_a2cba8b494b9909d6721f195bde6bf565}\label{a01411_a2cba8b494b9909d6721f195bde6bf565}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!RayIterrator@{RayIterrator}}
+\index{RayIterrator@{RayIterrator}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{RayIterrator()}{RayIterrator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Ray\+Iterrator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01307}{Entities\+::\+ICamera}} \&}]{camera }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & the camera to create the ray itterator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01411_a8edc5e425f9ea78bd28417c9bbcb6f62}\label{a01411_a8edc5e425f9ea78bd28417c9bbcb6f62}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!begin@{begin}}
+\index{begin@{begin}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01399}{IRay\+Iterator\+::\+IIterator}}$>$ Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the begin. 
+
+\begin{DoxyReturn}{Returns}
+the begin 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01395_a1091fd7e65db524ab307d648a05b2e6f}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator}}.
+
+\mbox{\Hypertarget{a01411_a09940f5ca315fc3cfc04b8627682f124}\label{a01411_a09940f5ca315fc3cfc04b8627682f124}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!end@{end}}
+\index{end@{end}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01399}{IRay\+Iterator\+::\+IIterator}}$>$ Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the end (out of range) 
+
+\begin{DoxyReturn}{Returns}
+the end 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01395_a6a54ffc59239a7865fbc4fd7569ba80b}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01411_ae5def240e0737ba0b77de0228215ff11}\label{a01411_ae5def240e0737ba0b77de0228215ff11}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!\_afterLast@{\_afterLast}}
+\index{\_afterLast@{\_afterLast}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{\_afterLast}{\_afterLast}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01407}{Ray}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+\_\+after\+Last\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01411_aa9f312a732d5b9a6a3b8ffa556cd3151}\label{a01411_aa9f312a732d5b9a6a3b8ffa556cd3151}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!\_beforeFirst@{\_beforeFirst}}
+\index{\_beforeFirst@{\_beforeFirst}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{\_beforeFirst}{\_beforeFirst}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01407}{Ray}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+\_\+before\+First\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01411_a4f48d15ad9f3e626c9442388500611ea}\label{a01411_a4f48d15ad9f3e626c9442388500611ea}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!\_camera@{\_camera}}
+\index{\_camera@{\_camera}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{\_camera}{\_camera}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01307}{Entities\+::\+ICamera}}\& Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+\_\+camera\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01411_a1c2632aa1e28bd81262143f596191472}\label{a01411_a1c2632aa1e28bd81262143f596191472}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!\_cluster@{\_cluster}}
+\index{\_cluster@{\_cluster}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{\_cluster}{\_cluster}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+\_\+cluster\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01411_aff0d27597bf79a22e7b54377f145c91a}\label{a01411_aff0d27597bf79a22e7b54377f145c91a}} 
+\index{RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}!\_pov@{\_pov}}
+\index{\_pov@{\_pov}!RayTracer::Images::RayIterrator@{RayTracer::Images::RayIterrator}}
+\doxysubsubsection{\texorpdfstring{\_pov}{\_pov}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01339}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+\_\+pov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\mbox{\hyperlink{a00176}{Ray\+Iterrator.\+hpp}}\end{DoxyCompactItemize}

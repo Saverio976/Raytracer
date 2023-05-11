@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01699" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Obj::ObjEntity Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ObjEntity.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::Obj::ObjEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01698.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Obj::ObjEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01697.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01703">Face</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01699_1a0afe7d69c7b4012b35bf95a00b5389d4">ObjEntity</link> (const <link linkend="_a01527">Scenes::ISetting</link> &amp;config, <link linkend="_a01375">ILogger</link> &amp;logger)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01699_1a80fb4f0120b6415a0922fd6d0aba61fe">triangulatePolygon</link> (<link linkend="_a01703">Face</link> face)</para>
+</listitem>
+            <listitem><para><link linkend="_a01311_1ab003087623e47600c09a76ff8138d37b">Type</link> <link linkend="_a01699_1a91920d0358ffa8ed1e19dfdf34d9939d">getType</link> () const final</para>
+
+<para>Get the type (light, camera, primitive) </para>
+</listitem>
+            <listitem><para><link linkend="_a01327">Entities::Transform::ITransform</link> &amp; <link linkend="_a01699_1a564d0aaafb4546d6e231347197957a87">getTransform</link> () final</para>
+
+<para>Get the transform (position, rotation, scale) </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01327">Entities::Transform::ITransform</link> &amp; <link linkend="_a01699_1aff4e534dd59f54e45d8b4912c20fb889">getTransform</link> () const final</para>
+
+<para>Get the transform (position, rotation, scale) (const) </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01699_1ac65156aa3f2738a3bfb34786f57c5f38">isCollided</link> (const <link linkend="_a01339">Entities::Transform::Vector3f</link> &amp;point) const final</para>
+
+<para>Check if the point is collided with the box. </para>
+</listitem>
+            <listitem><para>std::optional&lt; <link linkend="_a01339">Entities::Transform::Vector3f</link> &gt; <link linkend="_a01699_1a5ce8bb3b3572071243dba667454b08c4">isCollided</link> (const <link linkend="_a01407">Images::Ray</link> &amp;ray) const final</para>
+
+<para>Check if the ray is collided. </para>
+</listitem>
+            <listitem><para><link linkend="_a01379">Images::Color</link> <link linkend="_a01699_1abf931628f8f86f064cba41194728f260">getColor</link> (const <link linkend="_a01407">Images::Ray</link> &amp;ray, const <link linkend="_a01515">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01339">Entities::Transform::Vector3f</link> &amp;intersect) const final</para>
+
+<para>Get the material. </para>
+</listitem>
+            <listitem><para><link linkend="_a01379">Images::Color</link> <link linkend="_a01699_1af30041e60b74452545c17d40f0948907">redirectionLight</link> (const <link linkend="_a01407">Images::Ray</link> &amp;ray, const <link linkend="_a01515">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01339">Entities::Transform::Vector3f</link> &amp;intersect) const final</para>
+
+<para>this function is called when the object intercept the ray light </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01331">Entities::Transform::Transform</link> <link linkend="_a01699_1af1bfa8874552a7c700a327c5c29bda6f">_transform</link></para>
+</listitem>
+            <listitem><para>std::optional&lt; std::reference_wrapper&lt; <link linkend="_a01319">Entities::IMaterial</link> &gt; &gt; <link linkend="_a01699_1aae969c9f3a2a0cef69384045b8f46325">_material</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_a01339">Entities::Transform::Vector3f</link> &gt; <link linkend="_a01699_1adb88eae0b1a6571936f232c2fd70bbb2">_pointList</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_a01339">Entities::Transform::Vector3f</link> &gt; <link linkend="_a01699_1a8ff8673f891f040bb6f6348b01c48fbe">_normalList</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_a01703">Face</link> &gt; <link linkend="_a01699_1a02f5b4d0947f1d8bdc29272963593cf6">_faceList</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_a01703">Face</link> &gt; <link linkend="_a01699_1a91a622a7e98cad774de99b10a91fb476">_triangleList</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01375">ILogger</link> &amp; <link linkend="_a01699_1a76d64d4b927fbf28c96b866a949b964e">_logger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01699_1a0afe7d69c7b4012b35bf95a00b5389d4"/>    <section>
+    <title>ObjEntity()</title>
+<indexterm><primary>ObjEntity</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>ObjEntity</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Obj::ObjEntity::ObjEntity (const <link linkend="_a01527">Scenes::ISetting</link> &amp; config, <link linkend="_a01375">ILogger</link> &amp; logger)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01699_1abf931628f8f86f064cba41194728f260"/>    <section>
+    <title>getColor()</title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput><link linkend="_a01379">Images::Color</link> RayTracer::PluginsExt::Obj::ObjEntity::getColor (const <link linkend="_a01407">Images::Ray</link> &amp; ray, const <link linkend="_a01515">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01339">Entities::Transform::Vector3f</link> &amp; intersect) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the material. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the material </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01323_1a6c9c38a268043a21e98bd42661125e2e">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01699_1aff4e534dd59f54e45d8b4912c20fb889"/>    <section>
+    <title>getTransform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01327">Entities::Transform::ITransform</link>&amp; RayTracer::PluginsExt::Obj::ObjEntity::getTransform ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (position, rotation, scale) (const) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01311_1a703e6f7e78da30c2c7f4fecbe0bc580e">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01699_1a564d0aaafb4546d6e231347197957a87"/>    <section>
+    <title>getTransform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput><link linkend="_a01327">Entities::Transform::ITransform</link>&amp; RayTracer::PluginsExt::Obj::ObjEntity::getTransform ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (position, rotation, scale) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01311_1ac97ca7c49d7a87c00bf6a95ca227108a">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01699_1a91920d0358ffa8ed1e19dfdf34d9939d"/>    <section>
+    <title>getType()</title>
+<indexterm><primary>getType</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>getType</secondary></indexterm>
+<para><computeroutput><link linkend="_a01311_1ab003087623e47600c09a76ff8138d37b">Type</link> RayTracer::PluginsExt::Obj::ObjEntity::getType ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the type (light, camera, primitive) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the type </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01311_1a68374ef5e0932ab3b3dea57a87be156e">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01699_1ac65156aa3f2738a3bfb34786f57c5f38"/>    <section>
+    <title>isCollided()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>isCollided</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>isCollided</secondary></indexterm>
+<para><computeroutput>bool RayTracer::PluginsExt::Obj::ObjEntity::isCollided (const <link linkend="_a01339">Entities::Transform::Vector3f</link> &amp; point) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Check if the point is collided with the box. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>point</entry>
+                                <entry>
+<para>the point</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the point is collided </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01323_1a59076ea4dbff9d3617643678cb6bb266">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01699_1a5ce8bb3b3572071243dba667454b08c4"/>    <section>
+    <title>isCollided()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>isCollided</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>isCollided</secondary></indexterm>
+<para><computeroutput>std::optional&lt;<link linkend="_a01339">Entities::Transform::Vector3f</link>&gt; RayTracer::PluginsExt::Obj::ObjEntity::isCollided (const <link linkend="_a01407">Images::Ray</link> &amp; ray) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Check if the ray is collided. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the ray is collided </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01323_1aff9a474acf22c4d04959f8e8aaa5cac9">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01699_1af30041e60b74452545c17d40f0948907"/>    <section>
+    <title>redirectionLight()</title>
+<indexterm><primary>redirectionLight</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>redirectionLight</secondary></indexterm>
+<para><computeroutput><link linkend="_a01379">Images::Color</link> RayTracer::PluginsExt::Obj::ObjEntity::redirectionLight (const <link linkend="_a01407">Images::Ray</link> &amp; ray, const <link linkend="_a01515">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01339">Entities::Transform::Vector3f</link> &amp; intersect) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>this function is called when the object intercept the ray light </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray between the light and the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point between this point and the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color of the shadow </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01323_1ae6a0b892920f7ea034475d7777ed5cf2">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01699_1a80fb4f0120b6415a0922fd6d0aba61fe"/>    <section>
+    <title>triangulatePolygon()</title>
+<indexterm><primary>triangulatePolygon</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>triangulatePolygon</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::Obj::ObjEntity::triangulatePolygon (<link linkend="_a01703">Face</link> face)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01699_1a02f5b4d0947f1d8bdc29272963593cf6"/>    <section>
+    <title>_faceList</title>
+<indexterm><primary>_faceList</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_faceList</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01703">Face</link>&gt; RayTracer::PluginsExt::Obj::ObjEntity::_faceList<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01699_1a76d64d4b927fbf28c96b866a949b964e"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01375">ILogger</link>&amp; RayTracer::PluginsExt::Obj::ObjEntity::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01699_1aae969c9f3a2a0cef69384045b8f46325"/>    <section>
+    <title>_material</title>
+<indexterm><primary>_material</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_material</secondary></indexterm>
+<para><computeroutput>std::optional&lt;std::reference_wrapper&lt;<link linkend="_a01319">Entities::IMaterial</link>&gt; &gt; RayTracer::PluginsExt::Obj::ObjEntity::_material<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01699_1a8ff8673f891f040bb6f6348b01c48fbe"/>    <section>
+    <title>_normalList</title>
+<indexterm><primary>_normalList</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_normalList</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01339">Entities::Transform::Vector3f</link>&gt; RayTracer::PluginsExt::Obj::ObjEntity::_normalList<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01699_1adb88eae0b1a6571936f232c2fd70bbb2"/>    <section>
+    <title>_pointList</title>
+<indexterm><primary>_pointList</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_pointList</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01339">Entities::Transform::Vector3f</link>&gt; RayTracer::PluginsExt::Obj::ObjEntity::_pointList<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01699_1af1bfa8874552a7c700a327c5c29bda6f"/>    <section>
+    <title>_transform</title>
+<indexterm><primary>_transform</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_transform</secondary></indexterm>
+<para><computeroutput><link linkend="_a01331">Entities::Transform::Transform</link> RayTracer::PluginsExt::Obj::ObjEntity::_transform<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01699_1a91a622a7e98cad774de99b10a91fb476"/>    <section>
+    <title>_triangleList</title>
+<indexterm><primary>_triangleList</primary><secondary>RayTracer::PluginsExt::Obj::ObjEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Obj::ObjEntity</primary><secondary>_triangleList</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01703">Face</link>&gt; RayTracer::PluginsExt::Obj::ObjEntity::_triangleList<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/Obj/<link linkend="_a00350">ObjEntity.hpp</link></section>
+</section>

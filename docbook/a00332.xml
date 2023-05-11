@@ -30,18 +30,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01668">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link></para>
+            <listitem><para>class <link linkend="_a01675">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00423">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00436">RayTracer::PluginsExt::LimitedCylinder</link></para>
+            <listitem><para> <link linkend="_a00442">RayTracer::PluginsExt::LimitedCylinder</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

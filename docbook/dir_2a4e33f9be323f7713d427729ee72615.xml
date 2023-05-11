@@ -14,9 +14,9 @@ Directory dependency graph for SpotLight:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00377">SpotLightCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00383">SpotLightCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00380">SpotLightEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00386">SpotLightEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

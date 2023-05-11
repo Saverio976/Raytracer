@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="a01268.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="a01275.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="148.5,-639.5 148.5,-669.5 264.5,-669.5 264.5,-639.5 148.5,-639.5"/>
 <text text-anchor="start" x="156.5" y="-657.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Display</text>
 <text text-anchor="middle" x="206.5" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Display::StartFailed</text>
@@ -37,7 +37,7 @@
 <!-- Node6 -->
 <g id="node3" class="node">
 <title>Node6</title>
-<g id="a_node3"><a xlink:href="a01280.html" target="_top" xlink:title="If the function end failed, but it can continue without being completed.">
+<g id="a_node3"><a xlink:href="a01287.html" target="_top" xlink:title="If the function end failed, but it can continue without being completed.">
 <polygon fill="white" stroke="black" points="131,-590.5 131,-620.5 282,-620.5 282,-590.5 131,-590.5"/>
 <text text-anchor="start" x="139" y="-608.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Display</text>
 <text text-anchor="middle" x="206.5" y="-597.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IDisplayModule::EndFailed</text>
@@ -53,7 +53,7 @@
 <!-- Node7 -->
 <g id="node4" class="node">
 <title>Node7</title>
-<g id="a_node4"><a xlink:href="a01284.html" target="_top" xlink:title="If the function event failed, but it can continue without being completed.">
+<g id="a_node4"><a xlink:href="a01291.html" target="_top" xlink:title="If the function event failed, but it can continue without being completed.">
 <polygon fill="white" stroke="black" points="126,-541.5 126,-571.5 287,-571.5 287,-541.5 126,-541.5"/>
 <text text-anchor="start" x="134" y="-559.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Display</text>
 <text text-anchor="middle" x="206.5" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IDisplayModule::EventFailed</text>
@@ -69,7 +69,7 @@
 <!-- Node8 -->
 <g id="node5" class="node">
 <title>Node8</title>
-<g id="a_node5"><a xlink:href="a01276.html" target="_top" xlink:title="If the function start failed, but it can continue without being completed.">
+<g id="a_node5"><a xlink:href="a01283.html" target="_top" xlink:title="If the function start failed, but it can continue without being completed.">
 <polygon fill="white" stroke="black" points="128.5,-492.5 128.5,-522.5 284.5,-522.5 284.5,-492.5 128.5,-492.5"/>
 <text text-anchor="start" x="136.5" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Display</text>
 <text text-anchor="middle" x="206.5" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IDisplayModule::StartFailed</text>
@@ -85,7 +85,7 @@
 <!-- Node9 -->
 <g id="node6" class="node">
 <title>Node9</title>
-<g id="a_node6"><a xlink:href="a01288.html" target="_top" xlink:title="If the function tick failed, but it can continue without being completed.">
+<g id="a_node6"><a xlink:href="a01295.html" target="_top" xlink:title="If the function tick failed, but it can continue without being completed.">
 <polygon fill="white" stroke="black" points="130,-443.5 130,-473.5 283,-473.5 283,-443.5 130,-443.5"/>
 <text text-anchor="start" x="138" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Display</text>
 <text text-anchor="middle" x="206.5" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IDisplayModule::TickFailed</text>
@@ -101,7 +101,7 @@
 <!-- Node10 -->
 <g id="node7" class="node">
 <title>Node10</title>
-<g id="a_node7"><a xlink:href="a01424.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="a01431.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="132,-394.5 132,-424.5 281,-424.5 281,-394.5 132,-394.5"/>
 <text text-anchor="start" x="140" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Main::Argument</text>
 <text text-anchor="middle" x="206.5" y="-401.5" font-family="Helvetica,sans-Serif" font-size="10.00">Error</text>
@@ -117,7 +117,7 @@
 <!-- Node11 -->
 <g id="node8" class="node">
 <title>Node11</title>
-<g id="a_node8"><a xlink:href="a01420.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="a01427.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="132.5,-356 132.5,-375 280.5,-375 280.5,-356 132.5,-356"/>
 <text text-anchor="middle" x="206.5" y="-363" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Main::MainError</text>
 </a>
@@ -132,7 +132,7 @@
 <!-- Node12 -->
 <g id="node9" class="node">
 <title>Node12</title>
-<g id="a_node9"><a xlink:href="a01432.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="a01439.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="143.5,-306.5 143.5,-336.5 269.5,-336.5 269.5,-306.5 143.5,-306.5"/>
 <text text-anchor="start" x="151.5" y="-324.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Parameters</text>
 <text text-anchor="middle" x="206.5" y="-313.5" font-family="Helvetica,sans-Serif" font-size="10.00">::KeyNotFoundError</text>
@@ -148,7 +148,7 @@
 <!-- Node13 -->
 <g id="node10" class="node">
 <title>Node13</title>
-<g id="a_node10"><a xlink:href="a01488.html" target="_top" xlink:title="an exception for when the file can&#39;t be read">
+<g id="a_node10"><a xlink:href="a01495.html" target="_top" xlink:title="an exception for when the file can&#39;t be read">
 <polygon fill="white" stroke="black" points="123,-257.5 123,-287.5 290,-287.5 290,-257.5 123,-257.5"/>
 <text text-anchor="start" x="131" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="206.5" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigWrapper::ReadException</text>
@@ -164,7 +164,7 @@
 <!-- Node14 -->
 <g id="node11" class="node">
 <title>Node14</title>
-<g id="a_node11"><a xlink:href="a01492.html" target="_top" xlink:title="an exception for when the file can&#39;t be written">
+<g id="a_node11"><a xlink:href="a01499.html" target="_top" xlink:title="an exception for when the file can&#39;t be written">
 <polygon fill="white" stroke="black" points="122,-208.5 122,-238.5 291,-238.5 291,-208.5 122,-208.5"/>
 <text text-anchor="start" x="130" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="206.5" y="-215.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigWrapper::WriteException</text>
@@ -180,7 +180,7 @@
 <!-- Node15 -->
 <g id="node12" class="node">
 <title>Node15</title>
-<g id="a_node12"><a xlink:href="a01512.html" target="_top" xlink:title="an exception for when the key is not found">
+<g id="a_node12"><a xlink:href="a01519.html" target="_top" xlink:title="an exception for when the key is not found">
 <polygon fill="white" stroke="black" points="134.5,-148 134.5,-189 278.5,-189 278.5,-148 134.5,-148"/>
 <text text-anchor="start" x="142.5" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="start" x="142.5" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">IDisplayable::IDisplayable</text>
@@ -197,7 +197,7 @@
 <!-- Node17 -->
 <g id="node14" class="node">
 <title>Node17</title>
-<g id="a_node14"><a xlink:href="a01524.html" target="_top" xlink:title="an exception for when the key is not found">
+<g id="a_node14"><a xlink:href="a01531.html" target="_top" xlink:title="an exception for when the key is not found">
 <polygon fill="white" stroke="black" points="133.5,-98.5 133.5,-128.5 279.5,-128.5 279.5,-98.5 133.5,-98.5"/>
 <text text-anchor="start" x="141.5" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="206.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">ISetting::IParsingException</text>
@@ -213,7 +213,7 @@
 <!-- Node19 -->
 <g id="node16" class="node">
 <title>Node19</title>
-<g id="a_node16"><a xlink:href="a01528.html" target="_top" xlink:title="an exception for when the key is not found">
+<g id="a_node16"><a xlink:href="a01535.html" target="_top" xlink:title="an exception for when the key is not found">
 <polygon fill="white" stroke="black" points="139.5,-49.5 139.5,-79.5 273.5,-79.5 273.5,-49.5 139.5,-49.5"/>
 <text text-anchor="start" x="147.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="206.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ISetting::ITypeException</text>
@@ -229,7 +229,7 @@
 <!-- Node21 -->
 <g id="node18" class="node">
 <title>Node21</title>
-<g id="a_node18"><a xlink:href="a01540.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="a01547.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="134.5,-0.5 134.5,-30.5 278.5,-30.5 278.5,-0.5 134.5,-0.5"/>
 <text text-anchor="start" x="142.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="206.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SceneLoader::BadFileError</text>
@@ -245,7 +245,7 @@
 <!-- Node16 -->
 <g id="node13" class="node">
 <title>Node16</title>
-<g id="a_node13"><a xlink:href="a01500.html" target="_top" xlink:title="an exception for when the key is not found">
+<g id="a_node13"><a xlink:href="a01507.html" target="_top" xlink:title="an exception for when the key is not found">
 <polygon fill="white" stroke="black" points="327,-153.5 327,-183.5 513,-183.5 513,-153.5 327,-153.5"/>
 <text text-anchor="start" x="335" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="420" y="-160.5" font-family="Helvetica,sans-Serif" font-size="10.00">Displayable::DisplayableException</text>
@@ -261,7 +261,7 @@
 <!-- Node18 -->
 <g id="node15" class="node">
 <title>Node18</title>
-<g id="a_node15"><a xlink:href="a01552.html" target="_top" xlink:title="an exception for when the key is not found">
+<g id="a_node15"><a xlink:href="a01559.html" target="_top" xlink:title="an exception for when the key is not found">
 <polygon fill="white" stroke="black" points="329,-98.5 329,-128.5 511,-128.5 511,-98.5 329,-98.5"/>
 <text text-anchor="start" x="337" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="420" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">SettingWrapper::ParsingException</text>
@@ -277,7 +277,7 @@
 <!-- Node20 -->
 <g id="node17" class="node">
 <title>Node20</title>
-<g id="a_node17"><a xlink:href="a01556.html" target="_top" xlink:title="an exception for when the key is not found">
+<g id="a_node17"><a xlink:href="a01563.html" target="_top" xlink:title="an exception for when the key is not found">
 <polygon fill="white" stroke="black" points="335.5,-49.5 335.5,-79.5 504.5,-79.5 504.5,-49.5 335.5,-49.5"/>
 <text text-anchor="start" x="343.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Scenes::</text>
 <text text-anchor="middle" x="420" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">SettingWrapper::TypeException</text>

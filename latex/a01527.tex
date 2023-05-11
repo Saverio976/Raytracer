@@ -1,0 +1,347 @@
+\hypertarget{a01527}{}\doxysection{Ray\+Tracer\+::Scenes\+::ISetting Class Reference}
+\label{a01527}\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+
+
+{\ttfamily \#include $<$ISetting.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Scenes\+::ISetting\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01526}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Scenes\+::ISetting\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{a01525}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01531}{IParsing\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the key is not found \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01535}{IType\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the key is not found \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01527_aa7833cd7cabb4a146abeb9797239b7d6}{$\sim$\+ISetting}} ()=default
+\item 
+virtual void \mbox{\hyperlink{a01527_a6ef82306555ce131d6ff7d75596dd8d5}{get\+Setting}} (const std\+::string \&key)=0
+\begin{DoxyCompactList}\small\item\em get a precise setting of the config from key \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01527_ae4d9bd09a28ccd4cbaa16851db85555f}{get\+Setting}} (int index)=0
+\begin{DoxyCompactList}\small\item\em access element at index \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{a01527_a62fb98c88cb8cc0fba637b104d84ce1f}{get\+Length}} () const =0
+\begin{DoxyCompactList}\small\item\em get the length of the current key works only for lists, array, groups \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{a01527_a9f84f57ada001e8dc64ec56791ca4c82}{get\+Path}} () const =0
+\begin{DoxyCompactList}\small\item\em gets the full path of the current setting \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{a01527_a906cf80d206ea8e8105b297bd3a11cc6}{get\+Key}} () const =0
+\begin{DoxyCompactList}\small\item\em gets the key of the current setting \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ libconfig\+::\+Config $>$ \mbox{\hyperlink{a01527_a7b63f5d483c473ad3d77a12097cb6ce8}{get\+Config}} () const =0
+\begin{DoxyCompactList}\small\item\em gets the config of a setting \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01527_ad34eb603060626c24bf50065642142b7}{move\+To}} (const std\+::string \&key)=0
+\item 
+virtual void \mbox{\hyperlink{a01527_afa5db77d88aaf77ff146a146cd991d7c}{move\+To}} (int index)=0
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01527}{ISetting}} $>$ \mbox{\hyperlink{a01527_a6f04996c87bad9e48fc85ef26d5ee8a7}{get}} (const std\+::string \&key) const =0
+\begin{DoxyCompactList}\small\item\em search the setting at the given key in the childs \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01527}{ISetting}} $>$ \mbox{\hyperlink{a01527_ae7484ffc05c6071d01e589c3c9cec0d7}{get}} (int index) const =0
+\begin{DoxyCompactList}\small\item\em search the setting at the given index in the childs \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01527}{ISetting}} $>$ \mbox{\hyperlink{a01527_aecafb2dc2dacffcae5029f81bde4321a}{get}} () const =0
+\begin{DoxyCompactList}\small\item\em returns the current setting \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01527_aa24a4c685c14038967e2795e210b265d}{operator bool}} () const =0
+\begin{DoxyCompactList}\small\item\em cast operator to get the value \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01527_ab97ab9cba5f7cbfa7d8db3b3b56592b1}{operator int}} () const =0
+\item 
+virtual \mbox{\hyperlink{a01527_afbceda8dc0b26c9e330cca69b8ebf209}{operator double}} () const =0
+\item 
+virtual \mbox{\hyperlink{a01527_acc73c57e8acc780a87dce5cf0943833a}{operator const char $\ast$}} () const =0
+\item 
+virtual \mbox{\hyperlink{a01527_a1e2ab6e2e70e53a9d090706a3cdadbd6}{operator std\+::string}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01527_aa7833cd7cabb4a146abeb9797239b7d6}\label{a01527_aa7833cd7cabb4a146abeb9797239b7d6}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!````~ISetting@{$\sim$ISetting}}
+\index{````~ISetting@{$\sim$ISetting}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{$\sim$ISetting()}{~ISetting()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::$\sim$\+ISetting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01527_aecafb2dc2dacffcae5029f81bde4321a}\label{a01527_aecafb2dc2dacffcae5029f81bde4321a}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!get@{get}}
+\index{get@{get}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01527}{ISetting}}$>$ Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+returns the current setting 
+
+\begin{DoxyReturn}{Returns}
+a copy of the setting at the current emplacement 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_aab54e51787b0c8d9eeaee5b4dc2871a0}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a6f04996c87bad9e48fc85ef26d5ee8a7}\label{a01527_a6f04996c87bad9e48fc85ef26d5ee8a7}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!get@{get}}
+\index{get@{get}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01527}{ISetting}}$>$ Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+search the setting at the given key in the childs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to go to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a copy of the setting, moved to the key 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_a524874e4530299a30735e14bf939805b}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_ae7484ffc05c6071d01e589c3c9cec0d7}\label{a01527_ae7484ffc05c6071d01e589c3c9cec0d7}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!get@{get}}
+\index{get@{get}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01527}{ISetting}}$>$ Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+search the setting at the given index in the childs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index to go to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a copy of the setting, moved to the index 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_a187240284b49de24444b4a7fabc990fe}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a7b63f5d483c473ad3d77a12097cb6ce8}\label{a01527_a7b63f5d483c473ad3d77a12097cb6ce8}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$libconfig\+::\+Config$>$ Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+gets the config of a setting 
+
+\begin{DoxyReturn}{Returns}
+the config 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_a5df8bcdfa6c27017fe25a1ed2a665619}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a906cf80d206ea8e8105b297bd3a11cc6}\label{a01527_a906cf80d206ea8e8105b297bd3a11cc6}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!getKey@{getKey}}
+\index{getKey@{getKey}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{getKey()}{getKey()}}
+{\footnotesize\ttfamily virtual std\+::string Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+gets the key of the current setting 
+
+\begin{DoxyReturn}{Returns}
+the key 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_ad8966e0597a177003494a498389df4da}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a62fb98c88cb8cc0fba637b104d84ce1f}\label{a01527_a62fb98c88cb8cc0fba637b104d84ce1f}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!getLength@{getLength}}
+\index{getLength@{getLength}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily virtual int Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+get the length of the current key works only for lists, array, groups 
+
+\begin{DoxyReturn}{Returns}
+-\/1 if invalid type or size 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_aaaa74848aca6bf32bba62a3c9f64969c}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a9f84f57ada001e8dc64ec56791ca4c82}\label{a01527_a9f84f57ada001e8dc64ec56791ca4c82}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!getPath@{getPath}}
+\index{getPath@{getPath}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily virtual std\+::string Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+gets the full path of the current setting 
+
+\begin{DoxyReturn}{Returns}
+the path 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_ab13cc485cf09e9eda992da5487b23a50}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a6ef82306555ce131d6ff7d75596dd8d5}\label{a01527_a6ef82306555ce131d6ff7d75596dd8d5}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!getSetting@{getSetting}}
+\index{getSetting@{getSetting}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{getSetting()}{getSetting()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get\+Setting (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+get a precise setting of the config from key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the setting exists, false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_ad343aaeac8166e70f4b007e776ffe9d0}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_ae4d9bd09a28ccd4cbaa16851db85555f}\label{a01527_ae4d9bd09a28ccd4cbaa16851db85555f}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!getSetting@{getSetting}}
+\index{getSetting@{getSetting}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{getSetting()}{getSetting()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::get\+Setting (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+access element at index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the setting exists, false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_a24995c271c9eb067a880a7ed92b1039a}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_ad34eb603060626c24bf50065642142b7}\label{a01527_ad34eb603060626c24bf50065642142b7}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::move\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{a01555_a794348f6c0c89c90875594f866da94dc}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_afa5db77d88aaf77ff146a146cd991d7c}\label{a01527_afa5db77d88aaf77ff146a146cd991d7c}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::move\+To (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{a01555_ac0242a53b300beaa958cd1781bf28788}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_aa24a4c685c14038967e2795e210b265d}\label{a01527_aa24a4c685c14038967e2795e210b265d}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [pure virtual]}}
+
+
+
+cast operator to get the value 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01555_aaca34afb39b48e960753509cfbd26fc0}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_acc73c57e8acc780a87dce5cf0943833a}\label{a01527_acc73c57e8acc780a87dce5cf0943833a}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!operator const char $\ast$@{operator const char $\ast$}}
+\index{operator const char $\ast$@{operator const char $\ast$}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{operator const char $\ast$()}{operator const char *()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::operator const char $\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01555_a8301053aac11e5a7131871654ef07c64}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_afbceda8dc0b26c9e330cca69b8ebf209}\label{a01527_afbceda8dc0b26c9e330cca69b8ebf209}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!operator double@{operator double}}
+\index{operator double@{operator double}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{operator double()}{operator double()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::operator double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01555_a4b632bc6babafc9447cdd3cfe4fcf660}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_ab97ab9cba5f7cbfa7d8db3b3b56592b1}\label{a01527_ab97ab9cba5f7cbfa7d8db3b3b56592b1}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!operator int@{operator int}}
+\index{operator int@{operator int}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01555_ae5a79e7a6de98ab88b9a61519a54b751}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+\mbox{\Hypertarget{a01527_a1e2ab6e2e70e53a9d090706a3cdadbd6}\label{a01527_a1e2ab6e2e70e53a9d090706a3cdadbd6}} 
+\index{RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!RayTracer::Scenes::ISetting@{RayTracer::Scenes::ISetting}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01555_abb6ab38f87302788982e47c3b82af9d9}{Ray\+Tracer\+::\+Scenes\+::\+Setting\+Wrapper}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\mbox{\hyperlink{a00242}{ISetting.\+hpp}}\end{DoxyCompactItemize}

@@ -14,9 +14,9 @@ Directory dependency graph for RefractionMaterial:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00365">RefractionCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00371">RefractionCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00368">RefractionMaterial.hpp</link></para>
+            <listitem><para>file <link linkend="_a00374">RefractionMaterial.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

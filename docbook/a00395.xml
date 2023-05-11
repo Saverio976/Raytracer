@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00395" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/TransparencyMaterial/TransparencyCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/TransparencyMaterial/TransparencyCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;IEntityCreator.hpp&quot;
+#include &quot;IMaterialCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;TriangleEntity.hpp&quot;
-</programlisting>Include dependency graph for TriangleCreator.hpp:<para>
+#include &quot;TransparencyMaterial.hpp&quot;
+</programlisting>Include dependency graph for TransparencyCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01752">RayTracer::PluginsExt::Triangle::TriangleCreator</link></para>
+            <listitem><para>class <link linkend="_a01763">RayTracer::PluginsExt::Transparency::TransparencyCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00423">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00447">RayTracer::PluginsExt::Triangle</link></para>
+            <listitem><para> <link linkend="_a00453">RayTracer::PluginsExt::Transparency</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

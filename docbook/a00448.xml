@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00448" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Zebra Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Zebra</primary></indexterm>
+<title>RayTracer::PluginsExt::PointLight Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::PointLight</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01760">ZebraCreator</link></para>
+            <listitem><para>class <link linkend="_a01723">PointLightCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01764">ZebraMaterial</link></para>
+            <listitem><para>class <link linkend="_a01727">PointLightEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

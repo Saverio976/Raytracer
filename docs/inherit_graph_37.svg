@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01476.html" target="_top" xlink:title=" ">
+<g id="a_node1"><a xlink:href="a01483.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-52.5 179,-52.5 179,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Plugins</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">::PluginLoader&lt; MaterialHandler,</text>
@@ -24,7 +24,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01468.html" target="_top" xlink:title="The MaterialLoader.">
+<g id="a_node2"><a xlink:href="a01475.html" target="_top" xlink:title="The MaterialLoader.">
 <polygon fill="white" stroke="black" points="215,-11.5 215,-41.5 363,-41.5 363,-11.5 215,-11.5"/>
 <text text-anchor="start" x="223" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Plugins</text>
 <text text-anchor="middle" x="289" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Materials::MaterialLoader</text>

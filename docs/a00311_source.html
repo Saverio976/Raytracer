@@ -88,14 +88,14 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">ISetting.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00314.html">CylinderEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00433.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00433.html">RayTracer::PluginsExt::Cylinder</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01640.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01640.html">CylinderCreator</a> : <span class="keyword">public</span> <a class="code" href="a01444.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00439.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00439.html">RayTracer::PluginsExt::Cylinder</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01647.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01647.html">CylinderCreator</a> : <span class="keyword">public</span> <a class="code" href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01640.html#abdd4ba96f4b1f3e3fc1979d7d1805c23">   22</a></span>&#160;            <a class="code" href="a01640.html#abdd4ba96f4b1f3e3fc1979d7d1805c23">~CylinderCreator</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01640.html#a6b8565f3cc9bbf21d1e5622b93d9058d">   23</a></span>&#160;            <a class="code" href="a01304.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01640.html#a6b8565f3cc9bbf21d1e5622b93d9058d">create</a>(<span class="keyword">const</span> <a class="code" href="a01520.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01368.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01647.html#abdd4ba96f4b1f3e3fc1979d7d1805c23">   22</a></span>&#160;            <a class="code" href="a01647.html#abdd4ba96f4b1f3e3fc1979d7d1805c23">~CylinderCreator</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01647.html#a6b8565f3cc9bbf21d1e5622b93d9058d">   23</a></span>&#160;            <a class="code" href="a01311.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01647.html#a6b8565f3cc9bbf21d1e5622b93d9058d">create</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01640.html#a96bf51cc034f06b5cff62cb874dd20ae">   26</a></span>&#160;            std::vector&lt;CylinderEntity *&gt; <a class="code" href="a01640.html#a96bf51cc034f06b5cff62cb874dd20ae">_elements</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01647.html#a96bf51cc034f06b5cff62cb874dd20ae">   26</a></span>&#160;            std::vector&lt;CylinderEntity *&gt; <a class="code" href="a01647.html#a96bf51cc034f06b5cff62cb874dd20ae">_elements</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -104,19 +104,19 @@ $(function() {
 <div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">IEntityCreator.hpp</a></div></div>
 <div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">ISetting.hpp</a></div></div>
 <div class="ttc" id="aa00314_html"><div class="ttname"><a href="a00314.html">CylinderEntity.hpp</a></div></div>
-<div class="ttc" id="aa00433_html"><div class="ttname"><a href="a00433.html">RayTracer::PluginsExt::Cylinder</a></div><div class="ttdef"><b>Definition:</b> CylinderCreator.hpp:19</div></div>
-<div class="ttc" id="aa01304_html"><div class="ttname"><a href="a01304.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01444_html"><div class="ttname"><a href="a01444.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01520_html"><div class="ttname"><a href="a01520.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01640_html"><div class="ttname"><a href="a01640.html">RayTracer::PluginsExt::Cylinder::CylinderCreator</a></div><div class="ttdef"><b>Definition:</b> CylinderCreator.hpp:20</div></div>
-<div class="ttc" id="aa01640_html_a6b8565f3cc9bbf21d1e5622b93d9058d"><div class="ttname"><a href="a01640.html#a6b8565f3cc9bbf21d1e5622b93d9058d">RayTracer::PluginsExt::Cylinder::CylinderCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01640_html_a96bf51cc034f06b5cff62cb874dd20ae"><div class="ttname"><a href="a01640.html#a96bf51cc034f06b5cff62cb874dd20ae">RayTracer::PluginsExt::Cylinder::CylinderCreator::_elements</a></div><div class="ttdeci">std::vector&lt; CylinderEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> CylinderCreator.hpp:26</div></div>
-<div class="ttc" id="aa01640_html_abdd4ba96f4b1f3e3fc1979d7d1805c23"><div class="ttname"><a href="a01640.html#abdd4ba96f4b1f3e3fc1979d7d1805c23">RayTracer::PluginsExt::Cylinder::CylinderCreator::~CylinderCreator</a></div><div class="ttdeci">~CylinderCreator()</div></div>
+<div class="ttc" id="aa00439_html"><div class="ttname"><a href="a00439.html">RayTracer::PluginsExt::Cylinder</a></div><div class="ttdef"><b>Definition:</b> CylinderCreator.hpp:19</div></div>
+<div class="ttc" id="aa01311_html"><div class="ttname"><a href="a01311.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01451_html"><div class="ttname"><a href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01647_html"><div class="ttname"><a href="a01647.html">RayTracer::PluginsExt::Cylinder::CylinderCreator</a></div><div class="ttdef"><b>Definition:</b> CylinderCreator.hpp:20</div></div>
+<div class="ttc" id="aa01647_html_a6b8565f3cc9bbf21d1e5622b93d9058d"><div class="ttname"><a href="a01647.html#a6b8565f3cc9bbf21d1e5622b93d9058d">RayTracer::PluginsExt::Cylinder::CylinderCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01647_html_a96bf51cc034f06b5cff62cb874dd20ae"><div class="ttname"><a href="a01647.html#a96bf51cc034f06b5cff62cb874dd20ae">RayTracer::PluginsExt::Cylinder::CylinderCreator::_elements</a></div><div class="ttdeci">std::vector&lt; CylinderEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> CylinderCreator.hpp:26</div></div>
+<div class="ttc" id="aa01647_html_abdd4ba96f4b1f3e3fc1979d7d1805c23"><div class="ttname"><a href="a01647.html#abdd4ba96f4b1f3e3fc1979d7d1805c23">RayTracer::PluginsExt::Cylinder::CylinderCreator::~CylinderCreator</a></div><div class="ttdeci">~CylinderCreator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 17:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 18:14:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

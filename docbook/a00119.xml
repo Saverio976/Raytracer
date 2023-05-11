@@ -24,20 +24,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01320">RayTracer::Entities::Transform::ITransform</link></para>
+            <listitem><para>class <link linkend="_a01327">RayTracer::Entities::Transform::ITransform</link></para>
 
-<para>The <link linkend="_a01320">ITransform</link> class. </para>
+<para>The <link linkend="_a01327">ITransform</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00411">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00413">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00419">RayTracer::Entities</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00414">RayTracer::Entities::Transform</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer::Entities::Transform</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

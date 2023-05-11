@@ -1,0 +1,77 @@
+.TH "RayTracer::PluginsExt::Obj::ObjEntity::Face" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Obj::ObjEntity::Face
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ObjEntity\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFace\fP (std::string &faceString)"
+.br
+.ti -1c
+.RI "\fBFace\fP (int firstPoint, int secondPoint, int thirdPoint, int firstNormal, int secondNormal, int thirdNormal)"
+.br
+.ti -1c
+.RI "\fB~Face\fP ()=default"
+.br
+.ti -1c
+.RI "const std::vector< int > & \fBgetPointsIndexes\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< int > & \fBgetNormalsIndexes\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_size\fP = 0"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< int > \fB_points\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fB_normals\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fB_textures\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Obj::ObjEntity::Face::Face (std::string & faceString)"
+
+.SS "RayTracer::PluginsExt::Obj::ObjEntity::Face::Face (int firstPoint, int secondPoint, int thirdPoint, int firstNormal, int secondNormal, int thirdNormal)"
+
+.SS "RayTracer::PluginsExt::Obj::ObjEntity::Face::~Face ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const std::vector<int>& RayTracer::PluginsExt::Obj::ObjEntity::Face::getNormalsIndexes () const"
+
+.SS "const std::vector<int>& RayTracer::PluginsExt::Obj::ObjEntity::Face::getPointsIndexes () const"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<int> RayTracer::PluginsExt::Obj::ObjEntity::Face::_normals\fC [private]\fP"
+
+.SS "std::vector<int> RayTracer::PluginsExt::Obj::ObjEntity::Face::_points\fC [private]\fP"
+
+.SS "int RayTracer::PluginsExt::Obj::ObjEntity::Face::_size = 0"
+
+.SS "std::vector<int> RayTracer::PluginsExt::Obj::ObjEntity::Face::_textures\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,221 @@
+.TH "RayTracer::PluginsExt::Obj::ObjEntity" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Obj::ObjEntity
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ObjEntity\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Entities::IPrimitive\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFace\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjEntity\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger)"
+.br
+.ti -1c
+.RI "void \fBtriangulatePolygon\fP (\fBFace\fP face)"
+.br
+.ti -1c
+.RI "\fBType\fP \fBgetType\fP () const final"
+.br
+.RI "Get the type (light, camera, primitive) "
+.ti -1c
+.RI "\fBEntities::Transform::ITransform\fP & \fBgetTransform\fP () final"
+.br
+.RI "Get the transform (position, rotation, scale) "
+.ti -1c
+.RI "const \fBEntities::Transform::ITransform\fP & \fBgetTransform\fP () const final"
+.br
+.RI "Get the transform (position, rotation, scale) (const) "
+.ti -1c
+.RI "bool \fBisCollided\fP (const \fBEntities::Transform::Vector3f\fP &point) const final"
+.br
+.RI "Check if the point is collided with the box\&. "
+.ti -1c
+.RI "std::optional< \fBEntities::Transform::Vector3f\fP > \fBisCollided\fP (const \fBImages::Ray\fP &ray) const final"
+.br
+.RI "Check if the ray is collided\&. "
+.ti -1c
+.RI "\fBImages::Color\fP \fBgetColor\fP (const \fBImages::Ray\fP &ray, const \fBScenes::IDisplayable\fP &displayable, const \fBEntities::Transform::Vector3f\fP &intersect) const final"
+.br
+.RI "Get the material\&. "
+.ti -1c
+.RI "\fBImages::Color\fP \fBredirectionLight\fP (const \fBImages::Ray\fP &ray, const \fBScenes::IDisplayable\fP &displayable, const \fBEntities::Transform::Vector3f\fP &intersect) const final"
+.br
+.RI "this function is called when the object intercept the ray light "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntities::Transform::Transform\fP \fB_transform\fP"
+.br
+.ti -1c
+.RI "std::optional< std::reference_wrapper< \fBEntities::IMaterial\fP > > \fB_material\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBEntities::Transform::Vector3f\fP > \fB_pointList\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBEntities::Transform::Vector3f\fP > \fB_normalList\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBFace\fP > \fB_faceList\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBFace\fP > \fB_triangleList\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Obj::ObjEntity::ObjEntity (const \fBScenes::ISetting\fP & config, \fBILogger\fP & logger)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::Obj::ObjEntity::getColor (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBEntities::Transform::Vector3f\fP & intersect) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the material\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IPrimitive\fP\&.
+.SS "const \fBEntities::Transform::ITransform\fP& RayTracer::PluginsExt::Obj::ObjEntity::getTransform () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the transform (position, rotation, scale) (const) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "\fBEntities::Transform::ITransform\fP& RayTracer::PluginsExt::Obj::ObjEntity::getTransform ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the transform (position, rotation, scale) 
+.PP
+\fBReturns\fP
+.RS 4
+the transform 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "\fBType\fP RayTracer::PluginsExt::Obj::ObjEntity::getType () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the type (light, camera, primitive) 
+.PP
+\fBReturns\fP
+.RS 4
+the type 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IEntity\fP\&.
+.SS "bool RayTracer::PluginsExt::Obj::ObjEntity::isCollided (const \fBEntities::Transform::Vector3f\fP & point) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Check if the point is collided with the box\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpoint\fP the point
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the point is collided 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IPrimitive\fP\&.
+.SS "std::optional<\fBEntities::Transform::Vector3f\fP> RayTracer::PluginsExt::Obj::ObjEntity::isCollided (const \fBImages::Ray\fP & ray) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Check if the ray is collided\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIray\fP the ray
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the ray is collided 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IPrimitive\fP\&.
+.SS "\fBImages::Color\fP RayTracer::PluginsExt::Obj::ObjEntity::redirectionLight (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBEntities::Transform::Vector3f\fP & intersect) const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+this function is called when the object intercept the ray light 
+.PP
+\fBParameters\fP
+.RS 4
+\fIray\fP the ray between the light and the object 
+.br
+\fIdisplayable\fP the displayable 
+.br
+\fIintersect\fP the intersection point between this point and the ray
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the color of the shadow 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::IPrimitive\fP\&.
+.SS "void RayTracer::PluginsExt::Obj::ObjEntity::triangulatePolygon (\fBFace\fP face)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBFace\fP> RayTracer::PluginsExt::Obj::ObjEntity::_faceList\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::PluginsExt::Obj::ObjEntity::_logger\fC [private]\fP"
+
+.SS "std::optional<std::reference_wrapper<\fBEntities::IMaterial\fP> > RayTracer::PluginsExt::Obj::ObjEntity::_material\fC [private]\fP"
+
+.SS "std::vector<\fBEntities::Transform::Vector3f\fP> RayTracer::PluginsExt::Obj::ObjEntity::_normalList\fC [private]\fP"
+
+.SS "std::vector<\fBEntities::Transform::Vector3f\fP> RayTracer::PluginsExt::Obj::ObjEntity::_pointList\fC [private]\fP"
+
+.SS "\fBEntities::Transform::Transform\fP RayTracer::PluginsExt::Obj::ObjEntity::_transform\fC [private]\fP"
+
+.SS "std::vector<\fBFace\fP> RayTracer::PluginsExt::Obj::ObjEntity::_triangleList\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.
