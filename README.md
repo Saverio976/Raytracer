@@ -8,6 +8,9 @@ membres du projet:
 - [@SimonVermeulen](https://github.com/SimonVermeulen)
 - [@Amaz31](https://github.com/Amaz31)
 
+[Site Doxygen Du Projet](https://saverio976.github.io/Raytracer)
+[UML du Projet](https://github.com/Saverio976/Raytracer/blob/gh-pages/uml.svg)
+
 # Introduction
 
 L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tracing) en [C++](https://fr.wikipedia.org/wiki/C%2B%2B)
