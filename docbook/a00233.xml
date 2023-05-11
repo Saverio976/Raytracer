@@ -1,17 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00233" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
-#include &lt;memory&gt;
-#include &quot;ILogger.hpp&quot;
-#include &quot;IEntityCreator.hpp&quot;
-#include &quot;AmbientLightEntity.hpp&quot;
-</programlisting>Include dependency graph for AmbientLightCreator.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp</primary></indexterm>
+This graph shows which files directly or indirectly include this file:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00234.svg"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00235.svg"></imagedata>
             </imageobject>
         </mediaobject>
     </informalfigure>
@@ -19,18 +14,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01529">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</link></para>
+            <listitem><para>class <link linkend="_a01503">RayTracer::Scenes::ISceneState</link></para>
+
+<para>The <link linkend="_a01531">SceneState</link> interface. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00393">RayTracer::PluginsExt</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00394">RayTracer::PluginsExt::AmbientLight</link></para>
+            <listitem><para> <link linkend="_a00410">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

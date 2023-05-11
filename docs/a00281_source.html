@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/ClusterRayIterator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,57 +62,118 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_c8fd1adca193700d0c20cd153f75c1a6.html">Cone</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_62f615b43676db5ddd87f008b4cc30b3.html">Camera</a></li><li class="navelem"><a class="el" href="dir_6f6b6a3ad8e0d5aad58943c777bbb4ef.html">Cluster</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ConeCreator.hpp</div>  </div>
+<div class="title">ClusterRayIterator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00281.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ConeCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ClusterRayIterator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYTRACER_CONECREATOR_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYTRACER_CONECREATOR_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYITERATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYITERATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00173.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00284.html">ConeEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00402.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00402.html">RayTracer::PluginsExt::Cone</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01601.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01601.html">ConeCreator</a> : <span class="keyword">public</span> <a class="code" href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a>  {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01601.html#ad6a738f0b7f2989333d5bc9bac390fe0">   19</a></span>&#160;            <a class="code" href="a01601.html#ad6a738f0b7f2989333d5bc9bac390fe0">~ConeCreator</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01601.html#a44cc63186c26d121444a830641c98de9">   20</a></span>&#160;            <a class="code" href="a01273.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01601.html#a44cc63186c26d121444a830641c98de9">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01337.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01601.html#ab6a00dfa167098ffccfd8d899b9a73fd">   23</a></span>&#160;            std::vector&lt;ConeEntity *&gt; <a class="code" href="a01601.html#ab6a00dfa167098ffccfd8d899b9a73fd">_elements</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//RAYTRACER_CONECREATOR_HPP</span></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00284_html"><div class="ttname"><a href="a00284.html">ConeEntity.hpp</a></div></div>
-<div class="ttc" id="aa00402_html"><div class="ttname"><a href="a00402.html">RayTracer::PluginsExt::Cone</a></div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:16</div></div>
-<div class="ttc" id="aa01273_html"><div class="ttname"><a href="a01273.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01413_html"><div class="ttname"><a href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01601_html"><div class="ttname"><a href="a01601.html">RayTracer::PluginsExt::Cone::ConeCreator</a></div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:17</div></div>
-<div class="ttc" id="aa01601_html_a44cc63186c26d121444a830641c98de9"><div class="ttname"><a href="a01601.html#a44cc63186c26d121444a830641c98de9">RayTracer::PluginsExt::Cone::ConeCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01601_html_ab6a00dfa167098ffccfd8d899b9a73fd"><div class="ttname"><a href="a01601.html#ab6a00dfa167098ffccfd8d899b9a73fd">RayTracer::PluginsExt::Cone::ConeCreator::_elements</a></div><div class="ttdeci">std::vector&lt; ConeEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:23</div></div>
-<div class="ttc" id="aa01601_html_ad6a738f0b7f2989333d5bc9bac390fe0"><div class="ttname"><a href="a01601.html#ad6a738f0b7f2989333d5bc9bac390fe0">RayTracer::PluginsExt::Cone::ConeCreator::~ConeCreator</a></div><div class="ttdeci">~ConeCreator()</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &lt;iterator&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00098.html">ICamera.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">IRayIterator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00167.html">Ray.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">Vector2i.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Vector3f.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00417.html">RayTracer::PluginsExt::Camera::Clustered</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01587.html">   28</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01587.html">ClusterRayIterator</a> : <span class="keyword">public</span> <a class="code" href="a01375.html">Images::IRayIterator</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01591.html">   30</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01591.html">Iterator</a> : <span class="keyword">public</span> IRayIterator::IIterator {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01591.html#add44881ef5016746d629cc80908f4e6e">   32</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01591.html#add44881ef5016746d629cc80908f4e6e">iterator_category</a> = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01591.html#a9e175c83b5f2a32e356aec4cad8da422">   33</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01387.html">difference_type</a>   = <a class="code" href="a01387.html">Images::Ray</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01591.html#a4dacb3708f24db1e01c8a4566e73591d">   34</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01387.html">value_type</a>        = <a class="code" href="a01387.html">Images::Ray</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01591.html#a8268bb672ddcfe73764f1554697b745f">   35</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01387.html">pointer</a>           = <a class="code" href="a01387.html">Images::Ray</a> *;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01591.html#a24069d89a54bc16aea5734d48bf0c438">   36</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01387.html">reference</a>         = <a class="code" href="a01387.html">Images::Ray</a> &amp;;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01591.html#ad4f50b67996790e9e6b5dd45423bc86c">   38</a></span>&#160;                    <a class="code" href="a01591.html#ad4f50b67996790e9e6b5dd45423bc86c">Iterator</a>(</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                            <span class="keyword">const</span> <a class="code" href="a01319.html">Entities::Transform::Vector3f</a> &amp;cameraPos,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                            <span class="keyword">const</span> <a class="code" href="a01315.html">Entities::Transform::Vector2i</a> &amp;screenSize,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            <span class="keyword">const</span> <a class="code" href="a01319.html">Entities::Transform::Vector3f</a> &amp;screenPosCenter,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                            std::size_t x,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                            std::size_t y,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                            std::size_t cluster);</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01591.html#a9e3a8613b89a28db07df578e4b97c4e5">   50</a></span>&#160;                    <a class="code" href="a01379.html">IIterator</a> &amp;<a class="code" href="a01591.html#a9e3a8613b89a28db07df578e4b97c4e5">operator++</a>() final;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01591.html#a7dc06e57d3e951bfd6f46f2a4f80ae9f">   56</a></span>&#160;                    Images::Ray &amp;operator*() final;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a01591.html#adacbddc3b9670f3bea5fe203e508859e">   64</a></span>&#160;                    <span class="keywordtype">bool</span> operator==(const Images::IRayIterator::<a class="code" href="a01379.html">IIterator</a> &amp;other) const final;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a01591.html#a51bcdad5ba5e499ee94c3ace8d6f7b31">   72</a></span>&#160;                    <span class="keywordtype">bool</span> operator!=(const Images::IRayIterator::<a class="code" href="a01379.html">IIterator</a> &amp;other) const final;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="a01591.html#a3f543b938c04b397a22c267a2d3ce869">   78</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01591.html#a3f543b938c04b397a22c267a2d3ce869">toString</a>() const final;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a01591.html#a6dceebe0dc982ba75ce3de44b425b5f9">   86</a></span>&#160;                    <a class="code" href="a01587.html">ClusterRayIterator</a>::<a class="code" href="a01591.html">Iterator</a> &amp;operator=(const <a class="code" href="a01587.html">ClusterRayIterator</a>::<a class="code" href="a01591.html">Iterator</a> &amp;other);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                private:</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="a01591.html#ae179fdc7794b8ac601e91a0616f9f0f0">   88</a></span>&#160;                    Entities::Transform::Vector3f <a class="code" href="a01591.html#ae179fdc7794b8ac601e91a0616f9f0f0">_cameraPos</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a01591.html#a066e03779a8dda05880999bda8dda92d">   89</a></span>&#160;                    Entities::Transform::Vector2i <a class="code" href="a01591.html#a066e03779a8dda05880999bda8dda92d">_screenSize</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a01591.html#a0754b28a55c3f0e22dac6aed3e334779">   90</a></span>&#160;                    Entities::Transform::Vector3f <a class="code" href="a01591.html#a0754b28a55c3f0e22dac6aed3e334779">_screenPosTopLeft</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a01591.html#ad8cf58f4d900524207637b682851b55b">   91</a></span>&#160;                    std::<span class="keywordtype">size_t</span> <a class="code" href="a01591.html#ad8cf58f4d900524207637b682851b55b">_cluster</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a01591.html#ac10ca79a66f43e1b259b09af39cd3e46">   92</a></span>&#160;                    std::<span class="keywordtype">size_t</span> <a class="code" href="a01591.html#ac10ca79a66f43e1b259b09af39cd3e46">_x</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="a01591.html#a2a068982cc8036aef748c6c958e1cdc5">   93</a></span>&#160;                    std::<span class="keywordtype">size_t</span> <a class="code" href="a01591.html#a2a068982cc8036aef748c6c958e1cdc5">_y</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="a01591.html#ae4ce987b814f23032f19f0491bc971aa">   94</a></span>&#160;                    Images::Ray <a class="code" href="a01591.html#ae4ce987b814f23032f19f0491bc971aa">_ray</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            };</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="a01587.html#af1332365ec21f330ba488c761331423f">  101</a></span>&#160;            <a class="code" href="a01587.html">ClusterRayIterator</a>(</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    const Entities::Transform::Vector3f &amp;cameraPos,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    const Entities::Transform::Vector3f &amp;screenPosCenter,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    const Entities::Transform::Vector2i &amp;screenSize,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    std::<span class="keywordtype">size_t</span> unit);</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="a01587.html#ac67fd3d19dfee9267f0572502dade208">  111</a></span>&#160;            std::unique_ptr&lt;Images::IRayIterator::<a class="code" href="a01379.html">IIterator</a>&gt; <a class="code" href="a01587.html#ac67fd3d19dfee9267f0572502dade208">begin</a>() const final;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="a01587.html#aced1432cbb6b6a933d0c78ca0d4fdbe2">  117</a></span>&#160;            std::unique_ptr&lt;Images::IRayIterator::<a class="code" href="a01379.html">IIterator</a>&gt; <a class="code" href="a01587.html#aced1432cbb6b6a933d0c78ca0d4fdbe2">end</a>() const final;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        private:</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="a01587.html#a4a0c36eaf379ae625ad75e40916d066d">  120</a></span>&#160;            Entities::Transform::Vector3f <a class="code" href="a01591.html#ae179fdc7794b8ac601e91a0616f9f0f0">_cameraPos</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="a01587.html#a9b4b2b16981334e6fb408aed83daa132">  121</a></span>&#160;            Entities::Transform::Vector3f <a class="code" href="a01587.html#a9b4b2b16981334e6fb408aed83daa132">_screenPosCenter</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="a01587.html#a0651d6013213cc6b9f6341c0ede29398">  122</a></span>&#160;            Entities::Transform::Vector3f <a class="code" href="a01591.html#a0754b28a55c3f0e22dac6aed3e334779">_screenPosTopLeft</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="a01587.html#a9d2b07f2f0af8cca40c6cb57e4d44234">  123</a></span>&#160;            Entities::Transform::Vector2i <a class="code" href="a01591.html#a066e03779a8dda05880999bda8dda92d">_screenSize</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="a01587.html#a1c9db6b769f786c0b01c04b49fa1ca67">  124</a></span>&#160;            std::<span class="keywordtype">size_t</span> <a class="code" href="a01587.html#a1c9db6b769f786c0b01c04b49fa1ca67">_unit</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    };</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00098_html"><div class="ttname"><a href="a00098.html">ICamera.hpp</a></div></div>
+<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">Vector2i.hpp</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Vector3f.hpp</a></div></div>
+<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">IRayIterator.hpp</a></div></div>
+<div class="ttc" id="aa00167_html"><div class="ttname"><a href="a00167.html">Ray.hpp</a></div></div>
+<div class="ttc" id="aa00417_html"><div class="ttname"><a href="a00417.html">RayTracer::PluginsExt::Camera::Clustered</a></div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:17</div></div>
+<div class="ttc" id="aa01315_html"><div class="ttname"><a href="a01315.html">RayTracer::Entities::Transform::Vector2i</a></div><div class="ttdoc">The Vector2i class.</div><div class="ttdef"><b>Definition:</b> Vector2i.hpp:20</div></div>
+<div class="ttc" id="aa01319_html"><div class="ttname"><a href="a01319.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
+<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::Images::IRayIterator</a></div><div class="ttdoc">The RayIterator class.</div><div class="ttdef"><b>Definition:</b> IRayIterator.hpp:23</div></div>
+<div class="ttc" id="aa01379_html"><div class="ttname"><a href="a01379.html">RayTracer::Images::IRayIterator::IIterator</a></div><div class="ttdef"><b>Definition:</b> IRayIterator.hpp:25</div></div>
+<div class="ttc" id="aa01387_html"><div class="ttname"><a href="a01387.html">RayTracer::Images::Ray</a></div><div class="ttdoc">The Ray class.</div><div class="ttdef"><b>Definition:</b> Ray.hpp:19</div></div>
+<div class="ttc" id="aa01587_html"><div class="ttname"><a href="a01587.html">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator</a></div><div class="ttdoc">The ClusterRayIterator class.</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:28</div></div>
+<div class="ttc" id="aa01587_html_a1c9db6b769f786c0b01c04b49fa1ca67"><div class="ttname"><a href="a01587.html#a1c9db6b769f786c0b01c04b49fa1ca67">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_unit</a></div><div class="ttdeci">std::size_t _unit</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:124</div></div>
+<div class="ttc" id="aa01587_html_a9b4b2b16981334e6fb408aed83daa132"><div class="ttname"><a href="a01587.html#a9b4b2b16981334e6fb408aed83daa132">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::_screenPosCenter</a></div><div class="ttdeci">Entities::Transform::Vector3f _screenPosCenter</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:121</div></div>
+<div class="ttc" id="aa01587_html_ac67fd3d19dfee9267f0572502dade208"><div class="ttname"><a href="a01587.html#ac67fd3d19dfee9267f0572502dade208">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::begin</a></div><div class="ttdeci">std::unique_ptr&lt; Images::IRayIterator::IIterator &gt; begin() const final</div><div class="ttdoc">begin of the iterator</div></div>
+<div class="ttc" id="aa01587_html_aced1432cbb6b6a933d0c78ca0d4fdbe2"><div class="ttname"><a href="a01587.html#aced1432cbb6b6a933d0c78ca0d4fdbe2">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::end</a></div><div class="ttdeci">std::unique_ptr&lt; Images::IRayIterator::IIterator &gt; end() const final</div><div class="ttdoc">end of the iterator</div></div>
+<div class="ttc" id="aa01591_html"><div class="ttname"><a href="a01591.html">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</a></div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:30</div></div>
+<div class="ttc" id="aa01591_html_a066e03779a8dda05880999bda8dda92d"><div class="ttname"><a href="a01591.html#a066e03779a8dda05880999bda8dda92d">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_screenSize</a></div><div class="ttdeci">Entities::Transform::Vector2i _screenSize</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:89</div></div>
+<div class="ttc" id="aa01591_html_a0754b28a55c3f0e22dac6aed3e334779"><div class="ttname"><a href="a01591.html#a0754b28a55c3f0e22dac6aed3e334779">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_screenPosTopLeft</a></div><div class="ttdeci">Entities::Transform::Vector3f _screenPosTopLeft</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:90</div></div>
+<div class="ttc" id="aa01591_html_a2a068982cc8036aef748c6c958e1cdc5"><div class="ttname"><a href="a01591.html#a2a068982cc8036aef748c6c958e1cdc5">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_y</a></div><div class="ttdeci">std::size_t _y</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:93</div></div>
+<div class="ttc" id="aa01591_html_a3f543b938c04b397a22c267a2d3ce869"><div class="ttname"><a href="a01591.html#a3f543b938c04b397a22c267a2d3ce869">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::toString</a></div><div class="ttdeci">std::string toString() const final</div><div class="ttdoc">toString</div></div>
+<div class="ttc" id="aa01591_html_a9e3a8613b89a28db07df578e4b97c4e5"><div class="ttname"><a href="a01591.html#a9e3a8613b89a28db07df578e4b97c4e5">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator++</a></div><div class="ttdeci">IIterator &amp; operator++() final</div><div class="ttdoc">create the next ClusterRayIterator</div></div>
+<div class="ttc" id="aa01591_html_ac10ca79a66f43e1b259b09af39cd3e46"><div class="ttname"><a href="a01591.html#ac10ca79a66f43e1b259b09af39cd3e46">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_x</a></div><div class="ttdeci">std::size_t _x</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:92</div></div>
+<div class="ttc" id="aa01591_html_ad4f50b67996790e9e6b5dd45423bc86c"><div class="ttname"><a href="a01591.html#ad4f50b67996790e9e6b5dd45423bc86c">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const Entities::Transform::Vector3f &amp;cameraPos, const Entities::Transform::Vector2i &amp;screenSize, const Entities::Transform::Vector3f &amp;screenPosCenter, std::size_t x, std::size_t y, std::size_t cluster)</div></div>
+<div class="ttc" id="aa01591_html_ad8cf58f4d900524207637b682851b55b"><div class="ttname"><a href="a01591.html#ad8cf58f4d900524207637b682851b55b">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_cluster</a></div><div class="ttdeci">std::size_t _cluster</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:91</div></div>
+<div class="ttc" id="aa01591_html_add44881ef5016746d629cc80908f4e6e"><div class="ttname"><a href="a01591.html#add44881ef5016746d629cc80908f4e6e">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::iterator_category</a></div><div class="ttdeci">std::forward_iterator_tag iterator_category</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:32</div></div>
+<div class="ttc" id="aa01591_html_ae179fdc7794b8ac601e91a0616f9f0f0"><div class="ttname"><a href="a01591.html#ae179fdc7794b8ac601e91a0616f9f0f0">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_cameraPos</a></div><div class="ttdeci">Entities::Transform::Vector3f _cameraPos</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:88</div></div>
+<div class="ttc" id="aa01591_html_ae4ce987b814f23032f19f0491bc971aa"><div class="ttname"><a href="a01591.html#ae4ce987b814f23032f19f0491bc971aa">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_ray</a></div><div class="ttdeci">Images::Ray _ray</div><div class="ttdef"><b>Definition:</b> ClusterRayIterator.hpp:94</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

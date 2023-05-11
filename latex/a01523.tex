@@ -1,0 +1,195 @@
+\hypertarget{a01523}{}\doxysection{Ray\+Tracer\+::Scenes\+::Scene\+Loader Class Reference}
+\label{a01523}\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+
+
+The \mbox{\hyperlink{a01523}{Scene\+Loader}} class.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Loader.\+hpp$>$}
+
+
+
+Collaboration diagram for Ray\+Tracer\+::Scenes\+::Scene\+Loader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01521}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01527}{Bad\+File\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01523_a7121f1c9be27956002460f007cbc8876}{Scene\+Loader}} (const std\+::string \&file\+Path, \mbox{\hyperlink{a01355}{ILogger}} \&logger)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01523}{Scene\+Loader}} constructor (doesn\textquotesingle{}t load anything) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01523_a48c72376598e3b7119b831928ab050f9}{$\sim$\+Scene\+Loader}} ()=default
+\item 
+void \mbox{\hyperlink{a01523_a7e55c2a07b5a0ead1785bc7889daba9b}{subscribe}} (const std\+::string \&event, std\+::function$<$ void(const \mbox{\hyperlink{a01507}{ISetting}} \&)$>$ func)
+\begin{DoxyCompactList}\small\item\em Subscribe to an event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01523_aaf08ddee4c6f02232298a20c2d8a6c92}{update}} ()
+\begin{DoxyCompactList}\small\item\em Check if the file has been modified and call subscribed events in consequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a01523_a18db5151e5fa4f5b4425f24a5651cff4}{check\+Good\+File}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Check if the file passed can be proceed by the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01491}{IConfig}} $>$ \mbox{\hyperlink{a01523_a31ebaa9e51028c90ed24694c0c01cc23}{\+\_\+config\+Wrapper}}
+\item 
+std\+::map$<$ std\+::string, std\+::function$<$ void(const \mbox{\hyperlink{a01507}{ISetting}} \&)$>$ $>$ \mbox{\hyperlink{a01523_a33b84904d2f33a37e72c9d8528d0f391}{\+\_\+events}}
+\item 
+std\+::string \mbox{\hyperlink{a01523_a6b6d4aeae06e9a15b064b72478729776}{\+\_\+file\+Path}}
+\item 
+std\+::filesystem\+::file\+\_\+time\+\_\+type \mbox{\hyperlink{a01523_ad3bf37391e8604f1e00c8e7d45290151}{\+\_\+last\+Write\+Time}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01427}{Plugins\+::\+Entities\+::\+Entity\+Loader}} $>$ \mbox{\hyperlink{a01523_acebd4acfb5aa62362e8596c373991d33}{\+\_\+entity\+Loader}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01439}{Plugins\+::\+Filters\+::\+Filter\+Loader}} $>$ \mbox{\hyperlink{a01523_abeedbe059d036005194a1b40fe34f17b}{\+\_\+filter\+Loader}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01455}{Plugins\+::\+Materials\+::\+Material\+Loader}} $>$ \mbox{\hyperlink{a01523_a4167353dd73d3f9f8f1c405d72786bcb}{\+\_\+material\+Loader}}
+\item 
+\mbox{\hyperlink{a01355}{ILogger}} \& \mbox{\hyperlink{a01523_a11155cc9e48666357e0349dd1fd904a7}{\+\_\+logger}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01523}{Scene\+Loader}} class. 
+
+class that represent a scene loader (take a config file) and is an observer \+:eyes\+: 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01523_a7121f1c9be27956002460f007cbc8876}\label{a01523_a7121f1c9be27956002460f007cbc8876}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!SceneLoader@{SceneLoader}}
+\index{SceneLoader@{SceneLoader}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{SceneLoader()}{SceneLoader()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+Scene\+Loader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{\mbox{\hyperlink{a01355}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01523}{Scene\+Loader}} constructor (doesn\textquotesingle{}t load anything) 
+
+Throw \mbox{\hyperlink{a01527}{Bad\+File\+Error}} if the file\+Path doesn\textquotesingle{}t ends with \textquotesingle{}.yaax\textquotesingle{} Throw \mbox{\hyperlink{a01527}{Bad\+File\+Error}} if the file\+Path is not a regular file
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & the file path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01523_a48c72376598e3b7119b831928ab050f9}\label{a01523_a48c72376598e3b7119b831928ab050f9}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!````~SceneLoader@{$\sim$SceneLoader}}
+\index{````~SceneLoader@{$\sim$SceneLoader}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneLoader()}{~SceneLoader()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::$\sim$\+Scene\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01523_a18db5151e5fa4f5b4425f24a5651cff4}\label{a01523_a18db5151e5fa4f5b4425f24a5651cff4}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!checkGoodFile@{checkGoodFile}}
+\index{checkGoodFile@{checkGoodFile}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{checkGoodFile()}{checkGoodFile()}}
+{\footnotesize\ttfamily static void Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::check\+Good\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the file passed can be proceed by the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & the file\+Paht to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01523_a7e55c2a07b5a0ead1785bc7889daba9b}\label{a01523_a7e55c2a07b5a0ead1785bc7889daba9b}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::subscribe (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event,  }\item[{std\+::function$<$ void(const \mbox{\hyperlink{a01507}{ISetting}} \&)$>$}]{func }\end{DoxyParamCaption})}
+
+
+
+Subscribe to an event. 
+
+Available events \+: \char`\"{}on\+Change\char`\"{}, \char`\"{}on\+Before\+Change\char`\"{} on\+Change \+: called when the scene is changed on\+Before\+Change \+: called before reloading the scene
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the event \\
+\hline
+{\em std\+::function} & the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01523_aaf08ddee4c6f02232298a20c2d8a6c92}\label{a01523_aaf08ddee4c6f02232298a20c2d8a6c92}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!update@{update}}
+\index{update@{update}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the file has been modified and call subscribed events in consequence. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01523_a31ebaa9e51028c90ed24694c0c01cc23}\label{a01523_a31ebaa9e51028c90ed24694c0c01cc23}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_configWrapper@{\_configWrapper}}
+\index{\_configWrapper@{\_configWrapper}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_configWrapper}{\_configWrapper}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01491}{IConfig}}$>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+config\+Wrapper\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_acebd4acfb5aa62362e8596c373991d33}\label{a01523_acebd4acfb5aa62362e8596c373991d33}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_entityLoader@{\_entityLoader}}
+\index{\_entityLoader@{\_entityLoader}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_entityLoader}{\_entityLoader}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01427}{Plugins\+::\+Entities\+::\+Entity\+Loader}}$>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+entity\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_a33b84904d2f33a37e72c9d8528d0f391}\label{a01523_a33b84904d2f33a37e72c9d8528d0f391}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_events@{\_events}}
+\index{\_events@{\_events}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_events}{\_events}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::function$<$void(const \mbox{\hyperlink{a01507}{ISetting}} \&)$>$ $>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+events\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_a6b6d4aeae06e9a15b064b72478729776}\label{a01523_a6b6d4aeae06e9a15b064b72478729776}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_filePath@{\_filePath}}
+\index{\_filePath@{\_filePath}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_filePath}{\_filePath}}
+{\footnotesize\ttfamily std\+::string Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+file\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_abeedbe059d036005194a1b40fe34f17b}\label{a01523_abeedbe059d036005194a1b40fe34f17b}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_filterLoader@{\_filterLoader}}
+\index{\_filterLoader@{\_filterLoader}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_filterLoader}{\_filterLoader}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01439}{Plugins\+::\+Filters\+::\+Filter\+Loader}}$>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+filter\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_ad3bf37391e8604f1e00c8e7d45290151}\label{a01523_ad3bf37391e8604f1e00c8e7d45290151}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_lastWriteTime@{\_lastWriteTime}}
+\index{\_lastWriteTime@{\_lastWriteTime}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_lastWriteTime}{\_lastWriteTime}}
+{\footnotesize\ttfamily std\+::filesystem\+::file\+\_\+time\+\_\+type Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+last\+Write\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_a11155cc9e48666357e0349dd1fd904a7}\label{a01523_a11155cc9e48666357e0349dd1fd904a7}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01355}{ILogger}}\& Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01523_a4167353dd73d3f9f8f1c405d72786bcb}\label{a01523_a4167353dd73d3f9f8f1c405d72786bcb}} 
+\index{RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}!\_materialLoader@{\_materialLoader}}
+\index{\_materialLoader@{\_materialLoader}!RayTracer::Scenes::SceneLoader@{RayTracer::Scenes::SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\_materialLoader}{\_materialLoader}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01455}{Plugins\+::\+Materials\+::\+Material\+Loader}}$>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+\_\+material\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\mbox{\hyperlink{a00242}{Scene\+Loader.\+hpp}}\end{DoxyCompactItemize}

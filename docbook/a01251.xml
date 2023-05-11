@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01251" xml:lang="en-US">
+<title>RayTracer::Display::Display Class Reference</title>
+<indexterm><primary>RayTracer::Display::Display</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Display.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Display::Display:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01249.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01255">StartFailed</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01251_1a8d480e94bd613e89a95bd1dce99fe2ef">Display</link> (<link linkend="_a01355">ILogger</link> &amp;logger, <link linkend="_a01519">Scenes::Scene</link> &amp;scene, <link linkend="_a01523">Scenes::SceneLoader</link> &amp;loader)</para>
+</listitem>
+            <listitem><para><link linkend="_a01251_1a4c6845d3a8034dfa7186fe732a0176e5">~Display</link> ()=default</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01251_1a480b47ad9aa3b158997c82ed3ab4d814">start</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a01251_1a2618c0f61f75dfd17260022fb6950ed3">removeModule</link> (const std::vector&lt; std::string &gt; &amp;modulesToRemove)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01251_1a4fedb9e34c21f9e44c03269cebf197ac">run</link> (sf::RenderWindow &amp;window)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01251_1a8b9906fa497b35a843c1840c862d11e7">end</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; std::unique_ptr&lt; <link linkend="_a01259">IDisplayModule</link> &gt; &gt; <link linkend="_a01251_1a61c9af70e8d0959101168a0fc6cdb880">_modules</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01519">Scenes::Scene</link> &amp; <link linkend="_a01251_1ad5453377a810c0a916d94599a5db8383">_scene</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01523">Scenes::SceneLoader</link> &amp; <link linkend="_a01251_1aeb85f8661072b8b41d0146fbac889770">_loader</link></para>
+</listitem>
+            <listitem><para>sf::Font <link linkend="_a01251_1accb230f7d54d8a8ab6160c4b66eb07e5">_font</link></para>
+</listitem>
+            <listitem><para>size_t <link linkend="_a01251_1a4e889f3bc22f424855ac2de3c46da385">_position</link> = 0</para>
+</listitem>
+            <listitem><para><link linkend="_a01355">ILogger</link> &amp; <link linkend="_a01251_1a09bb02fee277f632fdf848ab4bc0d84c">_logger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01251_1a8d480e94bd613e89a95bd1dce99fe2ef"/>    <section>
+    <title>Display()</title>
+<indexterm><primary>Display</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>Display</secondary></indexterm>
+<para><computeroutput>RayTracer::Display::Display::Display (<link linkend="_a01355">ILogger</link> &amp; logger, <link linkend="_a01519">Scenes::Scene</link> &amp; scene, <link linkend="_a01523">Scenes::SceneLoader</link> &amp; loader)</computeroutput></para>    </section><anchor xml:id="_a01251_1a4c6845d3a8034dfa7186fe732a0176e5"/>    <section>
+    <title>~Display()</title>
+<indexterm><primary>~Display</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>~Display</secondary></indexterm>
+<para><computeroutput>RayTracer::Display::Display::~Display ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01251_1a8b9906fa497b35a843c1840c862d11e7"/>    <section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>end</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::Display::end ( )<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1a2618c0f61f75dfd17260022fb6950ed3"/>    <section>
+    <title>removeModule()</title>
+<indexterm><primary>removeModule</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>removeModule</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::Display::removeModule (const std::vector&lt; std::string &gt; &amp; modulesToRemove)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1a4fedb9e34c21f9e44c03269cebf197ac"/>    <section>
+    <title>run()</title>
+<indexterm><primary>run</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>run</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::Display::run (sf::RenderWindow &amp; window)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1a480b47ad9aa3b158997c82ed3ab4d814"/>    <section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::Display::start ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01251_1accb230f7d54d8a8ab6160c4b66eb07e5"/>    <section>
+    <title>_font</title>
+<indexterm><primary>_font</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>_font</secondary></indexterm>
+<para><computeroutput>sf::Font RayTracer::Display::Display::_font<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1aeb85f8661072b8b41d0146fbac889770"/>    <section>
+    <title>_loader</title>
+<indexterm><primary>_loader</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>_loader</secondary></indexterm>
+<para><computeroutput><link linkend="_a01523">Scenes::SceneLoader</link>&amp; RayTracer::Display::Display::_loader<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1a09bb02fee277f632fdf848ab4bc0d84c"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01355">ILogger</link>&amp; RayTracer::Display::Display::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1a61c9af70e8d0959101168a0fc6cdb880"/>    <section>
+    <title>_modules</title>
+<indexterm><primary>_modules</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>_modules</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::unique_ptr&lt;<link linkend="_a01259">IDisplayModule</link>&gt; &gt; RayTracer::Display::Display::_modules<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1a4e889f3bc22f424855ac2de3c46da385"/>    <section>
+    <title>_position</title>
+<indexterm><primary>_position</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>_position</secondary></indexterm>
+<para><computeroutput>size_t RayTracer::Display::Display::_position = 0<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01251_1ad5453377a810c0a916d94599a5db8383"/>    <section>
+    <title>_scene</title>
+<indexterm><primary>_scene</primary><secondary>RayTracer::Display::Display</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::Display</primary><secondary>_scene</secondary></indexterm>
+<para><computeroutput><link linkend="_a01519">Scenes::Scene</link>&amp; RayTracer::Display::Display::_scene<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Display/<link linkend="_a00086">Display.hpp</link></section>
+</section>

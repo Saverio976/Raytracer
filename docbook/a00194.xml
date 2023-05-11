@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00194" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/PluginHandler.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/PluginHandler.hpp</primary></indexterm>
-<programlisting>#include &lt;string&gt;
-#include &lt;memory&gt;
-#include &lt;dlfcn.h&gt;
-#include &lt;vector&gt;
-#include &lt;functional&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/FilterHandler.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/FilterHandler.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &quot;IFilter.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for PluginHandler.hpp:<para>
+#include &quot;PluginHandler.hpp&quot;
+#include &quot;IFilterCreator.hpp&quot;
+#include &quot;IConfig.hpp&quot;
+</programlisting>Include dependency graph for FilterHandler.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -30,18 +30,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01441">RayTracer::Plugins::PluginHandler&lt; Interface, Creator &gt;</link></para>
+            <listitem><para>class <link linkend="_a01435">RayTracer::Plugins::Filters::FilterHandler</link></para>
 
-<para>The <link linkend="_a01441">PluginHandler</link> class. </para>
+<para>The <link linkend="_a01435">FilterHandler</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00388">RayTracer::Plugins</link></para>
+            <listitem><para> <link linkend="_a00406">RayTracer::Plugins</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00408">RayTracer::Plugins::Filters</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

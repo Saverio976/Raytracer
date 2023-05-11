@@ -1,16 +1,13 @@
-\hypertarget{a00089}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Entities/\+IMaterial.hpp File Reference}
-\label{a00089}\index{/home/runner/work/Raytracer/Raytracer/src/Entities/IMaterial.hpp@{/home/runner/work/Raytracer/Raytracer/src/Entities/IMaterial.hpp}}
-{\ttfamily \#include \char`\"{}Ray.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Color.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}IDisplayable.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ITransform.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Vector3f.\+hpp\char`\"{}}\newline
-Include dependency graph for IMaterial.\+hpp\+:
+\hypertarget{a00089}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Display/\+IDisplay\+Module.hpp File Reference}
+\label{a00089}\index{/home/runner/work/Raytracer/Raytracer/src/Display/IDisplayModule.hpp@{/home/runner/work/Raytracer/Raytracer/src/Display/IDisplayModule.hpp}}
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for IDisplay\+Module.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{a00090}
+\includegraphics[width=266pt]{a00090}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -24,12 +21,20 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01281}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01281}{IMaterial}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01259}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module}}
+\item 
+class \mbox{\hyperlink{a01263}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module\+::\+Start\+Failed}}
+\begin{DoxyCompactList}\small\item\em If the function start failed, but it can continue without being completed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01267}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module\+::\+End\+Failed}}
+\begin{DoxyCompactList}\small\item\em If the function end failed, but it can continue without being completed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01271}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module\+::\+Event\+Failed}}
+\begin{DoxyCompactList}\small\item\em If the function event failed, but it can continue without being completed. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01275}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module\+::\+Tick\+Failed}}
+\begin{DoxyCompactList}\small\item\em If the function tick failed, but it can continue without being completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00381}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00399}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00383}{Ray\+Tracer\+::\+Entities}}
+ \mbox{\hyperlink{a00400}{Ray\+Tracer\+::\+Display}}
 \end{DoxyCompactItemize}

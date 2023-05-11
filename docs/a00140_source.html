@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Images/ImagePipeLine.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Factories/MaterialFactory.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,74 +62,74 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_58e3c3ebd10c56521cbe2e4a6271b724.html">Images</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3dbe57e65c50a7a17fba27939d267647.html">Factories</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ImagePipeLine.hpp</div>  </div>
+<div class="title">MaterialFactory.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00140.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ImagePipeLine.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** EntityFactory.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef IMAGEPIPELINE_HPP_</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">    #define IMAGEPIPELINE_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00137.html">Image.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00212.html">IDisplayable.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00215.html">ISceneState.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00143.html">IRayIterator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MATERIALFACTORY_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define MATERIALFACTORY_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00137.html">IMaterialFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00143.html">TFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00206.html">MaterialHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00107.html">IMaterial.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00387.html">RayTracer::Images</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01353.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01353.html">ImagePipeLine</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01353.html#adcb8eb1f8760bd9a3763a446600b1cfc">   32</a></span>&#160;            <a class="code" href="a01353.html#adcb8eb1f8760bd9a3763a446600b1cfc">ImagePipeLine</a>(<a class="code" href="a01345.html">Image</a> &amp;image, <span class="keyword">const</span> <a class="code" href="a01477.html">Scenes::IDisplayable</a> &amp;displayable, <span class="keyword">const</span> <a class="code" href="a01485.html">Scenes::ISceneState</a> &amp;state, <span class="keyword">const</span> <a class="code" href="a01357.html">IRayIterator</a> &amp;rayIterrator);</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01353.html#a334f2fc98699d1ebf2aa03831fd579ba">   39</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01353.html#a334f2fc98699d1ebf2aa03831fd579ba">generate</a>(<a class="code" href="a01337.html">ILogger</a> &amp;logger, std::size_t maxThread = 1, std::size_t cluster = 1);</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01353.html#a1480abb46258a4827960dab3448b0041">   45</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01353.html#a1480abb46258a4827960dab3448b0041">apply</a>(<a class="code" href="a01333.html">Filters::IFilter</a> &amp;filter);</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01353.html#abde10b0d2bb72b27ea0f1e9a9a5ac03d">   46</a></span>&#160;            <a class="code" href="a01353.html#abde10b0d2bb72b27ea0f1e9a9a5ac03d">~ImagePipeLine</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01353.html#a75e82efc180d4205954c385f37c0e0d2">   50</a></span>&#160;            <a class="code" href="a01345.html">Image</a> &amp;<a class="code" href="a01353.html#a75e82efc180d4205954c385f37c0e0d2">_image</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01353.html#a87e2e909fbb996ef27981fbfe77c86cd">   51</a></span>&#160;            <span class="keyword">const</span> <a class="code" href="a01477.html">Scenes::IDisplayable</a> &amp;<a class="code" href="a01353.html#a87e2e909fbb996ef27981fbfe77c86cd">_displayable</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01353.html#a6981ce661854bc5314157aef96827e08">   52</a></span>&#160;            <span class="keyword">const</span> <a class="code" href="a01485.html">Scenes::ISceneState</a> &amp;<a class="code" href="a01353.html#a6981ce661854bc5314157aef96827e08">_state</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01353.html#ae95c9b067c79dd8ac453c4931c36bc4a">   53</a></span>&#160;            <span class="keyword">const</span> <a class="code" href="a01357.html">IRayIterator</a> &amp;<a class="code" href="a01353.html#ae95c9b067c79dd8ac453c4931c36bc4a">_rayIterrator</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*IMAGEPIPELINE_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00137_html"><div class="ttname"><a href="a00137.html">Image.hpp</a></div></div>
-<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">IRayIterator.hpp</a></div></div>
-<div class="ttc" id="aa00212_html"><div class="ttname"><a href="a00212.html">IDisplayable.hpp</a></div></div>
-<div class="ttc" id="aa00215_html"><div class="ttname"><a href="a00215.html">ISceneState.hpp</a></div></div>
-<div class="ttc" id="aa00387_html"><div class="ttname"><a href="a00387.html">RayTracer::Images</a></div><div class="ttdef"><b>Definition:</b> Color.hpp:15</div></div>
-<div class="ttc" id="aa01333_html"><div class="ttname"><a href="a01333.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01345_html"><div class="ttname"><a href="a01345.html">RayTracer::Images::Image</a></div><div class="ttdoc">The Image class.</div><div class="ttdef"><b>Definition:</b> Image.hpp:23</div></div>
-<div class="ttc" id="aa01353_html"><div class="ttname"><a href="a01353.html">RayTracer::Images::ImagePipeLine</a></div><div class="ttdoc">The ImagePipeLine class.</div><div class="ttdef"><b>Definition:</b> ImagePipeLine.hpp:23</div></div>
-<div class="ttc" id="aa01353_html_a1480abb46258a4827960dab3448b0041"><div class="ttname"><a href="a01353.html#a1480abb46258a4827960dab3448b0041">RayTracer::Images::ImagePipeLine::apply</a></div><div class="ttdeci">void apply(Filters::IFilter &amp;filter)</div><div class="ttdoc">Apply the filter.</div></div>
-<div class="ttc" id="aa01353_html_a334f2fc98699d1ebf2aa03831fd579ba"><div class="ttname"><a href="a01353.html#a334f2fc98699d1ebf2aa03831fd579ba">RayTracer::Images::ImagePipeLine::generate</a></div><div class="ttdeci">void generate(ILogger &amp;logger, std::size_t maxThread=1, std::size_t cluster=1)</div><div class="ttdoc">Generate the image with entities displayable.</div></div>
-<div class="ttc" id="aa01353_html_a6981ce661854bc5314157aef96827e08"><div class="ttname"><a href="a01353.html#a6981ce661854bc5314157aef96827e08">RayTracer::Images::ImagePipeLine::_state</a></div><div class="ttdeci">const Scenes::ISceneState &amp; _state</div><div class="ttdef"><b>Definition:</b> ImagePipeLine.hpp:52</div></div>
-<div class="ttc" id="aa01353_html_a75e82efc180d4205954c385f37c0e0d2"><div class="ttname"><a href="a01353.html#a75e82efc180d4205954c385f37c0e0d2">RayTracer::Images::ImagePipeLine::_image</a></div><div class="ttdeci">Image &amp; _image</div><div class="ttdef"><b>Definition:</b> ImagePipeLine.hpp:50</div></div>
-<div class="ttc" id="aa01353_html_a87e2e909fbb996ef27981fbfe77c86cd"><div class="ttname"><a href="a01353.html#a87e2e909fbb996ef27981fbfe77c86cd">RayTracer::Images::ImagePipeLine::_displayable</a></div><div class="ttdeci">const Scenes::IDisplayable &amp; _displayable</div><div class="ttdef"><b>Definition:</b> ImagePipeLine.hpp:51</div></div>
-<div class="ttc" id="aa01353_html_abde10b0d2bb72b27ea0f1e9a9a5ac03d"><div class="ttname"><a href="a01353.html#abde10b0d2bb72b27ea0f1e9a9a5ac03d">RayTracer::Images::ImagePipeLine::~ImagePipeLine</a></div><div class="ttdeci">~ImagePipeLine()=default</div></div>
-<div class="ttc" id="aa01353_html_adcb8eb1f8760bd9a3763a446600b1cfc"><div class="ttname"><a href="a01353.html#adcb8eb1f8760bd9a3763a446600b1cfc">RayTracer::Images::ImagePipeLine::ImagePipeLine</a></div><div class="ttdeci">ImagePipeLine(Image &amp;image, const Scenes::IDisplayable &amp;displayable, const Scenes::ISceneState &amp;state, const IRayIterator &amp;rayIterrator)</div><div class="ttdoc">ImagePipeLine constructor.</div></div>
-<div class="ttc" id="aa01353_html_ae95c9b067c79dd8ac453c4931c36bc4a"><div class="ttname"><a href="a01353.html#ae95c9b067c79dd8ac453c4931c36bc4a">RayTracer::Images::ImagePipeLine::_rayIterrator</a></div><div class="ttdeci">const IRayIterator &amp; _rayIterrator</div><div class="ttdef"><b>Definition:</b> ImagePipeLine.hpp:53</div></div>
-<div class="ttc" id="aa01357_html"><div class="ttname"><a href="a01357.html">RayTracer::Images::IRayIterator</a></div><div class="ttdoc">The RayIterator class.</div><div class="ttdef"><b>Definition:</b> IRayIterator.hpp:23</div></div>
-<div class="ttc" id="aa01477_html"><div class="ttname"><a href="a01477.html">RayTracer::Scenes::IDisplayable</a></div><div class="ttdoc">The IDisplayable interface.</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:25</div></div>
-<div class="ttc" id="aa01485_html"><div class="ttname"><a href="a01485.html">RayTracer::Scenes::ISceneState</a></div><div class="ttdoc">The SceneState interface.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:18</div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00403.html">RayTracer::Factories</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01343.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01343.html">MaterialFactory</a> : <span class="keyword">public</span> <a class="code" href="a01339.html">IMaterialFactory</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01343.html#a360fdf8c4cb4010496fa6bfe059ca4ed">   23</a></span>&#160;            <a class="code" href="a01343.html#a360fdf8c4cb4010496fa6bfe059ca4ed">MaterialFactory</a>(<span class="keyword">const</span> <a class="code" href="a01343.html">MaterialFactory</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01343.html#a99b89756e60ef6478553010b16141160">   24</a></span>&#160;            <a class="code" href="a01343.html#a99b89756e60ef6478553010b16141160">~MaterialFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01343.html#ab11e2eb0ca6481ac48d6f5b6b0e6e3c1">   31</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01343.html#ab11e2eb0ca6481ac48d6f5b6b0e6e3c1">add</a>(<span class="keyword">const</span> std::string &amp;name, std::unique_ptr&lt;Plugins::Materials::MaterialHandler&gt; handler);</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01343.html#a44015146f20c0890701da39a442d6a12">   40</a></span>&#160;            <a class="code" href="a01299.html">Entities::IMaterial</a> &amp;<a class="code" href="a01343.html#a44015146f20c0890701da39a442d6a12">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01507.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01355.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01343.html#ae1e8809963cbf5dc421d39a042dd04c8">   44</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01343.html#ae1e8809963cbf5dc421d39a042dd04c8">clearAll</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01343.html#a819b284c93a61f717a05a996b0ecaa2c">   50</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="a01343.html">MaterialFactory</a> &amp;<a class="code" href="a01343.html#a819b284c93a61f717a05a996b0ecaa2c">getInstance</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01343.html#a6d46b0b1bccc928f96c5311e9117ff0c">   53</a></span>&#160;            <a class="code" href="a01343.html#a6d46b0b1bccc928f96c5311e9117ff0c">MaterialFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01343.html#a9c046777ea4a3aceb6fbe6c6910dc201">   54</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="a01347.html">TFactory&lt;Plugins::Materials::MaterialHandler, Entities::IMaterial&gt;</a> &amp;<a class="code" href="a01343.html#a9c046777ea4a3aceb6fbe6c6910dc201">getFactory</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01343.html#abfced7974dae1bb80a94b5deb0d4c978">   55</a></span>&#160;            <span class="keyword">static</span> std::unique_ptr&lt;MaterialFactory&gt; <a class="code" href="a01343.html#abfced7974dae1bb80a94b5deb0d4c978">_factory</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00107_html"><div class="ttname"><a href="a00107.html">IMaterial.hpp</a></div></div>
+<div class="ttc" id="aa00137_html"><div class="ttname"><a href="a00137.html">IMaterialFactory.hpp</a></div></div>
+<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">TFactory.hpp</a></div></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00206_html"><div class="ttname"><a href="a00206.html">MaterialHandler.hpp</a></div></div>
+<div class="ttc" id="aa00403_html"><div class="ttname"><a href="a00403.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
+<div class="ttc" id="aa01299_html"><div class="ttname"><a href="a01299.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
+<div class="ttc" id="aa01339_html"><div class="ttname"><a href="a01339.html">RayTracer::Factories::IMaterialFactory</a></div><div class="ttdef"><b>Definition:</b> IMaterialFactory.hpp:18</div></div>
+<div class="ttc" id="aa01343_html"><div class="ttname"><a href="a01343.html">RayTracer::Factories::MaterialFactory</a></div><div class="ttdoc">The MaterialFactory (singleton factory)</div><div class="ttdef"><b>Definition:</b> MaterialFactory.hpp:21</div></div>
+<div class="ttc" id="aa01343_html_a360fdf8c4cb4010496fa6bfe059ca4ed"><div class="ttname"><a href="a01343.html#a360fdf8c4cb4010496fa6bfe059ca4ed">RayTracer::Factories::MaterialFactory::MaterialFactory</a></div><div class="ttdeci">MaterialFactory(const MaterialFactory &amp;other)=delete</div></div>
+<div class="ttc" id="aa01343_html_a44015146f20c0890701da39a442d6a12"><div class="ttname"><a href="a01343.html#a44015146f20c0890701da39a442d6a12">RayTracer::Factories::MaterialFactory::get</a></div><div class="ttdeci">Entities::IMaterial &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger) final</div><div class="ttdoc">Get an material.</div></div>
+<div class="ttc" id="aa01343_html_a6d46b0b1bccc928f96c5311e9117ff0c"><div class="ttname"><a href="a01343.html#a6d46b0b1bccc928f96c5311e9117ff0c">RayTracer::Factories::MaterialFactory::MaterialFactory</a></div><div class="ttdeci">MaterialFactory()=default</div></div>
+<div class="ttc" id="aa01343_html_a819b284c93a61f717a05a996b0ecaa2c"><div class="ttname"><a href="a01343.html#a819b284c93a61f717a05a996b0ecaa2c">RayTracer::Factories::MaterialFactory::getInstance</a></div><div class="ttdeci">static MaterialFactory &amp; getInstance()</div><div class="ttdoc">Get the singleton.</div></div>
+<div class="ttc" id="aa01343_html_a99b89756e60ef6478553010b16141160"><div class="ttname"><a href="a01343.html#a99b89756e60ef6478553010b16141160">RayTracer::Factories::MaterialFactory::~MaterialFactory</a></div><div class="ttdeci">~MaterialFactory()=default</div></div>
+<div class="ttc" id="aa01343_html_a9c046777ea4a3aceb6fbe6c6910dc201"><div class="ttname"><a href="a01343.html#a9c046777ea4a3aceb6fbe6c6910dc201">RayTracer::Factories::MaterialFactory::getFactory</a></div><div class="ttdeci">static TFactory&lt; Plugins::Materials::MaterialHandler, Entities::IMaterial &gt; &amp; getFactory()</div></div>
+<div class="ttc" id="aa01343_html_ab11e2eb0ca6481ac48d6f5b6b0e6e3c1"><div class="ttname"><a href="a01343.html#ab11e2eb0ca6481ac48d6f5b6b0e6e3c1">RayTracer::Factories::MaterialFactory::add</a></div><div class="ttdeci">void add(const std::string &amp;name, std::unique_ptr&lt; Plugins::Materials::MaterialHandler &gt; handler)</div><div class="ttdoc">Add an material.</div></div>
+<div class="ttc" id="aa01343_html_abfced7974dae1bb80a94b5deb0d4c978"><div class="ttname"><a href="a01343.html#abfced7974dae1bb80a94b5deb0d4c978">RayTracer::Factories::MaterialFactory::_factory</a></div><div class="ttdeci">static std::unique_ptr&lt; MaterialFactory &gt; _factory</div><div class="ttdef"><b>Definition:</b> MaterialFactory.hpp:55</div></div>
+<div class="ttc" id="aa01343_html_ae1e8809963cbf5dc421d39a042dd04c8"><div class="ttname"><a href="a01343.html#ae1e8809963cbf5dc421d39a042dd04c8">RayTracer::Factories::MaterialFactory::clearAll</a></div><div class="ttdeci">void clearAll()</div><div class="ttdoc">Clear all handlers.</div></div>
+<div class="ttc" id="aa01347_html"><div class="ttname"><a href="a01347.html">RayTracer::Factories::TFactory</a></div><div class="ttdoc">The TFactory.</div><div class="ttdef"><b>Definition:</b> TFactory.hpp:24</div></div>
+<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01507_html"><div class="ttname"><a href="a01507.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

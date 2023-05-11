@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00137" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp</primary></indexterm>
-<programlisting>#include &lt;cstddef&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &quot;Color.hpp&quot;
-#include &quot;Vector2i.hpp&quot;
-</programlisting>Include dependency graph for Image.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;memory&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;IMaterial.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for IMaterialFactory.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,23 +28,32 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01345">RayTracer::Images::Image</link></para>
-
-<para>The <link linkend="_a01345">Image</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01349">RayTracer::Images::Image::PixelLine</link></para>
-
-<para><link linkend="_a01349">PixelLine</link> class. </para>
+            <listitem><para>class <link linkend="_a01339">RayTracer::Factories::IMaterialFactory</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00387">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00403">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01339">RayTracer::Factories::IMaterialFactory</link> * <link linkend="_a00137_1a5a43e0386914c1a248464383947709b5">getMaterialFactoryInstance</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a00137_1a5a43e0386914c1a248464383947709b5"/>    <section>
+    <title>getMaterialFactoryInstance()</title>
+<indexterm><primary>getMaterialFactoryInstance</primary><secondary>IMaterialFactory.hpp</secondary></indexterm>
+<indexterm><primary>IMaterialFactory.hpp</primary><secondary>getMaterialFactoryInstance</secondary></indexterm>
+<para><computeroutput><link linkend="_a01339">RayTracer::Factories::IMaterialFactory</link>* getMaterialFactoryInstance (void )</computeroutput></para></section>
+</section>
 </section>

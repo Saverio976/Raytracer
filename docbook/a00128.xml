@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00128" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Filters/IFilter.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Filters/IFilter.hpp</primary></indexterm>
-<programlisting>#include &quot;Image.hpp&quot;
-</programlisting>Include dependency graph for IFilter.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Factories/FilterFactory.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/FilterFactory.hpp</primary></indexterm>
+<programlisting>#include &quot;IFilterFactory.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;TFactory.hpp&quot;
+#include &quot;FilterHandler.hpp&quot;
+#include &quot;IFilter.hpp&quot;
+</programlisting>Include dependency graph for FilterFactory.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -24,18 +28,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01333">RayTracer::Filters::IFilter</link></para>
+            <listitem><para>class <link linkend="_a01327">RayTracer::Factories::FilterFactory</link></para>
 
-<para>The <link linkend="_a01333">IFilter</link> class. </para>
+<para>The <link linkend="_a01327">FilterFactory</link> (singleton factory) </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00386">RayTracer::Filters</link></para>
+            <listitem><para> <link linkend="_a00403">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

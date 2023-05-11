@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01311" xml:lang="en-US">
+<title>RayTracer::Entities::Transform::Transform Class Reference</title>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01311">Transform</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Transform.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Entities::Transform::Transform:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01310.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Entities::Transform::Transform:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01309.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01311_1a8e0e73a61d7bb0c11068e47b47fcb842">Transform</link> (const <link linkend="_a01507">Scenes::ISetting</link> &amp;setting)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01311_1ade32510a678f237b521ee9b42a7ea73e">setPosition</link> (const <link linkend="_a01319">Vector3f</link> &amp;position) final</para>
+
+<para>Set the position. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01319">Vector3f</link> &amp; <link linkend="_a01311_1a3c5fdb6d163271e3232f0a7a51824163">getPosition</link> () const final</para>
+
+<para>Get the position. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01311_1ae3338957810bc8365dd2f37f636f060e">setRotation</link> (const <link linkend="_a01319">Vector3f</link> &amp;rotation) final</para>
+
+<para>Set the rotation. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01319">Vector3f</link> &amp; <link linkend="_a01311_1a25e2017dfd044d7205976bacf4eb0b09">getRotation</link> () const final</para>
+
+<para>Get the rotation. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01311_1a02dfec630cff151c363ef48df529d652">setScale</link> (const <link linkend="_a01319">Vector3f</link> &amp;scale) final</para>
+
+<para>Set the scale. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01319">Vector3f</link> &amp; <link linkend="_a01311_1a70978d92572e87b2ff81a5ac95426445">getScale</link> () const final</para>
+
+<para>Get the scale. </para>
+</listitem>
+            <listitem><para><link linkend="_a01307">ITransform</link> &amp; <link linkend="_a01311_1ae7ef02b44892a6283eec4951ca260dea">operator=</link> (const <link linkend="_a01307">ITransform</link> &amp;other) final</para>
+
+<para>Assign a transform. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01319">Vector3f</link> <link linkend="_a01311_1a0098de7e2c6bc5ded2e058990a25064d">_position</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01319">Vector3f</link> <link linkend="_a01311_1a0ec9e6b9b1625ac00e35a4c340591fc7">_rotation</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01319">Vector3f</link> <link linkend="_a01311_1a5c4b91ec14e7ccce56609d95aff80103">_scale</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01311">Transform</link> class. </para>
+
+
+
+<para>class that represent a transform (position, rotation, scale, ..) of an <computeroutput><link linkend="_a01291">IEntity</link></computeroutput> </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01311_1a8e0e73a61d7bb0c11068e47b47fcb842"/>    <section>
+    <title>Transform()</title>
+<indexterm><primary>Transform</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>Transform</secondary></indexterm>
+<para><computeroutput>RayTracer::Entities::Transform::Transform::Transform (const <link linkend="_a01507">Scenes::ISetting</link> &amp; setting)<computeroutput>[explicit]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01311_1a3c5fdb6d163271e3232f0a7a51824163"/>    <section>
+    <title>getPosition()</title>
+<indexterm><primary>getPosition</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>getPosition</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01319">Vector3f</link>&amp; RayTracer::Entities::Transform::Transform::getPosition ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the position. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the position </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01307_1aff7fda973737a55306e1900439f3d6f6">RayTracer::Entities::Transform::ITransform</link>.</para>
+    </section><anchor xml:id="_a01311_1a25e2017dfd044d7205976bacf4eb0b09"/>    <section>
+    <title>getRotation()</title>
+<indexterm><primary>getRotation</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>getRotation</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01319">Vector3f</link>&amp; RayTracer::Entities::Transform::Transform::getRotation ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the rotation. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the rotation </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01307_1a57854e8e4ac74ab0ed827704ff81436f">RayTracer::Entities::Transform::ITransform</link>.</para>
+    </section><anchor xml:id="_a01311_1a70978d92572e87b2ff81a5ac95426445"/>    <section>
+    <title>getScale()</title>
+<indexterm><primary>getScale</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>getScale</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01319">Vector3f</link>&amp; RayTracer::Entities::Transform::Transform::getScale ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the scale. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the scale </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01307_1a50da7841f811b84d0fbf4fad492a8451">RayTracer::Entities::Transform::ITransform</link>.</para>
+    </section><anchor xml:id="_a01311_1ae7ef02b44892a6283eec4951ca260dea"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_a01307">ITransform</link>&amp; RayTracer::Entities::Transform::Transform::operator= (const <link linkend="_a01307">ITransform</link> &amp; other)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Assign a transform. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other transform</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the same transform modified </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01307_1abc6e2b741bd58849b10d4523d06ce389">RayTracer::Entities::Transform::ITransform</link>.</para>
+    </section><anchor xml:id="_a01311_1ade32510a678f237b521ee9b42a7ea73e"/>    <section>
+    <title>setPosition()</title>
+<indexterm><primary>setPosition</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>setPosition</secondary></indexterm>
+<para><computeroutput>void RayTracer::Entities::Transform::Transform::setPosition (const <link linkend="_a01319">Vector3f</link> &amp; position)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the position. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>position</entry>
+                                <entry>
+<para>the position </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01307_1a88e2865250cd190041916bb6b9d715b3">RayTracer::Entities::Transform::ITransform</link>.</para>
+    </section><anchor xml:id="_a01311_1ae3338957810bc8365dd2f37f636f060e"/>    <section>
+    <title>setRotation()</title>
+<indexterm><primary>setRotation</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>setRotation</secondary></indexterm>
+<para><computeroutput>void RayTracer::Entities::Transform::Transform::setRotation (const <link linkend="_a01319">Vector3f</link> &amp; rotation)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the rotation. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>rotation</entry>
+                                <entry>
+<para>the rotation </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01307_1a686b40a3b17310304bb9d532e8550b9b">RayTracer::Entities::Transform::ITransform</link>.</para>
+    </section><anchor xml:id="_a01311_1a02dfec630cff151c363ef48df529d652"/>    <section>
+    <title>setScale()</title>
+<indexterm><primary>setScale</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>setScale</secondary></indexterm>
+<para><computeroutput>void RayTracer::Entities::Transform::Transform::setScale (const <link linkend="_a01319">Vector3f</link> &amp; scale)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the scale. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>scale</entry>
+                                <entry>
+<para>the scale </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01307_1ae1099e652ff4659b04028f0d65c8d56b">RayTracer::Entities::Transform::ITransform</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01311_1a0098de7e2c6bc5ded2e058990a25064d"/>    <section>
+    <title>_position</title>
+<indexterm><primary>_position</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>_position</secondary></indexterm>
+<para><computeroutput><link linkend="_a01319">Vector3f</link> RayTracer::Entities::Transform::Transform::_position<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01311_1a0ec9e6b9b1625ac00e35a4c340591fc7"/>    <section>
+    <title>_rotation</title>
+<indexterm><primary>_rotation</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>_rotation</secondary></indexterm>
+<para><computeroutput><link linkend="_a01319">Vector3f</link> RayTracer::Entities::Transform::Transform::_rotation<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01311_1a5c4b91ec14e7ccce56609d95aff80103"/>    <section>
+    <title>_scale</title>
+<indexterm><primary>_scale</primary><secondary>RayTracer::Entities::Transform::Transform</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Transform</primary><secondary>_scale</secondary></indexterm>
+<para><computeroutput><link linkend="_a01319">Vector3f</link> RayTracer::Entities::Transform::Transform::_scale<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/<link linkend="_a00116">Transform.hpp</link></section>
+</section>

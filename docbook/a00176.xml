@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00176" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/FilterHandler.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/FilterHandler.hpp</primary></indexterm>
-<programlisting>#include &lt;memory&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Main.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Main.hpp</primary></indexterm>
+<programlisting>#include &lt;exception&gt;
+#include &lt;memory&gt;
 #include &lt;string&gt;
-#include &quot;IFilter.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;PluginHandler.hpp&quot;
-#include &quot;IFilterCreator.hpp&quot;
-#include &quot;IConfig.hpp&quot;
-</programlisting>Include dependency graph for FilterHandler.hpp:<para>
+#include &quot;Parameters.hpp&quot;
+#include &quot;Scene.hpp&quot;
+</programlisting>Include dependency graph for Main.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -18,33 +17,37 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00178.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01417">RayTracer::Plugins::Filters::FilterHandler</link></para>
-
-<para>The <link linkend="_a01417">FilterHandler</link>. </para>
+            <listitem><para>class <link linkend="_a01403">RayTracer::Main</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01407">RayTracer::Main::MainError</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01411">RayTracer::Main::ArgumentError</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00388">RayTracer::Plugins</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00390">RayTracer::Plugins::Filters</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a00176_1acfd30268d8cf7ee855a54804242fce5d">catch_sigint</link> (int sig)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a00176_1acfd30268d8cf7ee855a54804242fce5d"/>    <section>
+    <title>catch_sigint()</title>
+<indexterm><primary>catch_sigint</primary><secondary>Main.hpp</secondary></indexterm>
+<indexterm><primary>Main.hpp</primary><secondary>catch_sigint</secondary></indexterm>
+<para><computeroutput>void catch_sigint (int sig)</computeroutput></para></section>
+</section>
 </section>

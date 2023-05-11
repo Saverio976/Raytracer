@@ -1,14 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00170" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityLoader.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityLoader.hpp</primary></indexterm>
-<programlisting>#include &lt;string&gt;
-#include &quot;TFactory.hpp&quot;
-#include &quot;IEntity.hpp&quot;
-#include &quot;PluginLoader.hpp&quot;
-#include &quot;EntityHandler.hpp&quot;
-#include &quot;EntityFactory.hpp&quot;
-</programlisting>Include dependency graph for EntityLoader.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp</primary></indexterm>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;cstddef&gt;
+#include &lt;iterator&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &quot;ICamera.hpp&quot;
+#include &quot;IRayIterator.hpp&quot;
+#include &quot;Ray.hpp&quot;
+#include &quot;Vector2i.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for RayIterrator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -17,32 +21,23 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00172.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01409">RayTracer::Plugins::Entities::EntityLoader</link></para>
+            <listitem><para>class <link linkend="_a01391">RayTracer::Images::RayIterrator</link></para>
 
-<para>The <link linkend="_a01409">EntityLoader</link>. </para>
+<para>The <link linkend="_a01391">RayIterrator</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01395">RayTracer::Images::RayIterrator::Iterrator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00388">RayTracer::Plugins</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00389">RayTracer::Plugins::Entities</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

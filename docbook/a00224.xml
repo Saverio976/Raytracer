@@ -1,19 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00224" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp</primary></indexterm>
-<programlisting>#include &lt;exception&gt;
-#include &lt;string&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;memory&gt;
+#include &lt;vector&gt;
 #include &lt;functional&gt;
-#include &lt;map&gt;
-#include &lt;fstream&gt;
-#include &lt;filesystem&gt;
-#include &quot;FilterLoader.hpp&quot;
-#include &quot;EntityLoader.hpp&quot;
-#include &quot;MaterialLoader.hpp&quot;
-#include &quot;ConfigWrapper.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-</programlisting>Include dependency graph for SceneLoader.hpp:<para>
+#include &quot;IDisplayable.hpp&quot;
+</programlisting>Include dependency graph for Displayable.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -34,20 +28,24 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01505">RayTracer::Scenes::SceneLoader</link></para>
+            <listitem><para>class <link linkend="_a01483">RayTracer::Scenes::Displayable</link></para>
 
-<para>The <link linkend="_a01505">SceneLoader</link> class. </para>
+<para>The <link linkend="_a01483">Displayable</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01509">RayTracer::Scenes::SceneLoader::BadFileError</link></para>
+            <listitem><para>class <link linkend="_a01487">RayTracer::Scenes::Displayable::DisplayableException</link></para>
+
+<para>an exception for when the key is not found </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00392">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00401">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00410">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

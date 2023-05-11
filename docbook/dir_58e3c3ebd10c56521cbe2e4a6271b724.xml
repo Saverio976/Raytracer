@@ -14,19 +14,19 @@ Directory dependency graph for Images:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00134">Color.hpp</link></para>
+            <listitem><para>file <link linkend="_a00152">Color.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00137">Image.hpp</link></para>
+            <listitem><para>file <link linkend="_a00155">Image.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00140">ImagePipeLine.hpp</link></para>
+            <listitem><para>file <link linkend="_a00158">ImagePipeLine.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00143">IRayIterator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00161">IRayIterator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00146">PixelThread.hpp</link></para>
+            <listitem><para>file <link linkend="_a00164">PixelThread.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00149">Ray.hpp</link></para>
+            <listitem><para>file <link linkend="_a00167">Ray.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00152">RayIterrator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00170">RayIterrator.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,12 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00230" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp</primary></indexterm>
-<programlisting>#include &lt;libconfig.h++&gt;
-#include &lt;memory&gt;
-#include &lt;exception&gt;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for SettingWrapper.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for IDisplayable.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -27,15 +25,11 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01517">RayTracer::Scenes::SettingWrapper</link></para>
+            <listitem><para>class <link linkend="_a01495">RayTracer::Scenes::IDisplayable</link></para>
 
-<para>The <link linkend="_a01517">SettingWrapper</link> class. </para>
+<para>The <link linkend="_a01495">IDisplayable</link> interface. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01521">RayTracer::Scenes::SettingWrapper::ParsingException</link></para>
-
-<para>an exception for when the key is not found </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01525">RayTracer::Scenes::SettingWrapper::TypeException</link></para>
+            <listitem><para>class <link linkend="_a01499">RayTracer::Scenes::IDisplayable::IDisplayableException</link></para>
 
 <para>an exception for when the key is not found </para>
 </listitem>
@@ -44,9 +38,11 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00392">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00401">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00410">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,62 +62,54 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_a1e7b0f6c8c966f643def133f499c25f.html">BlackAndWhite</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d665af80335f773f8bfcf2f56b3f3e8a.html">Scenes</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">BlackAndWhiteCreator.hpp</div>  </div>
+<div class="title">SceneState.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00245.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** BlackAndWhiteCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** SceneState.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SPHERE_CREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define SPHERE_CREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SCENESTATE_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define SCENESTATE_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00182.html">IFilterCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00248.html">BlackAndWhiteFilter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00397.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00397.html">RayTracer::PluginsExt::BlackAndWhite</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01545.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01545.html">BlackAndWhiteCreator</a> : <span class="keyword">public</span> <a class="code" href="a01425.html">Plugins::Filters::IFilterCreator</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01545.html#aba1ca04a4a1a43278614d48a241b4eb4">   22</a></span>&#160;            <a class="code" href="a01545.html#aba1ca04a4a1a43278614d48a241b4eb4">~BlackAndWhiteCreator</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01545.html#a8ff0bc4874fde1535f06f5e469762103">   23</a></span>&#160;            <a class="code" href="a01333.html">Filters::IFilter</a> *<a class="code" href="a01545.html#a8ff0bc4874fde1535f06f5e469762103">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01337.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01545.html#a496357cce881381c326afd6df9bcf3fc">   26</a></span>&#160;            std::vector&lt;BlackAndWhiteFilter *&gt; <a class="code" href="a01545.html#a496357cce881381c326afd6df9bcf3fc">_elements</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00182_html"><div class="ttname"><a href="a00182.html">IFilterCreator.hpp</a></div></div>
-<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00248_html"><div class="ttname"><a href="a00248.html">BlackAndWhiteFilter.hpp</a></div></div>
-<div class="ttc" id="aa00397_html"><div class="ttname"><a href="a00397.html">RayTracer::PluginsExt::BlackAndWhite</a></div><div class="ttdef"><b>Definition:</b> BlackAndWhiteCreator.hpp:19</div></div>
-<div class="ttc" id="aa01333_html"><div class="ttname"><a href="a01333.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01425_html"><div class="ttname"><a href="a01425.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01545_html"><div class="ttname"><a href="a01545.html">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</a></div><div class="ttdef"><b>Definition:</b> BlackAndWhiteCreator.hpp:20</div></div>
-<div class="ttc" id="aa01545_html_a496357cce881381c326afd6df9bcf3fc"><div class="ttname"><a href="a01545.html#a496357cce881381c326afd6df9bcf3fc">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::_elements</a></div><div class="ttdeci">std::vector&lt; BlackAndWhiteFilter * &gt; _elements</div><div class="ttdef"><b>Definition:</b> BlackAndWhiteCreator.hpp:26</div></div>
-<div class="ttc" id="aa01545_html_a8ff0bc4874fde1535f06f5e469762103"><div class="ttname"><a href="a01545.html#a8ff0bc4874fde1535f06f5e469762103">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::create</a></div><div class="ttdeci">Filters::IFilter * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a filter with a setting.</div></div>
-<div class="ttc" id="aa01545_html_aba1ca04a4a1a43278614d48a241b4eb4"><div class="ttname"><a href="a01545.html#aba1ca04a4a1a43278614d48a241b4eb4">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::~BlackAndWhiteCreator</a></div><div class="ttdeci">~BlackAndWhiteCreator()</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00233.html">ISceneState.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00410.html">RayTracer::Scenes</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01531.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01531.html">SceneState</a> : <span class="keyword">public</span> <a class="code" href="a01503.html">ISceneState</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01531.html#acc138b3c85e7d17d6972649af2ebea52">   26</a></span>&#160;            <a class="code" href="a01531.html#acc138b3c85e7d17d6972649af2ebea52">SceneState</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01531.html#a653dac2bab1fce46419d0c3f11b56430">   32</a></span>&#160;            <a class="code" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">ISceneState::States</a> <a class="code" href="a01531.html#a653dac2bab1fce46419d0c3f11b56430">getState</a>() const final;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01531.html#ab88b04dafcbca0baedc27fbdc3d4c61e">   38</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01531.html#ab88b04dafcbca0baedc27fbdc3d4c61e">changeState</a>(const <a class="code" href="a01503.html">ISceneState</a>::<a class="code" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> &amp;state) final;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        private:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01531.html#a4f2867c6cc43488b30af5c708d8d59e8">   40</a></span>&#160;            <a class="code" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> <a class="code" href="a01531.html#a4f2867c6cc43488b30af5c708d8d59e8">_state</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01531.html#a46554a8aaa9282e67984689da6ddd89b">   41</a></span>&#160;            std::<a class="code" href="a01531.html#a46554a8aaa9282e67984689da6ddd89b">mutex</a> <a class="code" href="a01531.html#a46554a8aaa9282e67984689da6ddd89b">mutex</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00233_html"><div class="ttname"><a href="a00233.html">ISceneState.hpp</a></div></div>
+<div class="ttc" id="aa00410_html"><div class="ttname"><a href="a00410.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
+<div class="ttc" id="aa01503_html"><div class="ttname"><a href="a01503.html">RayTracer::Scenes::ISceneState</a></div><div class="ttdoc">The SceneState interface.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:18</div></div>
+<div class="ttc" id="aa01503_html_a3abb46616bc66e9744ad0bed1635afe6"><div class="ttname"><a href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">RayTracer::Scenes::ISceneState::States</a></div><div class="ttdeci">States</div><div class="ttdoc">The States.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:23</div></div>
+<div class="ttc" id="aa01531_html"><div class="ttname"><a href="a01531.html">RayTracer::Scenes::SceneState</a></div><div class="ttdoc">The SceneState class.</div><div class="ttdef"><b>Definition:</b> SceneState.hpp:21</div></div>
+<div class="ttc" id="aa01531_html_a46554a8aaa9282e67984689da6ddd89b"><div class="ttname"><a href="a01531.html#a46554a8aaa9282e67984689da6ddd89b">RayTracer::Scenes::SceneState::mutex</a></div><div class="ttdeci">std::mutex mutex</div><div class="ttdef"><b>Definition:</b> SceneState.hpp:41</div></div>
+<div class="ttc" id="aa01531_html_a4f2867c6cc43488b30af5c708d8d59e8"><div class="ttname"><a href="a01531.html#a4f2867c6cc43488b30af5c708d8d59e8">RayTracer::Scenes::SceneState::_state</a></div><div class="ttdeci">States _state</div><div class="ttdef"><b>Definition:</b> SceneState.hpp:40</div></div>
+<div class="ttc" id="aa01531_html_a653dac2bab1fce46419d0c3f11b56430"><div class="ttname"><a href="a01531.html#a653dac2bab1fce46419d0c3f11b56430">RayTracer::Scenes::SceneState::getState</a></div><div class="ttdeci">ISceneState::States getState() const final</div><div class="ttdoc">Get the state (thread safe)</div></div>
+<div class="ttc" id="aa01531_html_ab88b04dafcbca0baedc27fbdc3d4c61e"><div class="ttname"><a href="a01531.html#ab88b04dafcbca0baedc27fbdc3d4c61e">RayTracer::Scenes::SceneState::changeState</a></div><div class="ttdeci">void changeState(const ISceneState::States &amp;state) final</div><div class="ttdoc">Change the state (thread safe)</div></div>
+<div class="ttc" id="aa01531_html_acc138b3c85e7d17d6972649af2ebea52"><div class="ttname"><a href="a01531.html#acc138b3c85e7d17d6972649af2ebea52">RayTracer::Scenes::SceneState::SceneState</a></div><div class="ttdeci">SceneState()</div><div class="ttdoc">SceneState.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

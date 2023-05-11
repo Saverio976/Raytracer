@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01567" xml:lang="en-US">
+<title>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BlackAndWhiteFilter.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01566.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01565.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01567_1a2b690d26133d6bf641a34c7beb872112">BlackAndWhiteFilter</link> (const <link linkend="_a01507">Scenes::ISetting</link> &amp;config, <link linkend="_a01355">ILogger</link> &amp;logger)</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01567_1a66abcbb5b969caada1326cc3c6d238c9">apply</link> (<link linkend="_a01363">Images::Image</link> &amp;image) final</para>
+
+<para>Apply the filter on an image. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a01567_1a119d9cb7203630fc5ba3d04151735e46">waitOnePlace</link> ()</para>
+
+<para>Wait one place in the vector of futures. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01567_1a640246a8e6410659de68843860db3e11">waitAllFinisehd</link> ()</para>
+
+<para>Wait all places in the vector of futures. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_a01359">Images::Color</link> <link linkend="_a01567_1a1ce34edef94d410f7d52b325b60d3058">getColorsMean</link> (const <link linkend="_a01359">Images::Color</link> &amp;color, const std::string &amp;method)</para>
+
+<para>Mean of the colors. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01355">ILogger</link> &amp; <link linkend="_a01567_1afe4d1dadb733b738dfec912324640da8">_logger</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_a01567_1a1892559025bfcfd1e8b98ccca4097001">_maxThread</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; std::future&lt; void &gt; &gt; <link linkend="_a01567_1ac965d72f818c0852514f183a0649dda7">_futures</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01567_1aec74591d7ed55a03651382e8e728ece8">_method</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01567_1a2b690d26133d6bf641a34c7beb872112"/>    <section>
+    <title>BlackAndWhiteFilter()</title>
+<indexterm><primary>BlackAndWhiteFilter</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>BlackAndWhiteFilter</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::BlackAndWhiteFilter (const <link linkend="_a01507">Scenes::ISetting</link> &amp; config, <link linkend="_a01355">ILogger</link> &amp; logger)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01567_1a66abcbb5b969caada1326cc3c6d238c9"/>    <section>
+    <title>apply()</title>
+<indexterm><primary>apply</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>apply</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::apply (<link linkend="_a01363">Images::Image</link> &amp; image)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Apply the filter on an image. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>image</entry>
+                                <entry>
+<para>the image </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01351_1a3db0669688266d28dfefd7e65fc6e5cf">RayTracer::Filters::IFilter</link>.</para>
+    </section><anchor xml:id="_a01567_1a1ce34edef94d410f7d52b325b60d3058"/>    <section>
+    <title>getColorsMean()</title>
+<indexterm><primary>getColorsMean</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>getColorsMean</secondary></indexterm>
+<para><computeroutput>static <link linkend="_a01359">Images::Color</link> RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::getColorsMean (const <link linkend="_a01359">Images::Color</link> &amp; color, const std::string &amp; method)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Mean of the colors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>colors</entry>
+                                <entry>
+<para>The colors to mean</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The mean </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01567_1a640246a8e6410659de68843860db3e11"/>    <section>
+    <title>waitAllFinisehd()</title>
+<indexterm><primary>waitAllFinisehd</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>waitAllFinisehd</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::waitAllFinisehd ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Wait all places in the vector of futures. </para>
+</para>
+    </section><anchor xml:id="_a01567_1a119d9cb7203630fc5ba3d04151735e46"/>    <section>
+    <title>waitOnePlace()</title>
+<indexterm><primary>waitOnePlace</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>waitOnePlace</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::waitOnePlace ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Wait one place in the vector of futures. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01567_1ac965d72f818c0852514f183a0649dda7"/>    <section>
+    <title>_futures</title>
+<indexterm><primary>_futures</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>_futures</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::future&lt;void&gt; &gt; RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_futures<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01567_1afe4d1dadb733b738dfec912324640da8"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01355">ILogger</link>&amp; RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01567_1a1892559025bfcfd1e8b98ccca4097001"/>    <section>
+    <title>_maxThread</title>
+<indexterm><primary>_maxThread</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>_maxThread</secondary></indexterm>
+<para><computeroutput>int RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_maxThread<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01567_1aec74591d7ed55a03651382e8e728ece8"/>    <section>
+    <title>_method</title>
+<indexterm><primary>_method</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</primary><secondary>_method</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_method<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/<link linkend="_a00266">BlackAndWhiteFilter.hpp</link></section>
+</section>

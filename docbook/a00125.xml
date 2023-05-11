@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00125" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Factories/TFactory.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/TFactory.hpp</primary></indexterm>
-<programlisting>#include &lt;string&gt;
-#include &lt;memory&gt;
-#include &lt;map&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Factories/EntityFactory.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/EntityFactory.hpp</primary></indexterm>
+<programlisting>#include &quot;IEntityFactory.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for TFactory.hpp:<para>
+#include &quot;TFactory.hpp&quot;
+#include &quot;EntityHandler.hpp&quot;
+#include &quot;IEntity.hpp&quot;
+</programlisting>Include dependency graph for EntityFactory.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,18 +28,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01329">RayTracer::Factories::TFactory&lt; Handler, Interface &gt;</link></para>
+            <listitem><para>class <link linkend="_a01323">RayTracer::Factories::EntityFactory</link></para>
 
-<para>The <link linkend="_a01329">TFactory</link>. </para>
+<para>The <link linkend="_a01323">EntityFactory</link> (singleton factory) </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00385">RayTracer::Factories</link></para>
+            <listitem><para> <link linkend="_a00403">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

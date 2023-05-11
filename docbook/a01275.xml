@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01275" xml:lang="en-US">
+<title>RayTracer::Display::IDisplayModule::TickFailed Class Reference</title>
+<indexterm><primary>RayTracer::Display::IDisplayModule::TickFailed</primary></indexterm>
+<para>
+
+<para>If the function tick failed, but it can continue without being completed. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;IDisplayModule.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Display::IDisplayModule::TickFailed:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01274.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Display::IDisplayModule::TickFailed:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01273.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01275_1a825189c43fe6650b5be4d82f0bdf612b">TickFailed</link> (const std::string &amp;error)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_a01275_1ac3ff7a8fa7dcc226705f022f01c8be59">what</link> () const  throw ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01275_1ad803a97fb70f37f88743a146f4753d30">_error</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>If the function tick failed, but it can continue without being completed. </para>
+
+
+
+<para>Any other exception will let the program continue and remove this module from list </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01275_1a825189c43fe6650b5be4d82f0bdf612b"/>    <section>
+    <title>TickFailed()</title>
+<indexterm><primary>TickFailed</primary><secondary>RayTracer::Display::IDisplayModule::TickFailed</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule::TickFailed</primary><secondary>TickFailed</secondary></indexterm>
+<para><computeroutput>RayTracer::Display::IDisplayModule::TickFailed::TickFailed (const std::string &amp; error)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01275_1ac3ff7a8fa7dcc226705f022f01c8be59"/>    <section>
+    <title>what()</title>
+<indexterm><primary>what</primary><secondary>RayTracer::Display::IDisplayModule::TickFailed</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule::TickFailed</primary><secondary>what</secondary></indexterm>
+<para><computeroutput>const char* RayTracer::Display::IDisplayModule::TickFailed::what ( ) const throw ( ) <computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01275_1ad803a97fb70f37f88743a146f4753d30"/>    <section>
+    <title>_error</title>
+<indexterm><primary>_error</primary><secondary>RayTracer::Display::IDisplayModule::TickFailed</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule::TickFailed</primary><secondary>_error</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Display::IDisplayModule::TickFailed::_error<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Display/<link linkend="_a00089">IDisplayModule.hpp</link></section>
+</section>

@@ -14,9 +14,9 @@ Directory dependency graph for Sphere:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00341">SphereCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00359">SphereCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00344">SphereEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00362">SphereEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

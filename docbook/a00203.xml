@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00203" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ConfigWrapper.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ConfigWrapper.hpp</primary></indexterm>
-<programlisting>#include &lt;libconfig.h++&gt;
-#include &lt;memory&gt;
-#include &quot;IConfig.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/IMaterialCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/IMaterialCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
+#include &quot;IMaterial.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;SettingWrapper.hpp&quot;
-</programlisting>Include dependency graph for ConfigWrapper.hpp:<para>
+#include &quot;ISetting.hpp&quot;
+</programlisting>Include dependency graph for IMaterialCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,24 +27,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01453">RayTracer::Scenes::ConfigWrapper</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01457">RayTracer::Scenes::ConfigWrapper::ReadException</link></para>
+            <listitem><para>class <link linkend="_a01447">RayTracer::Plugins::Materials::IMaterialCreator</link></para>
 
-<para>an exception for when the file can&apos;t be read </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01461">RayTracer::Scenes::ConfigWrapper::WriteException</link></para>
-
-<para>an exception for when the file can&apos;t be written </para>
+<para>The <link linkend="_a01447">IMaterialCreator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00392">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00406">RayTracer::Plugins</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00409">RayTracer::Plugins::Materials</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

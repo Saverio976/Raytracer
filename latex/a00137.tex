@@ -1,11 +1,11 @@
-\hypertarget{a00137}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\+Image.hpp File Reference}
-\label{a00137}\index{/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp@{/home/runner/work/Raytracer/Raytracer/src/Images/Image.hpp}}
-{\ttfamily \#include $<$cstddef$>$}\newline
+\hypertarget{a00137}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\+IMaterial\+Factory.hpp File Reference}
+\label{a00137}\index{/home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp@{/home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp}}
 {\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include \char`\"{}Color.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Vector2i.\+hpp\char`\"{}}\newline
-Include dependency graph for Image.\+hpp\+:
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}ILogger.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IMaterial.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ISetting.\+hpp\char`\"{}}\newline
+Include dependency graph for IMaterial\+Factory.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -18,20 +18,32 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{a00139}
+\includegraphics[width=287pt]{a00139}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01345}{Ray\+Tracer\+::\+Images\+::\+Image}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01345}{Image}} class. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{a01349}{Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01349}{Pixel\+Line}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01339}{Ray\+Tracer\+::\+Factories\+::\+IMaterial\+Factory}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00381}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00399}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00387}{Ray\+Tracer\+::\+Images}}
+ \mbox{\hyperlink{a00403}{Ray\+Tracer\+::\+Factories}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01339}{Ray\+Tracer\+::\+Factories\+::\+IMaterial\+Factory}} $\ast$ \mbox{\hyperlink{a00137_a5a43e0386914c1a248464383947709b5}{get\+Material\+Factory\+Instance}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00137_a5a43e0386914c1a248464383947709b5}\label{a00137_a5a43e0386914c1a248464383947709b5}} 
+\index{IMaterialFactory.hpp@{IMaterialFactory.hpp}!getMaterialFactoryInstance@{getMaterialFactoryInstance}}
+\index{getMaterialFactoryInstance@{getMaterialFactoryInstance}!IMaterialFactory.hpp@{IMaterialFactory.hpp}}
+\doxysubsubsection{\texorpdfstring{getMaterialFactoryInstance()}{getMaterialFactoryInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01339}{Ray\+Tracer\+::\+Factories\+::\+IMaterial\+Factory}}$\ast$ get\+Material\+Factory\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

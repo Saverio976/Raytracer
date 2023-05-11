@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane/LimitedPlaneCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Disk/DiskCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,57 +62,58 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_56d1ca5d3ff5391e378c4668801107ef.html">LimitedPlane</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_e384b0f4955c8ba1a5bac76831a2f8ef.html">Disk</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LimitedPlaneCreator.hpp</div>  </div>
+<div class="title">DiskCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00311.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** LimitedPlaneCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** DiskCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef LIMITEDPLANECREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define LIMITEDPLANECREATOR_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00173.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00314.html">LimitedPlaneEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00407.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00407.html">RayTracer::PluginsExt::LimitedPlane</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01641.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01641.html">LimitedPlaneCreator</a> : <span class="keyword">public</span> <a class="code" href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01641.html#a5c68c6b9f7ac9a5c124a01ea8242583e">   19</a></span>&#160;        <a class="code" href="a01641.html#a5c68c6b9f7ac9a5c124a01ea8242583e">~LimitedPlaneCreator</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01641.html#a870183d631402aa1d41abafce4465a7e">   20</a></span>&#160;        <a class="code" href="a01273.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01641.html#a870183d631402aa1d41abafce4465a7e">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01337.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01641.html#abab0398480e050ed18df3cfdc2485621">   23</a></span>&#160;        std::vector&lt;LimitedPlaneEntity *&gt; <a class="code" href="a01641.html#abab0398480e050ed18df3cfdc2485621">_elements</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*LIMITEDPLANECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00314_html"><div class="ttname"><a href="a00314.html">LimitedPlaneEntity.hpp</a></div></div>
-<div class="ttc" id="aa00407_html"><div class="ttname"><a href="a00407.html">RayTracer::PluginsExt::LimitedPlane</a></div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:16</div></div>
-<div class="ttc" id="aa01273_html"><div class="ttname"><a href="a01273.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01413_html"><div class="ttname"><a href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01641_html"><div class="ttname"><a href="a01641.html">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator</a></div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:17</div></div>
-<div class="ttc" id="aa01641_html_a5c68c6b9f7ac9a5c124a01ea8242583e"><div class="ttname"><a href="a01641.html#a5c68c6b9f7ac9a5c124a01ea8242583e">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator::~LimitedPlaneCreator</a></div><div class="ttdeci">~LimitedPlaneCreator()</div></div>
-<div class="ttc" id="aa01641_html_a870183d631402aa1d41abafce4465a7e"><div class="ttname"><a href="a01641.html#a870183d631402aa1d41abafce4465a7e">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01641_html_abab0398480e050ed18df3cfdc2485621"><div class="ttname"><a href="a01641.html#abab0398480e050ed18df3cfdc2485621">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator::_elements</a></div><div class="ttdeci">std::vector&lt; LimitedPlaneEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:23</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef DISKCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define DISKCREATOR_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00191.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00314.html">DiskEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00422.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00422.html">RayTracer::PluginsExt::Disk</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01635.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01635.html">DiskCreator</a> : <span class="keyword">public</span> <a class="code" href="a01431.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01635.html#a369462c9b2ddac8eb7283e206165af15">   20</a></span>&#160;            <a class="code" href="a01635.html#a369462c9b2ddac8eb7283e206165af15">~DiskCreator</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01635.html#a7241dd2bf24faed2ea52132603dd599c">   21</a></span>&#160;            <a class="code" href="a01291.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01635.html#a7241dd2bf24faed2ea52132603dd599c">create</a>(<span class="keyword">const</span> <a class="code" href="a01507.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01355.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01635.html#a64eed30248bad8fd5dbe2ea97d903804">   24</a></span>&#160;            std::vector&lt;DiskEntity *&gt; <a class="code" href="a01635.html#a64eed30248bad8fd5dbe2ea97d903804">_elements</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00191_html"><div class="ttname"><a href="a00191.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00314_html"><div class="ttname"><a href="a00314.html">DiskEntity.hpp</a></div></div>
+<div class="ttc" id="aa00422_html"><div class="ttname"><a href="a00422.html">RayTracer::PluginsExt::Disk</a></div><div class="ttdef"><b>Definition:</b> DiskCreator.hpp:17</div></div>
+<div class="ttc" id="aa01291_html"><div class="ttname"><a href="a01291.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01431_html"><div class="ttname"><a href="a01431.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01507_html"><div class="ttname"><a href="a01507.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01635_html"><div class="ttname"><a href="a01635.html">RayTracer::PluginsExt::Disk::DiskCreator</a></div><div class="ttdef"><b>Definition:</b> DiskCreator.hpp:18</div></div>
+<div class="ttc" id="aa01635_html_a369462c9b2ddac8eb7283e206165af15"><div class="ttname"><a href="a01635.html#a369462c9b2ddac8eb7283e206165af15">RayTracer::PluginsExt::Disk::DiskCreator::~DiskCreator</a></div><div class="ttdeci">~DiskCreator()</div></div>
+<div class="ttc" id="aa01635_html_a64eed30248bad8fd5dbe2ea97d903804"><div class="ttname"><a href="a01635.html#a64eed30248bad8fd5dbe2ea97d903804">RayTracer::PluginsExt::Disk::DiskCreator::_elements</a></div><div class="ttdeci">std::vector&lt; DiskEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> DiskCreator.hpp:24</div></div>
+<div class="ttc" id="aa01635_html_a7241dd2bf24faed2ea52132603dd599c"><div class="ttname"><a href="a01635.html#a7241dd2bf24faed2ea52132603dd599c">RayTracer::PluginsExt::Disk::DiskCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

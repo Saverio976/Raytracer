@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00188" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/MaterialHandler.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/MaterialHandler.hpp</primary></indexterm>
-<programlisting>#include &lt;memory&gt;
-#include &lt;string&gt;
-#include &quot;IMaterial.hpp&quot;
-#include &quot;IMaterialCreator.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-#include &quot;PluginHandler.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for MaterialHandler.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityLoader.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityLoader.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &quot;TFactory.hpp&quot;
+#include &quot;IEntity.hpp&quot;
+#include &quot;PluginLoader.hpp&quot;
+#include &quot;EntityHandler.hpp&quot;
+#include &quot;EntityFactory.hpp&quot;
+</programlisting>Include dependency graph for EntityLoader.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -30,20 +29,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01433">RayTracer::Plugins::Materials::MaterialHandler</link></para>
+            <listitem><para>class <link linkend="_a01427">RayTracer::Plugins::Entities::EntityLoader</link></para>
 
-<para>The <link linkend="_a01433">MaterialHandler</link>. </para>
+<para>The <link linkend="_a01427">EntityLoader</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00388">RayTracer::Plugins</link></para>
+            <listitem><para> <link linkend="_a00406">RayTracer::Plugins</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00391">RayTracer::Plugins::Materials</link></para>
+            <listitem><para> <link linkend="_a00407">RayTracer::Plugins::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

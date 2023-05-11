@@ -1,13 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00406" xml:lang="en-US">
-<title>RayTracer::PluginsExt::LimitedCylinder Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::LimitedCylinder</primary></indexterm>
+<title>RayTracer::Plugins Namespace Reference</title>
+<indexterm><primary>RayTracer::Plugins</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00407">Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00408">Filters</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00409">Materials</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01633">LimitedCylinderCreator</link></para>
+            <listitem><para>class <link linkend="_a01459">PluginHandler</link></para>
+
+<para>The <link linkend="_a01459">PluginHandler</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01637">LimitedCylinderEntity</link></para>
+            <listitem><para>class <link linkend="_a01463">PluginLoader</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

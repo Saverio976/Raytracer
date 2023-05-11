@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Display/Modules/ProgressModule.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,85 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_093f3b7f7c7a61ef21fffb3d339f67e1.html">Entities</a></li><li class="navelem"><a class="el" href="dir_c620aa3b560253f2e8f37318dc57b0b1.html">Transform</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8b29354ea792f14f229ba6ab36888b3c.html">Display</a></li><li class="navelem"><a class="el" href="dir_03812256f86b8612ea29c117ed644088.html">Modules</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ITransform.hpp</div>  </div>
+<div class="title">ProgressModule.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00095.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ITransform.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ProgressModule.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ITRANSFORM_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ITRANSFORM_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00104.html">Vector3f.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00384.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00384.html">RayTracer::Entities::Transform</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01289.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01289.html">ITransform</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01289.html#ab2d5d22605b9951ec76ee25126633db0">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01289.html#ab2d5d22605b9951ec76ee25126633db0">~ITransform</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01289.html#a88e2865250cd190041916bb6b9d715b3">   27</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01289.html#a88e2865250cd190041916bb6b9d715b3">setPosition</a>(<span class="keyword">const</span> <a class="code" href="a01301.html">Vector3f</a> &amp;position) = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01289.html#aff7fda973737a55306e1900439f3d6f6">   33</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01301.html">Vector3f</a> &amp;<a class="code" href="a01289.html#aff7fda973737a55306e1900439f3d6f6">getPosition</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01289.html#a686b40a3b17310304bb9d532e8550b9b">   39</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01289.html#a686b40a3b17310304bb9d532e8550b9b">setRotation</a>(<span class="keyword">const</span> <a class="code" href="a01301.html">Vector3f</a> &amp;rotation) = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01289.html#a57854e8e4ac74ab0ed827704ff81436f">   45</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01301.html">Vector3f</a> &amp;<a class="code" href="a01289.html#a57854e8e4ac74ab0ed827704ff81436f">getRotation</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01289.html#ae1099e652ff4659b04028f0d65c8d56b">   51</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01289.html#ae1099e652ff4659b04028f0d65c8d56b">setScale</a>(<span class="keyword">const</span> <a class="code" href="a01301.html">Vector3f</a> &amp;scale) = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01289.html#a50da7841f811b84d0fbf4fad492a8451">   57</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01301.html">Vector3f</a> &amp;<a class="code" href="a01289.html#a50da7841f811b84d0fbf4fad492a8451">getScale</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01289.html#abc6e2b741bd58849b10d4523d06ce389">   65</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01289.html">ITransform</a> &amp;<a class="code" href="a01289.html#abc6e2b741bd58849b10d4523d06ce389">operator=</a>(<span class="keyword">const</span> <a class="code" href="a01289.html">ITransform</a> &amp;other) = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ITRANSFORM_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">Vector3f.hpp</a></div></div>
-<div class="ttc" id="aa00384_html"><div class="ttname"><a href="a00384.html">RayTracer::Entities::Transform</a></div><div class="ttdef"><b>Definition:</b> ITransform.hpp:12</div></div>
-<div class="ttc" id="aa01289_html"><div class="ttname"><a href="a01289.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
-<div class="ttc" id="aa01289_html_a50da7841f811b84d0fbf4fad492a8451"><div class="ttname"><a href="a01289.html#a50da7841f811b84d0fbf4fad492a8451">RayTracer::Entities::Transform::ITransform::getScale</a></div><div class="ttdeci">virtual const Vector3f &amp; getScale() const =0</div><div class="ttdoc">Get the scale.</div></div>
-<div class="ttc" id="aa01289_html_a57854e8e4ac74ab0ed827704ff81436f"><div class="ttname"><a href="a01289.html#a57854e8e4ac74ab0ed827704ff81436f">RayTracer::Entities::Transform::ITransform::getRotation</a></div><div class="ttdeci">virtual const Vector3f &amp; getRotation() const =0</div><div class="ttdoc">Get the rotation.</div></div>
-<div class="ttc" id="aa01289_html_a686b40a3b17310304bb9d532e8550b9b"><div class="ttname"><a href="a01289.html#a686b40a3b17310304bb9d532e8550b9b">RayTracer::Entities::Transform::ITransform::setRotation</a></div><div class="ttdeci">virtual void setRotation(const Vector3f &amp;rotation)=0</div><div class="ttdoc">Set the rotation.</div></div>
-<div class="ttc" id="aa01289_html_a88e2865250cd190041916bb6b9d715b3"><div class="ttname"><a href="a01289.html#a88e2865250cd190041916bb6b9d715b3">RayTracer::Entities::Transform::ITransform::setPosition</a></div><div class="ttdeci">virtual void setPosition(const Vector3f &amp;position)=0</div><div class="ttdoc">Set the position.</div></div>
-<div class="ttc" id="aa01289_html_ab2d5d22605b9951ec76ee25126633db0"><div class="ttname"><a href="a01289.html#ab2d5d22605b9951ec76ee25126633db0">RayTracer::Entities::Transform::ITransform::~ITransform</a></div><div class="ttdeci">virtual ~ITransform()=default</div></div>
-<div class="ttc" id="aa01289_html_abc6e2b741bd58849b10d4523d06ce389"><div class="ttname"><a href="a01289.html#abc6e2b741bd58849b10d4523d06ce389">RayTracer::Entities::Transform::ITransform::operator=</a></div><div class="ttdeci">virtual ITransform &amp; operator=(const ITransform &amp;other)=0</div><div class="ttdoc">Assign a transform.</div></div>
-<div class="ttc" id="aa01289_html_ae1099e652ff4659b04028f0d65c8d56b"><div class="ttname"><a href="a01289.html#ae1099e652ff4659b04028f0d65c8d56b">RayTracer::Entities::Transform::ITransform::setScale</a></div><div class="ttdeci">virtual void setScale(const Vector3f &amp;scale)=0</div><div class="ttdoc">Set the scale.</div></div>
-<div class="ttc" id="aa01289_html_aff7fda973737a55306e1900439f3d6f6"><div class="ttname"><a href="a01289.html#aff7fda973737a55306e1900439f3d6f6">RayTracer::Entities::Transform::ITransform::getPosition</a></div><div class="ttdeci">virtual const Vector3f &amp; getPosition() const =0</div><div class="ttdoc">Get the position.</div></div>
-<div class="ttc" id="aa01301_html"><div class="ttname"><a href="a01301.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PROGRESSMODULE_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define PROGRESSMODULE_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;SFML/Graphics/Font.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/Image.hpp&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;SFML/System/Clock.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00098.html">ICamera.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00089.html">IDisplayModule.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">ITransform.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00239.html">Scene.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00116.html">Transform.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Vector3f.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00400.html">RayTracer::Display</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01283.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01283.html">ProgressModule</a> : <span class="keyword">public</span> <a class="code" href="a01259.html">IDisplayModule</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01283.html#ad9511c6e6c568fee1c47e4e41c11a435">   26</a></span>&#160;            <a class="code" href="a01283.html#ad9511c6e6c568fee1c47e4e41c11a435">ProgressModule</a>(<a class="code" href="a01355.html">ILogger</a> &amp;logger);</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01283.html#aa543e1d4e49ba021f6cc14e9b3087303">   27</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01283.html#aa543e1d4e49ba021f6cc14e9b3087303">tick</a>(sf::RenderWindow &amp;window) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01283.html#a24bc9a0b0a6367e7cbf7ac24eacfc3f2">   28</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01283.html#a24bc9a0b0a6367e7cbf7ac24eacfc3f2">event</a>(sf::RenderWindow &amp;window, <span class="keyword">const</span> sf::Event &amp;<a class="code" href="a01283.html#a24bc9a0b0a6367e7cbf7ac24eacfc3f2">event</a>) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01283.html#adec0d08bdaf9fcf7aa13b80b3d0aba69">   29</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01283.html#adec0d08bdaf9fcf7aa13b80b3d0aba69">start</a>(sf::RenderWindow &amp;window) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01283.html#aad98a6855bb06d085697a2c3144923af">   30</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01283.html#aad98a6855bb06d085697a2c3144923af">end</a>() final;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01283.html#a5b3e6822759e29ad27963c7fdca55624">   31</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01283.html#a5b3e6822759e29ad27963c7fdca55624">getName</a>() const final;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        protected:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        private:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01283.html#a8c737620827f6a30a5ec36441557b459">   35</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01283.html#a8c737620827f6a30a5ec36441557b459">info</a>(const std::<span class="keywordtype">string</span> &amp;message);</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01283.html#a425bccf4cf3aab7a0016ff7a52ebb42a">   36</a></span>&#160;            sf::RenderWindow <a class="code" href="a01283.html#a425bccf4cf3aab7a0016ff7a52ebb42a">_window</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a01283.html#a088e759796b773244fcfda6a29617467">   37</a></span>&#160;            <a class="code" href="a01355.html">ILogger</a> &amp;<a class="code" href="a01283.html#a088e759796b773244fcfda6a29617467">_logger</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01283.html#abfda5af9c2a21ee3a84ecedbc6ad5b26">   38</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01283.html#abfda5af9c2a21ee3a84ecedbc6ad5b26">_message</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01283.html#ac9f1a7e14fbc7b9f7ace92086c0fd290">   39</a></span>&#160;            sf::Font <a class="code" href="a01283.html#ac9f1a7e14fbc7b9f7ace92086c0fd290">_font</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01283.html#af3fa2126e55918b6fffae8fec3f6ed8c">   40</a></span>&#160;            sf::Clock <a class="code" href="a01283.html#af3fa2126e55918b6fffae8fec3f6ed8c">_clock</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*CANVASMODULE_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00089_html"><div class="ttname"><a href="a00089.html">IDisplayModule.hpp</a></div></div>
+<div class="ttc" id="aa00098_html"><div class="ttname"><a href="a00098.html">ICamera.hpp</a></div></div>
+<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">ITransform.hpp</a></div></div>
+<div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">Transform.hpp</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Vector3f.hpp</a></div></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00239_html"><div class="ttname"><a href="a00239.html">Scene.hpp</a></div></div>
+<div class="ttc" id="aa00400_html"><div class="ttname"><a href="a00400.html">RayTracer::Display</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:18</div></div>
+<div class="ttc" id="aa01259_html"><div class="ttname"><a href="a01259.html">RayTracer::Display::IDisplayModule</a></div><div class="ttdef"><b>Definition:</b> IDisplayModule.hpp:14</div></div>
+<div class="ttc" id="aa01283_html"><div class="ttname"><a href="a01283.html">RayTracer::Display::ProgressModule</a></div><div class="ttdef"><b>Definition:</b> ProgressModule.hpp:24</div></div>
+<div class="ttc" id="aa01283_html_a088e759796b773244fcfda6a29617467"><div class="ttname"><a href="a01283.html#a088e759796b773244fcfda6a29617467">RayTracer::Display::ProgressModule::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> ProgressModule.hpp:37</div></div>
+<div class="ttc" id="aa01283_html_a24bc9a0b0a6367e7cbf7ac24eacfc3f2"><div class="ttname"><a href="a01283.html#a24bc9a0b0a6367e7cbf7ac24eacfc3f2">RayTracer::Display::ProgressModule::event</a></div><div class="ttdeci">void event(sf::RenderWindow &amp;window, const sf::Event &amp;event) final</div></div>
+<div class="ttc" id="aa01283_html_a425bccf4cf3aab7a0016ff7a52ebb42a"><div class="ttname"><a href="a01283.html#a425bccf4cf3aab7a0016ff7a52ebb42a">RayTracer::Display::ProgressModule::_window</a></div><div class="ttdeci">sf::RenderWindow _window</div><div class="ttdef"><b>Definition:</b> ProgressModule.hpp:36</div></div>
+<div class="ttc" id="aa01283_html_a5b3e6822759e29ad27963c7fdca55624"><div class="ttname"><a href="a01283.html#a5b3e6822759e29ad27963c7fdca55624">RayTracer::Display::ProgressModule::getName</a></div><div class="ttdeci">std::string getName() const final</div></div>
+<div class="ttc" id="aa01283_html_a8c737620827f6a30a5ec36441557b459"><div class="ttname"><a href="a01283.html#a8c737620827f6a30a5ec36441557b459">RayTracer::Display::ProgressModule::info</a></div><div class="ttdeci">void info(const std::string &amp;message)</div></div>
+<div class="ttc" id="aa01283_html_aa543e1d4e49ba021f6cc14e9b3087303"><div class="ttname"><a href="a01283.html#aa543e1d4e49ba021f6cc14e9b3087303">RayTracer::Display::ProgressModule::tick</a></div><div class="ttdeci">void tick(sf::RenderWindow &amp;window) final</div></div>
+<div class="ttc" id="aa01283_html_aad98a6855bb06d085697a2c3144923af"><div class="ttname"><a href="a01283.html#aad98a6855bb06d085697a2c3144923af">RayTracer::Display::ProgressModule::end</a></div><div class="ttdeci">void end() final</div></div>
+<div class="ttc" id="aa01283_html_abfda5af9c2a21ee3a84ecedbc6ad5b26"><div class="ttname"><a href="a01283.html#abfda5af9c2a21ee3a84ecedbc6ad5b26">RayTracer::Display::ProgressModule::_message</a></div><div class="ttdeci">std::string _message</div><div class="ttdef"><b>Definition:</b> ProgressModule.hpp:38</div></div>
+<div class="ttc" id="aa01283_html_ac9f1a7e14fbc7b9f7ace92086c0fd290"><div class="ttname"><a href="a01283.html#ac9f1a7e14fbc7b9f7ace92086c0fd290">RayTracer::Display::ProgressModule::_font</a></div><div class="ttdeci">sf::Font _font</div><div class="ttdef"><b>Definition:</b> ProgressModule.hpp:39</div></div>
+<div class="ttc" id="aa01283_html_ad9511c6e6c568fee1c47e4e41c11a435"><div class="ttname"><a href="a01283.html#ad9511c6e6c568fee1c47e4e41c11a435">RayTracer::Display::ProgressModule::ProgressModule</a></div><div class="ttdeci">ProgressModule(ILogger &amp;logger)</div></div>
+<div class="ttc" id="aa01283_html_adec0d08bdaf9fcf7aa13b80b3d0aba69"><div class="ttname"><a href="a01283.html#adec0d08bdaf9fcf7aa13b80b3d0aba69">RayTracer::Display::ProgressModule::start</a></div><div class="ttdeci">void start(sf::RenderWindow &amp;window) final</div></div>
+<div class="ttc" id="aa01283_html_af3fa2126e55918b6fffae8fec3f6ed8c"><div class="ttname"><a href="a01283.html#af3fa2126e55918b6fffae8fec3f6ed8c">RayTracer::Display::ProgressModule::_clock</a></div><div class="ttdeci">sf::Clock _clock</div><div class="ttdef"><b>Definition:</b> ProgressModule.hpp:40</div></div>
+<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

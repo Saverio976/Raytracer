@@ -1,15 +1,5 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Entities/IMaterial.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Entities/IMaterial.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="155,5,367,61"/>
-<area shape="rect" id="node2" href="$a00149.html" title=" " alt="" coords="104,109,177,136"/>
-<area shape="rect" id="node3" href="$a00104.html" title=" " alt="" coords="89,184,192,211"/>
-<area shape="rect" id="node8" href="$a00134.html" title=" " alt="" coords="285,184,367,211"/>
-<area shape="rect" id="node11" href="$a00212.html" title=" " alt="" coords="478,109,609,136"/>
-<area shape="rect" id="node13" href="$a00095.html" title=" " alt="" coords="201,109,320,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="135,259,211,285"/>
-<area shape="rect" id="node5" href="$a00218.html" title=" " alt="" coords="11,259,111,285"/>
-<area shape="rect" id="node6" title=" " alt="" coords="322,333,399,360"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,333,116,360"/>
-<area shape="rect" id="node9" title=" " alt="" coords="442,259,506,285"/>
-<area shape="rect" id="node10" title=" " alt="" coords="235,259,417,285"/>
-<area shape="rect" id="node12" title=" " alt="" coords="581,184,644,211"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/Display/IDisplayModule.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Display/IDisplayModule.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="30,5,253,61"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,109,152,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="176,109,235,136"/>
 </map>

@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01403" xml:lang="en-US">
+<title>RayTracer::Main Class Reference</title>
+<indexterm><primary>RayTracer::Main</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Main.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Main:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01401.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01411">ArgumentError</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01407">MainError</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01403_1a0a56937e6ce5b4c55451617a9e72ba61">Main</link> (<link linkend="_a01355">ILogger</link> &amp;logger)</para>
+
+<para>Construct a new <link linkend="_a01403">Main</link> object from argc and argv. </para>
+</listitem>
+            <listitem><para><link linkend="_a01403_1a67c8130e366f95481ca6b163e18c8cf5">~Main</link> ()=default</para>
+</listitem>
+            <listitem><para>int <link linkend="_a01403_1a2cfbeb56d56e0de841832fba6942f9a0">operator()</link> (int argc, char **argv)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a01403_1a2a218028362b3cb4d4f0e11436d5b8f3">exportScene</link> (const std::string &amp;baseFilePath)</para>
+
+<para>Export the scene to ppm files. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01403_1a0a4fda1ebed4d4b3d21024174ec454b9">run</link> ()</para>
+
+<para>Run the main (like the main func but in a method :eyes:) </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01403_1aa069d0fa1a4c757d745684ef1f17b646">help</link> () const</para>
+
+<para>Print the help. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01403_1a933dc11fbc4f3e98aef3b58e55ffa6f4">parseCmdArgs</link> (int argc, char **argv)</para>
+
+<para>Parse the command line argumens. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01403_1a711a6d375f7c44a344874a2f3e451a5f">_baseFilePath</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01403_1a8fd6bf597956a69a3f7552f2e77b57ff">_sceneConfFilePath</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01519">Scenes::Scene</link> <link linkend="_a01403_1af55edbf60888bfa40ebe04d5cf1aa530">_scene</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01355">ILogger</link> &amp; <link linkend="_a01403_1a9e5248148d6c2aa481828c6cbf71818b">_logger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01403_1a0a56937e6ce5b4c55451617a9e72ba61"/>    <section>
+    <title>Main()</title>
+<indexterm><primary>Main</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>Main</secondary></indexterm>
+<para><computeroutput>RayTracer::Main::Main (<link linkend="_a01355">ILogger</link> &amp; logger)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_a01403">Main</link> object from argc and argv. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>argc</entry>
+                                <entry>
+<para>(argc from main func) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>argv</entry>
+                                <entry>
+<para>(argv from main func) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01403_1a67c8130e366f95481ca6b163e18c8cf5"/>    <section>
+    <title>~Main()</title>
+<indexterm><primary>~Main</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>~Main</secondary></indexterm>
+<para><computeroutput>RayTracer::Main::~Main ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01403_1a2a218028362b3cb4d4f0e11436d5b8f3"/>    <section>
+    <title>exportScene()</title>
+<indexterm><primary>exportScene</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>exportScene</secondary></indexterm>
+<para><computeroutput>void RayTracer::Main::exportScene (const std::string &amp; baseFilePath)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Export the scene to ppm files. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>baseFilePath</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01403_1aa069d0fa1a4c757d745684ef1f17b646"/>    <section>
+    <title>help()</title>
+<indexterm><primary>help</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>help</secondary></indexterm>
+<para><computeroutput>void RayTracer::Main::help ( ) const<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Print the help. </para>
+</para>
+    </section><anchor xml:id="_a01403_1a2cfbeb56d56e0de841832fba6942f9a0"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>int RayTracer::Main::operator() (int argc, char ** argv)</computeroutput></para>    </section><anchor xml:id="_a01403_1a933dc11fbc4f3e98aef3b58e55ffa6f4"/>    <section>
+    <title>parseCmdArgs()</title>
+<indexterm><primary>parseCmdArgs</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>parseCmdArgs</secondary></indexterm>
+<para><computeroutput>bool RayTracer::Main::parseCmdArgs (int argc, char ** argv)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Parse the command line argumens. </para>
+</para>
+
+<para>This method can throw an <link linkend="_a01411">ArgumentError</link></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>argc</entry>
+                                <entry>
+<para>nb of arguments </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>argv</entry>
+                                <entry>
+<para>arguments</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if can proceed, false otherwise (but it is not an error) </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01403_1a0a4fda1ebed4d4b3d21024174ec454b9"/>    <section>
+    <title>run()</title>
+<indexterm><primary>run</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>run</secondary></indexterm>
+<para><computeroutput>void RayTracer::Main::run ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Run the main (like the main func but in a method :eyes:) </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01403_1a711a6d375f7c44a344874a2f3e451a5f"/>    <section>
+    <title>_baseFilePath</title>
+<indexterm><primary>_baseFilePath</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>_baseFilePath</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Main::_baseFilePath<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01403_1a9e5248148d6c2aa481828c6cbf71818b"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01355">ILogger</link>&amp; RayTracer::Main::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01403_1af55edbf60888bfa40ebe04d5cf1aa530"/>    <section>
+    <title>_scene</title>
+<indexterm><primary>_scene</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>_scene</secondary></indexterm>
+<para><computeroutput><link linkend="_a01519">Scenes::Scene</link> RayTracer::Main::_scene<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01403_1a8fd6bf597956a69a3f7552f2e77b57ff"/>    <section>
+    <title>_sceneConfFilePath</title>
+<indexterm><primary>_sceneConfFilePath</primary><secondary>RayTracer::Main</secondary></indexterm>
+<indexterm><primary>RayTracer::Main</primary><secondary>_sceneConfFilePath</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Main::_sceneConfFilePath<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/<link linkend="_a00176">Main.hpp</link></section>
+</section>

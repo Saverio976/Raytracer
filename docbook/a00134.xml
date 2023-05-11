@@ -1,12 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00134" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp</primary></indexterm>
-<programlisting>#include &lt;mutex&gt;
-#include &lt;ostream&gt;
-#include &lt;SFML/Graphics/Color.hpp&gt;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for Color.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp</primary></indexterm>
+<programlisting>#include &quot;ISetting.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;IFilter.hpp&quot;
+</programlisting>Include dependency graph for IFilterFactory.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -27,34 +26,34 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01341">RayTracer::Images::Color</link></para>
+            <listitem><para>class <link linkend="_a01335">RayTracer::Factories::IFilterFactory</link></para>
 
-<para>The <link linkend="_a01341">Color</link> class. </para>
+<para>The <link linkend="_a01327">FilterFactory</link> (singleton factory) </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00387">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00403">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>std::ostream &amp; <link linkend="_a00134_1a892349ff4da33acc2d79e3c5c7585374">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01341">RayTracer::Images::Color</link> &amp;color)</para>
+            <listitem><para><link linkend="_a01335">RayTracer::Factories::IFilterFactory</link> * <link linkend="_a00134_1acec3911c130ba3937e3a2a2a34177fdc">getFilterFactoryInstance</link> (void)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Function Documentation</title>
-<anchor xml:id="_a00134_1a892349ff4da33acc2d79e3c5c7585374"/>    <section>
-    <title>operator&lt;&lt;()</title>
-<indexterm><primary>operator&lt;&lt;</primary><secondary>Color.hpp</secondary></indexterm>
-<indexterm><primary>Color.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
-<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01341">RayTracer::Images::Color</link> &amp; color)</computeroutput></para></section>
+<anchor xml:id="_a00134_1acec3911c130ba3937e3a2a2a34177fdc"/>    <section>
+    <title>getFilterFactoryInstance()</title>
+<indexterm><primary>getFilterFactoryInstance</primary><secondary>IFilterFactory.hpp</secondary></indexterm>
+<indexterm><primary>IFilterFactory.hpp</primary><secondary>getFilterFactoryInstance</secondary></indexterm>
+<para><computeroutput><link linkend="_a01335">RayTracer::Factories::IFilterFactory</link>* getFilterFactoryInstance (void )</computeroutput></para></section>
 </section>
 </section>

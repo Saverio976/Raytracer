@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/PluginLoader.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,50 +62,67 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d665af80335f773f8bfcf2f56b3f3e8a.html">Scenes</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ISceneState.hpp</div>  </div>
+<div class="title">PluginLoader.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00215.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ISceneState.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PluginLoader.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ISCENESTATE_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ISCENESTATE_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00392.html">RayTracer::Scenes</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01485.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01485.html">ISceneState</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6">   23</a></span>&#160;            <span class="keyword">enum class</span> <a class="code" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RUNNING</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">CANCELLED</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">FINISHED</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            };</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01485.html#a2987cac49fef7a48b80aa2d1e4aa84da">   33</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> <a class="code" href="a01485.html#a2987cac49fef7a48b80aa2d1e4aa84da">getState</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01485.html#a9794d2a8b28b9753686931e78d5e315c">   39</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01485.html#a9794d2a8b28b9753686931e78d5e315c">changeState</a>(<span class="keyword">const</span> <a class="code" href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> &amp;state) = 0;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef PLUGINLOADER_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">    #define PLUGINLOADER_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00143.html">TFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;filesystem&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00406.html">RayTracer::Plugins</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Handler, <span class="keyword">typename</span> Interface, <span class="keyword">typename</span> Factory&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a01463.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01463.html">PluginLoader</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01463.html#a1172ca46ef18b385f243654f036234a6">   18</a></span>&#160;            <a class="code" href="a01463.html#a1172ca46ef18b385f243654f036234a6">PluginLoader</a>(<span class="keyword">const</span> std::string &amp;directory) :</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <a class="code" href="a01463.html#abb9a32a2ed89b78558a8a10a70b39a7c">_directory</a>(directory) { }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01463.html#a46618935de8534e70b310c5f97a40b8a">   21</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01463.html#a46618935de8534e70b310c5f97a40b8a">load</a>() {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                std::string currentFilePath;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                std::size_t sizeFilePath;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                std::string fileName;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                Factory::getInstance().clearAll();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : std::filesystem::directory_iterator(<a class="code" href="a01463.html#abb9a32a2ed89b78558a8a10a70b39a7c">_directory</a>)) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    currentFilePath = entry.path();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    sizeFilePath = currentFilePath.size();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <span class="keywordflow">if</span> (currentFilePath.substr(sizeFilePath - 3, sizeFilePath) == <span class="stringliteral">&quot;.so&quot;</span>) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        fileName = entry.path().filename();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        Factory::getInstance().add(fileName.substr(0, fileName.size() - 3), std::make_unique&lt;Handler&gt;(currentFilePath));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01463.html#abb9a32a2ed89b78558a8a10a70b39a7c">   38</a></span>&#160;            std::string <a class="code" href="a01463.html#abb9a32a2ed89b78558a8a10a70b39a7c">_directory</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00392_html"><div class="ttname"><a href="a00392.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
-<div class="ttc" id="aa01485_html"><div class="ttname"><a href="a01485.html">RayTracer::Scenes::ISceneState</a></div><div class="ttdoc">The SceneState interface.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:18</div></div>
-<div class="ttc" id="aa01485_html_a2987cac49fef7a48b80aa2d1e4aa84da"><div class="ttname"><a href="a01485.html#a2987cac49fef7a48b80aa2d1e4aa84da">RayTracer::Scenes::ISceneState::getState</a></div><div class="ttdeci">virtual States getState() const =0</div><div class="ttdoc">Get the state (thread safe)</div></div>
-<div class="ttc" id="aa01485_html_a3abb46616bc66e9744ad0bed1635afe6"><div class="ttname"><a href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6">RayTracer::Scenes::ISceneState::States</a></div><div class="ttdeci">States</div><div class="ttdoc">The States.</div><div class="ttdef"><b>Definition:</b> ISceneState.hpp:23</div></div>
-<div class="ttc" id="aa01485_html_a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133"><div class="ttname"><a href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">RayTracer::Scenes::ISceneState::States::FINISHED</a></div><div class="ttdeci">@ FINISHED</div></div>
-<div class="ttc" id="aa01485_html_a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd"><div class="ttname"><a href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RayTracer::Scenes::ISceneState::States::RUNNING</a></div><div class="ttdeci">@ RUNNING</div></div>
-<div class="ttc" id="aa01485_html_a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"><div class="ttname"><a href="a01485.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">RayTracer::Scenes::ISceneState::States::CANCELLED</a></div><div class="ttdeci">@ CANCELLED</div></div>
-<div class="ttc" id="aa01485_html_a9794d2a8b28b9753686931e78d5e315c"><div class="ttname"><a href="a01485.html#a9794d2a8b28b9753686931e78d5e315c">RayTracer::Scenes::ISceneState::changeState</a></div><div class="ttdeci">virtual void changeState(const States &amp;state)=0</div><div class="ttdoc">Change the state (thread safe)</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*PLUGINLOADER_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">TFactory.hpp</a></div></div>
+<div class="ttc" id="aa00406_html"><div class="ttname"><a href="a00406.html">RayTracer::Plugins</a></div><div class="ttdef"><b>Definition:</b> EntityHandler.hpp:19</div></div>
+<div class="ttc" id="aa01463_html"><div class="ttname"><a href="a01463.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
+<div class="ttc" id="aa01463_html_a1172ca46ef18b385f243654f036234a6"><div class="ttname"><a href="a01463.html#a1172ca46ef18b385f243654f036234a6">RayTracer::Plugins::PluginLoader::PluginLoader</a></div><div class="ttdeci">PluginLoader(const std::string &amp;directory)</div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:18</div></div>
+<div class="ttc" id="aa01463_html_a46618935de8534e70b310c5f97a40b8a"><div class="ttname"><a href="a01463.html#a46618935de8534e70b310c5f97a40b8a">RayTracer::Plugins::PluginLoader::load</a></div><div class="ttdeci">void load()</div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:21</div></div>
+<div class="ttc" id="aa01463_html_abb9a32a2ed89b78558a8a10a70b39a7c"><div class="ttname"><a href="a01463.html#abb9a32a2ed89b78558a8a10a70b39a7c">RayTracer::Plugins::PluginLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,17 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00260" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/CameraClusterEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/CameraClusterEntity.hpp</primary></indexterm>
-<programlisting>#include &lt;functional&gt;
-#include &lt;optional&gt;
-#include &quot;ICamera.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Filter.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Filter.hpp</primary></indexterm>
+<programlisting>#include &lt;future&gt;
+#include &lt;vector&gt;
+#include &quot;Color.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ISceneState.hpp&quot;
-#include &quot;IDisplayable.hpp&quot;
-#include &quot;Transform.hpp&quot;
-#include &quot;Vector2i.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for CameraClusterEntity.hpp:<para>
+#include &quot;IFilter.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+#include &quot;Image.hpp&quot;
+</programlisting>Include dependency graph for SSAAx4Filter.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -32,20 +30,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01565">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link></para>
+            <listitem><para>class <link linkend="_a01559">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00393">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00398">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00413">RayTracer::PluginsExt::AntiAliasing</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00399">RayTracer::PluginsExt::Camera::Clustered</link></para>
+            <listitem><para> <link linkend="_a00414">RayTracer::PluginsExt::AntiAliasing::SSAAx4</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

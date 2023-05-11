@@ -63,7 +63,7 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="a00381.html">RayTracer</a> </div>  </div>
+<div class="title"><a class="el" href="a00399.html">RayTracer</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>aficher ... <a class="anchor" id="md__home_runner_work_Raytracer_Raytracer_README"></a> Projet réalisé en 2ème année à EPITECH</p>
@@ -80,16 +80,45 @@ Introduction</h1>
 <p><img src="reprere.png" alt="" class="inline" title="image"/></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Usage</h1>
-<div class="fragment"><div class="line">USAGE: ./raytracer --scene-path &lt;scene-conf.yaax&gt; --output-path &lt;file&gt; [--log-level &lt;int&gt;]</div>
-<div class="line">USAGE: ./raytracer --help</div>
+<div class="fragment"><div class="line">                                        ,----,</div>
+<div class="line">                                      ,/   .`|</div>
+<div class="line">,-.----.                            ,`   .&#39;  :</div>
+<div class="line">\    /  \                         ;    ;     /</div>
+<div class="line">;   :    \                      .&#39;___,/    ,&#39; __  ,-.                                __  ,-.</div>
+<div class="line">|   | .\ :                      |    :     |,&#39; ,&#39;/ /|                              ,&#39; ,&#39;/ /|</div>
+<div class="line">.   : |: |   ,--.--.        .--,;    |.&#39;;  ;&#39;  | |&#39; | ,--.--.     ,---.     ,---.  &#39;  | |&#39; |</div>
+<div class="line">|   |  \ :  /       \     /_ ./|`----&#39;  |  ||  |   ,&#39;/       \   /     \   /     \ |  |   ,&#39;</div>
+<div class="line">|   : .  / .--.  .-. | , &#39; , &#39; :    &#39;   :  ;&#39;  :  / .--.  .-. | /    / &#39;  /    /  |&#39;  :  /</div>
+<div class="line">;   | |  \  \__\/: . ./___/ \: |    |   |  &#39;|  | &#39;   \__\/: . ..    &#39; /  .    &#39; / ||  | &#39;</div>
+<div class="line">|   | ;\  \ ,&quot; .--.; | .  \  &#39; |    &#39;   :  |;  : |   ,&quot; .--.; |&#39;   ; :__ &#39;   ;   /|;  : |</div>
+<div class="line">:   &#39; | \.&#39;/  /  ,.  |  \  ;   :    ;   |.&#39; |  , ;  /  /  ,.  |&#39;   | &#39;.&#39;|&#39;   |  / ||  , ;</div>
+<div class="line">:   : :-&#39; ;  :   .&#39;   \  \  \  ;    &#39;---&#39;    ---&#39;  ;  :   .&#39;   \   :    :|   :    | ---&#39;</div>
+<div class="line">|   |.&#39;   |  ,     .-./   :  \  \                  |  ,     .-./\   \  /  \   \  /</div>
+<div class="line">`---&#39;      `--`---&#39;        \  &#39; ;                   `--`---&#39;     `----&#39;    `----&#39;</div>
+<div class="line">                            `--`</div>
+<div class="line">__USAGE__:</div>
+<div class="line">    ./raytracer --scene-path &lt;scene-conf.yaax&gt; --output-path &lt;file&gt; [--log-level &lt;int&gt;] [--gui] [--font-path &lt;font file&gt;]</div>
+<div class="line">    ./raytracer --help</div>
 <div class="line"> </div>
-<div class="line">OPTIONS:</div>
-<div class="line">    --scene-path &lt;scene-conf.yaax&gt;  path to scene config</div>
-<div class="line">    --output-path &lt;file&gt;    path to output file (dont put .ppm or any extension, it is just a base file path)</div>
-<div class="line">    --help  to display the help message</div>
-<div class="line">    --log-level &lt;int&gt;   log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]</div>
+<div class="line">__OPTIONS__:</div>
+<div class="line">    --scene-path &lt;scene-conf.yaax&gt; path to scene config</div>
+<div class="line">    --output-path &lt;file&gt;           path to output file (dont put .ppm or any extension, it is just a base file path)</div>
+<div class="line">    --help                         to display the help message</div>
+<div class="line">    --log-level &lt;int&gt;              log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]</div>
+<div class="line">    --gui                          to display the images in GUI mode</div>
+<div class="line">    --font-path &lt;font file&gt;        path to font file [./Assets/arial.ttf by default]</div>
 <div class="line"> </div>
-<div class="line">CREDITS:</div>
+<div class="line">__IN WINDOW__:</div>
+<div class="line">    Z                              : go forward to exit</div>
+<div class="line">    Q                              : go left</div>
+<div class="line">    S                              : go backward to exit</div>
+<div class="line">    D                              : go right</div>
+<div class="line">    Space                          : go up</div>
+<div class="line">    Left Shift                     : go down</div>
+<div class="line">    Left Arrow                     : go previous camera</div>
+<div class="line">    Right Arrow                    : go next camera</div>
+<div class="line"> </div>
+<div class="line">__CREDITS__:</div>
 <div class="line">    Authors: Y A A X</div>
 <div class="line">    Repository: https://github.com/Saverio976/Raytracer</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
@@ -103,6 +132,14 @@ Exemples/Documentation</h1>
 <li><a href="#Cone-Limité">Cone-Limité</a></li>
 <li><a href="#Cylindre">Cylindre</a></li>
 <li><a href="#Cylindre-Limité">Cylindre-Limité</a></li>
+<li><a href="#Torus">Torus</a></li>
+<li><a href="#Triangle">Triangle</a></li>
+</ul>
+<p>les materiaux sont:</p><ul>
+<li><a href="#PlainMaterial">PlainMaterial</a></li>
+<li><a href="#ChessBoardMaterial">ChessBoardMaterial</a></li>
+<li><a href="#ZebraMaterial">ZebraMaterial</a></li>
+<li><a href="#TransparencyMaterial">TransparencyMaterial</a></li>
 </ul>
 <p>les lumières sont:</p><ul>
 <li><a href="#PointLight">PointLight</a> (mais la documentation est sur toutes les primitives)</li>
@@ -1122,6 +1159,705 @@ Cylindre-Limité</h1>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
 <h2><a class="anchor" id="autotoc_md12"></a>
+Torus</h2>
+<p><img src="torus1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># torus.yaax</div>
+<div class="line"> </div>
+<div class="line"># configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    # camera par defaut (la plus simple d&#39;utilisation)</div>
+<div class="line">    Camera: (</div>
+<div class="line">        {</div>
+<div class="line">            # taille de l&#39;image (de l&#39;écran) (en pixels)</div>
+<div class="line">            size = {x: 500; y = 500;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position de l&#39;écran</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # l&#39;echelle n&#39;est pas suportée</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # la rotation n&#39;est pas suportée</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # distance de la caméra par rapport à l&#39;écran</div>
+<div class="line">            focal = 200.0;</div>
+<div class="line">            # nombre de pixel d&#39;éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)</div>
+<div class="line">            maxThreads = -1;</div>
+<div class="line">            # filtres (étape après la génération de l&#39;image)</div>
+<div class="line">            filters = {};</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # list of torus</div>
+<div class="line">    Torus = (</div>
+<div class="line">        {</div>
+<div class="line">            minRadius = 50.0;</div>
+<div class="line">            maxRadius = 120.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position du torus</div>
+<div class="line">                position = {x = 0.0; y = 30.0; z = 0.0;};</div>
+<div class="line">                # x: agrandis/diminus l&#39;angle maxradius</div>
+<div class="line">                # y: agrandis/diminus l&#39;angle minradius</div>
+<div class="line">                # z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # x/y/z: mettre 0.0 (la rotation n&#39;est pas suportée)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            material = {</div>
+<div class="line">                # utilisation du matériau</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                # taux de reflet de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0;};</div>
+<div class="line">                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0;};</div>
+<div class="line">                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0;};</div>
+<div class="line">                # couleur du torus</div>
+<div class="line">                color = {r = 50.0; g = 255.0; b = 255.0; a = 255.0;};</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # première lampe de type pointlight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # x: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # première lampe de type ambientlight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # x: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # y/z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Triangle</h2>
+<p><img src="triangle1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># triangle.yaax</div>
+<div class="line"> </div>
+<div class="line"># configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    # camera par defaut (la plus simple d&#39;utilisation)</div>
+<div class="line">    Camera: (</div>
+<div class="line">        {</div>
+<div class="line">            # taille de l&#39;image (de l&#39;écran) (en pixels)</div>
+<div class="line">            size = {x: 500; y = 500;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position de l&#39;écran</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # l&#39;echelle n&#39;est pas suportée</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # la rotation n&#39;est pas suportée</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # distance de la caméra par rapport à l&#39;écran</div>
+<div class="line">            focal = 200.0;</div>
+<div class="line">            # nombre de pixel d&#39;éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)</div>
+<div class="line">            maxthreads = -1;</div>
+<div class="line">            # filtres (étape après la génération de l&#39;image)</div>
+<div class="line">            filters = {};</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # list of triangle</div>
+<div class="line">    Triangle = (</div>
+<div class="line">        {</div>
+<div class="line">            # Premier point du triangle</div>
+<div class="line">            pointOne = {x = 0.0; y = 100.0; z = 200.0;};</div>
+<div class="line">            # Second point du triangle</div>
+<div class="line">            pointTwo = {x = 40.0; y = 100.0; z = 0.0;};</div>
+<div class="line">            # Troisième point du triangle</div>
+<div class="line">            pointThree = {x = -40.0; y = 100.0; z = 0.0;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # X/Y/Z: mettre 0.0</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 20.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            material = {</div>
+<div class="line">                # Utilisation du matériau</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                # taux de reflet de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0;};</div>
+<div class="line">                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0;};</div>
+<div class="line">                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0;};</div>
+<div class="line">                # Couleur du triangle</div>
+<div class="line">                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};</div>
+<div class="line">            };</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # première lampe de type pointlight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # x: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # première lampe de type ambientlight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # x: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # y/z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+PlainMaterial</h2>
+<p><img src="plainmaterial1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># plainmaterial.yaax</div>
+<div class="line"> </div>
+<div class="line"># Configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    # Camera par defaut (la plus simple d&#39;utilisation)</div>
+<div class="line">    Camera: (</div>
+<div class="line">        {</div>
+<div class="line">            # Taille de l&#39;image (de l&#39;écran) (en pixels)</div>
+<div class="line">            size = {x: 500; y = 500;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de l&#39;écran</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # L&#39;Echelle n&#39;est pas suportée</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # La rotation n&#39;est pas suportée</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Distance de la caméra par rapport à l&#39;écran</div>
+<div class="line">            focal = 200.0;</div>
+<div class="line">            # Nombre de pixel d&#39;éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)</div>
+<div class="line">            maxThreads = -1;</div>
+<div class="line">            # Filtres (étape après la génération de l&#39;image)</div>
+<div class="line">            filters = {};</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # Liste des spheres</div>
+<div class="line">    Sphere = (</div>
+<div class="line">        # notre sphere est configuré ici</div>
+<div class="line">        {</div>
+<div class="line">            # Taille du rayon</div>
+<div class="line">            radius = 100.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la sphere</div>
+<div class="line">                position = {x = -150.0; y = 150.0; z = 50.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la sphere</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une sphere ?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                # Taux de reflet de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # Couleur de la sphere</div>
+<div class="line">                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};</div>
+<div class="line">                # Utilisation de la couche de la sphere</div>
+<div class="line">                type = &quot;PlainMaterial&quot;;</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">    )</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # Point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # Première lampe de type PointLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # Première lampe de type AmbientLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+ChessBoardMaterial</h2>
+<p><img src="chessboardmaterial1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># chessboardmaterial.yaax</div>
+<div class="line"> </div>
+<div class="line"># Configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    # Camera par defaut (la plus simple d&#39;utilisation)</div>
+<div class="line">    Camera: (</div>
+<div class="line">        {</div>
+<div class="line">            # Taille de l&#39;image (de l&#39;écran) (en pixels)</div>
+<div class="line">            size = {x: 500; y = 500;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de l&#39;écran</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # L&#39;Echelle n&#39;est pas suportée</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # La rotation n&#39;est pas suportée</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Distance de la caméra par rapport à l&#39;écran</div>
+<div class="line">            focal = 200.0;</div>
+<div class="line">            # Nombre de pixel d&#39;éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)</div>
+<div class="line">            maxThreads = -1;</div>
+<div class="line">            # Filtres (étape après la génération de l&#39;image)</div>
+<div class="line">            filters = {};</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # Liste des spheres</div>
+<div class="line">    Sphere = (</div>
+<div class="line">        # notre sphere est configuré ici</div>
+<div class="line">        {</div>
+<div class="line">            # Taille du rayon</div>
+<div class="line">            radius = 100.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la sphere</div>
+<div class="line">                position = {x = -150.0; y = 150.0; z = 50.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la sphere</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une sphere ?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                # Utilisation de la couche de la sphere</div>
+<div class="line">                type = &quot;ChessBoardMaterial&quot;;</div>
+<div class="line">                # taille des cases</div>
+<div class="line">                size = 10.0;</div>
+<div class="line">                # Couleur des cases impairs</div>
+<div class="line">                impair = {r = 255.0; g = 255.0; b = 255.0; a = 255.0;};</div>
+<div class="line">                # Couleur des cases pairs</div>
+<div class="line">                pair = {r = 0.0; g = 0.0; b = 0.0; a = 255.0;};</div>
+<div class="line">                # Taux de reflet de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">    )</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # Point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # Première lampe de type PointLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # Première lampe de type AmbientLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+ZebraMaterial</h2>
+<p><img src="zebramaterial1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># zebramaterial.yaax</div>
+<div class="line"> </div>
+<div class="line"># Configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    # Camera par defaut (la plus simple d&#39;utilisation)</div>
+<div class="line">    Camera: (</div>
+<div class="line">        {</div>
+<div class="line">            # Taille de l&#39;image (de l&#39;écran) (en pixels)</div>
+<div class="line">            size = {x: 500; y = 500;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de l&#39;écran</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # L&#39;Echelle n&#39;est pas suportée</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # La rotation n&#39;est pas suportée</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Distance de la caméra par rapport à l&#39;écran</div>
+<div class="line">            focal = 200.0;</div>
+<div class="line">            # Nombre de pixel d&#39;éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)</div>
+<div class="line">            maxThreads = -1;</div>
+<div class="line">            # Filtres (étape après la génération de l&#39;image)</div>
+<div class="line">            filters = {};</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # Liste des spheres</div>
+<div class="line">    Sphere = (</div>
+<div class="line">        # notre sphere est configuré ici</div>
+<div class="line">        {</div>
+<div class="line">            # Taille du rayon</div>
+<div class="line">            radius = 100.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la sphere</div>
+<div class="line">                position = {x = -150.0; y = 150.0; z = 50.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la sphere</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une sphere ?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                # Utilisation de la couche de la sphere</div>
+<div class="line">                type = &quot;ZebraMaterial&quot;;</div>
+<div class="line">                # Taux de reflet de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # Taille d&#39;une bande de rayure du zèbre</div>
+<div class="line">                size = 10.0;</div>
+<div class="line">                # Couleur impair</div>
+<div class="line">                impair = {r = 255.0; g = 255.0; b = 255.0; a = 255.0;};</div>
+<div class="line">                # Couleur pair</div>
+<div class="line">                pair = {r = 0.0; g = 0.0; b = 0.0; a = 255.0;};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">    )</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # Point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # Première lampe de type PointLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # Première lampe de type AmbientLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+TransparencyMaterial</h2>
+<p><img src="transparencymaterial1-basic.png" alt="" class="inline" title="image"/></p>
+<p>&lt;details&gt;</p>
+<p>afficher ... </p>
+<div class="fragment"><div class="line"># transpacparencymaterial.yaax</div>
+<div class="line"> </div>
+<div class="line"># Configuration des cameras</div>
+<div class="line">cameras:</div>
+<div class="line">{</div>
+<div class="line">    # Camera par defaut (la plus simple d&#39;utilisation)</div>
+<div class="line">    Camera: (</div>
+<div class="line">        {</div>
+<div class="line">            # Taille de l&#39;image (de l&#39;écran) (en pixels)</div>
+<div class="line">            size = {x: 500; y = 500;};</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de l&#39;écran</div>
+<div class="line">                position = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # L&#39;Echelle n&#39;est pas suportée</div>
+<div class="line">                scale = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # La rotation n&#39;est pas suportée</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Distance de la caméra par rapport à l&#39;écran</div>
+<div class="line">            focal = 200.0;</div>
+<div class="line">            # Nombre de pixel d&#39;éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)</div>
+<div class="line">            maxThreads = -1;</div>
+<div class="line">            # Filtres (étape après la génération de l&#39;image)</div>
+<div class="line">            filters = {};</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Les objets de la scene</div>
+<div class="line">primitives :</div>
+<div class="line">{</div>
+<div class="line">    # Liste des spheres</div>
+<div class="line">    Sphere = (</div>
+<div class="line">        # notre sphere est configuré ici</div>
+<div class="line">        {</div>
+<div class="line">            # Taille du rayon</div>
+<div class="line">            radius = 100.0;</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la sphere</div>
+<div class="line">                position = {x = -150.0; y = 150.0; z = 50.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la sphere</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une sphere ?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            }</div>
+<div class="line">            material = {</div>
+<div class="line">                # Utilisation de la couche de la sphere</div>
+<div class="line">                type = &quot;TransparencyMaterial&quot;;</div>
+<div class="line">                # Taux de reflet de la lumière</div>
+<div class="line">                shininess = 1.0;</div>
+<div class="line">                # Couleur de la sphere</div>
+<div class="line">                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)</div>
+<div class="line">                ambient = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                diffuse = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)</div>
+<div class="line">                specular = {x = 1.0; y = 1.0; z = 1.0};</div>
+<div class="line">                # pourcentage de transparance</div>
+<div class="line">                # entre 0 et 255</div>
+<div class="line">                # 0: totalement transparent</div>
+<div class="line">                # 255: totalement opaque</div>
+<div class="line">                transparency = 150.0;</div>
+<div class="line">            };</div>
+<div class="line">        },</div>
+<div class="line">    )</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"># Configuration de la lumière</div>
+<div class="line">lights :</div>
+<div class="line">{</div>
+<div class="line">    # Point de lumière (une lampe par example)</div>
+<div class="line">    PointLight = (</div>
+<div class="line">        # Première lampe de type PointLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus le rayon de la lampe</div>
+<div class="line">                # Y: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 1.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair de tous les cotés?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">            # Rayon du chants d&#39;actions de la lumière (au-delà la lumière n&#39;éclair pas)</div>
+<div class="line">            radius = 500.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">    AmbientLight = (</div>
+<div class="line">        # Première lampe de type AmbientLight</div>
+<div class="line">        {</div>
+<div class="line">            transform = {</div>
+<div class="line">                # Position de la lampe</div>
+<div class="line">                position = {x = 150.0; y = 0.0; z = 100.0;};</div>
+<div class="line">                # X: agrandis/diminus la puissance de la lampe</div>
+<div class="line">                # Y/Z: mettre 0.0</div>
+<div class="line">                scale = {x = 1.0; y = 0.0; z = 0.0;};</div>
+<div class="line">                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d&#39;une lampe qui écair partout?)</div>
+<div class="line">                rotation = {x = 0.0; y = 0.0; z = 0.0;};</div>
+<div class="line">            };</div>
+<div class="line">            # Couleur de la lampe</div>
+<div class="line">            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};</div>
+<div class="line">            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)</div>
+<div class="line">            power = 1.0;</div>
+<div class="line">        }</div>
+<div class="line">    );</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
 AmbientLight</h2>
 <p><img src="ambientlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1289,7 +2025,7 @@ AmbientLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 PointLight</h2>
 <p><img src="pointlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1459,7 +2195,7 @@ PointLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 SpotLight</h2>
 <p><img src="spotlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1624,10 +2360,10 @@ SpotLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Camera</h2>
 <p>Regarder la documentation pour les primitives, elle explique déjà bien le principe</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 CameraCluster</h2>
 <p><img src="camera-cluster1.png" alt="" class="inline" title="cluster1"/> <img src="camera-cluster2.png" alt="" class="inline" title="cluster2"/> <img src="camera-cluster5.png" alt="" class="inline" title="cluster5"/></p>
 <p>&lt;details&gt;</p>
@@ -2185,7 +2921,7 @@ CameraCluster</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 SSAAx4</h2>
 <p><img src="ssaax4-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2384,7 +3120,7 @@ SSAAx4</h2>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:52 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:21 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

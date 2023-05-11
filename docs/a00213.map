@@ -1,5 +1,11 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,280,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="57,95,135,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="159,95,222,121"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/Plugins/PluginHandler.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Plugins/PluginHandler.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="131,5,416,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,64,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="355,169,432,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="151,95,217,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="242,95,305,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="166,169,253,196"/>
+<area shape="rect" id="node7" href="$a00149.html" title=" " alt="" coords="29,95,126,121"/>
+<area shape="rect" id="node8" href="$a00236.html" title=" " alt="" coords="431,95,531,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="457,169,567,196"/>
 </map>

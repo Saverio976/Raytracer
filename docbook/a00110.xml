@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00110" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Factories/FilterFactory.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/FilterFactory.hpp</primary></indexterm>
-<programlisting>#include &quot;IFilterFactory.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-#include &quot;TFactory.hpp&quot;
-#include &quot;FilterHandler.hpp&quot;
-#include &quot;IFilter.hpp&quot;
-</programlisting>Include dependency graph for FilterFactory.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/IPrimitive.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/IPrimitive.hpp</primary></indexterm>
+<programlisting>#include &lt;optional&gt;
+#include &quot;Color.hpp&quot;
+#include &quot;IDisplayable.hpp&quot;
+#include &quot;IEntity.hpp&quot;
+#include &quot;IMaterial.hpp&quot;
+#include &quot;Ray.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for IPrimitive.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,18 +30,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01309">RayTracer::Factories::FilterFactory</link></para>
+            <listitem><para>class <link linkend="_a01303">RayTracer::Entities::IPrimitive</link></para>
 
-<para>The <link linkend="_a01309">FilterFactory</link> (singleton factory) </para>
+<para>The <link linkend="_a01303">IPrimitive</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00385">RayTracer::Factories</link></para>
+            <listitem><para> <link linkend="_a00401">RayTracer::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCone/LimitedConeCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,57 +62,57 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_d68547482c6b4917e6bf98401287b991.html">LimitedCone</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_c8fd1adca193700d0c20cd153f75c1a6.html">Cone</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LimitedConeCreator.hpp</div>  </div>
+<div class="title">ConeCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00299.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** LimitedConeCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ConeCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef LIMITEDCONECREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define LIMITEDCONECREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYTRACER_CONECREATOR_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYTRACER_CONECREATOR_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00173.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00302.html">LimitedConeEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00191.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00302.html">ConeEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00405.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00405.html">RayTracer::PluginsExt::LimitedCone</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01625.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01625.html">LimitedConeCreator</a> : <span class="keyword">public</span> <a class="code" href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a>  {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01625.html#a7b5fd25624d52b06eae95ec6aba54f56">   19</a></span>&#160;        <a class="code" href="a01625.html#a7b5fd25624d52b06eae95ec6aba54f56">~LimitedConeCreator</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01625.html#adf6fef6da750a152bb41c1c6bc753339">   20</a></span>&#160;        <a class="code" href="a01273.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01625.html#adf6fef6da750a152bb41c1c6bc753339">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01337.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01625.html#a02fe2b1ad110a7a5d1d8e3225dc94af9">   23</a></span>&#160;        std::vector&lt;LimitedConeEntity *&gt; <a class="code" href="a01625.html#a02fe2b1ad110a7a5d1d8e3225dc94af9">_elements</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00420.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00420.html">RayTracer::PluginsExt::Cone</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01619.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01619.html">ConeCreator</a> : <span class="keyword">public</span> <a class="code" href="a01431.html">RayTracer::Plugins::Entities::IEntityCreator</a>  {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01619.html#ad6a738f0b7f2989333d5bc9bac390fe0">   19</a></span>&#160;            <a class="code" href="a01619.html#ad6a738f0b7f2989333d5bc9bac390fe0">~ConeCreator</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01619.html#a44cc63186c26d121444a830641c98de9">   20</a></span>&#160;            <a class="code" href="a01291.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01619.html#a44cc63186c26d121444a830641c98de9">create</a>(<span class="keyword">const</span> <a class="code" href="a01507.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01355.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01619.html#ab6a00dfa167098ffccfd8d899b9a73fd">   23</a></span>&#160;            std::vector&lt;ConeEntity *&gt; <a class="code" href="a01619.html#ab6a00dfa167098ffccfd8d899b9a73fd">_elements</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*LIMITEDCONECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00302_html"><div class="ttname"><a href="a00302.html">LimitedConeEntity.hpp</a></div></div>
-<div class="ttc" id="aa00405_html"><div class="ttname"><a href="a00405.html">RayTracer::PluginsExt::LimitedCone</a></div><div class="ttdef"><b>Definition:</b> LimitedConeCreator.hpp:16</div></div>
-<div class="ttc" id="aa01273_html"><div class="ttname"><a href="a01273.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01413_html"><div class="ttname"><a href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01625_html"><div class="ttname"><a href="a01625.html">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator</a></div><div class="ttdef"><b>Definition:</b> LimitedConeCreator.hpp:17</div></div>
-<div class="ttc" id="aa01625_html_a02fe2b1ad110a7a5d1d8e3225dc94af9"><div class="ttname"><a href="a01625.html#a02fe2b1ad110a7a5d1d8e3225dc94af9">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator::_elements</a></div><div class="ttdeci">std::vector&lt; LimitedConeEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> LimitedConeCreator.hpp:23</div></div>
-<div class="ttc" id="aa01625_html_a7b5fd25624d52b06eae95ec6aba54f56"><div class="ttname"><a href="a01625.html#a7b5fd25624d52b06eae95ec6aba54f56">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator::~LimitedConeCreator</a></div><div class="ttdeci">~LimitedConeCreator()</div></div>
-<div class="ttc" id="aa01625_html_adf6fef6da750a152bb41c1c6bc753339"><div class="ttname"><a href="a01625.html#adf6fef6da750a152bb41c1c6bc753339">RayTracer::PluginsExt::LimitedCone::LimitedConeCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//RAYTRACER_CONECREATOR_HPP</span></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00191_html"><div class="ttname"><a href="a00191.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00302_html"><div class="ttname"><a href="a00302.html">ConeEntity.hpp</a></div></div>
+<div class="ttc" id="aa00420_html"><div class="ttname"><a href="a00420.html">RayTracer::PluginsExt::Cone</a></div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:16</div></div>
+<div class="ttc" id="aa01291_html"><div class="ttname"><a href="a01291.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01431_html"><div class="ttname"><a href="a01431.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01507_html"><div class="ttname"><a href="a01507.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01619_html"><div class="ttname"><a href="a01619.html">RayTracer::PluginsExt::Cone::ConeCreator</a></div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:17</div></div>
+<div class="ttc" id="aa01619_html_a44cc63186c26d121444a830641c98de9"><div class="ttname"><a href="a01619.html#a44cc63186c26d121444a830641c98de9">RayTracer::PluginsExt::Cone::ConeCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01619_html_ab6a00dfa167098ffccfd8d899b9a73fd"><div class="ttname"><a href="a01619.html#ab6a00dfa167098ffccfd8d899b9a73fd">RayTracer::PluginsExt::Cone::ConeCreator::_elements</a></div><div class="ttdeci">std::vector&lt; ConeEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:23</div></div>
+<div class="ttc" id="aa01619_html_ad6a738f0b7f2989333d5bc9bac390fe0"><div class="ttname"><a href="a01619.html#ad6a738f0b7f2989333d5bc9bac390fe0">RayTracer::PluginsExt::Cone::ConeCreator::~ConeCreator</a></div><div class="ttdeci">~ConeCreator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,10 +1,9 @@
-\hypertarget{a00134}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\+Color.hpp File Reference}
-\label{a00134}\index{/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp@{/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp}}
-{\ttfamily \#include $<$mutex$>$}\newline
-{\ttfamily \#include $<$ostream$>$}\newline
-{\ttfamily \#include $<$SFML/\+Graphics/\+Color.\+hpp$>$}\newline
+\hypertarget{a00134}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\+IFilter\+Factory.hpp File Reference}
+\label{a00134}\index{/home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp@{/home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp}}
 {\ttfamily \#include \char`\"{}ISetting.\+hpp\char`\"{}}\newline
-Include dependency graph for Color.\+hpp\+:
+{\ttfamily \#include \char`\"{}ILogger.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IFilter.\+hpp\char`\"{}}\newline
+Include dependency graph for IFilter\+Factory.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -17,32 +16,32 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{a00136}
+\includegraphics[width=287pt]{a00136}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01341}{Ray\+Tracer\+::\+Images\+::\+Color}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01341}{Color}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01335}{Ray\+Tracer\+::\+Factories\+::\+IFilter\+Factory}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01327}{Filter\+Factory}} (singleton factory) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00381}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00399}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00387}{Ray\+Tracer\+::\+Images}}
+ \mbox{\hyperlink{a00403}{Ray\+Tracer\+::\+Factories}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::ostream \& \mbox{\hyperlink{a00134_a892349ff4da33acc2d79e3c5c7585374}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{a01341}{Ray\+Tracer\+::\+Images\+::\+Color}} \&color)
+\mbox{\hyperlink{a01335}{Ray\+Tracer\+::\+Factories\+::\+IFilter\+Factory}} $\ast$ \mbox{\hyperlink{a00134_acec3911c130ba3937e3a2a2a34177fdc}{get\+Filter\+Factory\+Instance}} (void)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{a00134_a892349ff4da33acc2d79e3c5c7585374}\label{a00134_a892349ff4da33acc2d79e3c5c7585374}} 
-\index{Color.hpp@{Color.hpp}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!Color.hpp@{Color.hpp}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{a01341}{Ray\+Tracer\+::\+Images\+::\+Color}} \&}]{color }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00134_acec3911c130ba3937e3a2a2a34177fdc}\label{a00134_acec3911c130ba3937e3a2a2a34177fdc}} 
+\index{IFilterFactory.hpp@{IFilterFactory.hpp}!getFilterFactoryInstance@{getFilterFactoryInstance}}
+\index{getFilterFactoryInstance@{getFilterFactoryInstance}!IFilterFactory.hpp@{IFilterFactory.hpp}}
+\doxysubsubsection{\texorpdfstring{getFilterFactoryInstance()}{getFilterFactoryInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01335}{Ray\+Tracer\+::\+Factories\+::\+IFilter\+Factory}}$\ast$ get\+Filter\+Factory\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 

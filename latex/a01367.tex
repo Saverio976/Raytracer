@@ -1,0 +1,168 @@
+\hypertarget{a01367}{}\doxysection{Ray\+Tracer\+::Images\+::Image\+::Pixel\+Line Class Reference}
+\label{a01367}\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+
+
+\mbox{\hyperlink{a01367}{Pixel\+Line}} class.  
+
+
+
+
+{\ttfamily \#include $<$Image.\+hpp$>$}
+
+
+
+Collaboration diagram for Ray\+Tracer\+::Images\+::Image\+::Pixel\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01365}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01367_ae95c5bb4be5a498787ec2b3877b85931}{Pixel\+Line}} (const \mbox{\hyperlink{a01315}{Entities\+::\+Transform\+::\+Vector2i}} \&size, const std\+::size\+\_\+t \&y, std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \&pixels)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01367}{Pixel\+Line}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01367_a99bfe6065f079955ffc5dfd389b94fe4}{Pixel\+Line}} (const \mbox{\hyperlink{a01315}{Entities\+::\+Transform\+::\+Vector2i}} \&size, const std\+::size\+\_\+t \&y, const std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \&pixels)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01367}{Pixel\+Line}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01359}{Color}} \& \mbox{\hyperlink{a01367_ae7fd570c58f5f57bbf2df8019b667194}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t x) const
+\begin{DoxyCompactList}\small\item\em Get the color (const) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01359}{Color}} \& \mbox{\hyperlink{a01367_a48974fbf463d7310b3f5b46ffaced9c4}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a01315}{Entities\+::\+Transform\+::\+Vector2i}} \& \mbox{\hyperlink{a01367_a35439fc0053a10798a5a2d20e62528c7}{\+\_\+size}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \mbox{\hyperlink{a01367_a2b1f14680e3c73017417af23027e7dd7}{\+\_\+colors}}
+\item 
+const std\+::size\+\_\+t \mbox{\hyperlink{a01367_a497ddd4f14bde03ab79bb52a0b0b1e0c}{\+\_\+y}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \& \mbox{\hyperlink{a01367_ab2563af3ec9bf70ee656aab2c6af7e1e}{\+\_\+pixels}}
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \& \mbox{\hyperlink{a01367_a9eeb935b92f228681cad06a05e12578e}{\+\_\+pixels\+Const}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{a01367}{Pixel\+Line}} class. 
+
+class that represent a \mbox{\hyperlink{a01367}{Pixel\+Line}} (the line of pixel at line {\ttfamily y}) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01367_ae95c5bb4be5a498787ec2b3877b85931}\label{a01367_ae95c5bb4be5a498787ec2b3877b85931}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!PixelLine@{PixelLine}}
+\index{PixelLine@{PixelLine}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{PixelLine()}{PixelLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+Pixel\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01315}{Entities\+::\+Transform\+::\+Vector2i}} \&}]{size,  }\item[{const std\+::size\+\_\+t \&}]{y,  }\item[{std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \&}]{pixels }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01367}{Pixel\+Line}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the size \\
+\hline
+{\em y} & the y \\
+\hline
+{\em pixels} & the orginal pixels \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01367_a99bfe6065f079955ffc5dfd389b94fe4}\label{a01367_a99bfe6065f079955ffc5dfd389b94fe4}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!PixelLine@{PixelLine}}
+\index{PixelLine@{PixelLine}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{PixelLine()}{PixelLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+Pixel\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01315}{Entities\+::\+Transform\+::\+Vector2i}} \&}]{size,  }\item[{const std\+::size\+\_\+t \&}]{y,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{a01359}{Color}} $>$ \&}]{pixels }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01367}{Pixel\+Line}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the size \\
+\hline
+{\em y} & the y \\
+\hline
+{\em pixels} & the orginal pixels (const) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01367_a48974fbf463d7310b3f5b46ffaced9c4}\label{a01367_a48974fbf463d7310b3f5b46ffaced9c4}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01359}{Color}}\& Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+
+
+Get the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01367_ae7fd570c58f5f57bbf2df8019b667194}\label{a01367_ae7fd570c58f5f57bbf2df8019b667194}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01359}{Color}}\& Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Get the color (const) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01367_a2b1f14680e3c73017417af23027e7dd7}\label{a01367_a2b1f14680e3c73017417af23027e7dd7}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!\_colors@{\_colors}}
+\index{\_colors@{\_colors}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{\_colors}{\_colors}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01359}{Color}}$>$ Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01367_ab2563af3ec9bf70ee656aab2c6af7e1e}\label{a01367_ab2563af3ec9bf70ee656aab2c6af7e1e}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!\_pixels@{\_pixels}}
+\index{\_pixels@{\_pixels}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{\_pixels}{\_pixels}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01359}{Color}}$>$\& Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+\_\+pixels\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01367_a9eeb935b92f228681cad06a05e12578e}\label{a01367_a9eeb935b92f228681cad06a05e12578e}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!\_pixelsConst@{\_pixelsConst}}
+\index{\_pixelsConst@{\_pixelsConst}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{\_pixelsConst}{\_pixelsConst}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{a01359}{Color}}$>$\& Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+\_\+pixels\+Const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01367_a35439fc0053a10798a5a2d20e62528c7}\label{a01367_a35439fc0053a10798a5a2d20e62528c7}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!\_size@{\_size}}
+\index{\_size@{\_size}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01315}{Entities\+::\+Transform\+::\+Vector2i}}\& Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01367_a497ddd4f14bde03ab79bb52a0b0b1e0c}\label{a01367_a497ddd4f14bde03ab79bb52a0b0b1e0c}} 
+\index{RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}!\_y@{\_y}}
+\index{\_y@{\_y}!RayTracer::Images::Image::PixelLine@{RayTracer::Images::Image::PixelLine}}
+\doxysubsubsection{\texorpdfstring{\_y}{\_y}}
+{\footnotesize\ttfamily const std\+::size\+\_\+t Ray\+Tracer\+::\+Images\+::\+Image\+::\+Pixel\+Line\+::\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\mbox{\hyperlink{a00155}{Image.\+hpp}}\end{DoxyCompactItemize}

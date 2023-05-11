@@ -1,15 +1,24 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00239" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Creator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Creator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;future&gt;
+#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;IFilter.hpp&quot;
-#include &quot;IFilterCreator.hpp&quot;
+#include &lt;mutex&gt;
+#include &lt;thread&gt;
+#include &lt;functional&gt;
 #include &quot;ILogger.hpp&quot;
 #include &quot;ISetting.hpp&quot;
-#include &quot;SSAAx4Filter.hpp&quot;
-</programlisting>Include dependency graph for SSAAx4Creator.hpp:<para>
+#include &quot;Image.hpp&quot;
+#include &quot;ICamera.hpp&quot;
+#include &quot;ILight.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
+#include &quot;SceneState.hpp&quot;
+#include &quot;Displayable.hpp&quot;
+#include &quot;EntityFactory.hpp&quot;
+</programlisting>Include dependency graph for Scene.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -18,23 +27,30 @@
         </mediaobject>
     </informalfigure>
 </para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00241.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01537">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator</link></para>
+            <listitem><para>class <link linkend="_a01519">RayTracer::Scenes::Scene</link></para>
+
+<para>The <link linkend="_a01519">Scene</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00381">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00393">RayTracer::PluginsExt</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00395">RayTracer::PluginsExt::AntiAliasing</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00396">RayTracer::PluginsExt::AntiAliasing::SSAAx4</link></para>
+            <listitem><para> <link linkend="_a00410">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

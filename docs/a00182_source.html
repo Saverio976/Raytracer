@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/IFilterCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,54 +62,36 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_94f36a39fb90e1f2b0528819abd4baaf.html">Filters</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">IFilterCreator.hpp</div>  </div>
+<div class="title">Api.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00182.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IFilterCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Api.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IFILTERCREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IFILTERCREATOR_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00390.html">RayTracer::Plugins::Filters</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01425.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01425.html">IFilterCreator</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01425.html#ab5c1f23072e4c526505de148c36d4ec5">   23</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01425.html#ab5c1f23072e4c526505de148c36d4ec5">~IFilterCreator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01425.html#af72d84e7508e57e56fef9f48753f571f">   31</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01333.html">RayTracer::Filters::IFilter</a> *<a class="code" href="a01425.html#af72d84e7508e57e56fef9f48753f571f">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01337.html">ILogger</a> &amp;logger) = 0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef API_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define API_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a00182.html#a6c4bc04f8b3ed3e6ca1a056499438ab3">   24</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="a00182.html#a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00182.html#adb15eac6ad612e5de35b2bf82f199739">   30</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00182.html#adb15eac6ad612e5de35b2bf82f199739">deleteCreator</a>(<span class="keywordtype">void</span> *creator);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*IFILTERCREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00390_html"><div class="ttname"><a href="a00390.html">RayTracer::Plugins::Filters</a></div><div class="ttdef"><b>Definition:</b> FilterHandler.hpp:18</div></div>
-<div class="ttc" id="aa01333_html"><div class="ttname"><a href="a01333.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01425_html"><div class="ttname"><a href="a01425.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
-<div class="ttc" id="aa01425_html_ab5c1f23072e4c526505de148c36d4ec5"><div class="ttname"><a href="a01425.html#ab5c1f23072e4c526505de148c36d4ec5">RayTracer::Plugins::Filters::IFilterCreator::~IFilterCreator</a></div><div class="ttdeci">virtual ~IFilterCreator()=default</div></div>
-<div class="ttc" id="aa01425_html_af72d84e7508e57e56fef9f48753f571f"><div class="ttname"><a href="a01425.html#af72d84e7508e57e56fef9f48753f571f">RayTracer::Plugins::Filters::IFilterCreator::create</a></div><div class="ttdeci">virtual RayTracer::Filters::IFilter * create(const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Create a filter with a setting.</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00182_html_a6c4bc04f8b3ed3e6ca1a056499438ab3"><div class="ttname"><a href="a00182.html#a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator</a></div><div class="ttdeci">void * getCreator(void)</div><div class="ttdoc">Get the creator.</div></div>
+<div class="ttc" id="aa00182_html_adb15eac6ad612e5de35b2bf82f199739"><div class="ttname"><a href="a00182.html#adb15eac6ad612e5de35b2bf82f199739">deleteCreator</a></div><div class="ttdeci">void deleteCreator(void *creator)</div><div class="ttdoc">Delete the creator (created with the getCreator() method)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

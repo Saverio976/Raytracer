@@ -1,17 +1,11 @@
-\hypertarget{a00224}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\+Scene\+Loader.hpp File Reference}
-\label{a00224}\index{/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp@{/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp}}
-{\ttfamily \#include $<$exception$>$}\newline
+\hypertarget{a00224}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\+Displayable.hpp File Reference}
+\label{a00224}\index{/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp@{/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp}}
 {\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$functional$>$}\newline
-{\ttfamily \#include $<$map$>$}\newline
-{\ttfamily \#include $<$fstream$>$}\newline
-{\ttfamily \#include $<$filesystem$>$}\newline
-{\ttfamily \#include \char`\"{}Filter\+Loader.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Entity\+Loader.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Material\+Loader.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Config\+Wrapper.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ILogger.\+hpp\char`\"{}}\newline
-Include dependency graph for Scene\+Loader.\+hpp\+:
+{\ttfamily \#include \char`\"{}IDisplayable.\+hpp\char`\"{}}\newline
+Include dependency graph for Displayable.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -24,20 +18,22 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=287pt]{a00226}
+\includegraphics[width=350pt]{a00226}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01505}{Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01505}{Scene\+Loader}} class. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{a01509}{Ray\+Tracer\+::\+Scenes\+::\+Scene\+Loader\+::\+Bad\+File\+Error}}
-\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01483}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01483}{Displayable}} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01487}{Ray\+Tracer\+::\+Scenes\+::\+Displayable\+::\+Displayable\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the key is not found \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00381}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00399}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00392}{Ray\+Tracer\+::\+Scenes}}
+ \mbox{\hyperlink{a00401}{Ray\+Tracer\+::\+Entities}}
+\item 
+ \mbox{\hyperlink{a00410}{Ray\+Tracer\+::\+Scenes}}
 \end{DoxyCompactItemize}

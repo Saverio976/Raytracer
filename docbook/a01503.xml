@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01503" xml:lang="en-US">
+<title>RayTracer::Scenes::ISceneState Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01531">SceneState</link> interface. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ISceneState.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::ISceneState:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01502.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::ISceneState:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01501.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum class <link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6">States</link> { 
+<link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RUNNING</link>
+, 
+<link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">CANCELLED</link>
+, 
+<link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">FINISHED</link>
+ }</para>
+
+<para>The States. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6">States</link> <link linkend="_a01503_1a2987cac49fef7a48b80aa2d1e4aa84da">getState</link> () const =0</para>
+
+<para>Get the state (thread safe) </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01503_1a9794d2a8b28b9753686931e78d5e315c">changeState</link> (const <link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6">States</link> &amp;state)=0</para>
+
+<para>Change the state (thread safe) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01531">SceneState</link> interface. </para>
+
+
+
+<para>class that represent a scene state (to know if the scene is running or not) (or if the scene render need to be cancelled) </para>
+</section>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_a01503_1a3abb46616bc66e9744ad0bed1635afe6"/>    <section>
+    <title>States</title>
+<indexterm><primary>States</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>States</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6">RayTracer::Scenes::ISceneState::States</link><computeroutput>[strong]</computeroutput></computeroutput></para><para>
+
+<para>The States. </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>RUNNING</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>RUNNING</secondary></indexterm>
+<anchor xml:id="_a01503_1a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd"/>RUNNING</entry><entry></entry></row><row><entry><indexterm><primary>CANCELLED</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>CANCELLED</secondary></indexterm>
+<anchor xml:id="_a01503_1a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"/>CANCELLED</entry><entry></entry></row><row><entry><indexterm><primary>FINISHED</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>FINISHED</secondary></indexterm>
+<anchor xml:id="_a01503_1a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133"/>FINISHED</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01503_1a9794d2a8b28b9753686931e78d5e315c"/>    <section>
+    <title>changeState()</title>
+<indexterm><primary>changeState</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>changeState</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::ISceneState::changeState (const <link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6">States</link> &amp; state)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Change the state (thread safe) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>state</entry>
+                                <entry>
+<para>the state </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01531_1ab88b04dafcbca0baedc27fbdc3d4c61e">RayTracer::Scenes::SceneState</link>.</para>
+    </section><anchor xml:id="_a01503_1a2987cac49fef7a48b80aa2d1e4aa84da"/>    <section>
+    <title>getState()</title>
+<indexterm><primary>getState</primary><secondary>RayTracer::Scenes::ISceneState</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::ISceneState</primary><secondary>getState</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01503_1a3abb46616bc66e9744ad0bed1635afe6">States</link> RayTracer::Scenes::ISceneState::getState ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the state (thread safe) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the state </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01531_1a653dac2bab1fce46419d0c3f11b56430">RayTracer::Scenes::SceneState</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00233">ISceneState.hpp</link></section>
+</section>

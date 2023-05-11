@@ -20,16 +20,45 @@ L\textquotesingle{}objectif est de réaliser un \href{https://fr.wikipedia.org/w
 \hypertarget{index_autotoc_md2}{}\doxysection{Usage}\label{index_autotoc_md2}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{USAGE: ./raytracer -\/-\/scene-\/path <scene-\/conf.yaax> -\/-\/output-\/path <file> [-\/-\/log-\/level <int>]}
-\DoxyCodeLine{USAGE: ./raytracer -\/-\/help}
+\DoxyCodeLine{                                        ,-\/-\/-\/-\/,}
+\DoxyCodeLine{                                      ,/   .`|}
+\DoxyCodeLine{,-\/.-\/-\/-\/-\/.                            ,`   .'  :}
+\DoxyCodeLine{\(\backslash\)    /  \(\backslash\)                         ;    ;     /}
+\DoxyCodeLine{;   :    \(\backslash\)                      .'\_\_\_,/    ,' \_\_  ,-\/.                                \_\_  ,-\/.}
+\DoxyCodeLine{|   | .\(\backslash\) :                      |    :     |,' ,'/ /|                              ,' ,'/ /|}
+\DoxyCodeLine{.   : |: |   ,-\/-\/.-\/-\/.        .-\/-\/,;    |.';  ;'  | |' | ,-\/-\/.-\/-\/.     ,-\/-\/-\/.     ,-\/-\/-\/.  '  | |' |}
+\DoxyCodeLine{|   |  \(\backslash\) :  /       \(\backslash\)     /\_ ./|`-\/-\/-\/-\/'  |  ||  |   ,'/       \(\backslash\)   /     \(\backslash\)   /     \(\backslash\) |  |   ,'}
+\DoxyCodeLine{|   : .  / .-\/-\/.  .-\/. | , ' , ' :    '   :  ;'  :  / .-\/-\/.  .-\/. | /    / '  /    /  |'  :  /}
+\DoxyCodeLine{;   | |  \(\backslash\)  \(\backslash\)\_\_\(\backslash\)/: . ./\_\_\_/ \(\backslash\): |    |   |  '|  | '   \(\backslash\)\_\_\(\backslash\)/: . ..    ' /  .    ' / ||  | '}
+\DoxyCodeLine{|   | ;\(\backslash\)  \(\backslash\) ,"{} .-\/-\/.; | .  \(\backslash\)  ' |    '   :  |;  : |   ,"{} .-\/-\/.; |'   ; :\_\_ '   ;   /|;  : |}
+\DoxyCodeLine{:   ' | \(\backslash\).'/  /  ,.  |  \(\backslash\)  ;   :    ;   |.' |  , ;  /  /  ,.  |'   | '.'|'   |  / ||  , ;}
+\DoxyCodeLine{:   : :-\/' ;  :   .'   \(\backslash\)  \(\backslash\)  \(\backslash\)  ;    '-\/-\/-\/'    -\/-\/-\/'  ;  :   .'   \(\backslash\)   :    :|   :    | -\/-\/-\/'}
+\DoxyCodeLine{|   |.'   |  ,     .-\/./   :  \(\backslash\)  \(\backslash\)                  |  ,     .-\/./\(\backslash\)   \(\backslash\)  /  \(\backslash\)   \(\backslash\)  /}
+\DoxyCodeLine{`-\/-\/-\/'      `-\/-\/`-\/-\/-\/'        \(\backslash\)  ' ;                   `-\/-\/`-\/-\/-\/'     `-\/-\/-\/-\/'    `-\/-\/-\/-\/'}
+\DoxyCodeLine{                            `-\/-\/`}
+\DoxyCodeLine{\_\_USAGE\_\_:}
+\DoxyCodeLine{    ./raytracer -\/-\/scene-\/path <scene-\/conf.yaax> -\/-\/output-\/path <file> [-\/-\/log-\/level <int>] [-\/-\/gui] [-\/-\/font-\/path <font file>]}
+\DoxyCodeLine{    ./raytracer -\/-\/help}
 \DoxyCodeLine{}
-\DoxyCodeLine{OPTIONS:}
-\DoxyCodeLine{    -\/-\/scene-\/path <scene-\/conf.yaax>  path to scene config}
-\DoxyCodeLine{    -\/-\/output-\/path <file>    path to output file (dont put .ppm or any extension, it is just a base file path)}
-\DoxyCodeLine{    -\/-\/help  to display the help message}
-\DoxyCodeLine{    -\/-\/log-\/level <int>   log level can be \{-\/1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace\} [3 by default]}
+\DoxyCodeLine{\_\_OPTIONS\_\_:}
+\DoxyCodeLine{    -\/-\/scene-\/path <scene-\/conf.yaax> path to scene config}
+\DoxyCodeLine{    -\/-\/output-\/path <file>           path to output file (dont put .ppm or any extension, it is just a base file path)}
+\DoxyCodeLine{    -\/-\/help                         to display the help message}
+\DoxyCodeLine{    -\/-\/log-\/level <int>              log level can be \{-\/1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace\} [3 by default]}
+\DoxyCodeLine{    -\/-\/gui                          to display the images in GUI mode}
+\DoxyCodeLine{    -\/-\/font-\/path <font file>        path to font file [./Assets/arial.ttf by default]}
 \DoxyCodeLine{}
-\DoxyCodeLine{CREDITS:}
+\DoxyCodeLine{\_\_IN WINDOW\_\_:}
+\DoxyCodeLine{    Z                              : go forward to exit}
+\DoxyCodeLine{    Q                              : go left}
+\DoxyCodeLine{    S                              : go backward to exit}
+\DoxyCodeLine{    D                              : go right}
+\DoxyCodeLine{    Space                          : go up}
+\DoxyCodeLine{    Left Shift                     : go down}
+\DoxyCodeLine{    Left Arrow                     : go previous camera}
+\DoxyCodeLine{    Right Arrow                    : go next camera}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_CREDITS\_\_:}
 \DoxyCodeLine{    Authors: Y A A X}
 \DoxyCodeLine{    Repository: https://github.com/Saverio976/Raytracer}
 
@@ -45,6 +74,16 @@ les primitives sont\+:
 \item \href{\#Cone-Limit\%C3\%A9}{\texttt{ Cone-\/\+Limité}}
 \item \href{\#Cylindre}{\texttt{ Cylindre}}
 \item \href{\#Cylindre-Limit\%C3\%A9}{\texttt{ Cylindre-\/\+Limité}}
+\item \href{\#Torus}{\texttt{ Torus}}
+\item \href{\#Triangle}{\texttt{ Triangle}}
+\end{DoxyItemize}
+
+les materiaux sont\+:
+\begin{DoxyItemize}
+\item \href{\#PlainMaterial}{\texttt{ Plain\+Material}}
+\item \href{\#ChessBoardMaterial}{\texttt{ Chess\+Board\+Material}}
+\item \href{\#ZebraMaterial}{\texttt{ Zebra\+Material}}
+\item \href{\#TransparencyMaterial}{\texttt{ Transparency\+Material}}
 \end{DoxyItemize}
 
 les lumières sont\+:
@@ -1155,7 +1194,772 @@ afficher ...
 \end{DoxyCode}
 
 
-$<$/details$>$\hypertarget{index_autotoc_md12}{}\doxysubsection{Ambient\+Light}\label{index_autotoc_md12}
+$<$/details$>$\hypertarget{index_autotoc_md12}{}\doxysubsection{Torus}\label{index_autotoc_md12}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{torus1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# torus.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# l'echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# la rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# list of torus}
+\DoxyCodeLine{    Torus = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            minRadius = 50.0;}
+\DoxyCodeLine{            maxRadius = 120.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position du torus}
+\DoxyCodeLine{                position = \{x = 0.0; y = 30.0; z = 0.0;\};}
+\DoxyCodeLine{                \# x: agrandis/diminus l'angle maxradius}
+\DoxyCodeLine{                \# y: agrandis/diminus l'angle minradius}
+\DoxyCodeLine{                \# z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# x/y/z: mettre 0.0 (la rotation n'est pas suportée)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# utilisation du matériau}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# couleur du torus}
+\DoxyCodeLine{                color = \{r = 50.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# première lampe de type pointlight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# x: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# première lampe de type ambientlight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# x: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# y/z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md13}{}\doxysubsection{Triangle}\label{index_autotoc_md13}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{triangle1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# triangle.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# l'echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# la rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxthreads = -\/1;}
+\DoxyCodeLine{            \# filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# list of triangle}
+\DoxyCodeLine{    Triangle = (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Premier point du triangle}
+\DoxyCodeLine{            pointOne = \{x = 0.0; y = 100.0; z = 200.0;\};}
+\DoxyCodeLine{            \# Second point du triangle}
+\DoxyCodeLine{            pointTwo = \{x = 40.0; y = 100.0; z = 0.0;\};}
+\DoxyCodeLine{            \# Troisième point du triangle}
+\DoxyCodeLine{            pointThree = \{x = -\/40.0; y = 100.0; z = 0.0;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 20.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Utilisation du matériau}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0;\};}
+\DoxyCodeLine{                \# Couleur du triangle}
+\DoxyCodeLine{                color = \{r = 0.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# première lampe de type pointlight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# x: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# première lampe de type ambientlight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# x: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# y/z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md14}{}\doxysubsection{Plain\+Material}\label{index_autotoc_md14}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{plainmaterial1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# plainmaterial.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \# notre sphere est configuré ici}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la sphere}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la sphere}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur de la sphere}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisation de la couche de la sphere}
+\DoxyCodeLine{                type = "{}PlainMaterial"{};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md15}{}\doxysubsection{Chess\+Board\+Material}\label{index_autotoc_md15}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{chessboardmaterial1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# chessboardmaterial.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \# notre sphere est configuré ici}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la sphere}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la sphere}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Utilisation de la couche de la sphere}
+\DoxyCodeLine{                type = "{}ChessBoardMaterial"{};}
+\DoxyCodeLine{                \# taille des cases}
+\DoxyCodeLine{                size = 10.0;}
+\DoxyCodeLine{                \# Couleur des cases impairs}
+\DoxyCodeLine{                impair = \{r = 255.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Couleur des cases pairs}
+\DoxyCodeLine{                pair = \{r = 0.0; g = 0.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md16}{}\doxysubsection{Zebra\+Material}\label{index_autotoc_md16}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{zebramaterial1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# zebramaterial.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \# notre sphere est configuré ici}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la sphere}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la sphere}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Utilisation de la couche de la sphere}
+\DoxyCodeLine{                type = "{}ZebraMaterial"{};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Taille d'une bande de rayure du zèbre}
+\DoxyCodeLine{                size = 10.0;}
+\DoxyCodeLine{                \# Couleur impair}
+\DoxyCodeLine{                impair = \{r = 255.0; g = 255.0; b = 255.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Couleur pair}
+\DoxyCodeLine{                pair = \{r = 0.0; g = 0.0; b = 0.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md17}{}\doxysubsection{Transparency\+Material}\label{index_autotoc_md17}
+
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{transparencymaterial1-basic.png}%image
+\end{DoxyInlineImage}
+
+
+$<$details$>$
+
+afficher ... 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# transpacparencymaterial.yaax}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration des cameras}
+\DoxyCodeLine{cameras:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Camera par defaut (la plus simple d'utilisation)}
+\DoxyCodeLine{    Camera: (}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille de l'image (de l'écran) (en pixels)}
+\DoxyCodeLine{            size = \{x: 500; y = 500;\};}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de l'écran}
+\DoxyCodeLine{                position = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# L'Echelle n'est pas suportée}
+\DoxyCodeLine{                scale = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# La rotation n'est pas suportée}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Distance de la caméra par rapport à l'écran}
+\DoxyCodeLine{            focal = 200.0;}
+\DoxyCodeLine{            \# Nombre de pixel d'éxécution en parallelle (-\/1 laisse la caméra sélectionner le maximum possible)}
+\DoxyCodeLine{            maxThreads = -\/1;}
+\DoxyCodeLine{            \# Filtres (étape après la génération de l'image)}
+\DoxyCodeLine{            filters = \{\};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Les objets de la scene}
+\DoxyCodeLine{primitives :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Liste des spheres}
+\DoxyCodeLine{    Sphere = (}
+\DoxyCodeLine{        \# notre sphere est configuré ici}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \# Taille du rayon}
+\DoxyCodeLine{            radius = 100.0;}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la sphere}
+\DoxyCodeLine{                position = \{x = -\/150.0; y = 150.0; z = 50.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la sphere}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            material = \{}
+\DoxyCodeLine{                \# Utilisation de la couche de la sphere}
+\DoxyCodeLine{                type = "{}TransparencyMaterial"{};}
+\DoxyCodeLine{                \# Taux de reflet de la lumière}
+\DoxyCodeLine{                shininess = 1.0;}
+\DoxyCodeLine{                \# Couleur de la sphere}
+\DoxyCodeLine{                color = \{r = 68.0; g = 171.0; b = 128.0; a = 255.0;\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)}
+\DoxyCodeLine{                ambient = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                diffuse = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)}
+\DoxyCodeLine{                specular = \{x = 1.0; y = 1.0; z = 1.0\};}
+\DoxyCodeLine{                \# pourcentage de transparance}
+\DoxyCodeLine{                \# entre 0 et 255}
+\DoxyCodeLine{                \# 0: totalement transparent}
+\DoxyCodeLine{                \# 255: totalement opaque}
+\DoxyCodeLine{                transparency = 150.0;}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{        \},}
+\DoxyCodeLine{    )}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Configuration de la lumière}
+\DoxyCodeLine{lights :}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \# Point de lumière (une lampe par example)}
+\DoxyCodeLine{    PointLight = (}
+\DoxyCodeLine{        \# Première lampe de type PointLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus le rayon de la lampe}
+\DoxyCodeLine{                \# Y: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 1.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 255.0; g = 126.0; b = 300.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{            \# Rayon du chants d'actions de la lumière (au-\/delà la lumière n'éclair pas)}
+\DoxyCodeLine{            radius = 500.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{    AmbientLight = (}
+\DoxyCodeLine{        \# Première lampe de type AmbientLight}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            transform = \{}
+\DoxyCodeLine{                \# Position de la lampe}
+\DoxyCodeLine{                position = \{x = 150.0; y = 0.0; z = 100.0;\};}
+\DoxyCodeLine{                \# X: agrandis/diminus la puissance de la lampe}
+\DoxyCodeLine{                \# Y/Z: mettre 0.0}
+\DoxyCodeLine{                scale = \{x = 1.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{                \# X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)}
+\DoxyCodeLine{                rotation = \{x = 0.0; y = 0.0; z = 0.0;\};}
+\DoxyCodeLine{            \};}
+\DoxyCodeLine{            \# Couleur de la lampe}
+\DoxyCodeLine{            color = \{r = 50.0; g = 50.0; b = 50.0; a = 255.0;\};}
+\DoxyCodeLine{            \# Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)}
+\DoxyCodeLine{            power = 1.0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    );}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+$<$/details$>$\hypertarget{index_autotoc_md18}{}\doxysubsection{Ambient\+Light}\label{index_autotoc_md18}
 
 \begin{DoxyInlineImage}
 \includegraphics[height=\baselineskip,keepaspectratio=true]{ambientlight1-basic.png}%image
@@ -1334,7 +2138,7 @@ afficher ...
 \end{DoxyCode}
 
 
-$<$/details$>$\hypertarget{index_autotoc_md13}{}\doxysubsection{Point\+Light}\label{index_autotoc_md13}
+$<$/details$>$\hypertarget{index_autotoc_md19}{}\doxysubsection{Point\+Light}\label{index_autotoc_md19}
 
 \begin{DoxyInlineImage}
 \includegraphics[height=\baselineskip,keepaspectratio=true]{pointlight1-basic.png}%image
@@ -1515,7 +2319,7 @@ afficher ...
 \end{DoxyCode}
 
 
-$<$/details$>$\hypertarget{index_autotoc_md14}{}\doxysubsection{Spot\+Light}\label{index_autotoc_md14}
+$<$/details$>$\hypertarget{index_autotoc_md20}{}\doxysubsection{Spot\+Light}\label{index_autotoc_md20}
 
 \begin{DoxyInlineImage}
 \includegraphics[height=\baselineskip,keepaspectratio=true]{spotlight1-basic.png}%image
@@ -1691,8 +2495,8 @@ afficher ...
 \end{DoxyCode}
 
 
-$<$/details$>$\hypertarget{index_autotoc_md15}{}\doxysubsection{Camera}\label{index_autotoc_md15}
-Regarder la documentation pour les primitives, elle explique déjà bien le principe\hypertarget{index_autotoc_md16}{}\doxysubsection{Camera\+Cluster}\label{index_autotoc_md16}
+$<$/details$>$\hypertarget{index_autotoc_md21}{}\doxysubsection{Camera}\label{index_autotoc_md21}
+Regarder la documentation pour les primitives, elle explique déjà bien le principe\hypertarget{index_autotoc_md22}{}\doxysubsection{Camera\+Cluster}\label{index_autotoc_md22}
 
 \begin{DoxyInlineImage}
 \includegraphics[height=\baselineskip,keepaspectratio=true]{camera-cluster1.png}%cluster1
@@ -2281,7 +3085,7 @@ afficher ...
 \end{DoxyCode}
 
 
-$<$/details$>$\hypertarget{index_autotoc_md17}{}\doxysubsection{SSAAx4}\label{index_autotoc_md17}
+$<$/details$>$\hypertarget{index_autotoc_md23}{}\doxysubsection{SSAAx4}\label{index_autotoc_md23}
 
 \begin{DoxyInlineImage}
 \includegraphics[height=\baselineskip,keepaspectratio=true]{ssaax4-basic.png}%image

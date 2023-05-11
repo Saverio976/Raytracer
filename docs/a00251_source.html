@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,59 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_62f615b43676db5ddd87f008b4cc30b3.html">Camera</a></li><li class="navelem"><a class="el" href="dir_36f7b4cf007e3ad8108b966aa19e811a.html">Basic</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_23797dfc4efa85139749bce11a446eac.html">AmbientLight</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">CameraCreator.hpp</div>  </div>
+<div class="title">AmbientLightCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00251.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** CameraCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** AmbientLightCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CAMERACREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define CAMERACREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef AMBIENTLIGHTCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define AMBIENTLIGHTCREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00173.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00254.html">CameraEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00191.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00254.html">AmbientLightEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00398.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00398.html">RayTracer::PluginsExt::Camera</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01553.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01553.html">CameraCreator</a> : <span class="keyword">public</span> <a class="code" href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00411.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00412.html">RayTracer::PluginsExt::AmbientLight</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01547.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01547.html">AmbientLightCreator</a> : <span class="keyword">public</span> <a class="code" href="a01431.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01553.html#a5580533a0d4cf145261fd3d725818158">   20</a></span>&#160;            <a class="code" href="a01553.html#a5580533a0d4cf145261fd3d725818158">~CameraCreator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01553.html#a4ab55121e18bbbaf17bcb6abd4e33eea">   21</a></span>&#160;            <a class="code" href="a01273.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01553.html#a4ab55121e18bbbaf17bcb6abd4e33eea">create</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01337.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01547.html#aa3434640b1d3ffc4d5ab2b050e004b35">   20</a></span>&#160;            <a class="code" href="a01291.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01547.html#aa3434640b1d3ffc4d5ab2b050e004b35">create</a>(<span class="keyword">const</span> <a class="code" href="a01507.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01355.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01547.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">   21</a></span>&#160;            <a class="code" href="a01547.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">~AmbientLightCreator</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01553.html#af15c7348f22dae25cb3a3b98a3f51695">   25</a></span>&#160;            std::vector&lt;CameraEntity *&gt; <a class="code" href="a01553.html#af15c7348f22dae25cb3a3b98a3f51695">_elements</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01547.html#aa8eff37de8a7cffef91529bc56fc95fd">   25</a></span>&#160;            std::vector&lt;AmbientLightEntity *&gt; <a class="code" href="a01547.html#aa8eff37de8a7cffef91529bc56fc95fd">_elements</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*CAMERACREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00254_html"><div class="ttname"><a href="a00254.html">CameraEntity.hpp</a></div></div>
-<div class="ttc" id="aa00398_html"><div class="ttname"><a href="a00398.html">RayTracer::PluginsExt::Camera</a></div><div class="ttdef"><b>Definition:</b> CameraCreator.hpp:17</div></div>
-<div class="ttc" id="aa01273_html"><div class="ttname"><a href="a01273.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01337_html"><div class="ttname"><a href="a01337.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01413_html"><div class="ttname"><a href="a01413.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01553_html"><div class="ttname"><a href="a01553.html">RayTracer::PluginsExt::Camera::CameraCreator</a></div><div class="ttdef"><b>Definition:</b> CameraCreator.hpp:18</div></div>
-<div class="ttc" id="aa01553_html_a4ab55121e18bbbaf17bcb6abd4e33eea"><div class="ttname"><a href="a01553.html#a4ab55121e18bbbaf17bcb6abd4e33eea">RayTracer::PluginsExt::Camera::CameraCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01553_html_a5580533a0d4cf145261fd3d725818158"><div class="ttname"><a href="a01553.html#a5580533a0d4cf145261fd3d725818158">RayTracer::PluginsExt::Camera::CameraCreator::~CameraCreator</a></div><div class="ttdeci">~CameraCreator()</div></div>
-<div class="ttc" id="aa01553_html_af15c7348f22dae25cb3a3b98a3f51695"><div class="ttname"><a href="a01553.html#af15c7348f22dae25cb3a3b98a3f51695">RayTracer::PluginsExt::Camera::CameraCreator::_elements</a></div><div class="ttdeci">std::vector&lt; CameraEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> CameraCreator.hpp:25</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMBIENTLIGHTCREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00191_html"><div class="ttname"><a href="a00191.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00254_html"><div class="ttname"><a href="a00254.html">AmbientLightEntity.hpp</a></div></div>
+<div class="ttc" id="aa00412_html"><div class="ttname"><a href="a00412.html">RayTracer::PluginsExt::AmbientLight</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:17</div></div>
+<div class="ttc" id="aa01291_html"><div class="ttname"><a href="a01291.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01431_html"><div class="ttname"><a href="a01431.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01507_html"><div class="ttname"><a href="a01507.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01547_html"><div class="ttname"><a href="a01547.html">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:18</div></div>
+<div class="ttc" id="aa01547_html_aa3434640b1d3ffc4d5ab2b050e004b35"><div class="ttname"><a href="a01547.html#aa3434640b1d3ffc4d5ab2b050e004b35">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01547_html_aa8eff37de8a7cffef91529bc56fc95fd"><div class="ttname"><a href="a01547.html#aa8eff37de8a7cffef91529bc56fc95fd">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::_elements</a></div><div class="ttdeci">std::vector&lt; AmbientLightEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:25</div></div>
+<div class="ttc" id="aa01547_html_ad721244d4e7a1f95b45ffa40a0ff6cf8"><div class="ttname"><a href="a01547.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::~AmbientLightCreator</a></div><div class="ttdeci">~AmbientLightCreator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

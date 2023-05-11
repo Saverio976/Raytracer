@@ -1,0 +1,190 @@
+\hypertarget{a01727}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Transparency\+::Transparency\+Material Class Reference}
+\label{a01727}\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+
+
+{\ttfamily \#include $<$Transparency\+Material.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Transparency\+::Transparency\+Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{a01726}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Transparency\+::Transparency\+Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01725}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01727_aaf5b7a766f22f66c7e3401dff31b3a1f}{Transparency\+Material}} (const \mbox{\hyperlink{a01507}{Scenes\+::\+ISetting}} \&config)
+\item 
+\mbox{\hyperlink{a01359}{Images\+::\+Color}} \mbox{\hyperlink{a01727_abccd38b6f11c2840a37bb1a29ca0ad8d}{get\+Color}} (const \mbox{\hyperlink{a01387}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01307}{Entities\+::\+Transform\+::\+ITransform}} \&center\+Obj, const \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect, const \mbox{\hyperlink{a01495}{Scenes\+::\+IDisplayable}} \&displayable) const final
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01727_a7e0ba0fb9b05afb7d958b873db082889}{set\+Color}} (const \mbox{\hyperlink{a01359}{Images\+::\+Color}} \&color) final
+\begin{DoxyCompactList}\small\item\em Set the color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01359}{Images\+::\+Color}} \mbox{\hyperlink{a01727_a51b71a32c3a4b1647e35544bbc188794}{redirection\+Light}} (const \mbox{\hyperlink{a01387}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01495}{Scenes\+::\+IDisplayable}} \&displayable, const \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect) const final
+\begin{DoxyCompactList}\small\item\em this function is called when the object intercept the ray light \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01359}{Images\+::\+Color}} \mbox{\hyperlink{a01727_aef4ac13d9c41649e4df3ed3791c7e877}{get\+Next\+Color}} (const \mbox{\hyperlink{a01387}{Images\+::\+Ray}} \&ray, const \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \&intersect, const \mbox{\hyperlink{a01495}{Scenes\+::\+IDisplayable}} \&displayable) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01359}{Images\+::\+Color}} \mbox{\hyperlink{a01727_ae84731f8f03e50f9a6db93c6994c77f9}{\+\_\+color}}
+\item 
+\mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01727_a0e5c16da4d565cdfd55b54aa735dc8dc}{\+\_\+ambient}}
+\item 
+\mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01727_af6f01df604a6460a9992bdcc275dd962}{\+\_\+diffuse}}
+\item 
+\mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01727_abd971cac57b21e0a7b3d3c253bfbabd1}{\+\_\+specular}}
+\item 
+double \mbox{\hyperlink{a01727_a2b90edaf20a33fbe93fab0f62bb40463}{\+\_\+shininess}}
+\item 
+double \mbox{\hyperlink{a01727_ae263867f19f44aaf3bcfd3bbee6b4931}{\+\_\+transparency}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01727_aaf5b7a766f22f66c7e3401dff31b3a1f}\label{a01727_aaf5b7a766f22f66c7e3401dff31b3a1f}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!TransparencyMaterial@{TransparencyMaterial}}
+\index{TransparencyMaterial@{TransparencyMaterial}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{TransparencyMaterial()}{TransparencyMaterial()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+Transparency\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01507}{Scenes\+::\+ISetting}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01727_abccd38b6f11c2840a37bb1a29ca0ad8d}\label{a01727_abccd38b6f11c2840a37bb1a29ca0ad8d}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01359}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::get\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01387}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01307}{Entities\+::\+Transform\+::\+ITransform}} \&}]{center\+Obj,  }\item[{const \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect,  }\item[{const \mbox{\hyperlink{a01495}{Scenes\+::\+IDisplayable}} \&}]{displayable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center\+Obj} & the center of the object impacted \\
+\hline
+{\em intersect} & the intersection point on the object \\
+\hline
+{\em displayable} & the displayable objects\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01299_ace27fcd7ec81aa60ff66fc944042b0cb}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}.
+
+\mbox{\Hypertarget{a01727_aef4ac13d9c41649e4df3ed3791c7e877}\label{a01727_aef4ac13d9c41649e4df3ed3791c7e877}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!getNextColor@{getNextColor}}
+\index{getNextColor@{getNextColor}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{getNextColor()}{getNextColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01359}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::get\+Next\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01387}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect,  }\item[{const \mbox{\hyperlink{a01495}{Scenes\+::\+IDisplayable}} \&}]{displayable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01727_a51b71a32c3a4b1647e35544bbc188794}\label{a01727_a51b71a32c3a4b1647e35544bbc188794}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!redirectionLight@{redirectionLight}}
+\index{redirectionLight@{redirectionLight}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{redirectionLight()}{redirectionLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01359}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::redirection\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01387}{Images\+::\+Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{a01495}{Scenes\+::\+IDisplayable}} \&}]{displayable,  }\item[{const \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{intersect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+this function is called when the object intercept the ray light 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray between the light and the object \\
+\hline
+{\em displayable} & the displayable \\
+\hline
+{\em intersect} & the intersection point between this point and the ray\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color of the shadow 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01299_afcb781871a3292f695efc25f38e6d3ff}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}.
+
+\mbox{\Hypertarget{a01727_a7e0ba0fb9b05afb7d958b873db082889}\label{a01727_a7e0ba0fb9b05afb7d958b873db082889}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!setColor@{setColor}}
+\index{setColor@{setColor}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01359}{Images\+::\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Set the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & the color \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01299_a1d980e34030a879414065a9993f428b4}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01727_a0e5c16da4d565cdfd55b54aa735dc8dc}\label{a01727_a0e5c16da4d565cdfd55b54aa735dc8dc}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!\_ambient@{\_ambient}}
+\index{\_ambient@{\_ambient}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{\_ambient}{\_ambient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01727_ae84731f8f03e50f9a6db93c6994c77f9}\label{a01727_ae84731f8f03e50f9a6db93c6994c77f9}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!\_color@{\_color}}
+\index{\_color@{\_color}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{\_color}{\_color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01359}{Images\+::\+Color}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+\_\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01727_af6f01df604a6460a9992bdcc275dd962}\label{a01727_af6f01df604a6460a9992bdcc275dd962}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!\_diffuse@{\_diffuse}}
+\index{\_diffuse@{\_diffuse}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{\_diffuse}{\_diffuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01727_a2b90edaf20a33fbe93fab0f62bb40463}\label{a01727_a2b90edaf20a33fbe93fab0f62bb40463}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!\_shininess@{\_shininess}}
+\index{\_shininess@{\_shininess}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{\_shininess}{\_shininess}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+\_\+shininess\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01727_abd971cac57b21e0a7b3d3c253bfbabd1}\label{a01727_abd971cac57b21e0a7b3d3c253bfbabd1}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!\_specular@{\_specular}}
+\index{\_specular@{\_specular}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{\_specular}{\_specular}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01319}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01727_ae263867f19f44aaf3bcfd3bbee6b4931}\label{a01727_ae263867f19f44aaf3bcfd3bbee6b4931}} 
+\index{RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}!\_transparency@{\_transparency}}
+\index{\_transparency@{\_transparency}!RayTracer::PluginsExt::Transparency::TransparencyMaterial@{RayTracer::PluginsExt::Transparency::TransparencyMaterial}}
+\doxysubsubsection{\texorpdfstring{\_transparency}{\_transparency}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Transparency\+::\+Transparency\+Material\+::\+\_\+transparency\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Transparency\+Material/\mbox{\hyperlink{a00380}{Transparency\+Material.\+hpp}}\end{DoxyCompactItemize}

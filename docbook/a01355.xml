@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01355" xml:lang="en-US">
+<title>RayTracer::ILogger Class Reference</title>
+<indexterm><primary>RayTracer::ILogger</primary></indexterm>
+<para>
+
+<para><link linkend="_a01399">Logger</link> singleton. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ILogger.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::ILogger:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01354.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::ILogger:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01353.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01355_1a6d0c91ce8c1b14bb2847e8904ff61494">~ILogger</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1a7e6ea7896672d93467650551e5cd0dfe">fatal</link> (const std::string &amp;message)=0</para>
+
+<para><link linkend="_a01399">Logger</link> fata. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1a90f646fcaf4d02c6af0faa7f5ce4e3c8">error</link> (const std::string &amp;message)=0</para>
+
+<para><link linkend="_a01399">Logger</link> error. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1a149883bba192133a5d8cede10ab705a3">warn</link> (const std::string &amp;message)=0</para>
+
+<para><link linkend="_a01399">Logger</link> warn. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1a13e2ae2a73b533040df4b36e20aba69f">info</link> (const std::string &amp;message)=0</para>
+
+<para><link linkend="_a01399">Logger</link> info. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1aaeb0984b17b04ad668bd22a0f6f43d1c">debug</link> (const std::string &amp;message)=0</para>
+
+<para><link linkend="_a01399">Logger</link> debug. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1acb05281ccd789116a6f5436748a0a20b">trace</link> (const std::string &amp;message)=0</para>
+
+<para><link linkend="_a01399">Logger</link> trace. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1aeb0c8e88981b890e17c5ef326dfe9c0f">subscribeCallback</link> (int type, const std::string &amp;name, std::function&lt; void(const std::string &amp;)&gt; callback)=0</para>
+
+<para><link linkend="_a01399">Logger</link> subscribe. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01355_1ad6defebd662f97f62bf233dfc21d4588">unsubscribeCallback</link> (int type, const std::string &amp;name)=0</para>
+
+<para><link linkend="_a01399">Logger</link> remove callback. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_a01399">Logger</link> singleton. </para>
+
+
+
+<para>LogLevel: -1 - no messages 0 - only <computeroutput>fatal</computeroutput> are displayed 1 - <computeroutput>error</computeroutput> and <computeroutput>fatal</computeroutput> are displayed 2 - <computeroutput>warn</computeroutput>, <computeroutput>error</computeroutput> and <computeroutput>fatal</computeroutput> are displayed 3 - <computeroutput>info</computeroutput>, <computeroutput>warn</computeroutput>, <computeroutput>error</computeroutput> and <computeroutput>fatal</computeroutput> are displayed 4 - <computeroutput>debug</computeroutput>, <computeroutput>info</computeroutput>, <computeroutput>warn</computeroutput>, <computeroutput>error</computeroutput> and <computeroutput>fatal</computeroutput> are displayed 5 - <computeroutput>trace</computeroutput>, <computeroutput>debug</computeroutput>, <computeroutput>info</computeroutput>, <computeroutput>warn</computeroutput>, <computeroutput>error</computeroutput> and <computeroutput>fatal</computeroutput> are displayed</para>
+
+<para>Attention: <computeroutput>debug</computeroutput> and <computeroutput>trace</computeroutput> will only do something in debug mode compilation. (<computeroutput>set(CMAKE_BUILD_TYPE Debug)</computeroutput> in <computeroutput>CMakeLists.txt</computeroutput>) </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01355_1a6d0c91ce8c1b14bb2847e8904ff61494"/>    <section>
+    <title>~ILogger()</title>
+<indexterm><primary>~ILogger</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>~ILogger</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::ILogger::~ILogger ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01355_1aaeb0984b17b04ad668bd22a0f6f43d1c"/>    <section>
+    <title>debug()</title>
+<indexterm><primary>debug</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>debug</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::debug (const std::string &amp; message)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> debug. </para>
+</para>
+
+<para>The DEBUG level is used for logging messages that help developers find out what went wrong during a debugging session.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>message</entry>
+                                <entry>
+<para>the message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1a7218cc8759088a1ebb97841208757d0a">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1a90f646fcaf4d02c6af0faa7f5ce4e3c8"/>    <section>
+    <title>error()</title>
+<indexterm><primary>error</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>error</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::error (const std::string &amp; message)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> error. </para>
+</para>
+
+<para>The ERROR log level is used to represent error conditions in an application that prevent a specific operation from running, but the application itself can continue working even if it is at a reduced level of functionality or performance.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>message</entry>
+                                <entry>
+<para>the message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1af0d5fc305cc349ff3feb193afac0b519">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1a7e6ea7896672d93467650551e5cd0dfe"/>    <section>
+    <title>fatal()</title>
+<indexterm><primary>fatal</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>fatal</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::fatal (const std::string &amp; message)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> fata. </para>
+</para>
+
+<para>Means that something critical is broken, and the application cannot continue to do any more useful work without the intervention of an engineer.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>message</entry>
+                                <entry>
+<para>the message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1a8741d2463dc26b159b91a83a69e7d82e">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1a13e2ae2a73b533040df4b36e20aba69f"/>    <section>
+    <title>info()</title>
+<indexterm><primary>info</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>info</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::info (const std::string &amp; message)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> info. </para>
+</para>
+
+<para>INFO-level messages indicate events in the system that are significant to the business purpose of the application. Such events are logged to show that the system is operating normally.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>message</entry>
+                                <entry>
+<para>the message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1a04c873d9cd4b42d7d36159bf1534ad9a">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1aeb0c8e88981b890e17c5ef326dfe9c0f"/>    <section>
+    <title>subscribeCallback()</title>
+<indexterm><primary>subscribeCallback</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>subscribeCallback</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::subscribeCallback (int type, const std::string &amp; name, std::function&lt; void(const std::string &amp;)&gt; callback)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> subscribe. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>type</entry>
+                                <entry>
+<para>the type to subscribe for </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>the name </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>callback</entry>
+                                <entry>
+<para>the callback </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1a411199d517a082833d6b61d10b8aa541">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1acb05281ccd789116a6f5436748a0a20b"/>    <section>
+    <title>trace()</title>
+<indexterm><primary>trace</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>trace</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::trace (const std::string &amp; message)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> trace. </para>
+</para>
+
+<para>The TRACE level is used for tracing the path of code execution in a program.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>message</entry>
+                                <entry>
+<para>the message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1afad34b7b6a7d951e588ed2189f2f5d70">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1ad6defebd662f97f62bf233dfc21d4588"/>    <section>
+    <title>unsubscribeCallback()</title>
+<indexterm><primary>unsubscribeCallback</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>unsubscribeCallback</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::unsubscribeCallback (int type, const std::string &amp; name)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> remove callback. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>type</entry>
+                                <entry>
+<para>the type </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>the name </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1ab9d543234e1abc62f63c390c004e7e4b">RayTracer::Logger</link>.</para>
+    </section><anchor xml:id="_a01355_1a149883bba192133a5d8cede10ab705a3"/>    <section>
+    <title>warn()</title>
+<indexterm><primary>warn</primary><secondary>RayTracer::ILogger</secondary></indexterm>
+<indexterm><primary>RayTracer::ILogger</primary><secondary>warn</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::ILogger::warn (const std::string &amp; message)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_a01399">Logger</link> warn. </para>
+</para>
+
+<para>Messages logged at the WARN level typically indicate that something unexpected happened, but the application can recover and continue to function normally.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>message</entry>
+                                <entry>
+<para>the message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01399_1ad22a5c95aef00b69b2d3c66d5275fa4b">RayTracer::Logger</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/<link linkend="_a00149">ILogger.hpp</link></section>
+</section>

@@ -14,9 +14,9 @@ Directory dependency graph for BlackAndWhite:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00245">BlackAndWhiteCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00263">BlackAndWhiteCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00248">BlackAndWhiteFilter.hpp</link></para>
+            <listitem><para>file <link linkend="_a00266">BlackAndWhiteFilter.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

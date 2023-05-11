@@ -1,13 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00409" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Plane Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Plane</primary></indexterm>
+<title>RayTracer::Plugins::Materials Namespace Reference</title>
+<indexterm><primary>RayTracer::Plugins::Materials</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01657">PlaneCreator</link></para>
+            <listitem><para>class <link linkend="_a01447">IMaterialCreator</link></para>
+
+<para>The <link linkend="_a01447">IMaterialCreator</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01661">PlaneEntity</link></para>
+            <listitem><para>class <link linkend="_a01451">MaterialHandler</link></para>
+
+<para>The <link linkend="_a01451">MaterialHandler</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01455">MaterialLoader</link></para>
+
+<para>The <link linkend="_a01455">MaterialLoader</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

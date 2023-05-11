@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/RefractionMaterial/RefractionMaterial.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/PlainMaterial/PlainMaterialCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,85 +62,58 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_a1be71b4a87ea0a43842201df25556cd.html">RefractionMaterial</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_97bfd06170dbfdc7259e55f67270c986.html">PlainMaterial</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">RefractionMaterial.hpp</div>  </div>
+<div class="title">PlainMaterialCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00338.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PlainMaterial.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PlaneCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef REFRACTIONMATERIAL_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define REFRACTIONMATERIAL_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PLAINMATERIALCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define PLAINMATERIALCREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">Ray.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00134.html">Color.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00095.html">ITransform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00104.html">Vector3f.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00089.html">IMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00411.html">RayTracer::PluginsExt::Refraction</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01677.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01677.html">RefractionMaterial</a> : <span class="keyword">public</span> <a class="code" href="a01281.html">Entities::IMaterial</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01677.html#a10f78d08b422ff7a622d8df82eb85081">   21</a></span>&#160;        <a class="code" href="a01677.html#a10f78d08b422ff7a622d8df82eb85081">RefractionMaterial</a>(<span class="keyword">const</span> <a class="code" href="a01489.html">Scenes::ISetting</a> &amp;config);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01677.html#aedf23f607ca1676c86f236499c3625e5">   23</a></span>&#160;        <a class="code" href="a01341.html">Images::Color</a> <a class="code" href="a01677.html#aedf23f607ca1676c86f236499c3625e5">getColor</a>(<span class="keyword">const</span> <a class="code" href="a01369.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01289.html">Entities::Transform::ITransform</a> &amp;centerObj, <span class="keyword">const</span> <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> &amp;intersect, <span class="keyword">const</span> <a class="code" href="a01477.html">Scenes::IDisplayable</a> &amp;displayable) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01677.html#a1ec5f965cf2e2a17f880867ed8a2ab92">   24</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a01677.html#a1ec5f965cf2e2a17f880867ed8a2ab92">setColor</a>(<span class="keyword">const</span> <a class="code" href="a01341.html">Images::Color</a> &amp;color) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01677.html#a43c4d9b97c8b760011cd2259aa7ab4f7">   25</a></span>&#160;        <a class="code" href="a01341.html">Images::Color</a> <a class="code" href="a01677.html#a43c4d9b97c8b760011cd2259aa7ab4f7">redirectionLight</a>(<span class="keyword">const</span> <a class="code" href="a01369.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01477.html">Scenes::IDisplayable</a> &amp;displayable,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">const</span> <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> &amp;intersect) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00203.html">IMaterialCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00335.html">PlainMaterial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00426.html">RayTracer::PluginsExt::PlainMaterial</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01671.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01671.html">PlainMaterialCreator</a> : <span class="keyword">public</span> <a class="code" href="a01447.html">RayTracer::Plugins::Materials::IMaterialCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01671.html#a334ecfae3a87bad86245f86bb1af6678">   20</a></span>&#160;            <a class="code" href="a01671.html#a334ecfae3a87bad86245f86bb1af6678">~PlainMaterialCreator</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01671.html#a50404648ed5b94b546a6e853c636a7e5">   21</a></span>&#160;            <a class="code" href="a01299.html">RayTracer::Entities::IMaterial</a> *<a class="code" href="a01671.html#a50404648ed5b94b546a6e853c636a7e5">create</a>(<span class="keyword">const</span> <a class="code" href="a01507.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01355.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01671.html#afa0a0fc772a57e712908491223fd9451">   24</a></span>&#160;            std::vector&lt;PlainMaterial *&gt; <a class="code" href="a01671.html#afa0a0fc772a57e712908491223fd9451">_elements</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01677.html#a54ba5acbfcc6d016b7133985e1c209e5">   29</a></span>&#160;        <a class="code" href="a01341.html">Images::Color</a> <a class="code" href="a01677.html#a54ba5acbfcc6d016b7133985e1c209e5">getNextColor</a>(<span class="keyword">const</span> <a class="code" href="a01369.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> &amp;intersect, <span class="keyword">const</span> <a class="code" href="a01477.html">Scenes::IDisplayable</a> &amp;displayable) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01677.html#a08912b2ddff1d3835bf651b369af09b0">   30</a></span>&#160;        <a class="code" href="a01341.html">Images::Color</a> <a class="code" href="a01677.html#a08912b2ddff1d3835bf651b369af09b0">_color</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01677.html#a1a43d8c754868a11f968579d287d2cda">   31</a></span>&#160;        <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> <a class="code" href="a01677.html#a1a43d8c754868a11f968579d287d2cda">_ambient</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01677.html#a4240d73114e7cd9642eaefd6189aa91e">   32</a></span>&#160;        <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> <a class="code" href="a01677.html#a4240d73114e7cd9642eaefd6189aa91e">_diffuse</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01677.html#ae6463937a88e70d27d2a5fcc451e11b9">   33</a></span>&#160;        <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> <a class="code" href="a01677.html#ae6463937a88e70d27d2a5fcc451e11b9">_specular</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01677.html#ae97cd7f4248a716717c42a99d96dac5c">   34</a></span>&#160;        <a class="code" href="a01301.html">Entities::Transform::Vector3f</a> <a class="code" href="a01677.html#ae97cd7f4248a716717c42a99d96dac5c">_refraction</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01677.html#ae3586a2ba77811a4185c1c82954b1bab">   35</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01677.html#ae3586a2ba77811a4185c1c82954b1bab">_shininess</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01677.html#a67d31518c708de6b1313d5f22e33ac40">   36</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01677.html#a67d31518c708de6b1313d5f22e33ac40">_transparency</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00089_html"><div class="ttname"><a href="a00089.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00095_html"><div class="ttname"><a href="a00095.html">ITransform.hpp</a></div></div>
-<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">Vector3f.hpp</a></div></div>
-<div class="ttc" id="aa00134_html"><div class="ttname"><a href="a00134.html">Color.hpp</a></div></div>
-<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">Ray.hpp</a></div></div>
-<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00411_html"><div class="ttname"><a href="a00411.html">RayTracer::PluginsExt::Refraction</a></div><div class="ttdef"><b>Definition:</b> RefractionCreator.hpp:17</div></div>
-<div class="ttc" id="aa01281_html"><div class="ttname"><a href="a01281.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
-<div class="ttc" id="aa01289_html"><div class="ttname"><a href="a01289.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
-<div class="ttc" id="aa01301_html"><div class="ttname"><a href="a01301.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
-<div class="ttc" id="aa01341_html"><div class="ttname"><a href="a01341.html">RayTracer::Images::Color</a></div><div class="ttdoc">The Color class.</div><div class="ttdef"><b>Definition:</b> Color.hpp:21</div></div>
-<div class="ttc" id="aa01369_html"><div class="ttname"><a href="a01369.html">RayTracer::Images::Ray</a></div><div class="ttdoc">The Ray class.</div><div class="ttdef"><b>Definition:</b> Ray.hpp:19</div></div>
-<div class="ttc" id="aa01477_html"><div class="ttname"><a href="a01477.html">RayTracer::Scenes::IDisplayable</a></div><div class="ttdoc">The IDisplayable interface.</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:25</div></div>
-<div class="ttc" id="aa01489_html"><div class="ttname"><a href="a01489.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01677_html"><div class="ttname"><a href="a01677.html">RayTracer::PluginsExt::Refraction::RefractionMaterial</a></div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:19</div></div>
-<div class="ttc" id="aa01677_html_a08912b2ddff1d3835bf651b369af09b0"><div class="ttname"><a href="a01677.html#a08912b2ddff1d3835bf651b369af09b0">RayTracer::PluginsExt::Refraction::RefractionMaterial::_color</a></div><div class="ttdeci">Images::Color _color</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:30</div></div>
-<div class="ttc" id="aa01677_html_a10f78d08b422ff7a622d8df82eb85081"><div class="ttname"><a href="a01677.html#a10f78d08b422ff7a622d8df82eb85081">RayTracer::PluginsExt::Refraction::RefractionMaterial::RefractionMaterial</a></div><div class="ttdeci">RefractionMaterial(const Scenes::ISetting &amp;config)</div></div>
-<div class="ttc" id="aa01677_html_a1a43d8c754868a11f968579d287d2cda"><div class="ttname"><a href="a01677.html#a1a43d8c754868a11f968579d287d2cda">RayTracer::PluginsExt::Refraction::RefractionMaterial::_ambient</a></div><div class="ttdeci">Entities::Transform::Vector3f _ambient</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:31</div></div>
-<div class="ttc" id="aa01677_html_a1ec5f965cf2e2a17f880867ed8a2ab92"><div class="ttname"><a href="a01677.html#a1ec5f965cf2e2a17f880867ed8a2ab92">RayTracer::PluginsExt::Refraction::RefractionMaterial::setColor</a></div><div class="ttdeci">void setColor(const Images::Color &amp;color) final</div><div class="ttdoc">Set the color.</div></div>
-<div class="ttc" id="aa01677_html_a4240d73114e7cd9642eaefd6189aa91e"><div class="ttname"><a href="a01677.html#a4240d73114e7cd9642eaefd6189aa91e">RayTracer::PluginsExt::Refraction::RefractionMaterial::_diffuse</a></div><div class="ttdeci">Entities::Transform::Vector3f _diffuse</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:32</div></div>
-<div class="ttc" id="aa01677_html_a43c4d9b97c8b760011cd2259aa7ab4f7"><div class="ttname"><a href="a01677.html#a43c4d9b97c8b760011cd2259aa7ab4f7">RayTracer::PluginsExt::Refraction::RefractionMaterial::redirectionLight</a></div><div class="ttdeci">Images::Color redirectionLight(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">this function is called when the object intercept the ray light</div></div>
-<div class="ttc" id="aa01677_html_a54ba5acbfcc6d016b7133985e1c209e5"><div class="ttname"><a href="a01677.html#a54ba5acbfcc6d016b7133985e1c209e5">RayTracer::PluginsExt::Refraction::RefractionMaterial::getNextColor</a></div><div class="ttdeci">Images::Color getNextColor(const Images::Ray &amp;ray, const Entities::Transform::Vector3f &amp;intersect, const Scenes::IDisplayable &amp;displayable) const</div></div>
-<div class="ttc" id="aa01677_html_a67d31518c708de6b1313d5f22e33ac40"><div class="ttname"><a href="a01677.html#a67d31518c708de6b1313d5f22e33ac40">RayTracer::PluginsExt::Refraction::RefractionMaterial::_transparency</a></div><div class="ttdeci">double _transparency</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:36</div></div>
-<div class="ttc" id="aa01677_html_ae3586a2ba77811a4185c1c82954b1bab"><div class="ttname"><a href="a01677.html#ae3586a2ba77811a4185c1c82954b1bab">RayTracer::PluginsExt::Refraction::RefractionMaterial::_shininess</a></div><div class="ttdeci">double _shininess</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:35</div></div>
-<div class="ttc" id="aa01677_html_ae6463937a88e70d27d2a5fcc451e11b9"><div class="ttname"><a href="a01677.html#ae6463937a88e70d27d2a5fcc451e11b9">RayTracer::PluginsExt::Refraction::RefractionMaterial::_specular</a></div><div class="ttdeci">Entities::Transform::Vector3f _specular</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:33</div></div>
-<div class="ttc" id="aa01677_html_ae97cd7f4248a716717c42a99d96dac5c"><div class="ttname"><a href="a01677.html#ae97cd7f4248a716717c42a99d96dac5c">RayTracer::PluginsExt::Refraction::RefractionMaterial::_refraction</a></div><div class="ttdeci">Entities::Transform::Vector3f _refraction</div><div class="ttdef"><b>Definition:</b> RefractionMaterial.hpp:34</div></div>
-<div class="ttc" id="aa01677_html_aedf23f607ca1676c86f236499c3625e5"><div class="ttname"><a href="a01677.html#aedf23f607ca1676c86f236499c3625e5">RayTracer::PluginsExt::Refraction::RefractionMaterial::getColor</a></div><div class="ttdeci">Images::Color getColor(const Images::Ray &amp;ray, const Entities::Transform::ITransform &amp;centerObj, const Entities::Transform::Vector3f &amp;intersect, const Scenes::IDisplayable &amp;displayable) const final</div><div class="ttdoc">Get the color.</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*PLANECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00203_html"><div class="ttname"><a href="a00203.html">IMaterialCreator.hpp</a></div></div>
+<div class="ttc" id="aa00335_html"><div class="ttname"><a href="a00335.html">PlainMaterial.hpp</a></div></div>
+<div class="ttc" id="aa00426_html"><div class="ttname"><a href="a00426.html">RayTracer::PluginsExt::PlainMaterial</a></div><div class="ttdef"><b>Definition:</b> PlainMaterial.hpp:18</div></div>
+<div class="ttc" id="aa01299_html"><div class="ttname"><a href="a01299.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
+<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01447_html"><div class="ttname"><a href="a01447.html">RayTracer::Plugins::Materials::IMaterialCreator</a></div><div class="ttdoc">The IMaterialCreator class.</div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:22</div></div>
+<div class="ttc" id="aa01507_html"><div class="ttname"><a href="a01507.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01671_html"><div class="ttname"><a href="a01671.html">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</a></div><div class="ttdef"><b>Definition:</b> PlainMaterialCreator.hpp:18</div></div>
+<div class="ttc" id="aa01671_html_a334ecfae3a87bad86245f86bb1af6678"><div class="ttname"><a href="a01671.html#a334ecfae3a87bad86245f86bb1af6678">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator::~PlainMaterialCreator</a></div><div class="ttdeci">~PlainMaterialCreator()</div></div>
+<div class="ttc" id="aa01671_html_a50404648ed5b94b546a6e853c636a7e5"><div class="ttname"><a href="a01671.html#a50404648ed5b94b546a6e853c636a7e5">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IMaterial * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a material with a setting.</div></div>
+<div class="ttc" id="aa01671_html_afa0a0fc772a57e712908491223fd9451"><div class="ttname"><a href="a01671.html#afa0a0fc772a57e712908491223fd9451">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator::_elements</a></div><div class="ttdeci">std::vector&lt; PlainMaterial * &gt; _elements</div><div class="ttdef"><b>Definition:</b> PlainMaterialCreator.hpp:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:26:51 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,13 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00405" xml:lang="en-US">
-<title>RayTracer::PluginsExt::LimitedCone Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::LimitedCone</primary></indexterm>
+<title>RayTracer::Images Namespace Reference</title>
+<indexterm><primary>RayTracer::Images</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01625">LimitedConeCreator</link></para>
+            <listitem><para>class <link linkend="_a01359">Color</link></para>
+
+<para>The <link linkend="_a01359">Color</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01629">LimitedConeEntity</link></para>
+            <listitem><para>class <link linkend="_a01363">Image</link></para>
+
+<para>The <link linkend="_a01363">Image</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01371">ImagePipeLine</link></para>
+
+<para>The <link linkend="_a01371">ImagePipeLine</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01375">IRayIterator</link></para>
+
+<para>The RayIterator class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01383">PixelThread</link></para>
+
+<para>The <link linkend="_a01383">PixelThread</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01387">Ray</link></para>
+
+<para>The <link linkend="_a01387">Ray</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01391">RayIterrator</link></para>
+
+<para>The <link linkend="_a01391">RayIterrator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

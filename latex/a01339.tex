@@ -1,0 +1,74 @@
+\hypertarget{a01339}{}\doxysection{Ray\+Tracer\+::Factories\+::IMaterial\+Factory Class Reference}
+\label{a01339}\index{RayTracer::Factories::IMaterialFactory@{RayTracer::Factories::IMaterialFactory}}
+
+
+{\ttfamily \#include $<$IMaterial\+Factory.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Factories\+::IMaterial\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{a01338}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Factories\+::IMaterial\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{a01337}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01339_a108be57aeed0f6991e017f5e06d04c06}{$\sim$\+IMaterial\+Factory}} ()=default
+\item 
+virtual \mbox{\hyperlink{a01299}{Entities\+::\+IMaterial}} \& \mbox{\hyperlink{a01339_ab278e040b21266a3ec5ef70fd0ecbc03}{get}} (const std\+::string \&name, const \mbox{\hyperlink{a01507}{Scenes\+::\+ISetting}} \&setting, \mbox{\hyperlink{a01355}{ILogger}} \&logger)=0
+\begin{DoxyCompactList}\small\item\em Get an material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01339_a108be57aeed0f6991e017f5e06d04c06}\label{a01339_a108be57aeed0f6991e017f5e06d04c06}} 
+\index{RayTracer::Factories::IMaterialFactory@{RayTracer::Factories::IMaterialFactory}!````~IMaterialFactory@{$\sim$IMaterialFactory}}
+\index{````~IMaterialFactory@{$\sim$IMaterialFactory}!RayTracer::Factories::IMaterialFactory@{RayTracer::Factories::IMaterialFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$IMaterialFactory()}{~IMaterialFactory()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Factories\+::\+IMaterial\+Factory\+::$\sim$\+IMaterial\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01339_ab278e040b21266a3ec5ef70fd0ecbc03}\label{a01339_ab278e040b21266a3ec5ef70fd0ecbc03}} 
+\index{RayTracer::Factories::IMaterialFactory@{RayTracer::Factories::IMaterialFactory}!get@{get}}
+\index{get@{get}!RayTracer::Factories::IMaterialFactory@{RayTracer::Factories::IMaterialFactory}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01299}{Entities\+::\+IMaterial}}\& Ray\+Tracer\+::\+Factories\+::\+IMaterial\+Factory\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{a01507}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01355}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get an material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name \\
+\hline
+{\em setting} & the setting (to create the material)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the material 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01343_a44015146f20c0890701da39a442d6a12}{Ray\+Tracer\+::\+Factories\+::\+Material\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\mbox{\hyperlink{a00137}{IMaterial\+Factory.\+hpp}}\end{DoxyCompactItemize}

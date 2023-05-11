@@ -1,0 +1,11 @@
+<map id="RayTracer::PluginsExt::Triangle::TriangleEntity" name="RayTracer::PluginsExt::Triangle::TriangleEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="343,968,522,1163"/>
+<area shape="rect" id="node2" href="$a01303.html" title="The IPrimitive class." alt="" coords="23,733,173,883"/>
+<area shape="rect" id="node3" href="$a01291.html" title="The IEntity class." alt="" coords="5,329,148,465"/>
+<area shape="rect" id="node4" href="$a01311.html" title="The Transform class." alt="" coords="217,711,385,905"/>
+<area shape="rect" id="node5" href="$a01307.html" title="The ITransform class." alt="" coords="172,299,344,494"/>
+<area shape="rect" id="node6" href="$a01319.html" title="The Vector3f class." alt="" coords="369,175,526,619"/>
+<area shape="rect" id="node7" title=" " alt="" coords="414,5,481,83"/>
+<area shape="rect" id="node8" title=" " alt="" coords="539,755,758,861"/>
+<area shape="rect" id="node9" href="$a01355.html" title="Logger singleton." alt="" coords="782,711,963,905"/>
+</map>
