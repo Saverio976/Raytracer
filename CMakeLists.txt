@@ -253,7 +253,7 @@ add_library(TransparencyMaterial SHARED)
 set_target_properties(TransparencyMaterial PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(TransparencyMaterial PROPERTIES
