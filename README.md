@@ -76,6 +76,7 @@ les primitives sont:
 - [Cylindre-Limité](#Cylindre-Limité)
 - [Torus](#Torus)
 - [Triangle](#Triangle)
+- [Obj](#Obj)
 
 les materiaux sont:
 - [PlainMaterial](#PlainMaterial)
@@ -1385,6 +1386,95 @@ lights :
             # couleur de la lampe
             color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
             # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## Obj
+
+![image](/documentation/obj.png)
+
+<details>*
+	<summary>afficher ...</summary>
+
+```python
+# obj.yaax
+
+# Configuration of the camera
+cameras:
+{
+    Camera: (
+        {
+            size = {x: 500; y = 500;};
+            transform = {
+                position = {x = 0.0; y = -30.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            focal = 200.0;
+            maxThreads = -1;
+            filters = {
+                SSAAx4: (
+                    {
+                        maxThreads = -1;
+                    }
+                )
+            }
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of OBJ
+    Obj = (
+        {
+            filePath = "./tests/obj/monkey.obj";
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                type = "PlainMaterial";
+                shininess = 10.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# Light configuration
+lights :
+{
+    PointLight = (
+        {
+            transform = {
+                position = {x = 0.0; y = -10.0; z = 0.0;};
+                scale = {x = 500.0; y = 1.0; z = 0.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 255.0; g = 126.0; b = 255.0; a = 255.0;};
+            power = 2.0;
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        {
+            transform = {
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
             power = 1.0;
         }
     );
