@@ -218,6 +218,7 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
+endif()
 # TRIANGLE
 add_library(Triangle SHARED)
 set_target_properties(Triangle PROPERTIES
