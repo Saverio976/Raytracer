@@ -46,13 +46,25 @@ RayTracer::Parameters \- The \fBParameters\fP class singleton\&.
 .br
 .RI "Set config key value as int\&. "
 .ti -1c
+.RI "void \fBsetIfNotExists\fP (const std::string &key, int value)"
+.br
+.RI "Set config key value if not exists\&. "
+.ti -1c
 .RI "void \fBset\fP (const std::string &key, double value)"
 .br
 .RI "Set config key value as double\&. "
 .ti -1c
+.RI "void \fBsetIfNotExists\fP (const std::string &key, double value)"
+.br
+.RI "Set config key value if not exists\&. "
+.ti -1c
 .RI "void \fBset\fP (const std::string &key, const std::string &value)"
 .br
 .RI "Set config key value as string\&. "
+.ti -1c
+.RI "void \fBsetIfNotExists\fP (const std::string &key, const std::string &value)"
+.br
+.RI "Set config key value if not exists\&. "
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -211,6 +223,45 @@ Set config key value as double\&.
 
 .PP
 Set config key value as int\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.br
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::setIfNotExists (const std::string & key, const std::string & value)"
+
+.PP
+Set config key value if not exists\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.br
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::setIfNotExists (const std::string & key, double value)"
+
+.PP
+Set config key value if not exists\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the key 
+.br
+\fIvalue\fP the value 
+.RE
+.PP
+
+.SS "void RayTracer::Parameters::setIfNotExists (const std::string & key, int value)"
+
+.PP
+Set config key value if not exists\&. 
 .PP
 \fBParameters\fP
 .RS 4
