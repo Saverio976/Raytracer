@@ -20,6 +20,7 @@ target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(TransparencyMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ChessBoardMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ZebraMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(MirrorMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_ray PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_image PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -71,6 +72,8 @@ target_sources(TransparencyMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 target_sources(ChessBoardMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(ZebraMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
+target_sources(MirrorMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(LimitedCylinder PRIVATE $<TARGET_OBJECTS:ray_transform>)
 

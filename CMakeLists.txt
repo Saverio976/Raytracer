@@ -4,7 +4,7 @@ project(Raytracer
     DESCRIPTION "Raytracer engine with sphere,..."
     LANGUAGES CXX
 )
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
 if (NOT CMAKE_BUILD_TYPE STREQUAL Release)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
@@ -277,7 +277,6 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
-
 add_library(TransparencyMaterial SHARED)
 set_target_properties(TransparencyMaterial PROPERTIES
     CXX_STANDARD 20
@@ -312,6 +311,19 @@ set_target_properties(ZebraMaterial PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(ZebraMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(MirrorMaterial SHARED)
+set_target_properties(MirrorMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(MirrorMaterial PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
