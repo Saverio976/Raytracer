@@ -1,13 +1,4 @@
-<map id="RayTracer::PluginsExt::Zebra::ZebraCreator" name="RayTracer::PluginsExt::Zebra::ZebraCreator">
-<area shape="rect" id="node1" title=" " alt="" coords="153,1108,316,1215"/>
-<area shape="rect" id="node2" href="$a01408.html" title="The IMaterialCreator class." alt="" coords="111,939,316,1045"/>
-<area shape="rect" id="node3" title=" " alt="" coords="341,946,611,1038"/>
-<area shape="rect" id="node4" href="$a01680.html" title=" " alt="" coords="299,725,467,861"/>
-<area shape="rect" id="node5" href="$a01260.html" title="The IMaterial class." alt="" coords="5,343,155,479"/>
-<area shape="rect" id="node6" title=" " alt="" coords="349,5,416,83"/>
-<area shape="rect" id="node7" href="$a01280.html" title="The Vector3f class." alt="" coords="304,189,461,633"/>
-<area shape="rect" id="node8" href="$a01320.html" title="The Color class." alt="" coords="486,255,637,567"/>
-<area shape="rect" id="node9" title=" " alt="" coords="515,5,607,83"/>
-<area shape="rect" id="node10" title=" " alt="" coords="553,755,682,832"/>
-<area shape="rect" id="node11" title=" " alt="" coords="661,373,699,450"/>
+<map id="RayTracer::PluginsExt::Transparency::TransparencyCreator" name="RayTracer::PluginsExt::Transparency::TransparencyCreator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,160,215,281"/>
+<area shape="rect" id="node2" href="$a01415.html" title="The IMaterialCreator class." alt="" coords="7,5,213,112"/>
 </map>

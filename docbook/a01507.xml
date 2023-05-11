@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01507" xml:lang="en-US">
+<title>RayTracer::Scenes::SettingWrapper::ParsingException Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper::ParsingException</primary></indexterm>
+<para>
+
+<para>an exception for when the key is not found </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SettingWrapper.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::SettingWrapper::ParsingException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01506.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::SettingWrapper::ParsingException:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01505.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01507_1ade59c58e67ef4ca11109fd092df72117">ParsingException</link> (const std::string &amp;key)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_a01507_1add26fba65f4e25d81aba82f161bb4290">what</link> () const final  throw ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01507_1a2b29bd5ad7a40c8daced9f652a041d93">_msg</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>an exception for when the key is not found </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01507_1ade59c58e67ef4ca11109fd092df72117"/>    <section>
+    <title>ParsingException()</title>
+<indexterm><primary>ParsingException</primary><secondary>RayTracer::Scenes::SettingWrapper::ParsingException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper::ParsingException</primary><secondary>ParsingException</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::ParsingException::ParsingException (const std::string &amp; key)<computeroutput>[explicit]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01507_1add26fba65f4e25d81aba82f161bb4290"/>    <section>
+    <title>what()</title>
+<indexterm><primary>what</primary><secondary>RayTracer::Scenes::SettingWrapper::ParsingException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper::ParsingException</primary><secondary>what</secondary></indexterm>
+<para><computeroutput>const char* RayTracer::Scenes::SettingWrapper::ParsingException::what ( ) const throw ( ) <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01479_1a475e1c111acc801c1bd54e2a9d19700d">RayTracer::Scenes::ISetting::IParsingException</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01507_1a2b29bd5ad7a40c8daced9f652a041d93"/>    <section>
+    <title>_msg</title>
+<indexterm><primary>_msg</primary><secondary>RayTracer::Scenes::SettingWrapper::ParsingException</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper::ParsingException</primary><secondary>_msg</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Scenes::SettingWrapper::ParsingException::_msg<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00230">SettingWrapper.hpp</link></section>
+</section>

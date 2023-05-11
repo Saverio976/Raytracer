@@ -1,0 +1,62 @@
+.TH "RayTracer::PluginsExt::Transparency::TransparencyCreator" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::Transparency::TransparencyCreator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TransparencyCreator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::Materials::IMaterialCreator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~TransparencyCreator\fP ()"
+.br
+.ti -1c
+.RI "\fBRayTracer::Entities::IMaterial\fP * \fBcreate\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger) final"
+.br
+.RI "Create a material with a setting\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBTransparencyMaterial\fP * > \fB_elements\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::Transparency::TransparencyCreator::~TransparencyCreator ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRayTracer::Entities::IMaterial\fP* RayTracer::PluginsExt::Transparency::TransparencyCreator::create (const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Create a material with a setting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the material 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Plugins::Materials::IMaterialCreator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBTransparencyMaterial\fP *> RayTracer::PluginsExt::Transparency::TransparencyCreator::_elements\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,26 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00370" xml:lang="en-US">
-<title>RayTracer::Plugins Namespace Reference</title>
-<indexterm><primary>RayTracer::Plugins</primary></indexterm>
-<simplesect>
-    <title>Namespaces    </title>
-        <itemizedlist>
-            <listitem><para> <link linkend="_a00371">Entities</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00372">Filters</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00373">Materials</link></para>
-</listitem>
-        </itemizedlist>
-</simplesect>
+<title>RayTracer::Display Namespace Reference</title>
+<indexterm><primary>RayTracer::Display</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01420">PluginHandler</link></para>
-
-<para>The <link linkend="_a01420">PluginHandler</link> class. </para>
+            <listitem><para>class <link linkend="_a01219">Display</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01424">PluginLoader</link></para>
+            <listitem><para>class <link linkend="_a01227">IDisplayModule</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01247">CanvasModule</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01251">ProgressModule</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

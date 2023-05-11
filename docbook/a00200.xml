@@ -15,14 +15,14 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01428">RayTracer::Progress</link></para>
+            <listitem><para>class <link linkend="_a01435">RayTracer::Progress</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

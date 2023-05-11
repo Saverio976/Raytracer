@@ -1,0 +1,161 @@
+\hypertarget{a01263}{}\doxysection{Ray\+Tracer\+::Entities\+::ILight Class Reference}
+\label{a01263}\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+
+
+The \mbox{\hyperlink{a01263}{ILight}} class.  
+
+
+
+
+{\ttfamily \#include $<$ILight.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Entities\+::ILight\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01262}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Entities\+::ILight\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{a01261}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01263_a54c4cb49dfa5c7b1c9359661872f2055}{$\sim$\+ILight}} ()=default
+\item 
+virtual const \mbox{\hyperlink{a01327}{Images\+::\+Color}} \& \mbox{\hyperlink{a01263_aab6b55e1ad937edb532cce372516f5e4}{get\+Color}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01327}{Images\+::\+Color}} \mbox{\hyperlink{a01263_ab2623f1fbf4edd888616bf467602ee89}{get\+Color}} (const \mbox{\hyperlink{a01287}{Transform\+::\+Vector3f}} \&point, const \mbox{\hyperlink{a01463}{Scenes\+::\+IDisplayable}} \&displayable) const =0
+\begin{DoxyCompactList}\small\item\em Get the color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01263_a0b4a00caa3baefa7ed7b7d35c39e4fb0}{set\+Color}} (const \mbox{\hyperlink{a01327}{Images\+::\+Color}} \&color)=0
+\begin{DoxyCompactList}\small\item\em Set the color. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{a01263_a4fad9aee9e3df30c7f0f9b9f41596960}{is\+Ambient}} () const =0
+\begin{DoxyCompactList}\small\item\em Check if the light is ambient. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{a01263_a453a82618ff179b62b852f2249ef7358}{get\+Power}} () const =0
+\begin{DoxyCompactList}\small\item\em get the power of the light \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01263}{ILight}} class. 
+
+class that represent a light 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01263_a54c4cb49dfa5c7b1c9359661872f2055}\label{a01263_a54c4cb49dfa5c7b1c9359661872f2055}} 
+\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}!````~ILight@{$\sim$ILight}}
+\index{````~ILight@{$\sim$ILight}!RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+\doxysubsubsection{\texorpdfstring{$\sim$ILight()}{~ILight()}}
+{\footnotesize\ttfamily virtual Ray\+Tracer\+::\+Entities\+::\+ILight\+::$\sim$\+ILight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01263_aab6b55e1ad937edb532cce372516f5e4}\label{a01263_aab6b55e1ad937edb532cce372516f5e4}} 
+\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{a01327}{Images\+::\+Color}}\& Ray\+Tracer\+::\+Entities\+::\+ILight\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the color. 
+
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01663_a4af65a3be2e683d961aad6340af6eb38}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity}}, \mbox{\hyperlink{a01647_a8b21f95c4432da9487cfe9a811896dc0}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Point\+Light\+::\+Point\+Light\+Entity}}, and \mbox{\hyperlink{a01519_a36c5e8ca32251d013a22858fdf9614e0}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Ambient\+Light\+::\+Ambient\+Light\+Entity}}.
+
+\mbox{\Hypertarget{a01263_ab2623f1fbf4edd888616bf467602ee89}\label{a01263_ab2623f1fbf4edd888616bf467602ee89}} 
+\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}!getColor@{getColor}}
+\index{getColor@{getColor}!RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01327}{Images\+::\+Color}} Ray\+Tracer\+::\+Entities\+::\+ILight\+::get\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01287}{Transform\+::\+Vector3f}} \&}]{point,  }\item[{const \mbox{\hyperlink{a01463}{Scenes\+::\+IDisplayable}} \&}]{displayable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & the point of the impact\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01663_ad67d048e3bac060ab3c4be595dbe33d1}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity}}, \mbox{\hyperlink{a01647_a018519c5236380b0e00b880f45356adf}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Point\+Light\+::\+Point\+Light\+Entity}}, and \mbox{\hyperlink{a01519_a1604049558bc413d6b7474c2e87b7f18}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Ambient\+Light\+::\+Ambient\+Light\+Entity}}.
+
+\mbox{\Hypertarget{a01263_a453a82618ff179b62b852f2249ef7358}\label{a01263_a453a82618ff179b62b852f2249ef7358}} 
+\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}!getPower@{getPower}}
+\index{getPower@{getPower}!RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily virtual double Ray\+Tracer\+::\+Entities\+::\+ILight\+::get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+get the power of the light 
+
+\begin{DoxyReturn}{Returns}
+the value of the power 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01663_a60a9a2246de1312c078d7c3b877cde88}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity}}, \mbox{\hyperlink{a01647_af0e103054dfadfdb1a14fa9b6de7ff14}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Point\+Light\+::\+Point\+Light\+Entity}}, and \mbox{\hyperlink{a01519_abeef544eed44018633c88859e85864b6}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Ambient\+Light\+::\+Ambient\+Light\+Entity}}.
+
+\mbox{\Hypertarget{a01263_a4fad9aee9e3df30c7f0f9b9f41596960}\label{a01263_a4fad9aee9e3df30c7f0f9b9f41596960}} 
+\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}!isAmbient@{isAmbient}}
+\index{isAmbient@{isAmbient}!RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+\doxysubsubsection{\texorpdfstring{isAmbient()}{isAmbient()}}
+{\footnotesize\ttfamily virtual bool Ray\+Tracer\+::\+Entities\+::\+ILight\+::is\+Ambient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the light is ambient. 
+
+\begin{DoxyReturn}{Returns}
+true if the light is ambient 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01663_af1cee3b65afbea48ef55d3f121f20ee0}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity}}, \mbox{\hyperlink{a01647_ac6dffd9931afdca8caa92e188fd4990e}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Point\+Light\+::\+Point\+Light\+Entity}}, and \mbox{\hyperlink{a01519_a76ca4a3b53a72946e941dda726022a0c}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Ambient\+Light\+::\+Ambient\+Light\+Entity}}.
+
+\mbox{\Hypertarget{a01263_a0b4a00caa3baefa7ed7b7d35c39e4fb0}\label{a01263_a0b4a00caa3baefa7ed7b7d35c39e4fb0}} 
+\index{RayTracer::Entities::ILight@{RayTracer::Entities::ILight}!setColor@{setColor}}
+\index{setColor@{setColor}!RayTracer::Entities::ILight@{RayTracer::Entities::ILight}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily virtual void Ray\+Tracer\+::\+Entities\+::\+ILight\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01327}{Images\+::\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & the color \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{a01663_a9fc066adc92c0b3360f8175af9118fff}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Spot\+Light\+::\+Spot\+Light\+Entity}}, \mbox{\hyperlink{a01647_ac44d3472e2007ed9f1f2028be302b372}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Point\+Light\+::\+Point\+Light\+Entity}}, and \mbox{\hyperlink{a01519_a691d1b12741398b555ae9839e944bb95}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Ambient\+Light\+::\+Ambient\+Light\+Entity}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Entities/\mbox{\hyperlink{a00086}{ILight.\+hpp}}\end{DoxyCompactItemize}

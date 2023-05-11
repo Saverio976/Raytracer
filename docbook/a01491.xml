@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01491" xml:lang="en-US">
+<title>RayTracer::Scenes::SceneLoader Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01491">SceneLoader</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SceneLoader.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Scenes::SceneLoader:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01489.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01495">BadFileError</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01491_1a7121f1c9be27956002460f007cbc8876">SceneLoader</link> (const std::string &amp;filePath, <link linkend="_a01323">ILogger</link> &amp;logger)</para>
+
+<para><link linkend="_a01491">SceneLoader</link> constructor (doesn&apos;t load anything) </para>
+</listitem>
+            <listitem><para><link linkend="_a01491_1a48c72376598e3b7119b831928ab050f9">~SceneLoader</link> ()=default</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01491_1a7e55c2a07b5a0ead1785bc7889daba9b">subscribe</link> (const std::string &amp;event, std::function&lt; void(const <link linkend="_a01475">ISetting</link> &amp;)&gt; func)</para>
+
+<para>Subscribe to an event. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01491_1aaf08ddee4c6f02232298a20c2d8a6c92">update</link> ()</para>
+
+<para>Check if the file has been modified and call subscribed events in consequence. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_a01491_1a18db5151e5fa4f5b4425f24a5651cff4">checkGoodFile</link> (const std::string &amp;filePath)</para>
+
+<para>Check if the file passed can be proceed by the class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01459">IConfig</link> &gt; <link linkend="_a01491_1a31ebaa9e51028c90ed24694c0c01cc23">_configWrapper</link></para>
+</listitem>
+            <listitem><para>std::map&lt; std::string, std::function&lt; void(const <link linkend="_a01475">ISetting</link> &amp;)&gt; &gt; <link linkend="_a01491_1a33b84904d2f33a37e72c9d8528d0f391">_events</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01491_1a6b6d4aeae06e9a15b064b72478729776">_filePath</link></para>
+</listitem>
+            <listitem><para>std::filesystem::file_time_type <link linkend="_a01491_1ad3bf37391e8604f1e00c8e7d45290151">_lastWriteTime</link></para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01395">Plugins::Entities::EntityLoader</link> &gt; <link linkend="_a01491_1acebd4acfb5aa62362e8596c373991d33">_entityLoader</link></para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01407">Plugins::Filters::FilterLoader</link> &gt; <link linkend="_a01491_1abeedbe059d036005194a1b40fe34f17b">_filterLoader</link></para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01423">Plugins::Materials::MaterialLoader</link> &gt; <link linkend="_a01491_1a4167353dd73d3f9f8f1c405d72786bcb">_materialLoader</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01323">ILogger</link> &amp; <link linkend="_a01491_1a11155cc9e48666357e0349dd1fd904a7">_logger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01491">SceneLoader</link> class. </para>
+
+
+
+<para>class that represent a scene loader (take a config file) and is an observer :eyes: </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01491_1a7121f1c9be27956002460f007cbc8876"/>    <section>
+    <title>SceneLoader()</title>
+<indexterm><primary>SceneLoader</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>SceneLoader</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SceneLoader::SceneLoader (const std::string &amp; filePath, <link linkend="_a01323">ILogger</link> &amp; logger)</computeroutput></para><para>
+
+<para><link linkend="_a01491">SceneLoader</link> constructor (doesn&apos;t load anything) </para>
+</para>
+
+<para>Throw <link linkend="_a01495">BadFileError</link> if the filePath doesn&apos;t ends with &apos;.yaax&apos; Throw <link linkend="_a01495">BadFileError</link> if the filePath is not a regular file</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filePath</entry>
+                                <entry>
+<para>the file path </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01491_1a48c72376598e3b7119b831928ab050f9"/>    <section>
+    <title>~SceneLoader()</title>
+<indexterm><primary>~SceneLoader</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>~SceneLoader</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SceneLoader::~SceneLoader ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01491_1a18db5151e5fa4f5b4425f24a5651cff4"/>    <section>
+    <title>checkGoodFile()</title>
+<indexterm><primary>checkGoodFile</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>checkGoodFile</secondary></indexterm>
+<para><computeroutput>static void RayTracer::Scenes::SceneLoader::checkGoodFile (const std::string &amp; filePath)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Check if the file passed can be proceed by the class. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filePath</entry>
+                                <entry>
+<para>the filePaht to check </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01491_1a7e55c2a07b5a0ead1785bc7889daba9b"/>    <section>
+    <title>subscribe()</title>
+<indexterm><primary>subscribe</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>subscribe</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::SceneLoader::subscribe (const std::string &amp; event, std::function&lt; void(const <link linkend="_a01475">ISetting</link> &amp;)&gt; func)</computeroutput></para><para>
+
+<para>Subscribe to an event. </para>
+</para>
+
+<para>Available events : &quot;onChange&quot;, &quot;onBeforeChange&quot; onChange : called when the scene is changed onBeforeChange : called before reloading the scene</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>event</entry>
+                                <entry>
+<para>the event </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>std::function</entry>
+                                <entry>
+<para>the function </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01491_1aaf08ddee4c6f02232298a20c2d8a6c92"/>    <section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::SceneLoader::update ( )</computeroutput></para><para>
+
+<para>Check if the file has been modified and call subscribed events in consequence. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01491_1a31ebaa9e51028c90ed24694c0c01cc23"/>    <section>
+    <title>_configWrapper</title>
+<indexterm><primary>_configWrapper</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_configWrapper</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01459">IConfig</link>&gt; RayTracer::Scenes::SceneLoader::_configWrapper<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1acebd4acfb5aa62362e8596c373991d33"/>    <section>
+    <title>_entityLoader</title>
+<indexterm><primary>_entityLoader</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_entityLoader</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01395">Plugins::Entities::EntityLoader</link>&gt; RayTracer::Scenes::SceneLoader::_entityLoader<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1a33b84904d2f33a37e72c9d8528d0f391"/>    <section>
+    <title>_events</title>
+<indexterm><primary>_events</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_events</secondary></indexterm>
+<para><computeroutput>std::map&lt;std::string, std::function&lt;void(const <link linkend="_a01475">ISetting</link> &amp;)&gt; &gt; RayTracer::Scenes::SceneLoader::_events<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1a6b6d4aeae06e9a15b064b72478729776"/>    <section>
+    <title>_filePath</title>
+<indexterm><primary>_filePath</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_filePath</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Scenes::SceneLoader::_filePath<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1abeedbe059d036005194a1b40fe34f17b"/>    <section>
+    <title>_filterLoader</title>
+<indexterm><primary>_filterLoader</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_filterLoader</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01407">Plugins::Filters::FilterLoader</link>&gt; RayTracer::Scenes::SceneLoader::_filterLoader<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1ad3bf37391e8604f1e00c8e7d45290151"/>    <section>
+    <title>_lastWriteTime</title>
+<indexterm><primary>_lastWriteTime</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_lastWriteTime</secondary></indexterm>
+<para><computeroutput>std::filesystem::file_time_type RayTracer::Scenes::SceneLoader::_lastWriteTime<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1a11155cc9e48666357e0349dd1fd904a7"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01323">ILogger</link>&amp; RayTracer::Scenes::SceneLoader::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01491_1a4167353dd73d3f9f8f1c405d72786bcb"/>    <section>
+    <title>_materialLoader</title>
+<indexterm><primary>_materialLoader</primary><secondary>RayTracer::Scenes::SceneLoader</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SceneLoader</primary><secondary>_materialLoader</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01423">Plugins::Materials::MaterialLoader</link>&gt; RayTracer::Scenes::SceneLoader::_materialLoader<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00224">SceneLoader.hpp</link></section>
+</section>

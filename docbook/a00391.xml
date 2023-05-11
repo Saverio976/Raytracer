@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00391" xml:lang="en-US">
-<title>RayTracer::PluginsExt::PointLight Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::PointLight</primary></indexterm>
+<title>RayTracer::PluginsExt::Disk Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Disk</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01636">PointLightCreator</link></para>
+            <listitem><para>class <link linkend="_a01595">DiskCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01640">PointLightEntity</link></para>
+            <listitem><para>class <link linkend="_a01599">DiskEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

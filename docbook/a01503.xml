@@ -1,0 +1,526 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01503" xml:lang="en-US">
+<title>RayTracer::Scenes::SettingWrapper Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01503">SettingWrapper</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SettingWrapper.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::SettingWrapper:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01502.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::SettingWrapper:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01501.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01507">ParsingException</link></para>
+
+<para>an exception for when the key is not found </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01511">TypeException</link></para>
+
+<para>an exception for when the key is not found </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01503_1a93ac3ced19b9f9b1d27854af4a70dab3">SettingWrapper</link> (const std::shared_ptr&lt; libconfig::Config &gt; &amp;config)</para>
+
+<para>Creates a <link linkend="_a01503">SettingWrapper</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1a0c9bebccdc9f9312785a3d9d1c79b490">SettingWrapper</link> (const <link linkend="_a01475">ISetting</link> &amp;src)</para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1a9aae0e0d5afe1f00f69c079b654bb6f3">~SettingWrapper</link> ()=default</para>
+</listitem>
+            <listitem><para>void <link linkend="_a01503_1ad343aaeac8166e70f4b007e776ffe9d0">getSetting</link> (const std::string &amp;key) final</para>
+
+<para>get a precise setting of the config from key </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01503_1a24995c271c9eb067a880a7ed92b1039a">getSetting</link> (int index) final</para>
+
+<para>access element at index </para>
+</listitem>
+            <listitem><para>int <link linkend="_a01503_1aaaa74848aca6bf32bba62a3c9f64969c">getLength</link> () const final</para>
+
+<para>get the length of the current key works only for lists, array, groups </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01503_1ab13cc485cf09e9eda992da5487b23a50">getPath</link> () const final</para>
+
+<para>gets the full path of the current setting </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01503_1ad8966e0597a177003494a498389df4da">getKey</link> () const final</para>
+
+<para>gets the key of the setting </para>
+</listitem>
+            <listitem><para>std::shared_ptr&lt; libconfig::Config &gt; <link linkend="_a01503_1a5df8bcdfa6c27017fe25a1ed2a665619">getConfig</link> () const final</para>
+
+<para>gets the config of a setting </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01503_1a794348f6c0c89c90875594f866da94dc">moveTo</link> (const std::string &amp;key) final</para>
+
+<para>move to the given key </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01503_1ac0242a53b300beaa958cd1781bf28788">moveTo</link> (int index) final</para>
+
+<para>move to the given index </para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01475">ISetting</link> &gt; <link linkend="_a01503_1a524874e4530299a30735e14bf939805b">get</link> (const std::string &amp;key) const final</para>
+
+<para>search the setting at the given key in the childs </para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01475">ISetting</link> &gt; <link linkend="_a01503_1a187240284b49de24444b4a7fabc990fe">get</link> (int index) const final</para>
+
+<para>search the setting at the given index in the childs </para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01475">ISetting</link> &gt; <link linkend="_a01503_1aab54e51787b0c8d9eeaee5b4dc2871a0">get</link> () const final</para>
+
+<para>returns the current setting </para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1aaca34afb39b48e960753509cfbd26fc0">operator bool</link> () const final</para>
+
+<para>cast operator to get bool from setting </para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1ae5a79e7a6de98ab88b9a61519a54b751">operator int</link> () const final</para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1a4b632bc6babafc9447cdd3cfe4fcf660">operator double</link> () const final</para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1a8301053aac11e5a7131871654ef07c64">operator const char *</link> () const final</para>
+</listitem>
+            <listitem><para><link linkend="_a01503_1abb6ab38f87302788982e47c3b82af9d9">operator std::string</link> () const final</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>libconfig::Setting * <link linkend="_a01503_1a5e9465513e9dcf81429263b8a350a8ff">_setting</link></para>
+</listitem>
+            <listitem><para>std::shared_ptr&lt; libconfig::Config &gt; <link linkend="_a01503_1a5f46feffa03dc8d27cfff761d84d607e">_config</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01503">SettingWrapper</link> class. </para>
+
+
+
+<para>class that represent a setting in a scene configuration it allows the user to navigate through the scene configuration by changing the path of the setting </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01503_1a93ac3ced19b9f9b1d27854af4a70dab3"/>    <section>
+    <title>SettingWrapper()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>SettingWrapper</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>SettingWrapper</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::SettingWrapper (const std::shared_ptr&lt; libconfig::Config &gt; &amp; config)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Creates a <link linkend="_a01503">SettingWrapper</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>config</entry>
+                                <entry>
+<para>the config to wrap from libconfig++ </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01503_1a0c9bebccdc9f9312785a3d9d1c79b490"/>    <section>
+    <title>SettingWrapper()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>SettingWrapper</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>SettingWrapper</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::SettingWrapper (const <link linkend="_a01475">ISetting</link> &amp; src)</computeroutput></para>    </section><anchor xml:id="_a01503_1a9aae0e0d5afe1f00f69c079b654bb6f3"/>    <section>
+    <title>~SettingWrapper()</title>
+<indexterm><primary>~SettingWrapper</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>~SettingWrapper</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::~SettingWrapper ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01503_1aab54e51787b0c8d9eeaee5b4dc2871a0"/>    <section>
+    <title>get()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>get</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01475">ISetting</link>&gt; RayTracer::Scenes::SettingWrapper::get ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>returns the current setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>a copy of the setting at the current emplacement </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1aecafb2dc2dacffcae5029f81bde4321a">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a524874e4530299a30735e14bf939805b"/>    <section>
+    <title>get()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>get</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01475">ISetting</link>&gt; RayTracer::Scenes::SettingWrapper::get (const std::string &amp; key) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>search the setting at the given key in the childs </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>key</entry>
+                                <entry>
+<para>the key to go to</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a copy of the setting, moved to the key </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1a6f04996c87bad9e48fc85ef26d5ee8a7">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a187240284b49de24444b4a7fabc990fe"/>    <section>
+    <title>get()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>get</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01475">ISetting</link>&gt; RayTracer::Scenes::SettingWrapper::get (int index) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>search the setting at the given index in the childs </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>the index to go to</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a copy of the setting, moved to the index </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1ae7484ffc05c6071d01e589c3c9cec0d7">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a5df8bcdfa6c27017fe25a1ed2a665619"/>    <section>
+    <title>getConfig()</title>
+<indexterm><primary>getConfig</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>getConfig</secondary></indexterm>
+<para><computeroutput>std::shared_ptr&lt;libconfig::Config&gt; RayTracer::Scenes::SettingWrapper::getConfig ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>gets the config of a setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the config </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1a7b63f5d483c473ad3d77a12097cb6ce8">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1ad8966e0597a177003494a498389df4da"/>    <section>
+    <title>getKey()</title>
+<indexterm><primary>getKey</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>getKey</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Scenes::SettingWrapper::getKey ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>gets the key of the setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the key </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1a906cf80d206ea8e8105b297bd3a11cc6">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1aaaa74848aca6bf32bba62a3c9f64969c"/>    <section>
+    <title>getLength()</title>
+<indexterm><primary>getLength</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>getLength</secondary></indexterm>
+<para><computeroutput>int RayTracer::Scenes::SettingWrapper::getLength ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>get the length of the current key works only for lists, array, groups </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>-1 if invalid type or size </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1a62fb98c88cb8cc0fba637b104d84ce1f">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1ab13cc485cf09e9eda992da5487b23a50"/>    <section>
+    <title>getPath()</title>
+<indexterm><primary>getPath</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>getPath</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Scenes::SettingWrapper::getPath ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>gets the full path of the current setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the path </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1a9f84f57ada001e8dc64ec56791ca4c82">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1ad343aaeac8166e70f4b007e776ffe9d0"/>    <section>
+    <title>getSetting()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getSetting</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>getSetting</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::SettingWrapper::getSetting (const std::string &amp; key)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>get a precise setting of the config from key </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>key</entry>
+                                <entry>
+<para>the key</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the setting exists, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1a6ef82306555ce131d6ff7d75596dd8d5">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a24995c271c9eb067a880a7ed92b1039a"/>    <section>
+    <title>getSetting()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getSetting</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>getSetting</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::SettingWrapper::getSetting (int index)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>access element at index </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>the index</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the setting exists, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1ae4d9bd09a28ccd4cbaa16851db85555f">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a794348f6c0c89c90875594f866da94dc"/>    <section>
+    <title>moveTo()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>moveTo</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>moveTo</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::SettingWrapper::moveTo (const std::string &amp; key)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>move to the given key </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>key</entry>
+                                <entry>
+<para>the key </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01475_1ad34eb603060626c24bf50065642142b7">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1ac0242a53b300beaa958cd1781bf28788"/>    <section>
+    <title>moveTo()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>moveTo</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>moveTo</secondary></indexterm>
+<para><computeroutput>void RayTracer::Scenes::SettingWrapper::moveTo (int index)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>move to the given index </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>index</entry>
+                                <entry>
+<para>the index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01475_1afa5db77d88aaf77ff146a146cd991d7c">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1aaca34afb39b48e960753509cfbd26fc0"/>    <section>
+    <title>operator bool()</title>
+<indexterm><primary>operator bool</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>operator bool</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::operator bool ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>cast operator to get bool from setting </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01475_1aa24a4c685c14038967e2795e210b265d">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a8301053aac11e5a7131871654ef07c64"/>    <section>
+    <title>operator const char *()</title>
+<indexterm><primary>operator const char *</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>operator const char *</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::operator const char * ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01475_1acc73c57e8acc780a87dce5cf0943833a">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1a4b632bc6babafc9447cdd3cfe4fcf660"/>    <section>
+    <title>operator double()</title>
+<indexterm><primary>operator double</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>operator double</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::operator double ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01475_1afbceda8dc0b26c9e330cca69b8ebf209">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1ae5a79e7a6de98ab88b9a61519a54b751"/>    <section>
+    <title>operator int()</title>
+<indexterm><primary>operator int</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>operator int</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::operator int ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01475_1ab97ab9cba5f7cbfa7d8db3b3b56592b1">RayTracer::Scenes::ISetting</link>.</para>
+    </section><anchor xml:id="_a01503_1abb6ab38f87302788982e47c3b82af9d9"/>    <section>
+    <title>operator std::string()</title>
+<indexterm><primary>operator std::string</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>operator std::string</secondary></indexterm>
+<para><computeroutput>RayTracer::Scenes::SettingWrapper::operator std::string ( ) const<computeroutput>[explicit]</computeroutput>, <computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_a01475_1a1e2ab6e2e70e53a9d090706a3cdadbd6">RayTracer::Scenes::ISetting</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01503_1a5f46feffa03dc8d27cfff761d84d607e"/>    <section>
+    <title>_config</title>
+<indexterm><primary>_config</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>_config</secondary></indexterm>
+<para><computeroutput>std::shared_ptr&lt;libconfig::Config&gt; RayTracer::Scenes::SettingWrapper::_config<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01503_1a5e9465513e9dcf81429263b8a350a8ff"/>    <section>
+    <title>_setting</title>
+<indexterm><primary>_setting</primary><secondary>RayTracer::Scenes::SettingWrapper</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::SettingWrapper</primary><secondary>_setting</secondary></indexterm>
+<para><computeroutput>libconfig::Setting* RayTracer::Scenes::SettingWrapper::_setting<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00230">SettingWrapper.hpp</link></section>
+</section>

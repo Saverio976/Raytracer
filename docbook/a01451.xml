@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01451" xml:lang="en-US">
+<title>RayTracer::Scenes::Displayable Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01451">Displayable</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Displayable.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::Displayable:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01450.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::Displayable:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01449.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01455">DisplayableException</link></para>
+
+<para>an exception for when the key is not found </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>const std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01263">Entities::ILight</link> &gt; &gt; &amp; <link linkend="_a01451_1a1a1bfffec400ce0617f9a7098db9aa8d">getLightList</link> () const final</para>
+
+<para>Get the light list (const) </para>
+</listitem>
+            <listitem><para>std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01263">Entities::ILight</link> &gt; &gt; &amp; <link linkend="_a01451_1a4f22718af9b185b3b47591082b369e3f">getLightList</link> () final</para>
+
+<para>Get the light list. </para>
+</listitem>
+            <listitem><para>const std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01271">Entities::IPrimitive</link> &gt; &gt; &amp; <link linkend="_a01451_1a562d5887ee61efb642945226857ca427">getPrimitiveList</link> () const final</para>
+
+<para>Get the primitive list (const) </para>
+</listitem>
+            <listitem><para>std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01271">Entities::IPrimitive</link> &gt; &gt; &amp; <link linkend="_a01451_1ab612b2687132d74bc75c36c5142d217b">getPrimitiveList</link> () final</para>
+
+<para>Get the primitive list. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01263">Entities::ILight</link> &amp; <link linkend="_a01451_1a9ed85d3840978ab022f8b9d23a30c4a5">getAmbientLight</link> () const</para>
+
+<para>Get the ambient light. </para>
+</listitem>
+            <listitem><para><link linkend="_a01263">Entities::ILight</link> &amp; <link linkend="_a01451_1a794ec49b27d5a04c87ad02c30890c824">getAmbientLight</link> ()</para>
+
+<para>Get the ambient light. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01263">Entities::ILight</link> &gt; &gt; <link linkend="_a01451_1a98c19b16fcc867c980c1198699ee7f16">_lights</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; std::reference_wrapper&lt; <link linkend="_a01271">Entities::IPrimitive</link> &gt; &gt; <link linkend="_a01451_1a076e8e374f3b52cbd62a3a1aef7b5bb1">_primitives</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01451">Displayable</link> class. </para>
+
+
+
+<para>class that represent a displayable </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01451_1a794ec49b27d5a04c87ad02c30890c824"/>    <section>
+    <title>getAmbientLight()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getAmbientLight</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>getAmbientLight</secondary></indexterm>
+<para><computeroutput><link linkend="_a01263">Entities::ILight</link>&amp; RayTracer::Scenes::Displayable::getAmbientLight ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the ambient light. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the ambient light </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01463_1a9e1ce230855d0adab38b44d70179f33b">RayTracer::Scenes::IDisplayable</link>.</para>
+    </section><anchor xml:id="_a01451_1a9ed85d3840978ab022f8b9d23a30c4a5"/>    <section>
+    <title>getAmbientLight()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getAmbientLight</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>getAmbientLight</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01263">Entities::ILight</link>&amp; RayTracer::Scenes::Displayable::getAmbientLight ( ) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the ambient light. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the ambient light </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01463_1af511aa8520b8445d649edb3e10fadb62">RayTracer::Scenes::IDisplayable</link>.</para>
+    </section><anchor xml:id="_a01451_1a1a1bfffec400ce0617f9a7098db9aa8d"/>    <section>
+    <title>getLightList()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getLightList</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>getLightList</secondary></indexterm>
+<para><computeroutput>const std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01263">Entities::ILight</link>&gt; &gt;&amp; RayTracer::Scenes::Displayable::getLightList ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the light list (const) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the light list </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01463_1a617417eddf2ffcbdc09dbeece19aeaec">RayTracer::Scenes::IDisplayable</link>.</para>
+    </section><anchor xml:id="_a01451_1a4f22718af9b185b3b47591082b369e3f"/>    <section>
+    <title>getLightList()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getLightList</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>getLightList</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01263">Entities::ILight</link>&gt; &gt;&amp; RayTracer::Scenes::Displayable::getLightList ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the light list. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the light list </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01463_1a34e70ed442d05131965b23354f145638">RayTracer::Scenes::IDisplayable</link>.</para>
+    </section><anchor xml:id="_a01451_1a562d5887ee61efb642945226857ca427"/>    <section>
+    <title>getPrimitiveList()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getPrimitiveList</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>getPrimitiveList</secondary></indexterm>
+<para><computeroutput>const std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01271">Entities::IPrimitive</link>&gt; &gt;&amp; RayTracer::Scenes::Displayable::getPrimitiveList ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the primitive list (const) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the primitive list </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01463_1a4ad763383b511e1ff52f16a6cbf74bd5">RayTracer::Scenes::IDisplayable</link>.</para>
+    </section><anchor xml:id="_a01451_1ab612b2687132d74bc75c36c5142d217b"/>    <section>
+    <title>getPrimitiveList()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getPrimitiveList</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>getPrimitiveList</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01271">Entities::IPrimitive</link>&gt; &gt;&amp; RayTracer::Scenes::Displayable::getPrimitiveList ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the primitive list. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the primitive list </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01463_1ad75904a51bdc0eab0d6ea7fe0c567e7a">RayTracer::Scenes::IDisplayable</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01451_1a98c19b16fcc867c980c1198699ee7f16"/>    <section>
+    <title>_lights</title>
+<indexterm><primary>_lights</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>_lights</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01263">Entities::ILight</link>&gt; &gt; RayTracer::Scenes::Displayable::_lights<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01451_1a076e8e374f3b52cbd62a3a1aef7b5bb1"/>    <section>
+    <title>_primitives</title>
+<indexterm><primary>_primitives</primary><secondary>RayTracer::Scenes::Displayable</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Displayable</primary><secondary>_primitives</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::reference_wrapper&lt;<link linkend="_a01271">Entities::IPrimitive</link>&gt; &gt; RayTracer::Scenes::Displayable::_primitives<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00206">Displayable.hpp</link></section>
+</section>

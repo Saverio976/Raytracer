@@ -1,3 +1,4 @@
-<map id="RayTracer::Factories::IFilterFactory" name="RayTracer::Factories::IFilterFactory">
-<area shape="rect" id="node1" title="The FilterFactory (singleton factory)" alt="" coords="5,5,157,112"/>
+<map id="RayTracer::Factories::FilterFactory" name="RayTracer::Factories::FilterFactory">
+<area shape="rect" id="node1" title="The FilterFactory (singleton factory)" alt="" coords="5,160,157,355"/>
+<area shape="rect" id="node2" href="$a01303.html" title="The FilterFactory (singleton factory)" alt="" coords="5,5,157,112"/>
 </map>

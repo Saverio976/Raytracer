@@ -1,0 +1,86 @@
+\hypertarget{a01691}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Zebra\+::Zebra\+Creator Class Reference}
+\label{a01691}\index{RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}}
+
+
+{\ttfamily \#include $<$Zebra\+Creator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Zebra\+::Zebra\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{a01690}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Zebra\+::Zebra\+Creator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01689}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01691_a4d708d546b44ccfd7731f53f8cb9b4e9}{$\sim$\+Zebra\+Creator}} ()
+\item 
+\mbox{\hyperlink{a01267}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}} $\ast$ \mbox{\hyperlink{a01691_a79a4225c54f4d64c320b4907a5e4f7a5}{create}} (const \mbox{\hyperlink{a01475}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01323}{ILogger}} \&logger) final
+\begin{DoxyCompactList}\small\item\em Create a material with a setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a01695}{Zebra\+Material}} $\ast$ $>$ \mbox{\hyperlink{a01691_a0316feca3115a350535fabe6786cf7ea}{\+\_\+elements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01691_a4d708d546b44ccfd7731f53f8cb9b4e9}\label{a01691_a4d708d546b44ccfd7731f53f8cb9b4e9}} 
+\index{RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}!````~ZebraCreator@{$\sim$ZebraCreator}}
+\index{````~ZebraCreator@{$\sim$ZebraCreator}!RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}}
+\doxysubsubsection{\texorpdfstring{$\sim$ZebraCreator()}{~ZebraCreator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Zebra\+::\+Zebra\+Creator\+::$\sim$\+Zebra\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01691_a79a4225c54f4d64c320b4907a5e4f7a5}\label{a01691_a79a4225c54f4d64c320b4907a5e4f7a5}} 
+\index{RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}!create@{create}}
+\index{create@{create}!RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01267}{Ray\+Tracer\+::\+Entities\+::\+IMaterial}}$\ast$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Zebra\+::\+Zebra\+Creator\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01475}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01323}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Create a material with a setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the material 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01415_a16ac237d1dc493bb11cdaa1ff1c0b140}{Ray\+Tracer\+::\+Plugins\+::\+Materials\+::\+IMaterial\+Creator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01691_a0316feca3115a350535fabe6786cf7ea}\label{a01691_a0316feca3115a350535fabe6786cf7ea}} 
+\index{RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}!\_elements@{\_elements}}
+\index{\_elements@{\_elements}!RayTracer::PluginsExt::Zebra::ZebraCreator@{RayTracer::PluginsExt::Zebra::ZebraCreator}}
+\doxysubsubsection{\texorpdfstring{\_elements}{\_elements}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a01695}{Zebra\+Material}} $\ast$$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Zebra\+::\+Zebra\+Creator\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Zebra\+Material/\mbox{\hyperlink{a00359}{Zebra\+Creator.\+hpp}}\end{DoxyCompactItemize}

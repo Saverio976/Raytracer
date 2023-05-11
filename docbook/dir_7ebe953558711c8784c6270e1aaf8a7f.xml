@@ -14,9 +14,9 @@ Directory dependency graph for Triangle:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00347">TriangleCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00353">TriangleCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00350">TriangleEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00356">TriangleEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

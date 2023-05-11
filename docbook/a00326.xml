@@ -27,18 +27,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01640">RayTracer::PluginsExt::PointLight::PointLightEntity</link></para>
+            <listitem><para>class <link linkend="_a01647">RayTracer::PluginsExt::PointLight::PointLightEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00375">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00391">RayTracer::PluginsExt::PointLight</link></para>
+            <listitem><para> <link linkend="_a00397">RayTracer::PluginsExt::PointLight</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

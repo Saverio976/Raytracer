@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: RayTracer::Factories::EntityFactory Class Reference</title>
+<title>RayTracer: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,352 +62,49 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00363.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00367.html">Factories</a></li><li class="navelem"><a class="el" href="a01284.html">EntityFactory</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00369.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00371.html">Entities</a></li><li class="navelem"><a class="el" href="a00372.html">Transform</a></li><li class="navelem"><a class="el" href="a01287.html">Vector3f</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
-<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
-<a href="a01281.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RayTracer::Factories::EntityFactory Class Reference</div>  </div>
+<div class="title">RayTracer::Entities::Transform::Vector3f Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="a01284.html" title="The EntityFactory (singleton factory)">EntityFactory</a> (singleton factory)  
- <a href="a01284.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00107_source.html">EntityFactory.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for RayTracer::Factories::EntityFactory:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01283.svg" width="163" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Collaboration diagram for RayTracer::Factories::EntityFactory:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01282.svg" width="436" height="670"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:adc5584afd5fe3892a470b903b08e51e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#adc5584afd5fe3892a470b903b08e51e8">EntityFactory</a> (const <a class="el" href="a01284.html">EntityFactory</a> &amp;other)=delete</td></tr>
-<tr class="separator:adc5584afd5fe3892a470b903b08e51e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85cbd415c869f02ee69ab34d249335ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#a85cbd415c869f02ee69ab34d249335ed">~EntityFactory</a> ()=default</td></tr>
-<tr class="separator:a85cbd415c869f02ee69ab34d249335ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0eb8aba0428e8431a358a7fb23cfabc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#ad0eb8aba0428e8431a358a7fb23cfabc">add</a> (const std::string &amp;name, std::unique_ptr&lt; <a class="el" href="a01384.html">Plugins::Entities::EntityHandler</a> &gt; handler)</td></tr>
-<tr class="memdesc:ad0eb8aba0428e8431a358a7fb23cfabc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an entity.  <a href="a01284.html#ad0eb8aba0428e8431a358a7fb23cfabc">More...</a><br /></td></tr>
-<tr class="separator:ad0eb8aba0428e8431a358a7fb23cfabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad649c019712532e3a26d468ffb6754c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01252.html">Entities::IEntity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#ad649c019712532e3a26d468ffb6754c5">get</a> (const std::string &amp;name, const <a class="el" href="a01468.html">Scenes::ISetting</a> &amp;setting, <a class="el" href="a01316.html">ILogger</a> &amp;logger) final</td></tr>
-<tr class="memdesc:ad649c019712532e3a26d468ffb6754c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an entity.  <a href="a01284.html#ad649c019712532e3a26d468ffb6754c5">More...</a><br /></td></tr>
-<tr class="separator:ad649c019712532e3a26d468ffb6754c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e36290252bf368d9163b9aa266f7e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#a10e36290252bf368d9163b9aa266f7e9">clearAll</a> ()</td></tr>
-<tr class="memdesc:a10e36290252bf368d9163b9aa266f7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all handlers.  <a href="a01284.html#a10e36290252bf368d9163b9aa266f7e9">More...</a><br /></td></tr>
-<tr class="separator:a10e36290252bf368d9163b9aa266f7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a01292"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a01292')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a01292.html">RayTracer::Factories::IEntityFactory</a></td></tr>
-<tr class="memitem:aa8bca4d6e23129b4196e1c4c87a4e835 inherit pub_methods_a01292"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01292.html#aa8bca4d6e23129b4196e1c4c87a4e835">~IEntityFactory</a> ()=default</td></tr>
-<tr class="separator:aa8bca4d6e23129b4196e1c4c87a4e835 inherit pub_methods_a01292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa3dafc9c5dd7b6676883d442ef366746"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a01284.html">EntityFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#aa3dafc9c5dd7b6676883d442ef366746">getInstance</a> ()</td></tr>
-<tr class="memdesc:aa3dafc9c5dd7b6676883d442ef366746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton.  <a href="a01284.html#aa3dafc9c5dd7b6676883d442ef366746">More...</a><br /></td></tr>
-<tr class="separator:aa3dafc9c5dd7b6676883d442ef366746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:abf6347cf4c33e39e030802e1ddac5029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#abf6347cf4c33e39e030802e1ddac5029">EntityFactory</a> ()=default</td></tr>
-<tr class="separator:abf6347cf4c33e39e030802e1ddac5029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a87a2d5e02b518406c3768327ad58a294"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a01308.html">TFactory</a>&lt; <a class="el" href="a01384.html">Plugins::Entities::EntityHandler</a>, <a class="el" href="a01252.html">Entities::IEntity</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#a87a2d5e02b518406c3768327ad58a294">getFactory</a> ()</td></tr>
-<tr class="separator:a87a2d5e02b518406c3768327ad58a294"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
-Static Protected Attributes</h2></td></tr>
-<tr class="memitem:ad441a115c54b5c63c7e6a6f6d174a9a6"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="a01284.html">EntityFactory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01284.html#ad441a115c54b5c63c7e6a6f6d174a9a6">_factory</a></td></tr>
-<tr class="separator:ad441a115c54b5c63c7e6a6f6d174a9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="a01284.html" title="The EntityFactory (singleton factory)">EntityFactory</a> (singleton factory) </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adc5584afd5fe3892a470b903b08e51e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc5584afd5fe3892a470b903b08e51e8">&#9670;&nbsp;</a></span>EntityFactory() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RayTracer::Factories::EntityFactory::EntityFactory </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01284.html">EntityFactory</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a85cbd415c869f02ee69ab34d249335ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85cbd415c869f02ee69ab34d249335ed">&#9670;&nbsp;</a></span>~EntityFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RayTracer::Factories::EntityFactory::~EntityFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abf6347cf4c33e39e030802e1ddac5029"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf6347cf4c33e39e030802e1ddac5029">&#9670;&nbsp;</a></span>EntityFactory() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RayTracer::Factories::EntityFactory::EntityFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad0eb8aba0428e8431a358a7fb23cfabc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0eb8aba0428e8431a358a7fb23cfabc">&#9670;&nbsp;</a></span>add()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RayTracer::Factories::EntityFactory::add </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="a01384.html">Plugins::Entities::EntityHandler</a> &gt;&#160;</td>
-          <td class="paramname"><em>handler</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add an entity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>the name </td></tr>
-    <tr><td class="paramname">handler</td><td>the handler </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a10e36290252bf368d9163b9aa266f7e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e36290252bf368d9163b9aa266f7e9">&#9670;&nbsp;</a></span>clearAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RayTracer::Factories::EntityFactory::clearAll </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Clear all handlers. </p>
-
-</div>
-</div>
-<a id="ad649c019712532e3a26d468ffb6754c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad649c019712532e3a26d468ffb6754c5">&#9670;&nbsp;</a></span>get()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01252.html">Entities::IEntity</a>&amp; RayTracer::Factories::EntityFactory::get </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a01468.html">Scenes::ISetting</a> &amp;&#160;</td>
-          <td class="paramname"><em>setting</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a01316.html">ILogger</a> &amp;&#160;</td>
-          <td class="paramname"><em>logger</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get an entity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>the name </td></tr>
-    <tr><td class="paramname">setting</td><td>the setting (to create the entity)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the entity </dd></dl>
-
-<p>Implements <a class="el" href="a01292.html#a1ba3cef71daf8a51706eb080edd8115d">RayTracer::Factories::IEntityFactory</a>.</p>
-
-</div>
-</div>
-<a id="a87a2d5e02b518406c3768327ad58a294"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a2d5e02b518406c3768327ad58a294">&#9670;&nbsp;</a></span>getFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a01308.html">TFactory</a>&lt;<a class="el" href="a01384.html">Plugins::Entities::EntityHandler</a>, <a class="el" href="a01252.html">Entities::IEntity</a>&gt;&amp; RayTracer::Factories::EntityFactory::getFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa3dafc9c5dd7b6676883d442ef366746"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3dafc9c5dd7b6676883d442ef366746">&#9670;&nbsp;</a></span>getInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a01284.html">EntityFactory</a>&amp; RayTracer::Factories::EntityFactory::getInstance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the singleton. </p>
-<dl class="section return"><dt>Returns</dt><dd>the singleton </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad441a115c54b5c63c7e6a6f6d174a9a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad441a115c54b5c63c7e6a6f6d174a9a6">&#9670;&nbsp;</a></span>_factory</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="a01284.html">EntityFactory</a>&gt; RayTracer::Factories::EntityFactory::_factory</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/runner/work/Raytracer/Raytracer/src/Factories/<a class="el" href="a00107_source.html">EntityFactory.hpp</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a8f46269ba66636f3f498205b45bbf206">_x</a></td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a00958abd21fb5740adad3bd4a9afb102">_y</a></td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a04918d2bc40619d7d7e4a358bb5ecfa7">_z</a></td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#ad714c9c456ca51a9ccb5516a93ee2bee">dot</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a9817aaacf259fe206616c4ce0f96bc35">getAngle</a>(const Vector3f &amp;a, const Vector3f &amp;c) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a631e40b09355d07fc4859f036620109e">getCrossed</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a4f2414846f08332b440f8656f3b9e0bc">getDistance</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a5607f84a592744b9a1fcc7145382313f">getNorm</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a4819c8bbe6705e74be3340e0e16f3658">getNormalized</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#ad5b5d887e80827c2c222844a62689238">getX</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a6b12357ad80f0fc211eb2b139ef5f927">getY</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a261fdd9323ca2ad38d7c66c91ad1d469">getZ</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a0e3e9c67b43b5636ce85fa5d2d054bd3">operator*</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a247a76fbf78eab93f2c598316bce0943">operator+</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a42925657c9aed0d71cf23b8474374e57">operator-</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#adaca9d09dc536d54437a9428b2b98e2a">operator/</a>(const Vector3f &amp;other) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#aff73d333255dc23e2909b19defec063e">operator=</a>(const Vector3f &amp;other)</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#ab327f37eb046abd6d32bc92942260fe9">rotateVector</a>(const Vector3f &amp;direction, const Vector3f &amp;rotation) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#aac148295858f286002f9b58c50782a5d">rotateX</a>(float angle) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a5668d689e9fb3d9303a5809147daf01d">rotateY</a>(float angle) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#af20d604d672869bb748ebd0a015b29ed">rotateZ</a>(float angle) const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a98ff7d128ab1717bc0bcb3ca9a89929d">toDegrees</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#aaee2caadf57cec4d51a3684d5f5abd94">toRadians</a>() const</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#ad198f5dec93feba585e502c848c068f9">Vector3f</a>()</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#ad3554b6599dbf91d2db7d01fb0f72190">Vector3f</a>(const Vector3f &amp;vector3f)</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#a35dbad02a79eaead893d78e47c94423d">Vector3f</a>(double x, double y, double z)</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01287.html#a3458026a134484be8e26d1f5a53b9cf9">Vector3f</a>(const Scenes::ISetting &amp;setting)</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01287.html#afc5aef995bfb9e63c73ef820216be25b">~Vector3f</a>()=default</td><td class="entry"><a class="el" href="a01287.html">RayTracer::Entities::Transform::Vector3f</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 04:48:46 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:55:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

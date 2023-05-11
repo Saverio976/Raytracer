@@ -1,0 +1,232 @@
+\hypertarget{a01487}{}\doxysection{Ray\+Tracer\+::Scenes\+::Scene Class Reference}
+\label{a01487}\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+
+
+The \mbox{\hyperlink{a01487}{Scene}} class.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+
+
+Collaboration diagram for Ray\+Tracer\+::Scenes\+::Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01485}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01487_a5e16c2855a2f7b7b33eae0267d477c8e}{Scene}} (\mbox{\hyperlink{a01323}{ILogger}} \&logger)
+\item 
+\mbox{\hyperlink{a01487_adfda5955715dbfbb28da86d5ea4cbdf7}{$\sim$\+Scene}} ()=default
+\item 
+void \mbox{\hyperlink{a01487_a5308abe8cab46b4ab0a9d1a6da133e5b}{operator()}} (const \mbox{\hyperlink{a01475}{ISetting}} \&, const std\+::string \&event)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01487}{Scene}} config reloader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01487_a6b0e5f1d04ec62afc4569b3e508a7ac7}{renders}} ()
+\begin{DoxyCompactList}\small\item\em Renders the scene (execute internal process in the thread) \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01255}{Entities\+::\+ICamera}} $>$ $>$ \& \mbox{\hyperlink{a01487_a4a516d239f37864fbfc2e7c1c515591c}{get\+Cameras}} () const
+\begin{DoxyCompactList}\small\item\em Get the cameras. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01255}{Entities\+::\+ICamera}} $>$ $>$ \& \mbox{\hyperlink{a01487_ab74a1e37a33f06c3671c9c8863512bdc}{get\+Cameras}} ()
+\begin{DoxyCompactList}\small\item\em Get the cameras. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01487_a5e775828e7fef6d2fb5aef42c4c93668}{is\+Ready}} () const
+\begin{DoxyCompactList}\small\item\em Check if the scene is ready (internal render thread is stopped) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01487_a30095f564a868e741a1f29d3d1f80b7f}{cancel}} ()
+\begin{DoxyCompactList}\small\item\em Cancel the scene rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01487_ad4e9d99d1b3580602e49c15beb50ed7e}{wait\+\_\+end}} ()
+\begin{DoxyCompactList}\small\item\em wait until the end of the renders \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01487_abc8a0c2715d4922477dbf3541e2afc4b}{load\+Config}} (const \mbox{\hyperlink{a01475}{ISetting}} \&setting)
+\begin{DoxyCompactList}\small\item\em Load the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01487_a79daa1e7c9ddf0c13d8ff9499a557890}{wait\+Till\+Cancel}} ()
+\begin{DoxyCompactList}\small\item\em Wait till the cancel is active (and do the changestate cancel) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01255}{Entities\+::\+ICamera}} $>$ $>$ \mbox{\hyperlink{a01487_a9ca9245bba305415ad7f61bc4452539d}{\+\_\+cameras}}
+\item 
+\mbox{\hyperlink{a01499}{Scene\+State}} \mbox{\hyperlink{a01487_a570392eca9d512e4ada88d9d27741676}{\+\_\+state}}
+\item 
+std\+::future$<$ void $>$ \mbox{\hyperlink{a01487_a99b2019870a92ed63fbe8b33d951f612}{\+\_\+future}}
+\item 
+\mbox{\hyperlink{a01451}{Displayable}} \mbox{\hyperlink{a01487_a1b35bada57e491e45efb2f48d4bb93f3}{\+\_\+displayable}}
+\item 
+\mbox{\hyperlink{a01323}{ILogger}} \& \mbox{\hyperlink{a01487_a763004b5a3d9447bbac4254cecf26265}{\+\_\+logger}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01487}{Scene}} class. 
+
+class that represent a scene 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01487_a5e16c2855a2f7b7b33eae0267d477c8e}\label{a01487_a5e16c2855a2f7b7b33eae0267d477c8e}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01323}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a01487_adfda5955715dbfbb28da86d5ea4cbdf7}\label{a01487_adfda5955715dbfbb28da86d5ea4cbdf7}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!````~Scene@{$\sim$Scene}}
+\index{````~Scene@{$\sim$Scene}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Scenes\+::\+Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01487_a30095f564a868e741a1f29d3d1f80b7f}\label{a01487_a30095f564a868e741a1f29d3d1f80b7f}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!cancel@{cancel}}
+\index{cancel@{cancel}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+::cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cancel the scene rendering. 
+
+\mbox{\Hypertarget{a01487_ab74a1e37a33f06c3671c9c8863512bdc}\label{a01487_ab74a1e37a33f06c3671c9c8863512bdc}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!getCameras@{getCameras}}
+\index{getCameras@{getCameras}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{getCameras()}{getCameras()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01255}{Entities\+::\+ICamera}}$>$ $>$\& Ray\+Tracer\+::\+Scenes\+::\+Scene\+::get\+Cameras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the cameras. 
+
+\begin{DoxyReturn}{Returns}
+the cameras 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01487_a4a516d239f37864fbfc2e7c1c515591c}\label{a01487_a4a516d239f37864fbfc2e7c1c515591c}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!getCameras@{getCameras}}
+\index{getCameras@{getCameras}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{getCameras()}{getCameras()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01255}{Entities\+::\+ICamera}}$>$ $>$\& Ray\+Tracer\+::\+Scenes\+::\+Scene\+::get\+Cameras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the cameras. 
+
+\begin{DoxyReturn}{Returns}
+the cameras 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01487_a5e775828e7fef6d2fb5aef42c4c93668}\label{a01487_a5e775828e7fef6d2fb5aef42c4c93668}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!isReady@{isReady}}
+\index{isReady@{isReady}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{isReady()}{isReady()}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Scenes\+::\+Scene\+::is\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the scene is ready (internal render thread is stopped) 
+
+\begin{DoxyReturn}{Returns}
+true if the scene is ready 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01487_abc8a0c2715d4922477dbf3541e2afc4b}\label{a01487_abc8a0c2715d4922477dbf3541e2afc4b}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!loadConfig@{loadConfig}}
+\index{loadConfig@{loadConfig}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{loadConfig()}{loadConfig()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+::load\+Config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01475}{ISetting}} \&}]{setting }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Load the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & the setting \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01487_a5308abe8cab46b4ab0a9d1a6da133e5b}\label{a01487_a5308abe8cab46b4ab0a9d1a6da133e5b}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!operator()@{operator()}}
+\index{operator()@{operator()}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01475}{ISetting}} \&}]{,  }\item[{const std\+::string \&}]{event }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{a01487}{Scene}} config reloader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & the config changed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01487_a6b0e5f1d04ec62afc4569b3e508a7ac7}\label{a01487_a6b0e5f1d04ec62afc4569b3e508a7ac7}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!renders@{renders}}
+\index{renders@{renders}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{renders()}{renders()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+::renders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renders the scene (execute internal process in the thread) 
+
+So, it return imediatly after being called \mbox{\Hypertarget{a01487_ad4e9d99d1b3580602e49c15beb50ed7e}\label{a01487_ad4e9d99d1b3580602e49c15beb50ed7e}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!wait\_end@{wait\_end}}
+\index{wait\_end@{wait\_end}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{wait\_end()}{wait\_end()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+::wait\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+wait until the end of the renders 
+
+\mbox{\Hypertarget{a01487_a79daa1e7c9ddf0c13d8ff9499a557890}\label{a01487_a79daa1e7c9ddf0c13d8ff9499a557890}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!waitTillCancel@{waitTillCancel}}
+\index{waitTillCancel@{waitTillCancel}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{waitTillCancel()}{waitTillCancel()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Scenes\+::\+Scene\+::wait\+Till\+Cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wait till the cancel is active (and do the changestate cancel) 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01487_a9ca9245bba305415ad7f61bc4452539d}\label{a01487_a9ca9245bba305415ad7f61bc4452539d}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!\_cameras@{\_cameras}}
+\index{\_cameras@{\_cameras}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{\_cameras}{\_cameras}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01255}{Entities\+::\+ICamera}}$>$ $>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+::\+\_\+cameras\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01487_a1b35bada57e491e45efb2f48d4bb93f3}\label{a01487_a1b35bada57e491e45efb2f48d4bb93f3}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!\_displayable@{\_displayable}}
+\index{\_displayable@{\_displayable}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{\_displayable}{\_displayable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01451}{Displayable}} Ray\+Tracer\+::\+Scenes\+::\+Scene\+::\+\_\+displayable\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01487_a99b2019870a92ed63fbe8b33d951f612}\label{a01487_a99b2019870a92ed63fbe8b33d951f612}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!\_future@{\_future}}
+\index{\_future@{\_future}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{\_future}{\_future}}
+{\footnotesize\ttfamily std\+::future$<$void$>$ Ray\+Tracer\+::\+Scenes\+::\+Scene\+::\+\_\+future\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01487_a763004b5a3d9447bbac4254cecf26265}\label{a01487_a763004b5a3d9447bbac4254cecf26265}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01323}{ILogger}}\& Ray\+Tracer\+::\+Scenes\+::\+Scene\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01487_a570392eca9d512e4ada88d9d27741676}\label{a01487_a570392eca9d512e4ada88d9d27741676}} 
+\index{RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}!\_state@{\_state}}
+\index{\_state@{\_state}!RayTracer::Scenes::Scene@{RayTracer::Scenes::Scene}}
+\doxysubsubsection{\texorpdfstring{\_state}{\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01499}{Scene\+State}} Ray\+Tracer\+::\+Scenes\+::\+Scene\+::\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\mbox{\hyperlink{a00221}{Scene.\+hpp}}\end{DoxyCompactItemize}

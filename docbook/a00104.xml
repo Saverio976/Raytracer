@@ -25,27 +25,27 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01280">RayTracer::Entities::Transform::Vector3f</link></para>
+            <listitem><para>class <link linkend="_a01287">RayTracer::Entities::Transform::Vector3f</link></para>
 
-<para>The <link linkend="_a01280">Vector3f</link> class. </para>
+<para>The <link linkend="_a01287">Vector3f</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00363">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00365">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00371">RayTracer::Entities</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00366">RayTracer::Entities::Transform</link></para>
+            <listitem><para> <link linkend="_a00372">RayTracer::Entities::Transform</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>std::ostream &amp; <link linkend="_a00104_1a8e34b2349337972e4f3250fd8aa76592">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01280">RayTracer::Entities::Transform::Vector3f</link> &amp;vector)</para>
+            <listitem><para>std::ostream &amp; <link linkend="_a00104_1a8e34b2349337972e4f3250fd8aa76592">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01287">RayTracer::Entities::Transform::Vector3f</link> &amp;vector)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -55,6 +55,6 @@ This graph shows which files directly or indirectly include this file:<para>
     <title>operator&lt;&lt;()</title>
 <indexterm><primary>operator&lt;&lt;</primary><secondary>Vector3f.hpp</secondary></indexterm>
 <indexterm><primary>Vector3f.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
-<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01280">RayTracer::Entities::Transform::Vector3f</link> &amp; vector)</computeroutput></para></section>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01287">RayTracer::Entities::Transform::Vector3f</link> &amp; vector)</computeroutput></para></section>
 </section>
 </section>
