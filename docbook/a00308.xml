@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00308" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane/LimitedPlaneEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane/LimitedPlaneEntity.hpp</primary></indexterm>
-<programlisting>#include &lt;functional&gt;
-#include &quot;ILogger.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCylinder/LimitedCylinderEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedCylinder/LimitedCylinderEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;optional&gt;
 #include &quot;IPrimitive.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+#include &quot;ILogger.hpp&quot;
 #include &quot;Transform.hpp&quot;
 #include &quot;IMaterial.hpp&quot;
-#include &quot;Vector2i.hpp&quot;
-</programlisting>Include dependency graph for LimitedPlaneEntity.hpp:<para>
+#include &quot;Ray.hpp&quot;
+</programlisting>Include dependency graph for LimitedCylinderEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -29,18 +30,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01623">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</link></para>
+            <listitem><para>class <link linkend="_a01630">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00394">RayTracer::PluginsExt::LimitedPlane</link></para>
+            <listitem><para> <link linkend="_a00400">RayTracer::PluginsExt::LimitedCylinder</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

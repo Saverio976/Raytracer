@@ -1,11 +1,6 @@
-<map id="RayTracer::Images::PixelThread" name="RayTracer::Images::PixelThread">
-<area shape="rect" id="node1" title="The PixelThread class." alt="" coords="197,953,347,1075"/>
-<area shape="rect" id="node2" href="$a01463.html" title="The IDisplayable interface." alt="" coords="5,718,160,883"/>
-<area shape="rect" id="node3" href="$a01355.html" title="The Ray class." alt="" coords="185,711,359,891"/>
-<area shape="rect" id="node4" href="$a01287.html" title="The Vector3f class." alt="" coords="193,175,351,619"/>
-<area shape="rect" id="node5" title=" " alt="" coords="239,5,305,83"/>
-<area shape="rect" id="node6" title=" " alt="" coords="383,747,601,854"/>
-<area shape="rect" id="node7" title=" " alt="" coords="395,343,549,450"/>
-<area shape="rect" id="node8" title=" " alt="" coords="574,358,703,435"/>
-<area shape="rect" id="node9" title=" " alt="" coords="619,5,658,83"/>
+<map id="RayTracer::Images::IRayIterator" name="RayTracer::Images::IRayIterator">
+<area shape="rect" id="node1" title="The RayIterator class." alt="" coords="188,5,339,127"/>
+<area shape="rect" id="node2" href="$a01366.html" title="The RayIterrator class." alt="" coords="5,182,156,362"/>
+<area shape="rect" id="node3" href="$a01562.html" title="The ClusterRayIterator class." alt="" coords="180,175,347,369"/>
+<area shape="rect" id="node4" href="$a01578.html" title="The CustomRayIterator class." alt="" coords="371,182,542,362"/>
 </map>

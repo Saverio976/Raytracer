@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00341" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Torus/TorusCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Torus/TorusCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/SpotLight/SpotLightCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/SpotLight/SpotLightCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;IEntityCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;TorusEntity.hpp&quot;
-</programlisting>Include dependency graph for TorusCreator.hpp:<para>
+#include &quot;IEntityCreator.hpp&quot;
+#include &quot;SpotLightEntity.hpp&quot;
+</programlisting>Include dependency graph for SpotLightCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01667">RayTracer::PluginsExt::Torus::TorusCreator</link></para>
+            <listitem><para>class <link linkend="_a01674">RayTracer::PluginsExt::SpotLight::SpotLightCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00400">RayTracer::PluginsExt::Torus</link></para>
+            <listitem><para> <link linkend="_a00406">RayTracer::PluginsExt::SpotLight</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,5 +1,5 @@
-<map id="RayTracer::Images::Color" name="RayTracer::Images::Color">
-<area shape="rect" id="node1" title="The Color class." alt="" coords="15,189,166,501"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,72,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="97,5,189,83"/>
+<map id="RayTracer::Filters::IFilter" name="RayTracer::Filters::IFilter">
+<area shape="rect" id="node1" title="The IFilter class." alt="" coords="133,5,268,112"/>
+<area shape="rect" id="node2" href="$a01534.html" title=" " alt="" coords="5,167,172,362"/>
+<area shape="rect" id="node3" href="$a01542.html" title=" " alt="" coords="196,160,432,369"/>
 </map>

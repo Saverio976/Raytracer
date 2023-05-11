@@ -1,3 +1,4 @@
-<map id="RayTracer::Scenes::IConfig" name="RayTracer::Scenes::IConfig">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,153,141"/>
+<map id="RayTracer::Scenes::Displayable" name="RayTracer::Scenes::Displayable">
+<area shape="rect" id="node1" title="The Displayable class." alt="" coords="5,219,160,399"/>
+<area shape="rect" id="node2" href="$a01470.html" title="The IDisplayable interface." alt="" coords="5,5,160,171"/>
 </map>

@@ -14,11 +14,11 @@ Directory dependency graph for Cluster:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00251">CameraClusterCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00257">CameraClusterCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00254">CameraClusterEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00260">CameraClusterEntity.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00257">ClusterRayIterator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00263">ClusterRayIterator.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -14,9 +14,9 @@ Directory dependency graph for LimitedCone:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00293">LimitedConeCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00299">LimitedConeCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00296">LimitedConeEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00302">LimitedConeEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00320" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Plane/PlaneEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Plane/PlaneEntity.hpp</primary></indexterm>
-<programlisting>#include &quot;ILogger.hpp&quot;
-#include &quot;IPrimitive.hpp&quot;
-#include &quot;Transform.hpp&quot;
-#include &quot;IMaterial.hpp&quot;
-</programlisting>Include dependency graph for PlaneEntity.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/PlainMaterial/PlainMaterialCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/PlainMaterial/PlainMaterialCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IMaterialCreator.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;PlainMaterial.hpp&quot;
+</programlisting>Include dependency graph for PlainMaterialCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -15,30 +16,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00322.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01639">RayTracer::PluginsExt::Plane::PlaneEntity</link></para>
+            <listitem><para>class <link linkend="_a01646">RayTracer::PluginsExt::PlainMaterial::PlainMaterialCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00396">RayTracer::PluginsExt::Plane</link></para>
+            <listitem><para> <link linkend="_a00402">RayTracer::PluginsExt::PlainMaterial</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00323" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Plane/PlaneCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Plane/PlaneCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;ILogger.hpp&quot;
 #include &quot;IEntityCreator.hpp&quot;
-#include &quot;PointLightEntity.hpp&quot;
-</programlisting>Include dependency graph for PointLightCreator.hpp:<para>
+#include &quot;ILogger.hpp&quot;
+#include &quot;PlaneEntity.hpp&quot;
+</programlisting>Include dependency graph for PlaneCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01643">RayTracer::PluginsExt::PointLight::PointLightCreator</link></para>
+            <listitem><para>class <link linkend="_a01650">RayTracer::PluginsExt::Plane::PlaneCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00397">RayTracer::PluginsExt::PointLight</link></para>
+            <listitem><para> <link linkend="_a00403">RayTracer::PluginsExt::Plane</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

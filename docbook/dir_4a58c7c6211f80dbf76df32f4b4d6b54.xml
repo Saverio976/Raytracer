@@ -14,9 +14,9 @@ Directory dependency graph for Torus:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00341">TorusCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00347">TorusCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00344">TorusEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00350">TorusEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

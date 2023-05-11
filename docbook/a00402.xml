@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00402" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Triangle Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Triangle</primary></indexterm>
+<title>RayTracer::PluginsExt::PlainMaterial Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::PlainMaterial</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01683">TriangleCreator</link></para>
+            <listitem><para>class <link linkend="_a01642">PlainMaterial</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01687">TriangleEntity</link></para>
+            <listitem><para>class <link linkend="_a01646">PlainMaterialCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

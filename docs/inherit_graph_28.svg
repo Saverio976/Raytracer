@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01415.html" target="_top" xlink:title="The IMaterialCreator class.">
+<g id="a_node1"><a xlink:href="a01422.html" target="_top" xlink:title="The IMaterialCreator class.">
 <polygon fill="white" stroke="black" points="0,-85.5 0,-115.5 154,-115.5 154,-85.5 0,-85.5"/>
 <text text-anchor="start" x="8" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Plugins</text>
 <text text-anchor="middle" x="77" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Materials::IMaterialCreator</text>
@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01571.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="a01586.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="190,-170.5 190,-200.5 370,-200.5 370,-170.5 190,-170.5"/>
 <text text-anchor="start" x="198" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="280" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">::ChessBoard::ChessBoardCreator</text>
@@ -38,7 +38,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="a01631.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="a01646.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="201,-110 201,-151 359,-151 359,-110 201,-110"/>
 <text text-anchor="start" x="209" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="209" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">::PlainMaterial::PlainMaterial</text>
@@ -55,7 +55,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="a01675.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="a01690.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="201.5,-50 201.5,-91 358.5,-91 358.5,-50 201.5,-50"/>
 <text text-anchor="start" x="209.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="209.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">::Transparency::Transparency</text>
@@ -72,7 +72,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="a01691.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="a01706.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="219,-0.5 219,-30.5 341,-30.5 341,-0.5 219,-0.5"/>
 <text text-anchor="start" x="227" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="280" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Zebra::ZebraCreator</text>

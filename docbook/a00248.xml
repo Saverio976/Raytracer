@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00248" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraEntity.hpp</primary></indexterm>
-<programlisting>#include &lt;cstddef&gt;
-#include &lt;functional&gt;
-#include &quot;ICamera.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteFilter.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteFilter.hpp</primary></indexterm>
+<programlisting>#include &lt;future&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &quot;Color.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ISceneState.hpp&quot;
-#include &quot;IDisplayable.hpp&quot;
-#include &quot;Transform.hpp&quot;
-</programlisting>Include dependency graph for CameraEntity.hpp:<para>
+#include &quot;IFilter.hpp&quot;
+#include &quot;ISetting.hpp&quot;
+#include &quot;Image.hpp&quot;
+</programlisting>Include dependency graph for BlackAndWhiteFilter.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -30,18 +31,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01535">RayTracer::PluginsExt::Camera::CameraEntity</link></para>
+            <listitem><para>class <link linkend="_a01542">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00385">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00391">RayTracer::PluginsExt::BlackAndWhite</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,13 +1,4 @@
-<map id="RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator" name="RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator">
-<area shape="rect" id="node1" title=" " alt="" coords="25,969,191,1091"/>
-<area shape="rect" id="node2" href="$a01411.html" title="The IFilterCreator class." alt="" coords="5,800,168,907"/>
-<area shape="rect" id="node3" title=" " alt="" coords="193,800,391,907"/>
-<area shape="rect" id="node4" href="$a01527.html" title=" " alt="" coords="411,572,578,737"/>
-<area shape="rect" id="node5" href="$a01319.html" title="The IFilter class." alt="" coords="745,329,879,436"/>
-<area shape="rect" id="node6" title=" " alt="" coords="277,337,451,429"/>
-<area shape="rect" id="node7" title=" " alt="" coords="386,145,505,223"/>
-<area shape="rect" id="node8" title=" " alt="" coords="169,145,298,223"/>
-<area shape="rect" id="node9" title=" " alt="" coords="214,5,253,83"/>
-<area shape="rect" id="node10" title=" " alt="" coords="475,344,514,421"/>
-<area shape="rect" id="node11" href="$a01323.html" title="Logger singleton." alt="" coords="539,285,720,480"/>
+<map id="RayTracer::PluginsExt::AmbientLight::AmbientLightCreator" name="RayTracer::PluginsExt::AmbientLight::AmbientLightCreator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,160,217,281"/>
+<area shape="rect" id="node2" href="$a01406.html" title="The IEntityCreator." alt="" coords="23,5,200,112"/>
 </map>

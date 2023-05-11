@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00329" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/PointLightCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;IEntityCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-#include &quot;SphereEntity.hpp&quot;
-</programlisting>Include dependency graph for SphereCreator.hpp:<para>
+#include &quot;IEntityCreator.hpp&quot;
+#include &quot;PointLightEntity.hpp&quot;
+</programlisting>Include dependency graph for PointLightCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -20,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01651">RayTracer::PluginsExt::Sphere::SphereCreator</link></para>
+            <listitem><para>class <link linkend="_a01658">RayTracer::PluginsExt::PointLight::PointLightCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00398">RayTracer::PluginsExt::Sphere</link></para>
+            <listitem><para> <link linkend="_a00404">RayTracer::PluginsExt::PointLight</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

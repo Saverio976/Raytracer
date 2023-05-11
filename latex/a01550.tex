@@ -1,0 +1,357 @@
+\hypertarget{a01550}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Camera\+Entity Class Reference}
+\label{a01550}\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+
+
+{\ttfamily \#include $<$Camera\+Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Camera\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{a01549}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Camera\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01548}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01550_a5242e9d64256628448318a97b30d1c65}{Camera\+Entity}} (const \mbox{\hyperlink{a01482}{Scenes\+::\+ISetting}} \&config, \mbox{\hyperlink{a01330}{ILogger}} \&logger)
+\item 
+\mbox{\hyperlink{a01550_ad11f45a47dfcc77ea55227308af532e2}{$\sim$\+Camera\+Entity}} ()=default
+\item 
+\mbox{\hyperlink{a01266_ab003087623e47600c09a76ff8138d37b}{Type}} \mbox{\hyperlink{a01550_a7c47a9a55f589897b3182c213ee8cae5}{get\+Type}} () const final
+\begin{DoxyCompactList}\small\item\em Get the type (light, camera, primitive) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01282}{Entities\+::\+Transform\+::\+ITransform}} \& \mbox{\hyperlink{a01550_a94e8667f44b8b7e797f3beadbf79ee30}{get\+Transform}} () final
+\begin{DoxyCompactList}\small\item\em Get the transform (position, rotation, scale) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01282}{Entities\+::\+Transform\+::\+ITransform}} \& \mbox{\hyperlink{a01550_ae2de2882395c7bd76758d01d9f083dc8}{get\+Transform}} () const final
+\begin{DoxyCompactList}\small\item\em Get the transform (position, rotation, scale) (const) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a01550_a70eac7f57a3943eaceeb28fbe69b27ab}{get\+Focal}} () const final
+\begin{DoxyCompactList}\small\item\em Get the focal (distance from the camera) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01550_abd751ab74903bad3ba14dfbfd5197763}{set\+Focal}} (double value) final
+\begin{DoxyCompactList}\small\item\em Set the focal (distance from the camera) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01550_a6a4a45291b79a76553b4f961e46a3b06}{set\+Size}} (const \mbox{\hyperlink{a01290}{Entities\+::\+Transform\+::\+Vector2i}} \&vector) final
+\begin{DoxyCompactList}\small\item\em Set the size (of the screen) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01290}{Entities\+::\+Transform\+::\+Vector2i}} \& \mbox{\hyperlink{a01550_ae3b85580387a30d8f8a42f7c170fbe75}{get\+Size}} () const final
+\begin{DoxyCompactList}\small\item\em Get the size (of the screen) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01338}{Images\+::\+Image}} \& \mbox{\hyperlink{a01550_ab966131d9b2863bf71fd1161f9009ec1}{render}} (const \mbox{\hyperlink{a01470}{Scenes\+::\+IDisplayable}} \&displayable, const \mbox{\hyperlink{a01478}{Scenes\+::\+IScene\+State}} \&state) final
+\begin{DoxyCompactList}\small\item\em Render an image. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01338}{Images\+::\+Image}} \& \mbox{\hyperlink{a01550_a516bb3a9c980eb7728de5f903637ae73}{get\+Image}} () const final
+\begin{DoxyCompactList}\small\item\em Get the image (possible when rendering) \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01326}{Filters\+::\+IFilter}} $>$ $>$ \& \mbox{\hyperlink{a01550_a36c3d5d2ea566404dbb95c519ab455eb}{get\+Filters}} () final
+\begin{DoxyCompactList}\small\item\em Get the filters. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01550_a9dc424dd65cf62ce1e6f2b07d7b20b82}{get\+Cluster}} () const final
+\begin{DoxyCompactList}\small\item\em Get the cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01550_a292d250db9a33558f1ae311d92131409}{set\+Cluster}} (std\+::size\+\_\+t cluster) final
+\begin{DoxyCompactList}\small\item\em Set the cluster (1 is more precision, +infini is less precision) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01338}{Images\+::\+Image}} \mbox{\hyperlink{a01550_acceed139c58bbdc574d5cb2a7c40ffe0}{\+\_\+image}}
+\item 
+\mbox{\hyperlink{a01290}{Entities\+::\+Transform\+::\+Vector2i}} \mbox{\hyperlink{a01550_a84218a11a2c84222c71a996be3c5dbab}{\+\_\+size}}
+\item 
+double \mbox{\hyperlink{a01550_a1d833bfebac77833dc8ee993e444eeee}{\+\_\+focal}}
+\item 
+std\+::list$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01326}{Filters\+::\+IFilter}} $>$ $>$ \mbox{\hyperlink{a01550_ace433abc8efc7d3bc1f5d60671c8ec48}{\+\_\+filters}}
+\item 
+\mbox{\hyperlink{a01286}{Entities\+::\+Transform\+::\+Transform}} \mbox{\hyperlink{a01550_a37c13414dd7e16643b25fe646f409712}{\+\_\+transform}}
+\item 
+int \mbox{\hyperlink{a01550_ae0d2e1906f86f964222820f748e6ca7b}{\+\_\+max\+Thread}}
+\item 
+\mbox{\hyperlink{a01330}{ILogger}} \& \mbox{\hyperlink{a01550_af50e99bff9a5a37c0b14208aeeb422cf}{\+\_\+logger}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01550_a5242e9d64256628448318a97b30d1c65}\label{a01550_a5242e9d64256628448318a97b30d1c65}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!CameraEntity@{CameraEntity}}
+\index{CameraEntity@{CameraEntity}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{CameraEntity()}{CameraEntity()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+Camera\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01482}{Scenes\+::\+ISetting}} \&}]{config,  }\item[{\mbox{\hyperlink{a01330}{ILogger}} \&}]{logger }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a01550_ad11f45a47dfcc77ea55227308af532e2}\label{a01550_ad11f45a47dfcc77ea55227308af532e2}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!````~CameraEntity@{$\sim$CameraEntity}}
+\index{````~CameraEntity@{$\sim$CameraEntity}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{$\sim$CameraEntity()}{~CameraEntity()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::$\sim$\+Camera\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01550_a9dc424dd65cf62ce1e6f2b07d7b20b82}\label{a01550_a9dc424dd65cf62ce1e6f2b07d7b20b82}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getCluster@{getCluster}}
+\index{getCluster@{getCluster}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getCluster()}{getCluster()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the cluster. 
+
+
+
+Implements \mbox{\hyperlink{a01262_aab1a39d426743e4ea2765ef3155166ac}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_a36c3d5d2ea566404dbb95c519ab455eb}\label{a01550_a36c3d5d2ea566404dbb95c519ab455eb}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getFilters@{getFilters}}
+\index{getFilters@{getFilters}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getFilters()}{getFilters()}}
+{\footnotesize\ttfamily std\+::list$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01326}{Filters\+::\+IFilter}}$>$ $>$\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Filters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the filters. 
+
+\begin{DoxyReturn}{Returns}
+the filters 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01262_a8c001d43360383cd0e530c785fa73099}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_a70eac7f57a3943eaceeb28fbe69b27ab}\label{a01550_a70eac7f57a3943eaceeb28fbe69b27ab}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getFocal@{getFocal}}
+\index{getFocal@{getFocal}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getFocal()}{getFocal()}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Focal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the focal (distance from the camera) 
+
+\begin{DoxyReturn}{Returns}
+the focal 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01262_a548bf7da2cf92f03d1b251fd46a63523}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_a516bb3a9c980eb7728de5f903637ae73}\label{a01550_a516bb3a9c980eb7728de5f903637ae73}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getImage@{getImage}}
+\index{getImage@{getImage}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01338}{Images\+::\+Image}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the image (possible when rendering) 
+
+\begin{DoxyReturn}{Returns}
+the image 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01262_a72790d0c7c3b9f4ce87cbb57767448ec}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_ae3b85580387a30d8f8a42f7c170fbe75}\label{a01550_ae3b85580387a30d8f8a42f7c170fbe75}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getSize@{getSize}}
+\index{getSize@{getSize}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01290}{Entities\+::\+Transform\+::\+Vector2i}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the size (of the screen) 
+
+\begin{DoxyReturn}{Returns}
+the size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01262_a0fd939f947002d94158528cb916d2e62}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_ae2de2882395c7bd76758d01d9f083dc8}\label{a01550_ae2de2882395c7bd76758d01d9f083dc8}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01282}{Entities\+::\+Transform\+::\+ITransform}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform (position, rotation, scale) (const) 
+
+\begin{DoxyReturn}{Returns}
+the transform 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01266_a703e6f7e78da30c2c7f4fecbe0bc580e}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01550_a94e8667f44b8b7e797f3beadbf79ee30}\label{a01550_a94e8667f44b8b7e797f3beadbf79ee30}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01282}{Entities\+::\+Transform\+::\+ITransform}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform (position, rotation, scale) 
+
+\begin{DoxyReturn}{Returns}
+the transform 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01266_ac97ca7c49d7a87c00bf6a95ca227108a}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01550_a7c47a9a55f589897b3182c213ee8cae5}\label{a01550_a7c47a9a55f589897b3182c213ee8cae5}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!getType@{getType}}
+\index{getType@{getType}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01266_ab003087623e47600c09a76ff8138d37b}{Type}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Get the type (light, camera, primitive) 
+
+\begin{DoxyReturn}{Returns}
+the type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01266_a68374ef5e0932ab3b3dea57a87be156e}{Ray\+Tracer\+::\+Entities\+::\+IEntity}}.
+
+\mbox{\Hypertarget{a01550_ab966131d9b2863bf71fd1161f9009ec1}\label{a01550_ab966131d9b2863bf71fd1161f9009ec1}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!render@{render}}
+\index{render@{render}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01338}{Images\+::\+Image}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01470}{Scenes\+::\+IDisplayable}} \&}]{displayable,  }\item[{const \mbox{\hyperlink{a01478}{Scenes\+::\+IScene\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Render an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em displayable} & the displayable \\
+\hline
+{\em state} & the state (if cancel needed)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01262_a914fa640b82a3b050f5f3bc63dd07536}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_a292d250db9a33558f1ae311d92131409}\label{a01550_a292d250db9a33558f1ae311d92131409}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!setCluster@{setCluster}}
+\index{setCluster@{setCluster}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{setCluster()}{setCluster()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::set\+Cluster (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{cluster }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Set the cluster (1 is more precision, +infini is less precision) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & the cluster \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01262_a9edc0c7053e4bcfbf649d8121c54cc1a}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_abd751ab74903bad3ba14dfbfd5197763}\label{a01550_abd751ab74903bad3ba14dfbfd5197763}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!setFocal@{setFocal}}
+\index{setFocal@{setFocal}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{setFocal()}{setFocal()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::set\+Focal (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Set the focal (distance from the camera) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the focal \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01262_ad636b677d2aa96af8d5bfb58fe6e4aec}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+\mbox{\Hypertarget{a01550_a6a4a45291b79a76553b4f961e46a3b06}\label{a01550_a6a4a45291b79a76553b4f961e46a3b06}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!setSize@{setSize}}
+\index{setSize@{setSize}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::set\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01290}{Entities\+::\+Transform\+::\+Vector2i}} \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Set the size (of the screen) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & the size \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01262_a7d5f89da8b205c97855a25c99ed6ed2c}{Ray\+Tracer\+::\+Entities\+::\+ICamera}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01550_ace433abc8efc7d3bc1f5d60671c8ec48}\label{a01550_ace433abc8efc7d3bc1f5d60671c8ec48}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_filters@{\_filters}}
+\index{\_filters@{\_filters}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_filters}{\_filters}}
+{\footnotesize\ttfamily std\+::list$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01326}{Filters\+::\+IFilter}}$>$ $>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+filters\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01550_a1d833bfebac77833dc8ee993e444eeee}\label{a01550_a1d833bfebac77833dc8ee993e444eeee}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_focal@{\_focal}}
+\index{\_focal@{\_focal}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_focal}{\_focal}}
+{\footnotesize\ttfamily double Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+focal\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01550_acceed139c58bbdc574d5cb2a7c40ffe0}\label{a01550_acceed139c58bbdc574d5cb2a7c40ffe0}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_image@{\_image}}
+\index{\_image@{\_image}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_image}{\_image}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01338}{Images\+::\+Image}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+image\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01550_af50e99bff9a5a37c0b14208aeeb422cf}\label{a01550_af50e99bff9a5a37c0b14208aeeb422cf}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_logger@{\_logger}}
+\index{\_logger@{\_logger}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_logger}{\_logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01330}{ILogger}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01550_ae0d2e1906f86f964222820f748e6ca7b}\label{a01550_ae0d2e1906f86f964222820f748e6ca7b}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_maxThread@{\_maxThread}}
+\index{\_maxThread@{\_maxThread}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_maxThread}{\_maxThread}}
+{\footnotesize\ttfamily int Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+max\+Thread\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01550_a84218a11a2c84222c71a996be3c5dbab}\label{a01550_a84218a11a2c84222c71a996be3c5dbab}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_size@{\_size}}
+\index{\_size@{\_size}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01290}{Entities\+::\+Transform\+::\+Vector2i}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01550_a37c13414dd7e16643b25fe646f409712}\label{a01550_a37c13414dd7e16643b25fe646f409712}} 
+\index{RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}!\_transform@{\_transform}}
+\index{\_transform@{\_transform}!RayTracer::PluginsExt::Camera::CameraEntity@{RayTracer::PluginsExt::Camera::CameraEntity}}
+\doxysubsubsection{\texorpdfstring{\_transform}{\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01286}{Entities\+::\+Transform\+::\+Transform}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Camera\+Entity\+::\+\_\+transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Camera/\+Basic/\mbox{\hyperlink{a00254}{Camera\+Entity.\+hpp}}\end{DoxyCompactItemize}

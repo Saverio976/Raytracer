@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00395" xml:lang="en-US">
-<title>RayTracer::PluginsExt::PlainMaterial Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::PlainMaterial</primary></indexterm>
+<title>RayTracer::PluginsExt::ChessBoard Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::ChessBoard</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01627">PlainMaterial</link></para>
+            <listitem><para>class <link linkend="_a01586">ChessBoardCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01631">PlainMaterialCreator</link></para>
+            <listitem><para>class <link linkend="_a01590">ChessBoardMaterial</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

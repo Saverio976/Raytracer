@@ -813,6 +813,26 @@ namespace RayTracer {
 			}
 		}
 
+		namespace BlackAndWhite {
+			class BlackAndWhiteCreator {
+				+~BlackAndWhiteCreator()
+				+create(const Scenes::ISetting& config, ILogger& logger) : Filters::IFilter*
+				-_elements : std::vector<BlackAndWhiteFilter*>
+			}
+
+			class BlackAndWhiteFilter {
+				+BlackAndWhiteFilter(const Scenes::ISetting& config, ILogger& logger)
+				-_logger : ILogger&
+				-{static} getColorsMean(const Images::Color& color, const std::string& method) : Images::Color
+				-_maxThread : int
+				-_method : std::string
+				-_futures : std::vector<std::future<void>>
+				+apply(Images::Image& image) : void
+				-waitAllFinisehd() : void
+				-waitOnePlace() : void
+			}
+		}
+
 		namespace AntiAliasing {
 			namespace SSAAx4 {
 				class SSAAx4Creator {
@@ -1550,6 +1570,12 @@ RayTracer.PluginsExt.AmbientLight.AmbientLightEntity *-- RayTracer.ILogger
 RayTracer.PluginsExt.AmbientLight.AmbientLightEntity *-- RayTracer.Entities.Transform.Transform
 
 
+RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteCreator o-- RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
+
+
+RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter *-- RayTracer.ILogger
+
+
 RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator o-- RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
 
 
@@ -2042,12 +2068,6 @@ RayTracer.PluginsExt.Zebra.ZebraMaterial "3" *-- RayTracer.Entities.Transform.Ve
 
 /' Dependency relationships '/
 
-RayTracer.Images.Color <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
-
-
 RayTracer.Images.Color <.. RayTracer.Images.Color
 
 
@@ -2070,12 +2090,6 @@ RayTracer.Images.Color <.. RayTracer.Images.Color
 
 
 RayTracer.Images.Color <.. RayTracer.Images.Color
-
-
-RayTracer.Images.Color <.. RayTracer.Entities.ILight
-
-
-RayTracer.Images.Color <.. RayTracer.Entities.IMaterial
 
 
 RayTracer.Images.Color <.. RayTracer.Images.Image::PixelLine
@@ -2087,31 +2101,13 @@ RayTracer.Images.Color <.. RayTracer.Images.Image::PixelLine
 RayTracer.Images.Color <.. RayTracer.Images.PixelThread
 
 
-RayTracer.Images.Color <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.PointLight.PointLightEntity
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
-
-
 RayTracer.Plugins.Entities.EntityHandler <.. RayTracer.Factories.EntityFactory
 
 
 RayTracer.Plugins.Filters.FilterHandler <.. RayTracer.Factories.FilterFactory
+
+
+RayTracer.Entities.ICamera <.. RayTracer.Display.CanvasModule
 
 
 RayTracer.Entities.ICamera <.. RayTracer.Images.RayIterrator
@@ -2249,37 +2245,34 @@ RayTracer.Scenes.IDisplayable <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 RayTracer.Filters.IFilter <.. RayTracer.Images.ImagePipeLine
 
 
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+RayTracer.Scenes.ISceneState <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
 
 
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+RayTracer.Scenes.ISceneState <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
 
 
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+RayTracer.Scenes.ISceneState <.. RayTracer.PluginsExt.Camera.CameraEntity
 
 
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+RayTracer.Scenes.ISceneState <.. RayTracer.Entities.ICamera
 
 
-RayTracer.Images.IRayIterator <.. RayTracer.Images.IRayIterator::IIterator
+RayTracer.Scenes.ISceneState <.. RayTracer.Images.ImagePipeLine
 
 
-RayTracer.Images.IRayIterator <.. RayTracer.Images.IRayIterator::IIterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.ImagePipeLine
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.RayIterrator::Iterrator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.RayIterrator::Iterrator
+RayTracer.Scenes.ISceneState <.. RayTracer.Scenes.SceneState
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteCreator
+
+
+RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator
@@ -2330,13 +2323,7 @@ RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Disk.DiskEntity
 RayTracer.Scenes.ISetting <.. RayTracer.Factories.EntityFactory
 
 
-RayTracer.Scenes.ISetting <.. RayTracer.Plugins.Entities.EntityHandler
-
-
 RayTracer.Scenes.ISetting <.. RayTracer.Factories.FilterFactory
-
-
-RayTracer.Scenes.ISetting <.. RayTracer.Plugins.Filters.FilterHandler
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.Plugins.Entities.IEntityCreator
@@ -2378,9 +2365,6 @@ RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEnti
 RayTracer.Scenes.ISetting <.. RayTracer.Factories.MaterialFactory
 
 
-RayTracer.Scenes.ISetting <.. RayTracer.Plugins.Materials.MaterialHandler
-
-
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
 
 
@@ -2391,9 +2375,6 @@ RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Plane.PlaneCreator
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Plane.PlaneEntity
-
-
-RayTracer.Scenes.ISetting <.. RayTracer.Plugins.PluginHandler
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.PointLight.PointLightCreator
@@ -2471,9 +2452,6 @@ RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Zebra.ZebraCreator
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
-RayTracer.Entities.Transform.ITransform <.. RayTracer.Display.CanvasModule
-
-
 RayTracer.Entities.Transform.ITransform <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
 
 
@@ -2495,19 +2473,64 @@ RayTracer.Entities.Transform.ITransform <.. RayTracer.PluginsExt.Transparency.Tr
 RayTracer.Entities.Transform.ITransform <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
+RayTracer.Images.Image <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+
+
 RayTracer.Images.Image <.. RayTracer.Filters.IFilter
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.ILight
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IMaterial
 
 
 RayTracer.Images.Image <.. RayTracer.Images.ImagePipeLine
 
 
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
 RayTracer.Images.Image <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
 RayTracer.Logger <.. RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
 
 
 RayTracer.Logger <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteCreator
+
+
+RayTracer.Logger <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
 
 
 RayTracer.Logger <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterCreator
@@ -2696,13 +2719,25 @@ RayTracer.Images.Ray <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
 
 
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
 
 
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
 
 
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
 
 
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
@@ -2726,19 +2761,34 @@ RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
 
 
-RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
+RayTracer.Images.Ray <.. RayTracer.Plugins.Entities.EntityHandler
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.Filters.FilterHandler
 
 
 RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
 
 
-RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
+RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
 
 
 RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
 
 
 RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.IRayIterator::IIterator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.IRayIterator::IIterator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.ImagePipeLine
 
 
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
@@ -2766,6 +2816,9 @@ RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
 
 
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.Materials.MaterialHandler
 
 
 RayTracer.Images.Ray <.. RayTracer.Images.PixelThread
@@ -2784,6 +2837,15 @@ RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
 
 
 RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Ray <.. RayTracer.Plugins.PluginHandler
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
 
 
 RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
@@ -2841,24 +2903,6 @@ RayTracer.Scenes.Scene <.. RayTracer.Display.Display
 
 
 RayTracer.Scenes.SceneLoader <.. RayTracer.Display.Display
-
-
-RayTracer.Scenes.SceneState <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
-
-
-RayTracer.Scenes.SceneState <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
-
-
-RayTracer.Scenes.SceneState <.. RayTracer.PluginsExt.Camera.CameraEntity
-
-
-RayTracer.Scenes.SceneState <.. RayTracer.Entities.ICamera
-
-
-RayTracer.Scenes.SceneState <.. RayTracer.Images.ImagePipeLine
-
-
-RayTracer.Scenes.SceneState <.. RayTracer.Scenes.SceneState
 
 
 RayTracer.Entities.Transform.Vector2i <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity

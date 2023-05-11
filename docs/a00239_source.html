@@ -88,14 +88,14 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">SSAAx4Filter.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00383.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00384.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01523.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01523.html">SSAAx4Creator</a> : <span class="keyword">public</span> <a class="code" href="a01411.html">Plugins::Filters::IFilterCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00389.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00390.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01530.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01530.html">SSAAx4Creator</a> : <span class="keyword">public</span> <a class="code" href="a01418.html">Plugins::Filters::IFilterCreator</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01523.html#ab8a4d564fb91dce7d2e171379fd173ec">   22</a></span>&#160;            <a class="code" href="a01523.html#ab8a4d564fb91dce7d2e171379fd173ec">~SSAAx4Creator</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01523.html#a126b9903c84dbeaf947155c00755e6f0">   23</a></span>&#160;            <a class="code" href="a01319.html">Filters::IFilter</a> *<a class="code" href="a01523.html#a126b9903c84dbeaf947155c00755e6f0">create</a>(<span class="keyword">const</span> <a class="code" href="a01475.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01323.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01530.html#ab8a4d564fb91dce7d2e171379fd173ec">   22</a></span>&#160;            <a class="code" href="a01530.html#ab8a4d564fb91dce7d2e171379fd173ec">~SSAAx4Creator</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01530.html#a126b9903c84dbeaf947155c00755e6f0">   23</a></span>&#160;            <a class="code" href="a01326.html">Filters::IFilter</a> *<a class="code" href="a01530.html#a126b9903c84dbeaf947155c00755e6f0">create</a>(<span class="keyword">const</span> <a class="code" href="a01482.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01330.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01523.html#a23987d89e741cdc47e8fa7e148ac17b9">   26</a></span>&#160;            std::vector&lt;SSAAx4Filter *&gt; <a class="code" href="a01523.html#a23987d89e741cdc47e8fa7e148ac17b9">_elements</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01530.html#a23987d89e741cdc47e8fa7e148ac17b9">   26</a></span>&#160;            std::vector&lt;SSAAx4Filter *&gt; <a class="code" href="a01530.html#a23987d89e741cdc47e8fa7e148ac17b9">_elements</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -105,19 +105,19 @@ $(function() {
 <div class="ttc" id="aa00182_html"><div class="ttname"><a href="a00182.html">IFilterCreator.hpp</a></div></div>
 <div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
 <div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">SSAAx4Filter.hpp</a></div></div>
-<div class="ttc" id="aa00384_html"><div class="ttname"><a href="a00384.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:19</div></div>
-<div class="ttc" id="aa01319_html"><div class="ttname"><a href="a01319.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01323_html"><div class="ttname"><a href="a01323.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01411_html"><div class="ttname"><a href="a01411.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
-<div class="ttc" id="aa01475_html"><div class="ttname"><a href="a01475.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01523_html"><div class="ttname"><a href="a01523.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:20</div></div>
-<div class="ttc" id="aa01523_html_a126b9903c84dbeaf947155c00755e6f0"><div class="ttname"><a href="a01523.html#a126b9903c84dbeaf947155c00755e6f0">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::create</a></div><div class="ttdeci">Filters::IFilter * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a filter with a setting.</div></div>
-<div class="ttc" id="aa01523_html_a23987d89e741cdc47e8fa7e148ac17b9"><div class="ttname"><a href="a01523.html#a23987d89e741cdc47e8fa7e148ac17b9">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::_elements</a></div><div class="ttdeci">std::vector&lt; SSAAx4Filter * &gt; _elements</div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:26</div></div>
-<div class="ttc" id="aa01523_html_ab8a4d564fb91dce7d2e171379fd173ec"><div class="ttname"><a href="a01523.html#ab8a4d564fb91dce7d2e171379fd173ec">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::~SSAAx4Creator</a></div><div class="ttdeci">~SSAAx4Creator()</div></div>
+<div class="ttc" id="aa00390_html"><div class="ttname"><a href="a00390.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:19</div></div>
+<div class="ttc" id="aa01326_html"><div class="ttname"><a href="a01326.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
+<div class="ttc" id="aa01330_html"><div class="ttname"><a href="a01330.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01418_html"><div class="ttname"><a href="a01418.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
+<div class="ttc" id="aa01482_html"><div class="ttname"><a href="a01482.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01530_html"><div class="ttname"><a href="a01530.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:20</div></div>
+<div class="ttc" id="aa01530_html_a126b9903c84dbeaf947155c00755e6f0"><div class="ttname"><a href="a01530.html#a126b9903c84dbeaf947155c00755e6f0">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::create</a></div><div class="ttdeci">Filters::IFilter * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a filter with a setting.</div></div>
+<div class="ttc" id="aa01530_html_a23987d89e741cdc47e8fa7e148ac17b9"><div class="ttname"><a href="a01530.html#a23987d89e741cdc47e8fa7e148ac17b9">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::_elements</a></div><div class="ttdeci">std::vector&lt; SSAAx4Filter * &gt; _elements</div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:26</div></div>
+<div class="ttc" id="aa01530_html_ab8a4d564fb91dce7d2e171379fd173ec"><div class="ttname"><a href="a01530.html#ab8a4d564fb91dce7d2e171379fd173ec">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::~SSAAx4Creator</a></div><div class="ttdeci">~SSAAx4Creator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 05:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 13:08:41 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

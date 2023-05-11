@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01370" xml:lang="en-US">
+<title>RayTracer::Images::RayIterrator::Iterrator Class Reference</title>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary></indexterm>
+<para>
+<computeroutput>#include &lt;RayIterrator.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Images::RayIterrator::Iterrator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01369.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Images::RayIterrator::Iterrator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01368.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_a01370_1a8269f801293c573091eb1d0aac32f844">iterator_category</link> = std::forward_iterator_tag</para>
+</listitem>
+            <listitem><para>using <link linkend="_a01370_1aad4b00281ce1379ff5e02f5c41eb1518">difference_type</link> = <link linkend="_a01362">Ray</link></para>
+</listitem>
+            <listitem><para>using <link linkend="_a01370_1a980cc30113f804f860f68e68a1efacc2">value_type</link> = <link linkend="_a01362">Ray</link></para>
+</listitem>
+            <listitem><para>using <link linkend="_a01370_1abf9d59b8c7d9bd4c8980595241f40736">pointer</link> = <link linkend="_a01362">Ray</link> *</para>
+</listitem>
+            <listitem><para>using <link linkend="_a01370_1a44fcfa12c1246c71c37419732c4dc7ed">reference</link> = <link linkend="_a01362">Ray</link> &amp;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01370_1ac8ae5ca0b45f5256d658ab76a02a0a73">Iterrator</link> (const <link linkend="_a01362">Ray</link> &amp;last, const <link linkend="_a01290">Entities::Transform::Vector2i</link> &amp;size, const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp;screenPos, const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp;pov)</para>
+</listitem>
+            <listitem><para><link linkend="_a01354">IIterator</link> &amp; <link linkend="_a01370_1a175c0f23f75d6adc48caf81ba4c96299">operator++</link> () final</para>
+
+<para>create the next <link linkend="_a01366">RayIterrator</link> (modify current instance) </para>
+</listitem>
+            <listitem><para><link linkend="_a01362">Ray</link> &amp; <link linkend="_a01370_1a35a0670402cef0c2044560d84f0ae0fd">operator*</link> () final</para>
+
+<para>Get the ray of the current <link linkend="_a01366">RayIterrator</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01370_1a7b95f43845dffabf3f646ef7d29de5dc">operator==</link> (const <link linkend="_a01354">IRayIterator::IIterator</link> &amp;other) const final</para>
+
+<para>Compare two <link linkend="_a01366">RayIterrator</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01370_1adce8f700708cb8b362d404a51f7624e6">operator!=</link> (const <link linkend="_a01354">IRayIterator::IIterator</link> &amp;other) const final</para>
+
+<para>Compare two <link linkend="_a01366">RayIterrator</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_a01370">RayIterrator::Iterrator</link> &amp; <link linkend="_a01370_1a01b4177323fb7b9394cfa35aee077e98">operator=</link> (const <link linkend="_a01370">RayIterrator::Iterrator</link> &amp;other)</para>
+
+<para>Compare two RayIterrator::iterrator. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01370_1a7682736e140eae7c1c8bb7845758c5c0">toString</link> () const final</para>
+
+<para>toString </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_a01362">Ray</link> <link linkend="_a01370_1ad62e62ca68c8a1a9f6fe773ad68d565a">_last</link></para>
+</listitem>
+            <listitem><para>const <link linkend="_a01290">Entities::Transform::Vector2i</link> <link linkend="_a01370_1af434a930c74817b0eca52c2cd7deb8dc">_size</link></para>
+</listitem>
+            <listitem><para>const <link linkend="_a01294">Entities::Transform::Vector3f</link> <link linkend="_a01370_1a73ea96e140998200cff07105f0c1b9da">_screenPos</link></para>
+</listitem>
+            <listitem><para>const <link linkend="_a01294">Entities::Transform::Vector3f</link> <link linkend="_a01370_1aac5b3c373e37b88b489be56c78b9a1c8">_pov</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01362">Ray</link> <link linkend="_a01370_1a2267eb38ce2c73c80a3358a8df0aaea2">_ray</link></para>
+</listitem>
+            <listitem><para>std::size_t <link linkend="_a01370_1a5daa596e40e596f273090f9bf9c5736f">_cluster</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_a01370_1aad4b00281ce1379ff5e02f5c41eb1518"/>    <section>
+    <title>difference_type</title>
+<indexterm><primary>difference_type</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>difference_type</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01370_1aad4b00281ce1379ff5e02f5c41eb1518">RayTracer::Images::RayIterrator::Iterrator::difference_type</link> =  <link linkend="_a01362">Ray</link></computeroutput></para>    </section><anchor xml:id="_a01370_1a8269f801293c573091eb1d0aac32f844"/>    <section>
+    <title>iterator_category</title>
+<indexterm><primary>iterator_category</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>iterator_category</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01370_1a8269f801293c573091eb1d0aac32f844">RayTracer::Images::RayIterrator::Iterrator::iterator_category</link> =  std::forward_iterator_tag</computeroutput></para>    </section><anchor xml:id="_a01370_1abf9d59b8c7d9bd4c8980595241f40736"/>    <section>
+    <title>pointer</title>
+<indexterm><primary>pointer</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>pointer</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01370_1abf9d59b8c7d9bd4c8980595241f40736">RayTracer::Images::RayIterrator::Iterrator::pointer</link> =  <link linkend="_a01362">Ray</link> *</computeroutput></para>    </section><anchor xml:id="_a01370_1a44fcfa12c1246c71c37419732c4dc7ed"/>    <section>
+    <title>reference</title>
+<indexterm><primary>reference</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>reference</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01370_1a44fcfa12c1246c71c37419732c4dc7ed">RayTracer::Images::RayIterrator::Iterrator::reference</link> =  <link linkend="_a01362">Ray</link> &amp;</computeroutput></para>    </section><anchor xml:id="_a01370_1a980cc30113f804f860f68e68a1efacc2"/>    <section>
+    <title>value_type</title>
+<indexterm><primary>value_type</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>value_type</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01370_1a980cc30113f804f860f68e68a1efacc2">RayTracer::Images::RayIterrator::Iterrator::value_type</link> =  <link linkend="_a01362">Ray</link></computeroutput></para></section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01370_1ac8ae5ca0b45f5256d658ab76a02a0a73"/>    <section>
+    <title>Iterrator()</title>
+<indexterm><primary>Iterrator</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>Iterrator</secondary></indexterm>
+<para><computeroutput>RayTracer::Images::RayIterrator::Iterrator::Iterrator (const <link linkend="_a01362">Ray</link> &amp; last, const <link linkend="_a01290">Entities::Transform::Vector2i</link> &amp; size, const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp; screenPos, const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp; pov)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01370_1adce8f700708cb8b362d404a51f7624e6"/>    <section>
+    <title>operator!=()</title>
+<indexterm><primary>operator!=</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>operator!=</secondary></indexterm>
+<para><computeroutput>bool RayTracer::Images::RayIterrator::Iterrator::operator!= (const <link linkend="_a01354">IRayIterator::IIterator</link> &amp; other) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Compare two <link linkend="_a01366">RayIterrator</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if not equal </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01354_1a68edf117388a0d588b1d5030a5e0ec51">RayTracer::Images::IRayIterator::IIterator</link>.</para>
+    </section><anchor xml:id="_a01370_1a35a0670402cef0c2044560d84f0ae0fd"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>operator*</secondary></indexterm>
+<para><computeroutput><link linkend="_a01362">Ray</link>&amp; RayTracer::Images::RayIterrator::Iterrator::operator* ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the ray of the current <link linkend="_a01366">RayIterrator</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the ray </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01354_1a693bf2ce1b2846569514ac383df1d638">RayTracer::Images::IRayIterator::IIterator</link>.</para>
+    </section><anchor xml:id="_a01370_1a175c0f23f75d6adc48caf81ba4c96299"/>    <section>
+    <title>operator++()</title>
+<indexterm><primary>operator++</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>operator++</secondary></indexterm>
+<para><computeroutput><link linkend="_a01354">IIterator</link>&amp; RayTracer::Images::RayIterrator::Iterrator::operator++ ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>create the next <link linkend="_a01366">RayIterrator</link> (modify current instance) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the current instance modified </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01354_1a8a9611aab72a7d1df506abf5b1eb4383">RayTracer::Images::IRayIterator::IIterator</link>.</para>
+    </section><anchor xml:id="_a01370_1a01b4177323fb7b9394cfa35aee077e98"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_a01370">RayIterrator::Iterrator</link>&amp; RayTracer::Images::RayIterrator::Iterrator::operator= (const <link linkend="_a01370">RayIterrator::Iterrator</link> &amp; other)</computeroutput></para><para>
+
+<para>Compare two RayIterrator::iterrator. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if equal </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01370_1a7b95f43845dffabf3f646ef7d29de5dc"/>    <section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool RayTracer::Images::RayIterrator::Iterrator::operator== (const <link linkend="_a01354">IRayIterator::IIterator</link> &amp; other) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Compare two <link linkend="_a01366">RayIterrator</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if equal </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01354_1aeca58e7e75242864403c243e34f7a6b7">RayTracer::Images::IRayIterator::IIterator</link>.</para>
+    </section><anchor xml:id="_a01370_1a7682736e140eae7c1c8bb7845758c5c0"/>    <section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Images::RayIterrator::Iterrator::toString ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>toString </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the string </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01354_1a8e194702b273968c7c036253af0233d4">RayTracer::Images::IRayIterator::IIterator</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01370_1a5daa596e40e596f273090f9bf9c5736f"/>    <section>
+    <title>_cluster</title>
+<indexterm><primary>_cluster</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>_cluster</secondary></indexterm>
+<para><computeroutput>std::size_t RayTracer::Images::RayIterrator::Iterrator::_cluster<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01370_1ad62e62ca68c8a1a9f6fe773ad68d565a"/>    <section>
+    <title>_last</title>
+<indexterm><primary>_last</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>_last</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01362">Ray</link> RayTracer::Images::RayIterrator::Iterrator::_last<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01370_1aac5b3c373e37b88b489be56c78b9a1c8"/>    <section>
+    <title>_pov</title>
+<indexterm><primary>_pov</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>_pov</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01294">Entities::Transform::Vector3f</link> RayTracer::Images::RayIterrator::Iterrator::_pov<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01370_1a2267eb38ce2c73c80a3358a8df0aaea2"/>    <section>
+    <title>_ray</title>
+<indexterm><primary>_ray</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>_ray</secondary></indexterm>
+<para><computeroutput><link linkend="_a01362">Ray</link> RayTracer::Images::RayIterrator::Iterrator::_ray<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01370_1a73ea96e140998200cff07105f0c1b9da"/>    <section>
+    <title>_screenPos</title>
+<indexterm><primary>_screenPos</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>_screenPos</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01294">Entities::Transform::Vector3f</link> RayTracer::Images::RayIterrator::Iterrator::_screenPos<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01370_1af434a930c74817b0eca52c2cd7deb8dc"/>    <section>
+    <title>_size</title>
+<indexterm><primary>_size</primary><secondary>RayTracer::Images::RayIterrator::Iterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator::Iterrator</primary><secondary>_size</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01290">Entities::Transform::Vector2i</link> RayTracer::Images::RayIterrator::Iterrator::_size<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Images/<link linkend="_a00152">RayIterrator.hpp</link></section>
+</section>

@@ -1,0 +1,62 @@
+.TH "RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BlackAndWhiteCreator\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Plugins::Filters::IFilterCreator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~BlackAndWhiteCreator\fP ()"
+.br
+.ti -1c
+.RI "\fBFilters::IFilter\fP * \fBcreate\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger) final"
+.br
+.RI "Create a filter with a setting\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBBlackAndWhiteFilter\fP * > \fB_elements\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::~BlackAndWhiteCreator ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFilters::IFilter\fP* RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::create (const \fBScenes::ISetting\fP & setting, \fBILogger\fP & logger)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Create a filter with a setting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP the setting
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the filter 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Plugins::Filters::IFilterCreator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBBlackAndWhiteFilter\fP *> RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::_elements\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

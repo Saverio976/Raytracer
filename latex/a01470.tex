@@ -1,0 +1,166 @@
+\hypertarget{a01470}{}\doxysection{Ray\+Tracer\+::Scenes\+::IDisplayable Class Reference}
+\label{a01470}\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+
+
+The \mbox{\hyperlink{a01470}{IDisplayable}} interface.  
+
+
+
+
+{\ttfamily \#include $<$IDisplayable.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Scenes\+::IDisplayable\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{a01469}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Scenes\+::IDisplayable\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{a01468}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01474}{IDisplayable\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the key is not found \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01270}{Entities\+::\+ILight}} $>$ $>$ \& \mbox{\hyperlink{a01470_a617417eddf2ffcbdc09dbeece19aeaec}{get\+Light\+List}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the light list (const) \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01270}{Entities\+::\+ILight}} $>$ $>$ \& \mbox{\hyperlink{a01470_a34e70ed442d05131965b23354f145638}{get\+Light\+List}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the light list. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01278}{Entities\+::\+IPrimitive}} $>$ $>$ \& \mbox{\hyperlink{a01470_a4ad763383b511e1ff52f16a6cbf74bd5}{get\+Primitive\+List}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the primitive list (const) \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{a01278}{Entities\+::\+IPrimitive}} $>$ $>$ \& \mbox{\hyperlink{a01470_ad75904a51bdc0eab0d6ea7fe0c567e7a}{get\+Primitive\+List}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the primitive list. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{a01270}{Entities\+::\+ILight}} \& \mbox{\hyperlink{a01470_af511aa8520b8445d649edb3e10fadb62}{get\+Ambient\+Light}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the ambient light. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01270}{Entities\+::\+ILight}} \& \mbox{\hyperlink{a01470_a9e1ce230855d0adab38b44d70179f33b}{get\+Ambient\+Light}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the ambient light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01470}{IDisplayable}} interface. 
+
+interface that represent a displayable 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01470_af511aa8520b8445d649edb3e10fadb62}\label{a01470_af511aa8520b8445d649edb3e10fadb62}} 
+\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}!getAmbientLight@{getAmbientLight}}
+\index{getAmbientLight@{getAmbientLight}!RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+\doxysubsubsection{\texorpdfstring{getAmbientLight()}{getAmbientLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{a01270}{Entities\+::\+ILight}}\& Ray\+Tracer\+::\+Scenes\+::\+IDisplayable\+::get\+Ambient\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the ambient light. 
+
+\begin{DoxyReturn}{Returns}
+the ambient light 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01458_a9ed85d3840978ab022f8b9d23a30c4a5}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}.
+
+\mbox{\Hypertarget{a01470_a9e1ce230855d0adab38b44d70179f33b}\label{a01470_a9e1ce230855d0adab38b44d70179f33b}} 
+\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}!getAmbientLight@{getAmbientLight}}
+\index{getAmbientLight@{getAmbientLight}!RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+\doxysubsubsection{\texorpdfstring{getAmbientLight()}{getAmbientLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01270}{Entities\+::\+ILight}}\& Ray\+Tracer\+::\+Scenes\+::\+IDisplayable\+::get\+Ambient\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the ambient light. 
+
+\begin{DoxyReturn}{Returns}
+the ambient light 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01458_a794ec49b27d5a04c87ad02c30890c824}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}.
+
+\mbox{\Hypertarget{a01470_a617417eddf2ffcbdc09dbeece19aeaec}\label{a01470_a617417eddf2ffcbdc09dbeece19aeaec}} 
+\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}!getLightList@{getLightList}}
+\index{getLightList@{getLightList}!RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+\doxysubsubsection{\texorpdfstring{getLightList()}{getLightList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01270}{Entities\+::\+ILight}}$>$ $>$\& Ray\+Tracer\+::\+Scenes\+::\+IDisplayable\+::get\+Light\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the light list (const) 
+
+\begin{DoxyReturn}{Returns}
+the light list 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01458_a1a1bfffec400ce0617f9a7098db9aa8d}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}.
+
+\mbox{\Hypertarget{a01470_a34e70ed442d05131965b23354f145638}\label{a01470_a34e70ed442d05131965b23354f145638}} 
+\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}!getLightList@{getLightList}}
+\index{getLightList@{getLightList}!RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+\doxysubsubsection{\texorpdfstring{getLightList()}{getLightList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01270}{Entities\+::\+ILight}}$>$ $>$\& Ray\+Tracer\+::\+Scenes\+::\+IDisplayable\+::get\+Light\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the light list. 
+
+\begin{DoxyReturn}{Returns}
+the light list 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01458_a4f22718af9b185b3b47591082b369e3f}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}.
+
+\mbox{\Hypertarget{a01470_a4ad763383b511e1ff52f16a6cbf74bd5}\label{a01470_a4ad763383b511e1ff52f16a6cbf74bd5}} 
+\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}!getPrimitiveList@{getPrimitiveList}}
+\index{getPrimitiveList@{getPrimitiveList}!RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+\doxysubsubsection{\texorpdfstring{getPrimitiveList()}{getPrimitiveList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01278}{Entities\+::\+IPrimitive}}$>$ $>$\& Ray\+Tracer\+::\+Scenes\+::\+IDisplayable\+::get\+Primitive\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the primitive list (const) 
+
+\begin{DoxyReturn}{Returns}
+the primitive list 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01458_a562d5887ee61efb642945226857ca427}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}.
+
+\mbox{\Hypertarget{a01470_ad75904a51bdc0eab0d6ea7fe0c567e7a}\label{a01470_ad75904a51bdc0eab0d6ea7fe0c567e7a}} 
+\index{RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}!getPrimitiveList@{getPrimitiveList}}
+\index{getPrimitiveList@{getPrimitiveList}!RayTracer::Scenes::IDisplayable@{RayTracer::Scenes::IDisplayable}}
+\doxysubsubsection{\texorpdfstring{getPrimitiveList()}{getPrimitiveList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::reference\+\_\+wrapper$<$\mbox{\hyperlink{a01278}{Entities\+::\+IPrimitive}}$>$ $>$\& Ray\+Tracer\+::\+Scenes\+::\+IDisplayable\+::get\+Primitive\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the primitive list. 
+
+\begin{DoxyReturn}{Returns}
+the primitive list 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{a01458_ab612b2687132d74bc75c36c5142d217b}{Ray\+Tracer\+::\+Scenes\+::\+Displayable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\mbox{\hyperlink{a00212}{IDisplayable.\+hpp}}\end{DoxyCompactItemize}

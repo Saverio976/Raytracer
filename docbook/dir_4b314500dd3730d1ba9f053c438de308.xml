@@ -18,6 +18,8 @@ Directory dependency graph for PluginsExt:<para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_d4bc861357cab59352e84826f962b9a0">AntiAliasing</link></para>
 </listitem>
+            <listitem><para>directory <link linkend="_dir_a1e7b0f6c8c966f643def133f499c25f">BlackAndWhite</link></para>
+</listitem>
             <listitem><para>directory <link linkend="_dir_62f615b43676db5ddd87f008b4cc30b3">Camera</link></para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_616a73672332529d3731a9ebd7c994a8">ChessBoardMaterial</link></para>

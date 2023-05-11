@@ -1,7 +1,7 @@
-<map id="RayTracer::Plugins::Materials::MaterialLoader" name="RayTracer::Plugins::Materials::MaterialLoader">
-<area shape="rect" id="node1" title="The MaterialLoader." alt="" coords="5,700,203,807"/>
-<area shape="rect" id="node2" href="$a01431.html" title=" " alt="" coords="126,515,365,651"/>
-<area shape="rect" id="node3" href="$a01431.html" title=" " alt="" coords="139,287,323,408"/>
-<area shape="rect" id="node4" title=" " alt="" coords="66,147,153,224"/>
-<area shape="rect" id="node5" title=" " alt="" coords="40,5,179,97"/>
+<map id="RayTracer::Plugins::Materials::IMaterialCreator" name="RayTracer::Plugins::Materials::IMaterialCreator">
+<area shape="rect" id="node1" title="The IMaterialCreator class." alt="" coords="389,5,595,112"/>
+<area shape="rect" id="node2" href="$a01586.html" title=" " alt="" coords="5,167,245,274"/>
+<area shape="rect" id="node3" href="$a01646.html" title=" " alt="" coords="269,160,480,281"/>
+<area shape="rect" id="node4" href="$a01690.html" title=" " alt="" coords="505,160,714,281"/>
+<area shape="rect" id="node5" href="$a01706.html" title=" " alt="" coords="739,167,901,274"/>
 </map>

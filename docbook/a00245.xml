@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00245" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraCreator.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp</primary></indexterm>
 <programlisting>#include &lt;vector&gt;
 #include &lt;memory&gt;
-#include &quot;IEntityCreator.hpp&quot;
+#include &quot;IFilter.hpp&quot;
+#include &quot;IFilterCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;CameraEntity.hpp&quot;
-</programlisting>Include dependency graph for CameraCreator.hpp:<para>
+#include &quot;ISetting.hpp&quot;
+#include &quot;BlackAndWhiteFilter.hpp&quot;
+</programlisting>Include dependency graph for BlackAndWhiteCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,18 +21,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01531">RayTracer::PluginsExt::Camera::CameraCreator</link></para>
+            <listitem><para>class <link linkend="_a01538">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00385">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00391">RayTracer::PluginsExt::BlackAndWhite</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

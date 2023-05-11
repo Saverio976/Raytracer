@@ -1,13 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00269" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/ChessBoardMaterial/ChessBoardCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/ChessBoardMaterial/ChessBoardCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
-#include &lt;memory&gt;
-#include &quot;IMaterialCreator.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom/CameraCustomEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom/CameraCustomEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;functional&gt;
+#include &lt;optional&gt;
+#include &quot;ICamera.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;ChessBoardMaterial.hpp&quot;
-</programlisting>Include dependency graph for ChessBoardCreator.hpp:<para>
+#include &quot;ISceneState.hpp&quot;
+#include &quot;IDisplayable.hpp&quot;
+#include &quot;Transform.hpp&quot;
+#include &quot;Vector2i.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for CameraCustomEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -16,21 +20,32 @@
         </mediaobject>
     </informalfigure>
 </para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00271.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01571">RayTracer::PluginsExt::ChessBoard::ChessBoardCreator</link></para>
+            <listitem><para>class <link linkend="_a01574">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00388">RayTracer::PluginsExt::ChessBoard</link></para>
+            <listitem><para> <link linkend="_a00392">RayTracer::PluginsExt::Camera</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00394">RayTracer::PluginsExt::Camera::FullCustom</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

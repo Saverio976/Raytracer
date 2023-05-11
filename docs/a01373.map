@@ -1,6 +1,4 @@
-<map id="RayTracer::Main::MainError" name="RayTracer::Main::MainError">
-<area shape="rect" id="node1" title=" " alt="" coords="5,287,203,379"/>
-<area shape="rect" id="node2" title=" " alt="" coords="25,147,140,224"/>
-<area shape="rect" id="node3" title=" " alt="" coords="165,147,251,224"/>
-<area shape="rect" id="node4" title=" " alt="" coords="139,5,277,97"/>
+<map id="RayTracer::Logger" name="RayTracer::Logger">
+<area shape="rect" id="node1" title="Logger singleton." alt="" coords="5,248,187,443"/>
+<area shape="rect" id="node2" href="$a01330.html" title="Logger singleton." alt="" coords="5,5,187,200"/>
 </map>

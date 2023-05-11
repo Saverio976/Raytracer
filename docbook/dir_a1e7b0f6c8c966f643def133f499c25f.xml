@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a1e7b0f6c8c966f643def133f499c25f" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite Directory Reference</primary></indexterm>
+Directory dependency graph for BlackAndWhite:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_a1e7b0f6c8c966f643def133f499c25f_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00245">BlackAndWhiteCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00248">BlackAndWhiteFilter.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

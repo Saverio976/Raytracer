@@ -1,8 +1,4 @@
-<map id="RayTracer::Scenes::SettingWrapper" name="RayTracer::Scenes::SettingWrapper">
-<area shape="rect" id="node1" title="The SettingWrapper class." alt="" coords="216,675,400,1031"/>
-<area shape="rect" id="node2" href="$a01475.html" title=" " alt="" coords="5,285,189,612"/>
-<area shape="rect" id="node3" title=" " alt="" coords="213,403,403,495"/>
-<area shape="rect" id="node4" title=" " alt="" coords="229,145,387,223"/>
-<area shape="rect" id="node5" title=" " alt="" coords="289,5,327,83"/>
-<area shape="rect" id="node6" title=" " alt="" coords="427,410,506,487"/>
+<map id="RayTracer::Scenes::SceneLoader::BadFileError" name="RayTracer::Scenes::SceneLoader::BadFileError">
+<area shape="rect" id="node1" title=" " alt="" coords="5,131,197,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="44,5,159,83"/>
 </map>

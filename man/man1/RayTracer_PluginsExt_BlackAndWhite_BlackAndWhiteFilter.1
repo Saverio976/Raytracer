@@ -1,0 +1,116 @@
+.TH "RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BlackAndWhiteFilter\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Filters::IFilter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBlackAndWhiteFilter\fP (const \fBScenes::ISetting\fP &config, \fBILogger\fP &logger)"
+.br
+.ti -1c
+.RI "void \fBapply\fP (\fBImages::Image\fP &image) final"
+.br
+.RI "Apply the filter on an image\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwaitOnePlace\fP ()"
+.br
+.RI "Wait one place in the vector of futures\&. "
+.ti -1c
+.RI "void \fBwaitAllFinisehd\fP ()"
+.br
+.RI "Wait all places in the vector of futures\&. "
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBImages::Color\fP \fBgetColorsMean\fP (const \fBImages::Color\fP &color, const std::string &method)"
+.br
+.RI "Mean of the colors\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.ti -1c
+.RI "int \fB_maxThread\fP"
+.br
+.ti -1c
+.RI "std::vector< std::future< void > > \fB_futures\fP"
+.br
+.ti -1c
+.RI "std::string \fB_method\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::BlackAndWhiteFilter (const \fBScenes::ISetting\fP & config, \fBILogger\fP & logger)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::apply (\fBImages::Image\fP & image)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Apply the filter on an image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimage\fP the image 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Filters::IFilter\fP\&.
+.SS "static \fBImages::Color\fP RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::getColorsMean (const \fBImages::Color\fP & color, const std::string & method)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Mean of the colors\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolors\fP The colors to mean
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The mean 
+.RE
+.PP
+
+.SS "void RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::waitAllFinisehd ()\fC [private]\fP"
+
+.PP
+Wait all places in the vector of futures\&. 
+.SS "void RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::waitOnePlace ()\fC [private]\fP"
+
+.PP
+Wait one place in the vector of futures\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::future<void> > RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_futures\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_logger\fC [private]\fP"
+
+.SS "int RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_maxThread\fC [private]\fP"
+
+.SS "std::string RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter::_method\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green_1258',['GREEN',['../a01327.html#af35923ca8c50d72aa6e3c3af5601622aa9de0e5dd94e861317e74964bed179fa0',1,'RayTracer::Images::Color']]]
+  ['green_1273',['GREEN',['../a01334.html#af35923ca8c50d72aa6e3c3af5601622aa9de0e5dd94e861317e74964bed179fa0',1,'RayTracer::Images::Color']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ambientlightcreator_596',['AmbientLightCreator',['../a01515.html',1,'RayTracer::PluginsExt::AmbientLight']]],
-  ['ambientlightentity_597',['AmbientLightEntity',['../a01519.html',1,'RayTracer::PluginsExt::AmbientLight']]],
-  ['argumenterror_598',['ArgumentError',['../a01379.html',1,'RayTracer::Main']]]
+  ['ambientlightcreator_603',['AmbientLightCreator',['../a01522.html',1,'RayTracer::PluginsExt::AmbientLight']]],
+  ['ambientlightentity_604',['AmbientLightEntity',['../a01526.html',1,'RayTracer::PluginsExt::AmbientLight']]],
+  ['argumenterror_605',['ArgumentError',['../a01386.html',1,'RayTracer::Main']]]
 ];

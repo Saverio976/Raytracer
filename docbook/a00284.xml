@@ -1,15 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00284" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cylinder/CylinderEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cylinder/CylinderEntity.hpp</primary></indexterm>
-<programlisting>#include &lt;optional&gt;
-#include &quot;IPrimitive.hpp&quot;
-#include &quot;ISetting.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;cmath&gt;
 #include &quot;ILogger.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
 #include &quot;Transform.hpp&quot;
 #include &quot;IMaterial.hpp&quot;
-#include &quot;Ray.hpp&quot;
-</programlisting>Include dependency graph for CylinderEntity.hpp:<para>
+</programlisting>Include dependency graph for ConeEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -30,18 +28,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01591">RayTracer::PluginsExt::Cylinder::CylinderEntity</link></para>
+            <listitem><para>class <link linkend="_a01598">RayTracer::PluginsExt::Cone::ConeEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00369">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00375">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00381">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00387">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00390">RayTracer::PluginsExt::Cylinder</link></para>
+            <listitem><para> <link linkend="_a00396">RayTracer::PluginsExt::Cone</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

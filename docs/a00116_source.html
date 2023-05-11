@@ -84,16 +84,16 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00373.html">RayTracer::Factories</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01303.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01303.html">IFilterFactory</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00379.html">RayTracer::Factories</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01310.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01310.html">IFilterFactory</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01303.html#a5b8e762b8a179ba7c25cfe66c0f6da63">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01303.html#a5b8e762b8a179ba7c25cfe66c0f6da63">~IFilterFactory</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01303.html#a9b178f7a1ae9cad80648b033a449660c">   30</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01319.html">Filters::IFilter</a> &amp;<a class="code" href="a01303.html#a9b178f7a1ae9cad80648b033a449660c">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01475.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01323.html">ILogger</a> &amp;logger) = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01310.html#a5b8e762b8a179ba7c25cfe66c0f6da63">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01310.html#a5b8e762b8a179ba7c25cfe66c0f6da63">~IFilterFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01310.html#a9b178f7a1ae9cad80648b033a449660c">   30</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01326.html">Filters::IFilter</a> &amp;<a class="code" href="a01310.html#a9b178f7a1ae9cad80648b033a449660c">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01482.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01330.html">ILogger</a> &amp;logger) = 0;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">   35</a></span>&#160;    <span class="keyword">extern</span> <a class="code" href="a01303.html">RayTracer::Factories::IFilterFactory</a> *<a class="code" href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">getFilterFactoryInstance</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">   35</a></span>&#160;    <span class="keyword">extern</span> <a class="code" href="a01310.html">RayTracer::Factories::IFilterFactory</a> *<a class="code" href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">getFilterFactoryInstance</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*FILTERFACTORY_HPP_*/</span><span class="preprocessor"></span></div>
@@ -101,17 +101,17 @@ $(function() {
 <div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
 <div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
 <div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00373_html"><div class="ttname"><a href="a00373.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
-<div class="ttc" id="aa01303_html"><div class="ttname"><a href="a01303.html">RayTracer::Factories::IFilterFactory</a></div><div class="ttdoc">The FilterFactory (singleton factory)</div><div class="ttdef"><b>Definition:</b> IFilterFactory.hpp:19</div></div>
-<div class="ttc" id="aa01303_html_a5b8e762b8a179ba7c25cfe66c0f6da63"><div class="ttname"><a href="a01303.html#a5b8e762b8a179ba7c25cfe66c0f6da63">RayTracer::Factories::IFilterFactory::~IFilterFactory</a></div><div class="ttdeci">virtual ~IFilterFactory()=default</div></div>
-<div class="ttc" id="aa01303_html_a9b178f7a1ae9cad80648b033a449660c"><div class="ttname"><a href="a01303.html#a9b178f7a1ae9cad80648b033a449660c">RayTracer::Factories::IFilterFactory::get</a></div><div class="ttdeci">virtual Filters::IFilter &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Get a filter.</div></div>
-<div class="ttc" id="aa01319_html"><div class="ttname"><a href="a01319.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01323_html"><div class="ttname"><a href="a01323.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01475_html"><div class="ttname"><a href="a01475.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa00379_html"><div class="ttname"><a href="a00379.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
+<div class="ttc" id="aa01310_html"><div class="ttname"><a href="a01310.html">RayTracer::Factories::IFilterFactory</a></div><div class="ttdoc">The FilterFactory (singleton factory)</div><div class="ttdef"><b>Definition:</b> IFilterFactory.hpp:19</div></div>
+<div class="ttc" id="aa01310_html_a5b8e762b8a179ba7c25cfe66c0f6da63"><div class="ttname"><a href="a01310.html#a5b8e762b8a179ba7c25cfe66c0f6da63">RayTracer::Factories::IFilterFactory::~IFilterFactory</a></div><div class="ttdeci">virtual ~IFilterFactory()=default</div></div>
+<div class="ttc" id="aa01310_html_a9b178f7a1ae9cad80648b033a449660c"><div class="ttname"><a href="a01310.html#a9b178f7a1ae9cad80648b033a449660c">RayTracer::Factories::IFilterFactory::get</a></div><div class="ttdeci">virtual Filters::IFilter &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Get a filter.</div></div>
+<div class="ttc" id="aa01326_html"><div class="ttname"><a href="a01326.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
+<div class="ttc" id="aa01330_html"><div class="ttname"><a href="a01330.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01482_html"><div class="ttname"><a href="a01482.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 05:09:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 13:08:41 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01566" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ClusterRayIterator.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01565.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01564.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_a01566_1add44881ef5016746d629cc80908f4e6e">iterator_category</link> = std::forward_iterator_tag</para>
+</listitem>
+            <listitem><para>using <link linkend="_a01566_1a9e175c83b5f2a32e356aec4cad8da422">difference_type</link> = <link linkend="_a01362">Images::Ray</link></para>
+</listitem>
+            <listitem><para>using <link linkend="_a01566_1a4dacb3708f24db1e01c8a4566e73591d">value_type</link> = <link linkend="_a01362">Images::Ray</link></para>
+</listitem>
+            <listitem><para>using <link linkend="_a01566_1a8268bb672ddcfe73764f1554697b745f">pointer</link> = <link linkend="_a01362">Images::Ray</link> *</para>
+</listitem>
+            <listitem><para>using <link linkend="_a01566_1a24069d89a54bc16aea5734d48bf0c438">reference</link> = <link linkend="_a01362">Images::Ray</link> &amp;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01566_1ad4f50b67996790e9e6b5dd45423bc86c">Iterator</link> (const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp;cameraPos, const <link linkend="_a01290">Entities::Transform::Vector2i</link> &amp;screenSize, const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp;screenPosCenter, std::size_t x, std::size_t y, std::size_t cluster)</para>
+</listitem>
+            <listitem><para><link linkend="_a01354">IIterator</link> &amp; <link linkend="_a01566_1a9e3a8613b89a28db07df578e4b97c4e5">operator++</link> () final</para>
+
+<para>create the next <link linkend="_a01562">ClusterRayIterator</link> </para>
+</listitem>
+            <listitem><para><link linkend="_a01362">Images::Ray</link> &amp; <link linkend="_a01566_1a7dc06e57d3e951bfd6f46f2a4f80ae9f">operator*</link> () final</para>
+
+<para>Get the ray of the current <link linkend="_a01562">ClusterRayIterator</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01566_1adacbddc3b9670f3bea5fe203e508859e">operator==</link> (const <link linkend="_a01354">Images::IRayIterator::IIterator</link> &amp;other) const final</para>
+
+<para>Compare two <link linkend="_a01562">ClusterRayIterator</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01566_1a51bcdad5ba5e499ee94c3ace8d6f7b31">operator!=</link> (const <link linkend="_a01354">Images::IRayIterator::IIterator</link> &amp;other) const final</para>
+
+<para>Compare two <link linkend="_a01562">ClusterRayIterator</link>. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_a01566_1a3f543b938c04b397a22c267a2d3ce869">toString</link> () const final</para>
+
+<para>toString </para>
+</listitem>
+            <listitem><para><link linkend="_a01566">ClusterRayIterator::Iterator</link> &amp; <link linkend="_a01566_1a6dceebe0dc982ba75ce3de44b425b5f9">operator=</link> (const <link linkend="_a01566">ClusterRayIterator::Iterator</link> &amp;other)</para>
+
+<para>Compare two ClusterRayIterator::iterrator. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01294">Entities::Transform::Vector3f</link> <link linkend="_a01566_1ae179fdc7794b8ac601e91a0616f9f0f0">_cameraPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01290">Entities::Transform::Vector2i</link> <link linkend="_a01566_1a066e03779a8dda05880999bda8dda92d">_screenSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01294">Entities::Transform::Vector3f</link> <link linkend="_a01566_1a0754b28a55c3f0e22dac6aed3e334779">_screenPosTopLeft</link></para>
+</listitem>
+            <listitem><para>std::size_t <link linkend="_a01566_1ad8cf58f4d900524207637b682851b55b">_cluster</link></para>
+</listitem>
+            <listitem><para>std::size_t <link linkend="_a01566_1ac10ca79a66f43e1b259b09af39cd3e46">_x</link></para>
+</listitem>
+            <listitem><para>std::size_t <link linkend="_a01566_1a2a068982cc8036aef748c6c958e1cdc5">_y</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01362">Images::Ray</link> <link linkend="_a01566_1ae4ce987b814f23032f19f0491bc971aa">_ray</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_a01566_1a9e175c83b5f2a32e356aec4cad8da422"/>    <section>
+    <title>difference_type</title>
+<indexterm><primary>difference_type</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>difference_type</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01566_1a9e175c83b5f2a32e356aec4cad8da422">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::difference_type</link> =  <link linkend="_a01362">Images::Ray</link></computeroutput></para>    </section><anchor xml:id="_a01566_1add44881ef5016746d629cc80908f4e6e"/>    <section>
+    <title>iterator_category</title>
+<indexterm><primary>iterator_category</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>iterator_category</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01566_1add44881ef5016746d629cc80908f4e6e">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::iterator_category</link> =  std::forward_iterator_tag</computeroutput></para>    </section><anchor xml:id="_a01566_1a8268bb672ddcfe73764f1554697b745f"/>    <section>
+    <title>pointer</title>
+<indexterm><primary>pointer</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>pointer</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01566_1a8268bb672ddcfe73764f1554697b745f">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::pointer</link> =  <link linkend="_a01362">Images::Ray</link> *</computeroutput></para>    </section><anchor xml:id="_a01566_1a24069d89a54bc16aea5734d48bf0c438"/>    <section>
+    <title>reference</title>
+<indexterm><primary>reference</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>reference</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01566_1a24069d89a54bc16aea5734d48bf0c438">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::reference</link> =  <link linkend="_a01362">Images::Ray</link> &amp;</computeroutput></para>    </section><anchor xml:id="_a01566_1a4dacb3708f24db1e01c8a4566e73591d"/>    <section>
+    <title>value_type</title>
+<indexterm><primary>value_type</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>value_type</secondary></indexterm>
+<para><computeroutput>using <link linkend="_a01566_1a4dacb3708f24db1e01c8a4566e73591d">RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::value_type</link> =  <link linkend="_a01362">Images::Ray</link></computeroutput></para></section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01566_1ad4f50b67996790e9e6b5dd45423bc86c"/>    <section>
+    <title>Iterator()</title>
+<indexterm><primary>Iterator</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>Iterator</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::Iterator (const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp; cameraPos, const <link linkend="_a01290">Entities::Transform::Vector2i</link> &amp; screenSize, const <link linkend="_a01294">Entities::Transform::Vector3f</link> &amp; screenPosCenter, std::size_t x, std::size_t y, std::size_t cluster)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01566_1a51bcdad5ba5e499ee94c3ace8d6f7b31"/>    <section>
+    <title>operator!=()</title>
+<indexterm><primary>operator!=</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>operator!=</secondary></indexterm>
+<para><computeroutput>bool RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator!= (const <link linkend="_a01354">Images::IRayIterator::IIterator</link> &amp; other) const<computeroutput>[final]</computeroutput></computeroutput></para><para>
+
+<para>Compare two <link linkend="_a01562">ClusterRayIterator</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if not equal </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01566_1a7dc06e57d3e951bfd6f46f2a4f80ae9f"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>operator*</secondary></indexterm>
+<para><computeroutput><link linkend="_a01362">Images::Ray</link>&amp; RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator* ( )<computeroutput>[final]</computeroutput></computeroutput></para><para>
+
+<para>Get the ray of the current <link linkend="_a01562">ClusterRayIterator</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the ray </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01566_1a9e3a8613b89a28db07df578e4b97c4e5"/>    <section>
+    <title>operator++()</title>
+<indexterm><primary>operator++</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>operator++</secondary></indexterm>
+<para><computeroutput><link linkend="_a01354">IIterator</link>&amp; RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator++ ( )<computeroutput>[final]</computeroutput></computeroutput></para><para>
+
+<para>create the next <link linkend="_a01562">ClusterRayIterator</link> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the next <link linkend="_a01562">ClusterRayIterator</link> </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01566_1a6dceebe0dc982ba75ce3de44b425b5f9"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_a01566">ClusterRayIterator::Iterator</link>&amp; RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator= (const <link linkend="_a01566">ClusterRayIterator::Iterator</link> &amp; other)</computeroutput></para><para>
+
+<para>Compare two ClusterRayIterator::iterrator. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if equal </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01566_1adacbddc3b9670f3bea5fe203e508859e"/>    <section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::operator== (const <link linkend="_a01354">Images::IRayIterator::IIterator</link> &amp; other) const<computeroutput>[final]</computeroutput></computeroutput></para><para>
+
+<para>Compare two <link linkend="_a01562">ClusterRayIterator</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if equal </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01566_1a3f543b938c04b397a22c267a2d3ce869"/>    <section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::toString ( ) const<computeroutput>[final]</computeroutput></computeroutput></para><para>
+
+<para>toString </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the string </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01566_1ae179fdc7794b8ac601e91a0616f9f0f0"/>    <section>
+    <title>_cameraPos</title>
+<indexterm><primary>_cameraPos</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_cameraPos</secondary></indexterm>
+<para><computeroutput><link linkend="_a01294">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_cameraPos<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01566_1ad8cf58f4d900524207637b682851b55b"/>    <section>
+    <title>_cluster</title>
+<indexterm><primary>_cluster</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_cluster</secondary></indexterm>
+<para><computeroutput>std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_cluster<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01566_1ae4ce987b814f23032f19f0491bc971aa"/>    <section>
+    <title>_ray</title>
+<indexterm><primary>_ray</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_ray</secondary></indexterm>
+<para><computeroutput><link linkend="_a01362">Images::Ray</link> RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_ray<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01566_1a0754b28a55c3f0e22dac6aed3e334779"/>    <section>
+    <title>_screenPosTopLeft</title>
+<indexterm><primary>_screenPosTopLeft</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_screenPosTopLeft</secondary></indexterm>
+<para><computeroutput><link linkend="_a01294">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_screenPosTopLeft<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01566_1a066e03779a8dda05880999bda8dda92d"/>    <section>
+    <title>_screenSize</title>
+<indexterm><primary>_screenSize</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_screenSize</secondary></indexterm>
+<para><computeroutput><link linkend="_a01290">Entities::Transform::Vector2i</link> RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_screenSize<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01566_1ac10ca79a66f43e1b259b09af39cd3e46"/>    <section>
+    <title>_x</title>
+<indexterm><primary>_x</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_x</secondary></indexterm>
+<para><computeroutput>std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_x<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01566_1a2a068982cc8036aef748c6c958e1cdc5"/>    <section>
+    <title>_y</title>
+<indexterm><primary>_y</primary><secondary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator</primary><secondary>_y</secondary></indexterm>
+<para><computeroutput>std::size_t RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator::_y<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/<link linkend="_a00263">ClusterRayIterator.hpp</link></section>
+</section>

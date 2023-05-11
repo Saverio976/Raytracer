@@ -1,37 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00371" xml:lang="en-US">
-<title>RayTracer::Entities Namespace Reference</title>
-<indexterm><primary>RayTracer::Entities</primary></indexterm>
-<simplesect>
-    <title>Namespaces    </title>
-        <itemizedlist>
-            <listitem><para> <link linkend="_a00372">Transform</link></para>
-</listitem>
-        </itemizedlist>
-</simplesect>
-<simplesect>
-    <title>Classes    </title>
-        <itemizedlist>
-            <listitem><para>class <link linkend="_a01255">ICamera</link></para>
-
-<para>The <link linkend="_a01255">ICamera</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01259">IEntity</link></para>
-
-<para>The <link linkend="_a01259">IEntity</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01263">ILight</link></para>
-
-<para>The <link linkend="_a01263">ILight</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01267">IMaterial</link></para>
-
-<para>The <link linkend="_a01267">IMaterial</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01271">IPrimitive</link></para>
-
-<para>The <link linkend="_a01271">IPrimitive</link> class. </para>
-</listitem>
-        </itemizedlist>
-</simplesect>
+<title>/home/runner/work/Raytracer/Raytracer/README.md File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/README.md</primary></indexterm>
 </section>

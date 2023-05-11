@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01266" xml:lang="en-US">
+<title>RayTracer::Entities::IEntity Class Reference</title>
+<indexterm><primary>RayTracer::Entities::IEntity</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01266">IEntity</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;IEntity.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Entities::IEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01265.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Entities::IEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01264.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum class <link linkend="_a01266_1ab003087623e47600c09a76ff8138d37b">Type</link> { 
+<link linkend="_a01266_1ab003087623e47600c09a76ff8138d37ba9914a0ce04a7b7b6a8e39bec55064b82">Light</link>
+, 
+<link linkend="_a01266_1ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b">Camera</link>
+, 
+<link linkend="_a01266_1ab003087623e47600c09a76ff8138d37ba07ee3427562e4f1a5c9f2bfb17fd9eee">Primitive</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01266_1a1f03c5b791fa1e32583ff42a6694468b">~IEntity</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01282">Transform::ITransform</link> &amp; <link linkend="_a01266_1ac97ca7c49d7a87c00bf6a95ca227108a">getTransform</link> ()=0</para>
+
+<para>Get the transform (position, rotation, scale) </para>
+</listitem>
+            <listitem><para>virtual const <link linkend="_a01282">Transform::ITransform</link> &amp; <link linkend="_a01266_1a703e6f7e78da30c2c7f4fecbe0bc580e">getTransform</link> () const =0</para>
+
+<para>Get the transform (position, rotation, scale) (const) </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a01266_1ab003087623e47600c09a76ff8138d37b">Type</link> <link linkend="_a01266_1a68374ef5e0932ab3b3dea57a87be156e">getType</link> () const =0</para>
+
+<para>Get the type (light, camera, primitive) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01266">IEntity</link> class. </para>
+
+
+
+<para>Object available in a scene </para>
+</section>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_a01266_1ab003087623e47600c09a76ff8138d37b"/>    <section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>Type</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_a01266_1ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</link><computeroutput>[strong]</computeroutput></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>Light</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>Light</secondary></indexterm>
+<anchor xml:id="_a01266_1ab003087623e47600c09a76ff8138d37ba9914a0ce04a7b7b6a8e39bec55064b82"/>Light</entry><entry></entry></row><row><entry><indexterm><primary>Camera</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>Camera</secondary></indexterm>
+<anchor xml:id="_a01266_1ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b"/>Camera</entry><entry></entry></row><row><entry><indexterm><primary>Primitive</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>Primitive</secondary></indexterm>
+<anchor xml:id="_a01266_1ab003087623e47600c09a76ff8138d37ba07ee3427562e4f1a5c9f2bfb17fd9eee"/>Primitive</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01266_1a1f03c5b791fa1e32583ff42a6694468b"/>    <section>
+    <title>~IEntity()</title>
+<indexterm><primary>~IEntity</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>~IEntity</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Entities::IEntity::~IEntity ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01266_1a703e6f7e78da30c2c7f4fecbe0bc580e"/>    <section>
+    <title>getTransform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput>virtual const <link linkend="_a01282">Transform::ITransform</link>&amp; RayTracer::Entities::IEntity::getTransform ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (position, rotation, scale) (const) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01702_1a53e716b759b7b519d5bafce4c047ca8b">RayTracer::PluginsExt::Triangle::TriangleEntity</link>, <link linkend="_a01686_1a300104e916f22d5fdb7dc7ac4f780666">RayTracer::PluginsExt::Torus::TorusEntity</link>, <link linkend="_a01678_1a30dc83dde71200a494debca9bdf95db6">RayTracer::PluginsExt::SpotLight::SpotLightEntity</link>, <link linkend="_a01670_1a666898ba8544f9352c35d604c68db6a8">RayTracer::PluginsExt::Sphere::SphereEntity</link>, <link linkend="_a01662_1a04d461eacf8449df8822a820644bb201">RayTracer::PluginsExt::PointLight::PointLightEntity</link>, <link linkend="_a01654_1a97b6e716c44c5b3767a96249de19c957">RayTracer::PluginsExt::Plane::PlaneEntity</link>, <link linkend="_a01638_1a9173648cf9731b0fdbeaed3da93bf1fa">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</link>, <link linkend="_a01630_1a0be3aac9611adc45314b169ae86da095">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link>, <link linkend="_a01622_1adff1044a065fc9435a9209347806faa1">RayTracer::PluginsExt::LimitedCone::LimitedConeEntity</link>, <link linkend="_a01614_1ae1e92c2ffc2e1f532d6294649a2bbf09">RayTracer::PluginsExt::Disk::DiskEntity</link>, <link linkend="_a01606_1adf11c3686eea4d7de45994902daf6073">RayTracer::PluginsExt::Cylinder::CylinderEntity</link>, <link linkend="_a01598_1a48aae38c966fc4879a96d488f194ad5b">RayTracer::PluginsExt::Cone::ConeEntity</link>, <link linkend="_a01574_1a9aa0f672642af103ffdfbb0a190bf1b2">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01558_1a5de53479a3a6fb25ced21ec1189aa3de">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, <link linkend="_a01550_1ae2de2882395c7bd76758d01d9f083dc8">RayTracer::PluginsExt::Camera::CameraEntity</link>, and <link linkend="_a01526_1a895b2454238153f41763e6760f0cb198">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity</link>.</para>
+    </section><anchor xml:id="_a01266_1ac97ca7c49d7a87c00bf6a95ca227108a"/>    <section>
+    <title>getTransform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01282">Transform::ITransform</link>&amp; RayTracer::Entities::IEntity::getTransform ( )<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (position, rotation, scale) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01702_1af31805afb91921f2de2c51ba915fc7a3">RayTracer::PluginsExt::Triangle::TriangleEntity</link>, <link linkend="_a01686_1a71f0b434aa4ae5187524ed566db3cbc2">RayTracer::PluginsExt::Torus::TorusEntity</link>, <link linkend="_a01678_1a7c358a1b478dbbd337cfc00ed3fd4415">RayTracer::PluginsExt::SpotLight::SpotLightEntity</link>, <link linkend="_a01670_1aa9dfdd2a6caf00b259ba12eeee4c42a2">RayTracer::PluginsExt::Sphere::SphereEntity</link>, <link linkend="_a01662_1aff1b64e36be0857da51d311b2ec3ed04">RayTracer::PluginsExt::PointLight::PointLightEntity</link>, <link linkend="_a01654_1a7ddde2efda33143aa68bb2258c845273">RayTracer::PluginsExt::Plane::PlaneEntity</link>, <link linkend="_a01638_1a249fd299d58ecc8d3e7c8d6d7df1cca3">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</link>, <link linkend="_a01630_1a8ed055c678529cf85650d14204a3ee5e">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link>, <link linkend="_a01622_1a277173f16edcf7d815dab48d432983fa">RayTracer::PluginsExt::LimitedCone::LimitedConeEntity</link>, <link linkend="_a01614_1aa7bb7d26ab8c916885136fed23f80446">RayTracer::PluginsExt::Disk::DiskEntity</link>, <link linkend="_a01606_1a353936f915dafd097aca9ab96280ddd2">RayTracer::PluginsExt::Cylinder::CylinderEntity</link>, <link linkend="_a01598_1a109d5a374f27fa1f3eaf7913a5353d8a">RayTracer::PluginsExt::Cone::ConeEntity</link>, <link linkend="_a01574_1a3365ec643c96e1b223e043860213af8d">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01558_1ae88a84ec1cdba8651eea9078327dd488">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, <link linkend="_a01550_1a94e8667f44b8b7e797f3beadbf79ee30">RayTracer::PluginsExt::Camera::CameraEntity</link>, and <link linkend="_a01526_1ad60584f8a8a06e5bc5b12bf49d564fd4">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity</link>.</para>
+    </section><anchor xml:id="_a01266_1a68374ef5e0932ab3b3dea57a87be156e"/>    <section>
+    <title>getType()</title>
+<indexterm><primary>getType</primary><secondary>RayTracer::Entities::IEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::IEntity</primary><secondary>getType</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_a01266_1ab003087623e47600c09a76ff8138d37b">Type</link> RayTracer::Entities::IEntity::getType ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the type (light, camera, primitive) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the type </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01702_1aefb63e30deb54b3455205aa9d31ef58b">RayTracer::PluginsExt::Triangle::TriangleEntity</link>, <link linkend="_a01686_1a590d5c06e0a4ac8a7907de9cb6b312d8">RayTracer::PluginsExt::Torus::TorusEntity</link>, <link linkend="_a01678_1a3e562e65065032eb0e5e429abab31648">RayTracer::PluginsExt::SpotLight::SpotLightEntity</link>, <link linkend="_a01670_1a44805cfa4eb1d0e282d5b2dbc436886a">RayTracer::PluginsExt::Sphere::SphereEntity</link>, <link linkend="_a01662_1a9010a1ad03778c8c5216fff049ce27cc">RayTracer::PluginsExt::PointLight::PointLightEntity</link>, <link linkend="_a01654_1a574f4c7d989030ff202c52aabce8d14c">RayTracer::PluginsExt::Plane::PlaneEntity</link>, <link linkend="_a01638_1a7caeb35b40b9d4d3b04b8040a1bfdf5c">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</link>, <link linkend="_a01630_1a79bb3c933073d04b7bcecd0672a0f9f0">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderEntity</link>, <link linkend="_a01622_1aa14bb70fcfa10e42cf4e18e7ca8abe28">RayTracer::PluginsExt::LimitedCone::LimitedConeEntity</link>, <link linkend="_a01614_1a6a15beb816467d6fc09b1914cfd80bb8">RayTracer::PluginsExt::Disk::DiskEntity</link>, <link linkend="_a01606_1aad4d52f6c11c903429297f8219c593b7">RayTracer::PluginsExt::Cylinder::CylinderEntity</link>, <link linkend="_a01598_1a2cea269ec9f9974defd6d001f0f3f301">RayTracer::PluginsExt::Cone::ConeEntity</link>, <link linkend="_a01574_1a078213e4ff8d999b597deb45b6641965">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link>, <link linkend="_a01558_1a46340a0ece896969a23aa207335a7c67">RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity</link>, <link linkend="_a01550_1a7c47a9a55f589897b3182c213ee8cae5">RayTracer::PluginsExt::Camera::CameraEntity</link>, and <link linkend="_a01526_1a45b8d98da78875e18eaf47bc8cd1e214">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Entities/<link linkend="_a00083">IEntity.hpp</link></section>
+</section>
