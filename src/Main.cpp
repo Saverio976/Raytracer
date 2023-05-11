@@ -169,7 +169,9 @@ namespace RayTracer {
         int i = 0;
         std::vector<std::future<void>> futures;
 
-        std::cout << "je passes" << std::endl;
+        if (_scene.getState().getState() == Scenes::SceneState::States::CANCELLED) {
+            return;
+        }
         for (const auto &camera : _scene.getCameras()) {
             futures.push_back(std::async(std::launch::async, [camera, baseFilePath, i, this]() {
                 _logger.info("Exporting camera index " + std::to_string(i) + "...");
