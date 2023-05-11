@@ -26,31 +26,16 @@ cameras:
 primitives :
 {
     # List of spheres
-    Sphere = (
+    LimitedCylinder = (
         {
-            radius = 100.0;
-            transform = {
-                position = {x = -150.0; y = 150.0; z = 50.0;};
-                scale = {x = 1.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.0; y = 0.0; z = 1.0;};
-            }
-            material = {
-                type = "PlainMaterial";
-                shininess = 10.0;
-                ambient = {x = 1.0; y = 1.0; z = 1.0;};
-                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
-                specular = {x = 1.0; y = 1.0; z = 1.0;};
-                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
-            };
-        },
-        {
-            radius = 50.0;
-            transform = {
-                position = {x = 15.0; y = 100.0; z = 50.0;};
-                scale = {x = 1.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
-            }
-            material = {
+            height = 50.0;
+                radius = 50.0;
+                transform = {
+                    position = {x = 200.0; y = 100.0; z = 10.0;};
+                    scale = {x = 1.0; y = 1.0; z = 1.0;};
+                    rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                }
+             material = {
                 type = "PlainMaterial";
                 shininess = 10.0;
                 ambient = {x = 1.0; y = 1.0; z = 1.0;};
