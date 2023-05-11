@@ -31,6 +31,10 @@ namespace RayTracer::Images {
         file.close();
     }
 
+    const std::vector<Color> &Image::getPixelsList() const {
+        return this->_pixels;
+    }
+
     Image::PixelLine Image::operator[](std::size_t y) {
         return PixelLine(this->_size, y, this->_pixels);
     }

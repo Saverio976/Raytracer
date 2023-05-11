@@ -81,7 +81,6 @@ namespace RayTracer::Images {
              * @param filePath the file
              */
             void convertToPPM(const std::string &filePath) const;
-            // sf::Texture convertToSfTexture();
             /**
              * @brief Get the pixels line at line `y` (const)
              *
@@ -104,6 +103,12 @@ namespace RayTracer::Images {
              * @return the Image's size (Width, Height)
              */
             const Entities::Transform::Vector2i &getSize() const;
+            /**
+             * @brief Get the list of pixels
+             *
+             * @return the Image's size (Width, Height)
+             */
+            const std::vector<Color> &getPixelsList() const;
 
         private:
             std::vector<Color> _pixels;
