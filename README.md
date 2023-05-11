@@ -20,16 +20,45 @@ L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tra
 # Usage
 
 ```bash
-USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>]
-USAGE: ./raytracer --help
+                                        ,----,
+                                      ,/   .`|
+,-.----.                            ,`   .'  :
+\    /  \                         ;    ;     /
+;   :    \                      .'___,/    ,' __  ,-.                                __  ,-.
+|   | .\ :                      |    :     |,' ,'/ /|                              ,' ,'/ /|
+.   : |: |   ,--.--.        .--,;    |.';  ;'  | |' | ,--.--.     ,---.     ,---.  '  | |' |
+|   |  \ :  /       \     /_ ./|`----'  |  ||  |   ,'/       \   /     \   /     \ |  |   ,'
+|   : .  / .--.  .-. | , ' , ' :    '   :  ;'  :  / .--.  .-. | /    / '  /    /  |'  :  /
+;   | |  \  \__\/: . ./___/ \: |    |   |  '|  | '   \__\/: . ..    ' /  .    ' / ||  | '
+|   | ;\  \ ," .--.; | .  \  ' |    '   :  |;  : |   ," .--.; |'   ; :__ '   ;   /|;  : |
+:   ' | \.'/  /  ,.  |  \  ;   :    ;   |.' |  , ;  /  /  ,.  |'   | '.'|'   |  / ||  , ;
+:   : :-' ;  :   .'   \  \  \  ;    '---'    ---'  ;  :   .'   \   :    :|   :    | ---'
+|   |.'   |  ,     .-./   :  \  \                  |  ,     .-./\   \  /  \   \  /
+`---'      `--`---'        \  ' ;                   `--`---'     `----'    `----'
+                            `--`
+__USAGE__:
+	./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui] [--font-path <font file>]
+	./raytracer --help
 
-OPTIONS:
-	--scene-path <scene-conf.yaax>	path to scene config
-	--output-path <file>	path to output file (dont put .ppm or any extension, it is just a base file path)
-	--help	to display the help message
-	--log-level <int>	log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]
+__OPTIONS__:
+	--scene-path <scene-conf.yaax> path to scene config
+	--output-path <file>           path to output file (dont put .ppm or any extension, it is just a base file path)
+	--help                         to display the help message
+	--log-level <int>              log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]
+	--gui                          to display the images in GUI mode
+	--font-path <font file>        path to font file [./Assets/arial.ttf by default]
 
-CREDITS:
+__IN WINDOW__:
+	Z                              : go forward to exit
+	Q                              : go left
+	S                              : go backward to exit
+	D                              : go right
+	Space                          : go up
+	Left Shift                     : go down
+	Left Arrow                     : go previous camera
+	Right Arrow                    : go next camera
+
+__CREDITS__:
 	Authors: Y A A X
 	Repository: https://github.com/Saverio976/Raytracer
 ```
@@ -45,6 +74,14 @@ les primitives sont:
 - [Cone-Limité](#Cone-Limité)
 - [Cylindre](#Cylindre)
 - [Cylindre-Limité](#Cylindre-Limité)
+- [Torus](#Torus)
+- [Triangle](#Triangle)
+
+les materiaux sont:
+- [PlainMaterial](#PlainMaterial)
+- [ChessBoardMaterial](#ChessBoardMaterial)
+- [ZebraMaterial](#ZebraMaterial)
+- [TransparencyMaterial](#TransparencyMaterial)
 
 les lumières sont:
 - [PointLight](#PointLight) (mais la documentation est sur toutes les primitives)
@@ -1061,6 +1098,741 @@ primitives :
                 type = "PlainMaterial";
             }
         }
+    )
+};
+
+# Configuration de la lumière
+lights :
+{
+    # Point de lumière (une lampe par example)
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## Torus
+
+![image](/documentation/torus1-basic.png)
+
+<details>
+	<summary>afficher ...</summary>
+
+```python
+# torus.yaax
+
+# configuration des cameras
+cameras:
+{
+    # camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # l'echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # la rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# les objets de la scene
+primitives :
+{
+    # list of torus
+    Torus = (
+        {
+            minRadius = 50.0;
+            maxRadius = 120.0;
+            transform = {
+                # position du torus
+                position = {x = 0.0; y = 30.0; z = 0.0;};
+                # x: agrandis/diminus l'angle maxradius
+                # y: agrandis/diminus l'angle minradius
+                # z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (la rotation n'est pas suportée)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                # utilisation du matériau
+                type = "PlainMaterial";
+                # taux de reflet de la lumière
+                shininess = 1.0;
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+                # couleur du torus
+                color = {r = 50.0; g = 255.0; b = 255.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# configuration de la lumière
+lights :
+{
+    # point de lumière (une lampe par example)
+    PointLight = (
+        # première lampe de type pointlight
+        {
+            transform = {
+                # position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # x: agrandis/diminus le rayon de la lampe
+                # y: agrandis/diminus la puissance de la lampe
+                # z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # première lampe de type ambientlight
+        {
+            transform = {
+                # position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # x: agrandis/diminus la puissance de la lampe
+                # y/z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## Triangle
+
+![image](/documentation/triangle1-basic.png)
+
+<details>
+	<summary>afficher ...</summary>
+
+```python
+# triangle.yaax
+
+# configuration des cameras
+cameras:
+{
+    # camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # l'echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # la rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxthreads = -1;
+            # filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# les objets de la scene
+primitives :
+{
+    # list of triangle
+    Triangle = (
+        {
+            # Premier point du triangle
+            pointOne = {x = 0.0; y = 100.0; z = 200.0;};
+            # Second point du triangle
+            pointTwo = {x = 40.0; y = 100.0; z = 0.0;};
+            # Troisième point du triangle
+            pointThree = {x = -40.0; y = 100.0; z = 0.0;};
+            transform = {
+                # X/Y/Z: mettre 0.0
+                position = {x = 0.0; y = 0.0; z = 20.0;};
+                # X/Y/Z: mettre 0.0
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                # Utilisation du matériau
+                type = "PlainMaterial";
+                # taux de reflet de la lumière
+                shininess = 1.0;
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+                # Couleur du triangle
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# configuration de la lumière
+lights :
+{
+    # point de lumière (une lampe par example)
+    PointLight = (
+        # première lampe de type pointlight
+        {
+            transform = {
+                # position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # x: agrandis/diminus le rayon de la lampe
+                # y: agrandis/diminus la puissance de la lampe
+                # z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # première lampe de type ambientlight
+        {
+            transform = {
+                # position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # x: agrandis/diminus la puissance de la lampe
+                # y/z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## PlainMaterial
+
+![image](/documentation/plainmaterial1-basic.png)
+
+<details>
+	<summary>afficher ...</summary>
+
+```python
+# plainmaterial.yaax
+
+# Configuration des cameras
+cameras:
+{
+    # Camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # Taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # L'Echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # La rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # Nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# Les objets de la scene
+primitives :
+{
+    # Liste des spheres
+    Sphere = (
+        # notre sphere est configuré ici
+        {
+            # Taille du rayon
+            radius = 100.0;
+            transform = {
+                # Position de la sphere
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                # X: agrandis/diminus le rayon de la sphere
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Couleur de la sphere
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Utilisation de la couche de la sphere
+                type = "PlainMaterial";
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        },
+    )
+};
+
+# Configuration de la lumière
+lights :
+{
+    # Point de lumière (une lampe par example)
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## ChessBoardMaterial
+
+![image](/documentation/chessboardmaterial1-basic.png)
+
+<details>
+	<summary>afficher ...</summary>
+
+```python
+# chessboardmaterial.yaax
+
+# Configuration des cameras
+cameras:
+{
+    # Camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # Taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # L'Echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # La rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # Nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# Les objets de la scene
+primitives :
+{
+    # Liste des spheres
+    Sphere = (
+        # notre sphere est configuré ici
+        {
+            # Taille du rayon
+            radius = 100.0;
+            transform = {
+                # Position de la sphere
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                # X: agrandis/diminus le rayon de la sphere
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                # Utilisation de la couche de la sphere
+                type = "ChessBoardMaterial";
+                # taille des cases
+                size = 10.0;
+                # Couleur des cases impairs
+                impair = {r = 255.0; g = 255.0; b = 255.0; a = 255.0;};
+                # Couleur des cases pairs
+                pair = {r = 0.0; g = 0.0; b = 0.0; a = 255.0;};
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        },
+    )
+};
+
+# Configuration de la lumière
+lights :
+{
+    # Point de lumière (une lampe par example)
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## ZebraMaterial
+
+![image](/documentation/zebramaterial1-basic.png)
+
+<details>
+	<summary>afficher ...</summary>
+
+```python
+# zebramaterial.yaax
+
+# Configuration des cameras
+cameras:
+{
+    # Camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # Taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # L'Echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # La rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # Nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# Les objets de la scene
+primitives :
+{
+    # Liste des spheres
+    Sphere = (
+        # notre sphere est configuré ici
+        {
+            # Taille du rayon
+            radius = 100.0;
+            transform = {
+                # Position de la sphere
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                # X: agrandis/diminus le rayon de la sphere
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                # Utilisation de la couche de la sphere
+                type = "ZebraMaterial";
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Taille d'une bande de rayure du zèbre
+                size = 10.0;
+                # Couleur impair
+                impair = {r = 255.0; g = 255.0; b = 255.0; a = 255.0;};
+                # Couleur pair
+                pair = {r = 0.0; g = 0.0; b = 0.0; a = 255.0;};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        },
+    )
+};
+
+# Configuration de la lumière
+lights :
+{
+    # Point de lumière (une lampe par example)
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};
+```
+
+</details>
+
+## TransparencyMaterial
+
+![image](/documentation/transparencymaterial1-basic.png)
+
+<details>
+	<summary>afficher ...</summary>
+
+```python
+# transpacparencymaterial.yaax
+
+# Configuration des cameras
+cameras:
+{
+    # Camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # Taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # L'Echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # La rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # Nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# Les objets de la scene
+primitives :
+{
+    # Liste des spheres
+    Sphere = (
+        # notre sphere est configuré ici
+        {
+            # Taille du rayon
+            radius = 100.0;
+            transform = {
+                # Position de la sphere
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                # X: agrandis/diminus le rayon de la sphere
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                # Utilisation de la couche de la sphere
+                type = "TransparencyMaterial";
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Couleur de la sphere
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                # pourcentage de transparance
+                # entre 0 et 255
+                # 0: totalement transparent
+                # 255: totalement opaque
+                transparency = 150.0;
+            };
+        },
     )
 };
 
