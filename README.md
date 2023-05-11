@@ -1457,6 +1457,8 @@ lights: {
 }
 ```
 
+</details>
+
 ## SpotLight
 
 ![image](/documentation/spotlight1-basic.png)
@@ -2203,7 +2205,7 @@ lights: {
 }
 ```
 
-<details>
+</details>
 
 ## SSAAx4
 
