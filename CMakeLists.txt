@@ -206,6 +206,20 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+# TRIANGLE
+add_library(Triangle SHARED)
+set_target_properties(Triangle PROPERTIES
+        CXX_STANDARD 20
+        PREFIX ""
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+        )
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Triangle PROPERTIES
+            UNITY_BUILD true
+            UNITY_BUILD_MODE BATCH
+            )
+endif()
+
 # --------- Filters plugins ---------
 add_library(SSAAx4 SHARED)
 set_target_properties(SSAAx4 PROPERTIES
