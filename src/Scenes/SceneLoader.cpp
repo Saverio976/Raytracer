@@ -7,6 +7,7 @@
 
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 #include "Parameters.hpp"
 #include "SceneLoader.hpp"
 #include "ILogger.hpp"
@@ -35,7 +36,11 @@ namespace RayTracer::Scenes {
         if (currentTime != _lastWriteTime) {
             _logger.info("Scene config file changed, reloading...");
             auto it = _events.find("onChange");
-            _configWrapper->readFile(_filePath);
+            try {
+                _configWrapper->readFile(_filePath);
+            } catch (const std::exception &e) {
+                _logger.error(e.what());
+            }
 
             if (it == _events.end())
                 return;

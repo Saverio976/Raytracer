@@ -13,6 +13,7 @@ target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}"
 target_include_directories(Triangle PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedPlane PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Torus PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Obj PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(RefractionMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
