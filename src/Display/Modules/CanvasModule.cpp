@@ -29,6 +29,7 @@ namespace RayTracer::Display {
         sf::Texture texture;
         sf::Sprite sprite;
         std::string message = "focal: " + std::to_string(camera.getFocal()) + "\n" +
+                                "cluster: " + std::to_string(camera.getCluster()) + "\n" +
                                 "position: (x:" +
                                     std::to_string(camera.getTransform().getPosition().getX()) +
                                     ", y:" +
