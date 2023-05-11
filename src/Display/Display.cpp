@@ -10,6 +10,7 @@
 #include "ProgressModule.hpp"
 #include "IDisplayModule.hpp"
 #include "ILogger.hpp"
+#include "Parameters.hpp"
 
 namespace RayTracer::Display {
     Display::Display(ILogger &logger, Scenes::Scene &scene, Scenes::SceneLoader &loader) :
@@ -17,7 +18,7 @@ namespace RayTracer::Display {
         _loader(loader),
         _logger(logger)
     {
-        if (!this->_font.loadFromFile("./Assets/arial.ttf")) {
+        if (!this->_font.loadFromFile(Parameters::getInstance().getString("font-path"))) {
             throw StartFailed("error init font");
         }
         this->_modules.push_back(std::make_unique<CanvasModule>(scene, this->_position));

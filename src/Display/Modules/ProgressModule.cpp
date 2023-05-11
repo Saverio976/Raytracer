@@ -5,11 +5,11 @@
 ** ProgressModule.cpp
 */
 
-#include "ProgressModule.hpp"
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Event.hpp>
-#include <iostream>
 #include <stdexcept>
+#include "ProgressModule.hpp"
+#include "Parameters.hpp"
 
 namespace RayTracer::Display {
     ProgressModule::ProgressModule(ILogger &logger):
@@ -40,7 +40,7 @@ namespace RayTracer::Display {
     {
         _logger.subscribeCallback(3, getName(), std::bind(&ProgressModule::info, this, std::placeholders::_1));
         _clock.restart();
-        if (!_font.loadFromFile("./Assets/arial.ttf")) {
+        if (!_font.loadFromFile(Parameters::getInstance().getString("font-path"))) {
             throw std::runtime_error("error init font");
         }
     }

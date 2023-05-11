@@ -21,6 +21,25 @@
 #include "Display.hpp"
 
 namespace RayTracer {
+    static const std::vector<std::string> mainHelpHeader = {
+"                                        ,----,                                               ",
+"                                      ,/   .`|                                               ",
+",-.----.                            ,`   .'  :                                               ",
+"\\    /  \\                         ;    ;     /                                               ",
+";   :    \\                      .'___,/    ,' __  ,-.                                __  ,-. ",
+"|   | .\\ :                      |    :     |,' ,'/ /|                              ,' ,'/ /| ",
+".   : |: |   ,--.--.        .--,;    |.';  ;'  | |' | ,--.--.     ,---.     ,---.  '  | |' | ",
+"|   |  \\ :  /       \\     /_ ./|`----'  |  ||  |   ,'/       \\   /     \\   /     \\ |  |   ,' ",
+"|   : .  / .--.  .-. | , ' , ' :    '   :  ;'  :  / .--.  .-. | /    / '  /    /  |'  :  /   ",
+";   | |  \\  \\__\\/: . ./___/ \\: |    |   |  '|  | '   \\__\\/: . ..    ' /  .    ' / ||  | '    ",
+"|   | ;\\  \\ ,\" .--.; | .  \\  ' |    '   :  |;  : |   ,\" .--.; |'   ; :__ '   ;   /|;  : |    ",
+":   ' | \\.'/  /  ,.  |  \\  ;   :    ;   |.' |  , ;  /  /  ,.  |'   | '.'|'   |  / ||  , ;    ",
+":   : :-' ;  :   .'   \\  \\  \\  ;    '---'    ---'  ;  :   .'   \\   :    :|   :    | ---'     ",
+"|   |.'   |  ,     .-./   :  \\  \\                  |  ,     .-./\\   \\  /  \\   \\  /           ",
+"`---'      `--`---'        \\  ' ;                   `--`---'     `----'    `----'            ",
+"                            `--`                                                             "
+    };
+
     Main::Main(ILogger &logger):
         _logger(logger),
         _scene(logger)
@@ -46,6 +65,11 @@ namespace RayTracer {
             } else {
                 Parameters::getInstance().set("display-mode", "console");
             }
+        try {
+            std::string pathTtf = Parameters::getInstance().getString("font-path");
+        } catch (const Parameters::KeyNotFoundError &e) {
+            Parameters::getInstance().set("font-path", "./Assets/arial.ttf");
+        }
         } catch (const Parameters::KeyNotFoundError &e) {
             Parameters::getInstance().set("display-mode", "console");
         }
@@ -137,27 +161,32 @@ namespace RayTracer {
 
     void Main::help() const
     {
-        std::cout << "USAGE: ./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui]" << std::endl;
-        std::cout << "USAGE: ./raytracer --help" << std::endl;
+        for (const auto &line : mainHelpHeader) {
+            std::cout << line << std::endl;
+        }
+        std::cout << "__USAGE__:" << std::endl;
+        std::cout << "\t./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui] [--font-path <font file>]" << std::endl;
+        std::cout << "\t./raytracer --help" << std::endl;
         std::cout << std::endl;
-        std::cout << "OPTIONS:" << std::endl;
-        std::cout << "\t--scene-path <scene-conf.yaax>\tpath to scene config" << std::endl;
-        std::cout << "\t--output-path <file>\t\tpath to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
-        std::cout << "\t--help\t\t\t\tto display the help message" << std::endl;
-        std::cout << "\t--log-level <int>\t\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
-        std::cout << "\t--gui\t\t\t\tto display the images in GUI mode" << std::endl;
+        std::cout << "__OPTIONS__:" << std::endl;
+        std::cout << "\t--scene-path <scene-conf.yaax> path to scene config" << std::endl;
+        std::cout << "\t--output-path <file>           path to output file (dont put .ppm or any extension, it is just a base file path)" << std::endl;
+        std::cout << "\t--help                         to display the help message" << std::endl;
+        std::cout << "\t--log-level <int>              log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
+        std::cout << "\t--gui                          to display the images in GUI mode" << std::endl;
+        std::cout << "\t--font-path <font file>        path to font file [./Assets/arial.ttf by default]" << std::endl;
         std::cout << std::endl;
-        std::cout << "IN Window:" << std::endl;
-        std::cout << "\tZ\t\t: go forward to exit" << std::endl;
-        std::cout << "\tQ\t\t: go left" << std::endl;
-        std::cout << "\tS\t\t: go backward to exit" << std::endl;
-        std::cout << "\tD\t\t: go right" << std::endl;
-        std::cout << "\tSpace\t\t: go up" << std::endl;
-        std::cout << "\tLeft Shift\t: go down" << std::endl;
-        std::cout << "\tLeft Arrow\t: go previous camera" << std::endl;
-        std::cout << "\tRight Arrow\t: go next camera" << std::endl;
+        std::cout << "__IN WINDOW__:" << std::endl;
+        std::cout << "\tZ                              : go forward to exit" << std::endl;
+        std::cout << "\tQ                              : go left" << std::endl;
+        std::cout << "\tS                              : go backward to exit" << std::endl;
+        std::cout << "\tD                              : go right" << std::endl;
+        std::cout << "\tSpace                          : go up" << std::endl;
+        std::cout << "\tLeft Shift                     : go down" << std::endl;
+        std::cout << "\tLeft Arrow                     : go previous camera" << std::endl;
+        std::cout << "\tRight Arrow                    : go next camera" << std::endl;
         std::cout << std::endl;
-        std::cout << "CREDITS:" << std::endl;
+        std::cout << "__CREDITS__:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
         std::cout << "\tRepository: https://github.com/Saverio976/Raytracer" << std::endl;
     }
