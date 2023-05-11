@@ -67,6 +67,8 @@ Collaboration diagram for RayTracer::Display::CanvasModule:<para>
 </listitem>
             <listitem><para>void <link linkend="_a01299_1a1079bd67c48c841dd5704a880b65ffb9">goDown</link> (sf::RenderWindow &amp;window, const sf::Event &amp;<link linkend="_a01299_1ad48792782cf179be2008d5647f42134d">event</link>)</para>
 </listitem>
+            <listitem><para>void <link linkend="_a01299_1a25c5bb5d33b1186b777273ac3ca5595d">resetCluster</link> ()</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -79,6 +81,10 @@ Collaboration diagram for RayTracer::Display::CanvasModule:<para>
             <listitem><para>sf::Font <link linkend="_a01299_1a6d956c766055de837ebd395299f1abd1">_font</link></para>
 </listitem>
             <listitem><para>sf::Clock <link linkend="_a01299_1aaea54f7836044d85cec365d41a586ba5">_clock</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01299_1ac25bca5492430d14560122e08759bc0c">_isScreenShot</link></para>
+</listitem>
+            <listitem><para>std::size_t <link linkend="_a01299_1a15458be77d83eced2291216554786562">_nbPrinted</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -154,7 +160,11 @@ Implements <link linkend="_a01279_1aa1166ce7a418d8925502d67674c15c9a">RayTracer:
     <title>removeFocalLength()</title>
 <indexterm><primary>removeFocalLength</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
 <indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>removeFocalLength</secondary></indexterm>
-<para><computeroutput>void RayTracer::Display::CanvasModule::removeFocalLength (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1ab74a3190a75f4193f63541720f168f65"/>    <section>
+<para><computeroutput>void RayTracer::Display::CanvasModule::removeFocalLength (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1a25c5bb5d33b1186b777273ac3ca5595d"/>    <section>
+    <title>resetCluster()</title>
+<indexterm><primary>resetCluster</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>resetCluster</secondary></indexterm>
+<para><computeroutput>void RayTracer::Display::CanvasModule::resetCluster ( )<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1ab74a3190a75f4193f63541720f168f65"/>    <section>
     <title>resizeWindow()</title>
 <indexterm><primary>resizeWindow</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
 <indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>resizeWindow</secondary></indexterm>
@@ -182,7 +192,15 @@ Implements <link linkend="_a01279_1a5ac097661d1f612000e583ee1163746c">RayTracer:
     <title>_font</title>
 <indexterm><primary>_font</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
 <indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_font</secondary></indexterm>
-<para><computeroutput>sf::Font RayTracer::Display::CanvasModule::_font<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1a8e981f274333fe48efd9f690ec86857c"/>    <section>
+<para><computeroutput>sf::Font RayTracer::Display::CanvasModule::_font<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1ac25bca5492430d14560122e08759bc0c"/>    <section>
+    <title>_isScreenShot</title>
+<indexterm><primary>_isScreenShot</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_isScreenShot</secondary></indexterm>
+<para><computeroutput>bool RayTracer::Display::CanvasModule::_isScreenShot<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1a15458be77d83eced2291216554786562"/>    <section>
+    <title>_nbPrinted</title>
+<indexterm><primary>_nbPrinted</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_nbPrinted</secondary></indexterm>
+<para><computeroutput>std::size_t RayTracer::Display::CanvasModule::_nbPrinted<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01299_1a8e981f274333fe48efd9f690ec86857c"/>    <section>
     <title>_position</title>
 <indexterm><primary>_position</primary><secondary>RayTracer::Display::CanvasModule</secondary></indexterm>
 <indexterm><primary>RayTracer::Display::CanvasModule</primary><secondary>_position</secondary></indexterm>

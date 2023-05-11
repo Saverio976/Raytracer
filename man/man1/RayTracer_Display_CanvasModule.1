@@ -71,6 +71,9 @@ Inherits \fBRayTracer::Display::IDisplayModule\fP\&.
 .ti -1c
 .RI "void \fBgoDown\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
 .br
+.ti -1c
+.RI "void \fBresetCluster\fP ()"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -86,6 +89,12 @@ Inherits \fBRayTracer::Display::IDisplayModule\fP\&.
 .br
 .ti -1c
 .RI "sf::Clock \fB_clock\fP"
+.br
+.ti -1c
+.RI "bool \fB_isScreenShot\fP"
+.br
+.ti -1c
+.RI "std::size_t \fB_nbPrinted\fP"
 .br
 .in -1c
 .SH "Constructor & Destructor Documentation"
@@ -128,6 +137,8 @@ Implements \fBRayTracer::Display::IDisplayModule\fP\&.
 
 .SS "void RayTracer::Display::CanvasModule::removeFocalLength (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
 
+.SS "void RayTracer::Display::CanvasModule::resetCluster ()\fC [private]\fP"
+
 .SS "void RayTracer::Display::CanvasModule::resizeWindow (sf::RenderWindow & window)\fC [private]\fP"
 
 .SS "void RayTracer::Display::CanvasModule::start (sf::RenderWindow & window)\fC [final]\fP, \fC [virtual]\fP"
@@ -143,6 +154,10 @@ Implements \fBRayTracer::Display::IDisplayModule\fP\&.
 .SS "sf::Clock RayTracer::Display::CanvasModule::_clock\fC [private]\fP"
 
 .SS "sf::Font RayTracer::Display::CanvasModule::_font\fC [private]\fP"
+
+.SS "bool RayTracer::Display::CanvasModule::_isScreenShot\fC [private]\fP"
+
+.SS "std::size_t RayTracer::Display::CanvasModule::_nbPrinted\fC [private]\fP"
 
 .SS "std::size_t& RayTracer::Display::CanvasModule::_position\fC [private]\fP"
 

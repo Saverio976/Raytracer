@@ -11,7 +11,7 @@ Inheritance diagram for Ray\+Tracer\+::Display\+::Canvas\+Module\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{a01298}
+\includegraphics[height=550pt]{a01298}
 \end{center}
 \end{figure}
 
@@ -65,6 +65,8 @@ void \mbox{\hyperlink{a01299_ac21b1ebfdba2961ac13ed9893e8db00a}{go\+Backward}} (
 void \mbox{\hyperlink{a01299_ae32c5665c503281d1ac2b50e63764e73}{go\+Up}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01299_ad48792782cf179be2008d5647f42134d}{event}})
 \item 
 void \mbox{\hyperlink{a01299_a1079bd67c48c841dd5704a880b65ffb9}{go\+Down}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01299_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01299_a25c5bb5d33b1186b777273ac3ca5595d}{reset\+Cluster}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -76,6 +78,10 @@ std\+::size\+\_\+t \& \mbox{\hyperlink{a01299_a8e981f274333fe48efd9f690ec86857c}
 sf\+::\+Font \mbox{\hyperlink{a01299_a6d956c766055de837ebd395299f1abd1}{\+\_\+font}}
 \item 
 sf\+::\+Clock \mbox{\hyperlink{a01299_aaea54f7836044d85cec365d41a586ba5}{\+\_\+clock}}
+\item 
+bool \mbox{\hyperlink{a01299_ac25bca5492430d14560122e08759bc0c}{\+\_\+is\+Screen\+Shot}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01299_a15458be77d83eced2291216554786562}{\+\_\+nb\+Printed}}
 \end{DoxyCompactItemize}
 
 
@@ -185,6 +191,12 @@ Implements \mbox{\hyperlink{a01279_aa1166ce7a418d8925502d67674c15c9a}{Ray\+Trace
 \doxysubsubsection{\texorpdfstring{removeFocalLength()}{removeFocalLength()}}
 {\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::remove\+Focal\+Length (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{a01299_a25c5bb5d33b1186b777273ac3ca5595d}\label{a01299_a25c5bb5d33b1186b777273ac3ca5595d}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!resetCluster@{resetCluster}}
+\index{resetCluster@{resetCluster}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{resetCluster()}{resetCluster()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::reset\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{a01299_ab74a3190a75f4193f63541720f168f65}\label{a01299_ab74a3190a75f4193f63541720f168f65}} 
 \index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!resizeWindow@{resizeWindow}}
 \index{resizeWindow@{resizeWindow}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
@@ -225,6 +237,18 @@ Implements \mbox{\hyperlink{a01279_a5ac097661d1f612000e583ee1163746c}{Ray\+Trace
 \index{\_font@{\_font}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
 \doxysubsubsection{\texorpdfstring{\_font}{\_font}}
 {\footnotesize\ttfamily sf\+::\+Font Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01299_ac25bca5492430d14560122e08759bc0c}\label{a01299_ac25bca5492430d14560122e08759bc0c}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_isScreenShot@{\_isScreenShot}}
+\index{\_isScreenShot@{\_isScreenShot}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{\_isScreenShot}{\_isScreenShot}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+is\+Screen\+Shot\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01299_a15458be77d83eced2291216554786562}\label{a01299_a15458be77d83eced2291216554786562}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_nbPrinted@{\_nbPrinted}}
+\index{\_nbPrinted@{\_nbPrinted}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{\_nbPrinted}{\_nbPrinted}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+nb\+Printed\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{a01299_a8e981f274333fe48efd9f690ec86857c}\label{a01299_a8e981f274333fe48efd9f690ec86857c}} 
 \index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_position@{\_position}}

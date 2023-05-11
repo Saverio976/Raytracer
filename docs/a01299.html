@@ -80,13 +80,13 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for RayTracer::Display::CanvasModule:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01298.svg" width="190" height="610"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01298.svg" width="190" height="654"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for RayTracer::Display::CanvasModule:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01297.svg" width="1287" height="1507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01297.svg" width="1287" height="1536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -134,6 +134,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ae32c5665c503281d1ac2b50e63764e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1079bd67c48c841dd5704a880b65ffb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01299.html#a1079bd67c48c841dd5704a880b65ffb9">goDown</a> (sf::RenderWindow &amp;window, const sf::Event &amp;<a class="el" href="a01299.html#ad48792782cf179be2008d5647f42134d">event</a>)</td></tr>
 <tr class="separator:a1079bd67c48c841dd5704a880b65ffb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c5bb5d33b1186b777273ac3ca5595d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01299.html#a25c5bb5d33b1186b777273ac3ca5595d">resetCluster</a> ()</td></tr>
+<tr class="separator:a25c5bb5d33b1186b777273ac3ca5595d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -145,6 +147,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6d956c766055de837ebd395299f1abd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaea54f7836044d85cec365d41a586ba5"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01299.html#aaea54f7836044d85cec365d41a586ba5">_clock</a></td></tr>
 <tr class="separator:aaea54f7836044d85cec365d41a586ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25bca5492430d14560122e08759bc0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01299.html#ac25bca5492430d14560122e08759bc0c">_isScreenShot</a></td></tr>
+<tr class="separator:ac25bca5492430d14560122e08759bc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15458be77d83eced2291216554786562"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01299.html#a15458be77d83eced2291216554786562">_nbPrinted</a></td></tr>
+<tr class="separator:a15458be77d83eced2291216554786562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa96ffdb915a4730079b883870ea3182b"></a>
@@ -654,6 +660,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a25c5bb5d33b1186b777273ac3ca5595d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c5bb5d33b1186b777273ac3ca5595d">&#9670;&nbsp;</a></span>resetCluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RayTracer::Display::CanvasModule::resetCluster </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab74a3190a75f4193f63541720f168f65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab74a3190a75f4193f63541720f168f65">&#9670;&nbsp;</a></span>resizeWindow()</h2>
 
@@ -781,6 +812,50 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac25bca5492430d14560122e08759bc0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac25bca5492430d14560122e08759bc0c">&#9670;&nbsp;</a></span>_isScreenShot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RayTracer::Display::CanvasModule::_isScreenShot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15458be77d83eced2291216554786562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15458be77d83eced2291216554786562">&#9670;&nbsp;</a></span>_nbPrinted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t RayTracer::Display::CanvasModule::_nbPrinted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8e981f274333fe48efd9f690ec86857c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e981f274333fe48efd9f690ec86857c">&#9670;&nbsp;</a></span>_position</h2>
 
@@ -831,7 +906,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 18:14:57 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 18:20:09 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

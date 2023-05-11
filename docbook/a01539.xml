@@ -62,6 +62,10 @@ Collaboration diagram for RayTracer::Scenes::Scene:<para>
 
 <para>Get the state: </para>
 </listitem>
+            <listitem><para>const std::string &amp; <link linkend="_a01539_1a2890fc32f91aa45fe7b1fdc8882f23ab">getFileBase</link> () const</para>
+
+<para>Get the file base. </para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -149,6 +153,20 @@ Collaboration diagram for RayTracer::Scenes::Scene:<para>
 <para><formalpara><title>Returns</title>
 
 <para>the cameras </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01539_1a2890fc32f91aa45fe7b1fdc8882f23ab"/>    <section>
+    <title>getFileBase()</title>
+<indexterm><primary>getFileBase</primary><secondary>RayTracer::Scenes::Scene</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::Scene</primary><secondary>getFileBase</secondary></indexterm>
+<para><computeroutput>const std::string&amp; RayTracer::Scenes::Scene::getFileBase ( ) const</computeroutput></para><para>
+
+<para>Get the file base. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the file base </para>
 </formalpara>
 </para>
     </section><anchor xml:id="_a01539_1ab966df1a295b491374bd1a3eb1491711"/>    <section>

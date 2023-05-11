@@ -1,7 +1,7 @@
 <map id="RayTracer::Display::CanvasModule" name="RayTracer::Display::CanvasModule">
-<area shape="rect" id="node1" title=" " alt="" coords="740,1160,919,1501"/>
-<area shape="rect" id="node2" href="$a01279.html" title=" " alt="" coords="442,881,601,1046"/>
-<area shape="rect" id="node3" href="$a01539.html" title="The Scene class." alt="" coords="625,829,773,1097"/>
+<area shape="rect" id="node1" title=" " alt="" coords="840,1175,1019,1531"/>
+<area shape="rect" id="node2" href="$a01279.html" title=" " alt="" coords="442,888,601,1053"/>
+<area shape="rect" id="node3" href="$a01539.html" title="The Scene class." alt="" coords="625,829,773,1112"/>
 <area shape="rect" id="node4" href="$a01503.html" title="The Displayable class." alt="" coords="255,587,409,752"/>
 <area shape="rect" id="node5" href="$a01515.html" title="The IDisplayable interface." alt="" coords="255,344,409,509"/>
 <area shape="rect" id="node6" title=" " alt="" coords="433,373,652,480"/>
@@ -18,7 +18,9 @@
 <area shape="rect" id="node16" title=" " alt="" coords="1102,388,1194,465"/>
 <area shape="rect" id="node17" title=" " alt="" coords="1218,388,1281,465"/>
 <area shape="rect" id="node19" title=" " alt="" coords="892,145,1047,252"/>
-<area shape="rect" id="node20" title=" " alt="" coords="797,925,872,1002"/>
-<area shape="rect" id="node21" title=" " alt="" coords="900,925,959,1002"/>
-<area shape="rect" id="node22" title=" " alt="" coords="985,925,1036,1002"/>
+<area shape="rect" id="node20" title=" " alt="" coords="797,932,872,1009"/>
+<area shape="rect" id="node21" title=" " alt="" coords="900,932,959,1009"/>
+<area shape="rect" id="node22" title=" " alt="" coords="985,932,1036,1009"/>
+<area shape="rect" id="node23" title=" " alt="" coords="1060,932,1111,1009"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1186,932,1246,1009"/>
 </map>

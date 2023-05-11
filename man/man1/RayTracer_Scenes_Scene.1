@@ -54,6 +54,10 @@ RayTracer::Scenes::Scene \- The \fBScene\fP class\&.
 .RI "const \fBSceneState\fP & \fBgetState\fP () const"
 .br
 .RI "Get the state: "
+.ti -1c
+.RI "const std::string & \fBgetFileBase\fP () const"
+.br
+.RI "Get the file base\&. "
 .in -1c
 .SS "Private Member Functions"
 
@@ -122,6 +126,17 @@ Get the cameras\&.
 \fBReturns\fP
 .RS 4
 the cameras 
+.RE
+.PP
+
+.SS "const std::string& RayTracer::Scenes::Scene::getFileBase () const"
+
+.PP
+Get the file base\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the file base 
 .RE
 .PP
 
