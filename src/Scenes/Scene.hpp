@@ -73,6 +73,24 @@ namespace RayTracer::Scenes {
              * @brief wait until the end of the renders
              */
             void wait_end();
+            /**
+             * @brief Get the state
+             *
+             * @return the state
+             */
+            SceneState &getState();
+            /**
+             * @brief Get the state:
+             *
+             * @return the state
+             */
+            const SceneState &getState() const;
+            /**
+             * @brief Get the file base
+             *
+             * @return the file base
+             */
+            const std::string &getFileBase() const;
         protected:
         private:
             /**

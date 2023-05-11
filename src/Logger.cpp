@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <ctime>
+#include <map>
+#include <string>
 #include "Logger.hpp"
 #include "Parameters.hpp"
 
@@ -94,6 +96,15 @@ namespace RayTracer {
 
     void Logger::print(int levelT, const std::string &level, const std::string &message)
     {
+        static std::map<int, std::string> colors = {
+            {0, "\033[31m"},
+            {1, "\033[33m"},
+            {2, "\033[34m"},
+            {3, "\033[32m"},
+            {4, "\033[38m"},
+            {5, "\033[30m"},
+            {6, "\033[0m"},
+        };
         std::time_t rawtime;
         struct tm *timeinfo;
         std::string time;
@@ -105,7 +116,7 @@ namespace RayTracer {
         time = std::asctime(timeinfo);
         time.erase(time.find_last_of("\n"));
         mes = time + " [" + level + "] " + message;
-        std::cerr << mes << std::endl;
+        std::cerr << colors[levelT] << mes << colors[6] << std::endl;
         if (it != _callbacks.end()) {
             for (auto it1 = it->second.begin(); it1 != it->second.end(); ++it1) {
                 it1->second(mes);

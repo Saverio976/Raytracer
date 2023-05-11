@@ -15,6 +15,10 @@
     #include "Parameters.hpp"
     #include "Scene.hpp"
 
+extern "C" {
+    void catch_sigint(int sig);
+}
+
 namespace RayTracer {
     class Main {
         public:

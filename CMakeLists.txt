@@ -233,7 +233,23 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
             )
 endif()
 
+# OBJ
+add_library(Obj SHARED)
+set_target_properties(Obj PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Obj PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
 # --------- Filters plugins ---------
+
+# SSAAx4
 add_library(SSAAx4 SHARED)
 set_target_properties(SSAAx4 PROPERTIES
     CXX_STANDARD 20
@@ -242,6 +258,20 @@ set_target_properties(SSAAx4 PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(SSAAx4 PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# BlackAndWhite
+add_library(BlackAndWhite SHARED)
+set_target_properties(BlackAndWhite PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Filters"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(BlackAndWhite PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
@@ -261,6 +291,18 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+add_library(RefractionMaterial SHARED)
+set_target_properties(RefractionMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(RefractionMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
 
 add_library(TransparencyMaterial SHARED)
 set_target_properties(TransparencyMaterial PROPERTIES
@@ -296,6 +338,19 @@ set_target_properties(ZebraMaterial PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(ZebraMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(MirrorMaterial SHARED)
+set_target_properties(MirrorMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(MirrorMaterial PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )

@@ -21,9 +21,11 @@ namespace RayTracer::PluginsExt::Torus {
 
         std::string nameMaterial = static_cast<std::string>(*settingWrapper->get("type"));
         _material = static_cast<Entities::IMaterial &>(getMaterialFactoryInstance()->get(nameMaterial, *settingWrapper, _logger));
-        if (_transform.getScale().getX() != 0 || _transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
-            _logger.warn("PLANE: config: scale x y z must be the 0 (because that's mean nothing to scale an infinite plane)");
+        if (_transform.getScale().getZ() != 0) {
+            _logger.warn("TORUS: config: scale z must be the 0 (remainder: x is for maxRadius, y is for minRadius)");
         }
+        _maxRadius = _transform.getScale().getX() * _maxRadius;
+        _minRadius = _transform.getScale().getY() * _minRadius;
     }
 
     Entities::IEntity::Type TorusEntity::getType() const {

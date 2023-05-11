@@ -15,17 +15,21 @@ target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Triangle PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Torus PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Obj PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(RefractionMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(TransparencyMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ChessBoardMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ZebraMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(MirrorMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_ray PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_image PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(CameraCluster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_pipeline PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_pixelthread PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(BlackAndWhite PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(ray_transform PRIVATE
     Transform.cpp
@@ -63,7 +67,11 @@ target_sources(Cylinder PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(Torus PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
+target_sources(Obj PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
 target_sources(PlainMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
+target_sources(RefractionMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(TransparencyMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
@@ -71,9 +79,13 @@ target_sources(ChessBoardMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(ZebraMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
+target_sources(MirrorMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
 target_sources(LimitedCylinder PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(SSAAx4 PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
+target_sources(BlackAndWhite PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(CameraCustom PRIVATE $<TARGET_OBJECTS:ray_transform>)
 

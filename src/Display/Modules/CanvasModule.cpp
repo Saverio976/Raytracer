@@ -12,6 +12,7 @@
 #include <functional>
 #include <future>
 #include <iostream>
+#include <string>
 #include "CanvasModule.hpp"
 #include "Parameters.hpp"
 #include "Transform.hpp"
@@ -58,7 +59,13 @@ namespace RayTracer::Display {
         sprite.setTexture(texture);
         window.draw(sprite);
         window.draw(text);
-        if (_clock.getElapsedTime() > sf::seconds(0.5) && this->_scene.getCameras()[this->_position].get().getCluster() != 1) {
+        if (_isScreenShot) {
+            _isScreenShot = false;
+            Parameters::getInstance().setIfNotExists("screen-shot-path", "./DisplaySfmlScreenshot");
+            image.saveToFile(Parameters::getInstance().getString("screen-shot-path") + "_" + _scene.getFileBase() + std::to_string(this->_position) + "_" + std::to_string(_nbPrinted) + ".png");
+            _nbPrinted++;
+        }
+        if (_clock.getElapsedTime() > sf::seconds(1) && this->_scene.getCameras()[this->_position].get().getCluster() != 1) {
             this->_scene.getCameras()[this->_position].get().setCluster(1);
             this->_scene.cancel();
             this->_scene.renders();
@@ -66,6 +73,8 @@ namespace RayTracer::Display {
     }
 
     void CanvasModule::start(sf::RenderWindow &window) {
+        _isScreenShot = false;
+        _nbPrinted = 0;
         this->resizeWindow(window);
         if (!this->_font.loadFromFile(Parameters::getInstance().getString("font-path"))) {
             throw std::runtime_error("Can't load font");
@@ -92,12 +101,14 @@ namespace RayTracer::Display {
             {sf::Keyboard::LShift,          std::bind(&CanvasModule::goDown, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::S,               std::bind(&CanvasModule::goBackward, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::Z,               std::bind(&CanvasModule::goForward, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::P,               [this]() { this->_isScreenShot = true; }},
+            {sf::Keyboard::R,               [this]() { this->resetCluster(); }},
         };
 
         if (event.type == sf::Event::KeyPressed) {
             auto it = keyMap.find(event.key.code);
             if (it != keyMap.end()) {
-                if (_clock.getElapsedTime() > sf::seconds(0.5)) {
+                if (_clock.getElapsedTime() > sf::seconds(1)) {
                     this->_scene.getCameras()[this->_position].get().setCluster(5);
                 }
                 _clock.restart();
@@ -108,6 +119,12 @@ namespace RayTracer::Display {
 
     void CanvasModule::end() {
 
+    }
+
+    void CanvasModule::resetCluster() {
+        this->_scene.getCameras()[this->_position].get().setCluster(1);
+        this->_scene.cancel();
+        this->_scene.renders();
     }
 
     std::string CanvasModule::getName() const {
