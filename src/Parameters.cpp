@@ -107,6 +107,27 @@ namespace RayTracer {
         set(key, valueInt);
     }
 
+    void Parameters::setIfNotExists(const std::string &key, int value)
+    {
+        if (_parameters->_valuesInt.find(key) == _parameters->_valuesInt.end()) {
+            _valuesInt.emplace(key, value);
+        }
+    }
+
+    void Parameters::setIfNotExists(const std::string &key, double value)
+    {
+        if (_parameters->_valuesDouble.find(key) == _parameters->_valuesDouble.end()) {
+            _valuesDouble.emplace(key, value);
+        }
+    }
+
+    void Parameters::setIfNotExists(const std::string &key, const std::string &value)
+    {
+        if (_parameters->_valuesString.find(key) == _parameters->_valuesString.end()) {
+            _valuesString.emplace(key, value);
+        }
+    }
+
     // -----------------------------------------------------------------------
     // Parameters::KeyNotFoundError
     // -----------------------------------------------------------------------

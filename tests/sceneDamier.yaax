@@ -1,16 +1,17 @@
 # Configuration of the camera
 cameras:
 {
-    Camera: (
+    CameraCluster: (
         {
-            size = {x: 500; y = 500;};
-            transform = {
+            screenSize = {x: 500; y = 500;};
+            screen = {
                 position = {x = 0.0; y = 0.0; z = 0.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
                 rotation = {x = 0.0; y = 0.0; z = 0.0;};
             };
-            focal = 200.0;
+            distanceFromScreen = 200.0;
             maxThreads = -1;
+            cluster = 1;
             filters = {
                 SSAAx4: (
                     {

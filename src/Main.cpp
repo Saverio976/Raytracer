@@ -49,30 +49,23 @@ namespace RayTracer {
     bool Main::parseCmdArgs(int argc, char **argv)
     {
         Parameters::getInstance().parseCmdArgs(argc, argv);
-        try {
-            std::string isHelp = Parameters::getInstance().getString("help");
-            if (isHelp == "true" || isHelp == "") {
-                help();
-                return false;
-            } else {
-                throw ArgumentError("bad argument:: --help");
-            }
-        } catch (const Parameters::KeyNotFoundError &e) { }
-        try {
-            std::string isGui = Parameters::getInstance().getString("gui");
-            if (isGui == "true" || isGui == "") {
-                Parameters::getInstance().set("display-mode", "gui");
-            } else {
-                Parameters::getInstance().set("display-mode", "console");
-            }
-        try {
-            std::string pathTtf = Parameters::getInstance().getString("font-path");
-        } catch (const Parameters::KeyNotFoundError &e) {
-            Parameters::getInstance().set("font-path", "./Assets/arial.ttf");
+        Parameters::getInstance().setIfNotExists("help", "false");
+        if (Parameters::getInstance().getString("help") == "") {
+            this->help();
+            return false;
         }
+        Parameters::getInstance().setIfNotExists("EntitiesSO", "./plugins/Entities");
+        Parameters::getInstance().setIfNotExists("FiltersSO", "./plugins/Filters");
+        Parameters::getInstance().setIfNotExists("MaterialsSO", "./plugins/Materials");
+        Parameters::getInstance().setIfNotExists("log-level", 3);
+        try {
+            Parameters::getInstance().getString("gui");
+            Parameters::getInstance().set("display-mode", "gui");
         } catch (const Parameters::KeyNotFoundError &e) {
             Parameters::getInstance().set("display-mode", "console");
         }
+        Parameters::getInstance().setIfNotExists("display-mode", "console");
+        Parameters::getInstance().setIfNotExists("font-path", "./Assets/arial.ttf");
         try {
             _sceneConfFilePath = Parameters::getInstance().getString("scene-path");
         } catch (const Parameters::KeyNotFoundError &e) {
@@ -84,15 +77,9 @@ namespace RayTracer {
             throw ArgumentError("missing argument:: --output-path <path>");
         }
         try {
-            int logLevel = Parameters::getInstance().getInt("log-level");
-        } catch (const Parameters::KeyNotFoundError &e) {
-            Parameters::getInstance().set("log-level", 3);
-        }
-        try {
             Scenes::SceneLoader::checkGoodFile(_sceneConfFilePath);
         } catch (const Scenes::SceneLoader::BadFileError &e) {
-            std::string message = e.what();
-            throw ArgumentError("bad argument:: --scene-path <path>:: " + message);
+            throw ArgumentError("bad argument:: --scene-path <path>:: " + std::string(e.what()));
         }
         _logger.trace("Finishing Parsing Command Arguments");
         return true;
