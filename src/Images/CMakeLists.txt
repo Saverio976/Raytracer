@@ -24,6 +24,7 @@ target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(CameraCluster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_pipeline PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_pixelthread PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(BlackAndWhite PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_sources(ray_image_color PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Color.cpp"
@@ -162,6 +163,11 @@ target_sources(LimitedCylinder PRIVATE
 )
 
 target_sources(SSAAx4 PRIVATE
+    $<TARGET_OBJECTS:ray_image_color>
+    $<TARGET_OBJECTS:ray_image_image>
+)
+
+target_sources(BlackAndWhite PRIVATE
     $<TARGET_OBJECTS:ray_image_color>
     $<TARGET_OBJECTS:ray_image_image>
 )
