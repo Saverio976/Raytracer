@@ -1,0 +1,108 @@
+# configuration des cameras
+cameras:
+{
+    # camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # l'echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # la rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxthreads = -1;
+            # filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# les objets de la scene
+primitives :
+{
+    # list of triangle
+    Triangle = (
+        {
+            # Premier point du triangle
+            pointOne = {x = 0.0; y = 100.0; z = 200.0;};
+            # Second point du triangle
+            pointTwo = {x = 40.0; y = 100.0; z = 0.0;};
+            # Troisième point du triangle
+            pointThree = {x = -40.0; y = 100.0; z = 0.0;};
+            transform = {
+                # X/Y/Z: mettre 0.0
+                position = {x = 0.0; y = 0.0; z = 20.0;};
+                # X/Y/Z: mettre 0.0
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                # Utilisation du matériau
+                type = "PlainMaterial";
+                # taux de reflet de la lumière
+                shininess = 1.0;
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                # utilisé pour modifier le taux de reflet/couleur de la sphere (lumière lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+                # Couleur du triangle
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# configuration de la lumière
+lights :
+{
+    # point de lumière (une lampe par example)
+    PointLight = (
+        # première lampe de type pointlight
+        {
+            transform = {
+                # position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # x: agrandis/diminus le rayon de la lampe
+                # y: agrandis/diminus la puissance de la lampe
+                # z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # première lampe de type ambientlight
+        {
+            transform = {
+                # position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # x: agrandis/diminus la puissance de la lampe
+                # y/z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # x/y/z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};

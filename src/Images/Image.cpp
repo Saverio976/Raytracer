@@ -7,7 +7,6 @@
 
 #include "Image.hpp"
 #include <cstddef>
-#include <iostream>
 #include <fstream>
 
 namespace RayTracer::Images {
@@ -30,6 +29,10 @@ namespace RayTracer::Images {
         for (const Color &color : this->_pixels)
             file << color << std::endl;
         file.close();
+    }
+
+    const std::vector<Color> &Image::getPixelsList() const {
+        return this->_pixels;
     }
 
     Image::PixelLine Image::operator[](std::size_t y) {

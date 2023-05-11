@@ -60,82 +60,35 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
         return false;
     }
 
-    std::array<double, 2> LimitedCylinderEntity::isCollidedInfiniteCylinder(const Images::Ray &ray) const
-    {
-        double a = (_direction.getX() * _direction.getX()) + (_direction.getY() * _direction.getY()) + (_direction.getZ() * _direction.getZ());
-        double b = 2 * (_direction.getX() * ray.getOrigin().getX()) + 2 * (_direction.getY() * ray.getOrigin().getY()) + 2 * (_direction.getZ() * ray.getOrigin().getZ());
-        double c = (ray.getOrigin().getX() * ray.getOrigin().getX()) + (ray.getOrigin().getZ() * ray.getOrigin().getY()) + (ray.getOrigin().getZ() * ray.getOrigin().getZ()) - (_radius * _radius);
-        double delta = b * b - 4 * a * c;
+    std::optional<Entities::Transform::Vector3f> LimitedCylinderEntity::isCollided(const Images::Ray &ray) const {
+        Entities::Transform::Vector3f oc = ray.getOrigin() - this->_transform.getPosition();
+        double a = std::pow(ray.getDirection().getX(), 2) + std::pow(ray.getDirection().getY(), 2);
+        double b = 2 * (oc.getX() * ray.getDirection().getX() + oc.getY() * ray.getDirection().getY());
+        double c = std::pow(oc.getX(), 2) + std::pow(oc.getY(), 2) - std::pow(_radius, 2);
 
-        if (delta < 0 || std::abs(delta) < 0.001) {
-            return {-1, -1};
-        }
-        double t = (-b - std::sqrt(delta)) / (2 * a);
-        double t2 = (-b + std::sqrt(delta)) / (2 * a);
-        return {t, t2};
-    }
+        double discriminant = std::pow(b, 2) - 4 * a * c;
 
-    std::optional<Entities::Transform::Vector3f> LimitedCylinderEntity::isCollided(const Images::Ray &ray) const
-    {
-        auto tt = isCollidedInfiniteCylinder(ray);
-
-        if (tt[0] < 0 && tt[1] < 0) {
+        if (discriminant < 0)
             return std::nullopt;
-        }
-        auto t = tt[0];
-        auto m = ray.getDirection().dot(_direction) * t + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
-        Entities::Transform::Vector3f intersect = ray.getOrigin() + ray.getDirection() * Entities::Transform::Vector3f(t, t, t);
-        auto aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
-        auto bb = aa.dot(_direction);
-        if (std::abs(bb) < 0.001 && m > 0 && _transform.getPosition().getDistance(aa) < _height) {
-            return intersect;
-        }
-        t = tt[1];
-        m = ray.getDirection().dot(_direction) * t + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
-        intersect = ray.getOrigin() + ray.getDirection() * Entities::Transform::Vector3f(t, t, t);
-        aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
-        bb = aa.dot(_direction);
-        if (std::abs(bb) < 0.001 && m > 0 && _transform.getPosition().getDistance(aa) < _height) {
-            return intersect;
+        double t1 = (-b - std::sqrt(discriminant)) / (2 * a);
+        double t2 = (-b + std::sqrt(discriminant)) / (2 * a);
+
+        double z1 = oc.getZ() + t1 * ray.getDirection().getZ();
+        double z2 = oc.getZ() + t2 * ray.getDirection().getZ();
+
+        if ((z1 >= 0 && z1 <= _height) || (z2 >= 0 && z2 <= _height)) {
+            Entities::Transform::Vector3f collisionPoint = ray.getOrigin() + ray.getDirection() * Entities::Transform::Vector3f(t1, t1, t1);
+            return collisionPoint;
         }
         return std::nullopt;
     }
-
-    /* This work
-    std::optional<Entities::Transform::Vector3f> LimitedCylinderEntity::isCollided(const Images::Ray &ray) const
-    {
-        auto tt = isCollidedInfiniteCylinder(ray);
-
-        if (tt[0] < 0 && tt[1] < 0) {
-            return std::nullopt;
-        }
-        auto t = tt[0];
-        auto m = ray.getDirection().dot(_direction) * t + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
-        Entities::Transform::Vector3f intersect = ray.getOrigin() + ray.getDirection() * Entities::Transform::Vector3f(t, t, t);
-        auto aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
-        auto bb = aa.dot(_direction);
-        if (std::abs(bb) > 0.001) {
-            t = tt[1];
-            m = ray.getDirection().dot(_direction) * t + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
-            intersect = ray.getOrigin() + ray.getDirection() * Entities::Transform::Vector3f(t, t, t);
-            aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
-            bb = aa.dot(_direction);
-            if (std::abs(bb) > 0.001) {
-                return std::nullopt;
-            }
-        }
-        return intersect;
-    }
-     */
 
     Images::Color LimitedCylinderEntity::getColor(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const
     {
         auto transform = _transform;
-        auto tt = isCollidedInfiniteCylinder(ray);
-        auto m = ray.getDirection().dot(_direction) * tt[0] + (ray.getOrigin() - _transform.getPosition()).dot(_direction);
-        auto aa = intersect - _transform.getPosition() - (_direction * Entities::Transform::Vector3f(m, m, m));
-        transform.setPosition(aa);
+        Entities::Transform::Vector3f origin = this->_transform.getPosition();
+        transform.setPosition(Entities::Transform::Vector3f(origin.getX(), origin.getY(), intersect.getZ()));
         return _material->get().getColor(ray, transform, intersect, displayable);
     }
 

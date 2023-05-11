@@ -117,6 +117,13 @@ namespace RayTracer::Entities::Transform {
              */
             Vector3f getNormalized() const;
             /**
+             * @brief Get the perpendicular vector
+             *
+             * @param other the other vector
+             * @return the perpendicular vector
+             */
+            Vector3f getCrossed(const Vector3f &other) const;
+            /**
              * @brief Get dot product
              *
              * @param other the other
@@ -144,7 +151,7 @@ namespace RayTracer::Entities::Transform {
             /* @brief Rotate the vector (base, direction)
              *
              * @param direction the vector of the direction
-             * @param rotation the rotation
+             * @param rotation the rotation (in degree)
              *
              * @return a new vector direction
              */
@@ -157,6 +164,31 @@ namespace RayTracer::Entities::Transform {
              * @return the angle in degree
              */
             double getAngle(const Vector3f &a, const Vector3f &c) const;
+
+            /**
+             * @brief Rotate the vector
+             *
+             * @param angle the angle (in degree)
+             *
+             * @return a new vector
+             */
+            Vector3f rotateX(float angle) const;
+            /**
+             * @brief Rotate the vector
+             *
+             * @param angle the angle (in degree)
+             *
+             * @return a new vector
+             */
+            Vector3f rotateY(float angle) const;
+            /**
+             * @brief Rotate the vector
+             *
+             * @param angle the angle (in degree)
+             *
+             * @return a new vector
+             */
+            Vector3f rotateZ(float angle) const;
 
         protected:
         private:

@@ -31,9 +31,8 @@ namespace RayTracer::PluginsExt::LimitedCylinder {
             Images::Color redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
                 const Entities::Transform::Vector3f &intersect) const final;
         private:
-            std::array<double, 2> isCollidedInfiniteCylinder(const Images::Ray &ray) const;
             Entities::Transform::Transform _transform;
-            const Entities::Transform::Vector3f &_direction;
+            Entities::Transform::Vector3f _direction;
             double _radius;
             ILogger &_logger;
             std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;

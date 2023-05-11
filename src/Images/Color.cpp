@@ -191,6 +191,14 @@ namespace RayTracer::Images {
         this->_b = distance * this->_b / maxDistance;
         this->_mutex.unlock();
     }
+
+    sf::Color Color::toSfColor() const {
+        return {
+            static_cast<unsigned char>(this->_r),
+            static_cast<unsigned char>(this->_g),
+            static_cast<unsigned char>(this->_b),
+            static_cast<unsigned char>(this->_a)};
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color) {

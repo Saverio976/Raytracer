@@ -27,7 +27,6 @@ namespace RayTracer::PluginsExt::Plane {
                 const Entities::Transform::Vector3f &intersect) const final;
         private:
             Entities::Transform::Transform _transform;
-            RayTracer::Entities::Transform::Vector3f _size;
             std::optional<std::reference_wrapper<RayTracer::Entities::IMaterial>> _material;
             ILogger &_logger;
     };

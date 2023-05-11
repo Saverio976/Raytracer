@@ -1,0 +1,111 @@
+# Configuration des cameras
+cameras:
+{
+    # Camera par defaut (la plus simple d'utilisation)
+    Camera: (
+        {
+            # Taille de l'image (de l'écran) (en pixels)
+            size = {x: 500; y = 500;};
+            transform = {
+                # Position de l'écran
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                # L'Echelle n'est pas suportée
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                # La rotation n'est pas suportée
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Distance de la caméra par rapport à l'écran
+            focal = 200.0;
+            # Nombre de pixel d'éxécution en parallelle (-1 laisse la caméra sélectionner le maximum possible)
+            maxThreads = -1;
+            # Filtres (étape après la génération de l'image)
+            filters = {};
+        }
+    );
+};
+
+# Les objets de la scene
+primitives :
+{
+    # Liste des spheres
+    Sphere = (
+        # notre sphere est configuré ici
+        {
+            # Taille du rayon
+            radius = 100.0;
+            transform = {
+                # Position de la sphere
+                position = {x = -150.0; y = 150.0; z = 50.0;};
+                # X: agrandis/diminus le rayon de la sphere
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une sphere ?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            material = {
+                # Utilisation de la couche de la sphere
+                type = "TransparencyMaterial";
+                # Taux de reflet de la lumière
+                shininess = 1.0;
+                # Couleur de la sphere
+                color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est ambiante)
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                # Utilisé pour modifier le taux de reflet/couleur de la sphere (quand la lumière est une lampe)
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                # pourcentage de transparance
+                # entre 0 et 255
+                # 0: totalement transparent
+                # 255: totalement opaque
+                transparency = 150.0;
+            };
+        },
+    )
+};
+
+# Configuration de la lumière
+lights :
+{
+    # Point de lumière (une lampe par example)
+    PointLight = (
+        # Première lampe de type PointLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus le rayon de la lampe
+                # Y: agrandis/diminus la puissance de la lampe
+                # Z: mettre 0.0
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair de tous les cotés?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 255.0; g = 126.0; b = 300.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+            # Rayon du chants d'actions de la lumière (au-delà la lumière n'éclair pas)
+            radius = 500.0;
+        }
+    );
+    AmbientLight = (
+        # Première lampe de type AmbientLight
+        {
+            transform = {
+                # Position de la lampe
+                position = {x = 150.0; y = 0.0; z = 100.0;};
+                # X: agrandis/diminus la puissance de la lampe
+                # Y/Z: mettre 0.0
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                # X/Y/Z: mettre 0.0 (à quoi ça sert de changer la rotation d'une lampe qui écair partout?)
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            # Couleur de la lampe
+            color = {r = 50.0; g = 50.0; b = 50.0; a = 255.0;};
+            # Puissance de la lampe (plus il est grand, plus il comptera par rapport aux autres lumières)
+            power = 1.0;
+        }
+    );
+};

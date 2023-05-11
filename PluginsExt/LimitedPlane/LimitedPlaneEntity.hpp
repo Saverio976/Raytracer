@@ -12,6 +12,7 @@
     #include "IPrimitive.hpp"
     #include "Transform.hpp"
     #include "IMaterial.hpp"
+    #include "Vector2i.hpp"
 
 namespace RayTracer::PluginsExt::LimitedPlane {
     class LimitedPlaneEntity : public RayTracer::Entities::IPrimitive {
@@ -28,7 +29,7 @@ namespace RayTracer::PluginsExt::LimitedPlane {
                                        const Entities::Transform::Vector3f &intersect) const final;
     private:
         Entities::Transform::Transform _transform;
-        RayTracer::Entities::Transform::Vector3f _size;
+        RayTracer::Entities::Transform::Vector2i _size;
         std::optional<std::reference_wrapper<Entities::IMaterial>> _material;
         ILogger &_logger;
     };

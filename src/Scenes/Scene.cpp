@@ -8,6 +8,7 @@
 #include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Scene.hpp"
+#include "SceneState.hpp"
 #include <future>
 #include <string>
 
@@ -45,6 +46,10 @@ namespace RayTracer::Scenes {
     }
 
     const std::vector<std::reference_wrapper<Entities::ICamera>> &Scene::getCameras() const {
+        return this->_cameras;
+    }
+
+    std::vector<std::reference_wrapper<Entities::ICamera>> &Scene::getCameras() {
         return this->_cameras;
     }
 
@@ -112,5 +117,15 @@ namespace RayTracer::Scenes {
         while (!this->isReady()) {
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
+    }
+
+    SceneState &Scene::getState()
+    {
+        return this->_state;
+    }
+
+    const SceneState &Scene::getState() const
+    {
+        return this->_state;
     }
 }

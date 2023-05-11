@@ -82,6 +82,14 @@ namespace RayTracer::Entities::Transform {
         return {_x / norm, _y / norm, _z / norm};
     }
 
+    Vector3f Vector3f::getCrossed(const Vector3f &other) const {
+        return {
+        _y * other.getZ() - _z * other.getY(),
+        _z * other.getX() - _x * other.getZ(),
+        _x * other.getY() - _y * other.getX()
+        };
+    }
+
     double Vector3f::getDistance(const Vector3f &other) const
     {
         double dx = _x - other._x;
@@ -129,6 +137,72 @@ namespace RayTracer::Entities::Transform {
         zRotation = zRotation;
 
         return {xRotation, yRotation, zRotation};
+    }
+
+/*
+ *
+  PVector rotateX(float angle) {
+    float cosa = cos(angle);
+    float sina = sin(angle);
+    float tempy = y;
+    y = cosa * y - sina * z;
+    z = cosa * z + sina * tempy;
+    return this;
+  }
+
+  PVector rotateY(float angle) {
+    float cosa = cos(angle);
+    float sina = sin(angle);
+    float tempz = z;
+    z = cosa * z - sina * x;
+    x = cosa * x + sina * tempz;
+    return this;
+  }
+
+  PVector rotateZ(float angle) {
+    float cosa = cos(angle);
+    float sina = sin(angle);
+    float tempx = x;
+    x = cosa * x - sina * y;
+    y = cosa * y + sina * tempx;
+    return this;
+  }
+ */
+
+    Vector3f Vector3f::rotateX(float angle) const
+    {
+        Vector3f newVector = *this;
+        Vector3f rad = Vector3f(angle, angle, angle).toRadians();
+
+        float cosa = std::cos(rad.getX());
+        float sina = std::sin(rad.getX());
+        newVector._y = cosa * _y - sina * _z;
+        newVector._z = cosa * _z + sina * _y;
+        return newVector;
+    }
+
+    Vector3f Vector3f::rotateY(float angle) const
+    {
+        Vector3f newVector = *this;
+        Vector3f rad = Vector3f(angle, angle, angle).toRadians();
+
+        float cosa = std::cos(rad.getX());
+        float sina = std::sin(rad.getX());
+        newVector._z = cosa * _z - sina * _x;
+        newVector._x = cosa * _x + sina * _z;
+        return newVector;
+    }
+
+    Vector3f Vector3f::rotateZ(float angle) const
+    {
+        Vector3f newVector = *this;
+        Vector3f rad = Vector3f(angle, angle, angle).toRadians();
+
+        float cosa = cos(rad.getX());
+        float sina = sin(rad.getX());
+        newVector._x = cosa * _x - sina * _y;
+        newVector._y = cosa * _y + sina * _x;
+        return newVector;
     }
 
     double Vector3f::getAngle(const Vector3f &a, const Vector3f &c) const {
