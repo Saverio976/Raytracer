@@ -1,0 +1,177 @@
+\hypertarget{a01466}{}\doxysection{Ray\+Tracer\+::Plugins\+::Plugin\+Handler$<$ Interface, Creator $>$ Class Template Reference}
+\label{a01466}\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+
+
+The \mbox{\hyperlink{a01466}{Plugin\+Handler}} class.  
+
+
+
+
+{\ttfamily \#include $<$Plugin\+Handler.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+::Plugin\+Handler$<$ Interface, Creator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01465}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+::Plugin\+Handler$<$ Interface, Creator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01464}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01466_a673d29a276ac5ed9b37eb195ab034dc6}{Plugin\+Handler}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{a01466}{Plugin\+Handler}} constructor (take a .so) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01466_a856f0b9c8d10be31047aa49f6e6882fe}{$\sim$\+Plugin\+Handler}} ()
+\item 
+Interface \& \mbox{\hyperlink{a01466_a8db8913d954a2d7e19959bb394651391}{get}} (const \mbox{\hyperlink{a01514}{Ray\+Tracer\+::\+Scenes\+::\+ISetting}} \&setting, \mbox{\hyperlink{a01362}{ILogger}} \&logger)
+\begin{DoxyCompactList}\small\item\em Get an interface (and create it with setting) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\T \mbox{\hyperlink{a01466_a452d7c49955e86dba23575c152158eaf}{get\+Result}} (const std\+::string \&name, Args \&\&... \+\_\+\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Call function inside the handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Creator $\ast$ \mbox{\hyperlink{a01466_adc0c248bb9d5c2a086100feced87c94f}{\+\_\+creator}}
+\item 
+std\+::vector$<$ Interface $\ast$ $>$ \mbox{\hyperlink{a01466_ab89fe9d3613608bc899436d1ebbab285}{\+\_\+elements}}
+\item 
+std\+::string \mbox{\hyperlink{a01466_a3d1ede330bb415f095451d7ec784d0e5}{\+\_\+file\+Path}}
+\item 
+void $\ast$ \mbox{\hyperlink{a01466_a3a95e2e15687a60aa7ca5987f0871e5a}{\+\_\+handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Interface, typename Creator$>$\newline
+class Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler$<$ Interface, Creator $>$}
+
+The \mbox{\hyperlink{a01466}{Plugin\+Handler}} class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Interface} & the interface type of the value to get \\
+\hline
+{\em Creator} & the creator type to create the interface \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01466_a673d29a276ac5ed9b37eb195ab034dc6}\label{a01466_a673d29a276ac5ed9b37eb195ab034dc6}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!PluginHandler@{PluginHandler}}
+\index{PluginHandler@{PluginHandler}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{PluginHandler()}{PluginHandler()}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+\mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::\mbox{\hyperlink{a01466}{Plugin\+Handler}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{a01466}{Plugin\+Handler}} constructor (take a .so) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & the file path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01466_a856f0b9c8d10be31047aa49f6e6882fe}\label{a01466_a856f0b9c8d10be31047aa49f6e6882fe}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!````~PluginHandler@{$\sim$PluginHandler}}
+\index{````~PluginHandler@{$\sim$PluginHandler}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$PluginHandler()}{~PluginHandler()}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+\mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::$\sim$\mbox{\hyperlink{a01466}{Plugin\+Handler}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01466_a8db8913d954a2d7e19959bb394651391}\label{a01466_a8db8913d954a2d7e19959bb394651391}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!get@{get}}
+\index{get@{get}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+Interface\& \mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01514}{Ray\+Tracer\+::\+Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01362}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an interface (and create it with setting) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the interface 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01466_a452d7c49955e86dba23575c152158eaf}\label{a01466_a452d7c49955e86dba23575c152158eaf}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!getResult@{getResult}}
+\index{getResult@{getResult}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{getResult()}{getResult()}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+template$<$typename T , typename... Args$>$ \\
+T \mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::get\+Result (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{Args \&\&...}]{\+\_\+\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Call function inside the handler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the function \\
+\hline
+{\em \+\_\+\+\_\+args} & arguments of the function\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of the function called 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01466_adc0c248bb9d5c2a086100feced87c94f}\label{a01466_adc0c248bb9d5c2a086100feced87c94f}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!\_creator@{\_creator}}
+\index{\_creator@{\_creator}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{\_creator}{\_creator}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+Creator$\ast$ \mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::\+\_\+creator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{a01466_ab89fe9d3613608bc899436d1ebbab285}\label{a01466_ab89fe9d3613608bc899436d1ebbab285}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!\_elements@{\_elements}}
+\index{\_elements@{\_elements}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{\_elements}{\_elements}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+std\+::vector$<$Interface $\ast$$>$ \mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{a01466_a3d1ede330bb415f095451d7ec784d0e5}\label{a01466_a3d1ede330bb415f095451d7ec784d0e5}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!\_filePath@{\_filePath}}
+\index{\_filePath@{\_filePath}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{\_filePath}{\_filePath}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+std\+::string \mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::\+\_\+file\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{a01466_a3a95e2e15687a60aa7ca5987f0871e5a}\label{a01466_a3a95e2e15687a60aa7ca5987f0871e5a}} 
+\index{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}!\_handler@{\_handler}}
+\index{\_handler@{\_handler}!RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$@{RayTracer::Plugins::PluginHandler$<$ Interface, Creator $>$}}
+\doxysubsubsection{\texorpdfstring{\_handler}{\_handler}}
+{\footnotesize\ttfamily template$<$typename Interface , typename Creator $>$ \\
+void$\ast$ \mbox{\hyperlink{a01466}{Ray\+Tracer\+::\+Plugins\+::\+Plugin\+Handler}}$<$ Interface, Creator $>$\+::\+\_\+handler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Plugins/\mbox{\hyperlink{a00212}{Plugin\+Handler.\+hpp}}\end{DoxyCompactItemize}

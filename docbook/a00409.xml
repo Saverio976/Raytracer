@@ -1,21 +1,33 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00409" xml:lang="en-US">
-<title>RayTracer::Plugins::Materials Namespace Reference</title>
-<indexterm><primary>RayTracer::Plugins::Materials</primary></indexterm>
+<title>RayTracer::Factories Namespace Reference</title>
+<indexterm><primary>RayTracer::Factories</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01447">IMaterialCreator</link></para>
+            <listitem><para>class <link linkend="_a01330">EntityFactory</link></para>
 
-<para>The <link linkend="_a01447">IMaterialCreator</link> class. </para>
+<para>The <link linkend="_a01330">EntityFactory</link> (singleton factory) </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01451">MaterialHandler</link></para>
+            <listitem><para>class <link linkend="_a01334">FilterFactory</link></para>
 
-<para>The <link linkend="_a01451">MaterialHandler</link>. </para>
+<para>The <link linkend="_a01334">FilterFactory</link> (singleton factory) </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01455">MaterialLoader</link></para>
+            <listitem><para>class <link linkend="_a01338">IEntityFactory</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01342">IFilterFactory</link></para>
 
-<para>The <link linkend="_a01455">MaterialLoader</link>. </para>
+<para>The <link linkend="_a01334">FilterFactory</link> (singleton factory) </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01346">IMaterialFactory</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01350">MaterialFactory</link></para>
+
+<para>The <link linkend="_a01350">MaterialFactory</link> (singleton factory) </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01354">TFactory</link></para>
+
+<para>The <link linkend="_a01354">TFactory</link>. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -28,13 +28,13 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01471">RayTracer::Scenes::ConfigWrapper</link></para>
+            <listitem><para>class <link linkend="_a01478">RayTracer::Scenes::ConfigWrapper</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01475">RayTracer::Scenes::ConfigWrapper::ReadException</link></para>
+            <listitem><para>class <link linkend="_a01482">RayTracer::Scenes::ConfigWrapper::ReadException</link></para>
 
 <para>an exception for when the file can&apos;t be read </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01479">RayTracer::Scenes::ConfigWrapper::WriteException</link></para>
+            <listitem><para>class <link linkend="_a01486">RayTracer::Scenes::ConfigWrapper::WriteException</link></para>
 
 <para>an exception for when the file can&apos;t be written </para>
 </listitem>
@@ -43,9 +43,9 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00410">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00416">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -20,18 +20,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01371">RayTracer::Images::ImagePipeLine</link></para>
+            <listitem><para>class <link linkend="_a01378">RayTracer::Images::ImagePipeLine</link></para>
 
-<para>The <link linkend="_a01371">ImagePipeLine</link> class. </para>
+<para>The <link linkend="_a01378">ImagePipeLine</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00405">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

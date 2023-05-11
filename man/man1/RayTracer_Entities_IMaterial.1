@@ -10,7 +10,7 @@ RayTracer::Entities::IMaterial \- The \fBIMaterial\fP class\&.
 .PP
 \fC#include <IMaterial\&.hpp>\fP
 .PP
-Inherited by \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, and \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP\&.
+Inherited by \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP, \fBRayTracer::PluginsExt::Mirror::MirrorMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, and \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -62,7 +62,7 @@ the color
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, and \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, \fBRayTracer::PluginsExt::Mirror::MirrorMaterial\fP, and \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP\&.
 .SS "virtual \fBImages::Color\fP RayTracer::Entities::IMaterial::redirectionLight (const \fBImages::Ray\fP & ray, const \fBScenes::IDisplayable\fP & displayable, const \fBTransform::Vector3f\fP & intersect) const\fC [pure virtual]\fP"
 
 .PP
@@ -84,7 +84,7 @@ the color of the shadow
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, and \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, \fBRayTracer::PluginsExt::Mirror::MirrorMaterial\fP, and \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP\&.
 .SS "virtual void RayTracer::Entities::IMaterial::setColor (const \fBImages::Color\fP & color)\fC [pure virtual]\fP"
 
 .PP
@@ -97,7 +97,7 @@ Set the color\&.
 .PP
 
 .PP
-Implemented in \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, and \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP\&.
+Implemented in \fBRayTracer::PluginsExt::Zebra::ZebraMaterial\fP, \fBRayTracer::PluginsExt::Transparency::TransparencyMaterial\fP, \fBRayTracer::PluginsExt::Refraction::RefractionMaterial\fP, \fBRayTracer::PluginsExt::PlainMaterial::PlainMaterial\fP, \fBRayTracer::PluginsExt::Mirror::MirrorMaterial\fP, and \fBRayTracer::PluginsExt::ChessBoard::ChessBoardMaterial\fP\&.
 
 .SH "Author"
 .PP 

@@ -28,23 +28,23 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01339">RayTracer::Factories::IMaterialFactory</link></para>
+            <listitem><para>class <link linkend="_a01346">RayTracer::Factories::IMaterialFactory</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00403">RayTracer::Factories</link></para>
+            <listitem><para> <link linkend="_a00409">RayTracer::Factories</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_a01339">RayTracer::Factories::IMaterialFactory</link> * <link linkend="_a00137_1a5a43e0386914c1a248464383947709b5">getMaterialFactoryInstance</link> (void)</para>
+            <listitem><para><link linkend="_a01346">RayTracer::Factories::IMaterialFactory</link> * <link linkend="_a00137_1a5a43e0386914c1a248464383947709b5">getMaterialFactoryInstance</link> (void)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -54,6 +54,6 @@ This graph shows which files directly or indirectly include this file:<para>
     <title>getMaterialFactoryInstance()</title>
 <indexterm><primary>getMaterialFactoryInstance</primary><secondary>IMaterialFactory.hpp</secondary></indexterm>
 <indexterm><primary>IMaterialFactory.hpp</primary><secondary>getMaterialFactoryInstance</secondary></indexterm>
-<para><computeroutput><link linkend="_a01339">RayTracer::Factories::IMaterialFactory</link>* getMaterialFactoryInstance (void )</computeroutput></para></section>
+<para><computeroutput><link linkend="_a01346">RayTracer::Factories::IMaterialFactory</link>* getMaterialFactoryInstance (void )</computeroutput></para></section>
 </section>
 </section>

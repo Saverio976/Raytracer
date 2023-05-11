@@ -86,16 +86,16 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00101.html">IEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00236.html">ISetting.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00403.html">RayTracer::Factories</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01331.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01331.html">IEntityFactory</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00409.html">RayTracer::Factories</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01338.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01338.html">IEntityFactory</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01331.html#aa8bca4d6e23129b4196e1c4c87a4e835">   20</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01331.html#aa8bca4d6e23129b4196e1c4c87a4e835">~IEntityFactory</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01331.html#a1ba3cef71daf8a51706eb080edd8115d">   29</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01291.html">Entities::IEntity</a> &amp;<a class="code" href="a01331.html#a1ba3cef71daf8a51706eb080edd8115d">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01507.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01355.html">ILogger</a> &amp;logger) = 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01338.html#aa8bca4d6e23129b4196e1c4c87a4e835">   20</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01338.html#aa8bca4d6e23129b4196e1c4c87a4e835">~IEntityFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01338.html#a1ba3cef71daf8a51706eb080edd8115d">   29</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01298.html">Entities::IEntity</a> &amp;<a class="code" href="a01338.html#a1ba3cef71daf8a51706eb080edd8115d">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01514.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01362.html">ILogger</a> &amp;logger) = 0;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00131.html#aae10664f77a8c9a9fbbc43b95ecc5d03">   34</a></span>&#160;    <span class="keyword">extern</span> <a class="code" href="a01331.html">RayTracer::Factories::IEntityFactory</a> *<a class="code" href="a00131.html#aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00131.html#aae10664f77a8c9a9fbbc43b95ecc5d03">   34</a></span>&#160;    <span class="keyword">extern</span> <a class="code" href="a01338.html">RayTracer::Factories::IEntityFactory</a> *<a class="code" href="a00131.html#aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -103,17 +103,17 @@ $(function() {
 <div class="ttc" id="aa00131_html_aae10664f77a8c9a9fbbc43b95ecc5d03"><div class="ttname"><a href="a00131.html#aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</a></div><div class="ttdeci">RayTracer::Factories::IEntityFactory * getEntityFactoryInstance(void)</div></div>
 <div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">ILogger.hpp</a></div></div>
 <div class="ttc" id="aa00236_html"><div class="ttname"><a href="a00236.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00403_html"><div class="ttname"><a href="a00403.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
-<div class="ttc" id="aa01291_html"><div class="ttname"><a href="a01291.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01331_html"><div class="ttname"><a href="a01331.html">RayTracer::Factories::IEntityFactory</a></div><div class="ttdef"><b>Definition:</b> IEntityFactory.hpp:18</div></div>
-<div class="ttc" id="aa01331_html_a1ba3cef71daf8a51706eb080edd8115d"><div class="ttname"><a href="a01331.html#a1ba3cef71daf8a51706eb080edd8115d">RayTracer::Factories::IEntityFactory::get</a></div><div class="ttdeci">virtual Entities::IEntity &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Get an entity.</div></div>
-<div class="ttc" id="aa01331_html_aa8bca4d6e23129b4196e1c4c87a4e835"><div class="ttname"><a href="a01331.html#aa8bca4d6e23129b4196e1c4c87a4e835">RayTracer::Factories::IEntityFactory::~IEntityFactory</a></div><div class="ttdeci">virtual ~IEntityFactory()=default</div></div>
-<div class="ttc" id="aa01355_html"><div class="ttname"><a href="a01355.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01507_html"><div class="ttname"><a href="a01507.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa00409_html"><div class="ttname"><a href="a00409.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
+<div class="ttc" id="aa01298_html"><div class="ttname"><a href="a01298.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01338_html"><div class="ttname"><a href="a01338.html">RayTracer::Factories::IEntityFactory</a></div><div class="ttdef"><b>Definition:</b> IEntityFactory.hpp:18</div></div>
+<div class="ttc" id="aa01338_html_a1ba3cef71daf8a51706eb080edd8115d"><div class="ttname"><a href="a01338.html#a1ba3cef71daf8a51706eb080edd8115d">RayTracer::Factories::IEntityFactory::get</a></div><div class="ttdeci">virtual Entities::IEntity &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Get an entity.</div></div>
+<div class="ttc" id="aa01338_html_aa8bca4d6e23129b4196e1c4c87a4e835"><div class="ttname"><a href="a01338.html#aa8bca4d6e23129b4196e1c4c87a4e835">RayTracer::Factories::IEntityFactory::~IEntityFactory</a></div><div class="ttdeci">virtual ~IEntityFactory()=default</div></div>
+<div class="ttc" id="aa01362_html"><div class="ttname"><a href="a01362.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01514_html"><div class="ttname"><a href="a01514.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:30:20 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:32:12 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

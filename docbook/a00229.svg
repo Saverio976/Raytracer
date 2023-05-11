@@ -89,7 +89,7 @@
 <!-- Node36 -->
 <g id="node36" class="node">
 <title>Node36</title>
-<g id="a_node36"><a xlink:href="$a00350.html" xlink:title=" ">
+<g id="a_node36"><a xlink:href="$a00356.html" xlink:title=" ">
 <polygon fill="white" stroke="black" points="2723,-602.5 2723,-643.5 2896,-643.5 2896,-602.5 2723,-602.5"/>
 <text text-anchor="start" x="2731" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="2731" y="-620.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/PointLight</text>
@@ -106,7 +106,7 @@
 <!-- Node38 -->
 <g id="node38" class="node">
 <title>Node38</title>
-<g id="a_node38"><a xlink:href="$a00368.html" xlink:title=" ">
+<g id="a_node38"><a xlink:href="$a00374.html" xlink:title=" ">
 <polygon fill="white" stroke="black" points="2914.5,-602.5 2914.5,-643.5 3084.5,-643.5 3084.5,-602.5 2914.5,-602.5"/>
 <text text-anchor="start" x="2922.5" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="2922.5" y="-620.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/SpotLight</text>
@@ -776,7 +776,7 @@
 <!-- Node37 -->
 <g id="node37" class="node">
 <title>Node37</title>
-<g id="a_node37"><a xlink:href="$a00347.html" xlink:title=" ">
+<g id="a_node37"><a xlink:href="$a00353.html" xlink:title=" ">
 <polygon fill="white" stroke="black" points="2723,-524.5 2723,-565.5 2896,-565.5 2896,-524.5 2723,-524.5"/>
 <text text-anchor="start" x="2731" y="-553.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="2731" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/PointLight</text>
@@ -793,7 +793,7 @@
 <!-- Node39 -->
 <g id="node39" class="node">
 <title>Node39</title>
-<g id="a_node39"><a xlink:href="$a00365.html" xlink:title=" ">
+<g id="a_node39"><a xlink:href="$a00371.html" xlink:title=" ">
 <polygon fill="white" stroke="black" points="2914.5,-524.5 2914.5,-565.5 3084.5,-565.5 3084.5,-524.5 2914.5,-524.5"/>
 <text text-anchor="start" x="2922.5" y="-553.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="2922.5" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/SpotLight</text>

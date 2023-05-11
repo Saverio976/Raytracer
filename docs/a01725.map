@@ -1,8 +1,5 @@
-<map id="RayTracer::PluginsExt::Transparency::TransparencyMaterial" name="RayTracer::PluginsExt::Transparency::TransparencyMaterial">
-<area shape="rect" id="node1" title=" " alt="" coords="158,725,367,891"/>
-<area shape="rect" id="node2" href="$a01299.html" title="The IMaterial class." alt="" coords="5,343,155,479"/>
-<area shape="rect" id="node3" title=" " alt="" coords="369,5,436,83"/>
-<area shape="rect" id="node4" href="$a01319.html" title="The Vector3f class." alt="" coords="324,189,481,633"/>
-<area shape="rect" id="node5" href="$a01359.html" title="The Color class." alt="" coords="506,255,657,567"/>
-<area shape="rect" id="node6" title=" " alt="" coords="535,5,627,83"/>
+<map id="RayTracer::PluginsExt::SpotLight::SpotLightEntity" name="RayTracer::PluginsExt::SpotLight::SpotLightEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="5,403,204,700"/>
+<area shape="rect" id="node2" href="$a01302.html" title="The ILight class." alt="" coords="33,189,176,355"/>
+<area shape="rect" id="node3" href="$a01298.html" title="The IEntity class." alt="" coords="33,5,176,141"/>
 </map>

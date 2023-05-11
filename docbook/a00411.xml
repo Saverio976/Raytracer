@@ -1,51 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00411" xml:lang="en-US">
-<title>RayTracer::PluginsExt Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt</primary></indexterm>
+<title>RayTracer::Images Namespace Reference</title>
+<indexterm><primary>RayTracer::Images</primary></indexterm>
 <simplesect>
-    <title>Namespaces    </title>
+    <title>Classes    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00412">AmbientLight</link></para>
+            <listitem><para>class <link linkend="_a01366">Color</link></para>
+
+<para>The <link linkend="_a01366">Color</link> class. </para>
 </listitem>
-            <listitem><para> <link linkend="_a00413">AntiAliasing</link></para>
+            <listitem><para>class <link linkend="_a01370">Image</link></para>
+
+<para>The <link linkend="_a01370">Image</link> class. </para>
 </listitem>
-            <listitem><para> <link linkend="_a00415">BlackAndWhite</link></para>
+            <listitem><para>class <link linkend="_a01378">ImagePipeLine</link></para>
+
+<para>The <link linkend="_a01378">ImagePipeLine</link> class. </para>
 </listitem>
-            <listitem><para> <link linkend="_a00416">Camera</link></para>
+            <listitem><para>class <link linkend="_a01382">IRayIterator</link></para>
+
+<para>The RayIterator class. </para>
 </listitem>
-            <listitem><para> <link linkend="_a00419">ChessBoard</link></para>
+            <listitem><para>class <link linkend="_a01390">PixelThread</link></para>
+
+<para>The <link linkend="_a01390">PixelThread</link> class. </para>
 </listitem>
-            <listitem><para> <link linkend="_a00420">Cone</link></para>
+            <listitem><para>class <link linkend="_a01394">Ray</link></para>
+
+<para>The <link linkend="_a01394">Ray</link> class. </para>
 </listitem>
-            <listitem><para> <link linkend="_a00421">Cylinder</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00422">Disk</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00423">LimitedCone</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00424">LimitedCylinder</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00425">LimitedPlane</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00426">PlainMaterial</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00427">Plane</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00428">PointLight</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00429">Refraction</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00430">Sphere</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00431">SpotLight</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00432">Torus</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00433">Transparency</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00434">Triangle</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00435">Zebra</link></para>
+            <listitem><para>class <link linkend="_a01398">RayIterrator</link></para>
+
+<para>The <link linkend="_a01398">RayIterrator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

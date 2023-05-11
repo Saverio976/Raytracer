@@ -24,20 +24,20 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01391">RayTracer::Images::RayIterrator</link></para>
+            <listitem><para>class <link linkend="_a01398">RayTracer::Images::RayIterrator</link></para>
 
-<para>The <link linkend="_a01391">RayIterrator</link> class. </para>
+<para>The <link linkend="_a01398">RayIterrator</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01395">RayTracer::Images::RayIterrator::Iterrator</link></para>
+            <listitem><para>class <link linkend="_a01402">RayTracer::Images::RayIterrator::Iterrator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00405">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

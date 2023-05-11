@@ -28,20 +28,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01375">RayTracer::Images::IRayIterator</link></para>
+            <listitem><para>class <link linkend="_a01382">RayTracer::Images::IRayIterator</link></para>
 
 <para>The RayIterator class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01379">RayTracer::Images::IRayIterator::IIterator</link></para>
+            <listitem><para>class <link linkend="_a01386">RayTracer::Images::IRayIterator::IIterator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00405">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00411">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

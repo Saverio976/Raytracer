@@ -56,7 +56,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="a00350.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="a00356.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="957,-78.5 957,-119.5 1130,-119.5 1130,-78.5 957,-78.5"/>
 <text text-anchor="start" x="965" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="965" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/PointLight</text>
@@ -73,7 +73,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="a00368.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="a00374.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="1148.5,-78.5 1148.5,-119.5 1318.5,-119.5 1318.5,-78.5 1148.5,-78.5"/>
 <text text-anchor="start" x="1156.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="1156.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/SpotLight</text>
@@ -173,7 +173,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="a00347.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="a00353.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="957,-0.5 957,-41.5 1130,-41.5 1130,-0.5 957,-0.5"/>
 <text text-anchor="start" x="965" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="965" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/PointLight</text>
@@ -190,7 +190,7 @@
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="a00365.html" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="a00371.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="1148.5,-0.5 1148.5,-41.5 1318.5,-41.5 1318.5,-0.5 1148.5,-0.5"/>
 <text text-anchor="start" x="1156.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Raytracer</text>
 <text text-anchor="start" x="1156.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Raytracer/PluginsExt/SpotLight</text>

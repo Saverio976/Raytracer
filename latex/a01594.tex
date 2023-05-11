@@ -1,0 +1,156 @@
+\hypertarget{a01594}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Clustered\+::Cluster\+Ray\+Iterator Class Reference}
+\label{a01594}\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+
+
+The \mbox{\hyperlink{a01594}{Cluster\+Ray\+Iterator}} class.  
+
+
+
+
+{\ttfamily \#include $<$Cluster\+Ray\+Iterator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Clustered\+::Cluster\+Ray\+Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{a01593}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Clustered\+::Cluster\+Ray\+Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01592}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01598}{Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01594_af1332365ec21f330ba488c761331423f}{Cluster\+Ray\+Iterator}} (const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&camera\+Pos, const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&screen\+Pos\+Center, const \mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} \&screen\+Size, std\+::size\+\_\+t unit)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}} $>$ \mbox{\hyperlink{a01594_ac67fd3d19dfee9267f0572502dade208}{begin}} () const final
+\begin{DoxyCompactList}\small\item\em begin of the iterator \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}} $>$ \mbox{\hyperlink{a01594_aced1432cbb6b6a933d0c78ca0d4fdbe2}{end}} () const final
+\begin{DoxyCompactList}\small\item\em end of the iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01594_a4a0c36eaf379ae625ad75e40916d066d}{\+\_\+camera\+Pos}}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01594_a9b4b2b16981334e6fb408aed83daa132}{\+\_\+screen\+Pos\+Center}}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01594_a0651d6013213cc6b9f6341c0ede29398}{\+\_\+screen\+Pos\+Top\+Left}}
+\item 
+\mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} \mbox{\hyperlink{a01594_a9d2b07f2f0af8cca40c6cb57e4d44234}{\+\_\+screen\+Size}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01594_a1c9db6b769f786c0b01c04b49fa1ca67}{\+\_\+unit}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{a01594}{Cluster\+Ray\+Iterator}} class. 
+
+class that represent an iterator of a ray 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01594_af1332365ec21f330ba488c761331423f}\label{a01594_af1332365ec21f330ba488c761331423f}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!ClusterRayIterator@{ClusterRayIterator}}
+\index{ClusterRayIterator@{ClusterRayIterator}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{ClusterRayIterator()}{ClusterRayIterator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::\+Cluster\+Ray\+Iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{camera\+Pos,  }\item[{const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{screen\+Pos\+Center,  }\item[{const \mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} \&}]{screen\+Size,  }\item[{std\+::size\+\_\+t}]{unit }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & the camera to create the ray itterator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01594_ac67fd3d19dfee9267f0572502dade208}\label{a01594_ac67fd3d19dfee9267f0572502dade208}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!begin@{begin}}
+\index{begin@{begin}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}}$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+begin of the iterator 
+
+\begin{DoxyReturn}{Returns}
+the iterator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01382_a1091fd7e65db524ab307d648a05b2e6f}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator}}.
+
+\mbox{\Hypertarget{a01594_aced1432cbb6b6a933d0c78ca0d4fdbe2}\label{a01594_aced1432cbb6b6a933d0c78ca0d4fdbe2}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!end@{end}}
+\index{end@{end}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}}$>$ Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+end of the iterator 
+
+\begin{DoxyReturn}{Returns}
+the iterator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01382_a6a54ffc59239a7865fbc4fd7569ba80b}{Ray\+Tracer\+::\+Images\+::\+IRay\+Iterator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01594_a4a0c36eaf379ae625ad75e40916d066d}\label{a01594_a4a0c36eaf379ae625ad75e40916d066d}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!\_cameraPos@{\_cameraPos}}
+\index{\_cameraPos@{\_cameraPos}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{\_cameraPos}{\_cameraPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::\+\_\+camera\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01594_a9b4b2b16981334e6fb408aed83daa132}\label{a01594_a9b4b2b16981334e6fb408aed83daa132}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!\_screenPosCenter@{\_screenPosCenter}}
+\index{\_screenPosCenter@{\_screenPosCenter}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{\_screenPosCenter}{\_screenPosCenter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::\+\_\+screen\+Pos\+Center\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01594_a0651d6013213cc6b9f6341c0ede29398}\label{a01594_a0651d6013213cc6b9f6341c0ede29398}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!\_screenPosTopLeft@{\_screenPosTopLeft}}
+\index{\_screenPosTopLeft@{\_screenPosTopLeft}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{\_screenPosTopLeft}{\_screenPosTopLeft}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::\+\_\+screen\+Pos\+Top\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01594_a9d2b07f2f0af8cca40c6cb57e4d44234}\label{a01594_a9d2b07f2f0af8cca40c6cb57e4d44234}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!\_screenSize@{\_screenSize}}
+\index{\_screenSize@{\_screenSize}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{\_screenSize}{\_screenSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::\+\_\+screen\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01594_a1c9db6b769f786c0b01c04b49fa1ca67}\label{a01594_a1c9db6b769f786c0b01c04b49fa1ca67}} 
+\index{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}!\_unit@{\_unit}}
+\index{\_unit@{\_unit}!RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator@{RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator}}
+\doxysubsubsection{\texorpdfstring{\_unit}{\_unit}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Clustered\+::\+Cluster\+Ray\+Iterator\+::\+\_\+unit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Camera/\+Cluster/\mbox{\hyperlink{a00281}{Cluster\+Ray\+Iterator.\+hpp}}\end{DoxyCompactItemize}

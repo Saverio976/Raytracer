@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01734" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Torus::TorusEntity Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary></indexterm>
+<para>
+<computeroutput>#include &lt;TorusEntity.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::Torus::TorusEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01733.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Torus::TorusEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01732.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01734_1a9950cc77d5e8b4d4f5f9c36c9b682718">TorusEntity</link> (const <link linkend="_a01514">Scenes::ISetting</link> &amp;config, <link linkend="_a01362">ILogger</link> &amp;logger)</para>
+</listitem>
+            <listitem><para><link linkend="_a01298_1ab003087623e47600c09a76ff8138d37b">Type</link> <link linkend="_a01734_1a590d5c06e0a4ac8a7907de9cb6b312d8">getType</link> () const final</para>
+
+<para>Get the type (light, camera, primitive) </para>
+</listitem>
+            <listitem><para><link linkend="_a01314">Entities::Transform::ITransform</link> &amp; <link linkend="_a01734_1a71f0b434aa4ae5187524ed566db3cbc2">getTransform</link> () final</para>
+
+<para>Get the transform (position, rotation, scale) </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01314">Entities::Transform::ITransform</link> &amp; <link linkend="_a01734_1a300104e916f22d5fdb7dc7ac4f780666">getTransform</link> () const final</para>
+
+<para>Get the transform (position, rotation, scale) (const) </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01734_1a0adef1ca978af410d732816f8f960a5e">isCollided</link> (const <link linkend="_a01326">Entities::Transform::Vector3f</link> &amp;point) const final</para>
+
+<para>Check if the point is collided with the box. </para>
+</listitem>
+            <listitem><para>std::optional&lt; <link linkend="_a01326">Entities::Transform::Vector3f</link> &gt; <link linkend="_a01734_1aec6ff78cfa64e53a20ad1e6e7f01377f">isCollided</link> (const <link linkend="_a01394">Images::Ray</link> &amp;ray) const final</para>
+
+<para>Check if the ray is collided. </para>
+</listitem>
+            <listitem><para><link linkend="_a01366">Images::Color</link> <link linkend="_a01734_1a1c638d1dc19ba31ee74a6163f930e55b">getColor</link> (const <link linkend="_a01394">Images::Ray</link> &amp;ray, const <link linkend="_a01502">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01326">Entities::Transform::Vector3f</link> &amp;intersect) const final</para>
+
+<para>Get the material. </para>
+</listitem>
+            <listitem><para><link linkend="_a01366">Images::Color</link> <link linkend="_a01734_1a585f10646453c1aeedf6dd7ee542f5f7">redirectionLight</link> (const <link linkend="_a01394">Images::Ray</link> &amp;ray, const <link linkend="_a01502">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01326">Entities::Transform::Vector3f</link> &amp;intersect) const final</para>
+
+<para>this function is called when the object intercept the ray light </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01318">Entities::Transform::Transform</link> <link linkend="_a01734_1a0182110c950950f813ddb6adf87ee502">_transform</link></para>
+</listitem>
+            <listitem><para>std::optional&lt; std::reference_wrapper&lt; <link linkend="_a01306">RayTracer::Entities::IMaterial</link> &gt; &gt; <link linkend="_a01734_1ae4a5b5d8d0d0edc490ca3f9bee45e9e5">_material</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01362">ILogger</link> &amp; <link linkend="_a01734_1a89bc2598730bab7c9812469b6fd901f4">_logger</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01734_1ae9d2bb7e7fc515f12a27244e007b8bb8">_minRadius</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01734_1ab43ffc25f46c8becd5ab473b9439c7c6">_maxRadius</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01734_1a9950cc77d5e8b4d4f5f9c36c9b682718"/>    <section>
+    <title>TorusEntity()</title>
+<indexterm><primary>TorusEntity</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>TorusEntity</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Torus::TorusEntity::TorusEntity (const <link linkend="_a01514">Scenes::ISetting</link> &amp; config, <link linkend="_a01362">ILogger</link> &amp; logger)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01734_1a1c638d1dc19ba31ee74a6163f930e55b"/>    <section>
+    <title>getColor()</title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput><link linkend="_a01366">Images::Color</link> RayTracer::PluginsExt::Torus::TorusEntity::getColor (const <link linkend="_a01394">Images::Ray</link> &amp; ray, const <link linkend="_a01502">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01326">Entities::Transform::Vector3f</link> &amp; intersect) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the material. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the material </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01310_1a6c9c38a268043a21e98bd42661125e2e">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01734_1a300104e916f22d5fdb7dc7ac4f780666"/>    <section>
+    <title>getTransform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01314">Entities::Transform::ITransform</link>&amp; RayTracer::PluginsExt::Torus::TorusEntity::getTransform ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (position, rotation, scale) (const) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01298_1a703e6f7e78da30c2c7f4fecbe0bc580e">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01734_1a71f0b434aa4ae5187524ed566db3cbc2"/>    <section>
+    <title>getTransform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput><link linkend="_a01314">Entities::Transform::ITransform</link>&amp; RayTracer::PluginsExt::Torus::TorusEntity::getTransform ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (position, rotation, scale) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01298_1ac97ca7c49d7a87c00bf6a95ca227108a">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01734_1a590d5c06e0a4ac8a7907de9cb6b312d8"/>    <section>
+    <title>getType()</title>
+<indexterm><primary>getType</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>getType</secondary></indexterm>
+<para><computeroutput><link linkend="_a01298_1ab003087623e47600c09a76ff8138d37b">Type</link> RayTracer::PluginsExt::Torus::TorusEntity::getType ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the type (light, camera, primitive) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the type </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01298_1a68374ef5e0932ab3b3dea57a87be156e">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01734_1a0adef1ca978af410d732816f8f960a5e"/>    <section>
+    <title>isCollided()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>isCollided</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>isCollided</secondary></indexterm>
+<para><computeroutput>bool RayTracer::PluginsExt::Torus::TorusEntity::isCollided (const <link linkend="_a01326">Entities::Transform::Vector3f</link> &amp; point) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Check if the point is collided with the box. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>point</entry>
+                                <entry>
+<para>the point</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the point is collided </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01310_1a59076ea4dbff9d3617643678cb6bb266">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01734_1aec6ff78cfa64e53a20ad1e6e7f01377f"/>    <section>
+    <title>isCollided()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>isCollided</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>isCollided</secondary></indexterm>
+<para><computeroutput>std::optional&lt;<link linkend="_a01326">Entities::Transform::Vector3f</link>&gt; RayTracer::PluginsExt::Torus::TorusEntity::isCollided (const <link linkend="_a01394">Images::Ray</link> &amp; ray) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Check if the ray is collided. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the ray is collided </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01310_1aff9a474acf22c4d04959f8e8aaa5cac9">RayTracer::Entities::IPrimitive</link>.</para>
+    </section><anchor xml:id="_a01734_1a585f10646453c1aeedf6dd7ee542f5f7"/>    <section>
+    <title>redirectionLight()</title>
+<indexterm><primary>redirectionLight</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>redirectionLight</secondary></indexterm>
+<para><computeroutput><link linkend="_a01366">Images::Color</link> RayTracer::PluginsExt::Torus::TorusEntity::redirectionLight (const <link linkend="_a01394">Images::Ray</link> &amp; ray, const <link linkend="_a01502">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01326">Entities::Transform::Vector3f</link> &amp; intersect) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>this function is called when the object intercept the ray light </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray between the light and the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point between this point and the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color of the shadow </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01310_1ae6a0b892920f7ea034475d7777ed5cf2">RayTracer::Entities::IPrimitive</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01734_1a89bc2598730bab7c9812469b6fd901f4"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01362">ILogger</link>&amp; RayTracer::PluginsExt::Torus::TorusEntity::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01734_1ae4a5b5d8d0d0edc490ca3f9bee45e9e5"/>    <section>
+    <title>_material</title>
+<indexterm><primary>_material</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>_material</secondary></indexterm>
+<para><computeroutput>std::optional&lt;std::reference_wrapper&lt;<link linkend="_a01306">RayTracer::Entities::IMaterial</link>&gt; &gt; RayTracer::PluginsExt::Torus::TorusEntity::_material<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01734_1ab43ffc25f46c8becd5ab473b9439c7c6"/>    <section>
+    <title>_maxRadius</title>
+<indexterm><primary>_maxRadius</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>_maxRadius</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::Torus::TorusEntity::_maxRadius<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01734_1ae9d2bb7e7fc515f12a27244e007b8bb8"/>    <section>
+    <title>_minRadius</title>
+<indexterm><primary>_minRadius</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>_minRadius</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::Torus::TorusEntity::_minRadius<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01734_1a0182110c950950f813ddb6adf87ee502"/>    <section>
+    <title>_transform</title>
+<indexterm><primary>_transform</primary><secondary>RayTracer::PluginsExt::Torus::TorusEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Torus::TorusEntity</primary><secondary>_transform</secondary></indexterm>
+<para><computeroutput><link linkend="_a01318">Entities::Transform::Transform</link> RayTracer::PluginsExt::Torus::TorusEntity::_transform<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/Torus/<link linkend="_a00380">TorusEntity.hpp</link></section>
+</section>

@@ -1,10 +1,4 @@
-<map id="RayTracer::Display::ProgressModule" name="RayTracer::Display::ProgressModule">
-<area shape="rect" id="node1" title=" " alt="" coords="325,404,476,584"/>
-<area shape="rect" id="node2" href="$a01259.html" title=" " alt="" coords="5,161,164,327"/>
-<area shape="rect" id="node3" title=" " alt="" coords="189,205,309,283"/>
-<area shape="rect" id="node4" title=" " alt="" coords="333,205,391,283"/>
-<area shape="rect" id="node5" title=" " alt="" coords="417,205,467,283"/>
-<area shape="rect" id="node6" title=" " alt="" coords="492,205,579,283"/>
-<area shape="rect" id="node7" title=" " alt="" coords="466,5,605,97"/>
-<area shape="rect" id="node8" href="$a01355.html" title="Logger singleton." alt="" coords="603,147,785,341"/>
+<map id="RayTracer::Display::IDisplayModule::TickFailed" name="RayTracer::Display::IDisplayModule::TickFailed">
+<area shape="rect" id="node1" title="If the function tick failed, but it can continue without being completed." alt="" coords="5,131,209,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="50,5,165,83"/>
 </map>

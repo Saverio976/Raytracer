@@ -1,4 +1,7 @@
-<map id="RayTracer::Entities::ILight" name="RayTracer::Entities::ILight">
-<area shape="rect" id="node1" title="The ILight class." alt="" coords="5,189,148,355"/>
-<area shape="rect" id="node2" href="$a01291.html" title="The IEntity class." alt="" coords="5,5,148,141"/>
+<map id="RayTracer::Entities::ICamera" name="RayTracer::Entities::ICamera">
+<area shape="rect" id="node1" title="The ICamera class." alt="" coords="234,189,377,413"/>
+<area shape="rect" id="node3" href="$a01582.html" title=" " alt="" coords="5,476,184,847"/>
+<area shape="rect" id="node4" href="$a01590.html" title=" " alt="" coords="209,461,402,861"/>
+<area shape="rect" id="node5" href="$a01606.html" title=" " alt="" coords="427,469,624,854"/>
+<area shape="rect" id="node2" href="$a01298.html" title="The IEntity class." alt="" coords="234,5,377,141"/>
 </map>

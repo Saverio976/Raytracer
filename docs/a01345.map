@@ -1,12 +1,4 @@
-<map id="RayTracer::Factories::TFactory&lt; Handler, Interface &gt;" name="RayTracer::Factories::TFactory&lt; Handler, Interface &gt;">
-<area shape="rect" id="node1" title="The TFactory." alt="" coords="367,701,522,896"/>
-<area shape="rect" id="node2" title=" " alt="" coords="207,547,426,639"/>
-<area shape="rect" id="node3" title=" " alt="" coords="342,315,542,392"/>
-<area shape="rect" id="node4" title=" " alt="" coords="366,153,523,230"/>
-<area shape="rect" id="node10" title=" " alt="" coords="463,416,685,523"/>
-<area shape="rect" id="node5" title=" " alt="" coords="276,5,315,83"/>
-<area shape="rect" id="node8" title=" " alt="" coords="5,153,140,230"/>
-<area shape="rect" id="node6" title=" " alt="" coords="232,315,319,392"/>
-<area shape="rect" id="node7" title=" " alt="" coords="203,145,342,237"/>
-<area shape="rect" id="node9" title=" " alt="" coords="53,5,92,83"/>
+<map id="RayTracer::Factories::IMaterialFactory" name="RayTracer::Factories::IMaterialFactory">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,168,112"/>
+<area shape="rect" id="node2" href="$a01350.html" title="The MaterialFactory (singleton factory)" alt="" coords="7,160,166,355"/>
 </map>

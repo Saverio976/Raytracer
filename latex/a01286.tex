@@ -1,0 +1,245 @@
+\hypertarget{a01286}{}\doxysection{Ray\+Tracer\+::Display\+::Canvas\+Module Class Reference}
+\label{a01286}\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+
+
+{\ttfamily \#include $<$Canvas\+Module.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Display\+::Canvas\+Module\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{a01285}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Display\+::Canvas\+Module\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01284}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01286_aa96ffdb915a4730079b883870ea3182b}{Canvas\+Module}} (\mbox{\hyperlink{a01526}{Scenes\+::\+Scene}} \&scene, std\+::size\+\_\+t \&position)
+\item 
+void \mbox{\hyperlink{a01286_a4525e245621da6c4af7b5d6848bdfb88}{tick}} (sf\+::\+Render\+Window \&window) final
+\item 
+void \mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&event) final
+\item 
+void \mbox{\hyperlink{a01286_a9d1dd20b4aeded5e5f99597710cf3902}{start}} (sf\+::\+Render\+Window \&window) final
+\item 
+void \mbox{\hyperlink{a01286_a3ee02c659ba1cd38bd0ec3132c108003}{end}} () final
+\item 
+std\+::string \mbox{\hyperlink{a01286_a95781ba88742675a0d60586d2c859ccd}{get\+Name}} () const final
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01286_ab74a3190a75f4193f63541720f168f65}{resize\+Window}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{a01286_a7a636aca8943ca5c05cd8b041d60eabc}{exec\+If\+Ready}} (std\+::function$<$ void(\mbox{\hyperlink{a01294}{Entities\+::\+ICamera}} \&, \mbox{\hyperlink{a01314}{Entities\+::\+Transform\+::\+ITransform}} \&)$>$ func)
+\item 
+void \mbox{\hyperlink{a01286_a0cd3c9c86a96a55bd4d603882d51a7c5}{go\+To\+Next\+Camera}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a5438b24283b203e4ee8f3d34879f69ed}{go\+To\+Previous\+Camera}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a303cf76d4997b10409e316bbed6ee33f}{add\+Focal\+Length}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a1da1528cf580ca85646bac70f0bf6159}{remove\+Focal\+Length}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a65a861cd0156fb064de22282accdf407}{go\+Left}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a1e218903f0ddedb627e457dbcc949192}{go\+Right}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a6036ec6701099c7dd1278aeff5f8cb5b}{go\+Forward}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_ac21b1ebfdba2961ac13ed9893e8db00a}{go\+Backward}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_ae32c5665c503281d1ac2b50e63764e73}{go\+Up}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\item 
+void \mbox{\hyperlink{a01286_a1079bd67c48c841dd5704a880b65ffb9}{go\+Down}} (sf\+::\+Render\+Window \&window, const sf\+::\+Event \&\mbox{\hyperlink{a01286_ad48792782cf179be2008d5647f42134d}{event}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01526}{Scenes\+::\+Scene}} \& \mbox{\hyperlink{a01286_a733e78c6d31cddf2937175920acfff7e}{\+\_\+scene}}
+\item 
+std\+::size\+\_\+t \& \mbox{\hyperlink{a01286_a8e981f274333fe48efd9f690ec86857c}{\+\_\+position}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{a01286_a6d956c766055de837ebd395299f1abd1}{\+\_\+font}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{a01286_aaea54f7836044d85cec365d41a586ba5}{\+\_\+clock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01286_aa96ffdb915a4730079b883870ea3182b}\label{a01286_aa96ffdb915a4730079b883870ea3182b}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!CanvasModule@{CanvasModule}}
+\index{CanvasModule@{CanvasModule}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{CanvasModule()}{CanvasModule()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+Canvas\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01526}{Scenes\+::\+Scene}} \&}]{scene,  }\item[{std\+::size\+\_\+t \&}]{position }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01286_a303cf76d4997b10409e316bbed6ee33f}\label{a01286_a303cf76d4997b10409e316bbed6ee33f}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!addFocalLength@{addFocalLength}}
+\index{addFocalLength@{addFocalLength}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{addFocalLength()}{addFocalLength()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::add\+Focal\+Length (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a3ee02c659ba1cd38bd0ec3132c108003}\label{a01286_a3ee02c659ba1cd38bd0ec3132c108003}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!end@{end}}
+\index{end@{end}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01266_af49fc72ce860bb732ac3e95c57a9684f}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module}}.
+
+\mbox{\Hypertarget{a01286_ad48792782cf179be2008d5647f42134d}\label{a01286_ad48792782cf179be2008d5647f42134d}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!event@{event}}
+\index{event@{event}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{event()}{event()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::event (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01266_afb3d740a5cfc3b34936d16df8dec9ac8}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module}}.
+
+\mbox{\Hypertarget{a01286_a7a636aca8943ca5c05cd8b041d60eabc}\label{a01286_a7a636aca8943ca5c05cd8b041d60eabc}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!execIfReady@{execIfReady}}
+\index{execIfReady@{execIfReady}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{execIfReady()}{execIfReady()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::exec\+If\+Ready (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{a01294}{Entities\+::\+ICamera}} \&, \mbox{\hyperlink{a01314}{Entities\+::\+Transform\+::\+ITransform}} \&)$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a95781ba88742675a0d60586d2c859ccd}\label{a01286_a95781ba88742675a0d60586d2c859ccd}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!getName@{getName}}
+\index{getName@{getName}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01266_aa1166ce7a418d8925502d67674c15c9a}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module}}.
+
+\mbox{\Hypertarget{a01286_ac21b1ebfdba2961ac13ed9893e8db00a}\label{a01286_ac21b1ebfdba2961ac13ed9893e8db00a}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goBackward@{goBackward}}
+\index{goBackward@{goBackward}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goBackward()}{goBackward()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+Backward (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a1079bd67c48c841dd5704a880b65ffb9}\label{a01286_a1079bd67c48c841dd5704a880b65ffb9}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goDown@{goDown}}
+\index{goDown@{goDown}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goDown()}{goDown()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+Down (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a6036ec6701099c7dd1278aeff5f8cb5b}\label{a01286_a6036ec6701099c7dd1278aeff5f8cb5b}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goForward@{goForward}}
+\index{goForward@{goForward}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goForward()}{goForward()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+Forward (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a65a861cd0156fb064de22282accdf407}\label{a01286_a65a861cd0156fb064de22282accdf407}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goLeft@{goLeft}}
+\index{goLeft@{goLeft}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goLeft()}{goLeft()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+Left (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a1e218903f0ddedb627e457dbcc949192}\label{a01286_a1e218903f0ddedb627e457dbcc949192}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goRight@{goRight}}
+\index{goRight@{goRight}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goRight()}{goRight()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+Right (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a0cd3c9c86a96a55bd4d603882d51a7c5}\label{a01286_a0cd3c9c86a96a55bd4d603882d51a7c5}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goToNextCamera@{goToNextCamera}}
+\index{goToNextCamera@{goToNextCamera}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goToNextCamera()}{goToNextCamera()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+To\+Next\+Camera (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a5438b24283b203e4ee8f3d34879f69ed}\label{a01286_a5438b24283b203e4ee8f3d34879f69ed}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goToPreviousCamera@{goToPreviousCamera}}
+\index{goToPreviousCamera@{goToPreviousCamera}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goToPreviousCamera()}{goToPreviousCamera()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+To\+Previous\+Camera (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_ae32c5665c503281d1ac2b50e63764e73}\label{a01286_ae32c5665c503281d1ac2b50e63764e73}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!goUp@{goUp}}
+\index{goUp@{goUp}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{goUp()}{goUp()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::go\+Up (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a1da1528cf580ca85646bac70f0bf6159}\label{a01286_a1da1528cf580ca85646bac70f0bf6159}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!removeFocalLength@{removeFocalLength}}
+\index{removeFocalLength@{removeFocalLength}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{removeFocalLength()}{removeFocalLength()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::remove\+Focal\+Length (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_ab74a3190a75f4193f63541720f168f65}\label{a01286_ab74a3190a75f4193f63541720f168f65}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!resizeWindow@{resizeWindow}}
+\index{resizeWindow@{resizeWindow}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{resizeWindow()}{resizeWindow()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::resize\+Window (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a9d1dd20b4aeded5e5f99597710cf3902}\label{a01286_a9d1dd20b4aeded5e5f99597710cf3902}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!start@{start}}
+\index{start@{start}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::start (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01266_a0fd793ae621d180e3a609f69df8e4315}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module}}.
+
+\mbox{\Hypertarget{a01286_a4525e245621da6c4af7b5d6848bdfb88}\label{a01286_a4525e245621da6c4af7b5d6848bdfb88}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!tick@{tick}}
+\index{tick@{tick}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::tick (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01266_a5ac097661d1f612000e583ee1163746c}{Ray\+Tracer\+::\+Display\+::\+IDisplay\+Module}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01286_aaea54f7836044d85cec365d41a586ba5}\label{a01286_aaea54f7836044d85cec365d41a586ba5}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_clock@{\_clock}}
+\index{\_clock@{\_clock}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{\_clock}{\_clock}}
+{\footnotesize\ttfamily sf\+::\+Clock Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+clock\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a6d956c766055de837ebd395299f1abd1}\label{a01286_a6d956c766055de837ebd395299f1abd1}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_font@{\_font}}
+\index{\_font@{\_font}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{\_font}{\_font}}
+{\footnotesize\ttfamily sf\+::\+Font Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a8e981f274333fe48efd9f690ec86857c}\label{a01286_a8e981f274333fe48efd9f690ec86857c}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_position@{\_position}}
+\index{\_position@{\_position}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{\_position}{\_position}}
+{\footnotesize\ttfamily std\+::size\+\_\+t\& Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01286_a733e78c6d31cddf2937175920acfff7e}\label{a01286_a733e78c6d31cddf2937175920acfff7e}} 
+\index{RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}!\_scene@{\_scene}}
+\index{\_scene@{\_scene}!RayTracer::Display::CanvasModule@{RayTracer::Display::CanvasModule}}
+\doxysubsubsection{\texorpdfstring{\_scene}{\_scene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01526}{Scenes\+::\+Scene}}\& Ray\+Tracer\+::\+Display\+::\+Canvas\+Module\+::\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Display/\+Modules/\mbox{\hyperlink{a00092}{Canvas\+Module.\+hpp}}\end{DoxyCompactItemize}

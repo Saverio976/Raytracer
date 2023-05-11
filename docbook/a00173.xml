@@ -17,16 +17,16 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01399">RayTracer::Logger</link></para>
+            <listitem><para>class <link linkend="_a01406">RayTracer::Logger</link></para>
 
-<para><link linkend="_a01399">Logger</link> singleton. </para>
+<para><link linkend="_a01406">Logger</link> singleton. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

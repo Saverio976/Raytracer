@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: RayTracer::Scenes::ISceneState Class Reference</title>
+<title>RayTracer: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,165 +62,23 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00399.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00410.html">Scenes</a></li><li class="navelem"><a class="el" href="a01503.html">ISceneState</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00405.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00416.html">Scenes</a></li><li class="navelem"><a class="el" href="a01502.html">IDisplayable</a></li><li class="navelem"><a class="el" href="a01506.html">IDisplayableException</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01500.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RayTracer::Scenes::ISceneState Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">RayTracer::Scenes::IDisplayable::IDisplayableException Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="a01531.html" title="The SceneState class.">SceneState</a> interface.  
- <a href="a01503.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00233_source.html">ISceneState.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for RayTracer::Scenes::ISceneState:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01502.svg" width="159" height="302"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Collaboration diagram for RayTracer::Scenes::ISceneState:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01501.svg" width="159" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a3abb46616bc66e9744ad0bed1635afe6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> { <br />
-&#160;&#160;<a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd">RUNNING</a>
-, <br />
-&#160;&#160;<a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2">CANCELLED</a>
-, <br />
-&#160;&#160;<a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133">FINISHED</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a3abb46616bc66e9744ad0bed1635afe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The States.  <a href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">More...</a><br /></td></tr>
-<tr class="separator:a3abb46616bc66e9744ad0bed1635afe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a2987cac49fef7a48b80aa2d1e4aa84da"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01503.html#a2987cac49fef7a48b80aa2d1e4aa84da">getState</a> () const =0</td></tr>
-<tr class="memdesc:a2987cac49fef7a48b80aa2d1e4aa84da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state (thread safe)  <a href="a01503.html#a2987cac49fef7a48b80aa2d1e4aa84da">More...</a><br /></td></tr>
-<tr class="separator:a2987cac49fef7a48b80aa2d1e4aa84da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9794d2a8b28b9753686931e78d5e315c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01503.html#a9794d2a8b28b9753686931e78d5e315c">changeState</a> (const <a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> &amp;state)=0</td></tr>
-<tr class="memdesc:a9794d2a8b28b9753686931e78d5e315c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the state (thread safe)  <a href="a01503.html#a9794d2a8b28b9753686931e78d5e315c">More...</a><br /></td></tr>
-<tr class="separator:a9794d2a8b28b9753686931e78d5e315c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="a01531.html" title="The SceneState class.">SceneState</a> interface. </p>
-<p>class that represent a scene state (to know if the scene is running or not) (or if the scene render need to be cancelled) </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a3abb46616bc66e9744ad0bed1635afe6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3abb46616bc66e9744ad0bed1635afe6">&#9670;&nbsp;</a></span>States</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">RayTracer::Scenes::ISceneState::States</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The States. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3abb46616bc66e9744ad0bed1635afe6a43491564ebcfd38568918efbd6e840fd"></a>RUNNING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2"></a>CANCELLED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3abb46616bc66e9744ad0bed1635afe6a2c616b2713e2e0aed04b4c4752c88133"></a>FINISHED&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9794d2a8b28b9753686931e78d5e315c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9794d2a8b28b9753686931e78d5e315c">&#9670;&nbsp;</a></span>changeState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void RayTracer::Scenes::ISceneState::changeState </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> &amp;&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Change the state (thread safe) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">state</td><td>the state </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="a01531.html#ab88b04dafcbca0baedc27fbdc3d4c61e">RayTracer::Scenes::SceneState</a>.</p>
-
-</div>
-</div>
-<a id="a2987cac49fef7a48b80aa2d1e4aa84da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2987cac49fef7a48b80aa2d1e4aa84da">&#9670;&nbsp;</a></span>getState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="a01503.html#a3abb46616bc66e9744ad0bed1635afe6">States</a> RayTracer::Scenes::ISceneState::getState </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the state (thread safe) </p>
-<dl class="section return"><dt>Returns</dt><dd>the state </dd></dl>
-
-<p>Implemented in <a class="el" href="a01531.html#a653dac2bab1fce46419d0c3f11b56430">RayTracer::Scenes::SceneState</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/runner/work/Raytracer/Raytracer/src/Scenes/<a class="el" href="a00233_source.html">ISceneState.hpp</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a01506.html">RayTracer::Scenes::IDisplayable::IDisplayableException</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a01506.html#a2f5f2c3dc457cb9db7b6f5d8df5f7f6e">what</a>() const override=0</td><td class="entry"><a class="el" href="a01506.html">RayTracer::Scenes::IDisplayable::IDisplayableException</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01506.html#a24eee56d94c2e71cd0c71aded2288396">~IDisplayableException</a>()=default</td><td class="entry"><a class="el" href="a01506.html">RayTracer::Scenes::IDisplayable::IDisplayableException</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 16:30:21 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 16:32:13 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

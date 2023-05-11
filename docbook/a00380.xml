@@ -1,14 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00380" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/TransparencyMaterial/TransparencyMaterial.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/TransparencyMaterial/TransparencyMaterial.hpp</primary></indexterm>
-<programlisting>#include &quot;ISetting.hpp&quot;
-#include &quot;Ray.hpp&quot;
-#include &quot;Color.hpp&quot;
-#include &quot;ITransform.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Torus/TorusEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Torus/TorusEntity.hpp</primary></indexterm>
+<programlisting>#include &quot;ILogger.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
+#include &quot;Transform.hpp&quot;
 #include &quot;IMaterial.hpp&quot;
-</programlisting>Include dependency graph for TransparencyMaterial.hpp:<para>
+</programlisting>Include dependency graph for TorusEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -29,18 +27,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01727">RayTracer::PluginsExt::Transparency::TransparencyMaterial</link></para>
+            <listitem><para>class <link linkend="_a01734">RayTracer::PluginsExt::Torus::TorusEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00399">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00405">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00411">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00417">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00433">RayTracer::PluginsExt::Transparency</link></para>
+            <listitem><para> <link linkend="_a00439">RayTracer::PluginsExt::Torus</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

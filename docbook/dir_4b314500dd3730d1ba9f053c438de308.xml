@@ -36,6 +36,8 @@ Directory dependency graph for PluginsExt:<para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_56d1ca5d3ff5391e378c4668801107ef">LimitedPlane</link></para>
 </listitem>
+            <listitem><para>directory <link linkend="_dir_b4530f26c690837e3ba99bb03343b067">MirrorMaterial</link></para>
+</listitem>
             <listitem><para>directory <link linkend="_dir_97bfd06170dbfdc7259e55f67270c986">PlainMaterial</link></para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_7d8807d5aadc5bcef0cec14b97ad3e5d">Plane</link></para>

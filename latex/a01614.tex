@@ -1,0 +1,269 @@
+\hypertarget{a01614}{}\doxysection{Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Full\+Custom\+::Custom\+Ray\+Iterator\+::Iterator Class Reference}
+\label{a01614}\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+
+
+{\ttfamily \#include $<$Custom\+Ray\+Iterator.\+hpp$>$}
+
+
+
+Inheritance diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Full\+Custom\+::Custom\+Ray\+Iterator\+::Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{a01613}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ray\+Tracer\+::Plugins\+Ext\+::Camera\+::Full\+Custom\+::Custom\+Ray\+Iterator\+::Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01612}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01614_a34b28bfde1512f9a18a704bf1c162cfe}{iterator\+\_\+category}} = std\+::forward\+\_\+iterator\+\_\+tag
+\item 
+using \mbox{\hyperlink{a01614_add73070be049337eaa54ae4756372368}{difference\+\_\+type}} = \mbox{\hyperlink{a01394}{Images\+::\+Ray}}
+\item 
+using \mbox{\hyperlink{a01614_a5f802a7fc0495ae38280a552e9581a0f}{value\+\_\+type}} = \mbox{\hyperlink{a01394}{Images\+::\+Ray}}
+\item 
+using \mbox{\hyperlink{a01614_a6deee86433fa70bb3c8b68a64d745f73}{pointer}} = \mbox{\hyperlink{a01394}{Images\+::\+Ray}} $\ast$
+\item 
+using \mbox{\hyperlink{a01614_aced19e66523c9323e4dc668efa120b00}{reference}} = \mbox{\hyperlink{a01394}{Images\+::\+Ray}} \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01614_a99086a47f978f9318290c09b1e6b46c2}{Iterator}} (const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&camera\+Pos, const \mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} \&screen\+Size, const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&fov\+XYZ, const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&fov, std\+::size\+\_\+t x, std\+::size\+\_\+t y)
+\item 
+\mbox{\hyperlink{a01386}{IIterator}} \& \mbox{\hyperlink{a01614_a4cace9eb42490340510596ccb1b3533a}{operator++}} () final
+\begin{DoxyCompactList}\small\item\em create the next \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01394}{Images\+::\+Ray}} \& \mbox{\hyperlink{a01614_a18fd830a0a8035304580ba01b03beed5}{operator$\ast$}} () final
+\begin{DoxyCompactList}\small\item\em Get the ray of the current \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01614_a9c299cdda91c61c32e177fab0bd91f25}{operator==}} (const \mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}} \&other) const final
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01614_ad019a88d06c872ecab7a382f89cb33ba}{operator!=}} (const \mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}} \&other) const final
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01614_a3aecfb228a3ebe68a3a44e25bef3e9e2}{to\+String}} () const final
+\begin{DoxyCompactList}\small\item\em to\+String \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01614}{Custom\+Ray\+Iterator\+::\+Iterator}} \& \mbox{\hyperlink{a01614_a263d079c259bbc4f9d5dbf510c6b9c9d}{operator=}} (const \mbox{\hyperlink{a01614}{Custom\+Ray\+Iterator\+::\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em Compare two Custom\+Ray\+Iterator\+::iterrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01614_a2105e2e59ea8ac44397fc8f0debe74d8}{\+\_\+camera\+Pos}}
+\item 
+\mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} \mbox{\hyperlink{a01614_ae60ead825cd7bfbf5590e4881391270d}{\+\_\+screen\+Size}}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01614_af6eb396fb9bf8e6f7f12816b1325e7ae}{\+\_\+fov\+XYZ}}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01614_a789d265f189e2e42573284ac9c540c1c}{\+\_\+fov}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01614_ac80a1522f200b9131d3e75f27998230e}{\+\_\+x}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01614_ab2a883bd9799132666cdc3ebe50fe82a}{\+\_\+y}}
+\item 
+\mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \mbox{\hyperlink{a01614_aa622ec057ba57bb0163cfc864113e6e8}{\+\_\+normal}}
+\item 
+\mbox{\hyperlink{a01394}{Images\+::\+Ray}} \mbox{\hyperlink{a01614_ad3c645e3b6590ea73164c153dabc23bc}{\+\_\+ray}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{a01614_add73070be049337eaa54ae4756372368}\label{a01614_add73070be049337eaa54ae4756372368}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01614_add73070be049337eaa54ae4756372368}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::difference\+\_\+type}} =  \mbox{\hyperlink{a01394}{Images\+::\+Ray}}}
+
+\mbox{\Hypertarget{a01614_a34b28bfde1512f9a18a704bf1c162cfe}\label{a01614_a34b28bfde1512f9a18a704bf1c162cfe}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!iterator\_category@{iterator\_category}}
+\index{iterator\_category@{iterator\_category}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{iterator\_category}{iterator\_category}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01614_a34b28bfde1512f9a18a704bf1c162cfe}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::iterator\+\_\+category}} =  std\+::forward\+\_\+iterator\+\_\+tag}
+
+\mbox{\Hypertarget{a01614_a6deee86433fa70bb3c8b68a64d745f73}\label{a01614_a6deee86433fa70bb3c8b68a64d745f73}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!pointer@{pointer}}
+\index{pointer@{pointer}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01614_a6deee86433fa70bb3c8b68a64d745f73}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::pointer}} =  \mbox{\hyperlink{a01394}{Images\+::\+Ray}} $\ast$}
+
+\mbox{\Hypertarget{a01614_aced19e66523c9323e4dc668efa120b00}\label{a01614_aced19e66523c9323e4dc668efa120b00}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!reference@{reference}}
+\index{reference@{reference}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01614_aced19e66523c9323e4dc668efa120b00}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::reference}} =  \mbox{\hyperlink{a01394}{Images\+::\+Ray}} \&}
+
+\mbox{\Hypertarget{a01614_a5f802a7fc0495ae38280a552e9581a0f}\label{a01614_a5f802a7fc0495ae38280a552e9581a0f}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01614_a5f802a7fc0495ae38280a552e9581a0f}{Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::value\+\_\+type}} =  \mbox{\hyperlink{a01394}{Images\+::\+Ray}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01614_a99086a47f978f9318290c09b1e6b46c2}\label{a01614_a99086a47f978f9318290c09b1e6b46c2}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{Iterator()}{Iterator()}}
+{\footnotesize\ttfamily Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+Iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{camera\+Pos,  }\item[{const \mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} \&}]{screen\+Size,  }\item[{const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{fov\+XYZ,  }\item[{const \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} \&}]{fov,  }\item[{std\+::size\+\_\+t}]{x,  }\item[{std\+::size\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01614_ad019a88d06c872ecab7a382f89cb33ba}\label{a01614_ad019a88d06c872ecab7a382f89cb33ba}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}}
+
+
+
+Compare two \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01614_a18fd830a0a8035304580ba01b03beed5}\label{a01614_a18fd830a0a8035304580ba01b03beed5}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01394}{Images\+::\+Ray}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}}
+
+
+
+Get the ray of the current \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}}. 
+
+\begin{DoxyReturn}{Returns}
+the ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01614_a4cace9eb42490340510596ccb1b3533a}\label{a01614_a4cace9eb42490340510596ccb1b3533a}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01386}{IIterator}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}}
+
+
+
+create the next \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}} 
+
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01614_a263d079c259bbc4f9d5dbf510c6b9c9d}\label{a01614_a263d079c259bbc4f9d5dbf510c6b9c9d}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01614}{Custom\+Ray\+Iterator\+::\+Iterator}}\& Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01614}{Custom\+Ray\+Iterator\+::\+Iterator}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Compare two Custom\+Ray\+Iterator\+::iterrator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01614_a9c299cdda91c61c32e177fab0bd91f25}\label{a01614_a9c299cdda91c61c32e177fab0bd91f25}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01386}{Images\+::\+IRay\+Iterator\+::\+IIterator}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}}
+
+
+
+Compare two \mbox{\hyperlink{a01610}{Custom\+Ray\+Iterator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01614_a3aecfb228a3ebe68a3a44e25bef3e9e2}\label{a01614_a3aecfb228a3ebe68a3a44e25bef3e9e2}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!toString@{toString}}
+\index{toString@{toString}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}}
+
+
+
+to\+String 
+
+\begin{DoxyReturn}{Returns}
+the string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01614_a2105e2e59ea8ac44397fc8f0debe74d8}\label{a01614_a2105e2e59ea8ac44397fc8f0debe74d8}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_cameraPos@{\_cameraPos}}
+\index{\_cameraPos@{\_cameraPos}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_cameraPos}{\_cameraPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+camera\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_a789d265f189e2e42573284ac9c540c1c}\label{a01614_a789d265f189e2e42573284ac9c540c1c}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_fov@{\_fov}}
+\index{\_fov@{\_fov}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_fov}{\_fov}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+fov\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_af6eb396fb9bf8e6f7f12816b1325e7ae}\label{a01614_af6eb396fb9bf8e6f7f12816b1325e7ae}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_fovXYZ@{\_fovXYZ}}
+\index{\_fovXYZ@{\_fovXYZ}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_fovXYZ}{\_fovXYZ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+fov\+XYZ\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_aa622ec057ba57bb0163cfc864113e6e8}\label{a01614_aa622ec057ba57bb0163cfc864113e6e8}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_normal@{\_normal}}
+\index{\_normal@{\_normal}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_normal}{\_normal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01326}{Entities\+::\+Transform\+::\+Vector3f}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+normal\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_ad3c645e3b6590ea73164c153dabc23bc}\label{a01614_ad3c645e3b6590ea73164c153dabc23bc}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_ray@{\_ray}}
+\index{\_ray@{\_ray}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_ray}{\_ray}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01394}{Images\+::\+Ray}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+ray\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_ae60ead825cd7bfbf5590e4881391270d}\label{a01614_ae60ead825cd7bfbf5590e4881391270d}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_screenSize@{\_screenSize}}
+\index{\_screenSize@{\_screenSize}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_screenSize}{\_screenSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01322}{Entities\+::\+Transform\+::\+Vector2i}} Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+screen\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_ac80a1522f200b9131d3e75f27998230e}\label{a01614_ac80a1522f200b9131d3e75f27998230e}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_x@{\_x}}
+\index{\_x@{\_x}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_x}{\_x}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a01614_ab2a883bd9799132666cdc3ebe50fe82a}\label{a01614_ab2a883bd9799132666cdc3ebe50fe82a}} 
+\index{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}!\_y@{\_y}}
+\index{\_y@{\_y}!RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator@{RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator}}
+\doxysubsubsection{\texorpdfstring{\_y}{\_y}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Ray\+Tracer\+::\+Plugins\+Ext\+::\+Camera\+::\+Full\+Custom\+::\+Custom\+Ray\+Iterator\+::\+Iterator\+::\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/\+Plugins\+Ext/\+Camera/\+Full\+Custom/\mbox{\hyperlink{a00290}{Custom\+Ray\+Iterator.\+hpp}}\end{DoxyCompactItemize}

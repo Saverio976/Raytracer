@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_b4530f26c690837e3ba99bb03343b067" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/MirrorMaterial Directory Reference</primary></indexterm>
+Directory dependency graph for MirrorMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_b4530f26c690837e3ba99bb03343b067_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00335">MirrorCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00338">MirrorMaterial.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>
