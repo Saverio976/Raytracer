@@ -70,7 +70,7 @@ namespace RayTracer::PluginsExt::SpotLight {
             tmpDistance = impact->getDistance(this->_transform.getPosition());
             if (tmpDistance >= distance)
                 continue;
-            return primitive.get().redirectionLight(ray, displayable, *impact);
+            result.mergeColor(primitive.get().redirectionLight(ray, displayable, *impact));
         }
         result.applyDistance(distance, this->_radius);
         return result;
