@@ -259,3 +259,5 @@ documentation/latex
 !documentation/Makefile
 documentation/uml.puml
 documentation/uml.svg
+documentation/docbook
+documentation/man

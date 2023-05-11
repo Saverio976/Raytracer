@@ -20,6 +20,9 @@ namespace RayTracer::PluginsExt::AmbientLight {
         if (_transform.getScale().getY() != 0 || _transform.getScale().getZ() != 0) {
             _logger.warn("AMBIENT_lIGHT: config: scale y z must be 0 (remainder: x is for power)");
         }
+        if (_transform.getRotation().getX() != 0 || _transform.getRotation().getY() != 0 || _transform.getRotation().getZ() != 0) {
+            _logger.warn("AMBIENT_LIGHT: config: rotation x y z must be 0 (why rotate an AmbientLight ?)");
+        }
         _power = std::abs(_power * _transform.getScale().getX());
     }
 
