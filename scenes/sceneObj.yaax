@@ -28,7 +28,7 @@ primitives :
     # List of OBJ
     Obj = (
         {
-            filePath = "./tests/obj/monkey.obj";
+            filePath = "./scenes/obj/monkey.obj";
             transform = {
                 position = {x = 0.0; y = 0.0; z = 0.0;};
                 scale = {x = 1.0; y = 1.0; z = 1.0;};
