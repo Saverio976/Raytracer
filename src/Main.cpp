@@ -169,7 +169,7 @@ namespace RayTracer {
         int i = 0;
         std::vector<std::future<void>> futures;
 
-        if (_scene.getState().getState() != Scenes::SceneState::States::FINISHED) {
+        if (_scene.getState().getState() == Scenes::SceneState::States::CANCELLED) {
             return;
         }
         for (const auto &camera : _scene.getCameras()) {
