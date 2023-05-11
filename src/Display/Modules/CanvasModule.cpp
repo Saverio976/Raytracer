@@ -58,6 +58,11 @@ namespace RayTracer::Display {
         sprite.setTexture(texture);
         window.draw(sprite);
         window.draw(text);
+        if (_clock.getElapsedTime() > sf::seconds(0.5) && this->_scene.getCameras()[this->_position].get().getCluster() != 1) {
+            this->_scene.getCameras()[this->_position].get().setCluster(1);
+            this->_scene.cancel();
+            this->_scene.renders();
+        }
     }
 
     void CanvasModule::start(sf::RenderWindow &window) {
@@ -89,11 +94,6 @@ namespace RayTracer::Display {
             {sf::Keyboard::Z,               std::bind(&CanvasModule::goForward, this, std::ref(window), std::ref(event))},
         };
 
-        if (_clock.getElapsedTime() > sf::seconds(0.5) && this->_scene.getCameras()[this->_position].get().getCluster() != 1) {
-            this->_scene.getCameras()[this->_position].get().setCluster(1);
-            this->_scene.cancel();
-            this->_scene.renders();
-        }
         if (event.type == sf::Event::KeyPressed) {
             auto it = keyMap.find(event.key.code);
             if (it != keyMap.end()) {
