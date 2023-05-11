@@ -5,12 +5,13 @@
 ** Scene.cpp
 */
 
+#include <iostream>
+#include <string>
 #include "ILogger.hpp"
 #include "ISetting.hpp"
 #include "Scene.hpp"
 #include "SceneState.hpp"
 #include <future>
-#include <string>
 
 namespace RayTracer::Scenes {
     Scene::Scene(ILogger &logger):
