@@ -2211,13 +2211,7 @@ RayTracer.PluginsExt.Zebra.ZebraMaterial "3" *-- RayTracer.Entities.Transform.Ve
 
 /' Dependency relationships '/
 
-RayTracer.Images.Color <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
 
 
 RayTracer.Images.Color <.. RayTracer.Images.Color
@@ -2242,48 +2236,15 @@ RayTracer.Images.Color <.. RayTracer.Images.Color
 
 
 RayTracer.Images.Color <.. RayTracer.Images.Color
-
-
-RayTracer.Images.Color <.. RayTracer.Entities.ILight
-
-
-RayTracer.Images.Color <.. RayTracer.Entities.IMaterial
 
 
 RayTracer.Images.Color <.. RayTracer.Images.Image::PixelLine
 
 
 RayTracer.Images.Color <.. RayTracer.Images.Image::PixelLine
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
 
 
 RayTracer.Images.Color <.. RayTracer.Images.PixelThread
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.PointLight.PointLightEntity
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Images.Color <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
 RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
@@ -2452,51 +2413,6 @@ RayTracer.Entities.ICamera <.. RayTracer.Images.RayIterrator
 
 
 RayTracer.Filters.IFilter <.. RayTracer.Images.ImagePipeLine
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.IRayIterator::IIterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.IRayIterator::IIterator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.ImagePipeLine
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.RayIterrator::Iterrator
-
-
-RayTracer.Images.IRayIterator <.. RayTracer.Images.RayIterrator::Iterrator
-
-
-RayTracer.Scenes.ISceneState <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
-
-
-RayTracer.Scenes.ISceneState <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
-
-
-RayTracer.Scenes.ISceneState <.. RayTracer.PluginsExt.Camera.CameraEntity
-
-
-RayTracer.Scenes.ISceneState <.. RayTracer.Entities.ICamera
-
-
-RayTracer.Scenes.ISceneState <.. RayTracer.Images.ImagePipeLine
-
-
-RayTracer.Scenes.ISceneState <.. RayTracer.Scenes.SceneState
 
 
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
@@ -2718,16 +2634,232 @@ RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Zebra.ZebraCreator
 RayTracer.Scenes.ISetting <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
+RayTracer.Images.Image <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
+
+
 RayTracer.Images.Image <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.BlackAndWhite.BlackAndWhiteFilter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Disk.DiskEntity
 
 
 RayTracer.Images.Image <.. RayTracer.Filters.IFilter
 
 
+RayTracer.Images.Image <.. RayTracer.Entities.ILight
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Images.Image <.. RayTracer.Entities.IPrimitive
+
+
 RayTracer.Images.Image <.. RayTracer.Images.ImagePipeLine
 
 
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Obj.ObjEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Obj.ObjEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Obj.ObjEntity
+
+
+RayTracer.Images.Image <.. RayTracer.Images.PixelThread
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
 RayTracer.Images.Image <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.AntiAliasing.SSAAx4.SSAAx4Filter
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Torus.TorusEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Torus.TorusEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Torus.TorusEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Triangle.TriangleEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Triangle.TriangleEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Triangle.TriangleEntity
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
+
+
+RayTracer.Images.Image <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
 RayTracer.Logger <.. RayTracer.PluginsExt.AmbientLight.AmbientLightCreator
@@ -2931,118 +3063,13 @@ RayTracer.Logger <.. RayTracer.PluginsExt.Zebra.ZebraCreator
 RayTracer.Plugins.Materials.MaterialHandler <.. RayTracer.Factories.MaterialFactory
 
 
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+RayTracer.Images.Ray <.. RayTracer.Images.IRayIterator::IIterator
 
 
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+RayTracer.Images.Ray <.. RayTracer.Images.IRayIterator::IIterator
 
 
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cone.ConeEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Disk.DiskEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.Entities.IMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
-
-
-RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
-
-
-RayTracer.Images.Ray <.. RayTracer.Entities.IPrimitive
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Obj.ObjEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Obj.ObjEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Obj.ObjEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.Images.PixelThread
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Plane.PlaneEntity
+RayTracer.Images.Ray <.. RayTracer.Images.ImagePipeLine
 
 
 RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
@@ -3051,55 +3078,10 @@ RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
 RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
 
 
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
 
 
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Sphere.SphereEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Sphere.SphereEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Sphere.SphereEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Torus.TorusEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Torus.TorusEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Torus.TorusEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Triangle.TriangleEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Triangle.TriangleEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Triangle.TriangleEntity
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
-
-
-RayTracer.Images.Ray <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
+RayTracer.Images.RayIterrator <.. RayTracer.Images.RayIterrator::Iterrator
 
 
 RayTracer.Scenes.Scene <.. RayTracer.Display.CanvasModule
@@ -3109,6 +3091,27 @@ RayTracer.Scenes.Scene <.. RayTracer.Display.Display
 
 
 RayTracer.Scenes.SceneLoader <.. RayTracer.Display.Display
+
+
+RayTracer.Scenes.SceneState <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
+
+
+RayTracer.Scenes.SceneState <.. RayTracer.PluginsExt.Camera.FullCustom.CameraCustomEntity
+
+
+RayTracer.Scenes.SceneState <.. RayTracer.PluginsExt.Camera.CameraEntity
+
+
+RayTracer.Scenes.SceneState <.. RayTracer.Entities.ICamera
+
+
+RayTracer.Scenes.SceneState <.. RayTracer.Images.ImagePipeLine
+
+
+RayTracer.Scenes.SceneState <.. RayTracer.Scenes.SceneState
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.CameraClusterEntity
@@ -3126,10 +3129,43 @@ RayTracer.Entities.Transform.Transform <.. RayTracer.Display.CanvasModule
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
 
 
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
+
+
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Cone.ConeEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
@@ -3138,10 +3174,55 @@ RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCusto
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
 
 
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Disk.DiskEntity
+
+
 RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.ICamera
 
 
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.ILight
+
+
 RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.IMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.IPrimitive
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.IPrimitive
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.Transform.ITransform
@@ -3156,13 +3237,88 @@ RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Image::PixelLine
 RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Image::PixelLine
 
 
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
+
+
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Obj.ObjEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Obj.ObjEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Obj.ObjEntity
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Plane.PlaneEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.PointLight.PointLightEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Ray
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.Ray
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.RayIterrator::Iterrator
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.Images.RayIterrator::Iterrator
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.Images.RayIterrator::Iterrator
@@ -3171,10 +3327,64 @@ RayTracer.Entities.Transform.Transform <.. RayTracer.Images.RayIterrator::Iterra
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
 
 
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Sphere.SphereEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Torus.TorusEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Torus.TorusEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Torus.TorusEntity
+
+
 RayTracer.Entities.Transform.Transform <.. RayTracer.Entities.Transform.Transform
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Triangle.TriangleEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Triangle.TriangleEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Triangle.TriangleEntity
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
+
+
+RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
 RayTracer.Entities.Transform.Transform <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
@@ -3198,87 +3408,6 @@ RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
 RayTracer.Entities.Transform.Vector2i <.. RayTracer.Entities.Transform.Vector2i
 
 
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.AmbientLight.AmbientLightEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.ChessBoard.ChessBoardMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.Clustered.ClusterRayIterator::Iterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cone.ConeEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cone.ConeEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cone.ConeEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterator::Iterator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Cylinder.CylinderEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Disk.DiskEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Disk.DiskEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Disk.DiskEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.ILight
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IPrimitive
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IPrimitive
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.IPrimitive
-
-
 RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.ITransform
 
 
@@ -3286,111 +3415,6 @@ RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.ITransfor
 
 
 RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.ITransform
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCone.LimitedConeEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedCylinder.LimitedCylinderEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.LimitedPlane.LimitedPlaneEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Mirror.MirrorMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Obj.ObjEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Obj.ObjEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Obj.ObjEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.PlainMaterial.PlainMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Plane.PlaneEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Plane.PlaneEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Plane.PlaneEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.PointLight.PointLightEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.Ray
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.Ray
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.RayIterrator::Iterrator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.Images.RayIterrator::Iterrator
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Refraction.RefractionMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Sphere.SphereEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Sphere.SphereEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Sphere.SphereEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.SpotLight.SpotLightEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Torus.TorusEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Torus.TorusEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Torus.TorusEntity
 
 
 RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Transform
@@ -3402,24 +3426,6 @@ RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Transform
 RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Transform
 
 
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Transparency.TransparencyMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Triangle.TriangleEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Triangle.TriangleEntity
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Triangle.TriangleEntity
-
-
 RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
 
 
@@ -3457,12 +3463,6 @@ RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
 
 
 RayTracer.Entities.Transform.Vector3f <.. RayTracer.Entities.Transform.Vector3f
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
-
-
-RayTracer.Entities.Transform.Vector3f <.. RayTracer.PluginsExt.Zebra.ZebraMaterial
 
 
 
