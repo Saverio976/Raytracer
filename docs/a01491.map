@@ -1,8 +1,4 @@
-<map id="RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator" name="RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator">
-<area shape="rect" id="node1" title="The CustomRayIterator class." alt="" coords="174,696,345,832"/>
-<area shape="rect" id="node2" href="$a01273.html" title="The RayIterator class." alt="" coords="5,329,156,450"/>
-<area shape="rect" id="node3" href="$a01217.html" title="The Vector3f class." alt="" coords="181,175,338,604"/>
-<area shape="rect" id="node4" title=" " alt="" coords="226,5,293,83"/>
-<area shape="rect" id="node5" href="$a01213.html" title="The Vector2i class." alt="" coords="363,263,519,516"/>
-<area shape="rect" id="node6" title=" " alt="" coords="421,5,460,83"/>
+<map id="RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator" name="RayTracer::PluginsExt::Camera::FullCustom::CameraCustomCreator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,160,212,281"/>
+<area shape="rect" id="node2" href="$a01336.html" title="The IEntityCreator." alt="" coords="20,5,197,112"/>
 </map>

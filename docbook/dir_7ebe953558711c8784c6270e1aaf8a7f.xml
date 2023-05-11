@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_7ebe953558711c8784c6270e1aaf8a7f" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle Directory Reference</primary></indexterm>
+Directory dependency graph for Triangle:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_7ebe953558711c8784c6270e1aaf8a7f_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00329">TriangleCreator.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00332">TriangleEntity.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

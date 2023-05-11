@@ -1,10 +1,5 @@
-<map id="RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator" name="RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::Iterator">
-<area shape="rect" id="node1" title=" " alt="" coords="351,1041,549,1236"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,784,164,861"/>
-<area shape="rect" id="node3" href="$a01217.html" title="The Vector3f class." alt="" coords="205,175,362,604"/>
-<area shape="rect" id="node7" href="$a01285.html" title="The Ray class." alt="" coords="363,733,537,913"/>
-<area shape="rect" id="node4" title=" " alt="" coords="250,5,317,83"/>
-<area shape="rect" id="node5" href="$a01213.html" title="The Vector2i class." alt="" coords="561,696,717,949"/>
-<area shape="rect" id="node6" title=" " alt="" coords="620,351,659,428"/>
-<area shape="rect" id="node8" title=" " alt="" coords="741,784,801,861"/>
+<map id="RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity" name="RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="5,432,199,803"/>
+<area shape="rect" id="node2" href="$a01192.html" title="The ICamera class." alt="" coords="31,189,173,384"/>
+<area shape="rect" id="node3" href="$a01196.html" title="The IEntity class." alt="" coords="31,5,173,141"/>
 </map>

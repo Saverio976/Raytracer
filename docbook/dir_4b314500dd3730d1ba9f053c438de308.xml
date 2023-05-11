@@ -44,6 +44,8 @@ Directory dependency graph for PluginsExt:<para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_2a4e33f9be323f7713d427729ee72615">SpotLight</link></para>
 </listitem>
+            <listitem><para>directory <link linkend="_dir_7ebe953558711c8784c6270e1aaf8a7f">Triangle</link></para>
+</listitem>
             <listitem><para>directory <link linkend="_dir_3a54d858ddf47f1666bf932c87179399">ZebraMaterial</link></para>
 </listitem>
         </itemizedlist>

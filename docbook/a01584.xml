@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01584" xml:lang="en-US">
+<title>RayTracer::PluginsExt::PointLight::PointLightEntity Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary></indexterm>
+<para>
+<computeroutput>#include &lt;PointLightEntity.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::PointLight::PointLightEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01583.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::PointLight::PointLightEntity:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01582.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01584_1a1e475e93804fe001ac06575809c52143">PointLightEntity</link> (const <link linkend="_a01412">Scenes::ISetting</link> &amp;config, <link linkend="_a01260">ILogger</link> &amp;logger)</para>
+
+<para>Construct a new <link linkend="_a00357">AmbientLight</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_a01584_1ae0e8cf1a6fe67eb508d47be9ab9fe708">~PointLightEntity</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_a01196_1ab003087623e47600c09a76ff8138d37b">Type</link> <link linkend="_a01584_1a9010a1ad03778c8c5216fff049ce27cc">getType</link> () const final</para>
+
+<para>Get the type (ILight) </para>
+</listitem>
+            <listitem><para><link linkend="_a01212">Entities::Transform::ITransform</link> &amp; <link linkend="_a01584_1aff1b64e36be0857da51d311b2ec3ed04">getTransform</link> () final</para>
+
+<para>Get the transform. </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01212">Entities::Transform::ITransform</link> &amp; <link linkend="_a01584_1a04d461eacf8449df8822a820644bb201">getTransform</link> () const final</para>
+
+<para>Get the transform (const) </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01264">Images::Color</link> &amp; <link linkend="_a01584_1a8b21f95c4432da9487cfe9a811896dc0">getColor</link> () const final</para>
+
+<para>Get the color. </para>
+</listitem>
+            <listitem><para><link linkend="_a01264">Images::Color</link> <link linkend="_a01584_1a018519c5236380b0e00b880f45356adf">getColor</link> (const <link linkend="_a01224">Entities::Transform::Vector3f</link> &amp;point, const <link linkend="_a01400">Scenes::IDisplayable</link> &amp;displayable) const final</para>
+
+<para>Get the color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01584_1ac44d3472e2007ed9f1f2028be302b372">setColor</link> (const <link linkend="_a01264">Images::Color</link> &amp;color) final</para>
+
+<para>Set the color. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_a01584_1ac6dffd9931afdca8caa92e188fd4990e">isAmbient</link> () const final</para>
+
+<para>Check if the light is ambient. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01584_1af0e103054dfadfdb1a14fa9b6de7ff14">getPower</link> () const final</para>
+
+<para>get the power of the light </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01216">Entities::Transform::Transform</link> <link linkend="_a01584_1a47fb5db74ac6565d18543eef73ced400">_transform</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01264">Images::Color</link> <link linkend="_a01584_1a3f2a223096584df7cb62e720fd2d7952">_color</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01260">ILogger</link> &amp; <link linkend="_a01584_1af73d1207284680326eb8982c84104eb1">_logger</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01584_1ab280ce10858695a75cf72daf36c96e08">_power</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01584_1a8db9106bb2206867216c08dd4495d28b">_radius</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01584_1a1e475e93804fe001ac06575809c52143"/>    <section>
+    <title>PointLightEntity()</title>
+<indexterm><primary>PointLightEntity</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>PointLightEntity</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::PointLight::PointLightEntity::PointLightEntity (const <link linkend="_a01412">Scenes::ISetting</link> &amp; config, <link linkend="_a01260">ILogger</link> &amp; logger)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_a00357">AmbientLight</link>. </para>
+</para>
+
+<para>transform: { position: {x= 0; y= 0; z= 0}; scale: {x= 1; y= 1; z= 1}; rotation: {x= 0; y= 0; z= 0} }; color = {r= 1; g= 1; b= 1};</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>config</entry>
+                                <entry>
+<para>the config </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01584_1ae0e8cf1a6fe67eb508d47be9ab9fe708"/>    <section>
+    <title>~PointLightEntity()</title>
+<indexterm><primary>~PointLightEntity</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>~PointLightEntity</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::PointLight::PointLightEntity::~PointLightEntity ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01584_1a8b21f95c4432da9487cfe9a811896dc0"/>    <section>
+    <title>getColor()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01264">Images::Color</link>&amp; RayTracer::PluginsExt::PointLight::PointLightEntity::getColor ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the color. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the color </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01200_1aab6b55e1ad937edb532cce372516f5e4">RayTracer::Entities::ILight</link>.</para>
+    </section><anchor xml:id="_a01584_1a018519c5236380b0e00b880f45356adf"/>    <section>
+    <title>getColor()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput><link linkend="_a01264">Images::Color</link> RayTracer::PluginsExt::PointLight::PointLightEntity::getColor (const <link linkend="_a01224">Entities::Transform::Vector3f</link> &amp; point, const <link linkend="_a01400">Scenes::IDisplayable</link> &amp; displayable) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>point</entry>
+                                <entry>
+<para>the point of the impact</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01200_1ab2623f1fbf4edd888616bf467602ee89">RayTracer::Entities::ILight</link>.</para>
+    </section><anchor xml:id="_a01584_1af0e103054dfadfdb1a14fa9b6de7ff14"/>    <section>
+    <title>getPower()</title>
+<indexterm><primary>getPower</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>getPower</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::PointLight::PointLightEntity::getPower ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>get the power of the light </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the value of the power </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01200_1a453a82618ff179b62b852f2249ef7358">RayTracer::Entities::ILight</link>.</para>
+    </section><anchor xml:id="_a01584_1a04d461eacf8449df8822a820644bb201"/>    <section>
+    <title>getTransform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01212">Entities::Transform::ITransform</link>&amp; RayTracer::PluginsExt::PointLight::PointLightEntity::getTransform ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform (const) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01196_1a703e6f7e78da30c2c7f4fecbe0bc580e">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01584_1aff1b64e36be0857da51d311b2ec3ed04"/>    <section>
+    <title>getTransform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getTransform</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>getTransform</secondary></indexterm>
+<para><computeroutput><link linkend="_a01212">Entities::Transform::ITransform</link>&amp; RayTracer::PluginsExt::PointLight::PointLightEntity::getTransform ( )<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the transform. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the transform </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01196_1ac97ca7c49d7a87c00bf6a95ca227108a">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01584_1a9010a1ad03778c8c5216fff049ce27cc"/>    <section>
+    <title>getType()</title>
+<indexterm><primary>getType</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>getType</secondary></indexterm>
+<para><computeroutput><link linkend="_a01196_1ab003087623e47600c09a76ff8138d37b">Type</link> RayTracer::PluginsExt::PointLight::PointLightEntity::getType ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the type (ILight) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the type </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01196_1a68374ef5e0932ab3b3dea57a87be156e">RayTracer::Entities::IEntity</link>.</para>
+    </section><anchor xml:id="_a01584_1ac6dffd9931afdca8caa92e188fd4990e"/>    <section>
+    <title>isAmbient()</title>
+<indexterm><primary>isAmbient</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>isAmbient</secondary></indexterm>
+<para><computeroutput>bool RayTracer::PluginsExt::PointLight::PointLightEntity::isAmbient ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Check if the light is ambient. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if the light is ambient </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01200_1a4fad9aee9e3df30c7f0f9b9f41596960">RayTracer::Entities::ILight</link>.</para>
+    </section><anchor xml:id="_a01584_1ac44d3472e2007ed9f1f2028be302b372"/>    <section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::PointLight::PointLightEntity::setColor (const <link linkend="_a01264">Images::Color</link> &amp; color)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>the color </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01200_1a0b4a00caa3baefa7ed7b7d35c39e4fb0">RayTracer::Entities::ILight</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01584_1a3f2a223096584df7cb62e720fd2d7952"/>    <section>
+    <title>_color</title>
+<indexterm><primary>_color</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>_color</secondary></indexterm>
+<para><computeroutput><link linkend="_a01264">Images::Color</link> RayTracer::PluginsExt::PointLight::PointLightEntity::_color<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01584_1af73d1207284680326eb8982c84104eb1"/>    <section>
+    <title>_logger</title>
+<indexterm><primary>_logger</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>_logger</secondary></indexterm>
+<para><computeroutput><link linkend="_a01260">ILogger</link>&amp; RayTracer::PluginsExt::PointLight::PointLightEntity::_logger<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01584_1ab280ce10858695a75cf72daf36c96e08"/>    <section>
+    <title>_power</title>
+<indexterm><primary>_power</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>_power</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::PointLight::PointLightEntity::_power<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01584_1a8db9106bb2206867216c08dd4495d28b"/>    <section>
+    <title>_radius</title>
+<indexterm><primary>_radius</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>_radius</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::PointLight::PointLightEntity::_radius<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01584_1a47fb5db74ac6565d18543eef73ced400"/>    <section>
+    <title>_transform</title>
+<indexterm><primary>_transform</primary><secondary>RayTracer::PluginsExt::PointLight::PointLightEntity</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::PointLight::PointLightEntity</primary><secondary>_transform</secondary></indexterm>
+<para><computeroutput><link linkend="_a01216">Entities::Transform::Transform</link> RayTracer::PluginsExt::PointLight::PointLightEntity::_transform<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/PointLight/<link linkend="_a00314">PointLightEntity.hpp</link></section>
+</section>

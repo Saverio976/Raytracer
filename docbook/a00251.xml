@@ -32,20 +32,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01489">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link></para>
+            <listitem><para>class <link linkend="_a01496">RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00356">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00354">RayTracer::PluginsExt::Camera</link></para>
+            <listitem><para> <link linkend="_a00360">RayTracer::PluginsExt::Camera</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00356">RayTracer::PluginsExt::Camera::FullCustom</link></para>
+            <listitem><para> <link linkend="_a00362">RayTracer::PluginsExt::Camera::FullCustom</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -72,6 +72,10 @@ RayTracer::Entities::Transform::Vector3f \- The \fBVector3f\fP class\&.
 .br
 .RI "Get normalized vector\&. "
 .ti -1c
+.RI "\fBVector3f\fP \fBgetCrossed\fP (const \fBVector3f\fP &other) const"
+.br
+.RI "Get the perpendicular vector\&. "
+.ti -1c
 .RI "double \fBdot\fP (const \fBVector3f\fP &other) const"
 .br
 .RI "Get dot product\&. "
@@ -185,6 +189,22 @@ x^other\&.x + y^other\&.y + z^other\&.z
 .PP
 
 .SS "double RayTracer::Entities::Transform::Vector3f::getAngle (const \fBVector3f\fP & a, const \fBVector3f\fP & c) const"
+
+.SS "\fBVector3f\fP RayTracer::Entities::Transform::Vector3f::getCrossed (const \fBVector3f\fP & other) const"
+
+.PP
+Get the perpendicular vector\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP the other vector 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the perpendicular vector 
+.RE
+.PP
 
 .SS "double RayTracer::Entities::Transform::Vector3f::getDistance (const \fBVector3f\fP & other) const"
 

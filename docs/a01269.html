@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: RayTracer::Images::ImagePipeLine Class Reference</title>
+<title>RayTracer: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,300 +62,30 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00339.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00344.html">Images</a></li><li class="navelem"><a class="el" href="a01269.html">ImagePipeLine</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00345.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00350.html">Images</a></li><li class="navelem"><a class="el" href="a01268.html">Image</a></li><li class="navelem"><a class="el" href="a01272.html">PixelLine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="a01266.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RayTracer::Images::ImagePipeLine Class Reference</div>  </div>
+<div class="title">RayTracer::Images::Image::PixelLine Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="a01269.html" title="The ImagePipeLine class.">ImagePipeLine</a> class.  
- <a href="a01269.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00128_source.html">ImagePipeLine.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for RayTracer::Images::ImagePipeLine:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a01267.svg" width="736" height="1250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:adcb8eb1f8760bd9a3763a446600b1cfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#adcb8eb1f8760bd9a3763a446600b1cfc">ImagePipeLine</a> (<a class="el" href="a01261.html">Image</a> &amp;image, const <a class="el" href="a01393.html">Scenes::IDisplayable</a> &amp;displayable, const <a class="el" href="a01401.html">Scenes::ISceneState</a> &amp;state, const <a class="el" href="a01273.html">IRayIterator</a> &amp;rayIterrator)</td></tr>
-<tr class="memdesc:adcb8eb1f8760bd9a3763a446600b1cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a01269.html" title="The ImagePipeLine class.">ImagePipeLine</a> constructor.  <a href="a01269.html#adcb8eb1f8760bd9a3763a446600b1cfc">More...</a><br /></td></tr>
-<tr class="separator:adcb8eb1f8760bd9a3763a446600b1cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a334f2fc98699d1ebf2aa03831fd579ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#a334f2fc98699d1ebf2aa03831fd579ba">generate</a> (<a class="el" href="a01253.html">ILogger</a> &amp;logger, std::size_t maxThread=1, std::size_t cluster=1)</td></tr>
-<tr class="memdesc:a334f2fc98699d1ebf2aa03831fd579ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the image with entities displayable.  <a href="a01269.html#a334f2fc98699d1ebf2aa03831fd579ba">More...</a><br /></td></tr>
-<tr class="separator:a334f2fc98699d1ebf2aa03831fd579ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1480abb46258a4827960dab3448b0041"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#a1480abb46258a4827960dab3448b0041">apply</a> (<a class="el" href="a01249.html">Filters::IFilter</a> &amp;filter)</td></tr>
-<tr class="memdesc:a1480abb46258a4827960dab3448b0041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the filter.  <a href="a01269.html#a1480abb46258a4827960dab3448b0041">More...</a><br /></td></tr>
-<tr class="separator:a1480abb46258a4827960dab3448b0041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abde10b0d2bb72b27ea0f1e9a9a5ac03d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#abde10b0d2bb72b27ea0f1e9a9a5ac03d">~ImagePipeLine</a> ()=default</td></tr>
-<tr class="separator:abde10b0d2bb72b27ea0f1e9a9a5ac03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a75e82efc180d4205954c385f37c0e0d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01261.html">Image</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#a75e82efc180d4205954c385f37c0e0d2">_image</a></td></tr>
-<tr class="separator:a75e82efc180d4205954c385f37c0e0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87e2e909fbb996ef27981fbfe77c86cd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a01393.html">Scenes::IDisplayable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#a87e2e909fbb996ef27981fbfe77c86cd">_displayable</a></td></tr>
-<tr class="separator:a87e2e909fbb996ef27981fbfe77c86cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6981ce661854bc5314157aef96827e08"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a01401.html">Scenes::ISceneState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#a6981ce661854bc5314157aef96827e08">_state</a></td></tr>
-<tr class="separator:a6981ce661854bc5314157aef96827e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae95c9b067c79dd8ac453c4931c36bc4a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a01273.html">IRayIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01269.html#ae95c9b067c79dd8ac453c4931c36bc4a">_rayIterrator</a></td></tr>
-<tr class="separator:ae95c9b067c79dd8ac453c4931c36bc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="a01269.html" title="The ImagePipeLine class.">ImagePipeLine</a> class. </p>
-<p>class that represent pipeline modification on an image </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adcb8eb1f8760bd9a3763a446600b1cfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcb8eb1f8760bd9a3763a446600b1cfc">&#9670;&nbsp;</a></span>ImagePipeLine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RayTracer::Images::ImagePipeLine::ImagePipeLine </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01261.html">Image</a> &amp;&#160;</td>
-          <td class="paramname"><em>image</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a01393.html">Scenes::IDisplayable</a> &amp;&#160;</td>
-          <td class="paramname"><em>displayable</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a01401.html">Scenes::ISceneState</a> &amp;&#160;</td>
-          <td class="paramname"><em>state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a01273.html">IRayIterator</a> &amp;&#160;</td>
-          <td class="paramname"><em>rayIterrator</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a01269.html" title="The ImagePipeLine class.">ImagePipeLine</a> constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">image</td><td>the image to modify </td></tr>
-    <tr><td class="paramname">displayable</td><td>the displayable entities to render </td></tr>
-    <tr><td class="paramname">state</td><td>the state (if cancel needed) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abde10b0d2bb72b27ea0f1e9a9a5ac03d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abde10b0d2bb72b27ea0f1e9a9a5ac03d">&#9670;&nbsp;</a></span>~ImagePipeLine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RayTracer::Images::ImagePipeLine::~ImagePipeLine </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1480abb46258a4827960dab3448b0041"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1480abb46258a4827960dab3448b0041">&#9670;&nbsp;</a></span>apply()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RayTracer::Images::ImagePipeLine::apply </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01249.html">Filters::IFilter</a> &amp;&#160;</td>
-          <td class="paramname"><em>filter</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Apply the filter. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filter</td><td>the filter </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a334f2fc98699d1ebf2aa03831fd579ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a334f2fc98699d1ebf2aa03831fd579ba">&#9670;&nbsp;</a></span>generate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RayTracer::Images::ImagePipeLine::generate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01253.html">ILogger</a> &amp;&#160;</td>
-          <td class="paramname"><em>logger</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>maxThread</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>cluster</em> = <code>1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Generate the image with entities displayable. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">maxThread</td><td>the max thread number to use </td></tr>
-    <tr><td class="paramname">cluster</td><td>the cluster number (1 ray represent <code>cluster</code> pixel) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a87e2e909fbb996ef27981fbfe77c86cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87e2e909fbb996ef27981fbfe77c86cd">&#9670;&nbsp;</a></span>_displayable</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a01393.html">Scenes::IDisplayable</a>&amp; RayTracer::Images::ImagePipeLine::_displayable</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a75e82efc180d4205954c385f37c0e0d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75e82efc180d4205954c385f37c0e0d2">&#9670;&nbsp;</a></span>_image</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01261.html">Image</a>&amp; RayTracer::Images::ImagePipeLine::_image</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae95c9b067c79dd8ac453c4931c36bc4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae95c9b067c79dd8ac453c4931c36bc4a">&#9670;&nbsp;</a></span>_rayIterrator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a01273.html">IRayIterator</a>&amp; RayTracer::Images::ImagePipeLine::_rayIterrator</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6981ce661854bc5314157aef96827e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6981ce661854bc5314157aef96827e08">&#9670;&nbsp;</a></span>_state</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a01401.html">Scenes::ISceneState</a>&amp; RayTracer::Images::ImagePipeLine::_state</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/runner/work/Raytracer/Raytracer/src/Images/<a class="el" href="a00128_source.html">ImagePipeLine.hpp</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a01272.html#a2b1f14680e3c73017417af23027e7dd7">_colors</a></td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01272.html#ab2563af3ec9bf70ee656aab2c6af7e1e">_pixels</a></td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01272.html#a9eeb935b92f228681cad06a05e12578e">_pixelsConst</a></td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01272.html#a35439fc0053a10798a5a2d20e62528c7">_size</a></td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01272.html#a497ddd4f14bde03ab79bb52a0b0b1e0c">_y</a></td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01272.html#ae7fd570c58f5f57bbf2df8019b667194">operator[]</a>(std::size_t x) const</td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01272.html#a48974fbf463d7310b3f5b46ffaced9c4">operator[]</a>(std::size_t x)</td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01272.html#ae95c5bb4be5a498787ec2b3877b85931">PixelLine</a>(const Entities::Transform::Vector2i &amp;size, const std::size_t &amp;y, std::vector&lt; Color &gt; &amp;pixels)</td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01272.html#a99bfe6065f079955ffc5dfd389b94fe4">PixelLine</a>(const Entities::Transform::Vector2i &amp;size, const std::size_t &amp;y, const std::vector&lt; Color &gt; &amp;pixels)</td><td class="entry"><a class="el" href="a01272.html">RayTracer::Images::Image::PixelLine</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:01:27 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 03:29:32 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/ZebraMaterial/ZebraCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,58 +62,57 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_3a54d858ddf47f1666bf932c87179399.html">ZebraMaterial</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_7ebe953558711c8784c6270e1aaf8a7f.html">Triangle</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ZebraCreator.hpp</div>  </div>
+<div class="title">TriangleCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00329.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** PlaneCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** TriangleCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CHESSBOARDCREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define CHESSBOARDCREATOR_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00173.html">IMaterialCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00332.html">ZebraMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00369.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00369.html">RayTracer::PluginsExt::Zebra</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01597.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01597.html">ZebraCreator</a> : <span class="keyword">public</span> <a class="code" href="a01345.html">RayTracer::Plugins::Materials::IMaterialCreator</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01597.html#a4d708d546b44ccfd7731f53f8cb9b4e9">   20</a></span>&#160;        <a class="code" href="a01597.html#a4d708d546b44ccfd7731f53f8cb9b4e9">~ZebraCreator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01597.html#a79a4225c54f4d64c320b4907a5e4f7a5">   21</a></span>&#160;        <a class="code" href="a01197.html">RayTracer::Entities::IMaterial</a> *<a class="code" href="a01597.html#a79a4225c54f4d64c320b4907a5e4f7a5">create</a>(<span class="keyword">const</span> <a class="code" href="a01405.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01253.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01597.html#a0316feca3115a350535fabe6786cf7ea">   24</a></span>&#160;        std::vector&lt;ZebraMaterial *&gt; <a class="code" href="a01597.html#a0316feca3115a350535fabe6786cf7ea">_elements</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TRIANGLECREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define TRIANGLECREATOR_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00332.html">TriangleEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00375.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00375.html">RayTracer::PluginsExt::Triangle</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01604.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01604.html">TriangleCreator</a> : <span class="keyword">public</span> <a class="code" href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01604.html#a2011b25d02a1b1f08b4fc1414ee6ed46">   19</a></span>&#160;        <a class="code" href="a01604.html#a2011b25d02a1b1f08b4fc1414ee6ed46">~TriangleCreator</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01604.html#ab6492e10a8b3d81644925a86c30b31b8">   20</a></span>&#160;        <a class="code" href="a01196.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01604.html#ab6492e10a8b3d81644925a86c30b31b8">create</a>(<span class="keyword">const</span> <a class="code" href="a01412.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01260.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01604.html#aed82cb61c9f8b34f783290f8726c79e1">   23</a></span>&#160;        std::vector&lt;TriangleEntity *&gt; <a class="code" href="a01604.html#aed82cb61c9f8b34f783290f8726c79e1">_elements</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*TRIANGLECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">IMaterialCreator.hpp</a></div></div>
-<div class="ttc" id="aa00332_html"><div class="ttname"><a href="a00332.html">ZebraMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00369_html"><div class="ttname"><a href="a00369.html">RayTracer::PluginsExt::Zebra</a></div><div class="ttdef"><b>Definition:</b> ZebraCreator.hpp:17</div></div>
-<div class="ttc" id="aa01197_html"><div class="ttname"><a href="a01197.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
-<div class="ttc" id="aa01253_html"><div class="ttname"><a href="a01253.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01345_html"><div class="ttname"><a href="a01345.html">RayTracer::Plugins::Materials::IMaterialCreator</a></div><div class="ttdoc">The IMaterialCreator class.</div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:22</div></div>
-<div class="ttc" id="aa01405_html"><div class="ttname"><a href="a01405.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01597_html"><div class="ttname"><a href="a01597.html">RayTracer::PluginsExt::Zebra::ZebraCreator</a></div><div class="ttdef"><b>Definition:</b> ZebraCreator.hpp:18</div></div>
-<div class="ttc" id="aa01597_html_a0316feca3115a350535fabe6786cf7ea"><div class="ttname"><a href="a01597.html#a0316feca3115a350535fabe6786cf7ea">RayTracer::PluginsExt::Zebra::ZebraCreator::_elements</a></div><div class="ttdeci">std::vector&lt; ZebraMaterial * &gt; _elements</div><div class="ttdef"><b>Definition:</b> ZebraCreator.hpp:24</div></div>
-<div class="ttc" id="aa01597_html_a4d708d546b44ccfd7731f53f8cb9b4e9"><div class="ttname"><a href="a01597.html#a4d708d546b44ccfd7731f53f8cb9b4e9">RayTracer::PluginsExt::Zebra::ZebraCreator::~ZebraCreator</a></div><div class="ttdeci">~ZebraCreator()</div></div>
-<div class="ttc" id="aa01597_html_a79a4225c54f4d64c320b4907a5e4f7a5"><div class="ttname"><a href="a01597.html#a79a4225c54f4d64c320b4907a5e4f7a5">RayTracer::PluginsExt::Zebra::ZebraCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IMaterial * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a material with a setting.</div></div>
+<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00332_html"><div class="ttname"><a href="a00332.html">TriangleEntity.hpp</a></div></div>
+<div class="ttc" id="aa00375_html"><div class="ttname"><a href="a00375.html">RayTracer::PluginsExt::Triangle</a></div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:16</div></div>
+<div class="ttc" id="aa01196_html"><div class="ttname"><a href="a01196.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
+<div class="ttc" id="aa01336_html"><div class="ttname"><a href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01412_html"><div class="ttname"><a href="a01412.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01604_html"><div class="ttname"><a href="a01604.html">RayTracer::PluginsExt::Triangle::TriangleCreator</a></div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:17</div></div>
+<div class="ttc" id="aa01604_html_a2011b25d02a1b1f08b4fc1414ee6ed46"><div class="ttname"><a href="a01604.html#a2011b25d02a1b1f08b4fc1414ee6ed46">RayTracer::PluginsExt::Triangle::TriangleCreator::~TriangleCreator</a></div><div class="ttdeci">~TriangleCreator()</div></div>
+<div class="ttc" id="aa01604_html_ab6492e10a8b3d81644925a86c30b31b8"><div class="ttname"><a href="a01604.html#ab6492e10a8b3d81644925a86c30b31b8">RayTracer::PluginsExt::Triangle::TriangleCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01604_html_aed82cb61c9f8b34f783290f8726c79e1"><div class="ttname"><a href="a01604.html#aed82cb61c9f8b34f783290f8726c79e1">RayTracer::PluginsExt::Triangle::TriangleCreator::_elements</a></div><div class="ttdeci">std::vector&lt; TriangleEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:01:27 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

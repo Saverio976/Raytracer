@@ -1,9 +1,9 @@
-<map id="RayTracer::Scenes::ConfigWrapper" name="RayTracer::Scenes::ConfigWrapper">
-<area shape="rect" id="node1" title=" " alt="" coords="309,528,463,679"/>
-<area shape="rect" id="node2" href="$a01389.html" title=" " alt="" coords="5,315,153,451"/>
-<area shape="rect" id="node3" title=" " alt="" coords="177,337,376,429"/>
-<area shape="rect" id="node4" title=" " alt="" coords="307,145,465,223"/>
-<area shape="rect" id="node6" title=" " alt="" coords="401,337,590,429"/>
-<area shape="rect" id="node5" title=" " alt="" coords="367,5,405,83"/>
-<area shape="rect" id="node7" href="$a01253.html" title="Logger singleton." alt="" coords="615,300,757,465"/>
+<map id="RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;" name="RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="274,5,458,127"/>
+<area shape="rect" id="node2" href="$a01368.html" title=" " alt="" coords="5,233,223,369"/>
+<area shape="rect" id="node4" href="$a01368.html" title=" " alt="" coords="247,233,485,369"/>
+<area shape="rect" id="node6" href="$a01368.html" title=" " alt="" coords="509,233,732,369"/>
+<area shape="rect" id="node3" href="$a01344.html" title="The FilterLoader." alt="" coords="37,419,191,525"/>
+<area shape="rect" id="node5" href="$a01360.html" title="The MaterialLoader." alt="" coords="267,419,465,525"/>
+<area shape="rect" id="node7" href="$a01332.html" title="The EntityLoader." alt="" coords="536,419,705,525"/>
 </map>

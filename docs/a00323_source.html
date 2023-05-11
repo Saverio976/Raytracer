@@ -86,15 +86,15 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">IEntityCreator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00326.html">SpotLightEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00368.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00368.html">RayTracer::PluginsExt::SpotLight</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01589.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01589.html">SpotLightCreator</a> : <span class="keyword">public</span> <a class="code" href="a01329.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00374.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00374.html">RayTracer::PluginsExt::SpotLight</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01596.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01596.html">SpotLightCreator</a> : <span class="keyword">public</span> <a class="code" href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01589.html#ab0fdcec859972e2a6e9472982e9183bc">   20</a></span>&#160;        <a class="code" href="a01189.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01589.html#ab0fdcec859972e2a6e9472982e9183bc">create</a>(<span class="keyword">const</span> <a class="code" href="a01405.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01253.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01589.html#aa4d7903294ffd0ab8b5a7283b88d4a77">   21</a></span>&#160;        <a class="code" href="a01589.html#aa4d7903294ffd0ab8b5a7283b88d4a77">~SpotLightCreator</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01596.html#ab0fdcec859972e2a6e9472982e9183bc">   20</a></span>&#160;        <a class="code" href="a01196.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01596.html#ab0fdcec859972e2a6e9472982e9183bc">create</a>(<span class="keyword">const</span> <a class="code" href="a01412.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01260.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01596.html#aa4d7903294ffd0ab8b5a7283b88d4a77">   21</a></span>&#160;        <a class="code" href="a01596.html#aa4d7903294ffd0ab8b5a7283b88d4a77">~SpotLightCreator</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01589.html#a034fafe5b9ec3869d11abffa0da4b052">   25</a></span>&#160;        std::vector&lt;SpotLightEntity *&gt; <a class="code" href="a01589.html#a034fafe5b9ec3869d11abffa0da4b052">_elements</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01596.html#a034fafe5b9ec3869d11abffa0da4b052">   25</a></span>&#160;        std::vector&lt;SpotLightEntity *&gt; <a class="code" href="a01596.html#a034fafe5b9ec3869d11abffa0da4b052">_elements</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
@@ -102,19 +102,19 @@ $(function() {
 <div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
 <div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">IEntityCreator.hpp</a></div></div>
 <div class="ttc" id="aa00326_html"><div class="ttname"><a href="a00326.html">SpotLightEntity.hpp</a></div></div>
-<div class="ttc" id="aa00368_html"><div class="ttname"><a href="a00368.html">RayTracer::PluginsExt::SpotLight</a></div><div class="ttdef"><b>Definition:</b> SpotLightCreator.hpp:17</div></div>
-<div class="ttc" id="aa01189_html"><div class="ttname"><a href="a01189.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01253_html"><div class="ttname"><a href="a01253.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01329_html"><div class="ttname"><a href="a01329.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01405_html"><div class="ttname"><a href="a01405.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01589_html"><div class="ttname"><a href="a01589.html">RayTracer::PluginsExt::SpotLight::SpotLightCreator</a></div><div class="ttdef"><b>Definition:</b> SpotLightCreator.hpp:18</div></div>
-<div class="ttc" id="aa01589_html_a034fafe5b9ec3869d11abffa0da4b052"><div class="ttname"><a href="a01589.html#a034fafe5b9ec3869d11abffa0da4b052">RayTracer::PluginsExt::SpotLight::SpotLightCreator::_elements</a></div><div class="ttdeci">std::vector&lt; SpotLightEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> SpotLightCreator.hpp:25</div></div>
-<div class="ttc" id="aa01589_html_aa4d7903294ffd0ab8b5a7283b88d4a77"><div class="ttname"><a href="a01589.html#aa4d7903294ffd0ab8b5a7283b88d4a77">RayTracer::PluginsExt::SpotLight::SpotLightCreator::~SpotLightCreator</a></div><div class="ttdeci">~SpotLightCreator()</div></div>
-<div class="ttc" id="aa01589_html_ab0fdcec859972e2a6e9472982e9183bc"><div class="ttname"><a href="a01589.html#ab0fdcec859972e2a6e9472982e9183bc">RayTracer::PluginsExt::SpotLight::SpotLightCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa00374_html"><div class="ttname"><a href="a00374.html">RayTracer::PluginsExt::SpotLight</a></div><div class="ttdef"><b>Definition:</b> SpotLightCreator.hpp:17</div></div>
+<div class="ttc" id="aa01196_html"><div class="ttname"><a href="a01196.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
+<div class="ttc" id="aa01336_html"><div class="ttname"><a href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01412_html"><div class="ttname"><a href="a01412.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01596_html"><div class="ttname"><a href="a01596.html">RayTracer::PluginsExt::SpotLight::SpotLightCreator</a></div><div class="ttdef"><b>Definition:</b> SpotLightCreator.hpp:18</div></div>
+<div class="ttc" id="aa01596_html_a034fafe5b9ec3869d11abffa0da4b052"><div class="ttname"><a href="a01596.html#a034fafe5b9ec3869d11abffa0da4b052">RayTracer::PluginsExt::SpotLight::SpotLightCreator::_elements</a></div><div class="ttdeci">std::vector&lt; SpotLightEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> SpotLightCreator.hpp:25</div></div>
+<div class="ttc" id="aa01596_html_aa4d7903294ffd0ab8b5a7283b88d4a77"><div class="ttname"><a href="a01596.html#aa4d7903294ffd0ab8b5a7283b88d4a77">RayTracer::PluginsExt::SpotLight::SpotLightCreator::~SpotLightCreator</a></div><div class="ttdeci">~SpotLightCreator()</div></div>
+<div class="ttc" id="aa01596_html_ab0fdcec859972e2a6e9472982e9183bc"><div class="ttname"><a href="a01596.html#ab0fdcec859972e2a6e9472982e9183bc">RayTracer::PluginsExt::SpotLight::SpotLightCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:01:27 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

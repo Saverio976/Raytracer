@@ -1,8 +1,5 @@
-<map id="RayTracer::PluginsExt::Zebra::ZebraMaterial" name="RayTracer::PluginsExt::Zebra::ZebraMaterial">
-<area shape="rect" id="node1" title=" " alt="" coords="175,711,343,847"/>
-<area shape="rect" id="node2" href="$a01197.html" title="The IMaterial class." alt="" coords="5,336,155,472"/>
-<area shape="rect" id="node3" title=" " alt="" coords="349,5,416,83"/>
-<area shape="rect" id="node4" href="$a01217.html" title="The Vector3f class." alt="" coords="304,189,461,619"/>
-<area shape="rect" id="node5" href="$a01257.html" title="The Color class." alt="" coords="486,255,637,553"/>
-<area shape="rect" id="node6" title=" " alt="" coords="515,5,607,83"/>
+<map id="RayTracer::PluginsExt::SpotLight::SpotLightEntity" name="RayTracer::PluginsExt::SpotLight::SpotLightEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="5,403,204,700"/>
+<area shape="rect" id="node2" href="$a01200.html" title="The ILight class." alt="" coords="33,189,176,355"/>
+<area shape="rect" id="node3" href="$a01196.html" title="The IEntity class." alt="" coords="33,5,176,141"/>
 </map>

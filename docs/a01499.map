@@ -1,13 +1,4 @@
-<map id="RayTracer::PluginsExt::ChessBoard::ChessBoardCreator" name="RayTracer::PluginsExt::ChessBoard::ChessBoardCreator">
-<area shape="rect" id="node1" title=" " alt="" coords="183,1093,423,1200"/>
-<area shape="rect" id="node2" href="$a01345.html" title="The IMaterialCreator class." alt="" coords="179,924,384,1031"/>
-<area shape="rect" id="node3" title=" " alt="" coords="408,924,595,1031"/>
-<area shape="rect" id="node4" href="$a01505.html" title=" " alt="" coords="259,711,506,847"/>
-<area shape="rect" id="node5" href="$a01197.html" title="The IMaterial class." alt="" coords="5,336,155,472"/>
-<area shape="rect" id="node6" title=" " alt="" coords="349,5,416,83"/>
-<area shape="rect" id="node7" href="$a01217.html" title="The Vector3f class." alt="" coords="304,189,461,619"/>
-<area shape="rect" id="node8" href="$a01257.html" title="The Color class." alt="" coords="486,255,637,553"/>
-<area shape="rect" id="node9" title=" " alt="" coords="515,5,607,83"/>
-<area shape="rect" id="node10" title=" " alt="" coords="573,740,702,817"/>
-<area shape="rect" id="node11" title=" " alt="" coords="661,365,699,443"/>
+<map id="RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator" name="RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator">
+<area shape="rect" id="node1" title="The CustomRayIterator class." alt="" coords="5,175,176,355"/>
+<area shape="rect" id="node2" href="$a01280.html" title="The RayIterator class." alt="" coords="15,5,166,127"/>
 </map>

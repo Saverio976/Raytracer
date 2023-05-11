@@ -20,18 +20,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01541">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator</link></para>
+            <listitem><para>class <link linkend="_a01548">RayTracer::PluginsExt::LimitedCylinder::LimitedCylinderCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00356">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00362">RayTracer::PluginsExt::LimitedCylinder</link></para>
+            <listitem><para> <link linkend="_a00368">RayTracer::PluginsExt::LimitedCylinder</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

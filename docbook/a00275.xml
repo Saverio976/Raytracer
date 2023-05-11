@@ -19,18 +19,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01525">RayTracer::PluginsExt::Disk::DiskCreator</link></para>
+            <listitem><para>class <link linkend="_a01532">RayTracer::PluginsExt::Disk::DiskCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00339">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00350">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00356">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00360">RayTracer::PluginsExt::Disk</link></para>
+            <listitem><para> <link linkend="_a00366">RayTracer::PluginsExt::Disk</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

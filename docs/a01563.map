@@ -1,16 +1,4 @@
-<map id="RayTracer::PluginsExt::Plane::PlaneCreator" name="RayTracer::PluginsExt::Plane::PlaneCreator">
-<area shape="rect" id="node1" title=" " alt="" coords="273,1395,436,1501"/>
-<area shape="rect" id="node2" href="$a01329.html" title="The IEntityCreator." alt="" coords="245,1225,422,1332"/>
-<area shape="rect" id="node3" title=" " alt="" coords="447,1233,697,1325"/>
-<area shape="rect" id="node4" href="$a01569.html" title=" " alt="" coords="399,953,561,1148"/>
-<area shape="rect" id="node5" href="$a01201.html" title="The IPrimitive class." alt="" coords="5,718,155,869"/>
-<area shape="rect" id="node6" href="$a01189.html" title="The IEntity class." alt="" coords="9,321,151,457"/>
-<area shape="rect" id="node7" href="$a01209.html" title="The Transform class." alt="" coords="179,696,347,891"/>
-<area shape="rect" id="node8" href="$a01205.html" title="The ITransform class." alt="" coords="175,292,347,487"/>
-<area shape="rect" id="node9" href="$a01217.html" title="The Vector3f class." alt="" coords="372,175,529,604"/>
-<area shape="rect" id="node10" title=" " alt="" coords="417,5,484,83"/>
-<area shape="rect" id="node11" title=" " alt="" coords="371,740,589,847"/>
-<area shape="rect" id="node12" href="$a01253.html" title="Logger singleton." alt="" coords="614,711,757,876"/>
-<area shape="rect" id="node13" title=" " alt="" coords="661,1012,790,1089"/>
-<area shape="rect" id="node14" title=" " alt="" coords="781,755,819,832"/>
+<map id="RayTracer::PluginsExt::PlainMaterial::PlainMaterial" name="RayTracer::PluginsExt::PlainMaterial::PlainMaterial">
+<area shape="rect" id="node1" title=" " alt="" coords="5,189,216,399"/>
+<area shape="rect" id="node2" href="$a01204.html" title="The IMaterial class." alt="" coords="36,5,185,141"/>
 </map>

@@ -1,11 +1,4 @@
-<map id="RayTracer::PluginsExt::Cone::ConeEntity" name="RayTracer::PluginsExt::Cone::ConeEntity">
-<area shape="rect" id="node1" title=" " alt="" coords="233,953,396,1148"/>
-<area shape="rect" id="node2" href="$a01201.html" title="The IPrimitive class." alt="" coords="5,718,155,869"/>
-<area shape="rect" id="node3" href="$a01189.html" title="The IEntity class." alt="" coords="9,321,151,457"/>
-<area shape="rect" id="node4" href="$a01209.html" title="The Transform class." alt="" coords="231,696,399,891"/>
-<area shape="rect" id="node5" href="$a01205.html" title="The ITransform class." alt="" coords="230,292,402,487"/>
-<area shape="rect" id="node6" href="$a01217.html" title="The Vector3f class." alt="" coords="427,175,584,604"/>
-<area shape="rect" id="node7" title=" " alt="" coords="180,5,247,83"/>
-<area shape="rect" id="node8" title=" " alt="" coords="423,740,641,847"/>
-<area shape="rect" id="node9" href="$a01253.html" title="Logger singleton." alt="" coords="666,711,809,876"/>
+<map id="RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial" name="RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial">
+<area shape="rect" id="node1" title=" " alt="" coords="5,189,252,413"/>
+<area shape="rect" id="node2" href="$a01204.html" title="The IMaterial class." alt="" coords="54,5,203,141"/>
 </map>

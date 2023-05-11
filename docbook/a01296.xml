@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01296" xml:lang="en-US">
+<title>RayTracer::Images::RayIterrator Class Reference</title>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01296">RayIterrator</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;RayIterrator.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Images::RayIterrator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01295.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Images::RayIterrator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01294.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01300">Iterrator</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01296_1a2cba8b494b9909d6721f195bde6bf565">RayIterrator</link> (const <link linkend="_a01192">Entities::ICamera</link> &amp;camera)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01284">IRayIterator::IIterator</link> &gt; <link linkend="_a01296_1a8edc5e425f9ea78bd28417c9bbcb6f62">begin</link> () const final</para>
+
+<para>Get the begin. </para>
+</listitem>
+            <listitem><para>std::unique_ptr&lt; <link linkend="_a01284">IRayIterator::IIterator</link> &gt; <link linkend="_a01296_1a09940f5ca315fc3cfc04b8627682f124">end</link> () const final</para>
+
+<para>Get the end (out of range) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_a01192">Entities::ICamera</link> &amp; <link linkend="_a01296_1a4f48d15ad9f3e626c9442388500611ea">_camera</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01224">Entities::Transform::Vector3f</link> <link linkend="_a01296_1aff0d27597bf79a22e7b54377f145c91a">_pov</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01292">Ray</link> <link linkend="_a01296_1aa9f312a732d5b9a6a3b8ffa556cd3151">_beforeFirst</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01292">Ray</link> <link linkend="_a01296_1ae5def240e0737ba0b77de0228215ff11">_afterLast</link></para>
+</listitem>
+            <listitem><para>std::size_t <link linkend="_a01296_1a1c2632aa1e28bd81262143f596191472">_cluster</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01296">RayIterrator</link> class. </para>
+
+
+
+<para>class that represent an iterator of a ray </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01296_1a2cba8b494b9909d6721f195bde6bf565"/>    <section>
+    <title>RayIterrator()</title>
+<indexterm><primary>RayIterrator</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>RayIterrator</secondary></indexterm>
+<para><computeroutput>RayTracer::Images::RayIterrator::RayIterrator (const <link linkend="_a01192">Entities::ICamera</link> &amp; camera)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>camera</entry>
+                                <entry>
+<para>the camera to create the ray itterator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01296_1a8edc5e425f9ea78bd28417c9bbcb6f62"/>    <section>
+    <title>begin()</title>
+<indexterm><primary>begin</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01284">IRayIterator::IIterator</link>&gt; RayTracer::Images::RayIterrator::begin ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the begin. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the begin </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01280_1a1091fd7e65db524ab307d648a05b2e6f">RayTracer::Images::IRayIterator</link>.</para>
+    </section><anchor xml:id="_a01296_1a09940f5ca315fc3cfc04b8627682f124"/>    <section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>end</secondary></indexterm>
+<para><computeroutput>std::unique_ptr&lt;<link linkend="_a01284">IRayIterator::IIterator</link>&gt; RayTracer::Images::RayIterrator::end ( ) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the end (out of range) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the end </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01280_1a6a54ffc59239a7865fbc4fd7569ba80b">RayTracer::Images::IRayIterator</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01296_1ae5def240e0737ba0b77de0228215ff11"/>    <section>
+    <title>_afterLast</title>
+<indexterm><primary>_afterLast</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>_afterLast</secondary></indexterm>
+<para><computeroutput><link linkend="_a01292">Ray</link> RayTracer::Images::RayIterrator::_afterLast<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01296_1aa9f312a732d5b9a6a3b8ffa556cd3151"/>    <section>
+    <title>_beforeFirst</title>
+<indexterm><primary>_beforeFirst</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>_beforeFirst</secondary></indexterm>
+<para><computeroutput><link linkend="_a01292">Ray</link> RayTracer::Images::RayIterrator::_beforeFirst<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01296_1a4f48d15ad9f3e626c9442388500611ea"/>    <section>
+    <title>_camera</title>
+<indexterm><primary>_camera</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>_camera</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01192">Entities::ICamera</link>&amp; RayTracer::Images::RayIterrator::_camera<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01296_1a1c2632aa1e28bd81262143f596191472"/>    <section>
+    <title>_cluster</title>
+<indexterm><primary>_cluster</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>_cluster</secondary></indexterm>
+<para><computeroutput>std::size_t RayTracer::Images::RayIterrator::_cluster<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01296_1aff0d27597bf79a22e7b54377f145c91a"/>    <section>
+    <title>_pov</title>
+<indexterm><primary>_pov</primary><secondary>RayTracer::Images::RayIterrator</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::RayIterrator</primary><secondary>_pov</secondary></indexterm>
+<para><computeroutput><link linkend="_a01224">Entities::Transform::Vector3f</link> RayTracer::Images::RayIterrator::_pov<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Images/<link linkend="_a00140">RayIterrator.hpp</link></section>
+</section>

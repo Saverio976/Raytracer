@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['zebracreator_460',['ZebraCreator',['../a01597.html',1,'RayTracer::PluginsExt::Zebra']]],
-  ['zebracreator_2ehpp_461',['ZebraCreator.hpp',['../a00329.html',1,'']]],
-  ['zebramaterial_462',['ZebraMaterial',['../a01601.html',1,'RayTracer::PluginsExt::Zebra::ZebraMaterial'],['../a01601.html#a81e2278947185e088f9523820add5046',1,'RayTracer::PluginsExt::Zebra::ZebraMaterial::ZebraMaterial()']]],
-  ['zebramaterial_2ehpp_463',['ZebraMaterial.hpp',['../a00332.html',1,'']]]
+  ['zebracreator_469',['ZebraCreator',['../a01612.html',1,'RayTracer::PluginsExt::Zebra']]],
+  ['zebracreator_2ehpp_470',['ZebraCreator.hpp',['../a00335.html',1,'']]],
+  ['zebramaterial_471',['ZebraMaterial',['../a01616.html',1,'RayTracer::PluginsExt::Zebra::ZebraMaterial'],['../a01616.html#a81e2278947185e088f9523820add5046',1,'RayTracer::PluginsExt::Zebra::ZebraMaterial::ZebraMaterial()']]],
+  ['zebramaterial_2ehpp_472',['ZebraMaterial.hpp',['../a00338.html',1,'']]]
 ];

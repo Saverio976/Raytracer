@@ -1,17 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00356" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Camera::FullCustom Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Camera::FullCustom</primary></indexterm>
+<title>RayTracer::PluginsExt Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt</primary></indexterm>
 <simplesect>
-    <title>Classes    </title>
+    <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01485">CameraCustomCreator</link></para>
+            <listitem><para> <link linkend="_a00357">AmbientLight</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01489">CameraCustomEntity</link></para>
+            <listitem><para> <link linkend="_a00358">AntiAliasing</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01493">CustomRayIterator</link></para>
-
-<para>The <link linkend="_a01493">CustomRayIterator</link> class. </para>
+            <listitem><para> <link linkend="_a00360">Camera</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00363">ChessBoard</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00364">Cone</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00365">Cylinder</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00366">Disk</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00367">LimitedCone</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00368">LimitedCylinder</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00369">LimitedPlane</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00370">PlainMaterial</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00371">Plane</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00372">PointLight</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00373">Sphere</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00374">SpotLight</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00375">Triangle</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00376">Zebra</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

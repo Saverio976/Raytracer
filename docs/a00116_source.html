@@ -82,25 +82,25 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">Image.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00343.html">   13</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00343.html">RayTracer::Filters</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01249.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01249.html">IFilter</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00349.html">   13</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00349.html">RayTracer::Filters</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01256.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01256.html">IFilter</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01249.html#a4c35ede8fa416a25698446f6fe16a407">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01249.html#a4c35ede8fa416a25698446f6fe16a407">~IFilter</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01249.html#a3db0669688266d28dfefd7e65fc6e5cf">   27</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01249.html#a3db0669688266d28dfefd7e65fc6e5cf">apply</a>(<a class="code" href="a01261.html">Images::Image</a> &amp;image) = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01256.html#a4c35ede8fa416a25698446f6fe16a407">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01256.html#a4c35ede8fa416a25698446f6fe16a407">~IFilter</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01256.html#a3db0669688266d28dfefd7e65fc6e5cf">   27</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01256.html#a3db0669688266d28dfefd7e65fc6e5cf">apply</a>(<a class="code" href="a01268.html">Images::Image</a> &amp;image) = 0;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">Image.hpp</a></div></div>
-<div class="ttc" id="aa00343_html"><div class="ttname"><a href="a00343.html">RayTracer::Filters</a></div><div class="ttdef"><b>Definition:</b> IFilter.hpp:13</div></div>
-<div class="ttc" id="aa01249_html"><div class="ttname"><a href="a01249.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01249_html_a3db0669688266d28dfefd7e65fc6e5cf"><div class="ttname"><a href="a01249.html#a3db0669688266d28dfefd7e65fc6e5cf">RayTracer::Filters::IFilter::apply</a></div><div class="ttdeci">virtual void apply(Images::Image &amp;image)=0</div><div class="ttdoc">Apply the filter on an image.</div></div>
-<div class="ttc" id="aa01249_html_a4c35ede8fa416a25698446f6fe16a407"><div class="ttname"><a href="a01249.html#a4c35ede8fa416a25698446f6fe16a407">RayTracer::Filters::IFilter::~IFilter</a></div><div class="ttdeci">virtual ~IFilter()=default</div></div>
-<div class="ttc" id="aa01261_html"><div class="ttname"><a href="a01261.html">RayTracer::Images::Image</a></div><div class="ttdoc">The Image class.</div><div class="ttdef"><b>Definition:</b> Image.hpp:23</div></div>
+<div class="ttc" id="aa00349_html"><div class="ttname"><a href="a00349.html">RayTracer::Filters</a></div><div class="ttdef"><b>Definition:</b> IFilter.hpp:13</div></div>
+<div class="ttc" id="aa01256_html"><div class="ttname"><a href="a01256.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
+<div class="ttc" id="aa01256_html_a3db0669688266d28dfefd7e65fc6e5cf"><div class="ttname"><a href="a01256.html#a3db0669688266d28dfefd7e65fc6e5cf">RayTracer::Filters::IFilter::apply</a></div><div class="ttdeci">virtual void apply(Images::Image &amp;image)=0</div><div class="ttdoc">Apply the filter on an image.</div></div>
+<div class="ttc" id="aa01256_html_a4c35ede8fa416a25698446f6fe16a407"><div class="ttname"><a href="a01256.html#a4c35ede8fa416a25698446f6fe16a407">RayTracer::Filters::IFilter::~IFilter</a></div><div class="ttdeci">virtual ~IFilter()=default</div></div>
+<div class="ttc" id="aa01268_html"><div class="ttname"><a href="a01268.html">RayTracer::Images::Image</a></div><div class="ttdoc">The Image class.</div><div class="ttdef"><b>Definition:</b> Image.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:01:27 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

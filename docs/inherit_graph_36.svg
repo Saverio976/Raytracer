@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 106)">
 <title>Graphical Class Hierarchy</title>
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-106 316,-106 316,4 -4,4"/>
-<!-- Node62 -->
+<!-- Node64 -->
 <g id="node1" class="node">
-<title>Node62</title>
+<title>Node64</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="0,-41.5 0,-60.5 119,-60.5 119,-41.5 0,-41.5"/>
 <text text-anchor="middle" x="59.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">IRayIterator::IIterator</text>
@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="a01481.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="a01488.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="159.5,-60.5 159.5,-101.5 307.5,-101.5 307.5,-60.5 159.5,-60.5"/>
 <text text-anchor="start" x="167.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="167.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::Clustered::</text>
@@ -29,16 +29,16 @@
 </a>
 </g>
 </g>
-<!-- Node62&#45;&gt;Node0 -->
+<!-- Node64&#45;&gt;Node0 -->
 <g id="edge1" class="edge">
-<title>Node62&#45;&gt;Node0</title>
+<title>Node64&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M125.4,-62.32C136.46,-64.25 148.03,-66.27 159.29,-68.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="125.85,-58.85 115.39,-60.57 124.64,-65.74 125.85,-58.85"/>
 </g>
-<!-- Node64 -->
+<!-- Node66 -->
 <g id="node3" class="node">
-<title>Node64</title>
-<g id="a_node3"><a xlink:href="a01497.html" target="_top" xlink:title=" ">
+<title>Node66</title>
+<g id="a_node3"><a xlink:href="a01504.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="155,-0.5 155,-41.5 312,-41.5 312,-0.5 155,-0.5"/>
 <text text-anchor="start" x="163" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="163" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::FullCustom</text>
@@ -46,9 +46,9 @@
 </a>
 </g>
 </g>
-<!-- Node62&#45;&gt;Node64 -->
+<!-- Node64&#45;&gt;Node66 -->
 <g id="edge2" class="edge">
-<title>Node62&#45;&gt;Node64</title>
+<title>Node64&#45;&gt;Node66</title>
 <path fill="none" stroke="midnightblue" d="M125.31,-39.7C134.98,-38.01 145.03,-36.26 154.93,-34.53"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="124.64,-36.26 115.39,-41.43 125.85,-43.15 124.64,-36.26"/>
 </g>

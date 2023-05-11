@@ -1,13 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00361" xml:lang="en-US">
-<title>RayTracer::PluginsExt::LimitedCone Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::LimitedCone</primary></indexterm>
+<title>RayTracer::PluginsExt::Camera::Clustered Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Camera::Clustered</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01533">LimitedConeCreator</link></para>
+            <listitem><para>class <link linkend="_a01476">CameraClusterCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01537">LimitedConeEntity</link></para>
+            <listitem><para>class <link linkend="_a01480">CameraClusterEntity</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01484">ClusterRayIterator</link></para>
+
+<para>The <link linkend="_a01484">ClusterRayIterator</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

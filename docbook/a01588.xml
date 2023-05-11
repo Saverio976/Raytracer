@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01588" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Sphere::SphereCreator Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Sphere::SphereCreator</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SphereCreator.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::Sphere::SphereCreator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01587.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Sphere::SphereCreator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01586.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01588_1ad0d7daa45135aba5dddd8e8e0cea6b84">~SphereCreator</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_a01196">RayTracer::Entities::IEntity</link> * <link linkend="_a01588_1aed3cd596de7552263c608ce94cbc07d7">create</link> (const <link linkend="_a01412">Scenes::ISetting</link> &amp;config, <link linkend="_a01260">ILogger</link> &amp;logger) final</para>
+
+<para>Create an entity with a setting. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; <link linkend="_a01592">SphereEntity</link> * &gt; <link linkend="_a01588_1accc6b41f059ef195b5ff4d22be72b57d">_elements</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01588_1ad0d7daa45135aba5dddd8e8e0cea6b84"/>    <section>
+    <title>~SphereCreator()</title>
+<indexterm><primary>~SphereCreator</primary><secondary>RayTracer::PluginsExt::Sphere::SphereCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Sphere::SphereCreator</primary><secondary>~SphereCreator</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Sphere::SphereCreator::~SphereCreator ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01588_1aed3cd596de7552263c608ce94cbc07d7"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>RayTracer::PluginsExt::Sphere::SphereCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Sphere::SphereCreator</primary><secondary>create</secondary></indexterm>
+<para><computeroutput><link linkend="_a01196">RayTracer::Entities::IEntity</link>* RayTracer::PluginsExt::Sphere::SphereCreator::create (const <link linkend="_a01412">Scenes::ISetting</link> &amp; setting, <link linkend="_a01260">ILogger</link> &amp; logger)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Create an entity with a setting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>setting</entry>
+                                <entry>
+<para>the setting</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the entity </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01336_1ab6cc749aa296fe5fc205ad2cad321d30">RayTracer::Plugins::Entities::IEntityCreator</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01588_1accc6b41f059ef195b5ff4d22be72b57d"/>    <section>
+    <title>_elements</title>
+<indexterm><primary>_elements</primary><secondary>RayTracer::PluginsExt::Sphere::SphereCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Sphere::SphereCreator</primary><secondary>_elements</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01592">SphereEntity</link> *&gt; RayTracer::PluginsExt::Sphere::SphereCreator::_elements<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/<link linkend="_a00317">SphereCreator.hpp</link></section>
+</section>

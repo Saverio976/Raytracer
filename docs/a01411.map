@@ -1,4 +1,4 @@
-<map id="RayTracer::Scenes::ISetting::ITypeException" name="RayTracer::Scenes::ISetting::ITypeException">
-<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="5,131,184,237"/>
-<area shape="rect" id="node2" title=" " alt="" coords="37,5,152,83"/>
+<map id="RayTracer::Scenes::ISetting" name="RayTracer::Scenes::ISetting">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,189,332"/>
+<area shape="rect" id="node2" href="$a01440.html" title="The SettingWrapper class." alt="" coords="5,380,189,751"/>
 </map>
