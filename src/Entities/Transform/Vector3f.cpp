@@ -82,6 +82,14 @@ namespace RayTracer::Entities::Transform {
         return {_x / norm, _y / norm, _z / norm};
     }
 
+    Vector3f Vector3f::getCrossed(const Vector3f &other) const {
+        return {
+        _y * other.getZ() - _z * other.getY(),
+        _z * other.getX() - _x * other.getZ(),
+        _x * other.getY() - _y * other.getX()
+        };
+    }
+
     double Vector3f::getDistance(const Vector3f &other) const
     {
         double dx = _x - other._x;

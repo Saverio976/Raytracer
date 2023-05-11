@@ -206,6 +206,20 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+# TRIANGLE
+add_library(Triangle SHARED)
+set_target_properties(Triangle PROPERTIES
+        CXX_STANDARD 20
+        PREFIX ""
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+        )
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Triangle PROPERTIES
+            UNITY_BUILD true
+            UNITY_BUILD_MODE BATCH
+            )
+endif()
+
 # --------- Filters plugins ---------
 add_library(SSAAx4 SHARED)
 set_target_properties(SSAAx4 PROPERTIES
@@ -229,6 +243,32 @@ set_target_properties(PlainMaterial PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(PlainMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(ChessBoardMaterial SHARED)
+set_target_properties(ChessBoardMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ChessBoardMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(ZebraMaterial SHARED)
+set_target_properties(ZebraMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ZebraMaterial PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
