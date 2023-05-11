@@ -6,3 +6,4 @@ find scenes -name '*.yaax' -type f -exec ./raytracer --scene-path {} --output-pa
 
 mkdir -p screenshots
 mv ./scenes/**/*.ppm screenshots
+mv ./scenes/*.ppm screenshots
