@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00161" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/IEntityCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/IEntityCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;memory&gt;
-#include &quot;IEntity.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for IEntityCreator.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Parameters.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Parameters.hpp</primary></indexterm>
+<programlisting>#include &lt;exception&gt;
+#include &lt;memory&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for Parameters.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -27,20 +27,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01336">RayTracer::Plugins::Entities::IEntityCreator</link></para>
+            <listitem><para>class <link linkend="_a01369">RayTracer::Parameters</link></para>
 
-<para>The <link linkend="_a01336">IEntityCreator</link>. </para>
+<para>The <link linkend="_a01369">Parameters</link> class singleton. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01373">RayTracer::Parameters::KeyNotFoundError</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00351">RayTracer::Plugins</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00352">RayTracer::Plugins::Entities</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

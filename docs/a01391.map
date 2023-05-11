@@ -1,5 +1,7 @@
-<map id="RayTracer::Scenes::Displayable::DisplayableException" name="RayTracer::Scenes::Displayable::DisplayableException">
-<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="5,300,253,407"/>
-<area shape="rect" id="node2" href="$a01404.html" title="an exception for when the key is not found" alt="" coords="28,131,231,252"/>
-<area shape="rect" id="node3" title=" " alt="" coords="72,5,187,83"/>
+<map id="RayTracer::Plugins::Filters::FilterLoader" name="RayTracer::Plugins::Filters::FilterLoader">
+<area shape="rect" id="node1" title="The FilterLoader." alt="" coords="37,685,191,792"/>
+<area shape="rect" id="node2" href="$a01417.html" title=" " alt="" coords="5,500,223,636"/>
+<area shape="rect" id="node3" href="$a01417.html" title=" " alt="" coords="22,287,206,408"/>
+<area shape="rect" id="node4" title=" " alt="" coords="71,147,157,224"/>
+<area shape="rect" id="node5" title=" " alt="" coords="45,5,183,97"/>
 </map>

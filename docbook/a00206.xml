@@ -1,10 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00206" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISetting.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISetting.hpp</primary></indexterm>
-<programlisting>#include &lt;memory&gt;
-#include &lt;libconfig.h++&gt;
-</programlisting>Include dependency graph for ISetting.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/Displayable.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;memory&gt;
+#include &lt;vector&gt;
+#include &lt;functional&gt;
+#include &quot;IDisplayable.hpp&quot;
+</programlisting>Include dependency graph for Displayable.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -25,13 +28,11 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01412">RayTracer::Scenes::ISetting</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01416">RayTracer::Scenes::ISetting::IParsingException</link></para>
+            <listitem><para>class <link linkend="_a01437">RayTracer::Scenes::Displayable</link></para>
 
-<para>an exception for when the key is not found </para>
+<para>The <link linkend="_a01437">Displayable</link> class. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01420">RayTracer::Scenes::ISetting::ITypeException</link></para>
+            <listitem><para>class <link linkend="_a01441">RayTracer::Scenes::Displayable::DisplayableException</link></para>
 
 <para>an exception for when the key is not found </para>
 </listitem>
@@ -40,9 +41,11 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00355">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00359">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00368">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

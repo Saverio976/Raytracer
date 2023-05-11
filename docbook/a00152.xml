@@ -1,69 +1,44 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00152" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp</primary></indexterm>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;cstddef&gt;
+#include &lt;iterator&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &quot;ICamera.hpp&quot;
+#include &quot;IRayIterator.hpp&quot;
+#include &quot;Ray.hpp&quot;
+#include &quot;Vector2i.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for RayIterrator.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00153.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
-    <title>Functions    </title>
+    <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>void * <link linkend="_a00152_1a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator</link> (void)</para>
+            <listitem><para>class <link linkend="_a01345">RayTracer::Images::RayIterrator</link></para>
 
-<para>Get the creator. </para>
+<para>The <link linkend="_a01345">RayIterrator</link> class. </para>
 </listitem>
-            <listitem><para>void <link linkend="_a00152_1adb15eac6ad612e5de35b2bf82f199739">deleteCreator</link> (void *creator)</para>
-
-<para>Delete the creator (created with the <computeroutput><link linkend="_a00152_1a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator()</link></computeroutput> method) </para>
+            <listitem><para>class <link linkend="_a01349">RayTracer::Images::RayIterrator::Iterrator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
-<section>
-<title>Function Documentation</title>
-<anchor xml:id="_a00152_1adb15eac6ad612e5de35b2bf82f199739"/>    <section>
-    <title>deleteCreator()</title>
-<indexterm><primary>deleteCreator</primary><secondary>Api.hpp</secondary></indexterm>
-<indexterm><primary>Api.hpp</primary><secondary>deleteCreator</secondary></indexterm>
-<para><computeroutput>void deleteCreator (void * creator)</computeroutput></para><para>
-
-<para>Delete the creator (created with the <computeroutput><link linkend="_a00152_1a6c4bc04f8b3ed3e6ca1a056499438ab3">getCreator()</link></computeroutput> method) </para>
-</para>
-
-<para>
-                <formalpara>
-                    <title>
-Parameters                    </title>
-                    <para>
-                    <table frame="all">
-                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                        <colspec colwidth="1*"/>
-                        <colspec colwidth="4*"/>
-                        <tbody>
-                            <row>
-                                <entry>creator</entry>
-                                <entry>
-<para></para>
-</entry>
-                            </row>
-                        </tbody>
-                        </tgroup>
-                    </table>
-                    </para>
-                </formalpara>
-                </para>
-    </section><anchor xml:id="_a00152_1a6c4bc04f8b3ed3e6ca1a056499438ab3"/>    <section>
-    <title>getCreator()</title>
-<indexterm><primary>getCreator</primary><secondary>Api.hpp</secondary></indexterm>
-<indexterm><primary>Api.hpp</primary><secondary>getCreator</secondary></indexterm>
-<para><computeroutput>void* getCreator (void )</computeroutput></para><para>
-
-<para>Get the creator. </para>
-</para>
-
-<para>The creator must be a class that has a <computeroutput>.create(const ISetting &amp;settings)</computeroutput> method. This method must create an [ ILight | ICamera | IPrimitive | IFilter ]. There is no verification that the returning value is ok. So be cautious. Thx. For [ ILight | ICamera | IPrimitive ] they must inherite from IEntityCreator. For [ IFilter ] they must inherite from IFilterCreator.</para>
-
-<para><formalpara><title>Returns</title>
-
-<para>the creator </para>
-</formalpara>
-</para>
-</section>
-</section>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00363">RayTracer::Images</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 </section>

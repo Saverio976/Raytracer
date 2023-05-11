@@ -31,6 +31,10 @@ RayTracer::Scenes::Scene \- The \fBScene\fP class\&.
 .br
 .RI "Get the cameras\&. "
 .ti -1c
+.RI "std::vector< std::reference_wrapper< \fBEntities::ICamera\fP > > & \fBgetCameras\fP ()"
+.br
+.RI "Get the cameras\&. "
+.ti -1c
 .RI "bool \fBisReady\fP () const"
 .br
 .RI "Check if the scene is ready (internal render thread is stopped) "
@@ -91,6 +95,17 @@ class that represent a scene
 
 .PP
 Cancel the scene rendering\&. 
+.SS "std::vector<std::reference_wrapper<\fBEntities::ICamera\fP> >& RayTracer::Scenes::Scene::getCameras ()"
+
+.PP
+Get the cameras\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the cameras 
+.RE
+.PP
+
 .SS "const std::vector<std::reference_wrapper<\fBEntities::ICamera\fP> >& RayTracer::Scenes::Scene::getCameras () const"
 
 .PP

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Filters/IFilter.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Factories/IFilterFactory.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,45 +62,56 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_34df5910c3dede183eac518413f13c07.html">Filters</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3dbe57e65c50a7a17fba27939d267647.html">Factories</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">IFilter.hpp</div>  </div>
+<div class="title">IFilterFactory.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00116.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IFilter.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IFilterFactory.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IFILTER_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IFILTER_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IFILTERFACTORY_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IFILTERFACTORY_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">Image.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00349.html">   13</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00349.html">RayTracer::Filters</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01256.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01256.html">IFilter</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00361.html">RayTracer::Factories</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01289.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01289.html">IFilterFactory</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01256.html#a4c35ede8fa416a25698446f6fe16a407">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01256.html#a4c35ede8fa416a25698446f6fe16a407">~IFilter</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01256.html#a3db0669688266d28dfefd7e65fc6e5cf">   27</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01256.html#a3db0669688266d28dfefd7e65fc6e5cf">apply</a>(<a class="code" href="a01268.html">Images::Image</a> &amp;image) = 0;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">Image.hpp</a></div></div>
-<div class="ttc" id="aa00349_html"><div class="ttname"><a href="a00349.html">RayTracer::Filters</a></div><div class="ttdef"><b>Definition:</b> IFilter.hpp:13</div></div>
-<div class="ttc" id="aa01256_html"><div class="ttname"><a href="a01256.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01256_html_a3db0669688266d28dfefd7e65fc6e5cf"><div class="ttname"><a href="a01256.html#a3db0669688266d28dfefd7e65fc6e5cf">RayTracer::Filters::IFilter::apply</a></div><div class="ttdeci">virtual void apply(Images::Image &amp;image)=0</div><div class="ttdoc">Apply the filter on an image.</div></div>
-<div class="ttc" id="aa01256_html_a4c35ede8fa416a25698446f6fe16a407"><div class="ttname"><a href="a01256.html#a4c35ede8fa416a25698446f6fe16a407">RayTracer::Filters::IFilter::~IFilter</a></div><div class="ttdeci">virtual ~IFilter()=default</div></div>
-<div class="ttc" id="aa01268_html"><div class="ttname"><a href="a01268.html">RayTracer::Images::Image</a></div><div class="ttdoc">The Image class.</div><div class="ttdef"><b>Definition:</b> Image.hpp:23</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01289.html#a5b8e762b8a179ba7c25cfe66c0f6da63">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01289.html#a5b8e762b8a179ba7c25cfe66c0f6da63">~IFilterFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01289.html#a9b178f7a1ae9cad80648b033a449660c">   30</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01305.html">Filters::IFilter</a> &amp;<a class="code" href="a01289.html#a9b178f7a1ae9cad80648b033a449660c">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01461.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01309.html">ILogger</a> &amp;logger) = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">   35</a></span>&#160;    <span class="keyword">extern</span> <a class="code" href="a01289.html">RayTracer::Factories::IFilterFactory</a> *<a class="code" href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">getFilterFactoryInstance</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*FILTERFACTORY_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00116_html_acec3911c130ba3937e3a2a2a34177fdc"><div class="ttname"><a href="a00116.html#acec3911c130ba3937e3a2a2a34177fdc">getFilterFactoryInstance</a></div><div class="ttdeci">RayTracer::Factories::IFilterFactory * getFilterFactoryInstance(void)</div></div>
+<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00361_html"><div class="ttname"><a href="a00361.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
+<div class="ttc" id="aa01289_html"><div class="ttname"><a href="a01289.html">RayTracer::Factories::IFilterFactory</a></div><div class="ttdoc">The FilterFactory (singleton factory)</div><div class="ttdef"><b>Definition:</b> IFilterFactory.hpp:19</div></div>
+<div class="ttc" id="aa01289_html_a5b8e762b8a179ba7c25cfe66c0f6da63"><div class="ttname"><a href="a01289.html#a5b8e762b8a179ba7c25cfe66c0f6da63">RayTracer::Factories::IFilterFactory::~IFilterFactory</a></div><div class="ttdeci">virtual ~IFilterFactory()=default</div></div>
+<div class="ttc" id="aa01289_html_a9b178f7a1ae9cad80648b033a449660c"><div class="ttname"><a href="a01289.html#a9b178f7a1ae9cad80648b033a449660c">RayTracer::Factories::IFilterFactory::get</a></div><div class="ttdeci">virtual Filters::IFilter &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Get a filter.</div></div>
+<div class="ttc" id="aa01305_html"><div class="ttname"><a href="a01305.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
+<div class="ttc" id="aa01309_html"><div class="ttname"><a href="a01309.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01461_html"><div class="ttname"><a href="a01461.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

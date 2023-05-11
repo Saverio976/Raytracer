@@ -14,6 +14,8 @@ Directory dependency graph for src:<para>
 <simplesect>
     <title>Directories    </title>
         <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_8b29354ea792f14f229ba6ab36888b3c">Display</link></para>
+</listitem>
             <listitem><para>directory <link linkend="_dir_093f3b7f7c7a61ef21fffb3d339f67e1">Entities</link></para>
 </listitem>
             <listitem><para>directory <link linkend="_dir_3dbe57e65c50a7a17fba27939d267647">Factories</link></para>
@@ -31,15 +33,15 @@ Directory dependency graph for src:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00119">ILogger.hpp</link></para>
+            <listitem><para>file <link linkend="_a00131">ILogger.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00143">Logger.hpp</link></para>
+            <listitem><para>file <link linkend="_a00155">Logger.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00146">Main.hpp</link></para>
+            <listitem><para>file <link linkend="_a00158">Main.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00149">Parameters.hpp</link></para>
+            <listitem><para>file <link linkend="_a00161">Parameters.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00188">Progress.hpp</link></para>
+            <listitem><para>file <link linkend="_a00200">Progress.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

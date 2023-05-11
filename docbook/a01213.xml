@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01213" xml:lang="en-US">
+<title>RayTracer::Display::IDisplayModule Class Reference</title>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary></indexterm>
+<para>
+<computeroutput>#include &lt;IDisplayModule.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Display::IDisplayModule:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01212.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Display::IDisplayModule:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01211.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01221">EndFailed</link></para>
+
+<para>If the function end failed, but it can continue without being completed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01225">EventFailed</link></para>
+
+<para>If the function event failed, but it can continue without being completed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01217">StartFailed</link></para>
+
+<para>If the function start failed, but it can continue without being completed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01229">TickFailed</link></para>
+
+<para>If the function tick failed, but it can continue without being completed. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01213_1a54a9ed1413e8dee3b3ca4abb99a93840">~IDisplayModule</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01213_1a5ac097661d1f612000e583ee1163746c">tick</link> (sf::RenderWindow &amp;window)=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01213_1afb3d740a5cfc3b34936d16df8dec9ac8">event</link> (sf::RenderWindow &amp;window, const sf::Event &amp;event)=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01213_1a0fd793ae621d180e3a609f69df8e4315">start</link> (sf::RenderWindow &amp;window)=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01213_1af49fc72ce860bb732ac3e95c57a9684f">end</link> ()=0</para>
+</listitem>
+            <listitem><para>virtual std::string <link linkend="_a01213_1aa1166ce7a418d8925502d67674c15c9a">getName</link> () const =0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01213_1a54a9ed1413e8dee3b3ca4abb99a93840"/>    <section>
+    <title>~IDisplayModule()</title>
+<indexterm><primary>~IDisplayModule</primary><secondary>RayTracer::Display::IDisplayModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary><secondary>~IDisplayModule</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Display::IDisplayModule::~IDisplayModule ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01213_1af49fc72ce860bb732ac3e95c57a9684f"/>    <section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>RayTracer::Display::IDisplayModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary><secondary>end</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Display::IDisplayModule::end ( )<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01237_1aad98a6855bb06d085697a2c3144923af">RayTracer::Display::ProgressModule</link>, and <link linkend="_a01233_1a3ee02c659ba1cd38bd0ec3132c108003">RayTracer::Display::CanvasModule</link>.</para>
+    </section><anchor xml:id="_a01213_1afb3d740a5cfc3b34936d16df8dec9ac8"/>    <section>
+    <title>event()</title>
+<indexterm><primary>event</primary><secondary>RayTracer::Display::IDisplayModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary><secondary>event</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Display::IDisplayModule::event (sf::RenderWindow &amp; window, const sf::Event &amp; event)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01237_1a24bc9a0b0a6367e7cbf7ac24eacfc3f2">RayTracer::Display::ProgressModule</link>, and <link linkend="_a01233_1ad48792782cf179be2008d5647f42134d">RayTracer::Display::CanvasModule</link>.</para>
+    </section><anchor xml:id="_a01213_1aa1166ce7a418d8925502d67674c15c9a"/>    <section>
+    <title>getName()</title>
+<indexterm><primary>getName</primary><secondary>RayTracer::Display::IDisplayModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary><secondary>getName</secondary></indexterm>
+<para><computeroutput>virtual std::string RayTracer::Display::IDisplayModule::getName ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01237_1a5b3e6822759e29ad27963c7fdca55624">RayTracer::Display::ProgressModule</link>, and <link linkend="_a01233_1a95781ba88742675a0d60586d2c859ccd">RayTracer::Display::CanvasModule</link>.</para>
+    </section><anchor xml:id="_a01213_1a0fd793ae621d180e3a609f69df8e4315"/>    <section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>RayTracer::Display::IDisplayModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Display::IDisplayModule::start (sf::RenderWindow &amp; window)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01237_1adec0d08bdaf9fcf7aa13b80b3d0aba69">RayTracer::Display::ProgressModule</link>, and <link linkend="_a01233_1a9d1dd20b4aeded5e5f99597710cf3902">RayTracer::Display::CanvasModule</link>.</para>
+    </section><anchor xml:id="_a01213_1a5ac097661d1f612000e583ee1163746c"/>    <section>
+    <title>tick()</title>
+<indexterm><primary>tick</primary><secondary>RayTracer::Display::IDisplayModule</secondary></indexterm>
+<indexterm><primary>RayTracer::Display::IDisplayModule</primary><secondary>tick</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Display::IDisplayModule::tick (sf::RenderWindow &amp; window)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a01237_1aa543e1d4e49ba021f6cc14e9b3087303">RayTracer::Display::ProgressModule</link>, and <link linkend="_a01233_1a4525e245621da6c4af7b5d6848bdfb88">RayTracer::Display::CanvasModule</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Display/<link linkend="_a00071">IDisplayModule.hpp</link></section>
+</section>

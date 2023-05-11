@@ -1,7 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00203" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ConfigWrapper.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ConfigWrapper.hpp</primary></indexterm>
+<programlisting>#include &lt;libconfig.h++&gt;
+#include &lt;memory&gt;
+#include &quot;IConfig.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;SettingWrapper.hpp&quot;
+</programlisting>Include dependency graph for ConfigWrapper.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00204.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 This graph shows which files directly or indirectly include this file:<para>
     <informalfigure>
         <mediaobject>
@@ -14,18 +28,24 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01408">RayTracer::Scenes::ISceneState</link></para>
+            <listitem><para>class <link linkend="_a01425">RayTracer::Scenes::ConfigWrapper</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01429">RayTracer::Scenes::ConfigWrapper::ReadException</link></para>
 
-<para>The <link linkend="_a01436">SceneState</link> interface. </para>
+<para>an exception for when the file can&apos;t be read </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01433">RayTracer::Scenes::ConfigWrapper::WriteException</link></para>
+
+<para>an exception for when the file can&apos;t be written </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00355">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00368">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

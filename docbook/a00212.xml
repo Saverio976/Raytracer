@@ -1,19 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00212" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp</primary></indexterm>
-<programlisting>#include &lt;exception&gt;
-#include &lt;string&gt;
-#include &lt;functional&gt;
-#include &lt;map&gt;
-#include &lt;fstream&gt;
-#include &lt;filesystem&gt;
-#include &quot;FilterLoader.hpp&quot;
-#include &quot;EntityLoader.hpp&quot;
-#include &quot;MaterialLoader.hpp&quot;
-#include &quot;ConfigWrapper.hpp&quot;
-#include &quot;ILogger.hpp&quot;
-</programlisting>Include dependency graph for SceneLoader.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/IDisplayable.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for IDisplayable.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -22,23 +13,36 @@
         </mediaobject>
     </informalfigure>
 </para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00214.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01428">RayTracer::Scenes::SceneLoader</link></para>
+            <listitem><para>class <link linkend="_a01449">RayTracer::Scenes::IDisplayable</link></para>
 
-<para>The <link linkend="_a01428">SceneLoader</link> class. </para>
+<para>The <link linkend="_a01449">IDisplayable</link> interface. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01432">RayTracer::Scenes::SceneLoader::BadFileError</link></para>
+            <listitem><para>class <link linkend="_a01453">RayTracer::Scenes::IDisplayable::IDisplayableException</link></para>
+
+<para>an exception for when the key is not found </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00355">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00359">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00368">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

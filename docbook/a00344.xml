@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00344" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;functional&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
+#include &quot;Transform.hpp&quot;
+#include &quot;IMaterial.hpp&quot;
+</programlisting>Include dependency graph for TriangleEntity.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00345.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00346.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01657">RayTracer::PluginsExt::Triangle::TriangleEntity</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00388">RayTracer::PluginsExt::Triangle</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

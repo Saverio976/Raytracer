@@ -1,0 +1,182 @@
+\hypertarget{a01301}{}\doxysection{Ray\+Tracer\+::Factories\+::TFactory$<$ Handler, Interface $>$ Class Template Reference}
+\label{a01301}\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+
+
+The \mbox{\hyperlink{a01301}{TFactory}}.  
+
+
+
+
+{\ttfamily \#include $<$TFactory.\+hpp$>$}
+
+
+
+Collaboration diagram for Ray\+Tracer\+::Factories\+::TFactory$<$ Handler, Interface $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a01299}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01301_aae22acf26f245aeba914dfebabab5ead}{$\sim$\+TFactory}} ()=default
+\item 
+\mbox{\hyperlink{a01301_a39b228c7b720448e60c71a34ad66c5b6}{TFactory}} (const \mbox{\hyperlink{a01301}{TFactory}}$<$ Handler, Interface $>$ \&other)=delete
+\item 
+void \mbox{\hyperlink{a01301_a243a131e1b26b5b796f97522f8ccaf7a}{add}} (const std\+::string \&name, std\+::unique\+\_\+ptr$<$ Handler $>$ handler)
+\begin{DoxyCompactList}\small\item\em Add an {\ttfamily handler} \end{DoxyCompactList}\item 
+Interface \& \mbox{\hyperlink{a01301_afff24c66a00ccb100f136f5c5dc68608}{get}} (const std\+::string \&name, const \mbox{\hyperlink{a01461}{Scenes\+::\+ISetting}} \&setting, \mbox{\hyperlink{a01309}{ILogger}} \&logger)
+\begin{DoxyCompactList}\small\item\em Get an {\ttfamily interface} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01301_aa0ac3a81c43e942a9905facbfbccfc9b}{clear\+All}} ()
+\begin{DoxyCompactList}\small\item\em Clear all handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01301}{TFactory}}$<$ Handler, Interface $>$ \& \mbox{\hyperlink{a01301_afdf10ff424cb227b49c92283102e6725}{get\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Get the factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01301_a8dd0d053210805c8da2dffe2c3fc642f}{TFactory}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ Handler $>$ $>$ \mbox{\hyperlink{a01301_aff3739eaaa034a8d95780e4785caf888}{\+\_\+stock}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{a01301}{TFactory}}$<$ Handler, Interface $>$ $>$ \mbox{\hyperlink{a01301_a8b67d7064c132ca386500b4ccd1940df}{\+\_\+factory}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Handler, typename Interface$>$\newline
+class Ray\+Tracer\+::\+Factories\+::\+TFactory$<$ Handler, Interface $>$}
+
+The \mbox{\hyperlink{a01301}{TFactory}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Handler} & the handler class type \\
+\hline
+{\em Interface} & the interface class type \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a01301_aae22acf26f245aeba914dfebabab5ead}\label{a01301_aae22acf26f245aeba914dfebabab5ead}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!````~TFactory@{$\sim$TFactory}}
+\index{````~TFactory@{$\sim$TFactory}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$TFactory()}{~TFactory()}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+\mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::$\sim$\mbox{\hyperlink{a01301}{TFactory}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{a01301_a39b228c7b720448e60c71a34ad66c5b6}\label{a01301_a39b228c7b720448e60c71a34ad66c5b6}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!TFactory@{TFactory}}
+\index{TFactory@{TFactory}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{TFactory()}{TFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+\mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::\mbox{\hyperlink{a01301}{TFactory}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01301}{TFactory}}$<$ Handler, Interface $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{a01301_a8dd0d053210805c8da2dffe2c3fc642f}\label{a01301_a8dd0d053210805c8da2dffe2c3fc642f}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!TFactory@{TFactory}}
+\index{TFactory@{TFactory}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{TFactory()}{TFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+\mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::\mbox{\hyperlink{a01301}{TFactory}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a01301_a243a131e1b26b5b796f97522f8ccaf7a}\label{a01301_a243a131e1b26b5b796f97522f8ccaf7a}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!add@{add}}
+\index{add@{add}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+void \mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::unique\+\_\+ptr$<$ Handler $>$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an {\ttfamily handler} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name \\
+\hline
+{\em handler} & the handler \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a01301_aa0ac3a81c43e942a9905facbfbccfc9b}\label{a01301_aa0ac3a81c43e942a9905facbfbccfc9b}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!clearAll@{clearAll}}
+\index{clearAll@{clearAll}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{clearAll()}{clearAll()}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+void \mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::clear\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear all handler. 
+
+\mbox{\Hypertarget{a01301_afff24c66a00ccb100f136f5c5dc68608}\label{a01301_afff24c66a00ccb100f136f5c5dc68608}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!get@{get}}
+\index{get@{get}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+Interface\& \mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{a01461}{Scenes\+::\+ISetting}} \&}]{setting,  }\item[{\mbox{\hyperlink{a01309}{ILogger}} \&}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an {\ttfamily interface} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name \\
+\hline
+{\em setting} & the setting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the interface 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01301_afdf10ff424cb227b49c92283102e6725}\label{a01301_afdf10ff424cb227b49c92283102e6725}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!getFactory@{getFactory}}
+\index{getFactory@{getFactory}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{getFactory()}{getFactory()}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+static \mbox{\hyperlink{a01301}{TFactory}}$<$Handler, Interface$>$\& \mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::get\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the factory. 
+
+\begin{DoxyReturn}{Returns}
+the factory 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a01301_a8b67d7064c132ca386500b4ccd1940df}\label{a01301_a8b67d7064c132ca386500b4ccd1940df}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!\_factory@{\_factory}}
+\index{\_factory@{\_factory}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{\_factory}{\_factory}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{a01301}{TFactory}}$<$Handler, Interface$>$ $>$ \mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::\+\_\+factory\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{a01301_aff3739eaaa034a8d95780e4785caf888}\label{a01301_aff3739eaaa034a8d95780e4785caf888}} 
+\index{RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}!\_stock@{\_stock}}
+\index{\_stock@{\_stock}!RayTracer::Factories::TFactory$<$ Handler, Interface $>$@{RayTracer::Factories::TFactory$<$ Handler, Interface $>$}}
+\doxysubsubsection{\texorpdfstring{\_stock}{\_stock}}
+{\footnotesize\ttfamily template$<$typename Handler , typename Interface $>$ \\
+std\+::map$<$std\+::string, std\+::unique\+\_\+ptr$<$Handler$>$ $>$ \mbox{\hyperlink{a01301}{Ray\+Tracer\+::\+Factories\+::\+TFactory}}$<$ Handler, Interface $>$\+::\+\_\+stock\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\mbox{\hyperlink{a00125}{TFactory.\+hpp}}\end{DoxyCompactItemize}

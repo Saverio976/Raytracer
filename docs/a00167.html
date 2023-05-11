@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/FilterLoader.hpp File Reference</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityHandler.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_94f36a39fb90e1f2b0528819abd4baaf.html">Filters</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_99a9e5809d7dd3eea28a4e7b1821ca7c.html">Entities</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,25 +70,26 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">FilterLoader.hpp File Reference</div>  </div>
+<div class="title">EntityHandler.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00113_source.html">TFactory.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00116_source.html">IFilter.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00164_source.html">FilterHandler.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00185_source.html">PluginLoader.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00098_source.html">FilterFactory.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00083_source.html">IEntity.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00173_source.html">IEntityCreator.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00131_source.html">ILogger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00194_source.html">PluginHandler.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00218_source.html">ISetting.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for FilterLoader.hpp:</div>
+Include dependency graph for EntityHandler.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00168.svg" width="1567" height="739"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00168.svg" width="956" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00169.svg" width="287" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00169.svg" width="1070" height="468"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -96,23 +97,23 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01344.html">RayTracer::Plugins::Filters::FilterLoader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a01344.html" title="The FilterLoader.">FilterLoader</a>.  <a href="a01344.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01377.html">RayTracer::Plugins::Entities::EntityHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a01377.html" title="The EntityHandler.">EntityHandler</a>.  <a href="a01377.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00345"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00345.html">RayTracer</a></td></tr>
+<tr class="memitem:a00357"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00357.html">RayTracer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00351"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00351.html">RayTracer::Plugins</a></td></tr>
+<tr class="memitem:a00364"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00364.html">RayTracer::Plugins</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00353"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00353.html">RayTracer::Plugins::Filters</a></td></tr>
+<tr class="memitem:a00365"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00365.html">RayTracer::Plugins::Entities</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:34 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

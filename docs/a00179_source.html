@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/MaterialLoader.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/FilterLoader.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,56 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_090dd539cb56febacd605ed05f9fccf1.html">Materials</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_94f36a39fb90e1f2b0528819abd4baaf.html">Filters</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">MaterialLoader.hpp</div>  </div>
+<div class="title">FilterLoader.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00179.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** EntityLoader.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** FilterLoader.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MATERIALLOADER_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define MATERIALLOADER_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">TFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00077.html">IMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00185.html">PluginLoader.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00176.html">MaterialHandler.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00110.html">MaterialFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00354.html">RayTracer::Plugins::Materials</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01360.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01360.html">MaterialLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01368.html">PluginLoader</a>&lt;MaterialHandler, RayTracer::Entities::IMaterial, Factories::MaterialFactory&gt; {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01360.html#a59b717a6c6a694e4eb3885e9e02019b7">   31</a></span>&#160;        <a class="code" href="a01360.html#a59b717a6c6a694e4eb3885e9e02019b7">MaterialLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01360.html#abd8435c9b17e040199c57326d2a59b24">   35</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a01360.html#abd8435c9b17e040199c57326d2a59b24">loadMaterials</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01360.html#ae81f0e31968edf29ce3edd8c3f2ed215">   39</a></span>&#160;        std::string <a class="code" href="a01360.html#ae81f0e31968edf29ce3edd8c3f2ed215">_directory</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00077_html"><div class="ttname"><a href="a00077.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00110_html"><div class="ttname"><a href="a00110.html">MaterialFactory.hpp</a></div></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">TFactory.hpp</a></div></div>
-<div class="ttc" id="aa00176_html"><div class="ttname"><a href="a00176.html">MaterialHandler.hpp</a></div></div>
-<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">PluginLoader.hpp</a></div></div>
-<div class="ttc" id="aa00354_html"><div class="ttname"><a href="a00354.html">RayTracer::Plugins::Materials</a></div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:16</div></div>
-<div class="ttc" id="aa01360_html"><div class="ttname"><a href="a01360.html">RayTracer::Plugins::Materials::MaterialLoader</a></div><div class="ttdoc">The MaterialLoader.</div><div class="ttdef"><b>Definition:</b> MaterialLoader.hpp:24</div></div>
-<div class="ttc" id="aa01360_html_a59b717a6c6a694e4eb3885e9e02019b7"><div class="ttname"><a href="a01360.html#a59b717a6c6a694e4eb3885e9e02019b7">RayTracer::Plugins::Materials::MaterialLoader::MaterialLoader</a></div><div class="ttdeci">MaterialLoader(const std::string &amp;directory)</div><div class="ttdoc">MaterialLoader constructor (doesn't load anything)</div></div>
-<div class="ttc" id="aa01360_html_abd8435c9b17e040199c57326d2a59b24"><div class="ttname"><a href="a01360.html#abd8435c9b17e040199c57326d2a59b24">RayTracer::Plugins::Materials::MaterialLoader::loadMaterials</a></div><div class="ttdeci">void loadMaterials()</div><div class="ttdoc">Load all the materials in the factory singleton.</div></div>
-<div class="ttc" id="aa01360_html_ae81f0e31968edf29ce3edd8c3f2ed215"><div class="ttname"><a href="a01360.html#ae81f0e31968edf29ce3edd8c3f2ed215">RayTracer::Plugins::Materials::MaterialLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> MaterialLoader.hpp:39</div></div>
-<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef FILTERLOADER_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">    #define FILTERLOADER_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">TFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00176.html">FilterHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00197.html">PluginLoader.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00110.html">FilterFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00366.html">RayTracer::Plugins::Filters</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01393.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01393.html">FilterLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01417.html">PluginLoader</a>&lt;FilterHandler, RayTracer::Filters::IFilter, Factories::FilterFactory&gt; {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01393.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">   30</a></span>&#160;            <a class="code" href="a01393.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">FilterLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01393.html#ad7a0421cff475c80bb59141dfbba4c0d">   34</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01393.html#ad7a0421cff475c80bb59141dfbba4c0d">loadFilters</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*FILTERLOADER_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00110_html"><div class="ttname"><a href="a00110.html">FilterFactory.hpp</a></div></div>
+<div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">TFactory.hpp</a></div></div>
+<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
+<div class="ttc" id="aa00176_html"><div class="ttname"><a href="a00176.html">FilterHandler.hpp</a></div></div>
+<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">PluginLoader.hpp</a></div></div>
+<div class="ttc" id="aa00366_html"><div class="ttname"><a href="a00366.html">RayTracer::Plugins::Filters</a></div><div class="ttdef"><b>Definition:</b> FilterHandler.hpp:18</div></div>
+<div class="ttc" id="aa01393_html"><div class="ttname"><a href="a01393.html">RayTracer::Plugins::Filters::FilterLoader</a></div><div class="ttdoc">The FilterLoader.</div><div class="ttdef"><b>Definition:</b> FilterLoader.hpp:23</div></div>
+<div class="ttc" id="aa01393_html_a5a1f7ace06778e2bc4c46a6a87ef2f57"><div class="ttname"><a href="a01393.html#a5a1f7ace06778e2bc4c46a6a87ef2f57">RayTracer::Plugins::Filters::FilterLoader::FilterLoader</a></div><div class="ttdeci">FilterLoader(const std::string &amp;directory)</div><div class="ttdoc">FilterLoader constructor (doesn't load anything)</div></div>
+<div class="ttc" id="aa01393_html_ad7a0421cff475c80bb59141dfbba4c0d"><div class="ttname"><a href="a01393.html#ad7a0421cff475c80bb59141dfbba4c0d">RayTracer::Plugins::Filters::FilterLoader::loadFilters</a></div><div class="ttdeci">void loadFilters()</div><div class="ttdoc">Load all the filters in the factory singleton.</div></div>
+<div class="ttc" id="aa01417_html"><div class="ttname"><a href="a01417.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

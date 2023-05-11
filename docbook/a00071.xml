@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00071" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp</primary></indexterm>
-<programlisting>#include &quot;Transform/ITransform.hpp&quot;
-</programlisting>Include dependency graph for IEntity.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Display/IDisplayModule.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Display/IDisplayModule.hpp</primary></indexterm>
+<programlisting>#include &lt;SFML/Graphics.hpp&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for IDisplayModule.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -24,18 +25,32 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01196">RayTracer::Entities::IEntity</link></para>
+            <listitem><para>class <link linkend="_a01213">RayTracer::Display::IDisplayModule</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01217">RayTracer::Display::IDisplayModule::StartFailed</link></para>
 
-<para>The <link linkend="_a01196">IEntity</link> class. </para>
+<para>If the function start failed, but it can continue without being completed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01221">RayTracer::Display::IDisplayModule::EndFailed</link></para>
+
+<para>If the function end failed, but it can continue without being completed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01225">RayTracer::Display::IDisplayModule::EventFailed</link></para>
+
+<para>If the function event failed, but it can continue without being completed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01229">RayTracer::Display::IDisplayModule::TickFailed</link></para>
+
+<para>If the function tick failed, but it can continue without being completed. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00346">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00358">RayTracer::Display</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

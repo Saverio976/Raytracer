@@ -1,13 +1,11 @@
-<map id="/home/runner/work/Raytracer/Raytracer/src/Factories/TFactory.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Factories/TFactory.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="477,5,689,61"/>
-<area shape="rect" id="node2" href="$a00095.html" title=" " alt="" coords="49,109,261,165"/>
-<area shape="rect" id="node3" href="$a00158.html" title=" " alt="" coords="263,213,479,269"/>
-<area shape="rect" id="node7" href="$a00098.html" title=" " alt="" coords="924,109,1136,165"/>
-<area shape="rect" id="node8" href="$a00167.html" title=" " alt="" coords="840,213,1052,269"/>
-<area shape="rect" id="node9" href="$a00110.html" title=" " alt="" coords="335,109,547,165"/>
-<area shape="rect" id="node10" href="$a00179.html" title=" " alt="" coords="504,213,732,269"/>
-<area shape="rect" id="node11" href="$a00185.html" title=" " alt="" coords="621,117,900,158"/>
-<area shape="rect" id="node5" href="$a00209.html" title=" " alt="" coords="5,221,239,262"/>
-<area shape="rect" id="node4" href="$a00212.html" title=" " alt="" coords="480,317,756,359"/>
-<area shape="rect" id="node6" href="$a00146.html" title=" " alt="" coords="16,317,228,359"/>
+<map id="/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp" name="/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="200,5,412,61"/>
+<area shape="rect" id="node2" href="$a00107.html" title=" " alt="" coords="200,109,412,165"/>
+<area shape="rect" id="node3" href="$a00170.html" title=" " alt="" coords="74,213,290,269"/>
+<area shape="rect" id="node6" href="$a00221.html" title=" " alt="" coords="352,221,585,262"/>
+<area shape="rect" id="node4" href="$a00224.html" title=" " alt="" coords="5,325,281,366"/>
+<area shape="rect" id="node5" href="$a00068.html" title=" " alt="" coords="109,421,353,463"/>
+<area shape="rect" id="node7" href="$a00074.html" title=" " alt="" coords="357,317,581,373"/>
+<area shape="rect" id="node8" href="$a00077.html" title=" " alt="" coords="605,317,829,373"/>
+<area shape="rect" id="node9" href="$a00158.html" title=" " alt="" coords="852,325,1064,366"/>
 </map>

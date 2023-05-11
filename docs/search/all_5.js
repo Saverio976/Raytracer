@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['end_159',['end',['../a01280.html#a6a54ffc59239a7865fbc4fd7569ba80b',1,'RayTracer::Images::IRayIterator::end()'],['../a01296.html#a09940f5ca315fc3cfc04b8627682f124',1,'RayTracer::Images::RayIterrator::end()'],['../a01484.html#aced1432cbb6b6a933d0c78ca0d4fdbe2',1,'RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::end()'],['../a01500.html#aeb74f5baf7988ff13997e217ccc9a5c5',1,'RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::end()']]],
-  ['entityfactory_160',['EntityFactory',['../a01228.html#abf6347cf4c33e39e030802e1ddac5029',1,'RayTracer::Factories::EntityFactory::EntityFactory()=default'],['../a01228.html#adc5584afd5fe3892a470b903b08e51e8',1,'RayTracer::Factories::EntityFactory::EntityFactory(const EntityFactory &amp;other)=delete'],['../a01228.html',1,'RayTracer::Factories::EntityFactory']]],
-  ['entityfactory_2ehpp_161',['EntityFactory.hpp',['../a00095.html',1,'']]],
-  ['entityhandler_162',['EntityHandler',['../a01328.html#a95cab10c503b07e5fe749336efeca864',1,'RayTracer::Plugins::Entities::EntityHandler::EntityHandler()'],['../a01328.html',1,'RayTracer::Plugins::Entities::EntityHandler']]],
-  ['entityhandler_2ehpp_163',['EntityHandler.hpp',['../a00155.html',1,'']]],
-  ['entityloader_164',['EntityLoader',['../a01332.html#ae4c0b2318578996867d5486fcd6bb04f',1,'RayTracer::Plugins::Entities::EntityLoader::EntityLoader()'],['../a01332.html',1,'RayTracer::Plugins::Entities::EntityLoader']]],
-  ['entityloader_2ehpp_165',['EntityLoader.hpp',['../a00158.html',1,'']]],
-  ['error_166',['error',['../a01260.html#a90f646fcaf4d02c6af0faa7f5ce4e3c8',1,'RayTracer::ILogger::error()'],['../a01304.html#af0d5fc305cc349ff3feb193afac0b519',1,'RayTracer::Logger::error()']]],
-  ['exportscene_167',['exportScene',['../a01308.html#a2a218028362b3cb4d4f0e11436d5b8f3',1,'RayTracer::Main']]]
+  ['end_170',['end',['../a01549.html#aeb74f5baf7988ff13997e217ccc9a5c5',1,'RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::end()'],['../a01533.html#aced1432cbb6b6a933d0c78ca0d4fdbe2',1,'RayTracer::PluginsExt::Camera::Clustered::ClusterRayIterator::end()'],['../a01345.html#a09940f5ca315fc3cfc04b8627682f124',1,'RayTracer::Images::RayIterrator::end()'],['../a01205.html#a8b9906fa497b35a843c1840c862d11e7',1,'RayTracer::Display::Display::end()'],['../a01213.html#af49fc72ce860bb732ac3e95c57a9684f',1,'RayTracer::Display::IDisplayModule::end()'],['../a01233.html#a3ee02c659ba1cd38bd0ec3132c108003',1,'RayTracer::Display::CanvasModule::end()'],['../a01237.html#aad98a6855bb06d085697a2c3144923af',1,'RayTracer::Display::ProgressModule::end()'],['../a01329.html#a6a54ffc59239a7865fbc4fd7569ba80b',1,'RayTracer::Images::IRayIterator::end()']]],
+  ['endfailed_171',['EndFailed',['../a01221.html#a712a60be7343dff02e65c733df9ec041',1,'RayTracer::Display::IDisplayModule::EndFailed::EndFailed()'],['../a01221.html',1,'RayTracer::Display::IDisplayModule::EndFailed']]],
+  ['entityfactory_172',['EntityFactory',['../a01277.html#abf6347cf4c33e39e030802e1ddac5029',1,'RayTracer::Factories::EntityFactory::EntityFactory()=default'],['../a01277.html#adc5584afd5fe3892a470b903b08e51e8',1,'RayTracer::Factories::EntityFactory::EntityFactory(const EntityFactory &amp;other)=delete'],['../a01277.html',1,'RayTracer::Factories::EntityFactory']]],
+  ['entityfactory_2ehpp_173',['EntityFactory.hpp',['../a00107.html',1,'']]],
+  ['entityhandler_174',['EntityHandler',['../a01377.html#a95cab10c503b07e5fe749336efeca864',1,'RayTracer::Plugins::Entities::EntityHandler::EntityHandler()'],['../a01377.html',1,'RayTracer::Plugins::Entities::EntityHandler']]],
+  ['entityhandler_2ehpp_175',['EntityHandler.hpp',['../a00167.html',1,'']]],
+  ['entityloader_176',['EntityLoader',['../a01381.html#ae4c0b2318578996867d5486fcd6bb04f',1,'RayTracer::Plugins::Entities::EntityLoader::EntityLoader()'],['../a01381.html',1,'RayTracer::Plugins::Entities::EntityLoader']]],
+  ['entityloader_2ehpp_177',['EntityLoader.hpp',['../a00170.html',1,'']]],
+  ['error_178',['error',['../a01309.html#a90f646fcaf4d02c6af0faa7f5ce4e3c8',1,'RayTracer::ILogger::error()'],['../a01353.html#af0d5fc305cc349ff3feb193afac0b519',1,'RayTracer::Logger::error()']]],
+  ['event_179',['event',['../a01213.html#afb3d740a5cfc3b34936d16df8dec9ac8',1,'RayTracer::Display::IDisplayModule::event()'],['../a01233.html#ad48792782cf179be2008d5647f42134d',1,'RayTracer::Display::CanvasModule::event()'],['../a01237.html#a24bc9a0b0a6367e7cbf7ac24eacfc3f2',1,'RayTracer::Display::ProgressModule::event()']]],
+  ['eventfailed_180',['EventFailed',['../a01225.html#ab5ef7862da5a2291e26e9253b4e2b46f',1,'RayTracer::Display::IDisplayModule::EventFailed::EventFailed()'],['../a01225.html',1,'RayTracer::Display::IDisplayModule::EventFailed']]],
+  ['execifready_181',['execIfReady',['../a01233.html#a7a636aca8943ca5c05cd8b041d60eabc',1,'RayTracer::Display::CanvasModule']]],
+  ['exportscene_182',['exportScene',['../a01357.html#a2a218028362b3cb4d4f0e11436d5b8f3',1,'RayTracer::Main']]]
 ];

@@ -1,18 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00140" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp</primary></indexterm>
-<programlisting>#include &lt;algorithm&gt;
-#include &lt;cstddef&gt;
-#include &lt;iterator&gt;
-#include &lt;memory&gt;
-#include &lt;string&gt;
-#include &quot;ICamera.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/ImagePipeLine.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/ImagePipeLine.hpp</primary></indexterm>
+<programlisting>#include &quot;ILogger.hpp&quot;
+#include &quot;Image.hpp&quot;
+#include &quot;IDisplayable.hpp&quot;
+#include &quot;IFilter.hpp&quot;
+#include &quot;ISceneState.hpp&quot;
 #include &quot;IRayIterator.hpp&quot;
-#include &quot;Ray.hpp&quot;
-#include &quot;Vector2i.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for RayIterrator.hpp:<para>
+</programlisting>Include dependency graph for ImagePipeLine.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -24,20 +20,18 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01296">RayTracer::Images::RayIterrator</link></para>
+            <listitem><para>class <link linkend="_a01325">RayTracer::Images::ImagePipeLine</link></para>
 
-<para>The <link linkend="_a01296">RayIterrator</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01300">RayTracer::Images::RayIterrator::Iterrator</link></para>
+<para>The <link linkend="_a01325">ImagePipeLine</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00350">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00363">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

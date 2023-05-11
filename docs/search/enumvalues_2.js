@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['camera_1125',['Camera',['../a01196.html#ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b',1,'RayTracer::Entities::IEntity']]],
-  ['cancelled_1126',['CANCELLED',['../a01408.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2',1,'RayTracer::Scenes::ISceneState']]]
+  ['camera_1220',['Camera',['../a01245.html#ab003087623e47600c09a76ff8138d37ba967d35e40f3f95b1f538bd248640bf3b',1,'RayTracer::Entities::IEntity']]],
+  ['cancelled_1221',['CANCELLED',['../a01457.html#a3abb46616bc66e9744ad0bed1635afe6a9f935beb31030ad0d4d26126c0f39bf2',1,'RayTracer::Scenes::ISceneState']]]
 ];

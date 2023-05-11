@@ -1,12 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00074" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/ILight.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/ILight.hpp</primary></indexterm>
-<programlisting>#include &quot;Color.hpp&quot;
-#include &quot;IDisplayable.hpp&quot;
-#include &quot;Transform/Vector3f.hpp&quot;
-#include &quot;IEntity.hpp&quot;
-</programlisting>Include dependency graph for ILight.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Display/Modules/CanvasModule.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Display/Modules/CanvasModule.hpp</primary></indexterm>
+<programlisting>#include &lt;SFML/Graphics/Font.hpp&gt;
+#include &lt;SFML/Graphics/Image.hpp&gt;
+#include &lt;SFML/System/Clock.hpp&gt;
+#include &lt;functional&gt;
+#include &quot;ICamera.hpp&quot;
+#include &quot;IDisplayModule.hpp&quot;
+#include &quot;ITransform.hpp&quot;
+#include &quot;Scene.hpp&quot;
+#include &quot;Transform.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for CanvasModule.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -15,30 +21,19 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00076.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01200">RayTracer::Entities::ILight</link></para>
-
-<para>The <link linkend="_a01200">ILight</link> class. </para>
+            <listitem><para>class <link linkend="_a01233">RayTracer::Display::CanvasModule</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00346">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00358">RayTracer::Display</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -79,6 +79,10 @@ RayTracer::Images::Color \- The \fBColor\fP class\&.
 .RI "void \fBapplyDistance\fP (double distance, double maxDistance)"
 .br
 .RI "apply distance in the color "
+.ti -1c
+.RI "sf::Color \fBtoSfColor\fP () const"
+.br
+.RI "convert color to sfColor "
 .in -1c
 .SS "Private Attributes"
 
@@ -326,6 +330,17 @@ set the color (thread safe)
 \fBReturns\fP
 .RS 4
 the color 
+.RE
+.PP
+
+.SS "sf::Color RayTracer::Images::Color::toSfColor () const"
+
+.PP
+convert color to sfColor 
+.PP
+\fBReturns\fP
+.RS 4
+the sfcolor 
 .RE
 .PP
 

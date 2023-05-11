@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/CameraClusterCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Creator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,62 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_62f615b43676db5ddd87f008b4cc30b3.html">Camera</a></li><li class="navelem"><a class="el" href="dir_6f6b6a3ad8e0d5aad58943c777bbb4ef.html">Cluster</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_d4bc861357cab59352e84826f962b9a0.html">AntiAliasing</a></li><li class="navelem"><a class="el" href="dir_d2bd47c18e6fb74ecf9809c13d3336b6.html">SSAAx4</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">CameraClusterCreator.hpp</div>  </div>
+<div class="title">SSAAx4Creator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00239.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** CameraClusterCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** BasicCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CAMERACREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define CAMERACREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SPHERE_CREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define SPHERE_CREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">CameraClusterEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00361.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00361.html">RayTracer::PluginsExt::Camera::Clustered</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01476.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01476.html">CameraClusterCreator</a> : <span class="keyword">public</span> <a class="code" href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01476.html#aca76b08509235ddda188814ed3056f64">   20</a></span>&#160;            <a class="code" href="a01476.html#aca76b08509235ddda188814ed3056f64">~CameraClusterCreator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01476.html#a25404e4542804e3b327acf2ec5c0fba5">   21</a></span>&#160;            <a class="code" href="a01196.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01476.html#a25404e4542804e3b327acf2ec5c0fba5">create</a>(<span class="keyword">const</span> <a class="code" href="a01412.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01260.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01476.html#a21f32fd3548b0b1b1bc1235745f248fb">   25</a></span>&#160;            std::vector&lt;CameraClusterEntity *&gt; <a class="code" href="a01476.html#a21f32fd3548b0b1b1bc1235745f248fb">_elements</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*CAMERACREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">CameraClusterEntity.hpp</a></div></div>
-<div class="ttc" id="aa00361_html"><div class="ttname"><a href="a00361.html">RayTracer::PluginsExt::Camera::Clustered</a></div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:17</div></div>
-<div class="ttc" id="aa01196_html"><div class="ttname"><a href="a01196.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01336_html"><div class="ttname"><a href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01412_html"><div class="ttname"><a href="a01412.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01476_html"><div class="ttname"><a href="a01476.html">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator</a></div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:18</div></div>
-<div class="ttc" id="aa01476_html_a21f32fd3548b0b1b1bc1235745f248fb"><div class="ttname"><a href="a01476.html#a21f32fd3548b0b1b1bc1235745f248fb">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator::_elements</a></div><div class="ttdeci">std::vector&lt; CameraClusterEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> CameraClusterCreator.hpp:25</div></div>
-<div class="ttc" id="aa01476_html_a25404e4542804e3b327acf2ec5c0fba5"><div class="ttname"><a href="a01476.html#a25404e4542804e3b327acf2ec5c0fba5">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01476_html_aca76b08509235ddda188814ed3056f64"><div class="ttname"><a href="a01476.html#aca76b08509235ddda188814ed3056f64">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator::~CameraClusterCreator</a></div><div class="ttdeci">~CameraClusterCreator()</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">IFilter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00182.html">IFilterCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">SSAAx4Filter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00371.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00372.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01509.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01509.html">SSAAx4Creator</a> : <span class="keyword">public</span> <a class="code" href="a01397.html">Plugins::Filters::IFilterCreator</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01509.html#ab8a4d564fb91dce7d2e171379fd173ec">   22</a></span>&#160;            <a class="code" href="a01509.html#ab8a4d564fb91dce7d2e171379fd173ec">~SSAAx4Creator</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01509.html#a126b9903c84dbeaf947155c00755e6f0">   23</a></span>&#160;            <a class="code" href="a01305.html">Filters::IFilter</a> *<a class="code" href="a01509.html#a126b9903c84dbeaf947155c00755e6f0">create</a>(<span class="keyword">const</span> <a class="code" href="a01461.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01309.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01509.html#a23987d89e741cdc47e8fa7e148ac17b9">   26</a></span>&#160;            std::vector&lt;SSAAx4Filter *&gt; <a class="code" href="a01509.html#a23987d89e741cdc47e8fa7e148ac17b9">_elements</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">IFilter.hpp</a></div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00182_html"><div class="ttname"><a href="a00182.html">IFilterCreator.hpp</a></div></div>
+<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">SSAAx4Filter.hpp</a></div></div>
+<div class="ttc" id="aa00372_html"><div class="ttname"><a href="a00372.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:19</div></div>
+<div class="ttc" id="aa01305_html"><div class="ttname"><a href="a01305.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
+<div class="ttc" id="aa01309_html"><div class="ttname"><a href="a01309.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01397_html"><div class="ttname"><a href="a01397.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
+<div class="ttc" id="aa01461_html"><div class="ttname"><a href="a01461.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01509_html"><div class="ttname"><a href="a01509.html">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator</a></div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:20</div></div>
+<div class="ttc" id="aa01509_html_a126b9903c84dbeaf947155c00755e6f0"><div class="ttname"><a href="a01509.html#a126b9903c84dbeaf947155c00755e6f0">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::create</a></div><div class="ttdeci">Filters::IFilter * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create a filter with a setting.</div></div>
+<div class="ttc" id="aa01509_html_a23987d89e741cdc47e8fa7e148ac17b9"><div class="ttname"><a href="a01509.html#a23987d89e741cdc47e8fa7e148ac17b9">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::_elements</a></div><div class="ttdeci">std::vector&lt; SSAAx4Filter * &gt; _elements</div><div class="ttdef"><b>Definition:</b> SSAAx4Creator.hpp:26</div></div>
+<div class="ttc" id="aa01509_html_ab8a4d564fb91dce7d2e171379fd173ec"><div class="ttname"><a href="a01509.html#ab8a4d564fb91dce7d2e171379fd173ec">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Creator::~SSAAx4Creator</a></div><div class="ttdeci">~SSAAx4Creator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

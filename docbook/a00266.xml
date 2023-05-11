@@ -1,13 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00266" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeEntity.hpp</primary></indexterm>
-<programlisting>#include &lt;cmath&gt;
-#include &quot;ILogger.hpp&quot;
-#include &quot;IPrimitive.hpp&quot;
-#include &quot;Transform.hpp&quot;
-#include &quot;IMaterial.hpp&quot;
-</programlisting>Include dependency graph for ConeEntity.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom/CustomRayIterator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/FullCustom/CustomRayIterator.hpp</primary></indexterm>
+<programlisting>#include &lt;algorithm&gt;
+#include &lt;cstddef&gt;
+#include &lt;iterator&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &quot;ICamera.hpp&quot;
+#include &quot;IRayIterator.hpp&quot;
+#include &quot;Ray.hpp&quot;
+#include &quot;Vector2i.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for CustomRayIterator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -16,30 +21,27 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00268.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01520">RayTracer::PluginsExt::Cone::ConeEntity</link></para>
+            <listitem><para>class <link linkend="_a01549">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator</link></para>
+
+<para>The <link linkend="_a01549">CustomRayIterator</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01553">RayTracer::PluginsExt::Camera::FullCustom::CustomRayIterator::Iterator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00356">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00364">RayTracer::PluginsExt::Cone</link></para>
+            <listitem><para> <link linkend="_a00373">RayTracer::PluginsExt::Camera</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00375">RayTracer::PluginsExt::Camera::FullCustom</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

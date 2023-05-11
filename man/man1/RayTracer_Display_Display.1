@@ -1,0 +1,99 @@
+.TH "RayTracer::Display::Display" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Display::Display
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Display\&.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBStartFailed\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDisplay\fP (\fBILogger\fP &logger, \fBScenes::Scene\fP &scene, \fBScenes::SceneLoader\fP &loader)"
+.br
+.ti -1c
+.RI "\fB~Display\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBremoveModule\fP (const std::vector< std::string > &modulesToRemove)"
+.br
+.ti -1c
+.RI "void \fBrun\fP (sf::RenderWindow &window)"
+.br
+.ti -1c
+.RI "void \fBend\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::unique_ptr< \fBIDisplayModule\fP > > \fB_modules\fP"
+.br
+.ti -1c
+.RI "\fBScenes::Scene\fP & \fB_scene\fP"
+.br
+.ti -1c
+.RI "\fBScenes::SceneLoader\fP & \fB_loader\fP"
+.br
+.ti -1c
+.RI "sf::Font \fB_font\fP"
+.br
+.ti -1c
+.RI "size_t \fB_position\fP = 0"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Display::Display::Display (\fBILogger\fP & logger, \fBScenes::Scene\fP & scene, \fBScenes::SceneLoader\fP & loader)"
+
+.SS "RayTracer::Display::Display::~Display ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Display::Display::end ()\fC [private]\fP"
+
+.SS "void RayTracer::Display::Display::removeModule (const std::vector< std::string > & modulesToRemove)\fC [private]\fP"
+
+.SS "void RayTracer::Display::Display::run (sf::RenderWindow & window)\fC [private]\fP"
+
+.SS "void RayTracer::Display::Display::start ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sf::Font RayTracer::Display::Display::_font\fC [private]\fP"
+
+.SS "\fBScenes::SceneLoader\fP& RayTracer::Display::Display::_loader\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Display::Display::_logger\fC [private]\fP"
+
+.SS "std::vector<std::unique_ptr<\fBIDisplayModule\fP> > RayTracer::Display::Display::_modules\fC [private]\fP"
+
+.SS "size_t RayTracer::Display::Display::_position = 0\fC [private]\fP"
+
+.SS "\fBScenes::Scene\fP& RayTracer::Display::Display::_scene\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

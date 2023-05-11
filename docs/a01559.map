@@ -1,5 +1,8 @@
-<map id="RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity" name="RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity">
-<area shape="rect" id="node1" title=" " alt="" coords="5,388,213,641"/>
-<area shape="rect" id="node2" href="$a01208.html" title="The IPrimitive class." alt="" coords="35,189,184,340"/>
-<area shape="rect" id="node3" href="$a01196.html" title="The IEntity class." alt="" coords="38,5,181,141"/>
+<map id="RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial" name="RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial">
+<area shape="rect" id="node1" title=" " alt="" coords="135,725,382,861"/>
+<area shape="rect" id="node2" href="$a01253.html" title="The IMaterial class." alt="" coords="5,343,155,479"/>
+<area shape="rect" id="node3" title=" " alt="" coords="349,5,416,83"/>
+<area shape="rect" id="node4" href="$a01273.html" title="The Vector3f class." alt="" coords="304,189,461,633"/>
+<area shape="rect" id="node5" href="$a01313.html" title="The Color class." alt="" coords="486,255,637,567"/>
+<area shape="rect" id="node6" title=" " alt="" coords="515,5,607,83"/>
 </map>

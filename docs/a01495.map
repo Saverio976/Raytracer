@@ -1,5 +1,7 @@
-<map id="RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity" name="RayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity">
-<area shape="rect" id="node1" title=" " alt="" coords="5,432,203,788"/>
-<area shape="rect" id="node2" href="$a01192.html" title="The ICamera class." alt="" coords="33,189,175,384"/>
-<area shape="rect" id="node3" href="$a01196.html" title="The IEntity class." alt="" coords="33,5,175,141"/>
+<map id="RayTracer::Scenes::SettingWrapper::TypeException" name="RayTracer::Scenes::SettingWrapper::TypeException">
+<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="59,316,285,423"/>
+<area shape="rect" id="node2" href="$a01469.html" title="an exception for when the key is not found" alt="" coords="5,147,184,253"/>
+<area shape="rect" id="node3" title=" " alt="" coords="37,13,152,90"/>
+<area shape="rect" id="node4" title=" " alt="" coords="209,161,295,239"/>
+<area shape="rect" id="node5" title=" " alt="" coords="183,5,321,97"/>
 </map>

@@ -1,13 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00131" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Images/IRayIterator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/IRayIterator.hpp</primary></indexterm>
-<programlisting>#include &lt;algorithm&gt;
-#include &lt;iterator&gt;
-#include &lt;memory&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/ILogger.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/ILogger.hpp</primary></indexterm>
+<programlisting>#include &lt;functional&gt;
 #include &lt;string&gt;
-#include &quot;Ray.hpp&quot;
-</programlisting>Include dependency graph for IRayIterator.hpp:<para>
+</programlisting>Include dependency graph for ILogger.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,20 +25,16 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01280">RayTracer::Images::IRayIterator</link></para>
+            <listitem><para>class <link linkend="_a01309">RayTracer::ILogger</link></para>
 
-<para>The RayIterator class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01284">RayTracer::Images::IRayIterator::IIterator</link></para>
+<para><link linkend="_a01353">Logger</link> singleton. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00350">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: Member List</title>
+<title>RayTracer: RayTracer::Scenes::ISetting::IParsingException Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,25 +62,111 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00345.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00356.html">PluginsExt</a></li><li class="navelem"><a class="el" href="a00360.html">Camera</a></li><li class="navelem"><a class="el" href="a01468.html">CameraCreator</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00357.html">RayTracer</a></li><li class="navelem"><a class="el" href="a00368.html">Scenes</a></li><li class="navelem"><a class="el" href="a01461.html">ISetting</a></li><li class="navelem"><a class="el" href="a01465.html">IParsingException</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a01462.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RayTracer::PluginsExt::Camera::CameraCreator Member List</div>  </div>
+<div class="title">RayTracer::Scenes::ISetting::IParsingException Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a01468.html">RayTracer::PluginsExt::Camera::CameraCreator</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a01468.html#af15c7348f22dae25cb3a3b98a3f51695">_elements</a></td><td class="entry"><a class="el" href="a01468.html">RayTracer::PluginsExt::Camera::CameraCreator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01468.html#a4ab55121e18bbbaf17bcb6abd4e33eea">create</a>(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</td><td class="entry"><a class="el" href="a01468.html">RayTracer::PluginsExt::Camera::CameraCreator</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01468.html#a5580533a0d4cf145261fd3d725818158">~CameraCreator</a>()</td><td class="entry"><a class="el" href="a01468.html">RayTracer::PluginsExt::Camera::CameraCreator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01336.html#a1ae54039b8b804d38f0bb98286c21d6c">~IEntityCreator</a>()=default</td><td class="entry"><a class="el" href="a01336.html">RayTracer::Plugins::Entities::IEntityCreator</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+<p>an exception for when the key is not found  
+ <a href="a01465.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00218_source.html">ISetting.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for RayTracer::Scenes::ISetting::IParsingException:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01464.svg" width="254" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Collaboration diagram for RayTracer::Scenes::ISetting::IParsingException:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="a01463.svg" width="206" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6c0e22b8ed2ae8ea23d9dcb15f914b1d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01465.html#a6c0e22b8ed2ae8ea23d9dcb15f914b1d">~IParsingException</a> ()=default</td></tr>
+<tr class="separator:a6c0e22b8ed2ae8ea23d9dcb15f914b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475e1c111acc801c1bd54e2a9d19700d"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01465.html#a475e1c111acc801c1bd54e2a9d19700d">what</a> () const override=0  throw ()</td></tr>
+<tr class="separator:a475e1c111acc801c1bd54e2a9d19700d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>an exception for when the key is not found </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6c0e22b8ed2ae8ea23d9dcb15f914b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0e22b8ed2ae8ea23d9dcb15f914b1d">&#9670;&nbsp;</a></span>~IParsingException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RayTracer::Scenes::ISetting::IParsingException::~IParsingException </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a475e1c111acc801c1bd54e2a9d19700d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a475e1c111acc801c1bd54e2a9d19700d">&#9670;&nbsp;</a></span>what()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* RayTracer::Scenes::ISetting::IParsingException::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a01493.html#add26fba65f4e25d81aba82f161bb4290">RayTracer::Scenes::SettingWrapper::ParsingException</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/home/runner/work/Raytracer/Raytracer/src/Scenes/<a class="el" href="a00218_source.html">ISetting.hpp</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:32 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:34 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

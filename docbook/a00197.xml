@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00197" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/IConfig.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/IConfig.hpp</primary></indexterm>
-<programlisting>#include &lt;memory&gt;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for IConfig.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Plugins/PluginLoader.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Plugins/PluginLoader.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &quot;TFactory.hpp&quot;
+#include &lt;filesystem&gt;
+#include &lt;memory&gt;
+</programlisting>Include dependency graph for PluginLoader.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -25,16 +27,16 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01396">RayTracer::Scenes::IConfig</link></para>
+            <listitem><para>class <link linkend="_a01417">RayTracer::Plugins::PluginLoader&lt; Handler, Interface, Factory &gt;</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00355">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00364">RayTracer::Plugins</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

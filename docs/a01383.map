@@ -1,4 +1,3 @@
-<map id="RayTracer::Scenes::ConfigWrapper::WriteException" name="RayTracer::Scenes::ConfigWrapper::WriteException">
-<area shape="rect" id="node1" title="an exception for when the file can&#39;t be written" alt="" coords="5,131,231,237"/>
-<area shape="rect" id="node2" title=" " alt="" coords="61,5,175,83"/>
+<map id="RayTracer::Plugins::Entities::IEntityCreator" name="RayTracer::Plugins::Entities::IEntityCreator">
+<area shape="rect" id="node1" title="The IEntityCreator." alt="" coords="5,5,183,112"/>
 </map>

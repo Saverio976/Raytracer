@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Factories/EntityFactory.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,74 +62,59 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3dbe57e65c50a7a17fba27939d267647.html">Factories</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_093f3b7f7c7a61ef21fffb3d339f67e1.html">Entities</a></li><li class="navelem"><a class="el" href="dir_c620aa3b560253f2e8f37318dc57b0b1.html">Transform</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">EntityFactory.hpp</div>  </div>
+<div class="title">ITransform.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00095.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** EntityFactory.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ITransform.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ENTITYFACTORY_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ENTITYFACTORY_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00101.html">IEntityFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">TFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">EntityHandler.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00071.html">IEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00348.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00348.html">RayTracer::Factories</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01228.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01228.html">EntityFactory</a> : <span class="keyword">public</span> <a class="code" href="a01236.html">IEntityFactory</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01228.html#adc5584afd5fe3892a470b903b08e51e8">   23</a></span>&#160;            <a class="code" href="a01228.html#adc5584afd5fe3892a470b903b08e51e8">EntityFactory</a>(<span class="keyword">const</span> <a class="code" href="a01228.html">EntityFactory</a> &amp;other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01228.html#a85cbd415c869f02ee69ab34d249335ed">   24</a></span>&#160;            <a class="code" href="a01228.html#a85cbd415c869f02ee69ab34d249335ed">~EntityFactory</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01228.html#ad0eb8aba0428e8431a358a7fb23cfabc">   31</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01228.html#ad0eb8aba0428e8431a358a7fb23cfabc">add</a>(<span class="keyword">const</span> std::string &amp;name, std::unique_ptr&lt;Plugins::Entities::EntityHandler&gt; handler);</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01228.html#ad649c019712532e3a26d468ffb6754c5">   40</a></span>&#160;            <a class="code" href="a01196.html">Entities::IEntity</a> &amp;<a class="code" href="a01228.html#ad649c019712532e3a26d468ffb6754c5">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01412.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01260.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01228.html#a10e36290252bf368d9163b9aa266f7e9">   44</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01228.html#a10e36290252bf368d9163b9aa266f7e9">clearAll</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01228.html#aa3dafc9c5dd7b6676883d442ef366746">   50</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="a01228.html">EntityFactory</a> &amp;<a class="code" href="a01228.html#aa3dafc9c5dd7b6676883d442ef366746">getInstance</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01228.html#abf6347cf4c33e39e030802e1ddac5029">   53</a></span>&#160;            <a class="code" href="a01228.html#abf6347cf4c33e39e030802e1ddac5029">EntityFactory</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01228.html#a87a2d5e02b518406c3768327ad58a294">   54</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="a01252.html">TFactory&lt;Plugins::Entities::EntityHandler, Entities::IEntity&gt;</a> &amp;<a class="code" href="a01228.html#a87a2d5e02b518406c3768327ad58a294">getFactory</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01228.html#ad441a115c54b5c63c7e6a6f6d174a9a6">   55</a></span>&#160;            <span class="keyword">static</span> std::unique_ptr&lt;EntityFactory&gt; <a class="code" href="a01228.html#ad441a115c54b5c63c7e6a6f6d174a9a6">_factory</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ENTITYFACTORY_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00071_html"><div class="ttname"><a href="a00071.html">IEntity.hpp</a></div></div>
-<div class="ttc" id="aa00101_html"><div class="ttname"><a href="a00101.html">IEntityFactory.hpp</a></div></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">TFactory.hpp</a></div></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">EntityHandler.hpp</a></div></div>
-<div class="ttc" id="aa00348_html"><div class="ttname"><a href="a00348.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
-<div class="ttc" id="aa01196_html"><div class="ttname"><a href="a01196.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01228_html"><div class="ttname"><a href="a01228.html">RayTracer::Factories::EntityFactory</a></div><div class="ttdoc">The EntityFactory (singleton factory)</div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:21</div></div>
-<div class="ttc" id="aa01228_html_a10e36290252bf368d9163b9aa266f7e9"><div class="ttname"><a href="a01228.html#a10e36290252bf368d9163b9aa266f7e9">RayTracer::Factories::EntityFactory::clearAll</a></div><div class="ttdeci">void clearAll()</div><div class="ttdoc">Clear all handlers.</div></div>
-<div class="ttc" id="aa01228_html_a85cbd415c869f02ee69ab34d249335ed"><div class="ttname"><a href="a01228.html#a85cbd415c869f02ee69ab34d249335ed">RayTracer::Factories::EntityFactory::~EntityFactory</a></div><div class="ttdeci">~EntityFactory()=default</div></div>
-<div class="ttc" id="aa01228_html_a87a2d5e02b518406c3768327ad58a294"><div class="ttname"><a href="a01228.html#a87a2d5e02b518406c3768327ad58a294">RayTracer::Factories::EntityFactory::getFactory</a></div><div class="ttdeci">static TFactory&lt; Plugins::Entities::EntityHandler, Entities::IEntity &gt; &amp; getFactory()</div></div>
-<div class="ttc" id="aa01228_html_aa3dafc9c5dd7b6676883d442ef366746"><div class="ttname"><a href="a01228.html#aa3dafc9c5dd7b6676883d442ef366746">RayTracer::Factories::EntityFactory::getInstance</a></div><div class="ttdeci">static EntityFactory &amp; getInstance()</div><div class="ttdoc">Get the singleton.</div></div>
-<div class="ttc" id="aa01228_html_abf6347cf4c33e39e030802e1ddac5029"><div class="ttname"><a href="a01228.html#abf6347cf4c33e39e030802e1ddac5029">RayTracer::Factories::EntityFactory::EntityFactory</a></div><div class="ttdeci">EntityFactory()=default</div></div>
-<div class="ttc" id="aa01228_html_ad0eb8aba0428e8431a358a7fb23cfabc"><div class="ttname"><a href="a01228.html#ad0eb8aba0428e8431a358a7fb23cfabc">RayTracer::Factories::EntityFactory::add</a></div><div class="ttdeci">void add(const std::string &amp;name, std::unique_ptr&lt; Plugins::Entities::EntityHandler &gt; handler)</div><div class="ttdoc">Add an entity.</div></div>
-<div class="ttc" id="aa01228_html_ad441a115c54b5c63c7e6a6f6d174a9a6"><div class="ttname"><a href="a01228.html#ad441a115c54b5c63c7e6a6f6d174a9a6">RayTracer::Factories::EntityFactory::_factory</a></div><div class="ttdeci">static std::unique_ptr&lt; EntityFactory &gt; _factory</div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:55</div></div>
-<div class="ttc" id="aa01228_html_ad649c019712532e3a26d468ffb6754c5"><div class="ttname"><a href="a01228.html#ad649c019712532e3a26d468ffb6754c5">RayTracer::Factories::EntityFactory::get</a></div><div class="ttdeci">Entities::IEntity &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger) final</div><div class="ttdoc">Get an entity.</div></div>
-<div class="ttc" id="aa01228_html_adc5584afd5fe3892a470b903b08e51e8"><div class="ttname"><a href="a01228.html#adc5584afd5fe3892a470b903b08e51e8">RayTracer::Factories::EntityFactory::EntityFactory</a></div><div class="ttdeci">EntityFactory(const EntityFactory &amp;other)=delete</div></div>
-<div class="ttc" id="aa01236_html"><div class="ttname"><a href="a01236.html">RayTracer::Factories::IEntityFactory</a></div><div class="ttdef"><b>Definition:</b> IEntityFactory.hpp:18</div></div>
-<div class="ttc" id="aa01252_html"><div class="ttname"><a href="a01252.html">RayTracer::Factories::TFactory</a></div><div class="ttdoc">The TFactory.</div><div class="ttdef"><b>Definition:</b> TFactory.hpp:24</div></div>
-<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01412_html"><div class="ttname"><a href="a01412.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ITRANSFORM_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ITRANSFORM_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00104.html">Vector3f.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00360.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00360.html">RayTracer::Entities::Transform</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01261.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01261.html">ITransform</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01261.html#ab2d5d22605b9951ec76ee25126633db0">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01261.html#ab2d5d22605b9951ec76ee25126633db0">~ITransform</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01261.html#a88e2865250cd190041916bb6b9d715b3">   27</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01261.html#a88e2865250cd190041916bb6b9d715b3">setPosition</a>(<span class="keyword">const</span> <a class="code" href="a01273.html">Vector3f</a> &amp;position) = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01261.html#aff7fda973737a55306e1900439f3d6f6">   33</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01273.html">Vector3f</a> &amp;<a class="code" href="a01261.html#aff7fda973737a55306e1900439f3d6f6">getPosition</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01261.html#a686b40a3b17310304bb9d532e8550b9b">   39</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01261.html#a686b40a3b17310304bb9d532e8550b9b">setRotation</a>(<span class="keyword">const</span> <a class="code" href="a01273.html">Vector3f</a> &amp;rotation) = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01261.html#a57854e8e4ac74ab0ed827704ff81436f">   45</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01273.html">Vector3f</a> &amp;<a class="code" href="a01261.html#a57854e8e4ac74ab0ed827704ff81436f">getRotation</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01261.html#ae1099e652ff4659b04028f0d65c8d56b">   51</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01261.html#ae1099e652ff4659b04028f0d65c8d56b">setScale</a>(<span class="keyword">const</span> <a class="code" href="a01273.html">Vector3f</a> &amp;scale) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01261.html#a50da7841f811b84d0fbf4fad492a8451">   57</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01273.html">Vector3f</a> &amp;<a class="code" href="a01261.html#a50da7841f811b84d0fbf4fad492a8451">getScale</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01261.html#abc6e2b741bd58849b10d4523d06ce389">   65</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01261.html">ITransform</a> &amp;<a class="code" href="a01261.html#abc6e2b741bd58849b10d4523d06ce389">operator=</a>(<span class="keyword">const</span> <a class="code" href="a01261.html">ITransform</a> &amp;other) = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ITRANSFORM_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">Vector3f.hpp</a></div></div>
+<div class="ttc" id="aa00360_html"><div class="ttname"><a href="a00360.html">RayTracer::Entities::Transform</a></div><div class="ttdef"><b>Definition:</b> ITransform.hpp:12</div></div>
+<div class="ttc" id="aa01261_html"><div class="ttname"><a href="a01261.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
+<div class="ttc" id="aa01261_html_a50da7841f811b84d0fbf4fad492a8451"><div class="ttname"><a href="a01261.html#a50da7841f811b84d0fbf4fad492a8451">RayTracer::Entities::Transform::ITransform::getScale</a></div><div class="ttdeci">virtual const Vector3f &amp; getScale() const =0</div><div class="ttdoc">Get the scale.</div></div>
+<div class="ttc" id="aa01261_html_a57854e8e4ac74ab0ed827704ff81436f"><div class="ttname"><a href="a01261.html#a57854e8e4ac74ab0ed827704ff81436f">RayTracer::Entities::Transform::ITransform::getRotation</a></div><div class="ttdeci">virtual const Vector3f &amp; getRotation() const =0</div><div class="ttdoc">Get the rotation.</div></div>
+<div class="ttc" id="aa01261_html_a686b40a3b17310304bb9d532e8550b9b"><div class="ttname"><a href="a01261.html#a686b40a3b17310304bb9d532e8550b9b">RayTracer::Entities::Transform::ITransform::setRotation</a></div><div class="ttdeci">virtual void setRotation(const Vector3f &amp;rotation)=0</div><div class="ttdoc">Set the rotation.</div></div>
+<div class="ttc" id="aa01261_html_a88e2865250cd190041916bb6b9d715b3"><div class="ttname"><a href="a01261.html#a88e2865250cd190041916bb6b9d715b3">RayTracer::Entities::Transform::ITransform::setPosition</a></div><div class="ttdeci">virtual void setPosition(const Vector3f &amp;position)=0</div><div class="ttdoc">Set the position.</div></div>
+<div class="ttc" id="aa01261_html_ab2d5d22605b9951ec76ee25126633db0"><div class="ttname"><a href="a01261.html#ab2d5d22605b9951ec76ee25126633db0">RayTracer::Entities::Transform::ITransform::~ITransform</a></div><div class="ttdeci">virtual ~ITransform()=default</div></div>
+<div class="ttc" id="aa01261_html_abc6e2b741bd58849b10d4523d06ce389"><div class="ttname"><a href="a01261.html#abc6e2b741bd58849b10d4523d06ce389">RayTracer::Entities::Transform::ITransform::operator=</a></div><div class="ttdeci">virtual ITransform &amp; operator=(const ITransform &amp;other)=0</div><div class="ttdoc">Assign a transform.</div></div>
+<div class="ttc" id="aa01261_html_ae1099e652ff4659b04028f0d65c8d56b"><div class="ttname"><a href="a01261.html#ae1099e652ff4659b04028f0d65c8d56b">RayTracer::Entities::Transform::ITransform::setScale</a></div><div class="ttdeci">virtual void setScale(const Vector3f &amp;scale)=0</div><div class="ttdoc">Set the scale.</div></div>
+<div class="ttc" id="aa01261_html_aff7fda973737a55306e1900439f3d6f6"><div class="ttname"><a href="a01261.html#aff7fda973737a55306e1900439f3d6f6">RayTracer::Entities::Transform::ITransform::getPosition</a></div><div class="ttdeci">virtual const Vector3f &amp; getPosition() const =0</div><div class="ttdoc">Get the position.</div></div>
+<div class="ttc" id="aa01273_html"><div class="ttname"><a href="a01273.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

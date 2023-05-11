@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_03812256f86b8612ea29c117ed644088" xml:lang="en-US">
+<title>/home/runner/work/Raytracer/Raytracer/src/Display/Modules Directory Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Display/Modules Directory Reference</primary></indexterm>
+Directory dependency graph for Modules:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_03812256f86b8612ea29c117ed644088_dep.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a00074">CanvasModule.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a00077">ProgressModule.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

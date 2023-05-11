@@ -1,0 +1,104 @@
+.TH "RayTracer::Display::ProgressModule" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Display::ProgressModule
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ProgressModule\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgressModule\fP (\fBILogger\fP &logger)"
+.br
+.ti -1c
+.RI "void \fBtick\fP (sf::RenderWindow &window) final"
+.br
+.ti -1c
+.RI "void \fBevent\fP (sf::RenderWindow &window, const sf::Event &event) final"
+.br
+.ti -1c
+.RI "void \fBstart\fP (sf::RenderWindow &window) final"
+.br
+.ti -1c
+.RI "void \fBend\fP () final"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP () const final"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinfo\fP (const std::string &message)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "sf::RenderWindow \fB_window\fP"
+.br
+.ti -1c
+.RI "\fBILogger\fP & \fB_logger\fP"
+.br
+.ti -1c
+.RI "std::string \fB_message\fP"
+.br
+.ti -1c
+.RI "sf::Font \fB_font\fP"
+.br
+.ti -1c
+.RI "sf::Clock \fB_clock\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Display::ProgressModule::ProgressModule (\fBILogger\fP & logger)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Display::ProgressModule::end ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::ProgressModule::event (sf::RenderWindow & window, const sf::Event & event)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "std::string RayTracer::Display::ProgressModule::getName () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::ProgressModule::info (const std::string & message)\fC [private]\fP"
+
+.SS "void RayTracer::Display::ProgressModule::start (sf::RenderWindow & window)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::ProgressModule::tick (sf::RenderWindow & window)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sf::Clock RayTracer::Display::ProgressModule::_clock\fC [private]\fP"
+
+.SS "sf::Font RayTracer::Display::ProgressModule::_font\fC [private]\fP"
+
+.SS "\fBILogger\fP& RayTracer::Display::ProgressModule::_logger\fC [private]\fP"
+
+.SS "std::string RayTracer::Display::ProgressModule::_message\fC [private]\fP"
+
+.SS "sf::RenderWindow RayTracer::Display::ProgressModule::_window\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

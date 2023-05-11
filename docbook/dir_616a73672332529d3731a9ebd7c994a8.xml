@@ -14,9 +14,9 @@ Directory dependency graph for ChessBoardMaterial:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00257">ChessBoardCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00269">ChessBoardCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00260">ChessBoardMaterial.hpp</link></para>
+            <listitem><para>file <link linkend="_a00272">ChessBoardMaterial.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,24 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00209" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp</primary></indexterm>
-<programlisting>#include &lt;string&gt;
-#include &lt;future&gt;
-#include &lt;vector&gt;
-#include &lt;memory&gt;
-#include &lt;mutex&gt;
-#include &lt;thread&gt;
-#include &lt;functional&gt;
-#include &quot;ILogger.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/IConfig.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/IConfig.hpp</primary></indexterm>
+<programlisting>#include &lt;memory&gt;
 #include &quot;ISetting.hpp&quot;
-#include &quot;Image.hpp&quot;
-#include &quot;ICamera.hpp&quot;
-#include &quot;ILight.hpp&quot;
-#include &quot;IPrimitive.hpp&quot;
-#include &quot;SceneState.hpp&quot;
-#include &quot;Displayable.hpp&quot;
-#include &quot;EntityFactory.hpp&quot;
-</programlisting>Include dependency graph for Scene.hpp:<para>
+</programlisting>Include dependency graph for IConfig.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -39,18 +25,16 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01424">RayTracer::Scenes::Scene</link></para>
-
-<para>The <link linkend="_a01424">Scene</link> class. </para>
+            <listitem><para>class <link linkend="_a01445">RayTracer::Scenes::IConfig</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00355">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00368">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

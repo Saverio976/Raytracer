@@ -41,6 +41,14 @@ Inherited by \fBRayTracer::Logger\fP\&.
 .RI "virtual void \fBtrace\fP (const std::string &message)=0"
 .br
 .RI "\fBLogger\fP trace\&. "
+.ti -1c
+.RI "virtual void \fBsubscribeCallback\fP (int type, const std::string &name, std::function< void(const std::string &)> callback)=0"
+.br
+.RI "\fBLogger\fP subscribe\&. "
+.ti -1c
+.RI "virtual void \fBunsubscribeCallback\fP (int type, const std::string &name)=0"
+.br
+.RI "\fBLogger\fP remove callback\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -107,6 +115,23 @@ Implemented in \fBRayTracer::Logger\fP\&.
 
 .PP
 Implemented in \fBRayTracer::Logger\fP\&.
+.SS "virtual void RayTracer::ILogger::subscribeCallback (int type, const std::string & name, std::function< void(const std::string &)> callback)\fC [pure virtual]\fP"
+
+.PP
+\fBLogger\fP subscribe\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the type to subscribe for 
+.br
+\fIname\fP the name 
+.br
+\fIcallback\fP the callback 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Logger\fP\&.
 .SS "virtual void RayTracer::ILogger::trace (const std::string & message)\fC [pure virtual]\fP"
 
 .PP
@@ -115,6 +140,21 @@ Implemented in \fBRayTracer::Logger\fP\&.
 \fBParameters\fP
 .RS 4
 \fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::Logger\fP\&.
+.SS "virtual void RayTracer::ILogger::unsubscribeCallback (int type, const std::string & name)\fC [pure virtual]\fP"
+
+.PP
+\fBLogger\fP remove callback\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the type 
+.br
+\fIname\fP the name 
 .RE
 .PP
 

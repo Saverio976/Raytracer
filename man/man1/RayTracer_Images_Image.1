@@ -40,6 +40,10 @@ RayTracer::Images::Image \- The \fBImage\fP class\&.
 .RI "const \fBEntities::Transform::Vector2i\fP & \fBgetSize\fP () const"
 .br
 .RI "Get the size of \fBImage\fP\&. "
+.ti -1c
+.RI "const std::vector< \fBColor\fP > & \fBgetPixelsList\fP () const"
+.br
+.RI "Get the list of pixels\&. "
 .in -1c
 .SS "Private Attributes"
 
@@ -79,6 +83,17 @@ convertToPPM file
 \fBParameters\fP
 .RS 4
 \fIfilePath\fP the file 
+.RE
+.PP
+
+.SS "const std::vector<\fBColor\fP>& RayTracer::Images::Image::getPixelsList () const"
+
+.PP
+Get the list of pixels\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the \fBImage\fP's size (Width, Height) 
 .RE
 .PP
 

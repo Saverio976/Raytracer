@@ -1,0 +1,4 @@
+<map id="RayTracer::Display::IDisplayModule::EventFailed" name="RayTracer::Display::IDisplayModule::EventFailed">
+<area shape="rect" id="node1" title="If the function event failed, but it can continue without being completed." alt="" coords="5,131,220,237"/>
+<area shape="rect" id="node2" title=" " alt="" coords="55,5,170,83"/>
+</map>

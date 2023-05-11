@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Logger.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Images/IRayIterator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,58 +62,74 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_58e3c3ebd10c56521cbe2e4a6271b724.html">Images</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Logger.hpp</div>  </div>
+<div class="title">IRayIterator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00143.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Logger.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** RayIterator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYLOGGER_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYLOGGER_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IRAYITERATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IRAYITERATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00345.html">RayTracer</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01304.html">   31</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01304.html">Logger</a> : <span class="keyword">public</span> <a class="code" href="a01260.html">ILogger</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01304.html#a8741d2463dc26b159b91a83a69e7d82e">   42</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#a8741d2463dc26b159b91a83a69e7d82e">fatal</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01304.html#af0d5fc305cc349ff3feb193afac0b519">   53</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#af0d5fc305cc349ff3feb193afac0b519">error</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a01304.html#ad22a5c95aef00b69b2d3c66d5275fa4b">   63</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#ad22a5c95aef00b69b2d3c66d5275fa4b">warn</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01304.html#a04c873d9cd4b42d7d36159bf1534ad9a">   73</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#a04c873d9cd4b42d7d36159bf1534ad9a">info</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a01304.html#a7218cc8759088a1ebb97841208757d0a">   82</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#a7218cc8759088a1ebb97841208757d0a">debug</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a01304.html#afad34b7b6a7d951e588ed2189f2f5d70">   91</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#afad34b7b6a7d951e588ed2189f2f5d70">trace</a>(<span class="keyword">const</span> std::string &amp;message) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="a01304.html#a50fd813f74b2b9161422581df6e849e7">   94</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01304.html#a50fd813f74b2b9161422581df6e849e7">print</a>(<span class="keyword">const</span> std::string &amp;level, <span class="keyword">const</span> std::string &amp;message);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    };</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00345_html"><div class="ttname"><a href="a00345.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> ICamera.hpp:18</div></div>
-<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01304_html"><div class="ttname"><a href="a01304.html">RayTracer::Logger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> Logger.hpp:31</div></div>
-<div class="ttc" id="aa01304_html_a04c873d9cd4b42d7d36159bf1534ad9a"><div class="ttname"><a href="a01304.html#a04c873d9cd4b42d7d36159bf1534ad9a">RayTracer::Logger::info</a></div><div class="ttdeci">void info(const std::string &amp;message) final</div><div class="ttdoc">Logger info.</div></div>
-<div class="ttc" id="aa01304_html_a50fd813f74b2b9161422581df6e849e7"><div class="ttname"><a href="a01304.html#a50fd813f74b2b9161422581df6e849e7">RayTracer::Logger::print</a></div><div class="ttdeci">void print(const std::string &amp;level, const std::string &amp;message)</div></div>
-<div class="ttc" id="aa01304_html_a7218cc8759088a1ebb97841208757d0a"><div class="ttname"><a href="a01304.html#a7218cc8759088a1ebb97841208757d0a">RayTracer::Logger::debug</a></div><div class="ttdeci">void debug(const std::string &amp;message) final</div><div class="ttdoc">Logger debug.</div></div>
-<div class="ttc" id="aa01304_html_a8741d2463dc26b159b91a83a69e7d82e"><div class="ttname"><a href="a01304.html#a8741d2463dc26b159b91a83a69e7d82e">RayTracer::Logger::fatal</a></div><div class="ttdeci">void fatal(const std::string &amp;message) final</div><div class="ttdoc">Logger fata.</div></div>
-<div class="ttc" id="aa01304_html_ad22a5c95aef00b69b2d3c66d5275fa4b"><div class="ttname"><a href="a01304.html#ad22a5c95aef00b69b2d3c66d5275fa4b">RayTracer::Logger::warn</a></div><div class="ttdeci">void warn(const std::string &amp;message) final</div><div class="ttdoc">Logger warn.</div></div>
-<div class="ttc" id="aa01304_html_af0d5fc305cc349ff3feb193afac0b519"><div class="ttname"><a href="a01304.html#af0d5fc305cc349ff3feb193afac0b519">RayTracer::Logger::error</a></div><div class="ttdeci">void error(const std::string &amp;message) final</div><div class="ttdoc">Logger error.</div></div>
-<div class="ttc" id="aa01304_html_afad34b7b6a7d951e588ed2189f2f5d70"><div class="ttname"><a href="a01304.html#afad34b7b6a7d951e588ed2189f2f5d70">RayTracer::Logger::trace</a></div><div class="ttdeci">void trace(const std::string &amp;message) final</div><div class="ttdoc">Logger trace.</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;iterator&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00149.html">Ray.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00363.html">RayTracer::Images</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01329.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01329.html">IRayIterator</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01333.html">   25</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01333.html">IIterator</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01333.html#a8a171db4d14873056db6b4b911467e74">   27</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01333.html#a8a171db4d14873056db6b4b911467e74">iterator_category</a> = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01333.html#a932e715cdf71c468b794f8cd9fdd542c">   28</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01341.html">difference_type</a>   = <a class="code" href="a01341.html">Ray</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01333.html#a67b95ee9044e6817ff6ba796c2e98c02">   29</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01341.html">value_type</a>        = <a class="code" href="a01341.html">Ray</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01333.html#a667242f4703e9a1142d7655286e02325">   30</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01341.html">pointer</a>           = <a class="code" href="a01341.html">Ray</a> *;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01333.html#a31c18d4e9f68f7357135edbcade6509e">   31</a></span>&#160;                    <span class="keyword">using</span> <a class="code" href="a01341.html">reference</a>         = <a class="code" href="a01341.html">Ray</a> &amp;;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01333.html#ade35be8f411ce32b5e6639182bdd6501">   33</a></span>&#160;                    <span class="keyword">virtual</span> <a class="code" href="a01333.html#ade35be8f411ce32b5e6639182bdd6501">~IIterator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01333.html#a8a9611aab72a7d1df506abf5b1eb4383">   39</a></span>&#160;                    <span class="keyword">virtual</span> <a class="code" href="a01333.html">IIterator</a> &amp;<a class="code" href="a01333.html#a8a9611aab72a7d1df506abf5b1eb4383">operator++</a>() = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01333.html#a693bf2ce1b2846569514ac383df1d638">   45</a></span>&#160;                    <span class="keyword">virtual</span> <a class="code" href="a01341.html">Ray</a> &amp;<a class="code" href="a01333.html#a693bf2ce1b2846569514ac383df1d638">operator*</a>() = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01333.html#aeca58e7e75242864403c243e34f7a6b7">   53</a></span>&#160;                    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a01333.html#aeca58e7e75242864403c243e34f7a6b7">operator==</a>(<span class="keyword">const</span> <a class="code" href="a01333.html">IRayIterator::IIterator</a> &amp;other) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a01333.html#a68edf117388a0d588b1d5030a5e0ec51">   61</a></span>&#160;                    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a01333.html#a68edf117388a0d588b1d5030a5e0ec51">operator!=</a>(<span class="keyword">const</span> <a class="code" href="a01333.html">IRayIterator::IIterator</a> &amp;other) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a01333.html#a8e194702b273968c7c036253af0233d4">   67</a></span>&#160;                    <span class="keyword">virtual</span> std::string <a class="code" href="a01333.html#a8e194702b273968c7c036253af0233d4">toString</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            };</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="a01329.html#a12e7f392ecb48b4460e02a9a198e1c9b">   69</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01329.html#a12e7f392ecb48b4460e02a9a198e1c9b">~IRayIterator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a01329.html#a1091fd7e65db524ab307d648a05b2e6f">   75</a></span>&#160;            <span class="keyword">virtual</span> std::unique_ptr&lt;IRayIterator::IIterator&gt; <a class="code" href="a01329.html#a1091fd7e65db524ab307d648a05b2e6f">begin</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a01329.html#a6a54ffc59239a7865fbc4fd7569ba80b">   81</a></span>&#160;            <span class="keyword">virtual</span> std::unique_ptr&lt;IRayIterator::IIterator&gt; <a class="code" href="a01329.html#a6a54ffc59239a7865fbc4fd7569ba80b">end</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    };</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">Ray.hpp</a></div></div>
+<div class="ttc" id="aa00363_html"><div class="ttname"><a href="a00363.html">RayTracer::Images</a></div><div class="ttdef"><b>Definition:</b> Color.hpp:15</div></div>
+<div class="ttc" id="aa01329_html"><div class="ttname"><a href="a01329.html">RayTracer::Images::IRayIterator</a></div><div class="ttdoc">The RayIterator class.</div><div class="ttdef"><b>Definition:</b> IRayIterator.hpp:23</div></div>
+<div class="ttc" id="aa01329_html_a1091fd7e65db524ab307d648a05b2e6f"><div class="ttname"><a href="a01329.html#a1091fd7e65db524ab307d648a05b2e6f">RayTracer::Images::IRayIterator::begin</a></div><div class="ttdeci">virtual std::unique_ptr&lt; IRayIterator::IIterator &gt; begin() const =0</div><div class="ttdoc">Get the begin.</div></div>
+<div class="ttc" id="aa01329_html_a12e7f392ecb48b4460e02a9a198e1c9b"><div class="ttname"><a href="a01329.html#a12e7f392ecb48b4460e02a9a198e1c9b">RayTracer::Images::IRayIterator::~IRayIterator</a></div><div class="ttdeci">virtual ~IRayIterator()=default</div></div>
+<div class="ttc" id="aa01329_html_a6a54ffc59239a7865fbc4fd7569ba80b"><div class="ttname"><a href="a01329.html#a6a54ffc59239a7865fbc4fd7569ba80b">RayTracer::Images::IRayIterator::end</a></div><div class="ttdeci">virtual std::unique_ptr&lt; IRayIterator::IIterator &gt; end() const =0</div><div class="ttdoc">Get the end (out of range)</div></div>
+<div class="ttc" id="aa01333_html"><div class="ttname"><a href="a01333.html">RayTracer::Images::IRayIterator::IIterator</a></div><div class="ttdef"><b>Definition:</b> IRayIterator.hpp:25</div></div>
+<div class="ttc" id="aa01333_html_a68edf117388a0d588b1d5030a5e0ec51"><div class="ttname"><a href="a01333.html#a68edf117388a0d588b1d5030a5e0ec51">RayTracer::Images::IRayIterator::IIterator::operator!=</a></div><div class="ttdeci">virtual bool operator!=(const IRayIterator::IIterator &amp;other) const =0</div><div class="ttdoc">Compare two RayIterator.</div></div>
+<div class="ttc" id="aa01333_html_a693bf2ce1b2846569514ac383df1d638"><div class="ttname"><a href="a01333.html#a693bf2ce1b2846569514ac383df1d638">RayTracer::Images::IRayIterator::IIterator::operator*</a></div><div class="ttdeci">virtual Ray &amp; operator*()=0</div><div class="ttdoc">Get the ray of the current RayIterator.</div></div>
+<div class="ttc" id="aa01333_html_a8a171db4d14873056db6b4b911467e74"><div class="ttname"><a href="a01333.html#a8a171db4d14873056db6b4b911467e74">RayTracer::Images::IRayIterator::IIterator::iterator_category</a></div><div class="ttdeci">std::forward_iterator_tag iterator_category</div><div class="ttdef"><b>Definition:</b> IRayIterator.hpp:27</div></div>
+<div class="ttc" id="aa01333_html_a8a9611aab72a7d1df506abf5b1eb4383"><div class="ttname"><a href="a01333.html#a8a9611aab72a7d1df506abf5b1eb4383">RayTracer::Images::IRayIterator::IIterator::operator++</a></div><div class="ttdeci">virtual IIterator &amp; operator++()=0</div><div class="ttdoc">create the next RayIterator and modify current instance</div></div>
+<div class="ttc" id="aa01333_html_a8e194702b273968c7c036253af0233d4"><div class="ttname"><a href="a01333.html#a8e194702b273968c7c036253af0233d4">RayTracer::Images::IRayIterator::IIterator::toString</a></div><div class="ttdeci">virtual std::string toString() const =0</div><div class="ttdoc">toString</div></div>
+<div class="ttc" id="aa01333_html_ade35be8f411ce32b5e6639182bdd6501"><div class="ttname"><a href="a01333.html#ade35be8f411ce32b5e6639182bdd6501">RayTracer::Images::IRayIterator::IIterator::~IIterator</a></div><div class="ttdeci">virtual ~IIterator()=default</div></div>
+<div class="ttc" id="aa01333_html_aeca58e7e75242864403c243e34f7a6b7"><div class="ttname"><a href="a01333.html#aeca58e7e75242864403c243e34f7a6b7">RayTracer::Images::IRayIterator::IIterator::operator==</a></div><div class="ttdeci">virtual bool operator==(const IRayIterator::IIterator &amp;other) const =0</div><div class="ttdoc">Compare two RayIterator.</div></div>
+<div class="ttc" id="aa01341_html"><div class="ttname"><a href="a01341.html">RayTracer::Images::Ray</a></div><div class="ttdoc">The Ray class.</div><div class="ttdef"><b>Definition:</b> Ray.hpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

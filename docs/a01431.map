@@ -1,4 +1,6 @@
-<map id="RayTracer::Scenes::SceneLoader::BadFileError" name="RayTracer::Scenes::SceneLoader::BadFileError">
-<area shape="rect" id="node1" title=" " alt="" coords="5,131,197,237"/>
-<area shape="rect" id="node2" title=" " alt="" coords="44,5,159,83"/>
+<map id="RayTracer::Scenes::ConfigWrapper::WriteException" name="RayTracer::Scenes::ConfigWrapper::WriteException">
+<area shape="rect" id="node1" title="an exception for when the file can&#39;t be written" alt="" coords="5,287,231,393"/>
+<area shape="rect" id="node2" title=" " alt="" coords="39,147,154,224"/>
+<area shape="rect" id="node3" title=" " alt="" coords="179,147,265,224"/>
+<area shape="rect" id="node4" title=" " alt="" coords="153,5,291,97"/>
 </map>

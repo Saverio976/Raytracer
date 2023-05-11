@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Materials/IMaterialCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/IEntityCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,55 +62,54 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_090dd539cb56febacd605ed05f9fccf1.html">Materials</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_99a9e5809d7dd3eea28a4e7b1821ca7c.html">Entities</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">IMaterialCreator.hpp</div>  </div>
+<div class="title">IEntityCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00173.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IFilterCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IEntityCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IMATERIALCREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IMATERIALCREATOR_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00077.html">IMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00206.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00354.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00354.html">RayTracer::Plugins::Materials</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01352.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01352.html">IMaterialCreator</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01352.html#af5340be3d5aa1d28785fa10de0af795a">   24</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01352.html#af5340be3d5aa1d28785fa10de0af795a">~IMaterialCreator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01352.html#a16ac237d1dc493bb11cdaa1ff1c0b140">   32</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01204.html">RayTracer::Entities::IMaterial</a> *<a class="code" href="a01352.html#a16ac237d1dc493bb11cdaa1ff1c0b140">create</a>(<span class="keyword">const</span> <a class="code" href="a01412.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01260.html">ILogger</a> &amp;logger) = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00077_html"><div class="ttname"><a href="a00077.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00206_html"><div class="ttname"><a href="a00206.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00354_html"><div class="ttname"><a href="a00354.html">RayTracer::Plugins::Materials</a></div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:16</div></div>
-<div class="ttc" id="aa01204_html"><div class="ttname"><a href="a01204.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
-<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01352_html"><div class="ttname"><a href="a01352.html">RayTracer::Plugins::Materials::IMaterialCreator</a></div><div class="ttdoc">The IMaterialCreator class.</div><div class="ttdef"><b>Definition:</b> IMaterialCreator.hpp:22</div></div>
-<div class="ttc" id="aa01352_html_a16ac237d1dc493bb11cdaa1ff1c0b140"><div class="ttname"><a href="a01352.html#a16ac237d1dc493bb11cdaa1ff1c0b140">RayTracer::Plugins::Materials::IMaterialCreator::create</a></div><div class="ttdeci">virtual RayTracer::Entities::IMaterial * create(const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Create a material with a setting.</div></div>
-<div class="ttc" id="aa01352_html_af5340be3d5aa1d28785fa10de0af795a"><div class="ttname"><a href="a01352.html#af5340be3d5aa1d28785fa10de0af795a">RayTracer::Plugins::Materials::IMaterialCreator::~IMaterialCreator</a></div><div class="ttdeci">virtual ~IMaterialCreator()=default</div></div>
-<div class="ttc" id="aa01412_html"><div class="ttname"><a href="a01412.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IENTITYCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IENTITYCREATOR_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00083.html">IEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00365.html">RayTracer::Plugins::Entities</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01385.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01385.html">IEntityCreator</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01385.html#a1ae54039b8b804d38f0bb98286c21d6c">   23</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01385.html#a1ae54039b8b804d38f0bb98286c21d6c">~IEntityCreator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01385.html#ab6cc749aa296fe5fc205ad2cad321d30">   31</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01245.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01385.html#ab6cc749aa296fe5fc205ad2cad321d30">create</a>(<span class="keyword">const</span> <a class="code" href="a01461.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01309.html">ILogger</a> &amp;logger) = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*IENTITYCREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00083_html"><div class="ttname"><a href="a00083.html">IEntity.hpp</a></div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00365_html"><div class="ttname"><a href="a00365.html">RayTracer::Plugins::Entities</a></div><div class="ttdef"><b>Definition:</b> EntityHandler.hpp:19</div></div>
+<div class="ttc" id="aa01245_html"><div class="ttname"><a href="a01245.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01309_html"><div class="ttname"><a href="a01309.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01385_html"><div class="ttname"><a href="a01385.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01385_html_a1ae54039b8b804d38f0bb98286c21d6c"><div class="ttname"><a href="a01385.html#a1ae54039b8b804d38f0bb98286c21d6c">RayTracer::Plugins::Entities::IEntityCreator::~IEntityCreator</a></div><div class="ttdeci">virtual ~IEntityCreator()=default</div></div>
+<div class="ttc" id="aa01385_html_ab6cc749aa296fe5fc205ad2cad321d30"><div class="ttname"><a href="a01385.html#ab6cc749aa296fe5fc205ad2cad321d30">RayTracer::Plugins::Entities::IEntityCreator::create</a></div><div class="ttdeci">virtual RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01461_html"><div class="ttname"><a href="a01461.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

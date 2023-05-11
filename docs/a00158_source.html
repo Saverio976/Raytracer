@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityLoader.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Main.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,92 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_99a9e5809d7dd3eea28a4e7b1821ca7c.html">Entities</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">EntityLoader.hpp</div>  </div>
+<div class="title">Main.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00158.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** EntityLoader.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Parameters.cpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ENTITYLOADER_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ENTITYLOADER_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MAIN_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define MAIN_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">TFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00071.html">IEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00185.html">PluginLoader.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">EntityHandler.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00095.html">EntityFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">Parameters.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00221.html">Scene.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00352.html">RayTracer::Plugins::Entities</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01332.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01332.html">EntityLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01368.html">PluginLoader</a>&lt;EntityHandler, RayTracer::Entities::IEntity, Factories::EntityFactory&gt; {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01332.html#ae4c0b2318578996867d5486fcd6bb04f">   31</a></span>&#160;            <a class="code" href="a01332.html#ae4c0b2318578996867d5486fcd6bb04f">EntityLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01332.html#ab3564931a0542396d5e6ea85cc32c064">   35</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01332.html#ab3564931a0542396d5e6ea85cc32c064">loadEntities</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00357.html">RayTracer</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01357.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01357.html">Main</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01361.html">   21</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01361.html">MainError</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01361.html#a830b40cc4e74a0ad900c9714c0faa60b">   23</a></span>&#160;                    <span class="keyword">explicit</span> <a class="code" href="a01361.html#a830b40cc4e74a0ad900c9714c0faa60b">MainError</a>(<span class="keyword">const</span> std::string &amp;message);</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01361.html#a38f949a0b2a4d34abc8167d5aa13265a">   24</a></span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01361.html#a38f949a0b2a4d34abc8167d5aa13265a">what</a>() const noexcept override;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                private:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01361.html#a123ba5da478836742a237d1e27033a40">   26</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01361.html#a123ba5da478836742a237d1e27033a40">_message</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            };</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01357.html#a0a56937e6ce5b4c55451617a9e72ba61">   34</a></span>&#160;            <a class="code" href="a01357.html">Main</a>(<a class="code" href="a01309.html">ILogger</a> &amp;logger);</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01357.html#a67c8130e366f95481ca6b163e18c8cf5">   35</a></span>&#160;            ~<a class="code" href="a01357.html">Main</a>() = default;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01332.html#acd1c962a4738e078e5fb532741162e89">   39</a></span>&#160;            std::string <a class="code" href="a01332.html#acd1c962a4738e078e5fb532741162e89">_directory</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ENTITYLOADER_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00071_html"><div class="ttname"><a href="a00071.html">IEntity.hpp</a></div></div>
-<div class="ttc" id="aa00095_html"><div class="ttname"><a href="a00095.html">EntityFactory.hpp</a></div></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">TFactory.hpp</a></div></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">EntityHandler.hpp</a></div></div>
-<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">PluginLoader.hpp</a></div></div>
-<div class="ttc" id="aa00352_html"><div class="ttname"><a href="a00352.html">RayTracer::Plugins::Entities</a></div><div class="ttdef"><b>Definition:</b> EntityHandler.hpp:19</div></div>
-<div class="ttc" id="aa01332_html"><div class="ttname"><a href="a01332.html">RayTracer::Plugins::Entities::EntityLoader</a></div><div class="ttdoc">The EntityLoader.</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:24</div></div>
-<div class="ttc" id="aa01332_html_ab3564931a0542396d5e6ea85cc32c064"><div class="ttname"><a href="a01332.html#ab3564931a0542396d5e6ea85cc32c064">RayTracer::Plugins::Entities::EntityLoader::loadEntities</a></div><div class="ttdeci">void loadEntities()</div><div class="ttdoc">Load all the entities in the factory singleton.</div></div>
-<div class="ttc" id="aa01332_html_acd1c962a4738e078e5fb532741162e89"><div class="ttname"><a href="a01332.html#acd1c962a4738e078e5fb532741162e89">RayTracer::Plugins::Entities::EntityLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:39</div></div>
-<div class="ttc" id="aa01332_html_ae4c0b2318578996867d5486fcd6bb04f"><div class="ttname"><a href="a01332.html#ae4c0b2318578996867d5486fcd6bb04f">RayTracer::Plugins::Entities::EntityLoader::EntityLoader</a></div><div class="ttdeci">EntityLoader(const std::string &amp;directory)</div><div class="ttdoc">EntityLoader constructor (doesn't load anything)</div></div>
-<div class="ttc" id="aa01368_html"><div class="ttname"><a href="a01368.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a01357.html#a2cfbeb56d56e0de841832fba6942f9a0">   37</a></span>&#160;            <span class="keywordtype">int</span> operator()(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        private:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01365.html">   40</a></span>&#160;            class <a class="code" href="a01365.html">ArgumentError</a> : public std::exception {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01365.html#afe2cb91676ffaec3708b6e6948ab09b7">   42</a></span>&#160;                    <span class="keyword">explicit</span> <a class="code" href="a01365.html#afe2cb91676ffaec3708b6e6948ab09b7">ArgumentError</a>(<span class="keyword">const</span> std::string &amp;message);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01365.html#ae1dbc70a4a359762069862a369f6b485">   43</a></span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01365.html#ae1dbc70a4a359762069862a369f6b485">what</a>() const noexcept override;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                private:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01365.html#a356828f7fd99fc417acbd9bea7aa6b7b">   45</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01361.html#a123ba5da478836742a237d1e27033a40">_message</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            };</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01357.html#a2a218028362b3cb4d4f0e11436d5b8f3">   52</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01357.html#a2a218028362b3cb4d4f0e11436d5b8f3">exportScene</a>(const std::<span class="keywordtype">string</span> &amp;baseFilePath);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01357.html#a0a4fda1ebed4d4b3d21024174ec454b9">   56</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01357.html#a0a4fda1ebed4d4b3d21024174ec454b9">run</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a01357.html#aa069d0fa1a4c757d745684ef1f17b646">   60</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01357.html#aa069d0fa1a4c757d745684ef1f17b646">help</a>() const;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a01357.html#a933dc11fbc4f3e98aef3b58e55ffa6f4">   71</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="a01357.html#a933dc11fbc4f3e98aef3b58e55ffa6f4">parseCmdArgs</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01357.html#a711a6d375f7c44a344874a2f3e451a5f">   73</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01357.html#a711a6d375f7c44a344874a2f3e451a5f">_baseFilePath</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a01357.html#a8fd6bf597956a69a3f7552f2e77b57ff">   74</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01357.html#a8fd6bf597956a69a3f7552f2e77b57ff">_sceneConfFilePath</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a01357.html#af55edbf60888bfa40ebe04d5cf1aa530">   75</a></span>&#160;            Scenes::Scene <a class="code" href="a01357.html#af55edbf60888bfa40ebe04d5cf1aa530">_scene</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a01357.html#a9e5248148d6c2aa481828c6cbf71818b">   76</a></span>&#160;            <a class="code" href="a01309.html">ILogger</a> &amp;<a class="code" href="a01357.html#a9e5248148d6c2aa481828c6cbf71818b">_logger</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">Parameters.hpp</a></div></div>
+<div class="ttc" id="aa00221_html"><div class="ttname"><a href="a00221.html">Scene.hpp</a></div></div>
+<div class="ttc" id="aa00357_html"><div class="ttname"><a href="a00357.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:18</div></div>
+<div class="ttc" id="aa01309_html"><div class="ttname"><a href="a01309.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01357_html"><div class="ttname"><a href="a01357.html">RayTracer::Main</a></div><div class="ttdef"><b>Definition:</b> Main.hpp:19</div></div>
+<div class="ttc" id="aa01357_html_a0a4fda1ebed4d4b3d21024174ec454b9"><div class="ttname"><a href="a01357.html#a0a4fda1ebed4d4b3d21024174ec454b9">RayTracer::Main::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Run the main (like the main func but in a method :eyes:)</div></div>
+<div class="ttc" id="aa01357_html_a2a218028362b3cb4d4f0e11436d5b8f3"><div class="ttname"><a href="a01357.html#a2a218028362b3cb4d4f0e11436d5b8f3">RayTracer::Main::exportScene</a></div><div class="ttdeci">void exportScene(const std::string &amp;baseFilePath)</div><div class="ttdoc">Export the scene to ppm files.</div></div>
+<div class="ttc" id="aa01357_html_a711a6d375f7c44a344874a2f3e451a5f"><div class="ttname"><a href="a01357.html#a711a6d375f7c44a344874a2f3e451a5f">RayTracer::Main::_baseFilePath</a></div><div class="ttdeci">std::string _baseFilePath</div><div class="ttdef"><b>Definition:</b> Main.hpp:73</div></div>
+<div class="ttc" id="aa01357_html_a8fd6bf597956a69a3f7552f2e77b57ff"><div class="ttname"><a href="a01357.html#a8fd6bf597956a69a3f7552f2e77b57ff">RayTracer::Main::_sceneConfFilePath</a></div><div class="ttdeci">std::string _sceneConfFilePath</div><div class="ttdef"><b>Definition:</b> Main.hpp:74</div></div>
+<div class="ttc" id="aa01357_html_a933dc11fbc4f3e98aef3b58e55ffa6f4"><div class="ttname"><a href="a01357.html#a933dc11fbc4f3e98aef3b58e55ffa6f4">RayTracer::Main::parseCmdArgs</a></div><div class="ttdeci">bool parseCmdArgs(int argc, char **argv)</div><div class="ttdoc">Parse the command line argumens.</div></div>
+<div class="ttc" id="aa01357_html_a9e5248148d6c2aa481828c6cbf71818b"><div class="ttname"><a href="a01357.html#a9e5248148d6c2aa481828c6cbf71818b">RayTracer::Main::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> Main.hpp:76</div></div>
+<div class="ttc" id="aa01357_html_aa069d0fa1a4c757d745684ef1f17b646"><div class="ttname"><a href="a01357.html#aa069d0fa1a4c757d745684ef1f17b646">RayTracer::Main::help</a></div><div class="ttdeci">void help() const</div><div class="ttdoc">Print the help.</div></div>
+<div class="ttc" id="aa01357_html_af55edbf60888bfa40ebe04d5cf1aa530"><div class="ttname"><a href="a01357.html#af55edbf60888bfa40ebe04d5cf1aa530">RayTracer::Main::_scene</a></div><div class="ttdeci">Scenes::Scene _scene</div><div class="ttdef"><b>Definition:</b> Main.hpp:75</div></div>
+<div class="ttc" id="aa01361_html"><div class="ttname"><a href="a01361.html">RayTracer::Main::MainError</a></div><div class="ttdef"><b>Definition:</b> Main.hpp:21</div></div>
+<div class="ttc" id="aa01361_html_a123ba5da478836742a237d1e27033a40"><div class="ttname"><a href="a01361.html#a123ba5da478836742a237d1e27033a40">RayTracer::Main::MainError::_message</a></div><div class="ttdeci">std::string _message</div><div class="ttdef"><b>Definition:</b> Main.hpp:26</div></div>
+<div class="ttc" id="aa01361_html_a38f949a0b2a4d34abc8167d5aa13265a"><div class="ttname"><a href="a01361.html#a38f949a0b2a4d34abc8167d5aa13265a">RayTracer::Main::MainError::what</a></div><div class="ttdeci">const char * what() const noexcept override</div></div>
+<div class="ttc" id="aa01361_html_a830b40cc4e74a0ad900c9714c0faa60b"><div class="ttname"><a href="a01361.html#a830b40cc4e74a0ad900c9714c0faa60b">RayTracer::Main::MainError::MainError</a></div><div class="ttdeci">MainError(const std::string &amp;message)</div></div>
+<div class="ttc" id="aa01365_html"><div class="ttname"><a href="a01365.html">RayTracer::Main::ArgumentError</a></div><div class="ttdef"><b>Definition:</b> Main.hpp:40</div></div>
+<div class="ttc" id="aa01365_html_ae1dbc70a4a359762069862a369f6b485"><div class="ttname"><a href="a01365.html#ae1dbc70a4a359762069862a369f6b485">RayTracer::Main::ArgumentError::what</a></div><div class="ttdeci">const char * what() const noexcept override</div></div>
+<div class="ttc" id="aa01365_html_afe2cb91676ffaec3708b6e6948ab09b7"><div class="ttname"><a href="a01365.html#afe2cb91676ffaec3708b6e6948ab09b7">RayTracer::Main::ArgumentError::ArgumentError</a></div><div class="ttdeci">ArgumentError(const std::string &amp;message)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

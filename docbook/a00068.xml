@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00068" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/ICamera.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/ICamera.hpp</primary></indexterm>
-<programlisting>#include &lt;list&gt;
-#include &quot;Transform/Vector2i.hpp&quot;
-#include &quot;IDisplayable.hpp&quot;
-#include &quot;Image.hpp&quot;
-#include &quot;IFilter.hpp&quot;
-#include &quot;ISceneState.hpp&quot;
-#include &quot;IEntity.hpp&quot;
-</programlisting>Include dependency graph for ICamera.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Display/Display.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Display/Display.hpp</primary></indexterm>
+<programlisting>#include &lt;SFML/Graphics/RenderWindow.hpp&gt;
+#include &lt;vector&gt;
+#include &lt;SFML/Graphics.hpp&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;Scene.hpp&quot;
+#include &quot;SceneLoader.hpp&quot;
+#include &quot;IDisplayModule.hpp&quot;
+</programlisting>Include dependency graph for Display.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -18,30 +18,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00070.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01192">RayTracer::Entities::ICamera</link></para>
-
-<para>The <link linkend="_a01192">ICamera</link> class. </para>
+            <listitem><para>class <link linkend="_a01205">RayTracer::Display::Display</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01209">RayTracer::Display::Display::StartFailed</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00346">RayTracer::Entities</link></para>
+            <listitem><para> <link linkend="_a00358">RayTracer::Display</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

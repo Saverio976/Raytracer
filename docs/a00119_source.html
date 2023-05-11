@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/ILogger.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Factories/IMaterialFactory.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,53 +62,58 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3dbe57e65c50a7a17fba27939d267647.html">Factories</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ILogger.hpp</div>  </div>
+<div class="title">IMaterialFactory.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00119.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ILogger.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IEntityFactory.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYILOGGER_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYILOGGER_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IMATERIALFACTORY_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IMATERIALFACTORY_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00345.html">RayTracer</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01260.html">   30</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01260.html">ILogger</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01260.html#a6d0c91ce8c1b14bb2847e8904ff61494">   32</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01260.html#a6d0c91ce8c1b14bb2847e8904ff61494">~ILogger</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01260.html#a7e6ea7896672d93467650551e5cd0dfe">   42</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01260.html#a7e6ea7896672d93467650551e5cd0dfe">fatal</a>(<span class="keyword">const</span> std::string &amp;message) = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01260.html#a90f646fcaf4d02c6af0faa7f5ce4e3c8">   53</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01260.html#a90f646fcaf4d02c6af0faa7f5ce4e3c8">error</a>(<span class="keyword">const</span> std::string &amp;message) = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a01260.html#a149883bba192133a5d8cede10ab705a3">   63</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01260.html#a149883bba192133a5d8cede10ab705a3">warn</a>(<span class="keyword">const</span> std::string &amp;message) = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01260.html#a13e2ae2a73b533040df4b36e20aba69f">   73</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01260.html#a13e2ae2a73b533040df4b36e20aba69f">info</a>(<span class="keyword">const</span> std::string &amp;message) = 0;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a01260.html#aaeb0984b17b04ad668bd22a0f6f43d1c">   82</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01260.html#aaeb0984b17b04ad668bd22a0f6f43d1c">debug</a>(<span class="keyword">const</span> std::string &amp;message) = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a01260.html#acb05281ccd789116a6f5436748a0a20b">   91</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01260.html#acb05281ccd789116a6f5436748a0a20b">trace</a>(<span class="keyword">const</span> std::string &amp;message) = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00345_html"><div class="ttname"><a href="a00345.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> ICamera.hpp:18</div></div>
-<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01260_html_a13e2ae2a73b533040df4b36e20aba69f"><div class="ttname"><a href="a01260.html#a13e2ae2a73b533040df4b36e20aba69f">RayTracer::ILogger::info</a></div><div class="ttdeci">virtual void info(const std::string &amp;message)=0</div><div class="ttdoc">Logger info.</div></div>
-<div class="ttc" id="aa01260_html_a149883bba192133a5d8cede10ab705a3"><div class="ttname"><a href="a01260.html#a149883bba192133a5d8cede10ab705a3">RayTracer::ILogger::warn</a></div><div class="ttdeci">virtual void warn(const std::string &amp;message)=0</div><div class="ttdoc">Logger warn.</div></div>
-<div class="ttc" id="aa01260_html_a6d0c91ce8c1b14bb2847e8904ff61494"><div class="ttname"><a href="a01260.html#a6d0c91ce8c1b14bb2847e8904ff61494">RayTracer::ILogger::~ILogger</a></div><div class="ttdeci">virtual ~ILogger()=default</div></div>
-<div class="ttc" id="aa01260_html_a7e6ea7896672d93467650551e5cd0dfe"><div class="ttname"><a href="a01260.html#a7e6ea7896672d93467650551e5cd0dfe">RayTracer::ILogger::fatal</a></div><div class="ttdeci">virtual void fatal(const std::string &amp;message)=0</div><div class="ttdoc">Logger fata.</div></div>
-<div class="ttc" id="aa01260_html_a90f646fcaf4d02c6af0faa7f5ce4e3c8"><div class="ttname"><a href="a01260.html#a90f646fcaf4d02c6af0faa7f5ce4e3c8">RayTracer::ILogger::error</a></div><div class="ttdeci">virtual void error(const std::string &amp;message)=0</div><div class="ttdoc">Logger error.</div></div>
-<div class="ttc" id="aa01260_html_aaeb0984b17b04ad668bd22a0f6f43d1c"><div class="ttname"><a href="a01260.html#aaeb0984b17b04ad668bd22a0f6f43d1c">RayTracer::ILogger::debug</a></div><div class="ttdeci">virtual void debug(const std::string &amp;message)=0</div><div class="ttdoc">Logger debug.</div></div>
-<div class="ttc" id="aa01260_html_acb05281ccd789116a6f5436748a0a20b"><div class="ttname"><a href="a01260.html#acb05281ccd789116a6f5436748a0a20b">RayTracer::ILogger::trace</a></div><div class="ttdeci">virtual void trace(const std::string &amp;message)=0</div><div class="ttdoc">Logger trace.</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00089.html">IMaterial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00218.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00361.html">RayTracer::Factories</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01293.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01293.html">IMaterialFactory</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01293.html#a108be57aeed0f6991e017f5e06d04c06">   20</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01293.html#a108be57aeed0f6991e017f5e06d04c06">~IMaterialFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01293.html#ab278e040b21266a3ec5ef70fd0ecbc03">   29</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01253.html">Entities::IMaterial</a> &amp;<a class="code" href="a01293.html#ab278e040b21266a3ec5ef70fd0ecbc03">get</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="a01461.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01309.html">ILogger</a> &amp;logger) = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00119.html#a5a43e0386914c1a248464383947709b5">   34</a></span>&#160;    <span class="keyword">extern</span> <a class="code" href="a01293.html">RayTracer::Factories::IMaterialFactory</a> *<a class="code" href="a00119.html#a5a43e0386914c1a248464383947709b5">getMaterialFactoryInstance</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00089_html"><div class="ttname"><a href="a00089.html">IMaterial.hpp</a></div></div>
+<div class="ttc" id="aa00119_html_a5a43e0386914c1a248464383947709b5"><div class="ttname"><a href="a00119.html#a5a43e0386914c1a248464383947709b5">getMaterialFactoryInstance</a></div><div class="ttdeci">RayTracer::Factories::IMaterialFactory * getMaterialFactoryInstance(void)</div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00361_html"><div class="ttname"><a href="a00361.html">RayTracer::Factories</a></div><div class="ttdef"><b>Definition:</b> EntityFactory.hpp:17</div></div>
+<div class="ttc" id="aa01253_html"><div class="ttname"><a href="a01253.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
+<div class="ttc" id="aa01293_html"><div class="ttname"><a href="a01293.html">RayTracer::Factories::IMaterialFactory</a></div><div class="ttdef"><b>Definition:</b> IMaterialFactory.hpp:18</div></div>
+<div class="ttc" id="aa01293_html_a108be57aeed0f6991e017f5e06d04c06"><div class="ttname"><a href="a01293.html#a108be57aeed0f6991e017f5e06d04c06">RayTracer::Factories::IMaterialFactory::~IMaterialFactory</a></div><div class="ttdeci">virtual ~IMaterialFactory()=default</div></div>
+<div class="ttc" id="aa01293_html_ab278e040b21266a3ec5ef70fd0ecbc03"><div class="ttname"><a href="a01293.html#ab278e040b21266a3ec5ef70fd0ecbc03">RayTracer::Factories::IMaterialFactory::get</a></div><div class="ttdeci">virtual Entities::IMaterial &amp; get(const std::string &amp;name, const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Get an material.</div></div>
+<div class="ttc" id="aa01309_html"><div class="ttname"><a href="a01309.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01461_html"><div class="ttname"><a href="a01461.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

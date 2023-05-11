@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Filters/IFilterCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityLoader.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,54 +62,59 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_94f36a39fb90e1f2b0528819abd4baaf.html">Filters</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_022e325a8f259b9b8d324d8b04589350.html">Plugins</a></li><li class="navelem"><a class="el" href="dir_99a9e5809d7dd3eea28a4e7b1821ca7c.html">Entities</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">IFilterCreator.hpp</div>  </div>
+<div class="title">EntityLoader.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00170.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IFilterCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** EntityLoader.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IFILTERCREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define IFILTERCREATOR_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00116.html">IFilter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00206.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00353.html">RayTracer::Plugins::Filters</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01348.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01348.html">IFilterCreator</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01348.html#ab5c1f23072e4c526505de148c36d4ec5">   23</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01348.html#ab5c1f23072e4c526505de148c36d4ec5">~IFilterCreator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01348.html#af72d84e7508e57e56fef9f48753f571f">   31</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01256.html">RayTracer::Filters::IFilter</a> *<a class="code" href="a01348.html#af72d84e7508e57e56fef9f48753f571f">create</a>(<span class="keyword">const</span> <a class="code" href="a01412.html">Scenes::ISetting</a> &amp;setting, <a class="code" href="a01260.html">ILogger</a> &amp;logger) = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*IFILTERCREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">IFilter.hpp</a></div></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00206_html"><div class="ttname"><a href="a00206.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00353_html"><div class="ttname"><a href="a00353.html">RayTracer::Plugins::Filters</a></div><div class="ttdef"><b>Definition:</b> FilterHandler.hpp:18</div></div>
-<div class="ttc" id="aa01256_html"><div class="ttname"><a href="a01256.html">RayTracer::Filters::IFilter</a></div><div class="ttdoc">The IFilter class.</div><div class="ttdef"><b>Definition:</b> IFilter.hpp:19</div></div>
-<div class="ttc" id="aa01260_html"><div class="ttname"><a href="a01260.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:30</div></div>
-<div class="ttc" id="aa01348_html"><div class="ttname"><a href="a01348.html">RayTracer::Plugins::Filters::IFilterCreator</a></div><div class="ttdoc">The IFilterCreator class.</div><div class="ttdef"><b>Definition:</b> IFilterCreator.hpp:21</div></div>
-<div class="ttc" id="aa01348_html_ab5c1f23072e4c526505de148c36d4ec5"><div class="ttname"><a href="a01348.html#ab5c1f23072e4c526505de148c36d4ec5">RayTracer::Plugins::Filters::IFilterCreator::~IFilterCreator</a></div><div class="ttdeci">virtual ~IFilterCreator()=default</div></div>
-<div class="ttc" id="aa01348_html_af72d84e7508e57e56fef9f48753f571f"><div class="ttname"><a href="a01348.html#af72d84e7508e57e56fef9f48753f571f">RayTracer::Plugins::Filters::IFilterCreator::create</a></div><div class="ttdeci">virtual RayTracer::Filters::IFilter * create(const Scenes::ISetting &amp;setting, ILogger &amp;logger)=0</div><div class="ttdoc">Create a filter with a setting.</div></div>
-<div class="ttc" id="aa01412_html"><div class="ttname"><a href="a01412.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ENTITYLOADER_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ENTITYLOADER_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">TFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00083.html">IEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00197.html">PluginLoader.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00167.html">EntityHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00107.html">EntityFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00365.html">RayTracer::Plugins::Entities</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01381.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01381.html">EntityLoader</a> : <span class="keyword">protected</span> <a class="code" href="a01417.html">PluginLoader</a>&lt;EntityHandler, RayTracer::Entities::IEntity, Factories::EntityFactory&gt; {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01381.html#ae4c0b2318578996867d5486fcd6bb04f">   31</a></span>&#160;            <a class="code" href="a01381.html#ae4c0b2318578996867d5486fcd6bb04f">EntityLoader</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01381.html#ab3564931a0542396d5e6ea85cc32c064">   35</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01381.html#ab3564931a0542396d5e6ea85cc32c064">loadEntities</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01381.html#acd1c962a4738e078e5fb532741162e89">   39</a></span>&#160;            std::string <a class="code" href="a01381.html#acd1c962a4738e078e5fb532741162e89">_directory</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ENTITYLOADER_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00083_html"><div class="ttname"><a href="a00083.html">IEntity.hpp</a></div></div>
+<div class="ttc" id="aa00107_html"><div class="ttname"><a href="a00107.html">EntityFactory.hpp</a></div></div>
+<div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">TFactory.hpp</a></div></div>
+<div class="ttc" id="aa00167_html"><div class="ttname"><a href="a00167.html">EntityHandler.hpp</a></div></div>
+<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">PluginLoader.hpp</a></div></div>
+<div class="ttc" id="aa00365_html"><div class="ttname"><a href="a00365.html">RayTracer::Plugins::Entities</a></div><div class="ttdef"><b>Definition:</b> EntityHandler.hpp:19</div></div>
+<div class="ttc" id="aa01381_html"><div class="ttname"><a href="a01381.html">RayTracer::Plugins::Entities::EntityLoader</a></div><div class="ttdoc">The EntityLoader.</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:24</div></div>
+<div class="ttc" id="aa01381_html_ab3564931a0542396d5e6ea85cc32c064"><div class="ttname"><a href="a01381.html#ab3564931a0542396d5e6ea85cc32c064">RayTracer::Plugins::Entities::EntityLoader::loadEntities</a></div><div class="ttdeci">void loadEntities()</div><div class="ttdoc">Load all the entities in the factory singleton.</div></div>
+<div class="ttc" id="aa01381_html_acd1c962a4738e078e5fb532741162e89"><div class="ttname"><a href="a01381.html#acd1c962a4738e078e5fb532741162e89">RayTracer::Plugins::Entities::EntityLoader::_directory</a></div><div class="ttdeci">std::string _directory</div><div class="ttdef"><b>Definition:</b> EntityLoader.hpp:39</div></div>
+<div class="ttc" id="aa01381_html_ae4c0b2318578996867d5486fcd6bb04f"><div class="ttname"><a href="a01381.html#ae4c0b2318578996867d5486fcd6bb04f">RayTracer::Plugins::Entities::EntityLoader::EntityLoader</a></div><div class="ttdeci">EntityLoader(const std::string &amp;directory)</div><div class="ttdoc">EntityLoader constructor (doesn't load anything)</div></div>
+<div class="ttc" id="aa01417_html"><div class="ttname"><a href="a01417.html">RayTracer::Plugins::PluginLoader</a></div><div class="ttdef"><b>Definition:</b> PluginLoader.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

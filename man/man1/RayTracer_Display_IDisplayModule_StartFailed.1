@@ -1,0 +1,51 @@
+.TH "RayTracer::Display::IDisplayModule::StartFailed" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Display::IDisplayModule::StartFailed \- If the function start failed, but it can continue without being completed\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDisplayModule\&.hpp>\fP
+.PP
+Inherits std::exception\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStartFailed\fP (const std::string &error)"
+.br
+.ti -1c
+.RI "const char * \fBwhat\fP () const  throw ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_error\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+If the function start failed, but it can continue without being completed\&. 
+
+Any other exception will let the program continue and remove this module from list 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Display::IDisplayModule::StartFailed::StartFailed (const std::string & error)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* RayTracer::Display::IDisplayModule::StartFailed::what () const\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string RayTracer::Display::IDisplayModule::StartFailed::_error\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

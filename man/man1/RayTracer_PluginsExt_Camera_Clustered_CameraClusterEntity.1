@@ -59,6 +59,14 @@ Inherits \fBRayTracer::Entities::ICamera\fP\&.
 .RI "std::list< std::reference_wrapper< \fBFilters::IFilter\fP > > & \fBgetFilters\fP () final"
 .br
 .RI "Get the filters\&. "
+.ti -1c
+.RI "std::size_t \fBgetCluster\fP () const final"
+.br
+.RI "Get the cluster\&. "
+.ti -1c
+.RI "void \fBsetCluster\fP (std::size_t cluster) final"
+.br
+.RI "Set the cluster (1 is more precision, +infini is less precision) "
 .in -1c
 .SS "Private Attributes"
 
@@ -97,6 +105,12 @@ Inherits \fBRayTracer::Entities::ICamera\fP\&.
 
 .SH "Member Function Documentation"
 .PP 
+.SS "std::size_t RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity::getCluster () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Get the cluster\&. 
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
 .SS "std::list<std::reference_wrapper<\fBFilters::IFilter\fP> >& RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity::getFilters ()\fC [final]\fP, \fC [virtual]\fP"
 
 .PP
@@ -203,6 +217,19 @@ Render an image\&.
 \fBReturns\fP
 .RS 4
 the image 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::Entities::ICamera\fP\&.
+.SS "void RayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity::setCluster (std::size_t cluster)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Set the cluster (1 is more precision, +infini is less precision) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcluster\fP the cluster 
 .RE
 .PP
 

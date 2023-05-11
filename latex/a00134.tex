@@ -1,11 +1,10 @@
-\hypertarget{a00134}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\+Pixel\+Thread.hpp File Reference}
-\label{a00134}\index{/home/runner/work/Raytracer/Raytracer/src/Images/PixelThread.hpp@{/home/runner/work/Raytracer/Raytracer/src/Images/PixelThread.hpp}}
-{\ttfamily \#include \char`\"{}IDisplayable.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Ray.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Color.\+hpp\char`\"{}}\newline
-{\ttfamily \#include $<$functional$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
-Include dependency graph for Pixel\+Thread.\+hpp\+:
+\hypertarget{a00134}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\+Color.hpp File Reference}
+\label{a00134}\index{/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp@{/home/runner/work/Raytracer/Raytracer/src/Images/Color.hpp}}
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$SFML/\+Graphics/\+Color.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}ISetting.\+hpp\char`\"{}}\newline
+Include dependency graph for Color.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -13,15 +12,37 @@ Include dependency graph for Pixel\+Thread.\+hpp\+:
 \includegraphics[width=350pt]{a00135}
 \end{center}
 \end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00136}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01288}{Ray\+Tracer\+::\+Images\+::\+Pixel\+Thread}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01288}{Pixel\+Thread}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01313}{Ray\+Tracer\+::\+Images\+::\+Color}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01313}{Color}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00345}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00357}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00350}{Ray\+Tracer\+::\+Images}}
+ \mbox{\hyperlink{a00363}{Ray\+Tracer\+::\+Images}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{a00134_a892349ff4da33acc2d79e3c5c7585374}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{a01313}{Ray\+Tracer\+::\+Images\+::\+Color}} \&color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00134_a892349ff4da33acc2d79e3c5c7585374}\label{a00134_a892349ff4da33acc2d79e3c5c7585374}} 
+\index{Color.hpp@{Color.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Color.hpp@{Color.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{a01313}{Ray\+Tracer\+::\+Images\+::\+Color}} \&}]{color }\end{DoxyParamCaption})}
+

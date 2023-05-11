@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00083" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp</primary></indexterm>
-<programlisting>#include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for ITransform.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/IEntity.hpp</primary></indexterm>
+<programlisting>#include &quot;Transform/ITransform.hpp&quot;
+</programlisting>Include dependency graph for IEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -24,20 +24,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01212">RayTracer::Entities::Transform::ITransform</link></para>
+            <listitem><para>class <link linkend="_a01245">RayTracer::Entities::IEntity</link></para>
 
-<para>The <link linkend="_a01212">ITransform</link> class. </para>
+<para>The <link linkend="_a01245">IEntity</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00346">RayTracer::Entities</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00347">RayTracer::Entities::Transform</link></para>
+            <listitem><para> <link linkend="_a00359">RayTracer::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

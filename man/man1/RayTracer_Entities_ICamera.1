@@ -47,6 +47,14 @@ Inherited by \fBRayTracer::PluginsExt::Camera::CameraEntity\fP, \fBRayTracer::Pl
 .RI "virtual std::list< std::reference_wrapper< \fBFilters::IFilter\fP > > & \fBgetFilters\fP ()=0"
 .br
 .RI "Get the filters\&. "
+.ti -1c
+.RI "virtual void \fBsetCluster\fP (std::size_t cluster)=0"
+.br
+.RI "Set the cluster (1 is more precision, +infini is less precision) "
+.ti -1c
+.RI "virtual std::size_t \fBgetCluster\fP () const =0"
+.br
+.RI "Get the cluster\&. "
 .in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
@@ -60,6 +68,12 @@ class that represent a camera (perspective, orthographic, panoramic, \&.\&.\&.)
 
 .SH "Member Function Documentation"
 .PP 
+.SS "virtual std::size_t RayTracer::Entities::ICamera::getCluster () const\fC [pure virtual]\fP"
+
+.PP
+Get the cluster\&. 
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
 .SS "virtual std::list<std::reference_wrapper<\fBFilters::IFilter\fP> >& RayTracer::Entities::ICamera::getFilters ()\fC [pure virtual]\fP"
 
 .PP
@@ -127,6 +141,19 @@ Render an image\&.
 \fBReturns\fP
 .RS 4
 the image 
+.RE
+.PP
+
+.PP
+Implemented in \fBRayTracer::PluginsExt::Camera::FullCustom::CameraCustomEntity\fP, \fBRayTracer::PluginsExt::Camera::Clustered::CameraClusterEntity\fP, and \fBRayTracer::PluginsExt::Camera::CameraEntity\fP\&.
+.SS "virtual void RayTracer::Entities::ICamera::setCluster (std::size_t cluster)\fC [pure virtual]\fP"
+
+.PP
+Set the cluster (1 is more precision, +infini is less precision) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcluster\fP the cluster 
 .RE
 .PP
 

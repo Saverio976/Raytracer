@@ -1,13 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00101" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp</primary></indexterm>
-<programlisting>#include &lt;string&gt;
-#include &lt;memory&gt;
-#include &quot;ILogger.hpp&quot;
-#include &quot;IEntity.hpp&quot;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for IEntityFactory.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp</primary></indexterm>
+<programlisting>#include &lt;ostream&gt;
+#include &quot;IConfig.hpp&quot;
+</programlisting>Include dependency graph for Vector2i.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -28,32 +25,36 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01236">RayTracer::Factories::IEntityFactory</link></para>
+            <listitem><para>class <link linkend="_a01269">RayTracer::Entities::Transform::Vector2i</link></para>
+
+<para>The <link linkend="_a01269">Vector2i</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00348">RayTracer::Factories</link></para>
+            <listitem><para> <link linkend="_a00359">RayTracer::Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00360">RayTracer::Entities::Transform</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_a01236">RayTracer::Factories::IEntityFactory</link> * <link linkend="_a00101_1aae10664f77a8c9a9fbbc43b95ecc5d03">getEntityFactoryInstance</link> (void)</para>
+            <listitem><para>std::ostream &amp; <link linkend="_a00101_1a92abfcf0771ed10b742e6e8f20e79f0d">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01269">RayTracer::Entities::Transform::Vector2i</link> &amp;vector)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Function Documentation</title>
-<anchor xml:id="_a00101_1aae10664f77a8c9a9fbbc43b95ecc5d03"/>    <section>
-    <title>getEntityFactoryInstance()</title>
-<indexterm><primary>getEntityFactoryInstance</primary><secondary>IEntityFactory.hpp</secondary></indexterm>
-<indexterm><primary>IEntityFactory.hpp</primary><secondary>getEntityFactoryInstance</secondary></indexterm>
-<para><computeroutput><link linkend="_a01236">RayTracer::Factories::IEntityFactory</link>* getEntityFactoryInstance (void )</computeroutput></para></section>
+<anchor xml:id="_a00101_1a92abfcf0771ed10b742e6e8f20e79f0d"/>    <section>
+    <title>operator&lt;&lt;()</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Vector2i.hpp</secondary></indexterm>
+<indexterm><primary>Vector2i.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01269">RayTracer::Entities::Transform::Vector2i</link> &amp; vector)</computeroutput></para></section>
 </section>
 </section>

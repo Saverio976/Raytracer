@@ -25,11 +25,11 @@ Directory dependency graph for Plugins:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00152">Api.hpp</link></para>
+            <listitem><para>file <link linkend="_a00164">Api.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00182">PluginHandler.hpp</link></para>
+            <listitem><para>file <link linkend="_a00194">PluginHandler.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00185">PluginLoader.hpp</link></para>
+            <listitem><para>file <link linkend="_a00197">PluginLoader.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

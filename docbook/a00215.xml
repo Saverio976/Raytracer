@@ -1,18 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00215" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp</primary></indexterm>
-<programlisting>#include &lt;mutex&gt;
-#include &quot;ISceneState.hpp&quot;
-</programlisting>Include dependency graph for SceneState.hpp:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00216.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/ISceneState.hpp</primary></indexterm>
 This graph shows which files directly or indirectly include this file:<para>
     <informalfigure>
         <mediaobject>
@@ -25,18 +14,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01436">RayTracer::Scenes::SceneState</link></para>
+            <listitem><para>class <link linkend="_a01457">RayTracer::Scenes::ISceneState</link></para>
 
-<para>The <link linkend="_a01436">SceneState</link> class. </para>
+<para>The <link linkend="_a01485">SceneState</link> interface. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00355">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00368">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

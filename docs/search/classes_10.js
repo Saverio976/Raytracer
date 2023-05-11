@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['zebracreator_645',['ZebraCreator',['../a01612.html',1,'RayTracer::PluginsExt::Zebra']]],
-  ['zebramaterial_646',['ZebraMaterial',['../a01616.html',1,'RayTracer::PluginsExt::Zebra']]]
+  ['zebracreator_697',['ZebraCreator',['../a01661.html',1,'RayTracer::PluginsExt::Zebra']]],
+  ['zebramaterial_698',['ZebraMaterial',['../a01665.html',1,'RayTracer::PluginsExt::Zebra']]]
 ];

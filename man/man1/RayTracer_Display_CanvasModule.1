@@ -1,0 +1,154 @@
+.TH "RayTracer::Display::CanvasModule" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Display::CanvasModule
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CanvasModule\&.hpp>\fP
+.PP
+Inherits \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCanvasModule\fP (\fBScenes::Scene\fP &scene, std::size_t &position)"
+.br
+.ti -1c
+.RI "void \fBtick\fP (sf::RenderWindow &window) final"
+.br
+.ti -1c
+.RI "void \fBevent\fP (sf::RenderWindow &window, const sf::Event &event) final"
+.br
+.ti -1c
+.RI "void \fBstart\fP (sf::RenderWindow &window) final"
+.br
+.ti -1c
+.RI "void \fBend\fP () final"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP () const final"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBresizeWindow\fP (sf::RenderWindow &window)"
+.br
+.ti -1c
+.RI "void \fBexecIfReady\fP (std::function< void(\fBEntities::ICamera\fP &, \fBEntities::Transform::ITransform\fP &)> func)"
+.br
+.ti -1c
+.RI "void \fBgoToNextCamera\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoToPreviousCamera\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBaddFocalLength\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBremoveFocalLength\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoLeft\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoRight\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoForward\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoBackward\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoUp\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.ti -1c
+.RI "void \fBgoDown\fP (sf::RenderWindow &window, const sf::Event &\fBevent\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBScenes::Scene\fP & \fB_scene\fP"
+.br
+.ti -1c
+.RI "std::size_t & \fB_position\fP"
+.br
+.ti -1c
+.RI "sf::Font \fB_font\fP"
+.br
+.ti -1c
+.RI "sf::Clock \fB_clock\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RayTracer::Display::CanvasModule::CanvasModule (\fBScenes::Scene\fP & scene, std::size_t & position)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RayTracer::Display::CanvasModule::addFocalLength (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::end ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::CanvasModule::event (sf::RenderWindow & window, const sf::Event & event)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::CanvasModule::execIfReady (std::function< void(\fBEntities::ICamera\fP &, \fBEntities::Transform::ITransform\fP &)> func)\fC [private]\fP"
+
+.SS "std::string RayTracer::Display::CanvasModule::getName () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::CanvasModule::goBackward (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goDown (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goForward (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goLeft (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goRight (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goToNextCamera (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goToPreviousCamera (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::goUp (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::removeFocalLength (sf::RenderWindow & window, const sf::Event & event)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::resizeWindow (sf::RenderWindow & window)\fC [private]\fP"
+
+.SS "void RayTracer::Display::CanvasModule::start (sf::RenderWindow & window)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SS "void RayTracer::Display::CanvasModule::tick (sf::RenderWindow & window)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBRayTracer::Display::IDisplayModule\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sf::Clock RayTracer::Display::CanvasModule::_clock\fC [private]\fP"
+
+.SS "sf::Font RayTracer::Display::CanvasModule::_font\fC [private]\fP"
+
+.SS "std::size_t& RayTracer::Display::CanvasModule::_position\fC [private]\fP"
+
+.SS "\fBScenes::Scene\fP& RayTracer::Display::CanvasModule::_scene\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

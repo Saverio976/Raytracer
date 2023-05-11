@@ -38,12 +38,27 @@ Inherits \fBRayTracer::ILogger\fP\&.
 .RI "void \fBtrace\fP (const std::string &message) final"
 .br
 .RI "\fBLogger\fP trace\&. "
+.ti -1c
+.RI "void \fBsubscribeCallback\fP (int type, const std::string &name, std::function< void(const std::string &)> callback) final"
+.br
+.RI "\fBLogger\fP subscribe\&. "
+.ti -1c
+.RI "void \fBunsubscribeCallback\fP (int type, const std::string &name) final"
+.br
+.RI "\fBLogger\fP remove\&. "
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "void \fBprint\fP (const std::string &level, const std::string &message)"
+.RI "void \fBprint\fP (int levelT, const std::string &level, const std::string &message)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< int, std::map< std::string, std::function< void(const std::string &)> > > \fB_callbacks\fP"
 .br
 .in -1c
 .SH "Detailed Description"
@@ -107,8 +122,25 @@ Implements \fBRayTracer::ILogger\fP\&.
 
 .PP
 Implements \fBRayTracer::ILogger\fP\&.
-.SS "void RayTracer::Logger::print (const std::string & level, const std::string & message)\fC [private]\fP"
+.SS "void RayTracer::Logger::print (int levelT, const std::string & level, const std::string & message)\fC [private]\fP"
 
+.SS "void RayTracer::Logger::subscribeCallback (int type, const std::string & name, std::function< void(const std::string &)> callback)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP subscribe\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the type to subscribe for 
+.br
+\fIname\fP the name 
+.br
+\fIcallback\fP the callback 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
 .SS "void RayTracer::Logger::trace (const std::string & message)\fC [final]\fP, \fC [virtual]\fP"
 
 .PP
@@ -117,6 +149,21 @@ Implements \fBRayTracer::ILogger\fP\&.
 \fBParameters\fP
 .RS 4
 \fImessage\fP the message 
+.RE
+.PP
+
+.PP
+Implements \fBRayTracer::ILogger\fP\&.
+.SS "void RayTracer::Logger::unsubscribeCallback (int type, const std::string & name)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+\fBLogger\fP remove\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP the type 
+.br
+\fIname\fP the name 
 .RE
 .PP
 
@@ -135,6 +182,10 @@ Implements \fBRayTracer::ILogger\fP\&.
 
 .PP
 Implements \fBRayTracer::ILogger\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::map<int, std::map<std::string, std::function<void(const std::string &)> > > RayTracer::Logger::_callbacks\fC [private]\fP"
+
 
 .SH "Author"
 .PP 

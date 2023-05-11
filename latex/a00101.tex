@@ -1,16 +1,13 @@
-\hypertarget{a00101}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Factories/\+IEntity\+Factory.hpp File Reference}
-\label{a00101}\index{/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp@{/home/runner/work/Raytracer/Raytracer/src/Factories/IEntityFactory.hpp}}
-{\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$memory$>$}\newline
-{\ttfamily \#include \char`\"{}ILogger.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}IEntity.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ISetting.\+hpp\char`\"{}}\newline
-Include dependency graph for IEntity\+Factory.\+hpp\+:
+\hypertarget{a00101}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Entities/\+Transform/\+Vector2i.hpp File Reference}
+\label{a00101}\index{/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp@{/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp}}
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include \char`\"{}IConfig.\+hpp\char`\"{}}\newline
+Include dependency graph for Vector2i.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{a00102}
+\includegraphics[width=298pt]{a00102}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -24,26 +21,28 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01236}{Ray\+Tracer\+::\+Factories\+::\+IEntity\+Factory}}
-\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01269}{Ray\+Tracer\+::\+Entities\+::\+Transform\+::\+Vector2i}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01269}{Vector2i}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00345}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00357}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00348}{Ray\+Tracer\+::\+Factories}}
+ \mbox{\hyperlink{a00359}{Ray\+Tracer\+::\+Entities}}
+\item 
+ \mbox{\hyperlink{a00360}{Ray\+Tracer\+::\+Entities\+::\+Transform}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{a01236}{Ray\+Tracer\+::\+Factories\+::\+IEntity\+Factory}} $\ast$ \mbox{\hyperlink{a00101_aae10664f77a8c9a9fbbc43b95ecc5d03}{get\+Entity\+Factory\+Instance}} (void)
+std\+::ostream \& \mbox{\hyperlink{a00101_a92abfcf0771ed10b742e6e8f20e79f0d}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{a01269}{Ray\+Tracer\+::\+Entities\+::\+Transform\+::\+Vector2i}} \&vector)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{a00101_aae10664f77a8c9a9fbbc43b95ecc5d03}\label{a00101_aae10664f77a8c9a9fbbc43b95ecc5d03}} 
-\index{IEntityFactory.hpp@{IEntityFactory.hpp}!getEntityFactoryInstance@{getEntityFactoryInstance}}
-\index{getEntityFactoryInstance@{getEntityFactoryInstance}!IEntityFactory.hpp@{IEntityFactory.hpp}}
-\doxysubsubsection{\texorpdfstring{getEntityFactoryInstance()}{getEntityFactoryInstance()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{a01236}{Ray\+Tracer\+::\+Factories\+::\+IEntity\+Factory}}$\ast$ get\+Entity\+Factory\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00101_a92abfcf0771ed10b742e6e8f20e79f0d}\label{a00101_a92abfcf0771ed10b742e6e8f20e79f0d}} 
+\index{Vector2i.hpp@{Vector2i.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Vector2i.hpp@{Vector2i.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{a01269}{Ray\+Tracer\+::\+Entities\+::\+Transform\+::\+Vector2i}} \&}]{vector }\end{DoxyParamCaption})}
 

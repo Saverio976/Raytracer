@@ -14,11 +14,11 @@ Directory dependency graph for Entities:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00155">EntityHandler.hpp</link></para>
+            <listitem><para>file <link linkend="_a00167">EntityHandler.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00158">EntityLoader.hpp</link></para>
+            <listitem><para>file <link linkend="_a00170">EntityLoader.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00161">IEntityCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00173">IEntityCreator.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

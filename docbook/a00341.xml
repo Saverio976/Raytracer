@@ -1,5 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00341" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/README.md File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/README.md</primary></indexterm>
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IEntityCreator.hpp&quot;
+#include &quot;ILogger.hpp&quot;
+#include &quot;TriangleEntity.hpp&quot;
+</programlisting>Include dependency graph for TriangleCreator.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00342.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01653">RayTracer::PluginsExt::Triangle::TriangleCreator</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00369">RayTracer::PluginsExt</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00388">RayTracer::PluginsExt::Triangle</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 </section>

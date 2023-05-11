@@ -1,10 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00089" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Vector2i.hpp</primary></indexterm>
-<programlisting>#include &lt;ostream&gt;
-#include &quot;IConfig.hpp&quot;
-</programlisting>Include dependency graph for Vector2i.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Entities/IMaterial.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Entities/IMaterial.hpp</primary></indexterm>
+<programlisting>#include &quot;Ray.hpp&quot;
+#include &quot;Color.hpp&quot;
+#include &quot;IDisplayable.hpp&quot;
+#include &quot;ITransform.hpp&quot;
+#include &quot;Vector3f.hpp&quot;
+</programlisting>Include dependency graph for IMaterial.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -25,36 +28,19 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01220">RayTracer::Entities::Transform::Vector2i</link></para>
+            <listitem><para>class <link linkend="_a01253">RayTracer::Entities::IMaterial</link></para>
 
-<para>The <link linkend="_a01220">Vector2i</link> class. </para>
+<para>The <link linkend="_a01253">IMaterial</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00345">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00357">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00346">RayTracer::Entities</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00347">RayTracer::Entities::Transform</link></para>
+            <listitem><para> <link linkend="_a00359">RayTracer::Entities</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
-<simplesect>
-    <title>Functions    </title>
-        <itemizedlist>
-            <listitem><para>std::ostream &amp; <link linkend="_a00089_1a92abfcf0771ed10b742e6e8f20e79f0d">operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_a01220">RayTracer::Entities::Transform::Vector2i</link> &amp;vector)</para>
-</listitem>
-        </itemizedlist>
-</simplesect>
-<section>
-<title>Function Documentation</title>
-<anchor xml:id="_a00089_1a92abfcf0771ed10b742e6e8f20e79f0d"/>    <section>
-    <title>operator&lt;&lt;()</title>
-<indexterm><primary>operator&lt;&lt;</primary><secondary>Vector2i.hpp</secondary></indexterm>
-<indexterm><primary>Vector2i.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
-<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; os, const <link linkend="_a01220">RayTracer::Entities::Transform::Vector2i</link> &amp; vector)</computeroutput></para></section>
-</section>
 </section>

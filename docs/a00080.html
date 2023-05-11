@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/IPrimitive.hpp File Reference</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/ICamera.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,26 +70,27 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">IPrimitive.hpp File Reference</div>  </div>
+<div class="title">ICamera.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;optional&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00122_source.html">Color.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00200_source.html">IDisplayable.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00071_source.html">IEntity.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00077_source.html">IMaterial.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00137_source.html">Ray.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00092_source.html">Vector3f.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00101_source.html">Transform/Vector2i.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00212_source.html">IDisplayable.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00137_source.html">Image.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00128_source.html">IFilter.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00215_source.html">ISceneState.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00083_source.html">IEntity.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for IPrimitive.hpp:</div>
+Include dependency graph for ICamera.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00081.svg" width="684" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00081.svg" width="832" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00082.svg" width="2512" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00082.svg" width="2292" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -97,21 +98,21 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01208.html">RayTracer::Entities::IPrimitive</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a01208.html" title="The IPrimitive class.">IPrimitive</a> class.  <a href="a01208.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html">RayTracer::Entities::ICamera</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a01241.html" title="The ICamera class.">ICamera</a> class.  <a href="a01241.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00345"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00345.html">RayTracer</a></td></tr>
+<tr class="memitem:a00357"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00357.html">RayTracer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00346"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00346.html">RayTracer::Entities</a></td></tr>
+<tr class="memitem:a00359"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00359.html">RayTracer::Entities</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 03:29:31 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu May 11 2023 04:15:33 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

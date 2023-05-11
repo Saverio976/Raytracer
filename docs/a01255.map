@@ -1,4 +1,4 @@
-<map id="RayTracer::Filters::IFilter" name="RayTracer::Filters::IFilter">
-<area shape="rect" id="node1" title="The IFilter class." alt="" coords="21,5,156,112"/>
-<area shape="rect" id="node2" href="$a01464.html" title=" " alt="" coords="5,160,172,355"/>
+<map id="RayTracer::Entities::IPrimitive" name="RayTracer::Entities::IPrimitive">
+<area shape="rect" id="node1" title="The IPrimitive class." alt="" coords="5,189,155,340"/>
+<area shape="rect" id="node2" href="$a01245.html" title="The IEntity class." alt="" coords="9,5,151,141"/>
 </map>

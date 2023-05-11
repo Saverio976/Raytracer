@@ -1,42 +1,34 @@
-\hypertarget{a00152}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Plugins/\+Api.hpp File Reference}
-\label{a00152}\index{/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp@{/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp}}
-\doxysubsection*{Functions}
+\hypertarget{a00152}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Images/\+Ray\+Iterrator.hpp File Reference}
+\label{a00152}\index{/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp@{/home/runner/work/Raytracer/Raytracer/src/Images/RayIterrator.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}ICamera.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IRay\+Iterator.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Ray.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector2i.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector3f.\+hpp\char`\"{}}\newline
+Include dependency graph for Ray\+Iterrator.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00153}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-void $\ast$ \mbox{\hyperlink{a00152_a6c4bc04f8b3ed3e6ca1a056499438ab3}{get\+Creator}} (void)
-\begin{DoxyCompactList}\small\item\em Get the creator. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{a00152_adb15eac6ad612e5de35b2bf82f199739}{delete\+Creator}} (void $\ast$creator)
-\begin{DoxyCompactList}\small\item\em Delete the creator (created with the {\ttfamily \mbox{\hyperlink{a00152_a6c4bc04f8b3ed3e6ca1a056499438ab3}{get\+Creator()}}} method) \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{a00152_adb15eac6ad612e5de35b2bf82f199739}\label{a00152_adb15eac6ad612e5de35b2bf82f199739}} 
-\index{Api.hpp@{Api.hpp}!deleteCreator@{deleteCreator}}
-\index{deleteCreator@{deleteCreator}!Api.hpp@{Api.hpp}}
-\doxysubsubsection{\texorpdfstring{deleteCreator()}{deleteCreator()}}
-{\footnotesize\ttfamily void delete\+Creator (\begin{DoxyParamCaption}\item[{void $\ast$}]{creator }\end{DoxyParamCaption})}
-
-
-
-Delete the creator (created with the {\ttfamily \mbox{\hyperlink{a00152_a6c4bc04f8b3ed3e6ca1a056499438ab3}{get\+Creator()}}} method) 
-
-
-\begin{DoxyParams}{Parameters}
-{\em creator} & \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{a00152_a6c4bc04f8b3ed3e6ca1a056499438ab3}\label{a00152_a6c4bc04f8b3ed3e6ca1a056499438ab3}} 
-\index{Api.hpp@{Api.hpp}!getCreator@{getCreator}}
-\index{getCreator@{getCreator}!Api.hpp@{Api.hpp}}
-\doxysubsubsection{\texorpdfstring{getCreator()}{getCreator()}}
-{\footnotesize\ttfamily void$\ast$ get\+Creator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
-
-
-
-Get the creator. 
-
-The creator must be a class that has a {\ttfamily .create(const ISetting \&settings)} method. This method must create an \mbox{[} ILight $\vert$ ICamera $\vert$ IPrimitive $\vert$ IFilter \mbox{]}. There is no verification that the returning value is ok. So be cautious. Thx. For \mbox{[} ILight $\vert$ ICamera $\vert$ IPrimitive \mbox{]} they must inherite from IEntity\+Creator. For \mbox{[} IFilter \mbox{]} they must inherite from IFilter\+Creator.
-
-\begin{DoxyReturn}{Returns}
-the creator 
-\end{DoxyReturn}
+class \mbox{\hyperlink{a01345}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01345}{Ray\+Iterrator}} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01349}{Ray\+Tracer\+::\+Images\+::\+Ray\+Iterrator\+::\+Iterrator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{a00357}{Ray\+Tracer}}
+\item 
+ \mbox{\hyperlink{a00363}{Ray\+Tracer\+::\+Images}}
+\end{DoxyCompactItemize}

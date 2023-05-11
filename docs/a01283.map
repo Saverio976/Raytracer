@@ -1,4 +1,3 @@
-<map id="RayTracer::Images::IRayIterator::IIterator" name="RayTracer::Images::IRayIterator::IIterator">
-<area shape="rect" id="node1" title=" " alt="" coords="7,5,165,171"/>
-<area shape="rect" id="node2" href="$a01300.html" title=" " alt="" coords="5,219,167,472"/>
+<map id="RayTracer::Factories::IEntityFactory" name="RayTracer::Factories::IEntityFactory">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,157,112"/>
 </map>

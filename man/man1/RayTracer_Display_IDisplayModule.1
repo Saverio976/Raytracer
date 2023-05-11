@@ -1,0 +1,84 @@
+.TH "RayTracer::Display::IDisplayModule" 1 "Thu May 11 2023" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RayTracer::Display::IDisplayModule
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IDisplayModule\&.hpp>\fP
+.PP
+Inherited by \fBRayTracer::Display::CanvasModule\fP, and \fBRayTracer::Display::ProgressModule\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBEndFailed\fP"
+.br
+.RI "If the function end failed, but it can continue without being completed\&. "
+.ti -1c
+.RI "class \fBEventFailed\fP"
+.br
+.RI "If the function event failed, but it can continue without being completed\&. "
+.ti -1c
+.RI "class \fBStartFailed\fP"
+.br
+.RI "If the function start failed, but it can continue without being completed\&. "
+.ti -1c
+.RI "class \fBTickFailed\fP"
+.br
+.RI "If the function tick failed, but it can continue without being completed\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IDisplayModule\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBtick\fP (sf::RenderWindow &window)=0"
+.br
+.ti -1c
+.RI "virtual void \fBevent\fP (sf::RenderWindow &window, const sf::Event &event)=0"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP (sf::RenderWindow &window)=0"
+.br
+.ti -1c
+.RI "virtual void \fBend\fP ()=0"
+.br
+.ti -1c
+.RI "virtual std::string \fBgetName\fP () const =0"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual RayTracer::Display::IDisplayModule::~IDisplayModule ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void RayTracer::Display::IDisplayModule::end ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Display::ProgressModule\fP, and \fBRayTracer::Display::CanvasModule\fP\&.
+.SS "virtual void RayTracer::Display::IDisplayModule::event (sf::RenderWindow & window, const sf::Event & event)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Display::ProgressModule\fP, and \fBRayTracer::Display::CanvasModule\fP\&.
+.SS "virtual std::string RayTracer::Display::IDisplayModule::getName () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Display::ProgressModule\fP, and \fBRayTracer::Display::CanvasModule\fP\&.
+.SS "virtual void RayTracer::Display::IDisplayModule::start (sf::RenderWindow & window)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Display::ProgressModule\fP, and \fBRayTracer::Display::CanvasModule\fP\&.
+.SS "virtual void RayTracer::Display::IDisplayModule::tick (sf::RenderWindow & window)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRayTracer::Display::ProgressModule\fP, and \fBRayTracer::Display::CanvasModule\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

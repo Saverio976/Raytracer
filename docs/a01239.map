@@ -1,4 +1,4 @@
-<map id="RayTracer::Factories::IFilterFactory" name="RayTracer::Factories::IFilterFactory">
-<area shape="rect" id="node1" title="The FilterFactory (singleton factory)" alt="" coords="5,5,157,112"/>
-<area shape="rect" id="node2" href="$a01232.html" title="The FilterFactory (singleton factory)" alt="" coords="5,160,157,355"/>
+<map id="RayTracer::Entities::ICamera" name="RayTracer::Entities::ICamera">
+<area shape="rect" id="node1" title="The ICamera class." alt="" coords="5,189,148,413"/>
+<area shape="rect" id="node2" href="$a01245.html" title="The IEntity class." alt="" coords="5,5,148,141"/>
 </map>
