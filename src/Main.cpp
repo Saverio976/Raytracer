@@ -88,7 +88,7 @@ namespace RayTracer {
             throw MainError("Loader/Render error:: " + message);
         }
         if (displayMode) {
-            Display::Display display(this->_scene, loader);
+            Display::Display display(this->_logger, this->_scene, loader);
             display.start();
         } else {
             while (!_scene.isReady()) {

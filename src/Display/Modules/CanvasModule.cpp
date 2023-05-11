@@ -5,8 +5,15 @@
 ** CanvasModule.cpp
 */
 
+#include <SFML/Graphics/Image.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <functional>
 #include <future>
+#include <iostream>
 #include "CanvasModule.hpp"
+#include "Transform.hpp"
+#include "Vector3f.hpp"
 
 namespace RayTracer::Display {
     CanvasModule::CanvasModule(Scenes::Scene &scene, std::size_t &position):
@@ -16,28 +23,27 @@ namespace RayTracer::Display {
     void CanvasModule::tick(sf::RenderWindow &window) {
         Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
         Entities::Transform::Vector2i size = camera.getSize();
+        sf::Image image;
         sf::Texture texture;
         sf::Sprite sprite;
-        texture.create(size.getX(), size.getY());
 
-        sf::Color *pixels = new sf::Color[size.getX() * size.getY()];
+        image.create(size.getX(), size.getY(), sf::Color(0, 0, 0));
         for (int x = 0; x < size.getX(); x++) {
             for (int y =  0; y < size.getY(); y++) {
                 try {
-                    pixels[y * size.getX() + x] = camera.getImage().getPixelsList().at(y * size.getX() + x).toSfColor();
+                    image.setPixel(x, y, camera.getImage().getPixelsList().at(y * size.getX() + x).toSfColor());
                 } catch(const std::exception& e) {
-                    pixels[y * size.getX() + x] = sf::Color(0, 0, 0);
+                    image.setPixel(x, y, sf::Color(0, 0, 0));
                 }
             }
         }
-        texture.update((sf::Uint8 *) pixels, size.getX(), size.getY(), 0, 0);
-        delete [] pixels;
+        texture.loadFromImage(image);
         sprite.setTexture(texture);
         window.draw(sprite);
     }
 
     void CanvasModule::start(sf::RenderWindow &window) {
-
+        this->resizeWindow(window);
     }
 
     void CanvasModule::resizeWindow(sf::RenderWindow &window) {
@@ -49,81 +55,125 @@ namespace RayTracer::Display {
     }
 
     void CanvasModule::event(sf::RenderWindow &window, const sf::Event &event) {
-        Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
-        Entities::Transform::Vector3f position = camera.getTransform().getPosition();
+        std::map<sf::Keyboard::Key, std::function<void ()>> keyMap = {
+            {sf::Keyboard::Right,           std::bind(&CanvasModule::goToNextCamera, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::Left,            std::bind(&CanvasModule::goToPreviousCamera, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::Down,            std::bind(&CanvasModule::addFocalLength, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::Up,              std::bind(&CanvasModule::removeFocalLength, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::Q,               std::bind(&CanvasModule::goLeft, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::A,               std::bind(&CanvasModule::goLeft, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::D,               std::bind(&CanvasModule::goRight, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::Space,           std::bind(&CanvasModule::goUp, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::LShift,          std::bind(&CanvasModule::goDown, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::S,               std::bind(&CanvasModule::goBackward, this, std::ref(window), std::ref(event))},
+            {sf::Keyboard::Z,               std::bind(&CanvasModule::goForward, this, std::ref(window), std::ref(event))},
+        };
 
         if (event.type == sf::Event::KeyPressed) {
-            switch (event.key.code) {
-                case sf::Keyboard::Q:
-                    this->_position = (this->_position + 1) % this->_scene.getCameras().size();
-                    this->resizeWindow(window);
-                    break;
-                case sf::Keyboard::D:
-                    this->_position = (this->_position - 1) % this->_scene.getCameras().size();
-                    this->resizeWindow(window);
-                    break;
-                case sf::Keyboard::Z:
-                    if (this->_scene.isReady()) {
-                        camera.setFocal(camera.getFocal() + 10);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::S:
-                    if (this->_scene.isReady()) {
-                        camera.setFocal(camera.getFocal() - 10);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::Left:
-                    if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(-10, 0, 0);
-                        camera.getTransform().setPosition(position);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::Right:
-                    if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(10, 0, 0);
-                        camera.getTransform().setPosition(position);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::Up:
-                    if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(0, 10, 0);
-                        camera.getTransform().setPosition(position);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::Down:
-                    if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(0, -10, 0);
-                        camera.getTransform().setPosition(position);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::R:
-                    if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(0, 0, 10);
-                        camera.getTransform().setPosition(position);
-                        this->_scene.renders();
-                    }
-                    break;
-                case sf::Keyboard::F:
-                    if (this->_scene.isReady()) {
-                        position = position + Entities::Transform::Vector3f(0, 0, -10);
-                        camera.getTransform().setPosition(position);
-                        this->_scene.renders();
-                    }
-                    break;
-                default:
-                    break;
-
+            auto it = keyMap.find(event.key.code);
+            if (it != keyMap.end()) {
+                it->second();
             }
         }
     }
 
     void CanvasModule::end() {
 
+    }
+
+    std::string CanvasModule::getName() const {
+        return "Canvas";
+    }
+
+    void CanvasModule::execIfReady(std::function<void (Entities::ICamera &, Entities::Transform::ITransform &)> func)
+    {
+        if (this->_scene.isReady()) {
+            Entities::ICamera &camera = this->_scene.getCameras()[this->_position].get();
+            Entities::Transform::ITransform &transform = camera.getTransform();
+            func(camera, transform);
+            this->_scene.renders();
+        }
+    }
+
+    void CanvasModule::goToNextCamera(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->_position = (this->_position + 1) % this->_scene.getCameras().size();
+        this->resizeWindow(window);
+        std::cout << "" << this->_position << std::endl;
+    }
+
+    void CanvasModule::goToPreviousCamera(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->_position = (this->_position - 1) % this->_scene.getCameras().size();
+        this->resizeWindow(window);
+        std::cout << "" << this->_position << std::endl;
+    }
+
+    void CanvasModule::addFocalLength(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            camera.setFocal(camera.getFocal() + 10);
+        });
+    }
+
+    void CanvasModule::removeFocalLength(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            camera.setFocal(camera.getFocal() - 10);
+        });
+    }
+
+    void CanvasModule::goLeft(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            transform.setPosition(
+                transform.getPosition() + Entities::Transform::Vector3f(-10, 0, 0)
+            );
+        });
+    }
+
+    void CanvasModule::goRight(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            transform.setPosition(
+                transform.getPosition() + Entities::Transform::Vector3f(10, 0, 0)
+            );
+        });
+    }
+
+    void CanvasModule::goUp(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            transform.setPosition(
+                transform.getPosition() + Entities::Transform::Vector3f(0, 0, 10)
+            );
+        });
+    }
+
+    void CanvasModule::goDown(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            transform.setPosition(
+                transform.getPosition() + Entities::Transform::Vector3f(0, 0, -10)
+            );
+        });
+    }
+
+    void CanvasModule::goBackward(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            transform.setPosition(
+                transform.getPosition() + Entities::Transform::Vector3f(0, -10, 0)
+            );
+        });
+    }
+
+    void CanvasModule::goForward(sf::RenderWindow &window, const sf::Event &event)
+    {
+        this->execIfReady([](Entities::ICamera &camera, Entities::Transform::ITransform &transform) {
+            transform.setPosition(
+                transform.getPosition() + Entities::Transform::Vector3f(0, 10, 0)
+            );
+        });
     }
 }
