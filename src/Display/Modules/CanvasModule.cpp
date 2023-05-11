@@ -7,11 +7,13 @@
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <functional>
 #include <future>
 #include <iostream>
 #include "CanvasModule.hpp"
+#include "Parameters.hpp"
 #include "Transform.hpp"
 #include "Vector3f.hpp"
 
@@ -26,6 +28,20 @@ namespace RayTracer::Display {
         sf::Image image;
         sf::Texture texture;
         sf::Sprite sprite;
+        std::string message = "focal: " + std::to_string(camera.getFocal()) + "\n" +
+                                "position: (x:" +
+                                    std::to_string(camera.getTransform().getPosition().getX()) +
+                                    ", y:" +
+                                    std::to_string(camera.getTransform().getPosition().getY()) +
+                                    ", z:" +
+                                    std::to_string(camera.getTransform().getPosition().getZ()) +
+                                ")";
+        sf::Text text;
+        text.setFont(_font);
+        text.setString(message);
+        text.setFillColor(sf::Color::White);
+        text.setCharacterSize(window.getSize().y * 0.03);
+        text.setPosition(window.getSize().x - text.getGlobalBounds().width - 5, window.getSize().y - text.getGlobalBounds().height - 5);
 
         image.create(size.getX(), size.getY(), sf::Color(0, 0, 0));
         for (int x = 0; x < size.getX(); x++) {
@@ -40,10 +56,14 @@ namespace RayTracer::Display {
         texture.loadFromImage(image);
         sprite.setTexture(texture);
         window.draw(sprite);
+        window.draw(text);
     }
 
     void CanvasModule::start(sf::RenderWindow &window) {
         this->resizeWindow(window);
+        if (!this->_font.loadFromFile(Parameters::getInstance().getString("font-path"))) {
+            throw std::runtime_error("Can't load font");
+        }
     }
 
     void CanvasModule::resizeWindow(sf::RenderWindow &window) {

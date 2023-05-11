@@ -8,7 +8,8 @@
 #ifndef CANVASMODULE_HPP_
     #define CANVASMODULE_HPP_
 
-    #include <SFML/Graphics/Image.hpp>
+    #include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Image.hpp>
     #include <functional>
     #include "ICamera.hpp"
     #include "IDisplayModule.hpp"
@@ -45,6 +46,7 @@ namespace RayTracer::Display {
 
             Scenes::Scene &_scene;
             std::size_t &_position;
+            sf::Font _font;
     };
 }
 
