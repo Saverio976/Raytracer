@@ -26,6 +26,7 @@ namespace RayTracer::PluginsExt::Mirror {
             const Entities::Transform::Vector3f &intersect) const final;
 
     private:
+        double randomDouble(double min, double max) const;
         Images::Color getNextColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const;
         Images::Color _color;
         Entities::Transform::Vector3f _ambient;

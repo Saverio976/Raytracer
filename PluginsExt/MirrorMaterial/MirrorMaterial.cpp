@@ -7,6 +7,7 @@
 
 #include <cmath>
 #include <functional>
+#include <random>
 #include "MirrorMaterial.hpp"
 #include "Color.hpp"
 #include "ISetting.hpp"
@@ -26,11 +27,19 @@ namespace RayTracer::PluginsExt::Mirror {
             _color(Images::Color(*config.get("color")))
     { }
 
+    double MirrorMaterial::randomDouble(double min, double max) const {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+
     Images::Color MirrorMaterial::getNextColor(const Images::Ray &ray, const Entities::Transform::ITransform &centerObj, const Entities::Transform::Vector3f &intersect, const Scenes::IDisplayable &displayable) const {
         Images::Color final(0, 0, 0, 255);
         std::vector<std::reference_wrapper<Images::Color>> list;
         list.push_back(final);
-        Entities::Transform::Vector3f normal = (intersect - centerObj.getPosition()).getNormalized();
+        Entities::Transform::Vector3f center = centerObj.getPosition() + Entities::Transform::Vector3f(randomDouble(-0.01, 0.01), randomDouble(-0.01, 0.01), randomDouble(-0.01, 0.01));
+        Entities::Transform::Vector3f normal = (intersect - center).getNormalized();
         Entities::Transform::Vector3f spawn = intersect + normal;
         Images::Ray newRay(intersect, spawn);
         Images::PixelThread pixelThread(displayable, list, newRay);
