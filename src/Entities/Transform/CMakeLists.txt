@@ -14,6 +14,7 @@ target_include_directories(SpotLight PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Cylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Triangle PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(LimitedCylinder PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(Torus PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(SSAAx4 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(PlainMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ChessBoardMaterial PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -58,6 +59,8 @@ target_sources(PointLight PRIVATE $<TARGET_OBJECTS:ray_transform>)
 target_sources(SpotLight PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(Cylinder PRIVATE $<TARGET_OBJECTS:ray_transform>)
+
+target_sources(Torus PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
 target_sources(PlainMaterial PRIVATE $<TARGET_OBJECTS:ray_transform>)
 
