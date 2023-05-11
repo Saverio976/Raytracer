@@ -25,6 +25,9 @@ namespace RayTracer::PluginsExt::PointLight {
         if (_transform.getScale().getY() < 0) {
             _logger.warn("POINT_LIGHT: config: scale y must be positive (remainder: x is for radius, y is for power)");
         }
+        if (_transform.getRotation().getX() != 0 || _transform.getRotation().getY() != 0 || _transform.getRotation().getZ() != 0) {
+            _logger.warn("POINT_LIGHT: config: rotation x y z must be 0 (why rotate a pointLight ?)");
+        }
         _power = std::abs(_power * _transform.getScale().getY());
     }
 
@@ -53,6 +56,7 @@ namespace RayTracer::PluginsExt::PointLight {
         double distance = point.getDistance(this->_transform.getPosition());
         double tmpDistance = 0;
         Images::Color result(this->_color);
+
         for (const std::reference_wrapper<Entities::IPrimitive> &primitive : displayable.getPrimitiveList()) {
             impact = primitive.get().isCollided(ray);
             if (impact == std::nullopt)
@@ -60,7 +64,7 @@ namespace RayTracer::PluginsExt::PointLight {
             tmpDistance = impact->getDistance(this->_transform.getPosition());
             if (tmpDistance >= distance)
                 continue;
-            return primitive.get().redirectionLight(ray, displayable, *impact);
+            result.mergeColor(primitive.get().redirectionLight(ray, displayable, *impact));
         }
         result.applyDistance(distance, this->_radius);
         return result;

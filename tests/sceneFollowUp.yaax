@@ -1,17 +1,24 @@
 # Configuration of the camera
 cameras:
 {
-    Camera: (
+    CameraCluster: (
         {
-            size = {x: 500; y = 500;};
-            transform = {
+            screenSize = {x: 500; y = 500;};
+            screen = {
                 position = {x = 0.0; y = 0.0; z = 0.0;};
                 scale = {x = 0.0; y = 0.0; z = 0.0;};
-                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 90.0; y = 90.0; z = 0.0;};
             };
-            focal = 200.0;
-            maxThreads = 1000;
-            filters = ()
+            maxThreads = 1;
+            cluster = 1,
+            distanceFromScreen = 200.0;
+            filters = {
+                SSAAx4: (
+                    {
+                        maxThreads = -1
+                    },
+                )
+            }
         }
     );
 };
@@ -32,6 +39,9 @@ primitives :
                 shininess = 1.0;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
                 type = "PlainMaterial";
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
             };
         },
         {
@@ -45,6 +55,9 @@ primitives :
                 shininess = 1.0;
                 color = {r = 68.0; g = 171.0; b = 128.0; a = 255.0;};
                 type = "PlainMaterial";
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
             };
         }
     );
@@ -60,6 +73,9 @@ primitives :
                 shininess = 1.0;
                 color = {r = 255.0; g = 255.0; b = 0.0; a = 255.0;};
                 type = "PlainMaterial";
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
             };
         },
         {
@@ -71,11 +87,33 @@ primitives :
             size = {x = 1000.0; y = 500.0; z = 500.0;};
             material = {
                 shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
                 color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
                 type = "PlainMaterial";
             };
         }
     );
+    LimitedCylinder = (
+        {
+            transform = {
+                position = {x = 100.0; y = 0.0; z = -100.0;};
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            }
+            radius = 50.0;
+            height = 100.0;
+            material = {
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+                type = "PlainMaterial";
+            }
+        }
+    )
 };
 
 # Light configuration

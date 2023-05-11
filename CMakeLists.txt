@@ -15,7 +15,7 @@ add_library(Sphere SHARED)
 set_target_properties(Sphere PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Sphere PROPERTIES
@@ -29,10 +29,38 @@ add_library(Camera SHARED)
 set_target_properties(Camera PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Camera PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# CAMERA CUSTOM
+add_library(CameraCustom SHARED)
+set_target_properties(CameraCustom PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(CameraCustom PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# CAMERA CLUSTER
+add_library(CameraCluster SHARED)
+set_target_properties(CameraCluster PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(CameraCluster PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
@@ -43,7 +71,7 @@ add_library(AmbientLight SHARED)
 set_target_properties(AmbientLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(AmbientLight PROPERTIES
@@ -57,7 +85,7 @@ add_library(Plane SHARED)
 set_target_properties(Plane PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Plane PROPERTIES
@@ -71,7 +99,7 @@ add_library(LimitedPlane SHARED)
 set_target_properties(LimitedPlane PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(LimitedPlane PROPERTIES
@@ -85,7 +113,7 @@ add_library(Disk SHARED)
 set_target_properties(Disk PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Disk PROPERTIES
@@ -99,10 +127,24 @@ add_library(Cone SHARED)
 set_target_properties(Cone PROPERTIES
         CXX_STANDARD 20
         PREFIX ""
-        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Cone PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# LIMITED CONE
+add_library(LimitedCone SHARED)
+set_target_properties(LimitedCone PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(LimitedCone PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
@@ -113,7 +155,7 @@ add_library(PointLight SHARED)
 set_target_properties(PointLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(PointLight PROPERTIES
@@ -127,7 +169,7 @@ add_library(SpotLight SHARED)
 set_target_properties(SpotLight PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(SpotLight PROPERTIES
@@ -141,7 +183,7 @@ add_library(Cylinder SHARED)
 set_target_properties(Cylinder PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(Cylinder PROPERTIES
@@ -155,7 +197,7 @@ add_library(LimitedCylinder SHARED)
 set_target_properties(LimitedCylinder PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/EntitiesPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(LimitedCylinder PROPERTIES
@@ -164,15 +206,58 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
     )
 endif()
 
+# TORUS
+add_library(Torus SHARED)
+set_target_properties(Torus PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Torus PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+# TRIANGLE
+add_library(Triangle SHARED)
+set_target_properties(Triangle PROPERTIES
+        CXX_STANDARD 20
+        PREFIX ""
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Entities"
+        )
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(Triangle PROPERTIES
+            UNITY_BUILD true
+            UNITY_BUILD_MODE BATCH
+            )
+endif()
+
 # --------- Filters plugins ---------
+
+# SSAAx4
 add_library(SSAAx4 SHARED)
 set_target_properties(SSAAx4 PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/FiltersPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Filters"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(SSAAx4 PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# BlackAndWhite
+add_library(BlackAndWhite SHARED)
+set_target_properties(BlackAndWhite PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Filters"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(BlackAndWhite PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
@@ -183,10 +268,75 @@ add_library(PlainMaterial SHARED)
 set_target_properties(PlainMaterial PROPERTIES
     CXX_STANDARD 20
     PREFIX ""
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/MaterialsPlugins"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(PlainMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(RefractionMaterial SHARED)
+set_target_properties(RefractionMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(RefractionMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(TransparencyMaterial SHARED)
+set_target_properties(TransparencyMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(TransparencyMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(ChessBoardMaterial SHARED)
+set_target_properties(ChessBoardMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ChessBoardMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(ZebraMaterial SHARED)
+set_target_properties(ZebraMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ZebraMaterial PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+add_library(MirrorMaterial SHARED)
+set_target_properties(MirrorMaterial PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Materials"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(MirrorMaterial PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
@@ -258,6 +408,45 @@ set_target_properties(ray_image_image PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(ray_image_image PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/ImagePipeLine.cpp
+add_library(ray_image_pipeline OBJECT)
+set_target_properties(ray_image_pipeline PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_pipeline PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Image/PixelThread.cpp
+add_library(ray_image_pixelthread OBJECT)
+set_target_properties(ray_image_pixelthread PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_image_pixelthread PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# src/Progress.cpp
+add_library(ray_progress OBJECT)
+set_target_properties(ray_progress PROPERTIES
+    CXX_STANDARD 20
+    POSITION_INDEPENDENT_CODE ON
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(ray_progress PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )

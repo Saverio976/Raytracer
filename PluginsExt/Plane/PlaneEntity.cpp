@@ -13,7 +13,6 @@
 namespace RayTracer::PluginsExt::Plane {
     PlaneEntity::PlaneEntity(const Scenes::ISetting &config, ILogger &logger):
         _transform(Entities::Transform::Transform(*config.get("transform"))),
-        _size(Entities::Transform::Vector3f(*config.get("size"))),
         _logger(logger)
     {
         std::unique_ptr<Scenes::ISetting> settingWrapper = config.get("material");

@@ -1,0 +1,72 @@
+# Configuration of the camera
+cameras:
+{
+    Camera: (
+        {
+            size = {x: 500; y = 500;};
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 1.0; y = 1.0; z = 1.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            focal = 200.0;
+            maxThreads = -1;
+            filters = ()
+        }
+    );
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    Triangle = (
+        {
+            pointOne = {x = 0.0; y = 100.0; z = 200.0;};
+            pointTwo = {x = 40.0; y = 100.0; z = 0.0;};
+            pointThree = {x = -40.0; y = 100.0; z = 0.0;};
+            transform = {
+                position = {x = 0.0; y = 200.0; z = 20.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 1.0; y = 0.5; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+                color = {r = 0.0; g = 255.0; b = 255.0; a = 255.0;};
+            };
+        }
+    );
+};
+
+# Light configuration
+lights :
+{
+    # List of ambient lights
+    AmbientLight = (
+        {
+            transform = {
+                position = {x = 60.0; y = 20.0; z = 50.0;};
+                scale = {x = 60.0; y = 20.0; z = -10.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 104.0; g = 0.0; b = 202.0; a = 255.0;};
+            power = 1.0;
+        }
+    );
+    PointLight = (
+        {
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 500.0; y = 1.0; z = 0.0;};
+                rotation = {x = 60.0; y = 20.0; z = -10.0;};
+            };
+            color = {r = 255.0; g = 126.0; b = 255.0; a = 255.0;};
+            power = 2.0;
+            radius = 500.0;
+        }
+    );
+};
