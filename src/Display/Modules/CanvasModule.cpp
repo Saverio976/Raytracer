@@ -61,7 +61,6 @@ namespace RayTracer::Display {
             {sf::Keyboard::Down,            std::bind(&CanvasModule::addFocalLength, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::Up,              std::bind(&CanvasModule::removeFocalLength, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::Q,               std::bind(&CanvasModule::goLeft, this, std::ref(window), std::ref(event))},
-            {sf::Keyboard::A,               std::bind(&CanvasModule::goLeft, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::D,               std::bind(&CanvasModule::goRight, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::Space,           std::bind(&CanvasModule::goUp, this, std::ref(window), std::ref(event))},
             {sf::Keyboard::LShift,          std::bind(&CanvasModule::goDown, this, std::ref(window), std::ref(event))},

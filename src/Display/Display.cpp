@@ -71,8 +71,10 @@ namespace RayTracer::Display {
                 time.restart();
             }
             while (window.pollEvent(event)) {
-                if (event.type == sf::Event::Closed)
+                if (event.type == sf::Event::Closed) {
                     window.close();
+                    this->_scene.cancel();
+                }
                 for (auto &module : this->_modules) {
                     try {
                         module->event(window, event);

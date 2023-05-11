@@ -139,6 +139,16 @@ namespace RayTracer {
         std::cout << "\t--help\tto display the help message" << std::endl;
         std::cout << "\t--log-level <int>\tlog level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
         std::cout << std::endl;
+        std::cout << "IN Window:" << std::endl;
+        std::cout << "\tZ\t\t: go forward to exit" << std::endl;
+        std::cout << "\tQ\t\t: go left" << std::endl;
+        std::cout << "\tS\t\t: go backward to exit" << std::endl;
+        std::cout << "\tD\t\t: go right" << std::endl;
+        std::cout << "\tSpace\t\t: go up" << std::endl;
+        std::cout << "\tLeft Shift\t: go down" << std::endl;
+        std::cout << "\tLeft Arrow\t: go previous camera" << std::endl;
+        std::cout << "\tRight Arrow\t: go next camera" << std::endl;
+        std::cout << std::endl;
         std::cout << "CREDITS:" << std::endl;
         std::cout << "\tAuthors: Y A A X" << std::endl;
         std::cout << "\tRepository: https://github.com/Saverio976/Raytracer" << std::endl;
