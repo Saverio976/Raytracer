@@ -85,6 +85,6 @@ namespace RayTracer::PluginsExt::Triangle {
 
     Images::Color TriangleEntity::redirectionLight(const Images::Ray &ray, const Scenes::IDisplayable &displayable,
         const Entities::Transform::Vector3f &intersect) const {
-        return {0, 0, 0, 0};
+        return _material->get().redirectionLight(ray, displayable, intersect);
     }
 }
