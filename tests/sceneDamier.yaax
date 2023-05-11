@@ -17,6 +17,12 @@ cameras:
                     {
                         maxThreads = -1;
                     }
+                ),
+                BlackAndWhite: (
+                    {
+                        maxThreads = -1;
+                        method = "R";
+                    }
                 )
             }
         }

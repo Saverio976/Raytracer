@@ -46,6 +46,7 @@ target_include_directories(CameraCustom PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(CameraCluster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(Triangle PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(ray_image_pipeline PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(BlackAndWhite PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_subdirectory(Filters)
 add_subdirectory(Entities)

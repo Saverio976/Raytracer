@@ -234,6 +234,8 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
 endif()
 
 # --------- Filters plugins ---------
+
+# SSAAx4
 add_library(SSAAx4 SHARED)
 set_target_properties(SSAAx4 PROPERTIES
     CXX_STANDARD 20
@@ -242,6 +244,20 @@ set_target_properties(SSAAx4 PROPERTIES
 )
 if (CMAKE_BUILD_TYPE STREQUAL Release)
     set_target_properties(SSAAx4 PROPERTIES
+        UNITY_BUILD true
+        UNITY_BUILD_MODE BATCH
+    )
+endif()
+
+# BlackAndWhite
+add_library(BlackAndWhite SHARED)
+set_target_properties(BlackAndWhite PROPERTIES
+    CXX_STANDARD 20
+    PREFIX ""
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/plugins/Filters"
+)
+if (CMAKE_BUILD_TYPE STREQUAL Release)
+    set_target_properties(BlackAndWhite PROPERTIES
         UNITY_BUILD true
         UNITY_BUILD_MODE BATCH
     )
