@@ -117,6 +117,13 @@ namespace RayTracer::Entities::Transform {
              */
             Vector3f getNormalized() const;
             /**
+             * @brief Get the perpendicular vector
+             *
+             * @param other the other vector
+             * @return the perpendicular vector
+             */
+            Vector3f getCrossed(const Vector3f &other) const;
+            /**
              * @brief Get dot product
              *
              * @param other the other

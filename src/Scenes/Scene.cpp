@@ -48,6 +48,10 @@ namespace RayTracer::Scenes {
         return this->_cameras;
     }
 
+    std::vector<std::reference_wrapper<Entities::ICamera>> &Scene::getCameras() {
+        return this->_cameras;
+    }
+
     bool Scene::isReady() const
     {
         try {

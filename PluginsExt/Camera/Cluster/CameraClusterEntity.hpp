@@ -71,6 +71,16 @@ namespace RayTracer::PluginsExt::Camera::Clustered {
              * @return the filters
              */
             std::list<std::reference_wrapper<Filters::IFilter>> &getFilters() final;
+            /**
+             * @brief Get the cluster
+             */
+            std::size_t getCluster() const final;
+            /**
+             * @brief Set the cluster (1 is more precision, +infini is less precision)
+             *
+             * @param cluster the cluster
+             */
+            void setCluster(std::size_t cluster) final;
 
         protected:
         private:

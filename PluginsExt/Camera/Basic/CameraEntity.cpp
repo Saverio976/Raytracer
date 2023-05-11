@@ -5,6 +5,7 @@
 ** Camera.cpp
 */
 
+#include <cstddef>
 #include <string>
 #include <thread>
 #include "ILogger.hpp"
@@ -101,5 +102,14 @@ namespace RayTracer::PluginsExt::Camera {
 
     std::list<std::reference_wrapper<Filters::IFilter>> &CameraEntity::getFilters() {
         return this->_filters;
+    }
+
+    void CameraEntity::setCluster(std::size_t cluster)
+    {
+    }
+
+    std::size_t CameraEntity::getCluster() const
+    {
+        return 1;
     }
 }
