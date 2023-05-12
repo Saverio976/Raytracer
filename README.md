@@ -17,8 +17,19 @@ L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tra
 
 ![image](./documentation/reprere.png)
 
+# Installation
+
+```bash
+git clone https://github.com/Saverio976/Raytracer.git
+cd Raytracer
+cmake .
+make
+```
+This will create a binary in the current working directory
+
 # Usage
 
+`./raytracer --help`
 ```bash
                                         ,----,
                                       ,/   .`|
