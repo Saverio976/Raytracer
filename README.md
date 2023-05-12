@@ -17,6 +17,16 @@ L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tra
 
 ![image](./documentation/reprere.png)
 
+## TOC
+
+- [Raytracer](#RayTracer)
+- [Introduction](#Introduction)
+- [TOC](#TOC)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Exemples/Documentation](#Exemples/Documentation)
+- [Gource](#Gource)
+
 # Installation
 
 ```bash
@@ -3670,3 +3680,9 @@ lights: {
 ```
 
 </details>
+
+# Gource
+
+![gource](/Assets/raytracer.mp4)
+
+(if the video does not pop: [gource](/Assets/raytracer.mp4))
