@@ -33,9 +33,18 @@ image
 </para>
 </section>
 <section xml:id="_index_1autotoc_md2">
+<title>Installation</title>
+
+<para><literallayout><computeroutput>git&#32;clone&#32;https://github.com/Saverio976/Raytracer.git
+cd&#32;Raytracer
+cmake&#32;.
+make
+</computeroutput></literallayout> This will create a binary in the current working directory</para>
+</section>
+<section xml:id="_index_1autotoc_md3">
 <title>Usage</title>
 
-<para><literallayout><computeroutput>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,----,
+<para><computeroutput>./raytracer --help</computeroutput> <literallayout><computeroutput>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,----,
 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,/&#32;&#32;&#32;.`|
 ,-.----.&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,`&#32;&#32;&#32;.&apos;&#32;&#32;:
 \&#32;&#32;&#32;&#32;/&#32;&#32;\&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;;&#32;&#32;&#32;&#32;;&#32;&#32;&#32;&#32;&#32;/
@@ -78,7 +87,7 @@ __CREDITS__:
 &#32;&#32;&#32;&#32;Repository:&#32;https://github.com/Saverio976/Raytracer
 </computeroutput></literallayout></para>
 </section>
-<section xml:id="_index_1autotoc_md3">
+<section xml:id="_index_1autotoc_md4">
 <title>Exemples/Documentation</title>
 
 <para>les primitives sont:<itemizedlist>
@@ -144,7 +153,7 @@ __CREDITS__:
 <para><link xlink:href="#SSAAx4">SSAAx4</link></para>
 </listitem></itemizedlist>
 </para>
-<section xml:id="_index_1autotoc_md4">
+<section xml:id="_index_1autotoc_md5">
 <title>Sphere</title>
 
 <para>
@@ -272,7 +281,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md5">
+<section xml:id="_index_1autotoc_md6">
 <title>Plan</title>
 
 <para>
@@ -427,7 +436,7 @@ lights&#32;:
 <para>&lt;/details&gt;</para>
 </section>
 </section>
-<section xml:id="_index_1autotoc_md6">
+<section xml:id="_index_1autotoc_md7">
 <title>Plan-Limité</title>
 
 <para>
@@ -589,7 +598,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md7">
+<section xml:id="_index_1autotoc_md8">
 <title>Disque</title>
 
 <para>
@@ -749,7 +758,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md8">
+<section xml:id="_index_1autotoc_md9">
 <title>Cone</title>
 
 <para>
@@ -880,7 +889,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md9">
+<section xml:id="_index_1autotoc_md10">
 <title>Cone-Limité</title>
 
 <para>
@@ -1014,7 +1023,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md10">
+<section xml:id="_index_1autotoc_md11">
 <title>Cylindre</title>
 
 <para>
@@ -1144,7 +1153,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md11">
+<section xml:id="_index_1autotoc_md12">
 <title>Cylindre-Limité</title>
 
 <para>
@@ -1276,7 +1285,7 @@ lights&#32;:
 </computeroutput></literallayout></para>
 
 <para>&lt;/details&gt;</para>
-<section xml:id="_index_1autotoc_md12">
+<section xml:id="_index_1autotoc_md13">
 <title>Torus</title>
 
 <para>
@@ -1406,7 +1415,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md13">
+<section xml:id="_index_1autotoc_md14">
 <title>Triangle</title>
 
 <para>
@@ -1538,7 +1547,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md14">
+<section xml:id="_index_1autotoc_md15">
 <title>PlainMaterial</title>
 
 <para>
@@ -1668,7 +1677,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md15">
+<section xml:id="_index_1autotoc_md16">
 <title>ChessBoardMaterial</title>
 
 <para>
@@ -1802,7 +1811,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md16">
+<section xml:id="_index_1autotoc_md17">
 <title>ZebraMaterial</title>
 
 <para>
@@ -1936,7 +1945,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md17">
+<section xml:id="_index_1autotoc_md18">
 <title>TransparencyMaterial</title>
 
 <para>
@@ -2071,7 +2080,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md18">
+<section xml:id="_index_1autotoc_md19">
 <title>RefractionMaterial</title>
 
 <para>
@@ -2267,7 +2276,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md19">
+<section xml:id="_index_1autotoc_md20">
 <title>MirrorMaterial</title>
 
 <para>
@@ -2476,7 +2485,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md20">
+<section xml:id="_index_1autotoc_md21">
 <title>AmbientLight</title>
 
 <para>
@@ -2660,7 +2669,7 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md21">
+<section xml:id="_index_1autotoc_md22">
 <title>PointLight</title>
 
 <para>
@@ -2846,7 +2855,7 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md22">
+<section xml:id="_index_1autotoc_md23">
 <title>SpotLight</title>
 
 <para>
@@ -3027,12 +3036,12 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md23">
+<section xml:id="_index_1autotoc_md24">
 <title>Camera</title>
 
 <para>Regarder la documentation pour les primitives, elle explique déjà bien le principe</para>
 </section>
-<section xml:id="_index_1autotoc_md24">
+<section xml:id="_index_1autotoc_md25">
 <title>CameraCluster</title>
 
 <para>
@@ -3628,7 +3637,7 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md25">
+<section xml:id="_index_1autotoc_md26">
 <title>SSAAx4</title>
 
 <para>

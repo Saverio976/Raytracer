@@ -79,8 +79,15 @@ Introduction</h1>
 <p>L'objectif est de réaliser un <a href="https://fr.wikipedia.org/wiki/Ray_tracing">Raytracer</a> en <a href="https://fr.wikipedia.org/wiki/C%2B%2B">C++</a></p>
 <p><img src="reprere.png" alt="" class="inline" title="image"/></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Installation</h1>
+<div class="fragment"><div class="line">git clone https://github.com/Saverio976/Raytracer.git</div>
+<div class="line">cd Raytracer</div>
+<div class="line">cmake .</div>
+<div class="line">make</div>
+</div><!-- fragment --><p> This will create a binary in the current working directory</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Usage</h1>
-<div class="fragment"><div class="line">                                        ,----,</div>
+<p><code>./raytracer --help</code> </p><div class="fragment"><div class="line">                                        ,----,</div>
 <div class="line">                                      ,/   .`|</div>
 <div class="line">,-.----.                            ,`   .&#39;  :</div>
 <div class="line">\    /  \                         ;    ;     /</div>
@@ -121,7 +128,7 @@ Usage</h1>
 <div class="line">__CREDITS__:</div>
 <div class="line">    Authors: Y A A X</div>
 <div class="line">    Repository: https://github.com/Saverio976/Raytracer</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Exemples/Documentation</h1>
 <p>les primitives sont:</p><ul>
 <li><a href="#Sphere">Sphere</a></li>
@@ -155,7 +162,7 @@ Exemples/Documentation</h1>
 <p>les filtres sont:</p><ul>
 <li><a href="#SSAAx4">SSAAx4</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Sphere</h2>
 <p><img src="sphere1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -268,7 +275,7 @@ Sphere</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Plan</h2>
 <p><img src="plan2-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -406,7 +413,7 @@ Plan</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Plan-Limité</h1>
 <p><img src="plan2-basic-limited.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -552,7 +559,7 @@ Plan-Limité</h1>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Disque</h1>
 <p><img src="disk2-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -696,7 +703,7 @@ Disque</h1>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Cone</h1>
 <p><img src="cone1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -811,7 +818,7 @@ Cone</h1>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Cone-Limité</h1>
 <p><img src="cone1-basic-limited.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -929,7 +936,7 @@ Cone-Limité</h1>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Cylindre</h1>
 <p><img src="cylinder1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1043,7 +1050,7 @@ Cylindre</h1>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Cylindre-Limité</h1>
 <p><img src="cylinder1-basic-limited.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1160,7 +1167,7 @@ Cylindre-Limité</h1>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Torus</h2>
 <p><img src="torus1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1274,7 +1281,7 @@ Torus</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Triangle</h2>
 <p><img src="triangle1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1390,7 +1397,7 @@ Triangle</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 PlainMaterial</h2>
 <p><img src="plainmaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1504,7 +1511,7 @@ PlainMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 ChessBoardMaterial</h2>
 <p><img src="chessboardmaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1622,7 +1629,7 @@ ChessBoardMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 ZebraMaterial</h2>
 <p><img src="zebramaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1740,7 +1747,7 @@ ZebraMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 TransparencyMaterial</h2>
 <p><img src="transparencymaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -1859,7 +1866,7 @@ TransparencyMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 RefractionMaterial</h2>
 <p><img src="refractionmaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2039,7 +2046,7 @@ RefractionMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 MirrorMaterial</h2>
 <p><img src="mirrormaterial1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2232,7 +2239,7 @@ MirrorMaterial</h2>
 <div class="line">    );</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 AmbientLight</h2>
 <p><img src="ambientlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2400,7 +2407,7 @@ AmbientLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 PointLight</h2>
 <p><img src="pointlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2570,7 +2577,7 @@ PointLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 SpotLight</h2>
 <p><img src="spotlight1-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -2735,10 +2742,10 @@ SpotLight</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Camera</h2>
 <p>Regarder la documentation pour les primitives, elle explique déjà bien le principe</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 CameraCluster</h2>
 <p><img src="camera-cluster1.png" alt="" class="inline" title="cluster1"/> <img src="camera-cluster2.png" alt="" class="inline" title="cluster2"/> <img src="camera-cluster5.png" alt="" class="inline" title="cluster5"/></p>
 <p>&lt;details&gt;</p>
@@ -3296,7 +3303,7 @@ CameraCluster</h2>
 <div class="line">    );</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 SSAAx4</h2>
 <p><img src="ssaax4-basic.png" alt="" class="inline" title="image"/></p>
 <p>&lt;details&gt;</p>
@@ -3495,7 +3502,7 @@ SSAAx4</h2>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2023 18:27:46 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 07:33:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
