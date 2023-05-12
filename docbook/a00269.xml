@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00269" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
-#include &lt;memory&gt;
-#include &quot;IFilter.hpp&quot;
-#include &quot;IFilterCreator.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Filter.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/AntiAliasing/SSAAx4/SSAAx4Filter.hpp</primary></indexterm>
+<programlisting>#include &lt;future&gt;
+#include &lt;vector&gt;
+#include &quot;Color.hpp&quot;
 #include &quot;ILogger.hpp&quot;
+#include &quot;IFilter.hpp&quot;
 #include &quot;ISetting.hpp&quot;
-#include &quot;BlackAndWhiteFilter.hpp&quot;
-</programlisting>Include dependency graph for BlackAndWhiteCreator.hpp:<para>
+#include &quot;Image.hpp&quot;
+</programlisting>Include dependency graph for SSAAx4Filter.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -18,21 +18,32 @@
         </mediaobject>
     </informalfigure>
 </para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00271.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01583">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</link></para>
+            <listitem><para>class <link linkend="_a01582">RayTracer::PluginsExt::AntiAliasing::SSAAx4::SSAAx4Filter</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00433">RayTracer::PluginsExt::BlackAndWhite</link></para>
+            <listitem><para> <link linkend="_a00434">RayTracer::PluginsExt::AntiAliasing</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00435">RayTracer::PluginsExt::AntiAliasing::SSAAx4</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00442" xml:lang="en-US">
-<title>RayTracer::PluginsExt::LimitedCylinder Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::LimitedCylinder</primary></indexterm>
+<title>RayTracer::PluginsExt::Cylinder Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Cylinder</primary></indexterm>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01671">LimitedCylinderCreator</link></para>
+            <listitem><para>class <link linkend="_a01650">CylinderCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01675">LimitedCylinderEntity</link></para>
+            <listitem><para>class <link linkend="_a01654">CylinderEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

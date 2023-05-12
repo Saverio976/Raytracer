@@ -1,3 +1,5 @@
-<map id="RayTracer::Plugins::Filters::IFilterCreator" name="RayTracer::Plugins::Filters::IFilterCreator">
-<area shape="rect" id="node1" title="The IFilterCreator class." alt="" coords="5,5,168,112"/>
+<map id="RayTracer::Plugins::Filters::FilterLoader" name="RayTracer::Plugins::Filters::FilterLoader">
+<area shape="rect" id="node1" title="The FilterLoader." alt="" coords="37,404,191,511"/>
+<area shape="rect" id="node2" href="$a01486.html" title=" " alt="" coords="5,219,223,355"/>
+<area shape="rect" id="node3" href="$a01486.html" title=" " alt="" coords="22,5,206,127"/>
 </map>

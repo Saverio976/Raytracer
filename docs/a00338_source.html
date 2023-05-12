@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane/LimitedPlaneEntity.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/LimitedPlane/LimitedPlaneCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,73 +67,52 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LimitedPlaneEntity.hpp</div>  </div>
+<div class="title">LimitedPlaneCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00338.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** LimitedPlaneEntity.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** LimitedPlaneCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef LIMITEDPLANEENTITY_HPP_</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">    #define LIMITEDPLANEENTITY_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00116.html">IPrimitive.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Transform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">IMaterial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00125.html">Vector2i.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00443.html">RayTracer::PluginsExt::LimitedPlane</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01683.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01683.html">LimitedPlaneEntity</a> : <span class="keyword">public</span> <a class="code" href="a01323.html">RayTracer::Entities::IPrimitive</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01683.html#a0d2eeb72efbf30e03a4042c7fd264807">   20</a></span>&#160;        <a class="code" href="a01683.html#a0d2eeb72efbf30e03a4042c7fd264807">LimitedPlaneEntity</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger);</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01683.html#a7caeb35b40b9d4d3b04b8040a1bfdf5c">   21</a></span>&#160;        <a class="code" href="a01311.html#ab003087623e47600c09a76ff8138d37b">Type</a> <a class="code" href="a01683.html#a7caeb35b40b9d4d3b04b8040a1bfdf5c">getType</a>() const final;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01683.html#a249fd299d58ecc8d3e7c8d6d7df1cca3">   22</a></span>&#160;        Entities::Transform::ITransform &amp;<a class="code" href="a01683.html#a249fd299d58ecc8d3e7c8d6d7df1cca3">getTransform</a>() final;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01683.html#a9173648cf9731b0fdbeaed3da93bf1fa">   23</a></span>&#160;        const Entities::Transform::ITransform &amp;<a class="code" href="a01683.html#a249fd299d58ecc8d3e7c8d6d7df1cca3">getTransform</a>() const final;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01683.html#a4c74e9ca262ea3ade79a0cf7fbe1b2f6">   24</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="a01683.html#a4c74e9ca262ea3ade79a0cf7fbe1b2f6">isCollided</a>(const Entities::Transform::Vector3f &amp;point) const final;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01683.html#a33f6bbb623c4dfa345e4274bf57ff3c5">   25</a></span>&#160;        std::optional&lt;Entities::Transform::Vector3f&gt; <a class="code" href="a01683.html#a4c74e9ca262ea3ade79a0cf7fbe1b2f6">isCollided</a>(const Images::Ray &amp;ray) const final;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01683.html#a3546e3601c4049482bfbd09f527c2e3c">   26</a></span>&#160;        Images::Color <a class="code" href="a01683.html#a3546e3601c4049482bfbd09f527c2e3c">getColor</a>(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                               const Entities::Transform::Vector3f &amp;intersect) const final;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01683.html#a08d157c6503dda48857ee3b957e9a3dc">   28</a></span>&#160;        Images::Color <a class="code" href="a01683.html#a08d157c6503dda48857ee3b957e9a3dc">redirectionLight</a>(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                       const Entities::Transform::Vector3f &amp;intersect) const final;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    private:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01683.html#ab6e7b592073895b3570d0aee35125f96">   31</a></span>&#160;        Entities::Transform::Transform <a class="code" href="a01683.html#ab6e7b592073895b3570d0aee35125f96">_transform</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01683.html#a01db28d753a7dcf81de2dd70ef239b46">   32</a></span>&#160;        <a class="code" href="a00417.html">RayTracer</a>::Entities::Transform::Vector2i <a class="code" href="a01683.html#a01db28d753a7dcf81de2dd70ef239b46">_size</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01683.html#abc22d89ccbe9e30a688a92164079796d">   33</a></span>&#160;        std::optional&lt;std::reference_wrapper&lt;Entities::IMaterial&gt;&gt; <a class="code" href="a01683.html#abc22d89ccbe9e30a688a92164079796d">_material</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01683.html#a3a808575f0e2186cc48ba3472fbbc93c">   34</a></span>&#160;        <a class="code" href="a01375.html">ILogger</a> &amp;<a class="code" href="a01683.html#a3a808575f0e2186cc48ba3472fbbc93c">_logger</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*LIMITEDPLANEENTITY_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">IPrimitive.hpp</a></div></div>
-<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Transform.hpp</a></div></div>
-<div class="ttc" id="aa00125_html"><div class="ttname"><a href="a00125.html">Vector2i.hpp</a></div></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00417_html"><div class="ttname"><a href="a00417.html">RayTracer</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:18</div></div>
-<div class="ttc" id="aa00443_html"><div class="ttname"><a href="a00443.html">RayTracer::PluginsExt::LimitedPlane</a></div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:16</div></div>
-<div class="ttc" id="aa01311_html_ab003087623e47600c09a76ff8138d37b"><div class="ttname"><a href="a01311.html#ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:20</div></div>
-<div class="ttc" id="aa01323_html"><div class="ttname"><a href="a01323.html">RayTracer::Entities::IPrimitive</a></div><div class="ttdoc">The IPrimitive class.</div><div class="ttdef"><b>Definition:</b> IPrimitive.hpp:25</div></div>
-<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01683_html"><div class="ttname"><a href="a01683.html">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity</a></div><div class="ttdef"><b>Definition:</b> LimitedPlaneEntity.hpp:18</div></div>
-<div class="ttc" id="aa01683_html_a01db28d753a7dcf81de2dd70ef239b46"><div class="ttname"><a href="a01683.html#a01db28d753a7dcf81de2dd70ef239b46">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::_size</a></div><div class="ttdeci">RayTracer::Entities::Transform::Vector2i _size</div><div class="ttdef"><b>Definition:</b> LimitedPlaneEntity.hpp:32</div></div>
-<div class="ttc" id="aa01683_html_a08d157c6503dda48857ee3b957e9a3dc"><div class="ttname"><a href="a01683.html#a08d157c6503dda48857ee3b957e9a3dc">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::redirectionLight</a></div><div class="ttdeci">Images::Color redirectionLight(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">this function is called when the object intercept the ray light</div></div>
-<div class="ttc" id="aa01683_html_a0d2eeb72efbf30e03a4042c7fd264807"><div class="ttname"><a href="a01683.html#a0d2eeb72efbf30e03a4042c7fd264807">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::LimitedPlaneEntity</a></div><div class="ttdeci">LimitedPlaneEntity(const Scenes::ISetting &amp;config, ILogger &amp;logger)</div></div>
-<div class="ttc" id="aa01683_html_a249fd299d58ecc8d3e7c8d6d7df1cca3"><div class="ttname"><a href="a01683.html#a249fd299d58ecc8d3e7c8d6d7df1cca3">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::getTransform</a></div><div class="ttdeci">Entities::Transform::ITransform &amp; getTransform() final</div><div class="ttdoc">Get the transform (position, rotation, scale)</div></div>
-<div class="ttc" id="aa01683_html_a3546e3601c4049482bfbd09f527c2e3c"><div class="ttname"><a href="a01683.html#a3546e3601c4049482bfbd09f527c2e3c">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::getColor</a></div><div class="ttdeci">Images::Color getColor(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">Get the material.</div></div>
-<div class="ttc" id="aa01683_html_a3a808575f0e2186cc48ba3472fbbc93c"><div class="ttname"><a href="a01683.html#a3a808575f0e2186cc48ba3472fbbc93c">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> LimitedPlaneEntity.hpp:34</div></div>
-<div class="ttc" id="aa01683_html_a4c74e9ca262ea3ade79a0cf7fbe1b2f6"><div class="ttname"><a href="a01683.html#a4c74e9ca262ea3ade79a0cf7fbe1b2f6">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::isCollided</a></div><div class="ttdeci">bool isCollided(const Entities::Transform::Vector3f &amp;point) const final</div><div class="ttdoc">Check if the point is collided with the box.</div></div>
-<div class="ttc" id="aa01683_html_a7caeb35b40b9d4d3b04b8040a1bfdf5c"><div class="ttname"><a href="a01683.html#a7caeb35b40b9d4d3b04b8040a1bfdf5c">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::getType</a></div><div class="ttdeci">Type getType() const final</div><div class="ttdoc">Get the type (light, camera, primitive)</div></div>
-<div class="ttc" id="aa01683_html_ab6e7b592073895b3570d0aee35125f96"><div class="ttname"><a href="a01683.html#ab6e7b592073895b3570d0aee35125f96">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::_transform</a></div><div class="ttdeci">Entities::Transform::Transform _transform</div><div class="ttdef"><b>Definition:</b> LimitedPlaneEntity.hpp:31</div></div>
-<div class="ttc" id="aa01683_html_abc22d89ccbe9e30a688a92164079796d"><div class="ttname"><a href="a01683.html#abc22d89ccbe9e30a688a92164079796d">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneEntity::_material</a></div><div class="ttdeci">std::optional&lt; std::reference_wrapper&lt; Entities::IMaterial &gt; &gt; _material</div><div class="ttdef"><b>Definition:</b> LimitedPlaneEntity.hpp:33</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef LIMITEDPLANECREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define LIMITEDPLANECREATOR_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00200.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00158.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00341.html">LimitedPlaneEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00446.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00446.html">RayTracer::PluginsExt::LimitedPlane</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01682.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01682.html">LimitedPlaneCreator</a> : <span class="keyword">public</span> <a class="code" href="a01454.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01682.html#a5c68c6b9f7ac9a5c124a01ea8242583e">   19</a></span>&#160;        <a class="code" href="a01682.html#a5c68c6b9f7ac9a5c124a01ea8242583e">~LimitedPlaneCreator</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01682.html#a870183d631402aa1d41abafce4465a7e">   20</a></span>&#160;        <a class="code" href="a01314.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01682.html#a870183d631402aa1d41abafce4465a7e">create</a>(<span class="keyword">const</span> <a class="code" href="a01530.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01378.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01682.html#abab0398480e050ed18df3cfdc2485621">   23</a></span>&#160;        std::vector&lt;LimitedPlaneEntity *&gt; <a class="code" href="a01682.html#abab0398480e050ed18df3cfdc2485621">_elements</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*LIMITEDPLANECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00158_html"><div class="ttname"><a href="a00158.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00200_html"><div class="ttname"><a href="a00200.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00341_html"><div class="ttname"><a href="a00341.html">LimitedPlaneEntity.hpp</a></div></div>
+<div class="ttc" id="aa00446_html"><div class="ttname"><a href="a00446.html">RayTracer::PluginsExt::LimitedPlane</a></div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:16</div></div>
+<div class="ttc" id="aa01314_html"><div class="ttname"><a href="a01314.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01378_html"><div class="ttname"><a href="a01378.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01454_html"><div class="ttname"><a href="a01454.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01530_html"><div class="ttname"><a href="a01530.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01682_html"><div class="ttname"><a href="a01682.html">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator</a></div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:17</div></div>
+<div class="ttc" id="aa01682_html_a5c68c6b9f7ac9a5c124a01ea8242583e"><div class="ttname"><a href="a01682.html#a5c68c6b9f7ac9a5c124a01ea8242583e">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator::~LimitedPlaneCreator</a></div><div class="ttdeci">~LimitedPlaneCreator()</div></div>
+<div class="ttc" id="aa01682_html_a870183d631402aa1d41abafce4465a7e"><div class="ttname"><a href="a01682.html#a870183d631402aa1d41abafce4465a7e">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01682_html_abab0398480e050ed18df3cfdc2485621"><div class="ttname"><a href="a01682.html#abab0398480e050ed18df3cfdc2485621">RayTracer::PluginsExt::LimitedPlane::LimitedPlaneCreator::_elements</a></div><div class="ttdeci">std::vector&lt; LimitedPlaneEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> LimitedPlaneCreator.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:55 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00404" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleEntity.hpp</primary></indexterm>
-<programlisting>#include &lt;functional&gt;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IEntityCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;IPrimitive.hpp&quot;
-#include &quot;Transform.hpp&quot;
-#include &quot;IMaterial.hpp&quot;
-</programlisting>Include dependency graph for TriangleEntity.hpp:<para>
+#include &quot;TriangleEntity.hpp&quot;
+</programlisting>Include dependency graph for TriangleCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -16,30 +16,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00406.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01775">RayTracer::PluginsExt::Triangle::TriangleEntity</link></para>
+            <listitem><para>class <link linkend="_a01774">RayTracer::PluginsExt::Triangle::TriangleCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00454">RayTracer::PluginsExt::Triangle</link></para>
+            <listitem><para> <link linkend="_a00457">RayTracer::PluginsExt::Triangle</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

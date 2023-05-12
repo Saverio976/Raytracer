@@ -1,13 +1,22 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00437" xml:lang="en-US">
-<title>RayTracer::PluginsExt::ChessBoard Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::ChessBoard</primary></indexterm>
+<title>RayTracer::PluginsExt::Camera Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Camera</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00438">Clustered</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00439">FullCustom</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01631">ChessBoardCreator</link></para>
+            <listitem><para>class <link linkend="_a01594">CameraCreator</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01635">ChessBoardMaterial</link></para>
+            <listitem><para>class <link linkend="_a01598">CameraEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

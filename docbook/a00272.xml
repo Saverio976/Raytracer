@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00272" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteFilter.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteFilter.hpp</primary></indexterm>
-<programlisting>#include &lt;future&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &quot;Color.hpp&quot;
-#include &quot;ILogger.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/BlackAndWhiteCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
 #include &quot;IFilter.hpp&quot;
+#include &quot;IFilterCreator.hpp&quot;
+#include &quot;ILogger.hpp&quot;
 #include &quot;ISetting.hpp&quot;
-#include &quot;Image.hpp&quot;
-</programlisting>Include dependency graph for BlackAndWhiteFilter.hpp:<para>
+#include &quot;BlackAndWhiteFilter.hpp&quot;
+</programlisting>Include dependency graph for BlackAndWhiteCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -19,30 +18,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00274.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01587">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteFilter</link></para>
+            <listitem><para>class <link linkend="_a01586">RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00433">RayTracer::PluginsExt::BlackAndWhite</link></para>
+            <listitem><para> <link linkend="_a00436">RayTracer::PluginsExt::BlackAndWhite</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

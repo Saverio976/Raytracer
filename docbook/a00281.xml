@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00281" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/CameraClusterCreator.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Cluster/CameraClusterCreator.hpp</primary></indexterm>
-<programlisting>#include &lt;vector&gt;
-#include &lt;memory&gt;
-#include &quot;IEntityCreator.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Camera/Basic/CameraEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;cstddef&gt;
+#include &lt;functional&gt;
+#include &quot;ICamera.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;CameraClusterEntity.hpp&quot;
-</programlisting>Include dependency graph for CameraClusterCreator.hpp:<para>
+#include &quot;ISceneState.hpp&quot;
+#include &quot;IDisplayable.hpp&quot;
+#include &quot;Transform.hpp&quot;
+</programlisting>Include dependency graph for CameraEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -16,23 +18,30 @@
         </mediaobject>
     </informalfigure>
 </para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00283.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01599">RayTracer::PluginsExt::Camera::Clustered::CameraClusterCreator</link></para>
+            <listitem><para>class <link linkend="_a01598">RayTracer::PluginsExt::Camera::CameraEntity</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00434">RayTracer::PluginsExt::Camera</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00435">RayTracer::PluginsExt::Camera::Clustered</link></para>
+            <listitem><para> <link linkend="_a00437">RayTracer::PluginsExt::Camera</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

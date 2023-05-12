@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00173" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Images/Ray.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/Ray.hpp</primary></indexterm>
-<programlisting>#include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for Ray.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Images/PixelThread.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Images/PixelThread.hpp</primary></indexterm>
+<programlisting>#include &quot;IDisplayable.hpp&quot;
+#include &quot;Ray.hpp&quot;
+#include &quot;Color.hpp&quot;
+#include &lt;functional&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for PixelThread.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -12,30 +16,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00175.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01407">RayTracer::Images::Ray</link></para>
+            <listitem><para>class <link linkend="_a01406">RayTracer::Images::PixelThread</link></para>
 
-<para>The <link linkend="_a01407">Ray</link> class. </para>
+<para>The <link linkend="_a01406">PixelThread</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00423">RayTracer::Images</link></para>
+            <listitem><para> <link linkend="_a00426">RayTracer::Images</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

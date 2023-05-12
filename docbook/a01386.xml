@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01386" xml:lang="en-US">
+<title>RayTracer::Images::Image Class Reference</title>
+<indexterm><primary>RayTracer::Images::Image</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01386">Image</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Image.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Images::Image:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01384.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a01390">PixelLine</link></para>
+
+<para><link linkend="_a01390">PixelLine</link> class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01386_1a1dc6c33acbb2a5627e4b2e348ed34dee">Image</link> (const <link linkend="_a01338">Entities::Transform::Vector2i</link> &amp;size)</para>
+
+<para><link linkend="_a01386">Image</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01386_1a5bc834bc11a950f1cdab448c80e159b0">convertToPPM</link> (const std::string &amp;filePath) const</para>
+
+<para>convertToPPM file </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01390">PixelLine</link> <link linkend="_a01386_1afda70596b28316560e306535ed0a8e92">operator[]</link> (std::size_t y) const</para>
+
+<para>Get the pixels line at line <computeroutput>y</computeroutput> (const) </para>
+</listitem>
+            <listitem><para><link linkend="_a01390">PixelLine</link> <link linkend="_a01386_1ad0bd5e0cbf10f2cf4c93a5542d2ee431">operator[]</link> (std::size_t y)</para>
+
+<para>Get the pixels line at line <computeroutput>y</computeroutput> </para>
+</listitem>
+            <listitem><para>const <link linkend="_a01338">Entities::Transform::Vector2i</link> &amp; <link linkend="_a01386_1a4025ed85ccad754e6505634b3c756e10">getSize</link> () const</para>
+
+<para>Get the size of <link linkend="_a01386">Image</link>. </para>
+</listitem>
+            <listitem><para>const std::vector&lt; <link linkend="_a01382">Color</link> &gt; &amp; <link linkend="_a01386_1a0ad0601cdf90a1bc67d5fc10c7ff602f">getPixelsList</link> () const</para>
+
+<para>Get the list of pixels. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; <link linkend="_a01382">Color</link> &gt; <link linkend="_a01386_1ad90962ccc92e87279ba304bf473d8ac2">_pixels</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01338">Entities::Transform::Vector2i</link> <link linkend="_a01386_1a0c5e26f6ab1c053b6aa30b54babdf552">_size</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01386">Image</link> class. </para>
+
+
+
+<para>class that represent an image </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01386_1a1dc6c33acbb2a5627e4b2e348ed34dee"/>    <section>
+    <title>Image()</title>
+<indexterm><primary>Image</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>Image</secondary></indexterm>
+<para><computeroutput>RayTracer::Images::Image::Image (const <link linkend="_a01338">Entities::Transform::Vector2i</link> &amp; size)</computeroutput></para><para>
+
+<para><link linkend="_a01386">Image</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>size</entry>
+                                <entry>
+<para>the size </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01386_1a5bc834bc11a950f1cdab448c80e159b0"/>    <section>
+    <title>convertToPPM()</title>
+<indexterm><primary>convertToPPM</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>convertToPPM</secondary></indexterm>
+<para><computeroutput>void RayTracer::Images::Image::convertToPPM (const std::string &amp; filePath) const</computeroutput></para><para>
+
+<para>convertToPPM file </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filePath</entry>
+                                <entry>
+<para>the file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01386_1a0ad0601cdf90a1bc67d5fc10c7ff602f"/>    <section>
+    <title>getPixelsList()</title>
+<indexterm><primary>getPixelsList</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>getPixelsList</secondary></indexterm>
+<para><computeroutput>const std::vector&lt;<link linkend="_a01382">Color</link>&gt;&amp; RayTracer::Images::Image::getPixelsList ( ) const</computeroutput></para><para>
+
+<para>Get the list of pixels. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the <link linkend="_a01386">Image</link>&apos;s size (Width, Height) </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01386_1a4025ed85ccad754e6505634b3c756e10"/>    <section>
+    <title>getSize()</title>
+<indexterm><primary>getSize</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>getSize</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01338">Entities::Transform::Vector2i</link>&amp; RayTracer::Images::Image::getSize ( ) const</computeroutput></para><para>
+
+<para>Get the size of <link linkend="_a01386">Image</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the <link linkend="_a01386">Image</link>&apos;s size (Width, Height) </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01386_1ad0bd5e0cbf10f2cf4c93a5542d2ee431"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput><link linkend="_a01390">PixelLine</link> RayTracer::Images::Image::operator[] (std::size_t y)</computeroutput></para><para>
+
+<para>Get the pixels line at line <computeroutput>y</computeroutput> </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>the y</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the pixels line </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01386_1afda70596b28316560e306535ed0a8e92"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput>const <link linkend="_a01390">PixelLine</link> RayTracer::Images::Image::operator[] (std::size_t y) const</computeroutput></para><para>
+
+<para>Get the pixels line at line <computeroutput>y</computeroutput> (const) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>the y</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the pixels line </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01386_1ad90962ccc92e87279ba304bf473d8ac2"/>    <section>
+    <title>_pixels</title>
+<indexterm><primary>_pixels</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>_pixels</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01382">Color</link>&gt; RayTracer::Images::Image::_pixels<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01386_1a0c5e26f6ab1c053b6aa30b54babdf552"/>    <section>
+    <title>_size</title>
+<indexterm><primary>_size</primary><secondary>RayTracer::Images::Image</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Image</primary><secondary>_size</secondary></indexterm>
+<para><computeroutput><link linkend="_a01338">Entities::Transform::Vector2i</link> RayTracer::Images::Image::_size<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Images/<link linkend="_a00164">Image.hpp</link></section>
+</section>

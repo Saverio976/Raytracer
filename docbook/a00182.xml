@@ -1,14 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00182" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Main.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Main.hpp</primary></indexterm>
-<programlisting>#include &lt;exception&gt;
-#include &lt;memory&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Logger.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Logger.hpp</primary></indexterm>
+<programlisting>#include &lt;map&gt;
 #include &lt;string&gt;
 #include &quot;ILogger.hpp&quot;
-#include &quot;Parameters.hpp&quot;
-#include &quot;Scene.hpp&quot;
-</programlisting>Include dependency graph for Main.hpp:<para>
+</programlisting>Include dependency graph for Logger.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -20,34 +17,17 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01423">RayTracer::Main</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01427">RayTracer::Main::MainError</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01431">RayTracer::Main::ArgumentError</link></para>
+            <listitem><para>class <link linkend="_a01422">RayTracer::Logger</link></para>
+
+<para><link linkend="_a01422">Logger</link> singleton. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
-<simplesect>
-    <title>Functions    </title>
-        <itemizedlist>
-            <listitem><para>void <link linkend="_a00182_1acfd30268d8cf7ee855a54804242fce5d">catch_sigint</link> (int sig)</para>
-</listitem>
-        </itemizedlist>
-</simplesect>
-<section>
-<title>Function Documentation</title>
-<anchor xml:id="_a00182_1acfd30268d8cf7ee855a54804242fce5d"/>    <section>
-    <title>catch_sigint()</title>
-<indexterm><primary>catch_sigint</primary><secondary>Main.hpp</secondary></indexterm>
-<indexterm><primary>Main.hpp</primary><secondary>catch_sigint</secondary></indexterm>
-<para><computeroutput>void catch_sigint (int sig)</computeroutput></para></section>
-</section>
 </section>

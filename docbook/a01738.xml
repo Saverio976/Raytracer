@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01738" xml:lang="en-US">
+<title>RayTracer::PluginsExt::Refraction::RefractionMaterial Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary></indexterm>
+<para>
+<computeroutput>#include &lt;RefractionMaterial.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::Refraction::RefractionMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01737.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::Refraction::RefractionMaterial:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01736.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01738_1a10f78d08b422ff7a622d8df82eb85081">RefractionMaterial</link> (const <link linkend="_a01530">Scenes::ISetting</link> &amp;config)</para>
+</listitem>
+            <listitem><para><link linkend="_a01382">Images::Color</link> <link linkend="_a01738_1aedf23f607ca1676c86f236499c3625e5">getColor</link> (const <link linkend="_a01410">Images::Ray</link> &amp;ray, const <link linkend="_a01330">Entities::Transform::ITransform</link> &amp;centerObj, const <link linkend="_a01342">Entities::Transform::Vector3f</link> &amp;intersect, const <link linkend="_a01518">Scenes::IDisplayable</link> &amp;displayable) const final</para>
+
+<para>Get the color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a01738_1a1ec5f965cf2e2a17f880867ed8a2ab92">setColor</link> (const <link linkend="_a01382">Images::Color</link> &amp;color) final</para>
+
+<para>Set the color. </para>
+</listitem>
+            <listitem><para><link linkend="_a01382">Images::Color</link> <link linkend="_a01738_1a43c4d9b97c8b760011cd2259aa7ab4f7">redirectionLight</link> (const <link linkend="_a01410">Images::Ray</link> &amp;ray, const <link linkend="_a01518">Scenes::IDisplayable</link> &amp;displayable, const <link linkend="_a01342">Entities::Transform::Vector3f</link> &amp;intersect) const final</para>
+
+<para>this function is called when the object intercept the ray light </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01382">Images::Color</link> <link linkend="_a01738_1a54ba5acbfcc6d016b7133985e1c209e5">getNextColor</link> (const <link linkend="_a01410">Images::Ray</link> &amp;ray, const <link linkend="_a01342">Entities::Transform::Vector3f</link> &amp;intersect, const <link linkend="_a01518">Scenes::IDisplayable</link> &amp;displayable) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01382">Images::Color</link> <link linkend="_a01738_1a08912b2ddff1d3835bf651b369af09b0">_color</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Entities::Transform::Vector3f</link> <link linkend="_a01738_1a1a43d8c754868a11f968579d287d2cda">_ambient</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Entities::Transform::Vector3f</link> <link linkend="_a01738_1a4240d73114e7cd9642eaefd6189aa91e">_diffuse</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Entities::Transform::Vector3f</link> <link linkend="_a01738_1ae6463937a88e70d27d2a5fcc451e11b9">_specular</link></para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Entities::Transform::Vector3f</link> <link linkend="_a01738_1ae97cd7f4248a716717c42a99d96dac5c">_refraction</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01738_1ae3586a2ba77811a4185c1c82954b1bab">_shininess</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01738_1a67d31518c708de6b1313d5f22e33ac40">_transparency</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01738_1a10f78d08b422ff7a622d8df82eb85081"/>    <section>
+    <title>RefractionMaterial()</title>
+<indexterm><primary>RefractionMaterial</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>RefractionMaterial</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::Refraction::RefractionMaterial::RefractionMaterial (const <link linkend="_a01530">Scenes::ISetting</link> &amp; config)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01738_1aedf23f607ca1676c86f236499c3625e5"/>    <section>
+    <title>getColor()</title>
+<indexterm><primary>getColor</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>getColor</secondary></indexterm>
+<para><computeroutput><link linkend="_a01382">Images::Color</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::getColor (const <link linkend="_a01410">Images::Ray</link> &amp; ray, const <link linkend="_a01330">Entities::Transform::ITransform</link> &amp; centerObj, const <link linkend="_a01342">Entities::Transform::Vector3f</link> &amp; intersect, const <link linkend="_a01518">Scenes::IDisplayable</link> &amp; displayable) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Get the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>centerObj</entry>
+                                <entry>
+<para>the center of the object impacted </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point on the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable objects</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01322_1ace27fcd7ec81aa60ff66fc944042b0cb">RayTracer::Entities::IMaterial</link>.</para>
+    </section><anchor xml:id="_a01738_1a54ba5acbfcc6d016b7133985e1c209e5"/>    <section>
+    <title>getNextColor()</title>
+<indexterm><primary>getNextColor</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>getNextColor</secondary></indexterm>
+<para><computeroutput><link linkend="_a01382">Images::Color</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::getNextColor (const <link linkend="_a01410">Images::Ray</link> &amp; ray, const <link linkend="_a01342">Entities::Transform::Vector3f</link> &amp; intersect, const <link linkend="_a01518">Scenes::IDisplayable</link> &amp; displayable) const<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1a43c4d9b97c8b760011cd2259aa7ab4f7"/>    <section>
+    <title>redirectionLight()</title>
+<indexterm><primary>redirectionLight</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>redirectionLight</secondary></indexterm>
+<para><computeroutput><link linkend="_a01382">Images::Color</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::redirectionLight (const <link linkend="_a01410">Images::Ray</link> &amp; ray, const <link linkend="_a01518">Scenes::IDisplayable</link> &amp; displayable, const <link linkend="_a01342">Entities::Transform::Vector3f</link> &amp; intersect) const<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>this function is called when the object intercept the ray light </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ray</entry>
+                                <entry>
+<para>the ray between the light and the object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>displayable</entry>
+                                <entry>
+<para>the displayable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>intersect</entry>
+                                <entry>
+<para>the intersection point between this point and the ray</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the color of the shadow </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01322_1afcb781871a3292f695efc25f38e6d3ff">RayTracer::Entities::IMaterial</link>.</para>
+    </section><anchor xml:id="_a01738_1a1ec5f965cf2e2a17f880867ed8a2ab92"/>    <section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>void RayTracer::PluginsExt::Refraction::RefractionMaterial::setColor (const <link linkend="_a01382">Images::Color</link> &amp; color)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>the color </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_a01322_1a1d980e34030a879414065a9993f428b4">RayTracer::Entities::IMaterial</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01738_1a1a43d8c754868a11f968579d287d2cda"/>    <section>
+    <title>_ambient</title>
+<indexterm><primary>_ambient</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_ambient</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::_ambient<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1a08912b2ddff1d3835bf651b369af09b0"/>    <section>
+    <title>_color</title>
+<indexterm><primary>_color</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_color</secondary></indexterm>
+<para><computeroutput><link linkend="_a01382">Images::Color</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::_color<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1a4240d73114e7cd9642eaefd6189aa91e"/>    <section>
+    <title>_diffuse</title>
+<indexterm><primary>_diffuse</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_diffuse</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::_diffuse<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1ae97cd7f4248a716717c42a99d96dac5c"/>    <section>
+    <title>_refraction</title>
+<indexterm><primary>_refraction</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_refraction</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::_refraction<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1ae3586a2ba77811a4185c1c82954b1bab"/>    <section>
+    <title>_shininess</title>
+<indexterm><primary>_shininess</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_shininess</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::Refraction::RefractionMaterial::_shininess<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1ae6463937a88e70d27d2a5fcc451e11b9"/>    <section>
+    <title>_specular</title>
+<indexterm><primary>_specular</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_specular</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Entities::Transform::Vector3f</link> RayTracer::PluginsExt::Refraction::RefractionMaterial::_specular<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01738_1a67d31518c708de6b1313d5f22e33ac40"/>    <section>
+    <title>_transparency</title>
+<indexterm><primary>_transparency</primary><secondary>RayTracer::PluginsExt::Refraction::RefractionMaterial</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::Refraction::RefractionMaterial</primary><secondary>_transparency</secondary></indexterm>
+<para><computeroutput>double RayTracer::PluginsExt::Refraction::RefractionMaterial::_transparency<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/RefractionMaterial/<link linkend="_a00377">RefractionMaterial.hpp</link></section>
+</section>

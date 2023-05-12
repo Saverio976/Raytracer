@@ -31,8 +31,29 @@ image
         </mediaobject>
     </informalfigure>
 </para>
-</section>
 <section xml:id="_index_1autotoc_md2">
+<title>TOC</title>
+
+<para><itemizedlist>
+<listitem>
+<para><link xlink:href="#RayTracer">Raytracer</link></para>
+</listitem><listitem>
+<para><link xlink:href="#Introduction">Introduction</link></para>
+</listitem><listitem>
+<para><link xlink:href="#TOC">TOC</link></para>
+</listitem><listitem>
+<para><link xlink:href="#Installation">Installation</link></para>
+</listitem><listitem>
+<para><link xlink:href="#Usage">Usage</link></para>
+</listitem><listitem>
+<para><link xlink:href="#Exemples/Documentation">Exemples/Documentation</link></para>
+</listitem><listitem>
+<para><link xlink:href="#Gource">Gource</link></para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+<section xml:id="_index_1autotoc_md3">
 <title>Installation</title>
 
 <para><literallayout><computeroutput>git&#32;clone&#32;https://github.com/Saverio976/Raytracer.git
@@ -41,7 +62,7 @@ cmake&#32;.
 make
 </computeroutput></literallayout> This will create a binary in the current working directory</para>
 </section>
-<section xml:id="_index_1autotoc_md3">
+<section xml:id="_index_1autotoc_md4">
 <title>Usage</title>
 
 <para><computeroutput>./raytracer --help</computeroutput> <literallayout><computeroutput>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,----,
@@ -87,7 +108,7 @@ __CREDITS__:
 &#32;&#32;&#32;&#32;Repository:&#32;https://github.com/Saverio976/Raytracer
 </computeroutput></literallayout></para>
 </section>
-<section xml:id="_index_1autotoc_md4">
+<section xml:id="_index_1autotoc_md5">
 <title>Exemples/Documentation</title>
 
 <para>les primitives sont:<itemizedlist>
@@ -111,6 +132,8 @@ __CREDITS__:
 <para><link xlink:href="#Torus">Torus</link></para>
 </listitem><listitem>
 <para><link xlink:href="#Triangle">Triangle</link></para>
+</listitem><listitem>
+<para><link xlink:href="#Obj">Obj</link></para>
 </listitem></itemizedlist>
 </para>
 
@@ -153,7 +176,7 @@ __CREDITS__:
 <para><link xlink:href="#SSAAx4">SSAAx4</link></para>
 </listitem></itemizedlist>
 </para>
-<section xml:id="_index_1autotoc_md5">
+<section xml:id="_index_1autotoc_md6">
 <title>Sphere</title>
 
 <para>
@@ -281,7 +304,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md6">
+<section xml:id="_index_1autotoc_md7">
 <title>Plan</title>
 
 <para>
@@ -436,7 +459,7 @@ lights&#32;:
 <para>&lt;/details&gt;</para>
 </section>
 </section>
-<section xml:id="_index_1autotoc_md7">
+<section xml:id="_index_1autotoc_md8">
 <title>Plan-Limité</title>
 
 <para>
@@ -598,7 +621,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md8">
+<section xml:id="_index_1autotoc_md9">
 <title>Disque</title>
 
 <para>
@@ -758,7 +781,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md9">
+<section xml:id="_index_1autotoc_md10">
 <title>Cone</title>
 
 <para>
@@ -889,7 +912,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md10">
+<section xml:id="_index_1autotoc_md11">
 <title>Cone-Limité</title>
 
 <para>
@@ -1023,7 +1046,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md11">
+<section xml:id="_index_1autotoc_md12">
 <title>Cylindre</title>
 
 <para>
@@ -1153,7 +1176,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md12">
+<section xml:id="_index_1autotoc_md13">
 <title>Cylindre-Limité</title>
 
 <para>
@@ -1285,7 +1308,7 @@ lights&#32;:
 </computeroutput></literallayout></para>
 
 <para>&lt;/details&gt;</para>
-<section xml:id="_index_1autotoc_md13">
+<section xml:id="_index_1autotoc_md14">
 <title>Torus</title>
 
 <para>
@@ -1415,7 +1438,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md14">
+<section xml:id="_index_1autotoc_md15">
 <title>Triangle</title>
 
 <para>
@@ -1547,7 +1570,106 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md15">
+<section xml:id="_index_1autotoc_md16">
+<title>Obj</title>
+
+<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata align="center" valign="middle" scalefit="0" fileref="obj.png"></imagedata>
+            </imageobject>
+image
+        </mediaobject>
+    </informalfigure>
+</para>
+
+<para>&lt;details&gt;*</para>
+
+<para>afficher ... </para>
+
+<para><literallayout><computeroutput>#&#32;obj.yaax
+
+#&#32;Configuration&#32;of&#32;the&#32;camera
+cameras:
+{
+&#32;&#32;&#32;&#32;Camera:&#32;(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size&#32;=&#32;{x:&#32;500;&#32;y&#32;=&#32;500;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;transform&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#32;=&#32;{x&#32;=&#32;0.0;&#32;y&#32;=&#32;-30.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale&#32;=&#32;{x&#32;=&#32;0.0;&#32;y&#32;=&#32;0.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rotation&#32;=&#32;{x&#32;=&#32;0.0;&#32;y&#32;=&#32;0.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;focal&#32;=&#32;200.0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;maxThreads&#32;=&#32;-1;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;filters&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SSAAx4:&#32;(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;maxThreads&#32;=&#32;-1;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;);
+};
+
+#&#32;Primitives&#32;in&#32;the&#32;scene
+primitives&#32;:
+{
+&#32;&#32;&#32;&#32;#&#32;List&#32;of&#32;OBJ
+&#32;&#32;&#32;&#32;Obj&#32;=&#32;(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;filePath&#32;=&#32;&quot;./tests/obj/monkey.obj&quot;;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;transform&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#32;=&#32;{x&#32;=&#32;0.0;&#32;y&#32;=&#32;0.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale&#32;=&#32;{x&#32;=&#32;1.0;&#32;y&#32;=&#32;1.0;&#32;z&#32;=&#32;1.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rotation&#32;=&#32;{x&#32;=&#32;0.0;&#32;y&#32;=&#32;0.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;material&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type&#32;=&#32;&quot;PlainMaterial&quot;;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;shininess&#32;=&#32;10.0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ambient&#32;=&#32;{x&#32;=&#32;1.0;&#32;y&#32;=&#32;1.0;&#32;z&#32;=&#32;1.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diffuse&#32;=&#32;{x&#32;=&#32;1.0;&#32;y&#32;=&#32;1.0;&#32;z&#32;=&#32;1.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;specular&#32;=&#32;{x&#32;=&#32;1.0;&#32;y&#32;=&#32;1.0;&#32;z&#32;=&#32;1.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#32;=&#32;{r&#32;=&#32;68.0;&#32;g&#32;=&#32;171.0;&#32;b&#32;=&#32;128.0;&#32;a&#32;=&#32;255.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;);
+};
+
+#&#32;Light&#32;configuration
+lights&#32;:
+{
+&#32;&#32;&#32;&#32;PointLight&#32;=&#32;(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;transform&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#32;=&#32;{x&#32;=&#32;0.0;&#32;y&#32;=&#32;-10.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale&#32;=&#32;{x&#32;=&#32;500.0;&#32;y&#32;=&#32;1.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rotation&#32;=&#32;{x&#32;=&#32;60.0;&#32;y&#32;=&#32;20.0;&#32;z&#32;=&#32;-10.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#32;=&#32;{r&#32;=&#32;255.0;&#32;g&#32;=&#32;126.0;&#32;b&#32;=&#32;255.0;&#32;a&#32;=&#32;255.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;power&#32;=&#32;2.0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;radius&#32;=&#32;500.0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;);
+&#32;&#32;&#32;&#32;AmbientLight&#32;=&#32;(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;transform&#32;=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#32;=&#32;{x&#32;=&#32;150.0;&#32;y&#32;=&#32;0.0;&#32;z&#32;=&#32;100.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale&#32;=&#32;{x&#32;=&#32;1.0;&#32;y&#32;=&#32;0.0;&#32;z&#32;=&#32;0.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rotation&#32;=&#32;{x&#32;=&#32;60.0;&#32;y&#32;=&#32;20.0;&#32;z&#32;=&#32;-10.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#32;=&#32;{r&#32;=&#32;50.0;&#32;g&#32;=&#32;50.0;&#32;b&#32;=&#32;50.0;&#32;a&#32;=&#32;255.0;};
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;power&#32;=&#32;1.0;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;);
+};
+</computeroutput></literallayout></para>
+
+<para>&lt;/details&gt;</para>
+</section>
+<section xml:id="_index_1autotoc_md17">
 <title>PlainMaterial</title>
 
 <para>
@@ -1677,7 +1799,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md16">
+<section xml:id="_index_1autotoc_md18">
 <title>ChessBoardMaterial</title>
 
 <para>
@@ -1811,7 +1933,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md17">
+<section xml:id="_index_1autotoc_md19">
 <title>ZebraMaterial</title>
 
 <para>
@@ -1945,7 +2067,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md18">
+<section xml:id="_index_1autotoc_md20">
 <title>TransparencyMaterial</title>
 
 <para>
@@ -2080,7 +2202,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md19">
+<section xml:id="_index_1autotoc_md21">
 <title>RefractionMaterial</title>
 
 <para>
@@ -2276,7 +2398,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md20">
+<section xml:id="_index_1autotoc_md22">
 <title>MirrorMaterial</title>
 
 <para>
@@ -2485,7 +2607,7 @@ lights&#32;:
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md21">
+<section xml:id="_index_1autotoc_md23">
 <title>AmbientLight</title>
 
 <para>
@@ -2669,7 +2791,7 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md22">
+<section xml:id="_index_1autotoc_md24">
 <title>PointLight</title>
 
 <para>
@@ -2855,7 +2977,7 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md23">
+<section xml:id="_index_1autotoc_md25">
 <title>SpotLight</title>
 
 <para>
@@ -3036,12 +3158,12 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md24">
+<section xml:id="_index_1autotoc_md26">
 <title>Camera</title>
 
 <para>Regarder la documentation pour les primitives, elle explique déjà bien le principe</para>
 </section>
-<section xml:id="_index_1autotoc_md25">
+<section xml:id="_index_1autotoc_md27">
 <title>CameraCluster</title>
 
 <para>
@@ -3637,7 +3759,7 @@ lights:&#32;{
 
 <para>&lt;/details&gt;</para>
 </section>
-<section xml:id="_index_1autotoc_md26">
+<section xml:id="_index_1autotoc_md28">
 <title>SSAAx4</title>
 
 <para>
@@ -3846,7 +3968,14 @@ lights:&#32;{
 }
 </computeroutput></literallayout></para>
 
-<para>&lt;/details&gt; </para>
+<para>&lt;/details&gt;</para>
 </section>
+</section>
+<section xml:id="_index_1autotoc_md29">
+<title>Gource</title>
+
+<para></para>
+
+<para>(if the video does not pop: <link xlink:href="/Assets/raytracer.mp4">gource</link>) </para>
 </section>
 </chapter>

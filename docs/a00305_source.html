@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Cone/ConeCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/ChessBoardMaterial/ChessBoardMaterial.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,57 +62,83 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_c8fd1adca193700d0c20cd153f75c1a6.html">Cone</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_616a73672332529d3731a9ebd7c994a8.html">ChessBoardMaterial</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ConeCreator.hpp</div>  </div>
+<div class="title">ChessBoardMaterial.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00305.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ConeCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ChessBoardMaterial.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYTRACER_CONECREATOR_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYTRACER_CONECREATOR_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CHESSBOARDMATERIAL_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define CHESSBOARDMATERIAL_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00197.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00308.html">ConeEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00438.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00438.html">RayTracer::PluginsExt::Cone</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01639.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01639.html">ConeCreator</a> : <span class="keyword">public</span> <a class="code" href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a>  {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01639.html#ad6a738f0b7f2989333d5bc9bac390fe0">   19</a></span>&#160;            <a class="code" href="a01639.html#ad6a738f0b7f2989333d5bc9bac390fe0">~ConeCreator</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01639.html#a44cc63186c26d121444a830641c98de9">   20</a></span>&#160;            <a class="code" href="a01311.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01639.html#a44cc63186c26d121444a830641c98de9">create</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01639.html#ab6a00dfa167098ffccfd8d899b9a73fd">   23</a></span>&#160;            std::vector&lt;ConeEntity *&gt; <a class="code" href="a01639.html#ab6a00dfa167098ffccfd8d899b9a73fd">_elements</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//RAYTRACER_CONECREATOR_HPP</span></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00308_html"><div class="ttname"><a href="a00308.html">ConeEntity.hpp</a></div></div>
-<div class="ttc" id="aa00438_html"><div class="ttname"><a href="a00438.html">RayTracer::PluginsExt::Cone</a></div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:16</div></div>
-<div class="ttc" id="aa01311_html"><div class="ttname"><a href="a01311.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01451_html"><div class="ttname"><a href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01639_html"><div class="ttname"><a href="a01639.html">RayTracer::PluginsExt::Cone::ConeCreator</a></div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:17</div></div>
-<div class="ttc" id="aa01639_html_a44cc63186c26d121444a830641c98de9"><div class="ttname"><a href="a01639.html#a44cc63186c26d121444a830641c98de9">RayTracer::PluginsExt::Cone::ConeCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01639_html_ab6a00dfa167098ffccfd8d899b9a73fd"><div class="ttname"><a href="a01639.html#ab6a00dfa167098ffccfd8d899b9a73fd">RayTracer::PluginsExt::Cone::ConeCreator::_elements</a></div><div class="ttdeci">std::vector&lt; ConeEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> ConeCreator.hpp:23</div></div>
-<div class="ttc" id="aa01639_html_ad6a738f0b7f2989333d5bc9bac390fe0"><div class="ttname"><a href="a01639.html#ad6a738f0b7f2989333d5bc9bac390fe0">RayTracer::PluginsExt::Cone::ConeCreator::~ConeCreator</a></div><div class="ttdeci">~ConeCreator()</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00245.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00176.html">Ray.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00161.html">Color.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">ITransform.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">Vector3f.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00116.html">IMaterial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00440.html">RayTracer::PluginsExt::ChessBoard</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01638.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01638.html">ChessBoardMaterial</a> : <span class="keyword">public</span> <a class="code" href="a01322.html">Entities::IMaterial</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01638.html#a1ef22cf766ab001bd842879dec84c415">   21</a></span>&#160;        <a class="code" href="a01638.html#a1ef22cf766ab001bd842879dec84c415">ChessBoardMaterial</a>(<span class="keyword">const</span> <a class="code" href="a01530.html">Scenes::ISetting</a> &amp;config);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01638.html#aca7674697ba417664041a3739d052a3c">   23</a></span>&#160;        <a class="code" href="a01382.html">Images::Color</a> <a class="code" href="a01638.html#aca7674697ba417664041a3739d052a3c">getColor</a>(<span class="keyword">const</span> <a class="code" href="a01410.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01330.html">Entities::Transform::ITransform</a> &amp;centerObj, <span class="keyword">const</span> <a class="code" href="a01342.html">Entities::Transform::Vector3f</a> &amp;intersect, <span class="keyword">const</span> <a class="code" href="a01518.html">Scenes::IDisplayable</a> &amp;displayable) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01638.html#aae92675cd6d9027535b61dad7b0af969">   24</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a01638.html#aae92675cd6d9027535b61dad7b0af969">setColor</a>(<span class="keyword">const</span> <a class="code" href="a01382.html">Images::Color</a> &amp;color) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01638.html#a49e30eacb6de37a689986ddee9934ff9">   25</a></span>&#160;        <a class="code" href="a01382.html">Images::Color</a> <a class="code" href="a01638.html#a49e30eacb6de37a689986ddee9934ff9">redirectionLight</a>(<span class="keyword">const</span> <a class="code" href="a01410.html">Images::Ray</a> &amp;ray, <span class="keyword">const</span> <a class="code" href="a01518.html">Scenes::IDisplayable</a> &amp;displayable,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">const</span> <a class="code" href="a01342.html">Entities::Transform::Vector3f</a> &amp;intersect) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01638.html#acad68269a4ae7a5563cb15cc27c5e2fd">   29</a></span>&#160;        <a class="code" href="a01342.html">Entities::Transform::Vector3f</a> <a class="code" href="a01638.html#acad68269a4ae7a5563cb15cc27c5e2fd">_ambient</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01638.html#ad5da80d29e316965f2c7cd4486694c41">   30</a></span>&#160;        <a class="code" href="a01342.html">Entities::Transform::Vector3f</a> <a class="code" href="a01638.html#ad5da80d29e316965f2c7cd4486694c41">_diffuse</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01638.html#a5b3e412a931bf0aeea5cb794318f654e">   31</a></span>&#160;        <a class="code" href="a01342.html">Entities::Transform::Vector3f</a> <a class="code" href="a01638.html#a5b3e412a931bf0aeea5cb794318f654e">_specular</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01638.html#abf156d6ec40afbf962871e28ad6e5763">   32</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01638.html#abf156d6ec40afbf962871e28ad6e5763">_shininess</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01638.html#a468debd9e726603541698c193089f6a1">   33</a></span>&#160;        <a class="code" href="a01382.html">Images::Color</a> <a class="code" href="a01638.html#a468debd9e726603541698c193089f6a1">_pair</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01638.html#ab114805c5162e3a53c8a5284640620e6">   34</a></span>&#160;        <a class="code" href="a01382.html">Images::Color</a> <a class="code" href="a01638.html#ab114805c5162e3a53c8a5284640620e6">_impair</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01638.html#a39645a5c22fdbc85f9db97b977d45422">   35</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="a01638.html#a39645a5c22fdbc85f9db97b977d45422">_size</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">IMaterial.hpp</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">ITransform.hpp</a></div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Vector3f.hpp</a></div></div>
+<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">Color.hpp</a></div></div>
+<div class="ttc" id="aa00176_html"><div class="ttname"><a href="a00176.html">Ray.hpp</a></div></div>
+<div class="ttc" id="aa00245_html"><div class="ttname"><a href="a00245.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00440_html"><div class="ttname"><a href="a00440.html">RayTracer::PluginsExt::ChessBoard</a></div><div class="ttdef"><b>Definition:</b> ChessBoardCreator.hpp:17</div></div>
+<div class="ttc" id="aa01322_html"><div class="ttname"><a href="a01322.html">RayTracer::Entities::IMaterial</a></div><div class="ttdoc">The IMaterial class.</div><div class="ttdef"><b>Definition:</b> IMaterial.hpp:23</div></div>
+<div class="ttc" id="aa01330_html"><div class="ttname"><a href="a01330.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
+<div class="ttc" id="aa01342_html"><div class="ttname"><a href="a01342.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
+<div class="ttc" id="aa01382_html"><div class="ttname"><a href="a01382.html">RayTracer::Images::Color</a></div><div class="ttdoc">The Color class.</div><div class="ttdef"><b>Definition:</b> Color.hpp:21</div></div>
+<div class="ttc" id="aa01410_html"><div class="ttname"><a href="a01410.html">RayTracer::Images::Ray</a></div><div class="ttdoc">The Ray class.</div><div class="ttdef"><b>Definition:</b> Ray.hpp:19</div></div>
+<div class="ttc" id="aa01518_html"><div class="ttname"><a href="a01518.html">RayTracer::Scenes::IDisplayable</a></div><div class="ttdoc">The IDisplayable interface.</div><div class="ttdef"><b>Definition:</b> IDisplayable.hpp:25</div></div>
+<div class="ttc" id="aa01530_html"><div class="ttname"><a href="a01530.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01638_html"><div class="ttname"><a href="a01638.html">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial</a></div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:19</div></div>
+<div class="ttc" id="aa01638_html_a1ef22cf766ab001bd842879dec84c415"><div class="ttname"><a href="a01638.html#a1ef22cf766ab001bd842879dec84c415">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::ChessBoardMaterial</a></div><div class="ttdeci">ChessBoardMaterial(const Scenes::ISetting &amp;config)</div></div>
+<div class="ttc" id="aa01638_html_a39645a5c22fdbc85f9db97b977d45422"><div class="ttname"><a href="a01638.html#a39645a5c22fdbc85f9db97b977d45422">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_size</a></div><div class="ttdeci">double _size</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:35</div></div>
+<div class="ttc" id="aa01638_html_a468debd9e726603541698c193089f6a1"><div class="ttname"><a href="a01638.html#a468debd9e726603541698c193089f6a1">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_pair</a></div><div class="ttdeci">Images::Color _pair</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:33</div></div>
+<div class="ttc" id="aa01638_html_a49e30eacb6de37a689986ddee9934ff9"><div class="ttname"><a href="a01638.html#a49e30eacb6de37a689986ddee9934ff9">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::redirectionLight</a></div><div class="ttdeci">Images::Color redirectionLight(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">this function is called when the object intercept the ray light</div></div>
+<div class="ttc" id="aa01638_html_a5b3e412a931bf0aeea5cb794318f654e"><div class="ttname"><a href="a01638.html#a5b3e412a931bf0aeea5cb794318f654e">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_specular</a></div><div class="ttdeci">Entities::Transform::Vector3f _specular</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:31</div></div>
+<div class="ttc" id="aa01638_html_aae92675cd6d9027535b61dad7b0af969"><div class="ttname"><a href="a01638.html#aae92675cd6d9027535b61dad7b0af969">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::setColor</a></div><div class="ttdeci">void setColor(const Images::Color &amp;color) final</div><div class="ttdoc">Set the color.</div></div>
+<div class="ttc" id="aa01638_html_ab114805c5162e3a53c8a5284640620e6"><div class="ttname"><a href="a01638.html#ab114805c5162e3a53c8a5284640620e6">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_impair</a></div><div class="ttdeci">Images::Color _impair</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:34</div></div>
+<div class="ttc" id="aa01638_html_abf156d6ec40afbf962871e28ad6e5763"><div class="ttname"><a href="a01638.html#abf156d6ec40afbf962871e28ad6e5763">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_shininess</a></div><div class="ttdeci">double _shininess</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:32</div></div>
+<div class="ttc" id="aa01638_html_aca7674697ba417664041a3739d052a3c"><div class="ttname"><a href="a01638.html#aca7674697ba417664041a3739d052a3c">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::getColor</a></div><div class="ttdeci">Images::Color getColor(const Images::Ray &amp;ray, const Entities::Transform::ITransform &amp;centerObj, const Entities::Transform::Vector3f &amp;intersect, const Scenes::IDisplayable &amp;displayable) const final</div><div class="ttdoc">Get the color.</div></div>
+<div class="ttc" id="aa01638_html_acad68269a4ae7a5563cb15cc27c5e2fd"><div class="ttname"><a href="a01638.html#acad68269a4ae7a5563cb15cc27c5e2fd">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_ambient</a></div><div class="ttdeci">Entities::Transform::Vector3f _ambient</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:29</div></div>
+<div class="ttc" id="aa01638_html_ad5da80d29e316965f2c7cd4486694c41"><div class="ttname"><a href="a01638.html#ad5da80d29e316965f2c7cd4486694c41">RayTracer::PluginsExt::ChessBoard::ChessBoardMaterial::_diffuse</a></div><div class="ttdeci">Entities::Transform::Vector3f _diffuse</div><div class="ttdef"><b>Definition:</b> ChessBoardMaterial.hpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:55 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

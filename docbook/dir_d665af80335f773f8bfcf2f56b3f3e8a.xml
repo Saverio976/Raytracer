@@ -14,25 +14,25 @@ Directory dependency graph for Scenes:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00227">ConfigWrapper.hpp</link></para>
+            <listitem><para>file <link linkend="_a00230">ConfigWrapper.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00230">Displayable.hpp</link></para>
+            <listitem><para>file <link linkend="_a00233">Displayable.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00233">IConfig.hpp</link></para>
+            <listitem><para>file <link linkend="_a00236">IConfig.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00236">IDisplayable.hpp</link></para>
+            <listitem><para>file <link linkend="_a00239">IDisplayable.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00239">ISceneState.hpp</link></para>
+            <listitem><para>file <link linkend="_a00242">ISceneState.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00242">ISetting.hpp</link></para>
+            <listitem><para>file <link linkend="_a00245">ISetting.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00245">Scene.hpp</link></para>
+            <listitem><para>file <link linkend="_a00248">Scene.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00248">SceneLoader.hpp</link></para>
+            <listitem><para>file <link linkend="_a00251">SceneLoader.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00251">SceneState.hpp</link></para>
+            <listitem><para>file <link linkend="_a00254">SceneState.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00254">SettingWrapper.hpp</link></para>
+            <listitem><para>file <link linkend="_a00257">SettingWrapper.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

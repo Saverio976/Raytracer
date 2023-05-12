@@ -1,22 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00434" xml:lang="en-US">
-<title>RayTracer::PluginsExt::Camera Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::Camera</primary></indexterm>
+<title>RayTracer::PluginsExt::AntiAliasing Namespace Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::AntiAliasing</primary></indexterm>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00435">Clustered</link></para>
-</listitem>
-            <listitem><para> <link linkend="_a00436">FullCustom</link></para>
-</listitem>
-        </itemizedlist>
-</simplesect>
-<simplesect>
-    <title>Classes    </title>
-        <itemizedlist>
-            <listitem><para>class <link linkend="_a01591">CameraCreator</link></para>
-</listitem>
-            <listitem><para>class <link linkend="_a01595">CameraEntity</link></para>
+            <listitem><para> <link linkend="_a00435">SSAAx4</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

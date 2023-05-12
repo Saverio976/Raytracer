@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp File Reference</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/ISetting.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,35 +70,21 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">Scene.hpp File Reference</div>  </div>
+<div class="title">ISetting.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &lt;future&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
-<code>#include &lt;thread&gt;</code><br />
-<code>#include &lt;functional&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00155_source.html">ILogger.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00242_source.html">ISetting.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00161_source.html">Image.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00104_source.html">ICamera.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00110_source.html">ILight.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00116_source.html">IPrimitive.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00251_source.html">SceneState.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00230_source.html">Displayable.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00131_source.html">EntityFactory.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;libconfig.h++&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for Scene.hpp:</div>
+Include dependency graph for ISetting.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00246.svg" width="2890" height="650"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00246.svg" width="255" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="a00247.svg" width="987" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="a00247.svg" width="10663" height="1063"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -106,21 +92,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01539.html">RayTracer::Scenes::Scene</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a01539.html" title="The Scene class.">Scene</a> class.  <a href="a01539.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01530.html">RayTracer::Scenes::ISetting</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01534.html">RayTracer::Scenes::ISetting::IParsingException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">an exception for when the key is not found  <a href="a01534.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01538.html">RayTracer::Scenes::ISetting::ITypeException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">an exception for when the key is not found  <a href="a01538.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00417"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00417.html">RayTracer</a></td></tr>
+<tr class="memitem:a00420"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00420.html">RayTracer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00428"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00428.html">RayTracer::Scenes</a></td></tr>
+<tr class="memitem:a00431"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00431.html">RayTracer::Scenes</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

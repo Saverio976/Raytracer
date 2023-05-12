@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="a01451.html" target="_top" xlink:title="The IEntityCreator.">
+<g id="a_node1"><a xlink:href="a01454.html" target="_top" xlink:title="The IEntityCreator.">
 <polygon fill="white" stroke="black" points="0,-409.5 0,-439.5 133,-439.5 133,-409.5 0,-409.5"/>
 <text text-anchor="start" x="8" y="-427.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Plugins</text>
 <text text-anchor="middle" x="66.5" y="-416.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Entities::IEntityCreator</text>
@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="a01567.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="a01570.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="183.5,-831 183.5,-872 342.5,-872 342.5,-831 183.5,-831"/>
 <text text-anchor="start" x="191.5" y="-860" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="191.5" y="-849" font-family="Helvetica,sans-Serif" font-size="10.00">::AmbientLight::AmbientLight</text>
@@ -39,7 +39,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="a01591.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="a01594.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="192.5,-781.5 192.5,-811.5 333.5,-811.5 333.5,-781.5 192.5,-781.5"/>
 <text text-anchor="start" x="200.5" y="-799.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-788.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::CameraCreator</text>
@@ -55,7 +55,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="a01599.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="a01602.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="200.5,-721 200.5,-762 325.5,-762 325.5,-721 200.5,-721"/>
 <text text-anchor="start" x="208.5" y="-750" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="208.5" y="-739" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::Clustered::</text>
@@ -72,7 +72,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="a01615.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="a01618.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="196,-661 196,-702 330,-702 330,-661 196,-661"/>
 <text text-anchor="start" x="204" y="-690" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="204" y="-679" font-family="Helvetica,sans-Serif" font-size="10.00">::Camera::FullCustom</text>
@@ -89,7 +89,7 @@
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
-<g id="a_node6"><a xlink:href="a01639.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="a01642.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-611.5 202,-641.5 324,-641.5 324,-611.5 202,-611.5"/>
 <text text-anchor="start" x="210" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Cone::ConeCreator</text>
@@ -105,7 +105,7 @@
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
-<g id="a_node7"><a xlink:href="a01647.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="a01650.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="190,-562.5 190,-592.5 336,-592.5 336,-562.5 190,-562.5"/>
 <text text-anchor="start" x="198" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Cylinder::CylinderCreator</text>
@@ -121,7 +121,7 @@
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
-<g id="a_node8"><a xlink:href="a01655.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="a01658.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-513.5 202,-543.5 324,-543.5 324,-513.5 202,-513.5"/>
 <text text-anchor="start" x="210" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-520.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Disk::DiskCreator</text>
@@ -137,7 +137,7 @@
 <!-- Node8 -->
 <g id="node9" class="node">
 <title>Node8</title>
-<g id="a_node9"><a xlink:href="a01663.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="a01666.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="169,-464.5 169,-494.5 357,-494.5 357,-464.5 169,-464.5"/>
 <text text-anchor="start" x="177" y="-482.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-471.5" font-family="Helvetica,sans-Serif" font-size="10.00">::LimitedCone::LimitedConeCreator</text>
@@ -153,7 +153,7 @@
 <!-- Node9 -->
 <g id="node10" class="node">
 <title>Node9</title>
-<g id="a_node10"><a xlink:href="a01671.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="a01674.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="171.5,-404 171.5,-445 354.5,-445 354.5,-404 171.5,-404"/>
 <text text-anchor="start" x="179.5" y="-433" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="179.5" y="-422" font-family="Helvetica,sans-Serif" font-size="10.00">::LimitedCylinder::LimitedCylinder</text>
@@ -170,7 +170,7 @@
 <!-- Node10 -->
 <g id="node11" class="node">
 <title>Node10</title>
-<g id="a_node11"><a xlink:href="a01679.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="a01682.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="185,-344 185,-385 341,-385 341,-344 185,-344"/>
 <text text-anchor="start" x="193" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="start" x="193" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">::LimitedPlane::LimitedPlane</text>
@@ -187,7 +187,7 @@
 <!-- Node11 -->
 <g id="node12" class="node">
 <title>Node11</title>
-<g id="a_node12"><a xlink:href="a01695.html" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="a01698.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-294.5 202,-324.5 324,-324.5 324,-294.5 202,-294.5"/>
 <text text-anchor="start" x="210" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Obj::ObjCreator</text>
@@ -203,7 +203,7 @@
 <!-- Node12 -->
 <g id="node13" class="node">
 <title>Node12</title>
-<g id="a_node13"><a xlink:href="a01715.html" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="a01718.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-245.5 202,-275.5 324,-275.5 324,-245.5 202,-245.5"/>
 <text text-anchor="start" x="210" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Plane::PlaneCreator</text>
@@ -219,7 +219,7 @@
 <!-- Node13 -->
 <g id="node14" class="node">
 <title>Node13</title>
-<g id="a_node14"><a xlink:href="a01723.html" target="_top" xlink:title=" ">
+<g id="a_node14"><a xlink:href="a01726.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="182,-196.5 182,-226.5 344,-226.5 344,-196.5 182,-196.5"/>
 <text text-anchor="start" x="190" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-203.5" font-family="Helvetica,sans-Serif" font-size="10.00">::PointLight::PointLightCreator</text>
@@ -235,7 +235,7 @@
 <!-- Node14 -->
 <g id="node15" class="node">
 <title>Node14</title>
-<g id="a_node15"><a xlink:href="a01739.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="a01742.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="197,-147.5 197,-177.5 329,-177.5 329,-147.5 197,-147.5"/>
 <text text-anchor="start" x="205" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Sphere::SphereCreator</text>
@@ -251,7 +251,7 @@
 <!-- Node15 -->
 <g id="node16" class="node">
 <title>Node15</title>
-<g id="a_node16"><a xlink:href="a01747.html" target="_top" xlink:title=" ">
+<g id="a_node16"><a xlink:href="a01750.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="185,-98.5 185,-128.5 341,-128.5 341,-98.5 185,-98.5"/>
 <text text-anchor="start" x="193" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::SpotLight::SpotLightCreator</text>
@@ -267,7 +267,7 @@
 <!-- Node16 -->
 <g id="node17" class="node">
 <title>Node16</title>
-<g id="a_node17"><a xlink:href="a01755.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="a01758.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-49.5 202,-79.5 324,-79.5 324,-49.5 202,-49.5"/>
 <text text-anchor="start" x="210" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Torus::TorusCreator</text>
@@ -283,7 +283,7 @@
 <!-- Node17 -->
 <g id="node18" class="node">
 <title>Node17</title>
-<g id="a_node18"><a xlink:href="a01771.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="a01774.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="192.5,-0.5 192.5,-30.5 333.5,-30.5 333.5,-0.5 192.5,-0.5"/>
 <text text-anchor="start" x="200.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::PluginsExt</text>
 <text text-anchor="middle" x="263" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Triangle::TriangleCreator</text>

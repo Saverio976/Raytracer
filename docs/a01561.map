@@ -1,7 +1,5 @@
-<map id="RayTracer::Scenes::SettingWrapper::TypeException" name="RayTracer::Scenes::SettingWrapper::TypeException">
-<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="59,316,285,423"/>
-<area shape="rect" id="node2" href="$a01535.html" title="an exception for when the key is not found" alt="" coords="5,147,184,253"/>
-<area shape="rect" id="node3" title=" " alt="" coords="37,13,152,90"/>
-<area shape="rect" id="node4" title=" " alt="" coords="209,161,295,239"/>
-<area shape="rect" id="node5" title=" " alt="" coords="183,5,321,97"/>
+<map id="RayTracer::Scenes::SettingWrapper::ParsingException" name="RayTracer::Scenes::SettingWrapper::ParsingException">
+<area shape="rect" id="node1" title="an exception for when the key is not found" alt="" coords="5,285,248,392"/>
+<area shape="rect" id="node2" href="$a01534.html" title="an exception for when the key is not found" alt="" coords="29,131,224,237"/>
+<area shape="rect" id="node3" title=" " alt="" coords="69,5,184,83"/>
 </map>

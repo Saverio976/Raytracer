@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,59 +62,99 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_4b314500dd3730d1ba9f053c438de308.html">PluginsExt</a></li><li class="navelem"><a class="el" href="dir_23797dfc4efa85139749bce11a446eac.html">AmbientLight</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d665af80335f773f8bfcf2f56b3f3e8a.html">Scenes</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">AmbientLightCreator.hpp</div>  </div>
+<div class="title">SettingWrapper.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00257.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** AmbientLightCreator.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** SettingWrapper.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef AMBIENTLIGHTCREATOR_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define AMBIENTLIGHTCREATOR_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYTRACER_SETTINGWRAPPER_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYTRACER_SETTINGWRAPPER_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;libconfig.h++&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00197.html">IEntityCreator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00260.html">AmbientLightEntity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00429.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00430.html">RayTracer::PluginsExt::AmbientLight</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01567.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01567.html">AmbientLightCreator</a> : <span class="keyword">public</span> <a class="code" href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01567.html#aa3434640b1d3ffc4d5ab2b050e004b35">   20</a></span>&#160;            <a class="code" href="a01311.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01567.html#aa3434640b1d3ffc4d5ab2b050e004b35">create</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01567.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">   21</a></span>&#160;            <a class="code" href="a01567.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">~AmbientLightCreator</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01567.html#aa8eff37de8a7cffef91529bc56fc95fd">   25</a></span>&#160;            std::vector&lt;AmbientLightEntity *&gt; <a class="code" href="a01567.html#aa8eff37de8a7cffef91529bc56fc95fd">_elements</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMBIENTLIGHTCREATOR_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">IEntityCreator.hpp</a></div></div>
-<div class="ttc" id="aa00260_html"><div class="ttname"><a href="a00260.html">AmbientLightEntity.hpp</a></div></div>
-<div class="ttc" id="aa00430_html"><div class="ttname"><a href="a00430.html">RayTracer::PluginsExt::AmbientLight</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:17</div></div>
-<div class="ttc" id="aa01311_html"><div class="ttname"><a href="a01311.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
-<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01451_html"><div class="ttname"><a href="a01451.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
-<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01567_html"><div class="ttname"><a href="a01567.html">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:18</div></div>
-<div class="ttc" id="aa01567_html_aa3434640b1d3ffc4d5ab2b050e004b35"><div class="ttname"><a href="a01567.html#aa3434640b1d3ffc4d5ab2b050e004b35">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
-<div class="ttc" id="aa01567_html_aa8eff37de8a7cffef91529bc56fc95fd"><div class="ttname"><a href="a01567.html#aa8eff37de8a7cffef91529bc56fc95fd">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::_elements</a></div><div class="ttdeci">std::vector&lt; AmbientLightEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:25</div></div>
-<div class="ttc" id="aa01567_html_ad721244d4e7a1f95b45ffa40a0ff6cf8"><div class="ttname"><a href="a01567.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::~AmbientLightCreator</a></div><div class="ttdeci">~AmbientLightCreator()</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00245.html">ISetting.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00431.html">RayTracer::Scenes</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01558.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01558.html">SettingWrapper</a>: <span class="keyword">public</span> <a class="code" href="a01530.html">ISetting</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01562.html">   28</a></span>&#160;            <span class="keyword">class </span><a class="code" href="a01562.html">ParsingException</a>: <span class="keyword">public</span> <a class="code" href="a01534.html">ISetting::IParsingException</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01562.html#ade59c58e67ef4ca11109fd092df72117">   30</a></span>&#160;                    <span class="keyword">explicit</span> <a class="code" href="a01562.html#ade59c58e67ef4ca11109fd092df72117">ParsingException</a>(<span class="keyword">const</span> std::string &amp;key);</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01562.html#add26fba65f4e25d81aba82f161bb4290">   31</a></span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01562.html#add26fba65f4e25d81aba82f161bb4290">what</a>() <span class="keyword">const</span> throw() final;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                private:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01562.html#a2b29bd5ad7a40c8daced9f652a041d93">   33</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01562.html#a2b29bd5ad7a40c8daced9f652a041d93">_msg</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            };</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01566.html">   38</a></span>&#160;            class <a class="code" href="a01566.html">TypeException</a>: public <a class="code" href="a01530.html">ISetting</a>::<a class="code" href="a01538.html">ITypeException</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01566.html#a91fb76e9f70d9056ff4940923c01a255">   40</a></span>&#160;                    <span class="keyword">explicit</span> <a class="code" href="a01566.html#a91fb76e9f70d9056ff4940923c01a255">TypeException</a>(<span class="keyword">const</span> std::string &amp;key);</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01566.html#a365cae9b2f596a7698b0ebeeffca4dec">   41</a></span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01566.html#a365cae9b2f596a7698b0ebeeffca4dec">what</a>() <span class="keyword">const</span> throw() final;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                private:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01566.html#a40e0e2c9d7b175d6369aea1699541cdc">   43</a></span>&#160;                    std::<span class="keywordtype">string</span> <a class="code" href="a01562.html#a2b29bd5ad7a40c8daced9f652a041d93">_msg</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                };</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01558.html#a93ac3ced19b9f9b1d27854af4a70dab3">   50</a></span>&#160;            explicit <a class="code" href="a01558.html">SettingWrapper</a>(const std::shared_ptr&lt;libconfig::Config&gt; &amp;config);</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01558.html#a0c9bebccdc9f9312785a3d9d1c79b490">   51</a></span>&#160;            <a class="code" href="a01558.html">SettingWrapper</a>(const <a class="code" href="a01530.html">ISetting</a> &amp;src);</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01558.html#a9aae0e0d5afe1f00f69c079b654bb6f3">   52</a></span>&#160;            ~<a class="code" href="a01558.html">SettingWrapper</a>() = default;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a01558.html#ad343aaeac8166e70f4b007e776ffe9d0">   60</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01558.html#ad343aaeac8166e70f4b007e776ffe9d0">getSetting</a>(const std::<span class="keywordtype">string</span> &amp;key) final;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a01558.html#a24995c271c9eb067a880a7ed92b1039a">   68</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01558.html#ad343aaeac8166e70f4b007e776ffe9d0">getSetting</a>(<span class="keywordtype">int</span> index) final;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a01558.html#aaaa74848aca6bf32bba62a3c9f64969c">   75</a></span>&#160;            <span class="keywordtype">int</span> <a class="code" href="a01558.html#aaaa74848aca6bf32bba62a3c9f64969c">getLength</a>() const final;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a01558.html#ab13cc485cf09e9eda992da5487b23a50">   81</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01558.html#ab13cc485cf09e9eda992da5487b23a50">getPath</a>() const final;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a01558.html#ad8966e0597a177003494a498389df4da">   87</a></span>&#160;            std::<span class="keywordtype">string</span> <a class="code" href="a01558.html#ad8966e0597a177003494a498389df4da">getKey</a>() const final;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="a01558.html#a5df8bcdfa6c27017fe25a1ed2a665619">   93</a></span>&#160;            std::shared_ptr&lt;libconfig::Config&gt; <a class="code" href="a01558.html#a5df8bcdfa6c27017fe25a1ed2a665619">getConfig</a>() const final;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="a01558.html#a794348f6c0c89c90875594f866da94dc">   99</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01558.html#a794348f6c0c89c90875594f866da94dc">moveTo</a>(const std::<span class="keywordtype">string</span> &amp;key) final;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="a01558.html#ac0242a53b300beaa958cd1781bf28788">  105</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01558.html#a794348f6c0c89c90875594f866da94dc">moveTo</a>(<span class="keywordtype">int</span> index) final;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="a01558.html#a524874e4530299a30735e14bf939805b">  114</a></span>&#160;            std::unique_ptr&lt;<a class="code" href="a01530.html">ISetting</a>&gt; <a class="code" href="a01558.html#aab54e51787b0c8d9eeaee5b4dc2871a0">get</a>(const std::<span class="keywordtype">string</span> &amp;key) const final;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="a01558.html#a187240284b49de24444b4a7fabc990fe">  122</a></span>&#160;            std::unique_ptr&lt;<a class="code" href="a01530.html">ISetting</a>&gt; <a class="code" href="a01558.html#aab54e51787b0c8d9eeaee5b4dc2871a0">get</a>(<span class="keywordtype">int</span> index) const final;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="a01558.html#aab54e51787b0c8d9eeaee5b4dc2871a0">  128</a></span>&#160;            std::unique_ptr&lt;<a class="code" href="a01530.html">ISetting</a>&gt; <a class="code" href="a01558.html#aab54e51787b0c8d9eeaee5b4dc2871a0">get</a>() const final;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="a01558.html#aaca34afb39b48e960753509cfbd26fc0">  134</a></span>&#160;            explicit operator <span class="keywordtype">bool</span>() const final;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="a01558.html#ae5a79e7a6de98ab88b9a61519a54b751">  135</a></span>&#160;            explicit operator <span class="keywordtype">int</span>() const final;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="a01558.html#a4b632bc6babafc9447cdd3cfe4fcf660">  136</a></span>&#160;            explicit operator <span class="keywordtype">double</span>() const final;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="a01558.html#a8301053aac11e5a7131871654ef07c64">  137</a></span>&#160;            explicit operator const <span class="keywordtype">char</span> *() const final;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="a01558.html#abb6ab38f87302788982e47c3b82af9d9">  138</a></span>&#160;            explicit operator std::<span class="keywordtype">string</span>() const final;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        private:</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="a01558.html#a5e9465513e9dcf81429263b8a350a8ff">  140</a></span>&#160;            libconfig::Setting *<a class="code" href="a01558.html#a5e9465513e9dcf81429263b8a350a8ff">_setting</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="a01558.html#a5f46feffa03dc8d27cfff761d84d607e">  141</a></span>&#160;            std::shared_ptr&lt;libconfig::Config&gt; <a class="code" href="a01558.html#a5f46feffa03dc8d27cfff761d84d607e">_config</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    };</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//RAYTRACER_SETTINGWRAPPER_HPP</span></div>
+<div class="ttc" id="aa00245_html"><div class="ttname"><a href="a00245.html">ISetting.hpp</a></div></div>
+<div class="ttc" id="aa00431_html"><div class="ttname"><a href="a00431.html">RayTracer::Scenes</a></div><div class="ttdef"><b>Definition:</b> ConfigWrapper.hpp:17</div></div>
+<div class="ttc" id="aa01530_html"><div class="ttname"><a href="a01530.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01534_html"><div class="ttname"><a href="a01534.html">RayTracer::Scenes::ISetting::IParsingException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> ISetting.hpp:20</div></div>
+<div class="ttc" id="aa01538_html"><div class="ttname"><a href="a01538.html">RayTracer::Scenes::ISetting::ITypeException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> ISetting.hpp:28</div></div>
+<div class="ttc" id="aa01558_html"><div class="ttname"><a href="a01558.html">RayTracer::Scenes::SettingWrapper</a></div><div class="ttdoc">The SettingWrapper class.</div><div class="ttdef"><b>Definition:</b> SettingWrapper.hpp:23</div></div>
+<div class="ttc" id="aa01558_html_a5df8bcdfa6c27017fe25a1ed2a665619"><div class="ttname"><a href="a01558.html#a5df8bcdfa6c27017fe25a1ed2a665619">RayTracer::Scenes::SettingWrapper::getConfig</a></div><div class="ttdeci">std::shared_ptr&lt; libconfig::Config &gt; getConfig() const final</div><div class="ttdoc">gets the config of a setting</div></div>
+<div class="ttc" id="aa01558_html_a5e9465513e9dcf81429263b8a350a8ff"><div class="ttname"><a href="a01558.html#a5e9465513e9dcf81429263b8a350a8ff">RayTracer::Scenes::SettingWrapper::_setting</a></div><div class="ttdeci">libconfig::Setting * _setting</div><div class="ttdef"><b>Definition:</b> SettingWrapper.hpp:140</div></div>
+<div class="ttc" id="aa01558_html_a5f46feffa03dc8d27cfff761d84d607e"><div class="ttname"><a href="a01558.html#a5f46feffa03dc8d27cfff761d84d607e">RayTracer::Scenes::SettingWrapper::_config</a></div><div class="ttdeci">std::shared_ptr&lt; libconfig::Config &gt; _config</div><div class="ttdef"><b>Definition:</b> SettingWrapper.hpp:141</div></div>
+<div class="ttc" id="aa01558_html_a794348f6c0c89c90875594f866da94dc"><div class="ttname"><a href="a01558.html#a794348f6c0c89c90875594f866da94dc">RayTracer::Scenes::SettingWrapper::moveTo</a></div><div class="ttdeci">void moveTo(const std::string &amp;key) final</div><div class="ttdoc">move to the given key</div></div>
+<div class="ttc" id="aa01558_html_aaaa74848aca6bf32bba62a3c9f64969c"><div class="ttname"><a href="a01558.html#aaaa74848aca6bf32bba62a3c9f64969c">RayTracer::Scenes::SettingWrapper::getLength</a></div><div class="ttdeci">int getLength() const final</div><div class="ttdoc">get the length of the current key works only for lists, array, groups</div></div>
+<div class="ttc" id="aa01558_html_aab54e51787b0c8d9eeaee5b4dc2871a0"><div class="ttname"><a href="a01558.html#aab54e51787b0c8d9eeaee5b4dc2871a0">RayTracer::Scenes::SettingWrapper::get</a></div><div class="ttdeci">std::unique_ptr&lt; ISetting &gt; get() const final</div><div class="ttdoc">returns the current setting</div></div>
+<div class="ttc" id="aa01558_html_ab13cc485cf09e9eda992da5487b23a50"><div class="ttname"><a href="a01558.html#ab13cc485cf09e9eda992da5487b23a50">RayTracer::Scenes::SettingWrapper::getPath</a></div><div class="ttdeci">std::string getPath() const final</div><div class="ttdoc">gets the full path of the current setting</div></div>
+<div class="ttc" id="aa01558_html_ad343aaeac8166e70f4b007e776ffe9d0"><div class="ttname"><a href="a01558.html#ad343aaeac8166e70f4b007e776ffe9d0">RayTracer::Scenes::SettingWrapper::getSetting</a></div><div class="ttdeci">void getSetting(const std::string &amp;key) final</div><div class="ttdoc">get a precise setting of the config from key</div></div>
+<div class="ttc" id="aa01558_html_ad8966e0597a177003494a498389df4da"><div class="ttname"><a href="a01558.html#ad8966e0597a177003494a498389df4da">RayTracer::Scenes::SettingWrapper::getKey</a></div><div class="ttdeci">std::string getKey() const final</div><div class="ttdoc">gets the key of the setting</div></div>
+<div class="ttc" id="aa01562_html"><div class="ttname"><a href="a01562.html">RayTracer::Scenes::SettingWrapper::ParsingException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> SettingWrapper.hpp:28</div></div>
+<div class="ttc" id="aa01562_html_a2b29bd5ad7a40c8daced9f652a041d93"><div class="ttname"><a href="a01562.html#a2b29bd5ad7a40c8daced9f652a041d93">RayTracer::Scenes::SettingWrapper::ParsingException::_msg</a></div><div class="ttdeci">std::string _msg</div><div class="ttdef"><b>Definition:</b> SettingWrapper.hpp:33</div></div>
+<div class="ttc" id="aa01562_html_add26fba65f4e25d81aba82f161bb4290"><div class="ttname"><a href="a01562.html#add26fba65f4e25d81aba82f161bb4290">RayTracer::Scenes::SettingWrapper::ParsingException::what</a></div><div class="ttdeci">const char * what() const final</div></div>
+<div class="ttc" id="aa01562_html_ade59c58e67ef4ca11109fd092df72117"><div class="ttname"><a href="a01562.html#ade59c58e67ef4ca11109fd092df72117">RayTracer::Scenes::SettingWrapper::ParsingException::ParsingException</a></div><div class="ttdeci">ParsingException(const std::string &amp;key)</div></div>
+<div class="ttc" id="aa01566_html"><div class="ttname"><a href="a01566.html">RayTracer::Scenes::SettingWrapper::TypeException</a></div><div class="ttdoc">an exception for when the key is not found</div><div class="ttdef"><b>Definition:</b> SettingWrapper.hpp:38</div></div>
+<div class="ttc" id="aa01566_html_a365cae9b2f596a7698b0ebeeffca4dec"><div class="ttname"><a href="a01566.html#a365cae9b2f596a7698b0ebeeffca4dec">RayTracer::Scenes::SettingWrapper::TypeException::what</a></div><div class="ttdeci">const char * what() const final</div></div>
+<div class="ttc" id="aa01566_html_a91fb76e9f70d9056ff4940923c01a255"><div class="ttname"><a href="a01566.html#a91fb76e9f70d9056ff4940923c01a255">RayTracer::Scenes::SettingWrapper::TypeException::TypeException</a></div><div class="ttdeci">TypeException(const std::string &amp;key)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:55 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

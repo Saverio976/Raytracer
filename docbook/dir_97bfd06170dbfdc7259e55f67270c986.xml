@@ -14,9 +14,9 @@ Directory dependency graph for PlainMaterial:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00353">PlainMaterial.hpp</link></para>
+            <listitem><para>file <link linkend="_a00356">PlainMaterial.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00356">PlainMaterialCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00359">PlainMaterialCreator.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,12 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00254" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SettingWrapper.hpp</primary></indexterm>
-<programlisting>#include &lt;libconfig.h++&gt;
-#include &lt;memory&gt;
-#include &lt;exception&gt;
-#include &quot;ISetting.hpp&quot;
-</programlisting>Include dependency graph for SettingWrapper.hpp:<para>
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneState.hpp</primary></indexterm>
+<programlisting>#include &lt;mutex&gt;
+#include &quot;ISceneState.hpp&quot;
+</programlisting>Include dependency graph for SceneState.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -27,26 +25,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01555">RayTracer::Scenes::SettingWrapper</link></para>
+            <listitem><para>class <link linkend="_a01554">RayTracer::Scenes::SceneState</link></para>
 
-<para>The <link linkend="_a01555">SettingWrapper</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01559">RayTracer::Scenes::SettingWrapper::ParsingException</link></para>
-
-<para>an exception for when the key is not found </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01563">RayTracer::Scenes::SettingWrapper::TypeException</link></para>
-
-<para>an exception for when the key is not found </para>
+<para>The <link linkend="_a01554">SceneState</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00428">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00431">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,25 +1,46 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00420" xml:lang="en-US">
-<title>RayTracer::Entities::Transform Namespace Reference</title>
-<indexterm><primary>RayTracer::Entities::Transform</primary></indexterm>
+<title>RayTracer Namespace Reference</title>
+<indexterm><primary>RayTracer</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00421">Display</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00422">Entities</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00424">Factories</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00425">Filters</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00426">Images</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00427">Plugins</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00432">PluginsExt</link></para>
+</listitem>
+            <listitem><para> <link linkend="_a00431">Scenes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01327">ITransform</link></para>
+            <listitem><para>class <link linkend="_a01378">ILogger</link></para>
 
-<para>The <link linkend="_a01327">ITransform</link> class. </para>
+<para><link linkend="_a01422">Logger</link> singleton. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01331">Transform</link></para>
+            <listitem><para>class <link linkend="_a01422">Logger</link></para>
 
-<para>The <link linkend="_a01331">Transform</link> class. </para>
+<para><link linkend="_a01422">Logger</link> singleton. </para>
 </listitem>
-            <listitem><para>class <link linkend="_a01335">Vector2i</link></para>
-
-<para>The <link linkend="_a01335">Vector2i</link> class. </para>
+            <listitem><para>class <link linkend="_a01426">Main</link></para>
 </listitem>
-            <listitem><para>class <link linkend="_a01339">Vector3f</link></para>
+            <listitem><para>class <link linkend="_a01438">Parameters</link></para>
 
-<para>The <link linkend="_a01339">Vector3f</link> class. </para>
+<para>The <link linkend="_a01438">Parameters</link> class singleton. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01490">Progress</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

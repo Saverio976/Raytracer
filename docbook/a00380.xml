@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00380" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereEntity.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereEntity.hpp</primary></indexterm>
-<programlisting>#include &quot;IDisplayable.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereCreator.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Sphere/SphereCreator.hpp</primary></indexterm>
+<programlisting>#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &quot;IEntityCreator.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-#include &quot;IMaterial.hpp&quot;
-#include &quot;IPrimitive.hpp&quot;
 #include &quot;ISetting.hpp&quot;
-#include &quot;Transform.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
-</programlisting>Include dependency graph for SphereEntity.hpp:<para>
+#include &quot;SphereEntity.hpp&quot;
+</programlisting>Include dependency graph for SphereCreator.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -18,30 +17,21 @@
         </mediaobject>
     </informalfigure>
 </para>
-This graph shows which files directly or indirectly include this file:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a00382.svg"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01743">RayTracer::PluginsExt::Sphere::SphereEntity</link></para>
+            <listitem><para>class <link linkend="_a01742">RayTracer::PluginsExt::Sphere::SphereCreator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00450">RayTracer::PluginsExt::Sphere</link></para>
+            <listitem><para> <link linkend="_a00453">RayTracer::PluginsExt::Sphere</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

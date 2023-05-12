@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/Transform/Transform.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/src/Entities/Transform/ITransform.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,66 +67,54 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Transform.hpp</div>  </div>
+<div class="title">ITransform.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00122.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Transform.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** ITransform.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TRANSFORM_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define TRANSFORM_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00119.html">ITransform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00242.html">ISetting.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00128.html">Vector3f.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00420.html">RayTracer::Entities::Transform</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01331.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01331.html">Transform</a> : <span class="keyword">public</span> <a class="code" href="a01327.html">ITransform</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01331.html#a8e0e73a61d7bb0c11068e47b47fcb842">   23</a></span>&#160;            <span class="keyword">explicit</span> <a class="code" href="a01331.html#a8e0e73a61d7bb0c11068e47b47fcb842">Transform</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;setting);</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01331.html#ade32510a678f237b521ee9b42a7ea73e">   29</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01331.html#ade32510a678f237b521ee9b42a7ea73e">setPosition</a>(<span class="keyword">const</span> <a class="code" href="a01339.html">Vector3f</a> &amp;position) <span class="keyword">final</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01331.html#a3c5fdb6d163271e3232f0a7a51824163">   35</a></span>&#160;            <span class="keyword">const</span> <a class="code" href="a01339.html">Vector3f</a> &amp;<a class="code" href="a01331.html#a3c5fdb6d163271e3232f0a7a51824163">getPosition</a>() const final;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01331.html#ae3338957810bc8365dd2f37f636f060e">   41</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01331.html#ae3338957810bc8365dd2f37f636f060e">setRotation</a>(const <a class="code" href="a01339.html">Vector3f</a> &amp;rotation) final;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a01331.html#a25e2017dfd044d7205976bacf4eb0b09">   47</a></span>&#160;            const <a class="code" href="a01339.html">Vector3f</a> &amp;<a class="code" href="a01331.html#a25e2017dfd044d7205976bacf4eb0b09">getRotation</a>() const final;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01331.html#a02dfec630cff151c363ef48df529d652">   53</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01331.html#a02dfec630cff151c363ef48df529d652">setScale</a>(const <a class="code" href="a01339.html">Vector3f</a> &amp;scale) final;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a01331.html#a70978d92572e87b2ff81a5ac95426445">   59</a></span>&#160;            const <a class="code" href="a01339.html">Vector3f</a> &amp;<a class="code" href="a01331.html#a70978d92572e87b2ff81a5ac95426445">getScale</a>() const final;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a01331.html#ae7ef02b44892a6283eec4951ca260dea">   67</a></span>&#160;            <a class="code" href="a01327.html">ITransform</a> &amp;operator=(const <a class="code" href="a01327.html">ITransform</a> &amp;other) final;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            protected:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            private:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a01331.html#a0098de7e2c6bc5ded2e058990a25064d">   71</a></span>&#160;                <a class="code" href="a01339.html">Vector3f</a> <a class="code" href="a01331.html#a0098de7e2c6bc5ded2e058990a25064d">_position</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a01331.html#a0ec9e6b9b1625ac00e35a4c340591fc7">   72</a></span>&#160;                <a class="code" href="a01339.html">Vector3f</a> <a class="code" href="a01331.html#a0ec9e6b9b1625ac00e35a4c340591fc7">_rotation</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01331.html#a5c4b91ec14e7ccce56609d95aff80103">   73</a></span>&#160;                <a class="code" href="a01339.html">Vector3f</a> <a class="code" href="a01331.html#a5c4b91ec14e7ccce56609d95aff80103">_scale</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*TRANSFORM_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">ITransform.hpp</a></div></div>
-<div class="ttc" id="aa00128_html"><div class="ttname"><a href="a00128.html">Vector3f.hpp</a></div></div>
-<div class="ttc" id="aa00242_html"><div class="ttname"><a href="a00242.html">ISetting.hpp</a></div></div>
-<div class="ttc" id="aa00420_html"><div class="ttname"><a href="a00420.html">RayTracer::Entities::Transform</a></div><div class="ttdef"><b>Definition:</b> ITransform.hpp:12</div></div>
-<div class="ttc" id="aa01327_html"><div class="ttname"><a href="a01327.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
-<div class="ttc" id="aa01331_html"><div class="ttname"><a href="a01331.html">RayTracer::Entities::Transform::Transform</a></div><div class="ttdoc">The Transform class.</div><div class="ttdef"><b>Definition:</b> Transform.hpp:21</div></div>
-<div class="ttc" id="aa01331_html_a0098de7e2c6bc5ded2e058990a25064d"><div class="ttname"><a href="a01331.html#a0098de7e2c6bc5ded2e058990a25064d">RayTracer::Entities::Transform::Transform::_position</a></div><div class="ttdeci">Vector3f _position</div><div class="ttdef"><b>Definition:</b> Transform.hpp:71</div></div>
-<div class="ttc" id="aa01331_html_a02dfec630cff151c363ef48df529d652"><div class="ttname"><a href="a01331.html#a02dfec630cff151c363ef48df529d652">RayTracer::Entities::Transform::Transform::setScale</a></div><div class="ttdeci">void setScale(const Vector3f &amp;scale) final</div><div class="ttdoc">Set the scale.</div></div>
-<div class="ttc" id="aa01331_html_a0ec9e6b9b1625ac00e35a4c340591fc7"><div class="ttname"><a href="a01331.html#a0ec9e6b9b1625ac00e35a4c340591fc7">RayTracer::Entities::Transform::Transform::_rotation</a></div><div class="ttdeci">Vector3f _rotation</div><div class="ttdef"><b>Definition:</b> Transform.hpp:72</div></div>
-<div class="ttc" id="aa01331_html_a25e2017dfd044d7205976bacf4eb0b09"><div class="ttname"><a href="a01331.html#a25e2017dfd044d7205976bacf4eb0b09">RayTracer::Entities::Transform::Transform::getRotation</a></div><div class="ttdeci">const Vector3f &amp; getRotation() const final</div><div class="ttdoc">Get the rotation.</div></div>
-<div class="ttc" id="aa01331_html_a3c5fdb6d163271e3232f0a7a51824163"><div class="ttname"><a href="a01331.html#a3c5fdb6d163271e3232f0a7a51824163">RayTracer::Entities::Transform::Transform::getPosition</a></div><div class="ttdeci">const Vector3f &amp; getPosition() const final</div><div class="ttdoc">Get the position.</div></div>
-<div class="ttc" id="aa01331_html_a5c4b91ec14e7ccce56609d95aff80103"><div class="ttname"><a href="a01331.html#a5c4b91ec14e7ccce56609d95aff80103">RayTracer::Entities::Transform::Transform::_scale</a></div><div class="ttdeci">Vector3f _scale</div><div class="ttdef"><b>Definition:</b> Transform.hpp:73</div></div>
-<div class="ttc" id="aa01331_html_a70978d92572e87b2ff81a5ac95426445"><div class="ttname"><a href="a01331.html#a70978d92572e87b2ff81a5ac95426445">RayTracer::Entities::Transform::Transform::getScale</a></div><div class="ttdeci">const Vector3f &amp; getScale() const final</div><div class="ttdoc">Get the scale.</div></div>
-<div class="ttc" id="aa01331_html_a8e0e73a61d7bb0c11068e47b47fcb842"><div class="ttname"><a href="a01331.html#a8e0e73a61d7bb0c11068e47b47fcb842">RayTracer::Entities::Transform::Transform::Transform</a></div><div class="ttdeci">Transform(const Scenes::ISetting &amp;setting)</div></div>
-<div class="ttc" id="aa01331_html_ade32510a678f237b521ee9b42a7ea73e"><div class="ttname"><a href="a01331.html#ade32510a678f237b521ee9b42a7ea73e">RayTracer::Entities::Transform::Transform::setPosition</a></div><div class="ttdeci">void setPosition(const Vector3f &amp;position) final</div><div class="ttdoc">Set the position.</div></div>
-<div class="ttc" id="aa01331_html_ae3338957810bc8365dd2f37f636f060e"><div class="ttname"><a href="a01331.html#ae3338957810bc8365dd2f37f636f060e">RayTracer::Entities::Transform::Transform::setRotation</a></div><div class="ttdeci">void setRotation(const Vector3f &amp;rotation) final</div><div class="ttdoc">Set the rotation.</div></div>
-<div class="ttc" id="aa01339_html"><div class="ttname"><a href="a01339.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
-<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ITRANSFORM_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define ITRANSFORM_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00131.html">Vector3f.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00423.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00423.html">RayTracer::Entities::Transform</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01330.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01330.html">ITransform</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01330.html#ab2d5d22605b9951ec76ee25126633db0">   21</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01330.html#ab2d5d22605b9951ec76ee25126633db0">~ITransform</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01330.html#a88e2865250cd190041916bb6b9d715b3">   27</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01330.html#a88e2865250cd190041916bb6b9d715b3">setPosition</a>(<span class="keyword">const</span> <a class="code" href="a01342.html">Vector3f</a> &amp;position) = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01330.html#aff7fda973737a55306e1900439f3d6f6">   33</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01342.html">Vector3f</a> &amp;<a class="code" href="a01330.html#aff7fda973737a55306e1900439f3d6f6">getPosition</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01330.html#a686b40a3b17310304bb9d532e8550b9b">   39</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01330.html#a686b40a3b17310304bb9d532e8550b9b">setRotation</a>(<span class="keyword">const</span> <a class="code" href="a01342.html">Vector3f</a> &amp;rotation) = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01330.html#a57854e8e4ac74ab0ed827704ff81436f">   45</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01342.html">Vector3f</a> &amp;<a class="code" href="a01330.html#a57854e8e4ac74ab0ed827704ff81436f">getRotation</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01330.html#ae1099e652ff4659b04028f0d65c8d56b">   51</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a01330.html#ae1099e652ff4659b04028f0d65c8d56b">setScale</a>(<span class="keyword">const</span> <a class="code" href="a01342.html">Vector3f</a> &amp;scale) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01330.html#a50da7841f811b84d0fbf4fad492a8451">   57</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01342.html">Vector3f</a> &amp;<a class="code" href="a01330.html#a50da7841f811b84d0fbf4fad492a8451">getScale</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01330.html#abc6e2b741bd58849b10d4523d06ce389">   65</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="a01330.html">ITransform</a> &amp;<a class="code" href="a01330.html#abc6e2b741bd58849b10d4523d06ce389">operator=</a>(<span class="keyword">const</span> <a class="code" href="a01330.html">ITransform</a> &amp;other) = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*ITRANSFORM_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Vector3f.hpp</a></div></div>
+<div class="ttc" id="aa00423_html"><div class="ttname"><a href="a00423.html">RayTracer::Entities::Transform</a></div><div class="ttdef"><b>Definition:</b> ITransform.hpp:12</div></div>
+<div class="ttc" id="aa01330_html"><div class="ttname"><a href="a01330.html">RayTracer::Entities::Transform::ITransform</a></div><div class="ttdoc">The ITransform class.</div><div class="ttdef"><b>Definition:</b> ITransform.hpp:19</div></div>
+<div class="ttc" id="aa01330_html_a50da7841f811b84d0fbf4fad492a8451"><div class="ttname"><a href="a01330.html#a50da7841f811b84d0fbf4fad492a8451">RayTracer::Entities::Transform::ITransform::getScale</a></div><div class="ttdeci">virtual const Vector3f &amp; getScale() const =0</div><div class="ttdoc">Get the scale.</div></div>
+<div class="ttc" id="aa01330_html_a57854e8e4ac74ab0ed827704ff81436f"><div class="ttname"><a href="a01330.html#a57854e8e4ac74ab0ed827704ff81436f">RayTracer::Entities::Transform::ITransform::getRotation</a></div><div class="ttdeci">virtual const Vector3f &amp; getRotation() const =0</div><div class="ttdoc">Get the rotation.</div></div>
+<div class="ttc" id="aa01330_html_a686b40a3b17310304bb9d532e8550b9b"><div class="ttname"><a href="a01330.html#a686b40a3b17310304bb9d532e8550b9b">RayTracer::Entities::Transform::ITransform::setRotation</a></div><div class="ttdeci">virtual void setRotation(const Vector3f &amp;rotation)=0</div><div class="ttdoc">Set the rotation.</div></div>
+<div class="ttc" id="aa01330_html_a88e2865250cd190041916bb6b9d715b3"><div class="ttname"><a href="a01330.html#a88e2865250cd190041916bb6b9d715b3">RayTracer::Entities::Transform::ITransform::setPosition</a></div><div class="ttdeci">virtual void setPosition(const Vector3f &amp;position)=0</div><div class="ttdoc">Set the position.</div></div>
+<div class="ttc" id="aa01330_html_ab2d5d22605b9951ec76ee25126633db0"><div class="ttname"><a href="a01330.html#ab2d5d22605b9951ec76ee25126633db0">RayTracer::Entities::Transform::ITransform::~ITransform</a></div><div class="ttdeci">virtual ~ITransform()=default</div></div>
+<div class="ttc" id="aa01330_html_abc6e2b741bd58849b10d4523d06ce389"><div class="ttname"><a href="a01330.html#abc6e2b741bd58849b10d4523d06ce389">RayTracer::Entities::Transform::ITransform::operator=</a></div><div class="ttdeci">virtual ITransform &amp; operator=(const ITransform &amp;other)=0</div><div class="ttdoc">Assign a transform.</div></div>
+<div class="ttc" id="aa01330_html_ae1099e652ff4659b04028f0d65c8d56b"><div class="ttname"><a href="a01330.html#ae1099e652ff4659b04028f0d65c8d56b">RayTracer::Entities::Transform::ITransform::setScale</a></div><div class="ttdeci">virtual void setScale(const Vector3f &amp;scale)=0</div><div class="ttdoc">Set the scale.</div></div>
+<div class="ttc" id="aa01330_html_aff7fda973737a55306e1900439f3d6f6"><div class="ttname"><a href="a01330.html#aff7fda973737a55306e1900439f3d6f6">RayTracer::Entities::Transform::ITransform::getPosition</a></div><div class="ttdeci">virtual const Vector3f &amp; getPosition() const =0</div><div class="ttdoc">Get the position.</div></div>
+<div class="ttc" id="aa01342_html"><div class="ttname"><a href="a01342.html">RayTracer::Entities::Transform::Vector3f</a></div><div class="ttdoc">The Vector3f class.</div><div class="ttdef"><b>Definition:</b> Vector3f.hpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:56 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

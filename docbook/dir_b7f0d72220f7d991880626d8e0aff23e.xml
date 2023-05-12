@@ -14,9 +14,9 @@ Directory dependency graph for Obj:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00347">ObjCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00350">ObjCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00350">ObjEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00353">ObjEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

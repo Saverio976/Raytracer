@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01342" xml:lang="en-US">
+<title>RayTracer::Entities::Transform::Vector3f Class Reference</title>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary></indexterm>
+<para>
+
+<para>The <link linkend="_a01342">Vector3f</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Vector3f.hpp&gt;</computeroutput>
+</para>
+Collaboration diagram for RayTracer::Entities::Transform::Vector3f:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01340.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01342_1afc5aef995bfb9e63c73ef820216be25b">~Vector3f</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_a01342_1ad198f5dec93feba585e502c848c068f9">Vector3f</link> ()</para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link> with x=0, y=0, z=0. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342_1ad3554b6599dbf91d2db7d01fb0f72190">Vector3f</link> (const <link linkend="_a01342">Vector3f</link> &amp;vector3f)</para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342_1a35dbad02a79eaead893d78e47c94423d">Vector3f</link> (double x, double y, double z)</para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342_1a3458026a134484be8e26d1f5a53b9cf9">Vector3f</link> (const <link linkend="_a01530">Scenes::ISetting</link> &amp;setting)</para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link> from a setting. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a247a76fbf78eab93f2c598316bce0943">operator+</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+
+<para>Addition two vectors. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a42925657c9aed0d71cf23b8474374e57">operator-</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+
+<para>Subtraction two vectors. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a0e3e9c67b43b5636ce85fa5d2d054bd3">operator*</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+
+<para>Multiplication two vectors. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1adaca9d09dc536d54437a9428b2b98e2a">operator/</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+
+<para>Division two vectors. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> &amp; <link linkend="_a01342_1aff73d333255dc23e2909b19defec063e">operator=</link> (const <link linkend="_a01342">Vector3f</link> &amp;other)</para>
+
+<para>Assign a vector. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1ad5b5d887e80827c2c222844a62689238">getX</link> () const</para>
+
+<para>Get x. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a6b12357ad80f0fc211eb2b139ef5f927">getY</link> () const</para>
+
+<para>Get y. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a261fdd9323ca2ad38d7c66c91ad1d469">getZ</link> () const</para>
+
+<para>Get z. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a5607f84a592744b9a1fcc7145382313f">getNorm</link> () const</para>
+
+<para>Get the norm. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a4819c8bbe6705e74be3340e0e16f3658">getNormalized</link> () const</para>
+
+<para>Get normalized vector. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a631e40b09355d07fc4859f036620109e">getCrossed</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+
+<para>Get the perpendicular vector. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1ad714c9c456ca51a9ccb5516a93ee2bee">dot</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+
+<para>Get dot product. </para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a4f2414846f08332b440f8656f3b9e0bc">getDistance</link> (const <link linkend="_a01342">Vector3f</link> &amp;other) const</para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a98ff7d128ab1717bc0bcb3ca9a89929d">toDegrees</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1aaee2caadf57cec4d51a3684d5f5abd94">toRadians</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1ab327f37eb046abd6d32bc92942260fe9">rotateVector</link> (const <link linkend="_a01342">Vector3f</link> &amp;direction, const <link linkend="_a01342">Vector3f</link> &amp;rotation) const</para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a9817aaacf259fe206616c4ce0f96bc35">getAngle</link> (const <link linkend="_a01342">Vector3f</link> &amp;a, const <link linkend="_a01342">Vector3f</link> &amp;c) const</para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1aac148295858f286002f9b58c50782a5d">rotateX</link> (float angle) const</para>
+
+<para>Rotate the vector. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1a5668d689e9fb3d9303a5809147daf01d">rotateY</link> (float angle) const</para>
+
+<para>Rotate the vector. </para>
+</listitem>
+            <listitem><para><link linkend="_a01342">Vector3f</link> <link linkend="_a01342_1af20d604d672869bb748ebd0a015b29ed">rotateZ</link> (float angle) const</para>
+
+<para>Rotate the vector. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_a01342_1a8f46269ba66636f3f498205b45bbf206">_x</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a00958abd21fb5740adad3bd4a9afb102">_y</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_a01342_1a04918d2bc40619d7d7e4a358bb5ecfa7">_z</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_a01342">Vector3f</link> class. </para>
+
+
+
+<para>point in 3D space </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01342_1afc5aef995bfb9e63c73ef820216be25b"/>    <section>
+    <title>~Vector3f()</title>
+<indexterm><primary>~Vector3f</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>~Vector3f</secondary></indexterm>
+<para><computeroutput>RayTracer::Entities::Transform::Vector3f::~Vector3f ( )<computeroutput>[default]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01342_1ad198f5dec93feba585e502c848c068f9"/>    <section>
+    <title>Vector3f()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Vector3f</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>Vector3f</secondary></indexterm>
+<para><computeroutput>RayTracer::Entities::Transform::Vector3f::Vector3f ( )</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link> with x=0, y=0, z=0. </para>
+</para>
+    </section><anchor xml:id="_a01342_1ad3554b6599dbf91d2db7d01fb0f72190"/>    <section>
+    <title>Vector3f()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Vector3f</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>Vector3f</secondary></indexterm>
+<para><computeroutput>RayTracer::Entities::Transform::Vector3f::Vector3f (const <link linkend="_a01342">Vector3f</link> &amp; vector3f)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>vector3f</entry>
+                                <entry>
+<para>the vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01342_1a35dbad02a79eaead893d78e47c94423d"/>    <section>
+    <title>Vector3f()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Vector3f</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>Vector3f</secondary></indexterm>
+<para><computeroutput>RayTracer::Entities::Transform::Vector3f::Vector3f (double x, double y, double z)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>x position </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>y position </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>z</entry>
+                                <entry>
+<para>z position </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_a01342_1a3458026a134484be8e26d1f5a53b9cf9"/>    <section>
+    <title>Vector3f()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Vector3f</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>Vector3f</secondary></indexterm>
+<para><computeroutput>RayTracer::Entities::Transform::Vector3f::Vector3f (const <link linkend="_a01530">Scenes::ISetting</link> &amp; setting)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_a01342">Vector3f</link> from a setting. </para>
+</para>
+
+<para>needed: x, y, z</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>setting</entry>
+                                <entry>
+<para>the setting </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01342_1ad714c9c456ca51a9ccb5516a93ee2bee"/>    <section>
+    <title>dot()</title>
+<indexterm><primary>dot</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>dot</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::dot (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para><para>
+
+<para>Get dot product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>x^other.x + y^other.y + z^other.z </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a9817aaacf259fe206616c4ce0f96bc35"/>    <section>
+    <title>getAngle()</title>
+<indexterm><primary>getAngle</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getAngle</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::getAngle (const <link linkend="_a01342">Vector3f</link> &amp; a, const <link linkend="_a01342">Vector3f</link> &amp; c) const</computeroutput></para>    </section><anchor xml:id="_a01342_1a631e40b09355d07fc4859f036620109e"/>    <section>
+    <title>getCrossed()</title>
+<indexterm><primary>getCrossed</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getCrossed</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::getCrossed (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para><para>
+
+<para>Get the perpendicular vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the perpendicular vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a4f2414846f08332b440f8656f3b9e0bc"/>    <section>
+    <title>getDistance()</title>
+<indexterm><primary>getDistance</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getDistance</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::getDistance (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para>    </section><anchor xml:id="_a01342_1a5607f84a592744b9a1fcc7145382313f"/>    <section>
+    <title>getNorm()</title>
+<indexterm><primary>getNorm</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getNorm</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::getNorm ( ) const</computeroutput></para><para>
+
+<para>Get the norm. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>sqrt(x^2 + y^2 + z^2) </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a4819c8bbe6705e74be3340e0e16f3658"/>    <section>
+    <title>getNormalized()</title>
+<indexterm><primary>getNormalized</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getNormalized</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::getNormalized ( ) const</computeroutput></para><para>
+
+<para>Get normalized vector. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>vector / <link linkend="_a01342_1a5607f84a592744b9a1fcc7145382313f">getNorm()</link> </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1ad5b5d887e80827c2c222844a62689238"/>    <section>
+    <title>getX()</title>
+<indexterm><primary>getX</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getX</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::getX ( ) const</computeroutput></para><para>
+
+<para>Get x. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>x </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a6b12357ad80f0fc211eb2b139ef5f927"/>    <section>
+    <title>getY()</title>
+<indexterm><primary>getY</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getY</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::getY ( ) const</computeroutput></para><para>
+
+<para>Get y. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>y </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a261fdd9323ca2ad38d7c66c91ad1d469"/>    <section>
+    <title>getZ()</title>
+<indexterm><primary>getZ</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>getZ</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::getZ ( ) const</computeroutput></para><para>
+
+<para>Get z. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>z </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a0e3e9c67b43b5636ce85fa5d2d054bd3"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>operator*</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::operator* (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para><para>
+
+<para>Multiplication two vectors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other vector</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the new vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a247a76fbf78eab93f2c598316bce0943"/>    <section>
+    <title>operator+()</title>
+<indexterm><primary>operator+</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>operator+</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::operator+ (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para><para>
+
+<para>Addition two vectors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other vector</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the new </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a42925657c9aed0d71cf23b8474374e57"/>    <section>
+    <title>operator-()</title>
+<indexterm><primary>operator-</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>operator-</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::operator- (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para><para>
+
+<para>Subtraction two vectors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other vector</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the new vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1adaca9d09dc536d54437a9428b2b98e2a"/>    <section>
+    <title>operator/()</title>
+<indexterm><primary>operator/</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>operator/</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::operator/ (const <link linkend="_a01342">Vector3f</link> &amp; other) const</computeroutput></para><para>
+
+<para>Division two vectors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other vector</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the new vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1aff73d333255dc23e2909b19defec063e"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link>&amp; RayTracer::Entities::Transform::Vector3f::operator= (const <link linkend="_a01342">Vector3f</link> &amp; other)</computeroutput></para><para>
+
+<para>Assign a vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the other vector</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the same vector modified </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1ab327f37eb046abd6d32bc92942260fe9"/>    <section>
+    <title>rotateVector()</title>
+<indexterm><primary>rotateVector</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>rotateVector</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::rotateVector (const <link linkend="_a01342">Vector3f</link> &amp; direction, const <link linkend="_a01342">Vector3f</link> &amp; rotation) const</computeroutput></para>    </section><anchor xml:id="_a01342_1aac148295858f286002f9b58c50782a5d"/>    <section>
+    <title>rotateX()</title>
+<indexterm><primary>rotateX</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>rotateX</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::rotateX (float angle) const</computeroutput></para><para>
+
+<para>Rotate the vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>angle</entry>
+                                <entry>
+<para>the angle (in degree)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a new vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a5668d689e9fb3d9303a5809147daf01d"/>    <section>
+    <title>rotateY()</title>
+<indexterm><primary>rotateY</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>rotateY</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::rotateY (float angle) const</computeroutput></para><para>
+
+<para>Rotate the vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>angle</entry>
+                                <entry>
+<para>the angle (in degree)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a new vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1af20d604d672869bb748ebd0a015b29ed"/>    <section>
+    <title>rotateZ()</title>
+<indexterm><primary>rotateZ</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>rotateZ</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::rotateZ (float angle) const</computeroutput></para><para>
+
+<para>Rotate the vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>angle</entry>
+                                <entry>
+<para>the angle (in degree)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a new vector </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01342_1a98ff7d128ab1717bc0bcb3ca9a89929d"/>    <section>
+    <title>toDegrees()</title>
+<indexterm><primary>toDegrees</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>toDegrees</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::toDegrees ( ) const</computeroutput></para>    </section><anchor xml:id="_a01342_1aaee2caadf57cec4d51a3684d5f5abd94"/>    <section>
+    <title>toRadians()</title>
+<indexterm><primary>toRadians</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>toRadians</secondary></indexterm>
+<para><computeroutput><link linkend="_a01342">Vector3f</link> RayTracer::Entities::Transform::Vector3f::toRadians ( ) const</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01342_1a8f46269ba66636f3f498205b45bbf206"/>    <section>
+    <title>_x</title>
+<indexterm><primary>_x</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>_x</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::_x<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01342_1a00958abd21fb5740adad3bd4a9afb102"/>    <section>
+    <title>_y</title>
+<indexterm><primary>_y</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>_y</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::_y<computeroutput>[private]</computeroutput></computeroutput></para>    </section><anchor xml:id="_a01342_1a04918d2bc40619d7d7e4a358bb5ecfa7"/>    <section>
+    <title>_z</title>
+<indexterm><primary>_z</primary><secondary>RayTracer::Entities::Transform::Vector3f</secondary></indexterm>
+<indexterm><primary>RayTracer::Entities::Transform::Vector3f</primary><secondary>_z</secondary></indexterm>
+<para><computeroutput>double RayTracer::Entities::Transform::Vector3f::_z<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Entities/Transform/<link linkend="_a00131">Vector3f.hpp</link></section>
+</section>

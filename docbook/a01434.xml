@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01434" xml:lang="en-US">
+<title>RayTracer::Main::ArgumentError Class Reference</title>
+<indexterm><primary>RayTracer::Main::ArgumentError</primary></indexterm>
+Inheritance diagram for RayTracer::Main::ArgumentError:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01433.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Main::ArgumentError:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01432.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01434_1afe2cb91676ffaec3708b6e6948ab09b7">ArgumentError</link> (const std::string &amp;message)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_a01434_1ae1dbc70a4a359762069862a369f6b485">what</link> () const noexcept override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_a01434_1a356828f7fd99fc417acbd9bea7aa6b7b">_message</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01434_1afe2cb91676ffaec3708b6e6948ab09b7"/>    <section>
+    <title>ArgumentError()</title>
+<indexterm><primary>ArgumentError</primary><secondary>RayTracer::Main::ArgumentError</secondary></indexterm>
+<indexterm><primary>RayTracer::Main::ArgumentError</primary><secondary>ArgumentError</secondary></indexterm>
+<para><computeroutput>RayTracer::Main::ArgumentError::ArgumentError (const std::string &amp; message)<computeroutput>[explicit]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01434_1ae1dbc70a4a359762069862a369f6b485"/>    <section>
+    <title>what()</title>
+<indexterm><primary>what</primary><secondary>RayTracer::Main::ArgumentError</secondary></indexterm>
+<indexterm><primary>RayTracer::Main::ArgumentError</primary><secondary>what</secondary></indexterm>
+<para><computeroutput>const char* RayTracer::Main::ArgumentError::what ( ) const<computeroutput>[override]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01434_1a356828f7fd99fc417acbd9bea7aa6b7b"/>    <section>
+    <title>_message</title>
+<indexterm><primary>_message</primary><secondary>RayTracer::Main::ArgumentError</secondary></indexterm>
+<indexterm><primary>RayTracer::Main::ArgumentError</primary><secondary>_message</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Main::ArgumentError::_message<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/<link linkend="_a00185">Main.hpp</link></section>
+</section>

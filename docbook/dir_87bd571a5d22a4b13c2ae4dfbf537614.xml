@@ -14,9 +14,9 @@ Directory dependency graph for LimitedCylinder:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00329">LimitedCylinderCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00332">LimitedCylinderCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00332">LimitedCylinderEntity.hpp</link></para>
+            <listitem><para>file <link linkend="_a00335">LimitedCylinderEntity.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

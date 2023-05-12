@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01514" xml:lang="en-US">
+<title>RayTracer::Scenes::IConfig Class Reference</title>
+<indexterm><primary>RayTracer::Scenes::IConfig</primary></indexterm>
+<para>
+<computeroutput>#include &lt;IConfig.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::Scenes::IConfig:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01513.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::Scenes::IConfig:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01512.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_a01514_1a4c2aceca807dcddc07ee12e2f1fa257c">~IConfig</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01514_1a71aeba4627fd3383648ea5c562612147">readFile</link> (const std::string &amp;path)=0</para>
+
+<para>read and parse the file at given path </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a01514_1a0a0911b751314421eb36a73cbe2391e0">writeFile</link> (const std::string &amp;path)=0</para>
+
+<para>writes the current config in a file at the given path </para>
+</listitem>
+            <listitem><para>virtual std::shared_ptr&lt; <link linkend="_a01530">ISetting</link> &gt; <link linkend="_a01514_1a95797d99d37d2ad238a8e83af7b3ceb1">getSetting</link> () const =0</para>
+
+<para>returns the current <link linkend="_a01558">SettingWrapper</link> </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01514_1a4c2aceca807dcddc07ee12e2f1fa257c"/>    <section>
+    <title>~IConfig()</title>
+<indexterm><primary>~IConfig</primary><secondary>RayTracer::Scenes::IConfig</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::IConfig</primary><secondary>~IConfig</secondary></indexterm>
+<para><computeroutput>virtual RayTracer::Scenes::IConfig::~IConfig ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01514_1a95797d99d37d2ad238a8e83af7b3ceb1"/>    <section>
+    <title>getSetting()</title>
+<indexterm><primary>getSetting</primary><secondary>RayTracer::Scenes::IConfig</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::IConfig</primary><secondary>getSetting</secondary></indexterm>
+<para><computeroutput>virtual std::shared_ptr&lt;<link linkend="_a01530">ISetting</link>&gt; RayTracer::Scenes::IConfig::getSetting ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>returns the current <link linkend="_a01558">SettingWrapper</link> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the current <link linkend="_a01558">SettingWrapper</link> </para>
+</formalpara>
+</para>
+<para>
+Implemented in <link linkend="_a01494_1a2b7fb0c31aaaac0ef381d2d8ffcf9026">RayTracer::Scenes::ConfigWrapper</link>.</para>
+    </section><anchor xml:id="_a01514_1a71aeba4627fd3383648ea5c562612147"/>    <section>
+    <title>readFile()</title>
+<indexterm><primary>readFile</primary><secondary>RayTracer::Scenes::IConfig</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::IConfig</primary><secondary>readFile</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::IConfig::readFile (const std::string &amp; path)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>read and parse the file at given path </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>path</entry>
+                                <entry>
+<para>the path to the file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01494_1aeb17cab1863ea71f5f8ea1f0eed7a46c">RayTracer::Scenes::ConfigWrapper</link>.</para>
+    </section><anchor xml:id="_a01514_1a0a0911b751314421eb36a73cbe2391e0"/>    <section>
+    <title>writeFile()</title>
+<indexterm><primary>writeFile</primary><secondary>RayTracer::Scenes::IConfig</secondary></indexterm>
+<indexterm><primary>RayTracer::Scenes::IConfig</primary><secondary>writeFile</secondary></indexterm>
+<para><computeroutput>virtual void RayTracer::Scenes::IConfig::writeFile (const std::string &amp; path)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>writes the current config in a file at the given path </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>path</entry>
+                                <entry>
+<para>the path to the file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_a01494_1a579a6c990bd028bc77ffeb4227bec6b8">RayTracer::Scenes::ConfigWrapper</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/src/Scenes/<link linkend="_a00236">IConfig.hpp</link></section>
+</section>

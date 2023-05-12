@@ -1,19 +1,24 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00248" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/SceneLoader.hpp</primary></indexterm>
-<programlisting>#include &lt;exception&gt;
-#include &lt;string&gt;
+<title>/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;future&gt;
+#include &lt;vector&gt;
+#include &lt;memory&gt;
+#include &lt;mutex&gt;
+#include &lt;thread&gt;
 #include &lt;functional&gt;
-#include &lt;map&gt;
-#include &lt;fstream&gt;
-#include &lt;filesystem&gt;
-#include &quot;FilterLoader.hpp&quot;
-#include &quot;EntityLoader.hpp&quot;
-#include &quot;MaterialLoader.hpp&quot;
-#include &quot;ConfigWrapper.hpp&quot;
 #include &quot;ILogger.hpp&quot;
-</programlisting>Include dependency graph for SceneLoader.hpp:<para>
+#include &quot;ISetting.hpp&quot;
+#include &quot;Image.hpp&quot;
+#include &quot;ICamera.hpp&quot;
+#include &quot;ILight.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
+#include &quot;SceneState.hpp&quot;
+#include &quot;Displayable.hpp&quot;
+#include &quot;EntityFactory.hpp&quot;
+</programlisting>Include dependency graph for Scene.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -34,20 +39,18 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01543">RayTracer::Scenes::SceneLoader</link></para>
+            <listitem><para>class <link linkend="_a01542">RayTracer::Scenes::Scene</link></para>
 
-<para>The <link linkend="_a01543">SceneLoader</link> class. </para>
-</listitem>
-            <listitem><para>class <link linkend="_a01547">RayTracer::Scenes::SceneLoader::BadFileError</link></para>
+<para>The <link linkend="_a01542">Scene</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00428">RayTracer::Scenes</link></para>
+            <listitem><para> <link linkend="_a00431">RayTracer::Scenes</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

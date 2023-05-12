@@ -1,39 +1,42 @@
-\hypertarget{a00191}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Plugins/\+Entities/\+Entity\+Handler.hpp File Reference}
-\label{a00191}\index{/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityHandler.hpp@{/home/runner/work/Raytracer/Raytracer/src/Plugins/Entities/EntityHandler.hpp}}
-{\ttfamily \#include $<$memory$>$}\newline
-{\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include \char`\"{}IEntity.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}IEntity\+Creator.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ILogger.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Plugin\+Handler.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ISetting.\+hpp\char`\"{}}\newline
-Include dependency graph for Entity\+Handler.\+hpp\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{a00192}
-\end{center}
-\end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{a00193}
-\end{center}
-\end{figure}
-\doxysubsection*{Classes}
+\hypertarget{a00191}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Plugins/\+Api.hpp File Reference}
+\label{a00191}\index{/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp@{/home/runner/work/Raytracer/Raytracer/src/Plugins/Api.hpp}}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01443}{Ray\+Tracer\+::\+Plugins\+::\+Entities\+::\+Entity\+Handler}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01443}{Entity\+Handler}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
- \mbox{\hyperlink{a00417}{Ray\+Tracer}}
-\item 
- \mbox{\hyperlink{a00424}{Ray\+Tracer\+::\+Plugins}}
-\item 
- \mbox{\hyperlink{a00425}{Ray\+Tracer\+::\+Plugins\+::\+Entities}}
-\end{DoxyCompactItemize}
+void $\ast$ \mbox{\hyperlink{a00191_a6c4bc04f8b3ed3e6ca1a056499438ab3}{get\+Creator}} (void)
+\begin{DoxyCompactList}\small\item\em Get the creator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00191_adb15eac6ad612e5de35b2bf82f199739}{delete\+Creator}} (void $\ast$creator)
+\begin{DoxyCompactList}\small\item\em Delete the creator (created with the {\ttfamily \mbox{\hyperlink{a00191_a6c4bc04f8b3ed3e6ca1a056499438ab3}{get\+Creator()}}} method) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00191_adb15eac6ad612e5de35b2bf82f199739}\label{a00191_adb15eac6ad612e5de35b2bf82f199739}} 
+\index{Api.hpp@{Api.hpp}!deleteCreator@{deleteCreator}}
+\index{deleteCreator@{deleteCreator}!Api.hpp@{Api.hpp}}
+\doxysubsubsection{\texorpdfstring{deleteCreator()}{deleteCreator()}}
+{\footnotesize\ttfamily void delete\+Creator (\begin{DoxyParamCaption}\item[{void $\ast$}]{creator }\end{DoxyParamCaption})}
+
+
+
+Delete the creator (created with the {\ttfamily \mbox{\hyperlink{a00191_a6c4bc04f8b3ed3e6ca1a056499438ab3}{get\+Creator()}}} method) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creator} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{a00191_a6c4bc04f8b3ed3e6ca1a056499438ab3}\label{a00191_a6c4bc04f8b3ed3e6ca1a056499438ab3}} 
+\index{Api.hpp@{Api.hpp}!getCreator@{getCreator}}
+\index{getCreator@{getCreator}!Api.hpp@{Api.hpp}}
+\doxysubsubsection{\texorpdfstring{getCreator()}{getCreator()}}
+{\footnotesize\ttfamily void$\ast$ get\+Creator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the creator. 
+
+The creator must be a class that has a {\ttfamily .create(const ISetting \&settings)} method. This method must create an \mbox{[} ILight $\vert$ ICamera $\vert$ IPrimitive $\vert$ IFilter \mbox{]}. There is no verification that the returning value is ok. So be cautious. Thx. For \mbox{[} ILight $\vert$ ICamera $\vert$ IPrimitive \mbox{]} they must inherite from IEntity\+Creator. For \mbox{[} IFilter \mbox{]} they must inherite from IFilter\+Creator.
+
+\begin{DoxyReturn}{Returns}
+the creator 
+\end{DoxyReturn}

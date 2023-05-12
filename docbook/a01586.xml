@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a01586" xml:lang="en-US">
+<title>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator Class Reference</title>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BlackAndWhiteCreator.hpp&gt;</computeroutput>
+</para>
+Inheritance diagram for RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01585.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="a01584.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a01586_1aba1ca04a4a1a43278614d48a241b4eb4">~BlackAndWhiteCreator</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_a01374">Filters::IFilter</link> * <link linkend="_a01586_1a8ff0bc4874fde1535f06f5e469762103">create</link> (const <link linkend="_a01530">Scenes::ISetting</link> &amp;config, <link linkend="_a01378">ILogger</link> &amp;logger) final</para>
+
+<para>Create a filter with a setting. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::vector&lt; <link linkend="_a01590">BlackAndWhiteFilter</link> * &gt; <link linkend="_a01586_1a496357cce881381c326afd6df9bcf3fc">_elements</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a01586_1aba1ca04a4a1a43278614d48a241b4eb4"/>    <section>
+    <title>~BlackAndWhiteCreator()</title>
+<indexterm><primary>~BlackAndWhiteCreator</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</primary><secondary>~BlackAndWhiteCreator</secondary></indexterm>
+<para><computeroutput>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::~BlackAndWhiteCreator ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a01586_1a8ff0bc4874fde1535f06f5e469762103"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</primary><secondary>create</secondary></indexterm>
+<para><computeroutput><link linkend="_a01374">Filters::IFilter</link>* RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::create (const <link linkend="_a01530">Scenes::ISetting</link> &amp; setting, <link linkend="_a01378">ILogger</link> &amp; logger)<computeroutput>[final]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Create a filter with a setting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>config</entry>
+                                <entry>
+<para>the setting</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the filter </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a01466_1af72d84e7508e57e56fef9f48753f571f">RayTracer::Plugins::Filters::IFilterCreator</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a01586_1a496357cce881381c326afd6df9bcf3fc"/>    <section>
+    <title>_elements</title>
+<indexterm><primary>_elements</primary><secondary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</secondary></indexterm>
+<indexterm><primary>RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator</primary><secondary>_elements</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_a01590">BlackAndWhiteFilter</link> *&gt; RayTracer::PluginsExt::BlackAndWhite::BlackAndWhiteCreator::_elements<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/runner/work/Raytracer/Raytracer/PluginsExt/BlackAndWhite/<link linkend="_a00272">BlackAndWhiteCreator.hpp</link></section>
+</section>

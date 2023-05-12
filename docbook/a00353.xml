@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00353" xml:lang="en-US">
-<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/PlainMaterial/PlainMaterial.hpp File Reference</title>
-<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/PlainMaterial/PlainMaterial.hpp</primary></indexterm>
-<programlisting>#include &quot;ISetting.hpp&quot;
-#include &quot;Ray.hpp&quot;
-#include &quot;Color.hpp&quot;
-#include &quot;ITransform.hpp&quot;
-#include &quot;Vector3f.hpp&quot;
+<title>/home/runner/work/Raytracer/Raytracer/PluginsExt/Obj/ObjEntity.hpp File Reference</title>
+<indexterm><primary>/home/runner/work/Raytracer/Raytracer/PluginsExt/Obj/ObjEntity.hpp</primary></indexterm>
+<programlisting>#include &lt;functional&gt;
+#include &lt;vector&gt;
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &quot;ILogger.hpp&quot;
+#include &quot;IPrimitive.hpp&quot;
+#include &quot;Transform.hpp&quot;
 #include &quot;IMaterial.hpp&quot;
-</programlisting>Include dependency graph for PlainMaterial.hpp:<para>
+</programlisting>Include dependency graph for ObjEntity.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -29,18 +32,20 @@ This graph shows which files directly or indirectly include this file:<para>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01707">RayTracer::PluginsExt::PlainMaterial::PlainMaterial</link></para>
+            <listitem><para>class <link linkend="_a01702">RayTracer::PluginsExt::Obj::ObjEntity</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01706">RayTracer::PluginsExt::Obj::ObjEntity::Face</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Namespaces    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00417">RayTracer</link></para>
+            <listitem><para> <link linkend="_a00420">RayTracer</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00429">RayTracer::PluginsExt</link></para>
+            <listitem><para> <link linkend="_a00432">RayTracer::PluginsExt</link></para>
 </listitem>
-            <listitem><para> <link linkend="_a00446">RayTracer::PluginsExt::PlainMaterial</link></para>
+            <listitem><para> <link linkend="_a00448">RayTracer::PluginsExt::Obj</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

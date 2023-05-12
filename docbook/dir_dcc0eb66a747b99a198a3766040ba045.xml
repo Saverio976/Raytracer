@@ -14,9 +14,9 @@ Directory dependency graph for TransparencyMaterial:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a00395">TransparencyCreator.hpp</link></para>
+            <listitem><para>file <link linkend="_a00398">TransparencyCreator.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a00398">TransparencyMaterial.hpp</link></para>
+            <listitem><para>file <link linkend="_a00401">TransparencyMaterial.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

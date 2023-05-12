@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleEntity.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/Triangle/TriangleCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,74 +67,52 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">TriangleEntity.hpp</div>  </div>
+<div class="title">TriangleCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00404.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** TriangleEntity.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** TriangleCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYTRACER_TRIANGLEENTITY_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYTRACER_TRIANGLEENTITY_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00116.html">IPrimitive.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Transform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00113.html">IMaterial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TRIANGLECREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define TRIANGLECREATOR_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00200.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00158.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00407.html">TriangleEntity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00454.html">RayTracer::PluginsExt::Triangle</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01775.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01775.html">TriangleEntity</a> : <span class="keyword">public</span> <a class="code" href="a01323.html">RayTracer::Entities::IPrimitive</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00457.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00457.html">RayTracer::PluginsExt::Triangle</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01774.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01774.html">TriangleCreator</a> : <span class="keyword">public</span> <a class="code" href="a01454.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01775.html#a62ae4644f3741d7aa853dce562b5fb64">   19</a></span>&#160;        <a class="code" href="a01775.html#a62ae4644f3741d7aa853dce562b5fb64">TriangleEntity</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger);</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01775.html#aefb63e30deb54b3455205aa9d31ef58b">   20</a></span>&#160;        <a class="code" href="a01311.html#ab003087623e47600c09a76ff8138d37b">Type</a> <a class="code" href="a01775.html#aefb63e30deb54b3455205aa9d31ef58b">getType</a>() const final;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01775.html#af31805afb91921f2de2c51ba915fc7a3">   21</a></span>&#160;        Entities::Transform::ITransform &amp;<a class="code" href="a01775.html#af31805afb91921f2de2c51ba915fc7a3">getTransform</a>() final;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a01775.html#a53e716b759b7b519d5bafce4c047ca8b">   22</a></span>&#160;        const Entities::Transform::ITransform &amp;<a class="code" href="a01775.html#af31805afb91921f2de2c51ba915fc7a3">getTransform</a>() const final;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01775.html#ae28cf8d2a9967048feaf391ca5544e7b">   23</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="a01775.html#ae28cf8d2a9967048feaf391ca5544e7b">isCollided</a>(const Entities::Transform::Vector3f &amp;point) const final;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01775.html#a787b08e6a6097411001e7859ab574776">   24</a></span>&#160;        std::optional&lt;Entities::Transform::Vector3f&gt; <a class="code" href="a01775.html#ae28cf8d2a9967048feaf391ca5544e7b">isCollided</a>(const Images::Ray &amp;ray) const final;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01775.html#a354290e7edc235e89e1721369a61f969">   25</a></span>&#160;        Images::Color <a class="code" href="a01775.html#a354290e7edc235e89e1721369a61f969">getColor</a>(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                               const Entities::Transform::Vector3f &amp;intersect) const final;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01775.html#a31d556941485aa5085311e9d51f98cac">   27</a></span>&#160;        Images::Color <a class="code" href="a01775.html#a31d556941485aa5085311e9d51f98cac">redirectionLight</a>(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                       const Entities::Transform::Vector3f &amp;intersect) const final;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    private:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01775.html#aa738e1cd2133a0dcd00584f1b8d722a1">   30</a></span>&#160;        Entities::Transform::Transform <a class="code" href="a01775.html#aa738e1cd2133a0dcd00584f1b8d722a1">_transform</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01775.html#a6bbcd8a3a4e58f0c01b57f77d7410d26">   31</a></span>&#160;        std::optional&lt;std::reference_wrapper&lt;Entities::IMaterial&gt;&gt; <a class="code" href="a01775.html#a6bbcd8a3a4e58f0c01b57f77d7410d26">_material</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01775.html#a39ebe1dbea8beda2c3c53ff3a94d2414">   32</a></span>&#160;        Entities::Transform::Vector3f <a class="code" href="a01775.html#a39ebe1dbea8beda2c3c53ff3a94d2414">_pointOne</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01775.html#ab9e2f3fc826185b88e805812bb15e452">   33</a></span>&#160;        Entities::Transform::Vector3f <a class="code" href="a01775.html#ab9e2f3fc826185b88e805812bb15e452">_pointTwo</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01775.html#aeb560280f8b58d61a9fc2ae847f1b573">   34</a></span>&#160;        Entities::Transform::Vector3f <a class="code" href="a01775.html#aeb560280f8b58d61a9fc2ae847f1b573">_pointThree</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01775.html#a5665591b836d166cbc8defea82d05239">   35</a></span>&#160;        <a class="code" href="a01375.html">ILogger</a> &amp;<a class="code" href="a01775.html#a5665591b836d166cbc8defea82d05239">_logger</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//RAYTRACER_TRIANGLEENTITY_HPP</span></div>
-<div class="ttc" id="aa00113_html"><div class="ttname"><a href="a00113.html">IMaterial.hpp</a></div></div>
-<div class="ttc" id="aa00116_html"><div class="ttname"><a href="a00116.html">IPrimitive.hpp</a></div></div>
-<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Transform.hpp</a></div></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00454_html"><div class="ttname"><a href="a00454.html">RayTracer::PluginsExt::Triangle</a></div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:16</div></div>
-<div class="ttc" id="aa01311_html_ab003087623e47600c09a76ff8138d37b"><div class="ttname"><a href="a01311.html#ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:20</div></div>
-<div class="ttc" id="aa01323_html"><div class="ttname"><a href="a01323.html">RayTracer::Entities::IPrimitive</a></div><div class="ttdoc">The IPrimitive class.</div><div class="ttdef"><b>Definition:</b> IPrimitive.hpp:25</div></div>
-<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01775_html"><div class="ttname"><a href="a01775.html">RayTracer::PluginsExt::Triangle::TriangleEntity</a></div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:17</div></div>
-<div class="ttc" id="aa01775_html_a31d556941485aa5085311e9d51f98cac"><div class="ttname"><a href="a01775.html#a31d556941485aa5085311e9d51f98cac">RayTracer::PluginsExt::Triangle::TriangleEntity::redirectionLight</a></div><div class="ttdeci">Images::Color redirectionLight(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">this function is called when the object intercept the ray light</div></div>
-<div class="ttc" id="aa01775_html_a354290e7edc235e89e1721369a61f969"><div class="ttname"><a href="a01775.html#a354290e7edc235e89e1721369a61f969">RayTracer::PluginsExt::Triangle::TriangleEntity::getColor</a></div><div class="ttdeci">Images::Color getColor(const Images::Ray &amp;ray, const Scenes::IDisplayable &amp;displayable, const Entities::Transform::Vector3f &amp;intersect) const final</div><div class="ttdoc">Get the material.</div></div>
-<div class="ttc" id="aa01775_html_a39ebe1dbea8beda2c3c53ff3a94d2414"><div class="ttname"><a href="a01775.html#a39ebe1dbea8beda2c3c53ff3a94d2414">RayTracer::PluginsExt::Triangle::TriangleEntity::_pointOne</a></div><div class="ttdeci">Entities::Transform::Vector3f _pointOne</div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:32</div></div>
-<div class="ttc" id="aa01775_html_a5665591b836d166cbc8defea82d05239"><div class="ttname"><a href="a01775.html#a5665591b836d166cbc8defea82d05239">RayTracer::PluginsExt::Triangle::TriangleEntity::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:35</div></div>
-<div class="ttc" id="aa01775_html_a62ae4644f3741d7aa853dce562b5fb64"><div class="ttname"><a href="a01775.html#a62ae4644f3741d7aa853dce562b5fb64">RayTracer::PluginsExt::Triangle::TriangleEntity::TriangleEntity</a></div><div class="ttdeci">TriangleEntity(const Scenes::ISetting &amp;config, ILogger &amp;logger)</div></div>
-<div class="ttc" id="aa01775_html_a6bbcd8a3a4e58f0c01b57f77d7410d26"><div class="ttname"><a href="a01775.html#a6bbcd8a3a4e58f0c01b57f77d7410d26">RayTracer::PluginsExt::Triangle::TriangleEntity::_material</a></div><div class="ttdeci">std::optional&lt; std::reference_wrapper&lt; Entities::IMaterial &gt; &gt; _material</div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:31</div></div>
-<div class="ttc" id="aa01775_html_aa738e1cd2133a0dcd00584f1b8d722a1"><div class="ttname"><a href="a01775.html#aa738e1cd2133a0dcd00584f1b8d722a1">RayTracer::PluginsExt::Triangle::TriangleEntity::_transform</a></div><div class="ttdeci">Entities::Transform::Transform _transform</div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:30</div></div>
-<div class="ttc" id="aa01775_html_ab9e2f3fc826185b88e805812bb15e452"><div class="ttname"><a href="a01775.html#ab9e2f3fc826185b88e805812bb15e452">RayTracer::PluginsExt::Triangle::TriangleEntity::_pointTwo</a></div><div class="ttdeci">Entities::Transform::Vector3f _pointTwo</div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:33</div></div>
-<div class="ttc" id="aa01775_html_ae28cf8d2a9967048feaf391ca5544e7b"><div class="ttname"><a href="a01775.html#ae28cf8d2a9967048feaf391ca5544e7b">RayTracer::PluginsExt::Triangle::TriangleEntity::isCollided</a></div><div class="ttdeci">bool isCollided(const Entities::Transform::Vector3f &amp;point) const final</div><div class="ttdoc">Check if the point is collided with the box.</div></div>
-<div class="ttc" id="aa01775_html_aeb560280f8b58d61a9fc2ae847f1b573"><div class="ttname"><a href="a01775.html#aeb560280f8b58d61a9fc2ae847f1b573">RayTracer::PluginsExt::Triangle::TriangleEntity::_pointThree</a></div><div class="ttdeci">Entities::Transform::Vector3f _pointThree</div><div class="ttdef"><b>Definition:</b> TriangleEntity.hpp:34</div></div>
-<div class="ttc" id="aa01775_html_aefb63e30deb54b3455205aa9d31ef58b"><div class="ttname"><a href="a01775.html#aefb63e30deb54b3455205aa9d31ef58b">RayTracer::PluginsExt::Triangle::TriangleEntity::getType</a></div><div class="ttdeci">Type getType() const final</div><div class="ttdoc">Get the type (light, camera, primitive)</div></div>
-<div class="ttc" id="aa01775_html_af31805afb91921f2de2c51ba915fc7a3"><div class="ttname"><a href="a01775.html#af31805afb91921f2de2c51ba915fc7a3">RayTracer::PluginsExt::Triangle::TriangleEntity::getTransform</a></div><div class="ttdeci">Entities::Transform::ITransform &amp; getTransform() final</div><div class="ttdoc">Get the transform (position, rotation, scale)</div></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a01774.html#a2011b25d02a1b1f08b4fc1414ee6ed46">   19</a></span>&#160;        <a class="code" href="a01774.html#a2011b25d02a1b1f08b4fc1414ee6ed46">~TriangleCreator</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01774.html#ab6492e10a8b3d81644925a86c30b31b8">   20</a></span>&#160;        <a class="code" href="a01314.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01774.html#ab6492e10a8b3d81644925a86c30b31b8">create</a>(<span class="keyword">const</span> <a class="code" href="a01530.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01378.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a01774.html#aed82cb61c9f8b34f783290f8726c79e1">   23</a></span>&#160;        std::vector&lt;TriangleEntity *&gt; <a class="code" href="a01774.html#aed82cb61c9f8b34f783290f8726c79e1">_elements</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*TRIANGLECREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00158_html"><div class="ttname"><a href="a00158.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00200_html"><div class="ttname"><a href="a00200.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00407_html"><div class="ttname"><a href="a00407.html">TriangleEntity.hpp</a></div></div>
+<div class="ttc" id="aa00457_html"><div class="ttname"><a href="a00457.html">RayTracer::PluginsExt::Triangle</a></div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:16</div></div>
+<div class="ttc" id="aa01314_html"><div class="ttname"><a href="a01314.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01378_html"><div class="ttname"><a href="a01378.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01454_html"><div class="ttname"><a href="a01454.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01530_html"><div class="ttname"><a href="a01530.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01774_html"><div class="ttname"><a href="a01774.html">RayTracer::PluginsExt::Triangle::TriangleCreator</a></div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:17</div></div>
+<div class="ttc" id="aa01774_html_a2011b25d02a1b1f08b4fc1414ee6ed46"><div class="ttname"><a href="a01774.html#a2011b25d02a1b1f08b4fc1414ee6ed46">RayTracer::PluginsExt::Triangle::TriangleCreator::~TriangleCreator</a></div><div class="ttdeci">~TriangleCreator()</div></div>
+<div class="ttc" id="aa01774_html_ab6492e10a8b3d81644925a86c30b31b8"><div class="ttname"><a href="a01774.html#ab6492e10a8b3d81644925a86c30b31b8">RayTracer::PluginsExt::Triangle::TriangleCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01774_html_aed82cb61c9f8b34f783290f8726c79e1"><div class="ttname"><a href="a01774.html#aed82cb61c9f8b34f783290f8726c79e1">RayTracer::PluginsExt::Triangle::TriangleCreator::_elements</a></div><div class="ttdeci">std::vector&lt; TriangleEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> TriangleCreator.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:55 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,11 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00431" xml:lang="en-US">
-<title>RayTracer::PluginsExt::AntiAliasing Namespace Reference</title>
-<indexterm><primary>RayTracer::PluginsExt::AntiAliasing</primary></indexterm>
+<title>RayTracer::Scenes Namespace Reference</title>
+<indexterm><primary>RayTracer::Scenes</primary></indexterm>
 <simplesect>
-    <title>Namespaces    </title>
+    <title>Classes    </title>
         <itemizedlist>
-            <listitem><para> <link linkend="_a00432">SSAAx4</link></para>
+            <listitem><para>class <link linkend="_a01494">ConfigWrapper</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01506">Displayable</link></para>
+
+<para>The <link linkend="_a01506">Displayable</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01514">IConfig</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01518">IDisplayable</link></para>
+
+<para>The <link linkend="_a01518">IDisplayable</link> interface. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01526">ISceneState</link></para>
+
+<para>The <link linkend="_a01554">SceneState</link> interface. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01530">ISetting</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a01542">Scene</link></para>
+
+<para>The <link linkend="_a01542">Scene</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01546">SceneLoader</link></para>
+
+<para>The <link linkend="_a01546">SceneLoader</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01554">SceneState</link></para>
+
+<para>The <link linkend="_a01554">SceneState</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01558">SettingWrapper</link></para>
+
+<para>The <link linkend="_a01558">SettingWrapper</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

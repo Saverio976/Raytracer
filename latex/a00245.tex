@@ -1,27 +1,13 @@
-\hypertarget{a00245}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\+Scene.hpp File Reference}
-\label{a00245}\index{/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp@{/home/runner/work/Raytracer/Raytracer/src/Scenes/Scene.hpp}}
-{\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$future$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
+\hypertarget{a00245}{}\doxysection{/home/runner/work/\+Raytracer/\+Raytracer/src/\+Scenes/\+ISetting.hpp File Reference}
+\label{a00245}\index{/home/runner/work/Raytracer/Raytracer/src/Scenes/ISetting.hpp@{/home/runner/work/Raytracer/Raytracer/src/Scenes/ISetting.hpp}}
 {\ttfamily \#include $<$memory$>$}\newline
-{\ttfamily \#include $<$mutex$>$}\newline
-{\ttfamily \#include $<$thread$>$}\newline
-{\ttfamily \#include $<$functional$>$}\newline
-{\ttfamily \#include \char`\"{}ILogger.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ISetting.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Image.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ICamera.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ILight.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}IPrimitive.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Scene\+State.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Displayable.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Entity\+Factory.\+hpp\char`\"{}}\newline
-Include dependency graph for Scene.\+hpp\+:
+{\ttfamily \#include $<$libconfig.\+h++$>$}\newline
+Include dependency graph for ISetting.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{a00246}
+\includegraphics[width=263pt]{a00246}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -35,12 +21,16 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{a01539}{Ray\+Tracer\+::\+Scenes\+::\+Scene}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{a01539}{Scene}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{a01530}{Ray\+Tracer\+::\+Scenes\+::\+ISetting}}
+\item 
+class \mbox{\hyperlink{a01534}{Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::\+IParsing\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the key is not found \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01538}{Ray\+Tracer\+::\+Scenes\+::\+ISetting\+::\+IType\+Exception}}
+\begin{DoxyCompactList}\small\item\em an exception for when the key is not found \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{a00417}{Ray\+Tracer}}
+ \mbox{\hyperlink{a00420}{Ray\+Tracer}}
 \item 
- \mbox{\hyperlink{a00428}{Ray\+Tracer\+::\+Scenes}}
+ \mbox{\hyperlink{a00431}{Ray\+Tracer\+::\+Scenes}}
 \end{DoxyCompactItemize}

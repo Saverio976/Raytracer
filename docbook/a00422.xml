@@ -1,13 +1,36 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a00422" xml:lang="en-US">
-<title>RayTracer::Filters Namespace Reference</title>
-<indexterm><primary>RayTracer::Filters</primary></indexterm>
+<title>RayTracer::Entities Namespace Reference</title>
+<indexterm><primary>RayTracer::Entities</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_a00423">Transform</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
-            <listitem><para>class <link linkend="_a01371">IFilter</link></para>
+            <listitem><para>class <link linkend="_a01310">ICamera</link></para>
 
-<para>The <link linkend="_a01371">IFilter</link> class. </para>
+<para>The <link linkend="_a01310">ICamera</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01314">IEntity</link></para>
+
+<para>The <link linkend="_a01314">IEntity</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01318">ILight</link></para>
+
+<para>The <link linkend="_a01318">ILight</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01322">IMaterial</link></para>
+
+<para>The <link linkend="_a01322">IMaterial</link> class. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a01326">IPrimitive</link></para>
+
+<para>The <link linkend="_a01326">IPrimitive</link> class. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightEntity.hpp Source File</title>
+<title>RayTracer: /home/runner/work/Raytracer/Raytracer/PluginsExt/AmbientLight/AmbientLightCreator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,74 +67,54 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">AmbientLightEntity.hpp</div>  </div>
+<div class="title">AmbientLightCreator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00260.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2023</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** raytracer</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** AmbientLightEntity.hpp</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** AmbientLightCreator.hpp</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef AMBIENTLIGHTENTITY_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define AMBIENTLIGHTENTITY_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef AMBIENTLIGHTCREATOR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define AMBIENTLIGHTCREATOR_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00110.html">ILight.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00233.html">IConfig.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00155.html">ILogger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00122.html">Transform.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00430.html">RayTracer::PluginsExt::AmbientLight</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a01571.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01571.html">AmbientLightEntity</a> : <span class="keyword">public</span> <a class="code" href="a01315.html">RayTracer::Entities::ILight</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01571.html#a60cc12c4b1dc338dd6f906759c1ce903">   31</a></span>&#160;            <a class="code" href="a01571.html#a60cc12c4b1dc338dd6f906759c1ce903">AmbientLightEntity</a>(<span class="keyword">const</span> <a class="code" href="a01527.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01375.html">ILogger</a> &amp;logger);</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01571.html#aaaec2f7a93ec915c8ffed458d5a0bd15">   32</a></span>&#160;            <a class="code" href="a01571.html#aaaec2f7a93ec915c8ffed458d5a0bd15">~AmbientLightEntity</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01571.html#a45b8d98da78875e18eaf47bc8cd1e214">   38</a></span>&#160;            <a class="code" href="a01311.html#ab003087623e47600c09a76ff8138d37b">Type</a> <a class="code" href="a01571.html#a45b8d98da78875e18eaf47bc8cd1e214">getType</a>() const final;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01571.html#ad60584f8a8a06e5bc5b12bf49d564fd4">   44</a></span>&#160;            Entities::Transform::ITransform &amp;<a class="code" href="a01571.html#ad60584f8a8a06e5bc5b12bf49d564fd4">getTransform</a>() final;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01571.html#a895b2454238153f41763e6760f0cb198">   50</a></span>&#160;            const Entities::Transform::ITransform &amp;<a class="code" href="a01571.html#ad60584f8a8a06e5bc5b12bf49d564fd4">getTransform</a>() const final;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01571.html#a36c5e8ca32251d013a22858fdf9614e0">   56</a></span>&#160;            const Images::Color &amp;<a class="code" href="a01571.html#a36c5e8ca32251d013a22858fdf9614e0">getColor</a>() const final;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a01571.html#a1604049558bc413d6b7474c2e87b7f18">   64</a></span>&#160;            Images::Color <a class="code" href="a01571.html#a36c5e8ca32251d013a22858fdf9614e0">getColor</a>(const Entities::Transform::Vector3f &amp;point, const Scenes::IDisplayable &amp;displayable) const final;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a01571.html#a691d1b12741398b555ae9839e944bb95">   70</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="a01571.html#a691d1b12741398b555ae9839e944bb95">setColor</a>(const Images::Color &amp;color) final;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a01571.html#a76ca4a3b53a72946e941dda726022a0c">   76</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="a01571.html#a76ca4a3b53a72946e941dda726022a0c">isAmbient</a>() const final;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a01571.html#abeef544eed44018633c88859e85864b6">   82</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="a01571.html#abeef544eed44018633c88859e85864b6">getPower</a>() const final;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        protected:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        private:</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a01571.html#a857ab80683e0d384df90884a2f685f6f">   86</a></span>&#160;            Entities::Transform::Transform <a class="code" href="a01571.html#a857ab80683e0d384df90884a2f685f6f">_transform</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a01571.html#a962522050740d5dace7a29e041d437f2">   87</a></span>&#160;            Images::Color <a class="code" href="a01571.html#a962522050740d5dace7a29e041d437f2">_color</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="a01571.html#a277eb2065b697cb9b40975fdf7237576">   88</a></span>&#160;            <a class="code" href="a01375.html">ILogger</a> &amp;<a class="code" href="a01571.html#a277eb2065b697cb9b40975fdf7237576">_logger</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a01571.html#ada783747adb16d5d96464d1db8f2c7c3">   89</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="a01571.html#ada783747adb16d5d96464d1db8f2c7c3">_power</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    };</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMBIENTLIGHTENTITY_HPP_*/</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aa00110_html"><div class="ttname"><a href="a00110.html">ILight.hpp</a></div></div>
-<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Transform.hpp</a></div></div>
-<div class="ttc" id="aa00155_html"><div class="ttname"><a href="a00155.html">ILogger.hpp</a></div></div>
-<div class="ttc" id="aa00233_html"><div class="ttname"><a href="a00233.html">IConfig.hpp</a></div></div>
-<div class="ttc" id="aa00430_html"><div class="ttname"><a href="a00430.html">RayTracer::PluginsExt::AmbientLight</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:17</div></div>
-<div class="ttc" id="aa01311_html_ab003087623e47600c09a76ff8138d37b"><div class="ttname"><a href="a01311.html#ab003087623e47600c09a76ff8138d37b">RayTracer::Entities::IEntity::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:20</div></div>
-<div class="ttc" id="aa01315_html"><div class="ttname"><a href="a01315.html">RayTracer::Entities::ILight</a></div><div class="ttdoc">The ILight class.</div><div class="ttdef"><b>Definition:</b> ILight.hpp:21</div></div>
-<div class="ttc" id="aa01375_html"><div class="ttname"><a href="a01375.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
-<div class="ttc" id="aa01527_html"><div class="ttname"><a href="a01527.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
-<div class="ttc" id="aa01571_html"><div class="ttname"><a href="a01571.html">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity</a></div><div class="ttdef"><b>Definition:</b> AmbientLightEntity.hpp:17</div></div>
-<div class="ttc" id="aa01571_html_a277eb2065b697cb9b40975fdf7237576"><div class="ttname"><a href="a01571.html#a277eb2065b697cb9b40975fdf7237576">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::_logger</a></div><div class="ttdeci">ILogger &amp; _logger</div><div class="ttdef"><b>Definition:</b> AmbientLightEntity.hpp:88</div></div>
-<div class="ttc" id="aa01571_html_a36c5e8ca32251d013a22858fdf9614e0"><div class="ttname"><a href="a01571.html#a36c5e8ca32251d013a22858fdf9614e0">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::getColor</a></div><div class="ttdeci">const Images::Color &amp; getColor() const final</div><div class="ttdoc">Get the color.</div></div>
-<div class="ttc" id="aa01571_html_a45b8d98da78875e18eaf47bc8cd1e214"><div class="ttname"><a href="a01571.html#a45b8d98da78875e18eaf47bc8cd1e214">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::getType</a></div><div class="ttdeci">Type getType() const final</div><div class="ttdoc">Get the type (ILight)</div></div>
-<div class="ttc" id="aa01571_html_a60cc12c4b1dc338dd6f906759c1ce903"><div class="ttname"><a href="a01571.html#a60cc12c4b1dc338dd6f906759c1ce903">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::AmbientLightEntity</a></div><div class="ttdeci">AmbientLightEntity(const Scenes::ISetting &amp;config, ILogger &amp;logger)</div><div class="ttdoc">Construct a new AmbientLight.</div></div>
-<div class="ttc" id="aa01571_html_a691d1b12741398b555ae9839e944bb95"><div class="ttname"><a href="a01571.html#a691d1b12741398b555ae9839e944bb95">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::setColor</a></div><div class="ttdeci">void setColor(const Images::Color &amp;color) final</div><div class="ttdoc">Set the color.</div></div>
-<div class="ttc" id="aa01571_html_a76ca4a3b53a72946e941dda726022a0c"><div class="ttname"><a href="a01571.html#a76ca4a3b53a72946e941dda726022a0c">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::isAmbient</a></div><div class="ttdeci">bool isAmbient() const final</div><div class="ttdoc">Check if the light is ambient.</div></div>
-<div class="ttc" id="aa01571_html_a857ab80683e0d384df90884a2f685f6f"><div class="ttname"><a href="a01571.html#a857ab80683e0d384df90884a2f685f6f">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::_transform</a></div><div class="ttdeci">Entities::Transform::Transform _transform</div><div class="ttdef"><b>Definition:</b> AmbientLightEntity.hpp:86</div></div>
-<div class="ttc" id="aa01571_html_a962522050740d5dace7a29e041d437f2"><div class="ttname"><a href="a01571.html#a962522050740d5dace7a29e041d437f2">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::_color</a></div><div class="ttdeci">Images::Color _color</div><div class="ttdef"><b>Definition:</b> AmbientLightEntity.hpp:87</div></div>
-<div class="ttc" id="aa01571_html_aaaec2f7a93ec915c8ffed458d5a0bd15"><div class="ttname"><a href="a01571.html#aaaec2f7a93ec915c8ffed458d5a0bd15">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::~AmbientLightEntity</a></div><div class="ttdeci">~AmbientLightEntity()=default</div></div>
-<div class="ttc" id="aa01571_html_abeef544eed44018633c88859e85864b6"><div class="ttname"><a href="a01571.html#abeef544eed44018633c88859e85864b6">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::getPower</a></div><div class="ttdeci">double getPower() const final</div><div class="ttdoc">get the power of the light</div></div>
-<div class="ttc" id="aa01571_html_ad60584f8a8a06e5bc5b12bf49d564fd4"><div class="ttname"><a href="a01571.html#ad60584f8a8a06e5bc5b12bf49d564fd4">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::getTransform</a></div><div class="ttdeci">Entities::Transform::ITransform &amp; getTransform() final</div><div class="ttdoc">Get the transform.</div></div>
-<div class="ttc" id="aa01571_html_ada783747adb16d5d96464d1db8f2c7c3"><div class="ttname"><a href="a01571.html#ada783747adb16d5d96464d1db8f2c7c3">RayTracer::PluginsExt::AmbientLight::AmbientLightEntity::_power</a></div><div class="ttdeci">double _power</div><div class="ttdef"><b>Definition:</b> AmbientLightEntity.hpp:89</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00158.html">ILogger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00200.html">IEntityCreator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="a00263.html">AmbientLightEntity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00432.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00433.html">RayTracer::PluginsExt::AmbientLight</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a01570.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a01570.html">AmbientLightCreator</a> : <span class="keyword">public</span> <a class="code" href="a01454.html">RayTracer::Plugins::Entities::IEntityCreator</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a01570.html#aa3434640b1d3ffc4d5ab2b050e004b35">   20</a></span>&#160;            <a class="code" href="a01314.html">RayTracer::Entities::IEntity</a> *<a class="code" href="a01570.html#aa3434640b1d3ffc4d5ab2b050e004b35">create</a>(<span class="keyword">const</span> <a class="code" href="a01530.html">Scenes::ISetting</a> &amp;config, <a class="code" href="a01378.html">ILogger</a> &amp;logger) <span class="keyword">final</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01570.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">   21</a></span>&#160;            <a class="code" href="a01570.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">~AmbientLightCreator</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01570.html#aa8eff37de8a7cffef91529bc56fc95fd">   25</a></span>&#160;            std::vector&lt;AmbientLightEntity *&gt; <a class="code" href="a01570.html#aa8eff37de8a7cffef91529bc56fc95fd">_elements</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMBIENTLIGHTCREATOR_HPP_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aa00158_html"><div class="ttname"><a href="a00158.html">ILogger.hpp</a></div></div>
+<div class="ttc" id="aa00200_html"><div class="ttname"><a href="a00200.html">IEntityCreator.hpp</a></div></div>
+<div class="ttc" id="aa00263_html"><div class="ttname"><a href="a00263.html">AmbientLightEntity.hpp</a></div></div>
+<div class="ttc" id="aa00433_html"><div class="ttname"><a href="a00433.html">RayTracer::PluginsExt::AmbientLight</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:17</div></div>
+<div class="ttc" id="aa01314_html"><div class="ttname"><a href="a01314.html">RayTracer::Entities::IEntity</a></div><div class="ttdoc">The IEntity class.</div><div class="ttdef"><b>Definition:</b> IEntity.hpp:18</div></div>
+<div class="ttc" id="aa01378_html"><div class="ttname"><a href="a01378.html">RayTracer::ILogger</a></div><div class="ttdoc">Logger singleton.</div><div class="ttdef"><b>Definition:</b> ILogger.hpp:31</div></div>
+<div class="ttc" id="aa01454_html"><div class="ttname"><a href="a01454.html">RayTracer::Plugins::Entities::IEntityCreator</a></div><div class="ttdoc">The IEntityCreator.</div><div class="ttdef"><b>Definition:</b> IEntityCreator.hpp:21</div></div>
+<div class="ttc" id="aa01530_html"><div class="ttname"><a href="a01530.html">RayTracer::Scenes::ISetting</a></div><div class="ttdef"><b>Definition:</b> ISetting.hpp:15</div></div>
+<div class="ttc" id="aa01570_html"><div class="ttname"><a href="a01570.html">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator</a></div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:18</div></div>
+<div class="ttc" id="aa01570_html_aa3434640b1d3ffc4d5ab2b050e004b35"><div class="ttname"><a href="a01570.html#aa3434640b1d3ffc4d5ab2b050e004b35">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::create</a></div><div class="ttdeci">RayTracer::Entities::IEntity * create(const Scenes::ISetting &amp;config, ILogger &amp;logger) final</div><div class="ttdoc">Create an entity with a setting.</div></div>
+<div class="ttc" id="aa01570_html_aa8eff37de8a7cffef91529bc56fc95fd"><div class="ttname"><a href="a01570.html#aa8eff37de8a7cffef91529bc56fc95fd">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::_elements</a></div><div class="ttdeci">std::vector&lt; AmbientLightEntity * &gt; _elements</div><div class="ttdef"><b>Definition:</b> AmbientLightCreator.hpp:25</div></div>
+<div class="ttc" id="aa01570_html_ad721244d4e7a1f95b45ffa40a0ff6cf8"><div class="ttname"><a href="a01570.html#ad721244d4e7a1f95b45ffa40a0ff6cf8">RayTracer::PluginsExt::AmbientLight::AmbientLightCreator::~AmbientLightCreator</a></div><div class="ttdeci">~AmbientLightCreator()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 12 2023 07:33:55 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri May 12 2023 21:32:16 for RayTracer by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
