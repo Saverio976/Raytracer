@@ -198,7 +198,7 @@ namespace RayTracer {
             std::cout << line << std::endl;
         }
         std::cout << "__USAGE__:" << std::endl;
-        std::cout << "\t./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui] [--font-path <font file>]" << std::endl;
+        std::cout << "\t./raytracer --scene-path <scene-conf.yaax> --output-path <file> [--log-level <int>] [--gui] [--font-path <font file>] [--EntitiesSO <path>] [--FiltersSO <path>] [--MaterialsSO <path>]" << std::endl;
         std::cout << "\t./raytracer --help" << std::endl;
         std::cout << std::endl;
         std::cout << "__OPTIONS__:" << std::endl;
@@ -208,8 +208,12 @@ namespace RayTracer {
         std::cout << "\t--log-level <int>              log level can be {-1: no log, 0: fatal, 1: error, 2: warn, 3: info, 4: debug, 5: trace} [3 by default]" << std::endl;
         std::cout << "\t--gui                          to display the images in GUI mode" << std::endl;
         std::cout << "\t--font-path <font file>        path to font file [./Assets/arial.ttf by default]" << std::endl;
+        std::cout << "\t--EntitiesSO <path>            path to .so lib for entities" << std::endl;
+        std::cout << "\t--FiltersSO <path>             path to .so lib for filters" << std::endl;
+        std::cout << "\t--MaterialsSO <path>           path to .so lib for materials" << std::endl;
         std::cout << std::endl;
         std::cout << "__IN WINDOW__:" << std::endl;
+        std::cout << "! Attention ! : in gui mode, the .ppm is not saved. But we have a keybind to do it. see more in the next keybinds." << std::endl;
         std::cout << "\tZ                              : go forward to exit" << std::endl;
         std::cout << "\tQ                              : go left" << std::endl;
         std::cout << "\tS                              : go backward to exit" << std::endl;
