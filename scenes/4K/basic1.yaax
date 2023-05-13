@@ -1,0 +1,358 @@
+# List of cameras
+cameras:
+{
+    # List of "Cluster" cameras
+    CameraCluster:
+    (
+        # 4k, cluster size 5, anti-aliasing SSAAx4
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = -1;
+            cluster = 1,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = -1
+                    }
+                )
+            }
+        },
+        # 4k, cluster size 1, anti-aliasing SSAAx4
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = -1;
+            cluster = 10,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = -1
+                    }
+                )
+            }
+        },
+        # 4k, cluster size 1, anti-aliasing SSAAx4, BlackAndWhite method Max
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = -1;
+            cluster = 10,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = -1;
+                    }
+                );
+                BlackAndWhite:
+                (
+                    {
+                        maxThreads = -1;
+                        method = "Max";
+                    }
+                )
+            };
+        },
+    )
+}
+
+# List of lights
+lights:
+{
+    # List of AmbientLight
+    AmbientLight:
+    (
+        {
+            color = {r = 255.0; g = 255.0; b = 255.0; a = 255.0};
+            power = 1.0;
+            transform = {
+                # The position does not matter
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+        }
+    );
+    # List of PointLight
+    PointLight:
+    (
+        {
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            color = {r = 255.0; g = 255.0; b = 255.0; a = 255.0};
+            power = 3.0;
+            radius = 4000.0;
+        }
+    );
+}
+
+# List of primitives
+primitives:
+{
+    Plane:
+    (
+        # up
+        {
+            transform = {
+                position = {x = 0.0; y = 0.0; z = 1000.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 20.0;
+                impair = {r = 255.0; g = 20.0; b = 20.0; a = 255.0};
+                pair = {r = 20.0; g = 255.0; b = 20.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            }
+        },
+        # down
+        {
+            transform = {
+                position = {x = 0.0; y = 0.0; z = -1000.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            material = {
+                type = "ZebraMaterial";
+                size = 20.0;
+                impair = {r = 255.0; g = 125.0; b = 0.0; a = 255.0};
+                pair = {r = 125.0; g = 0.0; b = 255.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            }
+        },
+        # right
+        {
+            transform = {
+                position = {x = 2000.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 1.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                color = {r = 0.0; g = 255.0; b = 0.0; a = 255.0;};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            }
+        },
+        # left
+        {
+            transform = {
+                position = {x = -2000.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 1.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "TransparencyMaterial";
+                color = {r = 0.0; g = 0.0; b = 255.0; a = 255.0;};
+                shininess = 1.0;
+                transparency = 200.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # back
+        {
+            transform = {
+                position = {x = 0.0; y = 2000.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 1.0; z = 0.0;};
+            };
+            material = {
+                type = "MirrorMaterial";
+                color = {r = 50.0; g = 50.0; b = 200.0; a = 255.0;};
+                shininess = 5.0;
+                transparency = 0.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        }
+    );
+    Sphere:
+    (
+        # middle left sphere
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -1000.0; y = 500.0; z = 0.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                color = {r = 100.0; g = 200.0; b = 150.0; a = 255.0;};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        }
+    )
+    Torus:
+    (
+        # right
+        {
+            minRadius = 50.0;
+            maxRadius = 500.0;
+            transform = {
+                position = {x = 2000.0; y = 100.0; z = 0.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                color = {r = 255.0; g = 50.0; b = 50.0; a = 255.0;};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # left
+        {
+            minRadius = 50.0;
+            maxRadius = 120.0;
+            transform = {
+                position = {x = -2000.0; y = 100.0; z = 0.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                color = {r = 255.0; g = 200.0; b = 150.0; a = 255.0;};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # up
+        {
+            minRadius = 50.0;
+            maxRadius = 120.0;
+            transform = {
+                position = {x = 0.0; y = 100.0; z = 1000.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                color = {r = 255.0; g = 200.0; b = 150.0; a = 255.0;};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # down
+        {
+            minRadius = 50.0;
+            maxRadius = 120.0;
+            transform = {
+                position = {x = 0.0; y = 100.0; z = -1000.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "PlainMaterial";
+                color = {r = 255.0; g = 200.0; b = 150.0; a = 255.0;};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        }
+    );
+    Cylinder:
+    (
+        # right
+        {
+            radius = 200.0;
+            transform = {
+                position = {x = 2000.0; y = 500.0; z = 0.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "ZebraMaterial";
+                size = 5.0;
+                impair = {r = 125.0; g = 0.0; b = 255.0; a = 255.0};
+                pair = {r = 125.0; g = 0.0; b = 125.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            }
+        }
+    );
+    Cone:
+    (
+        # back right
+        {
+            transform = {
+                position = {x = 0.0; y = 1900.0; z = 0.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 1.0; y = 1.0; z = 0.0;};
+            };
+            height = 10000.0;
+            angle = 10.0;
+            material = {
+                type = "PlainMaterial";
+                shininess = 1.0;
+                color = {r = 57.0; g = 255.0; b = 20.0; a = 255.0;};
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        },
+        # back left
+        {
+            transform = {
+                position = {x = 0.0; y = 1900.0; z = 0.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = -1.0; y = 1.0; z = 0.0;};
+            };
+            height = 10000.0;
+            angle = 10.0;
+            material = {
+                type = "PlainMaterial";
+                shininess = 1.0;
+                color = {r = 57.0; g = 255.0; b = 20.0; a = 255.0;};
+                ambient = {x = 1.0; y = 1.0; z = 1.0};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0};
+                specular = {x = 1.0; y = 1.0; z = 1.0};
+            };
+        }
+    )
+}
