@@ -10,6 +10,7 @@
     #include <mutex>
     #include <ostream>
     #include <SFML/Graphics/Color.hpp>
+    #include <string>
     #include "ISetting.hpp"
 
 namespace RayTracer::Images {
@@ -142,6 +143,12 @@ namespace RayTracer::Images {
              * @return the sfcolor
              */
             sf::Color toSfColor() const;
+            /**
+             * @brief convert color to string (with alpha apliyed)
+             *
+             * @return the string
+             */
+            std::string toString() const;
 
         private:
             double _r;
