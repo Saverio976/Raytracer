@@ -1,0 +1,444 @@
+# List of cameras
+cameras:
+{
+    # List of "Cluster" cameras
+    CameraCluster:
+    (
+        # 4k, cluster size 5, anti-aliasing SSAAx4
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 1060.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = 1000;
+            cluster = 1,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = 1000;
+                    }
+                )
+            };
+        },
+        # 4k, cluster size 5, anti-aliasing SSAAx4
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 1060.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = 1000;
+            cluster = 1,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = 1000;
+                    }
+                );
+                BlackAndWhite:
+                (
+                    {
+                        maxThreads = 1000;
+                        method = "Max";
+                    }
+                )
+            };
+        },
+        # 4k, cluster size 1, anti-aliasing SSAAx4
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = 1000;
+            cluster = 1,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = 1000;
+                    }
+                );
+            };
+        },
+        # 4k, cluster size 1, anti-aliasing SSAAx4, BlackAndWhite method Max
+        {
+            screenSize = {x: 3840; y = 2160;};
+            screen = {
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            maxThreads = 1000;
+            cluster = 1,
+            distanceFromScreen = 2000.0;
+            filters = {
+                SSAAx4:
+                (
+                    {
+                        maxThreads = 1000;
+                    }
+                );
+                BlackAndWhite:
+                (
+                    {
+                        maxThreads = 1000;
+                        method = "Max";
+                    }
+                )
+            };
+        },
+    )
+}
+
+# List of lights
+lights:
+{
+    # List of AmbientLight
+    AmbientLight:
+    (
+        {
+            color = {r = 45.0; g = 80.0; b = 133.0; a = 255.0};
+            power = 5.0;
+            transform = {
+                # The position does not matter
+                position = {x = 0.0; y = 0.0; z = 0.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+        },
+    );
+    # List of PointLight
+    PointLight:
+    (
+        {
+            transform = {
+                position = {x = -1000.0; y = 0.0; z = 3000.0;};
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            color = {r = 45.0; g = 80.0; b = 133.0; a = 255.0};
+            power = 1.0;
+            radius = 1000000.0;
+        },
+        {
+            transform = {
+                position = {x = -1810.0; y = 2810.0; z = 2000.0;};
+                scale = {x = 1.0; y = 1.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            color = {r = 45.0; g = 80.0; b = 133.0; a = 255.0};
+            power = 5.0;
+            radius = 10000000.0;
+        }
+    );
+}
+
+# List of primitives
+primitives:
+{
+    Plane:
+    (
+        # up
+        # {
+        #     transform = {
+        #         position = {x = 0.0; y = 0.0; z = 2160.0;};
+        #         scale = {x = 0.0; y = 0.0; z = 0.0;};
+        #         rotation = {x = 0.0; y = 0.0; z = 1.0;};
+        #     };
+        #     material = {
+        #         type = "PlainMaterial";
+        #         color = {r = 0.0; g = 0.0; b = 255.0; a = 255.0};
+        #         shininess = 1.0;
+        #         ambient = {x = 1.0; y = 1.0; z = 1.0;};
+        #         diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+        #         specular = {x = 1.0; y = 1.0; z = 1.0;};
+        #     }
+        # },
+        # down
+        {
+            transform = {
+                position = {x = 0.0; y = 0.0; z = -10.0;};
+                scale = {x = 0.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 1.0;};
+            };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 2.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            }
+        },
+        # # back
+        # {
+        #     transform = {
+        #         position = {x = 0.0; y = 5000.0; z = 0.0;};
+        #         scale = {x = 0.0; y = 0.0; z = 0.0;};
+        #         rotation = {x = 0.0; y = 1.0; z = 1.0;};
+        #     };
+        #     material = {
+        #         type = "PlainMaterial";
+        #         color = {r = 0.0; g = 0.0; b = 255.0; a = 255.0};
+        #         shininess = 1.0;
+        #         ambient = {x = 1.0; y = 1.0; z = 1.0;};
+        #         diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+        #         specular = {x = 1.0; y = 1.0; z = 1.0;};
+        #     }
+        # },
+    );
+    Sphere:
+    (
+        {
+            radius = 100.0;
+            transform = {
+                position = {x = -2000.0; y = 3000.0; z = 3000.0;};
+                scale = {x = 1.0; y = 0.0; z = 0.0;};
+                rotation = {x = 0.0; y = 0.0; z = 0.0;};
+            };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 30.0
+                pair = {r = 0.0; g = 0.0; b = 0.0; a = 250.0};
+                impair = {r = 250.0; g = 250.0; b = 250.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # {
+        #     radius = 100.0;
+        #     transform = {
+        #         position = {x = -2500.0; y = 1500.0; z = 990.0;};
+        #         scale = {x = 1.0; y = 0.0; z = 0.0;};
+        #         rotation = {x = 0.0; y = 0.0; z = 0.0;};
+        #     };
+        #     material = {
+        #         type = "PlainMaterial";
+        #         color = {r = 255.0; g = 0.0; b = 0.0; a = 255.0};
+        #         shininess = 1.0;
+        #         ambient = {x = 1.0; y = 1.0; z = 1.0;};
+        #         diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+        #         specular = {x = 1.0; y = 1.0; z = 1.0;};
+        #     };
+        # },
+    );
+    Triangle:
+    (
+        # --------------------------------------------------------------------
+        # Pyramid left
+        # --------------------------------------------------------------------
+        {
+            pointOne = {x = -2000.0; y = 2000.0; z = -10.0;};
+            pointTwo = {x = -3000.0; y = 2000.0; z = -10.0;};
+            pointThree = {x = -2500.0; y = 1500.0; z = 750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 4.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = -2000.0; y = 2000.0; z = -10.0;};
+            pointTwo = {x = -2000.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = -2500.0; y = 1500.0; z = 750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 4.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = -3000.0; y = 2000.0; z = -10.0;};
+            pointTwo = {x = -3000.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = -2500.0; y = 1500.0; z = 750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 4.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = -3000.0; y = 1000.0; z = -10.0;};
+            pointTwo = {x = -2000.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = -2500.0; y = 1500.0; z = 750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 4.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # --------------------------------------------------------------------
+        # Pyramid Middle
+        # --------------------------------------------------------------------
+        {
+            pointOne = {x = 0.0; y = 2000.0; z = -10.0;};
+            pointTwo = {x = -1500.0; y = 2000.0; z = -10.0;};
+            pointThree = {x = -750.0; y = 1500.0; z = 990.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 5.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = 0.0; y = 2000.0; z = -10.0;};
+            pointTwo = {x = 0.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = -750.0; y = 1500.0; z = 990.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 5.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = -1500.0; y = 2000.0; z = -10.0;};
+            pointTwo = {x = -1500.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = -750.0; y = 1500.0; z = 990.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 5.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = -1500.0; y = 1000.0; z = -10.0;};
+            pointTwo = {x = 0.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = -750.0; y = 1500.0; z = 990.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 5.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        # --------------------------------------------------------------------
+        # Pyramid Right
+        # --------------------------------------------------------------------
+        {
+            pointOne = {x = 4000.0; y = 1000.0; z = -10.0;};
+            pointTwo = {x = 4000.0; y = 4500.0; z = -10.0;};
+            pointThree = {x = 2250.0; y = 2750.0; z = 1750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 6.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = 4000.0; y = 4500.0; z = -10.0;};
+            pointTwo = {x = 500.0; y = 4500.0; z = -10.0;};
+            pointThree = {x = 2250.0; y = 2750.0; z = 1750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 6.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = 500.0; y = 4500.0; z = -10.0;};
+            pointTwo = {x = 500.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = 2250.0; y = 2750.0; z = 1750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 6.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+        {
+            pointOne = {x = 500.0; y = 1000.0; z = -10.0;};
+            pointTwo = {x = 4000.0; y = 1000.0; z = -10.0;};
+            pointThree = {x = 2250.0; y = 2750.0; z = 1750.0;};
+            transform = { position = {x = 0.0; y = 0.0; z = 0.0;}; scale = {x = 0.0; y = 0.0; z = 0.0;}; rotation = {x = 0.0; y = 0.0; z = 0.0;}; };
+            material = {
+                type = "ChessBoardMaterial";
+                size = 6.0;
+                impair = {r = 220.0; g = 220.0; b = 220.0; a = 255.0};
+                pair = {r = 194.0; g = 178.0; b = 100.0; a = 255.0};
+                shininess = 1.0;
+                ambient = {x = 1.0; y = 1.0; z = 1.0;};
+                diffuse = {x = 1.0; y = 1.0; z = 1.0;};
+                specular = {x = 1.0; y = 1.0; z = 1.0;};
+            };
+        },
+    )
+}
