@@ -17,6 +17,15 @@ L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tra
 
 ![image](./documentation/reprere.png)
 
+<details>
+    <summary>example 4K image and its config file ...</summary>
+
+![pyramid](/Assets/scene4kpyramide_0.png)
+
+[config link](/scenes/4K/pyramide.yaax)
+
+</details>
+
 ## TOC
 
 - [Raytracer](#RayTracer)
