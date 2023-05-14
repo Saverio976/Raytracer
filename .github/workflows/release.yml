@@ -1,0 +1,40 @@
+name: Build and release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+
+  release-exe:
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker:latest
+
+    steps:
+      - name: Clone
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get install -y cmake make g++ tar gzip 
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config Release
+
+      - name: Package to archive
+        run: |
+          mkdir raytracer-bin
+          cp raytracer raytracer-bin/raytracer
+          cp -r plugins raytracer-bin/
+          tar -czf raytracer.tar.gz raytracer-bin -I 'gzip -9'
+
+      - name: Upload to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: "raytracer.tar.gz"
+          tag: ${{ github.ref }}
+          overwrite: true
