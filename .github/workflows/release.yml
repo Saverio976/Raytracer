@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: sudo apt-get install -y tar gzip libconfig-devel libconfig
+        run: sudo dnf install -y tar gzip libconfig-devel libconfig
 
       - name: Configure CMake
         run: cmake . -DCMAKE_BUILD_TYPE=Release
