@@ -31,14 +31,6 @@ jobs:
           cp -r plugins raytracer-bin/
           tar -czf - raytracer-bin | gzip -9 > raytracer.tar.gz
 
-      - name: Upload to release (binary)
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "raytracer.tar.gz"
-          tag: ${{ github.ref }}
-          overwrite: true
-
       - name: Package to archive (examples)
         run: |
           mkdir raytracer-examples
@@ -46,10 +38,11 @@ jobs:
           find raytracer-examples -name '*.yaax' -type f -print -exec ./raytracer --scene-path {} --output-path {} \;
           tar -czf - raytracer-examples | gzip -9 > raytracer-examples.tar.gz
 
-      - name: Upload to release (examples)
+      - name: Upload to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "raytracer-examples.tar.gz"
+          file: "./*.tar.gz"
+          file_glob: true
           tag: ${{ github.ref }}
           overwrite: true
