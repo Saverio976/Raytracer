@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: sudo dnf install -y tar gzip libconfig-devel libconfig
+        run: sudo apt-get install -y tar gzip libconfig-devel libconfig
 
       - name: Configure CMake
         run: cmake . -DCMAKE_BUILD_TYPE=Release
@@ -31,6 +31,12 @@ jobs:
           cp -r plugins raytracer-bin/
           tar -czf - raytracer-bin | gzip -9 > raytracer.tar.gz
 
+      - name: Upload to release (binary)
+        uses: actions/upload-artifact@v3
+        with:
+          name: raytracer.tar.gz
+          path: raytracer.tar.gz
+
       - name: Package to archive (examples)
         run: |
           mkdir raytracer-examples
@@ -38,11 +44,8 @@ jobs:
           find raytracer-examples -name '*.yaax' -type f -print -exec ./raytracer --scene-path {} --output-path {} \;
           tar -czf - raytracer-examples | gzip -9 > raytracer-examples.tar.gz
 
-      - name: Upload to release
-        uses: svenstaro/upload-release-action@v2
+      - name: Upload to release (examples)
+        uses: actions/upload-artifact@v3
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "./*.tar.gz"
-          file_glob: true
-          tag: ${{ github.ref }}
-          overwrite: true
+          name: raytracer-examples.tar.gz
+          path: raytracer-examples.tar.gz
