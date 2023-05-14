@@ -1,3 +1,5 @@
+[![Build and release](https://github.com/Saverio976/Raytracer/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/Saverio976/Raytracer/actions/workflows/release.yml)
+
 # RayTracer
 
 Projet réalisé en 2ème année à EPITECH
