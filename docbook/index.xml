@@ -4,7 +4,7 @@
     <title>RayTracer</title>
     </info>
 <chapter>
-    <title>RayTracer</title>
+    <title>Main Page</title>
     <xi:include href="mainpage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <chapter>

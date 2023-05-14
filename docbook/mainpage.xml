@@ -1,7 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage" xml:lang="en-US">
 
-<para>example 4K image and its config file ... <anchor xml:id="_index_1md__home_runner_work_Raytracer_Raytracer_README"/> Projet réalisé en 2ème année à EPITECH</para>
+<para>example 4K image and its config file ... <anchor xml:id="_index_1md__home_runner_work_Raytracer_Raytracer_README"/> <link xlink:href="https://github.com/Saverio976/Raytracer/actions/workflows/release.yml"></link></para>
+<section xml:id="_index_1autotoc_md0">
+<title>RayTracer</title>
+
+<para>Projet réalisé en 2ème année à EPITECH</para>
 
 <para>membres du projet:<itemizedlist>
 <listitem>
@@ -16,6 +20,7 @@
 </para>
 
 <para><link xlink:href="https://saverio976.github.io/Raytracer">Site Doxygen Du Projet</link> <link xlink:href="https://github.com/Saverio976/Raytracer/blob/gh-pages/uml.svg">UML du Projet</link></para>
+</section>
 <section xml:id="_index_1autotoc_md1">
 <title>Introduction</title>
 
