@@ -223,36 +223,37 @@
 <g id="node16" class="node">
 <title>Node16</title>
 <g id="a_node16"><a xlink:href="a01382.html" target="_top" xlink:title="The Color class.">
-<polygon fill="white" stroke="black" points="502,-783 502,-1016 615,-1016 615,-783 502,-783"/>
-<text text-anchor="start" x="510" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Images::</text>
-<text text-anchor="middle" x="558.5" y="-993" font-family="Helvetica,sans-Serif" font-size="10.00">Color</text>
-<polyline fill="none" stroke="black" points="502,-986 615,-986 "/>
-<text text-anchor="middle" x="558.5" y="-974" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="502,-967 615,-967 "/>
-<text text-anchor="start" x="510" y="-955" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Color()</text>
-<text text-anchor="start" x="510" y="-944" font-family="Helvetica,sans-Serif" font-size="10.00">+ Color()</text>
-<text text-anchor="start" x="510" y="-933" font-family="Helvetica,sans-Serif" font-size="10.00">+ Color()</text>
-<text text-anchor="start" x="510" y="-922" font-family="Helvetica,sans-Serif" font-size="10.00">+ Color()</text>
-<text text-anchor="start" x="510" y="-911" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator+()</text>
-<text text-anchor="start" x="510" y="-900" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator&#45;()</text>
-<text text-anchor="start" x="510" y="-889" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator*()</text>
-<text text-anchor="start" x="510" y="-878" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator/()</text>
-<text text-anchor="start" x="510" y="-867" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="510" y="-856" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator[]()</text>
-<text text-anchor="start" x="510" y="-845" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator[]()</text>
-<text text-anchor="start" x="510" y="-834" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="510" y="-823" font-family="Helvetica,sans-Serif" font-size="10.00">+ applyAlpha()</text>
-<text text-anchor="start" x="510" y="-812" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeColor()</text>
-<text text-anchor="start" x="510" y="-801" font-family="Helvetica,sans-Serif" font-size="10.00">+ applyDistance()</text>
-<text text-anchor="start" x="510" y="-790" font-family="Helvetica,sans-Serif" font-size="10.00">+ toSfColor()</text>
+<polygon fill="white" stroke="black" points="502,-777.5 502,-1021.5 615,-1021.5 615,-777.5 502,-777.5"/>
+<text text-anchor="start" x="510" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayTracer::Images::</text>
+<text text-anchor="middle" x="558.5" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">Color</text>
+<polyline fill="none" stroke="black" points="502,-991.5 615,-991.5 "/>
+<text text-anchor="middle" x="558.5" y="-979.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="502,-972.5 615,-972.5 "/>
+<text text-anchor="start" x="510" y="-960.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Color()</text>
+<text text-anchor="start" x="510" y="-949.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Color()</text>
+<text text-anchor="start" x="510" y="-938.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Color()</text>
+<text text-anchor="start" x="510" y="-927.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Color()</text>
+<text text-anchor="start" x="510" y="-916.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator+()</text>
+<text text-anchor="start" x="510" y="-905.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator&#45;()</text>
+<text text-anchor="start" x="510" y="-894.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator*()</text>
+<text text-anchor="start" x="510" y="-883.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator/()</text>
+<text text-anchor="start" x="510" y="-872.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="510" y="-861.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator[]()</text>
+<text text-anchor="start" x="510" y="-850.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator[]()</text>
+<text text-anchor="start" x="510" y="-839.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
+<text text-anchor="start" x="510" y="-828.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ applyAlpha()</text>
+<text text-anchor="start" x="510" y="-817.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeColor()</text>
+<text text-anchor="start" x="510" y="-806.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ applyDistance()</text>
+<text text-anchor="start" x="510" y="-795.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ toSfColor()</text>
+<text text-anchor="start" x="510" y="-784.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ toString()</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node16 -->
 <g id="edge18" class="edge">
 <title>Node7&#45;&gt;Node16</title>
-<path fill="none" stroke="#404040" d="M255.76,-1170.28C307.14,-1161.45 424.71,-1134.58 492.5,-1066 503.59,-1054.78 512.88,-1041.46 520.65,-1027.33"/>
-<polygon fill="none" stroke="#404040" points="520.8,-1027.05 519.99,-1019.88 526.3,-1016.38 527.1,-1023.55 520.8,-1027.05"/>
+<path fill="none" stroke="#404040" d="M255.76,-1170.28C307.14,-1161.45 424.71,-1134.58 492.5,-1066 502.17,-1056.22 510.47,-1044.84 517.59,-1032.71"/>
+<polygon fill="none" stroke="#404040" points="517.76,-1032.4 517.15,-1025.22 523.55,-1021.89 524.16,-1029.07 517.76,-1032.4"/>
 <text text-anchor="middle" x="480" y="-1120" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;_a</text>
 <text text-anchor="middle" x="480" y="-1109" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;_b</text>
 <text text-anchor="middle" x="480" y="-1098" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;_g</text>
@@ -480,7 +481,7 @@
 <!-- Node16&#45;&gt;Node15 -->
 <g id="edge17" class="edge">
 <title>Node16&#45;&gt;Node15</title>
-<path fill="none" stroke="#404040" d="M564.59,-782.82C567.7,-749.98 572.4,-714.37 579.5,-682 584.48,-659.3 592.65,-634.85 600.22,-614.61"/>
+<path fill="none" stroke="#404040" d="M565.11,-777.46C568.22,-746.14 572.79,-712.62 579.5,-682 584.48,-659.3 592.65,-634.85 600.22,-614.61"/>
 <polygon fill="none" stroke="#404040" points="600.29,-614.42 598.71,-607.39 604.59,-603.21 606.18,-610.25 600.29,-614.42"/>
 <text text-anchor="middle" x="608.5" y="-696" font-family="Helvetica,sans-Serif" font-size="10.00"> +elements</text>
 </g>
@@ -500,8 +501,8 @@
 <!-- Node17&#45;&gt;Node16 -->
 <g id="edge19" class="edge">
 <title>Node17&#45;&gt;Node16</title>
-<path fill="none" stroke="#404040" d="M558.5,-1146.27C558.5,-1118.16 558.5,-1072.6 558.5,-1028.3"/>
-<polygon fill="none" stroke="#404040" points="558.5,-1028.16 554.5,-1022.16 558.5,-1016.16 562.5,-1022.16 558.5,-1028.16"/>
+<path fill="none" stroke="#404040" d="M558.5,-1146.27C558.5,-1119.33 558.5,-1076.37 558.5,-1033.85"/>
+<polygon fill="none" stroke="#404040" points="558.5,-1033.58 554.5,-1027.58 558.5,-1021.58 562.5,-1027.58 558.5,-1033.58"/>
 <text text-anchor="middle" x="580.5" y="-1103.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;_mutex</text>
 </g>
 <!-- Node18&#45;&gt;Node15 -->

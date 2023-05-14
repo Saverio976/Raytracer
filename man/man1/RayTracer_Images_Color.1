@@ -83,6 +83,10 @@ RayTracer::Images::Color \- The \fBColor\fP class\&.
 .RI "sf::Color \fBtoSfColor\fP () const"
 .br
 .RI "convert color to sfColor "
+.ti -1c
+.RI "std::string \fBtoString\fP () const"
+.br
+.RI "convert color to string (with alpha apliyed) "
 .in -1c
 .SS "Private Attributes"
 
@@ -341,6 +345,17 @@ convert color to sfColor
 \fBReturns\fP
 .RS 4
 the sfcolor 
+.RE
+.PP
+
+.SS "std::string RayTracer::Images::Color::toString () const"
+
+.PP
+convert color to string (with alpha apliyed) 
+.PP
+\fBReturns\fP
+.RS 4
+the string 
 .RE
 .PP
 

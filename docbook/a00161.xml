@@ -5,6 +5,7 @@
 <programlisting>#include &lt;mutex&gt;
 #include &lt;ostream&gt;
 #include &lt;SFML/Graphics/Color.hpp&gt;
+#include &lt;string&gt;
 #include &quot;ISetting.hpp&quot;
 </programlisting>Include dependency graph for Color.hpp:<para>
     <informalfigure>

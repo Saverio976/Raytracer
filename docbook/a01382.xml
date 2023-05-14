@@ -101,6 +101,10 @@ Collaboration diagram for RayTracer::Images::Color:<para>
 
 <para>convert color to sfColor </para>
 </listitem>
+            <listitem><para>std::string <link linkend="_a01382_1a05fb083a7d0a53b342fc30b5dbd31f9e">toString</link> () const</para>
+
+<para>convert color to string (with alpha apliyed) </para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -670,6 +674,20 @@ Parameters                    </title>
 <para><formalpara><title>Returns</title>
 
 <para>the sfcolor </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_a01382_1a05fb083a7d0a53b342fc30b5dbd31f9e"/>    <section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>RayTracer::Images::Color</secondary></indexterm>
+<indexterm><primary>RayTracer::Images::Color</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>std::string RayTracer::Images::Color::toString ( ) const</computeroutput></para><para>
+
+<para>convert color to string (with alpha apliyed) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the string </para>
 </formalpara>
 </para>
 </section>

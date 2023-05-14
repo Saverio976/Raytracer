@@ -66,7 +66,9 @@ void \mbox{\hyperlink{a01382_a2483b1d43e1d4575a60c1fb52dba16ee}{merge\+Color}} (
 void \mbox{\hyperlink{a01382_adcfb6aa19b275a35efce1f608961e64f}{apply\+Distance}} (double distance, double max\+Distance)
 \begin{DoxyCompactList}\small\item\em apply distance in the color \end{DoxyCompactList}\item 
 sf\+::\+Color \mbox{\hyperlink{a01382_ac638739f0c7599f0325b2039c280a79f}{to\+Sf\+Color}} () const
-\begin{DoxyCompactList}\small\item\em convert color to sf\+Color \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em convert color to sf\+Color \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01382_a05fb083a7d0a53b342fc30b5dbd31f9e}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em convert color to string (with alpha apliyed) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -384,6 +386,19 @@ convert color to sf\+Color
 
 \begin{DoxyReturn}{Returns}
 the sfcolor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{a01382_a05fb083a7d0a53b342fc30b5dbd31f9e}\label{a01382_a05fb083a7d0a53b342fc30b5dbd31f9e}} 
+\index{RayTracer::Images::Color@{RayTracer::Images::Color}!toString@{toString}}
+\index{toString@{toString}!RayTracer::Images::Color@{RayTracer::Images::Color}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Ray\+Tracer\+::\+Images\+::\+Color\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+convert color to string (with alpha apliyed) 
+
+\begin{DoxyReturn}{Returns}
+the string 
 \end{DoxyReturn}
 
 
