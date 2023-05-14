@@ -1,3 +1,5 @@
+[![Build and release](https://github.com/Saverio976/Raytracer/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/Saverio976/Raytracer/actions/workflows/release.yml)
+
 # RayTracer
 
 Projet réalisé en 2ème année à EPITECH
@@ -16,6 +18,15 @@ membres du projet:
 L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tracing) en [C++](https://fr.wikipedia.org/wiki/C%2B%2B)
 
 ![image](./documentation/reprere.png)
+
+<details>
+    <summary>example 4K image and its config file ...</summary>
+
+![pyramid](/Assets/scene4kpyramide_0.png)
+
+[config link](/scenes/4K/pyramide.yaax)
+
+</details>
 
 ## TOC
 

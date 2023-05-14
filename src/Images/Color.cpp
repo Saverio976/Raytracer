@@ -8,6 +8,7 @@
 #include "Color.hpp"
 #include "ISetting.hpp"
 #include <memory>
+#include <string>
 
 namespace RayTracer::Images {
 
@@ -199,6 +200,15 @@ namespace RayTracer::Images {
             static_cast<unsigned char>(this->_b),
             static_cast<unsigned char>(this->_a)};
     }
+
+    std::string Color::toString() const {
+        double a = (*this)[RayTracer::Images::Color::Types::ALPHA];
+        int r = a * (*this)[RayTracer::Images::Color::Types::RED] / 255;
+        int g = a * (*this)[RayTracer::Images::Color::Types::GREEN] / 255;
+        int b = a * (*this)[RayTracer::Images::Color::Types::BLUE] / 255;
+
+        return std::to_string(r) + ' ' + std::to_string(g) + ' ' + std::to_string(b);
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color) {
@@ -207,9 +217,6 @@ std::ostream& operator<<(std::ostream& os, const RayTracer::Images::Color& color
     int g = a * color[RayTracer::Images::Color::Types::GREEN] / 255;
     int b = a * color[RayTracer::Images::Color::Types::BLUE] / 255;
 
-    r = (r < 0) ? 0 : (r > 255) ? 255 : r;
-    g = (g < 0) ? 0 : (g > 255) ? 255 : g;
-    b = (b < 0) ? 0 : (b > 255) ? 255 : b;
     os << r << ' ' << g << ' ' << b;
     return os;
 }

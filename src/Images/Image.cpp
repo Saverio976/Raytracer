@@ -5,9 +5,10 @@
 ** Image.cpp
 */
 
-#include "Image.hpp"
 #include <cstddef>
 #include <fstream>
+#include <string>
+#include "Image.hpp"
 
 namespace RayTracer::Images {
     Image::Image(const Entities::Transform::Vector2i &size): _size(size)
@@ -19,15 +20,18 @@ namespace RayTracer::Images {
 
     void Image::convertToPPM(const std::string &filePath) const {
         std::ofstream file;
+        std::string buffer;
 
         file.open(filePath);
         if (!file.is_open())
             throw std::runtime_error("Error conversion PPM : Failed to open file");
-        file << "P3" << std::endl;
-        file << this->_size.getX() << ' ' << this->_size.getY() << std::endl;
-        file << "255" << std::endl;
-        for (const Color &color : this->_pixels)
-            file << color << std::endl;
+        buffer += "P3\n";
+        buffer += std::to_string(this->_size.getX()) + ' ' + std::to_string(this->_size.getY()) + '\n';
+        buffer += "255\n";
+        for (const Color &color : this->_pixels) {
+            buffer += color.toString() + '\n';
+        }
+        file.write(buffer.c_str(), buffer.size());
         file.close();
     }
 
