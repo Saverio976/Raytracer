@@ -3103,7 +3103,7 @@ RayTracer.Images.Ray <.. RayTracer.PluginsExt.Camera.FullCustom.CustomRayIterato
 RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
 
 
-RayTracer.Images.Ray <.. RayTracer.Images.RayIterrator::Iterrator
+RayTracer.Images.RayIterrator <.. RayTracer.Images.RayIterrator::Iterrator
 
 
 RayTracer.Scenes.Scene <.. RayTracer.Display.CanvasModule

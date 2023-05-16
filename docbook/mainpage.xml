@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage" xml:lang="en-US">
 
-<para>example 4K image and its config file ... <anchor xml:id="_index_1md__home_runner_work_Raytracer_Raytracer_README"/> <link xlink:href="https://github.com/Saverio976/Raytracer/actions/workflows/release.yml"></link></para>
+<para>afficher ... <anchor xml:id="_index_1md__home_runner_work_Raytracer_Raytracer_README"/> <link xlink:href="https://github.com/Saverio976/Raytracer/actions/workflows/release.yml"></link></para>
 <section xml:id="_index_1autotoc_md0">
 <title>RayTracer</title>
 
@@ -37,13 +37,15 @@ image
     </informalfigure>
 </para>
 
-<para>&lt;details&gt;</para>
+<para><itemizedlist>
+<listitem>
+<para>Pyramide 4k:</para>
+</listitem></itemizedlist>
+</para>
 
 <para></para>
 
 <para><link xlink:href="/scenes/4K/pyramide.yaax">config link</link></para>
-
-<para>&lt;/details&gt;</para>
 <section xml:id="_index_1autotoc_md2">
 <title>TOC</title>
 
@@ -205,8 +207,6 @@ image
 
 <para>&lt;details&gt;</para>
 
-<para>aficher ... </para>
-
 <para><literallayout><computeroutput>#sphere.yaax
 
 #&#32;Configuration&#32;des&#32;cameras
@@ -335,7 +335,7 @@ image
 
 <para>&lt;details&gt;</para>
 
-<para>aficher ... </para>
+<para>afficher ... </para>
 
 <para><literallayout><computeroutput>#plan.yaax
 
@@ -490,7 +490,7 @@ image
 
 <para>&lt;details&gt;</para>
 
-<para>aficher ... </para>
+<para>afficher ... </para>
 
 <para><literallayout><computeroutput>#plan-limited.yaax
 
