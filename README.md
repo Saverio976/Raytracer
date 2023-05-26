@@ -19,14 +19,11 @@ L'objectif est de réaliser un [Raytracer](https://fr.wikipedia.org/wiki/Ray_tra
 
 ![image](./documentation/reprere.png)
 
-<details>
-    <summary>example 4K image and its config file ...</summary>
+- Pyramide 4k:
 
 ![pyramid](/Assets/scene4kpyramide_0.png)
 
 [config link](/scenes/4K/pyramide.yaax)
-
-</details>
 
 ## TOC
 
@@ -135,7 +132,7 @@ les filtres sont:
 ![image](/documentation/sphere1-basic.png)
 
 <details>
-    <summary>aficher ...</summary>
+    <summary>afficher ...</summary>
 
 ```python
 #sphere.yaax
@@ -255,7 +252,7 @@ lights :
 ![image](/documentation/plan2-basic.png)
 
 <details>
-    <summary>aficher ...</summary>
+    <summary>afficher ...</summary>
 
 ```python
 #plan.yaax
@@ -399,7 +396,7 @@ lights :
 ![image](/documentation/plan2-basic-limited.png)
 
 <details>
-    <summary>aficher ...</summary>
+    <summary>afficher ...</summary>
 
 ```python
 #plan-limited.yaax
