@@ -23,7 +23,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y graphviz doxygen plantuml curl default-jre default-jdk
+          sudo apt-get install -y \
+            graphviz \
+            doxygen \
+            plantuml \
+            curl \
+            default-jre \
+            default-jdk \
+            ca-certificates-java
           pip install -r ./requirements.txt
 
       - name: Build uml
